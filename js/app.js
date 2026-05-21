@@ -9,6 +9,226 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // =====================================
+// ABRIR / CERRAR MENÚ
+// =====================================
+
+function presenToggleMenu(){
+
+    // Obtener menú
+    const menu =
+        document.getElementById(
+            "presenMenuIdioma"
+        );
+
+    // Mostrar u ocultar menú
+    menu.classList.toggle(
+        "presen-show"
+    );
+}
+
+// =====================================
+// CAMBIAR IDIOMA
+// =====================================
+
+function presenCambiarModo(modo){
+
+    // Guardar idioma seleccionado
+    // en localStorage
+    localStorage.setItem(
+        "idiomaSeleccionado",
+        modo
+    );
+
+    // Obtener todos los elementos
+    // que tengan traducciones
+    const elementos =
+        document.querySelectorAll(
+            "[data-es]"
+        );
+
+    // Recorrer elementos
+    elementos.forEach(el => {
+
+        // Obtener textos
+        const es =
+            el.getAttribute("data-es");
+
+        const na =
+            el.getAttribute("data-na");
+
+
+        // =================================
+        // ELEMENTOS SOLO SIMPLE
+        // =================================
+
+        if(el.classList.contains("solo-simple")){
+
+            // SI EL MODO CONTIENE ESPAÑOL
+            if(
+                modo === "es" ||
+                modo === "es-na"
+            ){
+
+                el.textContent = es;
+            }
+
+            // SI EL MODO CONTIENE NÁHUATL
+            if(
+                modo === "na" ||
+                modo === "na-es"
+            ){
+
+                el.textContent = na;
+            }
+
+            return;
+        }    
+
+        // =================================
+        // CASO ESPECIAL:
+        // BOTONES DE TRAJES / AVATARES
+        // =================================
+
+        if(
+            el.classList.contains(
+                "avatar-btn"
+            )
+        ){
+
+            const span =
+                el.querySelector(
+                    ".nombre-traje"
+                );
+
+            // SOLO ESPAÑOL
+            if(modo === "es"){
+
+                span.textContent = es;
+            }
+
+            // SOLO NÁHUATL
+            if(modo === "na"){
+
+                span.textContent = na;
+            }
+
+            // ESPAÑOL + NÁHUATL
+            if(modo === "es-na"){
+
+                span.innerHTML =
+
+                    '<span class="idioma-principal">'
+                    + es +
+                    '</span>' +
+
+                    '<span class="idioma-secundario">'
+                    + ' / ' + na +
+                    '</span>';
+            }
+
+            // NÁHUATL + ESPAÑOL
+            if(modo === "na-es"){
+
+                span.innerHTML =
+
+                    '<span class="idioma-principal">'
+                    + na +
+                    '</span>' +
+
+                    '<span class="idioma-secundario">'
+                    + ' / ' + es +
+                    '</span>';
+            }
+
+            // Saltar resto
+            return;
+        }
+
+        // =================================
+        // TEXTO NORMAL
+        // =================================
+
+        // SOLO ESPAÑOL
+        if(modo === "es"){
+
+            el.textContent = es;
+        }
+
+        // SOLO NÁHUATL
+        if(modo === "na"){
+
+            el.textContent = na;
+        }
+
+        // ESPAÑOL + NÁHUATL
+        if(modo === "es-na"){
+
+            el.innerHTML =
+
+                '<span class="idioma-principal">'
+                + es +
+                '</span>' +
+
+                '<span class="idioma-secundario">'
+                + ' / ' + na +
+                '</span>';
+        }
+
+        // NÁHUATL + ESPAÑOL
+        if(modo === "na-es"){
+
+            el.innerHTML =
+
+                '<span class="idioma-principal">'
+                + na +
+                '</span>' +
+
+                '<span class="idioma-secundario">'
+                + ' / ' + es +
+                '</span>';
+        }
+
+    });
+
+    // Cerrar menú después
+    // de seleccionar idioma
+    document
+        .getElementById(
+            "presenMenuIdioma"
+        )
+        .classList.remove(
+            "presen-show"
+        );
+}
+
+// =====================================
+// CARGAR IDIOMA GUARDADO
+// =====================================
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function(){
+
+        // Obtener idioma guardado
+        const idiomaGuardado =
+
+            localStorage.getItem(
+                "idiomaSeleccionado"
+            );
+
+        // Si existe idioma guardado
+        // aplicarlo automáticamente
+        if(idiomaGuardado){
+
+            presenCambiarModo(
+                idiomaGuardado
+            );
+        }
+
+    }
+);
+
+// =====================================
 // MOSTRAR PAGINAS
 // =====================================
 
@@ -196,3 +416,4 @@ function renderMisiones(misiones){
         `;
     });
 }
+
