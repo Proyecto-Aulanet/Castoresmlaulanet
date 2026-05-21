@@ -30,7 +30,7 @@
 
 <!-- HEADER -->
 <header
-    class="header-main sticky-top shadow-lg">
+    class="header-main shadow-lg">
 
     <div class="container">
 
@@ -196,245 +196,191 @@
 </div>
 
         <!-- MAIN -->
-        <main class="container py-5">
+        <main>
 
-         <div class="d-flex align-items-center gap-3 stats-box">
 
-                <!-- RACHA -->
-                <div class="stat-item">
+            <!-- HOME -->
+                <section
+                    id="page-home"
+                    class="page-section d-flex align-items-center justify-content-center min-vh-100 position-relative overflow-hidden">
 
-                    <i class="bi bi-fire stat-icon text-warning"></i>
+                <!-- CARRUSEL -->
+                <div
+                    id="homeCarousel"
+                    class="carousel slide carousel-fade position-absolute top-0 start-0 w-100 h-100"
+                    data-bs-ride="carousel"
+                    data-bs-interval="4000">
 
-                    <div>
+                    <div class="carousel-inner h-100">
 
-                        <small
-                            class="stat-label"
-                            data-es="Racha"
-                            data-na="Tlatzintli">
+                        <div class="carousel-item active h-100">
 
-                            Racha
+                            <img
+                                src="/Recursos/fondos_carrusel/memelas.jpeg"
+                                class="d-block w-100 h-100 carousel-bg"
+                                alt="">
 
-                        </small>
+                        </div>
 
-                        <span
-                            id="streak-display"
-                            class="stat-value">
+                        <div class="carousel-item h-100">
 
-                            0
+                            <img
+                                src="/Recursos/fondos_carrusel/parroquia.jpeg"
+                                class="d-block w-100 h-100 carousel-bg"
+                                alt="">
 
-                        </span>
+                        </div>
 
-                    </div>
+                        <div class="carousel-item h-100">
 
-                </div>
+                            <img
+                                src="/Recursos/fondos_carrusel/grupodanza.jpeg"
+                                class="d-block w-100 h-100 carousel-bg"
+                                alt="">
 
-                <!-- XP -->
-                <div class="stat-item">
+                        </div>
 
-                    <i class="bi bi-stars stat-icon text-warning"></i>
+                        <div class="carousel-item h-100">
 
-                    <div>
+                            <img
+                                src="/Recursos/fondos_carrusel/ceremonial.jpeg"
+                                class="d-block w-100 h-100 carousel-bg"
+                                alt="">
 
-                        <small
-                            class="stat-label"
-                            data-es="Experiencia"
-                            data-na="Machiyotl">
+                        </div>
 
-                            Experiencia
+                        
+                        <div class="carousel-item h-100">
 
-                        </small>
+                            <img
+                                src="/Recursos/fondos_carrusel/ceremonial2.jpeg"
+                                class="d-block w-100 h-100 carousel-bg"
+                                alt="">
 
-                        <span
-                            id="xp-display"
-                            class="stat-value">
-
-                            0
-
-                        </span>
-
-                    </div>
-
-                </div>
-
-                <!-- VIDAS -->
-                <div class="stat-item">
-
-                    <i class="bi bi-heart-fill stat-icon text-danger"></i>
-
-                    <div>
-
-                        <small
-                            class="stat-label"
-                            data-es="Vidas"
-                            data-na="Yolistli">
-
-                            Vidas
-
-                        </small>
-
-                        <span
-                            id="lives-display"
-                            class="stat-value">
-
-                            5
-
-                        </span>
+                        </div>
+                        
 
                     </div>
 
                 </div>
 
-            </div>
-            
-            <!-- BOTÓN TRADUCTOR -->
-            <div class="d-flex justify-content-end">
+                <!-- OVERLAY -->
 
-                <div class="presen-traductor">
+                <div class="carousel-overlay"></div>
+
+                <!-- CONTENIDO -->
+                    <div class="container hero-content text-center">
+
+                    <!-- BOTÓN TRADUCTOR -->
+                    <div class="d-flex justify-content-end w-100">
+
+                        <div class="presen-traductor">
+
+                            <!-- BOTÓN -->
+                            <button
+                                class="btn btn-light rounded-circle traductor-btn"
+                                onclick="presenToggleMenu()"
+                                data-aos="zoom-in">
+
+                                <i class="bi bi-translate"></i>
+
+                            </button>
+
+                            <!-- MENÚ -->
+                            <div
+                                class="presen-menu"
+                                id="presenMenuIdioma">
+
+                                <ul class="list-unstyled m-0">
+
+                                    <li onclick="presenCambiarModo('es')">
+                                        Español
+                                    </li>
+
+                                    <li onclick="presenCambiarModo('na')">
+                                        Náhuatl
+                                    </li>
+
+                                    <li onclick="presenCambiarModo('es-na')">
+                                        Español + Náhuatl
+                                    </li>
+
+                                    <li onclick="presenCambiarModo('na-es')">
+                                        Náhuatl + Español
+                                    </li>
+
+                                </ul>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- IMAGEN -->
+
+                    <div class="d-flex justify-content-center">
+
+                        <img
+                            src="/Recursos/nahui/nahui_amigos.png"
+                            alt="Nahui Amigos"
+                            class="img-fluid float-anim"
+                            style="max-width:480px; width:80%;"
+                            data-aos="zoom-out">
+
+                    </div>
+
+                    <!-- TITULO -->
+
+                    <h2
+                        class="hero-title mb-3 text-white"
+                        data-aos="fade-up">
+
+                        <span
+                            data-es="¡Aprende Náhuatl de forma divertida!"
+                            data-na="¡Ximomachtia nāhuatl ica pakilistli!">
+
+                            ¡Aprende Náhuatl de forma divertida!
+
+                        </span>
+
+                    </h2>
+
+                    <!-- TEXTO -->
+
+                    <p
+                        class="hero-text mx-auto text-white"
+                        data-aos="fade-up">
+
+                        <span
+                            data-es="Descubre la riqueza del náhuatl."
+                            data-na="Xikmati in hueyi tlamantli nāhuatl.">
+
+                            Descubre la riqueza del náhuatl.
+
+                        </span>
+
+                    </p>
 
                     <!-- BOTÓN -->
-                    <button
-                        class="btn btn-light rounded-circle traductor-btn"
-                        onclick="presenToggleMenu()"
-                        data-aos="zoom-in">
 
-                        <i class="bi bi-translate"></i>
+                    <button
+                        onclick="showPage('modules')"
+                        class="btn btn-success btn-lg rounded-pill px-5 pulse-glow mt-3">
+
+                        <span
+                            data-es="¡Comenzar a aprender!"
+                            data-na="¡Pewas timomachtis!">
+
+                            ¡Comenzar a aprender!
+
+                        </span>
+
+                        <i class="bi bi-rocket-takeoff-fill ms-2"></i>
 
                     </button>
 
-                    <!-- MENÚ -->
-                    <div
-                        class="presen-menu"
-                        id="presenMenuIdioma">
-
-                        <ul class="list-unstyled m-0">
-
-                            <li onclick="presenCambiarModo('es')">
-                                Español
-                            </li>
-
-                            <li onclick="presenCambiarModo('na')">
-                                Náhuatl
-                            </li>
-
-                            <li onclick="presenCambiarModo('es-na')">
-                                Español + Náhuatl
-                            </li>
-
-                            <li onclick="presenCambiarModo('na-es')">
-                                Náhuatl + Español
-                            </li>
-
-                        </ul>
-
-                    </div>
-
                 </div>
-
-            </div>
-
-        <!-- HOME -->
-        <section
-            id="page-home"
-            class="page-section">
-
-            <div class="text-center mb-5">
-
-                <div class="d-flex justify-content-center">
-
-                    <img
-                        src="/Recursos/nahui/nahui_amigos.png"
-                        alt="Nahui Amigos"
-                        class="img-fluid float-anim"
-                        style="max-width:430px; width:80%;">
-
-                </div>
-
-                <h2
-                    class="hero-title mb-3"
-                    data-aos="fade-up">
-
-                    <span
-                        data-es="¡Aprende Náhuatl de forma divertida!"
-                        data-na="¡Ximomachtia nāhuatl ica pakilistli!">
-
-                        ¡Aprende Náhuatl de forma divertida!
-
-                    </span>
-
-                </h2>
-
-                <p
-                    class="hero-text mx-auto"
-                    data-aos="fade-up">
-
-                    <span
-                        data-es="Descubre la riqueza del náhuatl."
-                        data-na="Xikmati in hueyi tlamantli nāhuatl.">
-
-                        Descubre la riqueza del náhuatl.
-
-                    </span>
-
-                </p>
-
-            </div>
-
-            <div class="text-center">
-
-            <button
-                onclick="showPage('modules')"
-                class="btn btn-success btn-lg rounded-pill px-5 pulse-glow">
-
-                <span
-                    data-es="¡Comenzar a aprender!"
-                    data-na="¡Pewas timomachtis!">
-
-                    ¡Comenzar a aprender!
-
-                </span>
-
-                <i class="bi bi-rocket-takeoff-fill ms-2"></i>
-
-            </button>
-
-            </div>
-
-        </section>
-
-            <!-- MODULOS -->
-            <section
-                id="page-modules"
-                class="page-section hidden">
-
-                <h2
-                    class="font-display text-2xl font-bold mb-6 text-jade-700">
-
-                    📚 Módulos de Aprendizaje
-
-                </h2>
-
-                <div
-                    id="modules-grid"
-                    class="row g-4">
-
-                </div>
-
-            </section>
-
-            <!-- MISIONES -->
-            <section
-                id="page-missions"
-                class="page-section hidden">
-
-                <button
-                    onclick="showPage('modules')"
-                    class="mb-4 bg-jade-500 text-white px-4 py-2 rounded-lg">
-
-                    Volver
-
-                </button>
-
-                <div id="missions-container"></div>
 
             </section>
 
