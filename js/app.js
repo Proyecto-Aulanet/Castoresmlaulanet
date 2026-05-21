@@ -4,8 +4,6 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    lucide.createIcons();
-
     obtenerCategorias();
 
 });
@@ -67,29 +65,38 @@ function renderCategorias(categorias){
 
         container.innerHTML += `
 
-            <div
-                onclick="obtenerMisiones(${categoria.idcategoria})"
-                class="lesson-card bg-white rounded-2xl overflow-hidden shadow-lg cursor-pointer">
+            <div class="col-12 col-md-6 col-lg-3">
 
                 <div
-                    class="bg-gradient-to-r from-jade-500 to-nahua-500 p-6 text-center text-white">
+                    onclick="obtenerMisiones(${categoria.idcategoria})"
+                    class="lesson-card card border-0 shadow-lg h-100 overflow-hidden cursor-pointer">
 
-                    <img
-                        src="${categoria.imagen}"
-                        class="w-24 h-24 object-cover rounded-full mx-auto mb-4">
+                    <div
+                        class="bg-success text-white text-center p-4">
 
-                    <h3
-                        class="font-display text-xl font-bold">
+                        <img
+                            src="${categoria.imagen}"
+                            class="rounded-circle mb-3 object-fit-cover"
+                            style="
+                                width:100px;
+                                height:100px;
+                                object-fit:cover;
+                            ">
 
-                        ${categoria.nombre_esp}
+                        <h3
+                            class="fw-bold fs-4">
 
-                    </h3>
+                            ${categoria.nombre_esp}
 
-                    <p class="text-sm mt-2">
+                        </h3>
 
-                        ${categoria.descripcion_esp}
+                        <p class="small mt-2 mb-0">
 
-                    </p>
+                            ${categoria.descripcion_esp}
+
+                        </p>
+
+                    </div>
 
                 </div>
 
@@ -140,31 +147,41 @@ function renderMisiones(misiones){
         container.innerHTML += `
 
             <div
-                class="bg-white rounded-2xl shadow-lg p-5 mb-4">
+                class="card border-0 shadow-lg rounded-4 p-4 mb-4">
 
-                <div class="flex gap-4 items-center">
+                <div
+                    class="row align-items-center g-4">
 
-                    <img
-                        src="${mision.imagen}"
-                        class="w-24 h-24 rounded-xl object-cover">
+                    <div class="col-12 col-md-3 text-center">
 
-                    <div>
+                        <img
+                            src="${mision.imagen}"
+                            class="img-fluid rounded-4"
+                            style="
+                                width:140px;
+                                height:140px;
+                                object-fit:cover;
+                            ">
+
+                    </div>
+
+                    <div class="col-12 col-md-9">
 
                         <h2
-                            class="font-display text-2xl font-bold text-jade-700">
+                            class="fw-bold text-success">
 
                             ${mision.nombre_esp}
 
                         </h2>
 
                         <h3
-                            class="text-nahua-600 font-bold">
+                            class="fw-bold text-warning">
 
                             ${mision.nombre_nah}
 
                         </h3>
 
-                        <p class="text-obsidian-500 mt-2">
+                        <p class="text-secondary mt-3">
 
                             ${mision.descripcion_esp}
 

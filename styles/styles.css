@@ -1,33 +1,110 @@
+/* =========================
+   FUENTES
+========================= */
+
+@font-face{
+    font-family:'Poppins';
+    src:url('../assets/fonts/Poppins-Regular.ttf');
+}
+
+@font-face{
+    font-family:'PoppinsBold';
+    src:url('../assets/fonts/Poppins-Bold.ttf');
+}
+
+@font-face{
+    font-family:'Fredoka';
+    src:url('../assets/fonts/Fredoka-Regular.ttf');
+}
+
+@font-face{
+    font-family:'FredokaBold';
+    src:url('../assets/fonts/Fredoka-Bold.ttf');
+}
+
+/* =========================
+   BASE
+========================= */
+
 html,
 body{
     height:100%;
 }
 
 body{
-    box-sizing:border-box;
+    background:#fef7e7;
+    font-family:'Poppins';
+    color:#2e2740;
 }
 
-/* ANIMACIONES */
+/* =========================
+   HEADER
+========================= */
 
-@keyframes float {
+.header-main{
+    background:linear-gradient(
+        90deg,
+        #0f9259,
+        #1db571,
+        #f7a621
+    );
+
+    color:white;
+}
+
+.logo-circle{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    background:rgba(255,255,255,.2);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:28px;
+}
+
+.title-main{
+    font-family:'FredokaBold';
+    font-size:clamp(1.2rem,3vw,2rem);
+}
+
+.hero-title{
+    font-family:'FredokaBold';
+    color:#0d7549;
+    font-size:clamp(2rem,5vw,4rem);
+}
+
+.hero-text{
+    max-width:700px;
+    font-size:1.1rem;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.lesson-card{
+    transition:.3s ease;
+}
+
+.lesson-card:hover{
+    transform:translateY(-5px);
+}
+
+/* =========================
+   ANIMACIONES
+========================= */
+
+@keyframes float{
 
     0%,100%{
-        transform:translateY(0)
+        transform:translateY(0);
     }
 
     50%{
-        transform:translateY(-10px)
-    }
-}
-
-@keyframes pulse-glow {
-
-    0%,100%{
-        box-shadow:0 0 5px rgba(29,181,113,0.3)
-    }
-
-    50%{
-        box-shadow:0 0 20px rgba(29,181,113,0.6)
+        transform:translateY(-10px);
     }
 }
 
@@ -35,29 +112,40 @@ body{
     animation:float 3s ease-in-out infinite;
 }
 
-.pulse-glow{
-    animation:pulse-glow 2s ease-in-out infinite;
-}
+@keyframes pulse-glow{
 
-.page-section{
-    animation:fadeIn .3s ease;
-}
-
-.lesson-card{
-    transition:all .2s ease;
-}
-
-.lesson-card:hover{
-    transform:translateY(-5px);
-}
-
-@keyframes fadeIn{
-
-    from{
-        opacity:0;
+    0%,100%{
+        box-shadow:0 0 5px rgba(29,181,113,.3);
     }
 
-    to{
-        opacity:1;
+    50%{
+        box-shadow:0 0 20px rgba(29,181,113,.7);
+    }
+}
+
+.pulse-glow{
+    animation:pulse-glow 2s infinite;
+}
+
+.hidden{
+    display:none !important;
+}
+
+.cursor-pointer{
+    cursor:pointer;
+}
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+    .stats-box{
+        width:100%;
+        justify-content:center;
+    }
+
+    .hero-title{
+        font-size:2.2rem;
     }
 }
