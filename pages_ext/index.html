@@ -4,199 +4,161 @@
 <head>
 
     <meta charset="UTF-8">
+
+    <!-- RESPONSIVE -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Catores Multibilingues aul@Net</title>
 
-    <!-- Tailwind -->
-    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
 
-    <!-- Lucide -->
-    <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+    <!-- BOOTSTRAP ICONS -->
+    <link rel="stylesheet" href="/assets/icons/bootstrap-icons.css">
 
-    <!-- Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap"
-        rel="stylesheet">
+    <!-- AOS -->
+    <link rel="stylesheet" href="/assets/css/aos.css">
 
     <!-- CSS -->
     <link rel="stylesheet" href="/styles/styles.css">
 
-    <!-- Tailwind Config -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        display: ['Fredoka', 'sans-serif'],
-                        body: ['Nunito', 'sans-serif']
-                    },
-
-                    colors: {
-
-                        nahua: {
-                            50: '#fef7e7',
-                            100: '#fdecc6',
-                            200: '#fbd88d',
-                            300: '#f9be4a',
-                            400: '#f7a621',
-                            500: '#e8850b',
-                            600: '#cc6306',
-                            700: '#a84509',
-                            800: '#893710',
-                            900: '#712f10'
-                        },
-
-                        jade: {
-                            50: '#edfcf5',
-                            100: '#d3f8e5',
-                            200: '#aaf0cf',
-                            300: '#73e3b2',
-                            400: '#3bce91',
-                            500: '#1db571',
-                            600: '#0f9259',
-                            700: '#0d7549',
-                            800: '#0e5d3b',
-                            900: '#0c4d33'
-                        },
-
-                        obsidian: {
-                            50: '#f4f3f7',
-                            100: '#e8e6ee',
-                            200: '#d5d1e0',
-                            300: '#b5aec8',
-                            400: '#9085ab',
-                            500: '#756891',
-                            700: '#4a3d62',
-                            800: '#3d3351',
-                            900: '#2e2740'
-                        },
-
-                        terra: {
-                            500: '#c44536',
-                            600: '#a63729',
-                            700: '#8b2d22'
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-
 </head>
 
-<body class="h-full font-body bg-nahua-50 text-obsidian-900 overflow-auto">
+<body>
 
     <div id="app" class="w-full min-h-full flex flex-col">
 
-        <!-- HEADER -->
-        <header
-            class="bg-gradient-to-r from-jade-600 via-jade-500 to-nahua-500 text-white shadow-lg sticky top-0 z-50">
+ <!-- HEADER -->
+<header
+    class="header-main sticky-top shadow-lg">
 
-            <div
-                class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+    <div class="container">
 
-                <div class="flex items-center gap-3">
+        <div
+            class="d-flex justify-content-between align-items-center py-3 flex-wrap gap-3">
 
-                    <div
-                        class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-2xl float-anim">
-                        🦎
-                    </div>
+            <div class="d-flex align-items-center gap-3">
 
-                    <h1
-                        class="font-display text-lg md:text-xl font-bold truncate">
-                        Catores Multibilingues aul@Net
-                    </h1>
-
+                <div class="logo-circle float-anim">
+                    🦎
                 </div>
 
-                <div class="flex items-center gap-4 text-sm">
+                <h1 class="title-main m-0">
 
-                    <div class="flex items-center gap-1">
-                        <i data-lucide="flame"
-                            class="w-5 h-5 text-nahua-300"></i>
+                    Catores Multibilingues aul@Net
 
-                        <span id="streak-display">0</span>
-                    </div>
+                </h1>
 
-                    <div class="flex items-center gap-1">
-                        <i data-lucide="star"
-                            class="w-5 h-5 text-nahua-200"></i>
-
-                        <span id="xp-display">0</span>
-                    </div>
-
-                    <div class="flex items-center gap-1">
-                        <i data-lucide="heart"
-                            class="w-5 h-5 text-terra-500"></i>
-
-                        <span id="lives-display">5</span>
-                    </div>
-
-                </div>
             </div>
 
-            <!-- NAV -->
-            <nav
-                class="max-w-6xl mx-auto px-4 pb-2 flex gap-2 overflow-x-auto text-xs md:text-sm">
+            <div class="d-flex align-items-center gap-4 stats-box">
+
+                <div class="d-flex align-items-center gap-1">
+
+                    <i class="bi bi-fire text-warning"></i>
+
+                    <span id="streak-display">0</span>
+
+                </div>
+
+                <div class="d-flex align-items-center gap-1">
+
+                    <i class="bi bi-star-fill text-warning"></i>
+
+                    <span id="xp-display">0</span>
+
+                </div>
+
+                <div class="d-flex align-items-center gap-1">
+
+                    <i class="bi bi-heart-fill text-danger"></i>
+
+                    <span id="lives-display">5</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- NAV -->
+
+        <nav class="pb-3">
+
+            <div class="d-flex gap-2 overflow-auto">
 
                 <button
                     onclick="showPage('home')"
-                    class="nav-btn px-3 py-1 rounded-full bg-white/20 hover:bg-white/30 transition whitespace-nowrap">
+                    class="btn btn-light rounded-pill">
+
                     Inicio
+
                 </button>
 
                 <button
                     onclick="showPage('modules')"
-                    class="nav-btn px-3 py-1 rounded-full bg-white/20 hover:bg-white/30 transition whitespace-nowrap">
+                    class="btn btn-light rounded-pill">
+
                     Lecciones
+
                 </button>
 
-            </nav>
+            </div>
 
-        </header>
+        </nav>
+
+    </div>
+
+</header>
 
         <!-- MAIN -->
-        <main class="flex-1 w-full max-w-6xl mx-auto px-4 py-6">
+        <main class="container py-5">
 
-            <!-- HOME -->
-            <section id="page-home"
-                class="page-section slide-up">
+        <!-- HOME -->
+        <section
+            id="page-home"
+            class="page-section">
 
-                <div class="text-center mb-8">
+            <div class="text-center mb-5">
 
-                    <div class="text-6xl mb-4 float-anim inline-block">
-                        🦎
-                    </div>
+                <div
+                    class="display-1 mb-4 float-anim">
 
-                    <h2
-                        class="font-display text-3xl md:text-4xl font-bold text-jade-700 mb-2">
-
-                        ¡Aprende Náhuatl de forma divertida!
-
-                    </h2>
-
-                    <p class="text-obsidian-500 max-w-2xl mx-auto">
-
-                        Descubre la riqueza del náhuatl.
-
-                    </p>
+                    🦎
 
                 </div>
 
-                <div class="text-center">
+                <h2
+                    class="hero-title mb-3"
+                    data-aos="fade-up">
 
-                    <button
-                        onclick="showPage('modules')"
-                        class="bg-jade-500 hover:bg-jade-600 text-white font-bold px-8 py-3 rounded-full text-lg shadow-lg transition transform hover:scale-105 pulse-glow">
+                    ¡Aprende Náhuatl de forma divertida!
 
-                        ¡Comenzar a aprender! 🚀
+                </h2>
 
-                    </button>
+                <p
+                    class="hero-text mx-auto"
+                    data-aos="fade-up">
 
-                </div>
+                    Descubre la riqueza del náhuatl.
 
-            </section>
+                </p>
+
+            </div>
+
+            <div class="text-center">
+
+                <button
+                    onclick="showPage('modules')"
+                    class="btn btn-success btn-lg rounded-pill px-5 pulse-glow">
+
+                    ¡Comenzar a aprender! 🚀
+
+                </button>
+
+            </div>
+
+        </section>
 
             <!-- MODULOS -->
             <section
@@ -212,7 +174,7 @@
 
                 <div
                     id="modules-grid"
-                    class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    class="row g-4">
 
                 </div>
 
@@ -238,6 +200,20 @@
         </main>
 
     </div>
+
+    <!-- BOOTSTRAP -->
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+
+    <!-- AOS -->
+    <script src="/assets/js/aos.js"></script>
+
+    <!-- INIT AOS -->
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
 
     <!-- JS -->
     <script src="/js/app.js"></script>
