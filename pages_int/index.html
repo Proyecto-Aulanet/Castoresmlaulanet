@@ -8,7 +8,9 @@
     <!-- RESPONSIVE -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Castores Multilingües Aul@Net</title>
+    <title>Inicio - Castores Multilingües Aul@Net</title>
+
+    <link rel="icon" href="/Recursos/nahui_caras/nahui_feliz_vector.svg" type="image/png">
 
     <!-- BOOTSTRAP -->
     <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
@@ -27,97 +29,39 @@
 <body>
 
     <div id="app" class="w-full min-h-full flex flex-col">
+     
+        
+<!-- ========================================== -->
+<!--                HEADER MAIN                 -->
+<!-- ========================================== -->
 
- <!-- HEADER -->
-<header
-    class="header-main sticky-top shadow-lg">
+<header class="header-main sticky-top shadow-lg">
 
     <div class="container">
 
+        <!-- FILA SUPERIOR -->
         <div
-            class="d-flex justify-content-between align-items-center py-3 flex-wrap gap-3">
+            class="headerint-top d-flex justify-content-between align-items-star flex-wrap gap-3 py-3">
 
-            <div class="d-flex justify-content-center">
+            <!-- LOGO -->
+            <div class="headerint-logo">
 
-            <img
-                src="/Recursos/logos/logo_completo_svg.svg"
-                alt="logo"
-                class="img-fluid"
-                style="width:100%; max-width:185px;"
-                data-aos="fade-right">
-
-            </div>
-
-        </div>
-
-        <!-- NAVBAR -->
-        <nav class="navbar navbar-expand-lg pb-3">
-
-            <div class="container-fluid">
-
-                <!-- BOTON HAMBURGUESA -->
-                <button
-                    class="navbar-toggler ms-auto bg-white"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#menuNavbar">
-
-                    <span class="navbar-toggler-icon"></span>
-
-                </button>
-
-                <!-- MENU -->
-                <div
-                    class="collapse navbar-collapse"
-                    id="menuNavbar">
-
-                    <div class="navbar-nav gap-2 ms-auto">
-
-                    <button
-                        onclick="showPage('home')"
-                        class="btn btn-light rounded-pill"
-
-                        data-es="Inicio"
-                        data-na="Pewaloyan">
-
-                        <i class="bi bi-house-fill me-1"></i>
-
-                        Inicio
-
-                    </button>
-
-                    <button
-                        onclick="showPage('modules')"
-                        class="btn btn-light rounded-pill"
-
-                        data-es="Lecciones"
-                        data-na="Temachtilli">
-
-                        <i class="bi bi-book-fill me-1"></i>
-
-                        Lecciones
-
-                    </button>
-
-                    </div>
-
-                </div>
+                <img
+                    src="/Recursos/logos/logo_completo_svg.svg"
+                    alt="logo"
+                    class="img-fluid"
+                    style="max-width:185px;"
+                    data-aos="fade-right">
 
             </div>
 
-        </nav>
-
-    </div>
-
-</header>
-
-        <!-- MAIN -->
-        <main class="container py-5">
-
-         <div class="d-flex align-items-center gap-3 stats-box">
+            <!-- ESTADÍSTICAS -->
+            <div
+                class="headerint-stats d-flex align-items-center justify-content-center gap-3 flex-wrap"
+                data-aos="fade-up">
 
                 <!-- RACHA -->
-                <div class="stat-item">
+                <div class="stat-item headerint-racha">
 
                     <i class="bi bi-fire stat-icon text-warning"></i>
 
@@ -145,7 +89,7 @@
                 </div>
 
                 <!-- XP -->
-                <div class="stat-item">
+                <div class="stat-item headerint-xp">
 
                     <i class="bi bi-stars stat-icon text-warning"></i>
 
@@ -173,7 +117,7 @@
                 </div>
 
                 <!-- VIDAS -->
-                <div class="stat-item">
+                <div class="stat-item headerint-vidas">
 
                     <i class="bi bi-heart-fill stat-icon text-danger"></i>
 
@@ -201,11 +145,106 @@
                 </div>
 
             </div>
-            
+
+            <!-- PERFIL -->
+            <div
+                class="perfil-header"
+                data-aos="fade-left">
+
+                <div class="perfil-avatar">
+
+                    <i class="bi bi-person-fill"></i>
+
+                </div>
+
+                <div class="perfil-info d-none d-md-block">
+
+                    <span
+                        class="perfil-nombre"
+                        data-es="Invitado"
+                        data-na="Tlapowalistli">
+
+                        Invitado
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- NAVBAR -->
+        <nav class="navbar navbar-expand-lg navbarint justify-content-center">
+
+            <div class="container-fluid justify-content-center">
+
+                <!-- BOTÓN HAMBURGUESA -->
+                    <button
+                    class="navbar-toggler navbarint-toggler mx-auto"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#menuNavbar">
+
+                    <i class="bi bi-chevron-down"></i>
+
+                </button>
+
+                <!-- MENÚ -->
+                <div
+                    class="collapse navbar-collapse justify-content-center"
+                    id="menuNavbar">
+
+                    <div class="navbar-nav gap-2 justify-content-center">
+
+                        <!-- INICIO -->
+                        <button
+                            onclick="showPage('home')"
+                            class="btn navbarint-btn rounded-pill px-4"
+                            data-aos="fade-up"
+                            data-es="Inicio"
+                            data-na="Pewaloyan">
+
+                            <i class="bi bi-house-fill me-2"></i>
+
+                            Inicio
+
+                        </button>
+
+                        <!-- LECCIONES -->
+                        <button
+                            onclick="showPage('modules')"
+                            class="btn navbarint-btn rounded-pill px-4"
+                            data-aos="fade-up"
+                            data-aos-delay="100"
+                            data-es="Lecciones"
+                            data-na="Temachtilli">
+
+                            <i class="bi bi-book-fill me-2"></i>
+
+                            Lecciones
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+    </div>
+
+</header>
+
+        <!-- MAIN -->
+        <main class="container py-5">
+
             <!-- BOTÓN TRADUCTOR -->
             <div class="d-flex justify-content-end">
 
-                <div class="presen-traductor">
+                <div class="presen-traductor-int">
 
                     <!-- BOTÓN -->
                     <button
@@ -219,7 +258,7 @@
 
                     <!-- MENÚ -->
                     <div
-                        class="presen-menu"
+                        class="presen-menu-int"
                         id="presenMenuIdioma">
 
                         <ul class="list-unstyled m-0">
@@ -247,113 +286,135 @@
                 </div>
 
             </div>
-
-        <!-- HOME -->
-        <section
-            id="page-home"
-            class="page-section">
-
-            <div class="text-center mb-5">
-
-                <div
-                    class="display-1 mb-4 float-anim">
-
-                    🦎
-
-                </div>
-
-                <h2
-                    class="hero-title mb-3"
-                    data-aos="fade-up">
-
-                    <span
-                        data-es="¡Aprende Náhuatl de forma divertida!"
-                        data-na="¡Ximomachtia nāhuatl ica pakilistli!">
-
-                        ¡Aprende Náhuatl de forma divertida!
-
-                    </span>
-
-                </h2>
-
-                <p
-                    class="hero-text mx-auto"
-                    data-aos="fade-up">
-
-                    <span
-                        data-es="Descubre la riqueza del náhuatl."
-                        data-na="Xikmati in hueyi tlamantli nāhuatl.">
-
-                        Descubre la riqueza del náhuatl.
-
-                    </span>
-
-                </p>
-
-            </div>
-
-            <div class="text-center">
-
-            <button
-                onclick="showPage('modules')"
-                class="btn btn-success btn-lg rounded-pill px-5 pulse-glow">
-
-                <span
-                    data-es="¡Comenzar a aprender!"
-                    data-na="¡Pewas timomachtis!">
-
-                    ¡Comenzar a aprender!
-
-                </span>
-
-                <i class="bi bi-rocket-takeoff-fill ms-2"></i>
-
-            </button>
-
-            </div>
-
-        </section>
-
-            <!-- MODULOS -->
-            <section
-                id="page-modules"
-                class="page-section hidden">
-
-                <h2
-                    class="font-display text-2xl font-bold mb-6 text-jade-700">
-
-                    📚 Módulos de Aprendizaje
-
-                </h2>
-
-                <div
-                    id="modules-grid"
-                    class="row g-4">
-
-                </div>
-
-            </section>
-
-            <!-- MISIONES -->
-            <section
-                id="page-missions"
-                class="page-section hidden">
-
-                <button
-                    onclick="showPage('modules')"
-                    class="mb-4 bg-jade-500 text-white px-4 py-2 rounded-lg">
-
-                    Volver
-
-                </button>
-
-                <div id="missions-container"></div>
-
-            </section>
-
         </main>
-
     </div>
+
+<br>
+
+                <!-- =========================================
+                FOOTER
+            ========================================= -->
+
+            <footer class="footer-main mt-5">
+
+                <div class="container py-4">
+
+                    <div class="row align-items-center text-center text-md-start gy-4">
+
+
+                        <div class="col-12 col-md-4"
+                        data-aos="fade-right">
+
+                            <img
+                                src="/Recursos/logos/logo_completo_svg.svg"
+                                alt="Aul@Net"
+                                class="img-fluid footer-logo">
+
+
+                             <img
+                                src="/Recursos/logos/utp_svg.svg"
+                                alt="Aul@Net"
+                                class="img-fluid footer-logo-utp">
+
+  
+
+                        </div>
+
+                        <!-- INFORMACIÓN -->
+
+                        <div class="col-12 col-md-5"
+                        data-aos="fade-left">
+
+                            <p class="footer-text mb-2">
+
+                                <i class="bi bi-geo-alt-fill me-2"></i>
+
+                                Antiguo Camino a la Resurrección No. 1002-A  
+                                Zona Industrial Puebla Oriente, Puebla, México CP 72300
+
+                            </p>
+
+                            <p class="footer-text mb-0">
+
+                                <i class="bi bi-envelope-fill me-2"></i>
+
+                                <a
+                                    href="mailto:aulanetoficialpue@gmail.com"
+                                    class="footer-link">
+
+                                    aulanetoficialpue@gmail.com
+
+                                </a>
+
+                            </p>
+
+                        </div>
+
+                        <!-- REDES / ENLACES -->
+
+                        <div class="col-12 col-md-3"
+                        data-aos="fade-right">
+
+                            <div
+                                class="d-flex justify-content-center justify-content-md-end gap-3">
+
+                                <a
+                                    href="https://www.utpuebla.edu.mx/"
+                                    target="_blank"
+                                    class="footer-social">
+
+                                    <i class="bi bi-globe"></i>
+
+                                </a>
+
+                                <a
+                                    href="https://www.facebook.com/profile.php?id=61589668907732"
+                                    class="footer-social">
+
+                                    <i class="bi bi-facebook"></i>
+
+                                </a>
+
+                                <a
+                                    href="https://www.instagram.com/nahuinetof/?utm_source=ig_web_button_share_sheet"
+                                    class="footer-social">
+
+                                    <i class="bi bi-instagram"></i>
+
+                                </a>
+
+                                <a
+                                    href="https://www.youtube.com/@AulaNetOficial"
+                                    class="footer-social">
+
+                                    <i class="bi bi-youtube"></i>
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- COPYRIGHT -->
+
+                    <hr class="footer-divider" >
+
+                    <div class="text-center">
+
+                        <small class="footer-copy" >
+
+                            © 2026 Universidad Tecnológica de Puebla.  
+                            Todos los derechos reservados.
+
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </footer>
 
     <!-- BOOTSTRAP -->
     <script src="/assets/js/bootstrap.bundle.min.js"></script>

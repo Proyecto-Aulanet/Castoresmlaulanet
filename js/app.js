@@ -420,4 +420,31 @@ function renderMisiones(misiones){
     });
 }
 
+/*Scroll en header animacion*/
 
+let ultimoScroll = 0;
+
+window.addEventListener("scroll", () => {
+
+    const header =
+        document.querySelector(".header-main");
+
+    const scrollActual =
+        window.pageYOffset;
+
+    if (scrollActual > 100) {
+
+        if (scrollActual > ultimoScroll) {
+
+            header.classList.add("header-hide");
+
+        } else {
+
+            header.classList.remove("header-hide");
+
+        }
+    }
+
+    ultimoScroll = scrollActual;
+
+});
