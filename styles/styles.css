@@ -196,11 +196,7 @@
 
     z-index:999;
 
-    background:
-        linear-gradient(
-            90deg,
-            #0d3527
-        );
+
 }
 
 /* ESPACIO PARA HEADER */
@@ -282,6 +278,8 @@ main{
     z-index:1;
 }
 
+
+
 /* =====================================
    RESPONSIVE
 ===================================== */
@@ -327,13 +325,16 @@ body{
 ========================= */
 
 .header-main{
-    background:linear-gradient(
-        90deg,
-        #0d3527
-
-    );
+    background:
+        linear-gradient(
+            90deg,
+            #0d3527,
+            #124734
+        );
 
     color:white;
+
+
 }
 
 
@@ -474,5 +475,160 @@ body{
 
     .hero-title{
         font-size:2.2rem;
+    }
+}
+
+
+/* =====================================
+   FOOTER
+===================================== */
+
+.footer-main{
+
+    background:
+        linear-gradient(
+            90deg,
+            #0d3527,
+            #124734
+        );
+
+    color:white;
+
+    position:relative;
+
+    z-index:5;
+}
+
+/* LOGO */
+
+.footer-logo{
+
+    max-width:180px;
+}
+
+.footer-logo-utp{
+
+    max-width:160px;
+}
+
+/* TITULO */
+
+.footer-title{
+
+    font-family:'FredokaBold';
+
+    margin:0;
+
+    font-size:1.2rem;
+}
+
+/* SUBTITULO */
+
+.footer-subtitle{
+
+    opacity:.8;
+
+    font-size:.9rem;
+}
+
+/* TEXTO */
+
+.footer-text{
+
+    font-size:.95rem;
+
+    line-height:1.6;
+
+    opacity:.9;
+}
+
+/* LINKS */
+
+.footer-link{
+
+    color:#ffffff;
+
+    text-decoration:none;
+
+    transition:.3s ease;
+}
+
+.footer-link:hover{
+
+    color:#9fffc7;
+}
+
+/* ICONOS */
+
+.footer-social{
+
+    width:45px;
+    height:45px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.12);
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    color:white;
+
+    font-size:1.2rem;
+
+    text-decoration:none;
+
+    transition:.3s ease;
+}
+
+.footer-social:hover{
+
+    background:#1db571;
+
+    transform:translateY(-3px);
+}
+
+/* LINEA */
+
+.footer-divider{
+
+    border-color:rgba(255,255,255,.15);
+
+    margin:25px 0;
+}
+
+/* COPYRIGHT */
+
+.footer-copy{
+
+    opacity:.75;
+
+    font-size:.85rem;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    .footer-logo{
+
+        max-width:95px;
+    }
+
+    .footer-logo-utp{
+
+        max-width:95px;
+    }
+
+    .footer-title{
+
+        font-size:1rem;
+    }
+
+    .footer-text{
+
+        font-size:.85rem;
     }
 }
