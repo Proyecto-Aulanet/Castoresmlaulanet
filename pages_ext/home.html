@@ -8,7 +8,9 @@
     <!-- RESPONSIVE -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Castores Multilingües Aul@Net</title>
+    <title>Inicio - Castores Multilingües Aul@Net</title>
+
+    <link rel="icon" href="/Recursos/nahui_caras/nahui_feliz_vector.svg" type="image/png">
 
     <!-- BOOTSTRAP -->
     <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
@@ -51,7 +53,7 @@
 
             <!-- BOTÓN LOGIN -->
             <button
-                class="btn btn-light rounded-pill px-3 py-2"
+                class="btn login-btn rounded-pill px-3 py-2"
                 data-bs-toggle="modal"
                 data-bs-target="#loginModal">
 
@@ -277,7 +279,7 @@
 
                             <!-- BOTÓN -->
                             <button
-                                class="btn btn-light rounded-circle traductor-btn"
+                                class="btn rounded-circle traductor-btn"
                                 onclick="presenToggleMenu()"
                                 data-aos="zoom-in">
 
@@ -365,7 +367,8 @@
 
                     <button
                         onclick="showPage('modules')"
-                        class="btn btn-success btn-lg rounded-pill px-5 pulse-glow mt-3">
+                        class="btn btn-lg rounded-pill px-5 mt-3 start-btn"
+                        data-aos="zoom-in-up">
 
                         <span
                             data-es="¡Comenzar a aprender!"
@@ -522,7 +525,9 @@
     <script>
         AOS.init({
             duration: 800,
-            once: true
+            once: true,
+            offset: 0,
+            disableMutationObserver: true
         });
     </script>
 

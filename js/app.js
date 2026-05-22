@@ -8,6 +8,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
+
+
+
 // =====================================
 // ABRIR / CERRAR MENÚ
 // =====================================
@@ -416,4 +419,5 @@ function renderMisiones(misiones){
         `;
     });
 }
+
 
