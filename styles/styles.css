@@ -1268,5 +1268,69 @@ body{
 }
 
 
+/* BOTÓN OJO */
+
+.visibility-btn{
+
+    width:52px;
+    height:52px;
+
+    background:#0d6efd !important;
+
+    color:white !important;
+
+    border:none;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    margin-top: 145px;
+
+    position:relative;
+
+    z-index:9999;
+}
+
+
+/* HOVER */
+
+.visibility-btn:hover{
+
+    background:#0b5ed7;
+
+    transform:scale(1.08);
+}
+
+/* ANIMACIÓN AL CAMBIAR */
+
+.visibility-btn i{
+
+    transition:.35s ease;
+}
+
+.eye-animate{
+
+    animation:eyePop .35s ease;
+}
+
+@keyframes eyePop{
+
+    0%{
+
+        transform:scale(.5) rotate(-20deg);
+        opacity:.3;
+
+    }
+
+    100%{
+
+        transform:scale(1);
+        opacity:1;
+
+    }
+}
+
+
 
 

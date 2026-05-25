@@ -448,3 +448,31 @@ window.addEventListener("scroll", () => {
     ultimoScroll = scrollActual;
 
 });
+
+
+let visible = true;
+
+function toggleVisibilidad(){
+
+    const icono =
+        document.getElementById("iconoVisibilidad");
+
+    visible = !visible;
+
+    icono.classList.remove("eye-animate");
+
+    void icono.offsetWidth;
+
+    icono.classList.add("eye-animate");
+
+    if(visible){
+
+        icono.className =
+            "bi bi-eye-fill eye-animate";
+
+    }else{
+
+        icono.className =
+            "bi bi-eye-slash-fill eye-animate";
+    }
+}

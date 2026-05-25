@@ -116,34 +116,6 @@
 
                 </div>
 
-                <!-- VIDAS -->
-                <div class="stat-item headerint-vidas">
-
-                    <i class="bi bi-heart-fill stat-icon text-danger"></i>
-
-                    <div>
-
-                        <small
-                            class="stat-label"
-                            data-es="Vidas"
-                            data-na="Yolistli">
-
-                            Vidas
-
-                        </small>
-
-                        <span
-                            id="lives-display"
-                            class="stat-value">
-
-                            5
-
-                        </span>
-
-                    </div>
-
-                </div>
-
             </div>
 
             <!-- PERFIL -->
@@ -283,54 +255,69 @@
 
 </header>
 
-        <!-- MAIN -->
-        <main class="container py-5">
+<!-- MAIN -->
+<main class="container py-5">
 
-            <!-- BOTÓN TRADUCTOR -->
-            <div class="d-flex justify-content-end">
+    <!-- BOTONES SUPERIORES -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
 
-                <div class="presen-traductor-int">
+        <!-- BOTÓN VISIBILIDAD -->
+        <button
+            id="btnVisibilidad"
+            class="btn rounded-circle visibility-btn"
+            onclick="toggleVisibilidad()"
+            data-aos="zoom-in">
 
-                    <!-- BOTÓN -->
-                    <button
-                        class="btn btn-light rounded-circle traductor-btn"
-                        onclick="presenToggleMenu()"
-                        data-aos="zoom-in">
+            <i
+                id="iconoVisibilidad"
+                class="bi bi-eye-fill">
 
-                        <i class="bi bi-translate"></i>
+            </i>
 
-                    </button>
+        </button>
 
-                    <!-- MENÚ -->
-                    <div
-                        class="presen-menu-int"
-                        id="presenMenuIdioma">
+        <!-- BOTÓN TRADUCTOR -->
+        <div class="presen-traductor-int">
 
-                        <ul class="list-unstyled m-0">
+            <button
+                class="btn btn-light rounded-circle traductor-btn"
+                onclick="presenToggleMenu()"
+                data-aos="zoom-in">
 
-                            <li onclick="presenCambiarModo('es')">
-                                Español
-                            </li>
+                <i class="bi bi-translate"></i>
 
-                            <li onclick="presenCambiarModo('na')">
-                                Náhuatl
-                            </li>
+            </button>
 
-                            <li onclick="presenCambiarModo('es-na')">
-                                Español + Náhuatl
-                            </li>
+            <!-- MENÚ -->
+            <div
+                class="presen-menu-int"
+                id="presenMenuIdioma">
 
-                            <li onclick="presenCambiarModo('na-es')">
-                                Náhuatl + Español
-                            </li>
+                <ul class="list-unstyled m-0">
 
-                        </ul>
+                    <li onclick="presenCambiarModo('es')">
+                        Español
+                    </li>
 
-                    </div>
+                    <li onclick="presenCambiarModo('na')">
+                        Náhuatl
+                    </li>
 
-                </div>
+                    <li onclick="presenCambiarModo('es-na')">
+                        Español + Náhuatl
+                    </li>
+
+                    <li onclick="presenCambiarModo('na-es')">
+                        Náhuatl + Español
+                    </li>
+
+                </ul>
 
             </div>
+
+        </div>
+
+    </div>
         </main>
     </div>
 
