@@ -479,37 +479,35 @@ function toggleVisibilidad(){
 
 
 
-/*guardado de nombre en mayuscula*/
-document.getElementById("nombre")
-.addEventListener("input", function(){
+/* NOMBRES EN MAYÚSCULAS */
+[
+    "nombre",
+    "apellidoPaterno",
+    "apellidoMaterno"
+].forEach(id => {
 
-    this.value =
-    this.value.toUpperCase();
+    const campo =
+    document.getElementById(id);
+
+    if(campo){
+
+        campo.addEventListener("input", function(){
+
+            this.value = this.value
+            .replace(
+                /[^A-Za-zÁÉÍÓÚáéíóúÑñÜü\s-]/g,
+                ""
+            )
+            .toUpperCase();
+
+        });
+
+    }
 
 });
 
 
-/*Contraseña con digitos */
-const password =
-document.getElementById("password")
-.value;
-
-const regexPassword =
-/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&.#_-])[A-Za-z\d@$!%*?&.#_-]{8,}$/;
-
-if(!regexPassword.test(password)){
-
-    alert(
-        "La contraseña debe tener mínimo 8 caracteres, mayúsculas, minúsculas, números y símbolos."
-    );
-
-    return;
-
-}
-
-
-
-/*llamados json*/
+/* JSON REGISTRO */
 
 let paises = [];
 let estadosMexico = [];
@@ -517,23 +515,37 @@ let palabrasProhibidas = [];
 
 async function cargarDatosRegistro(){
 
-    paises =
-    await fetch("/json/paises.json")
-    .then(r => r.json());
+    try{
 
-    paises = paises.map(
-    pais => pais.shortName
-    );
+        paises =
+        await fetch("/json/paises.json")
+        .then(r => r.json());
 
-    estadosMexico =
-    await fetch("/json/estados_mexico.json")
-    .then(r => r.json());
+        paises =
+        paises.map(
+            pais => pais.shortName
+        );
 
-    palabrasProhibidas =
-    await fetch("/json/palabras_prohibidas.json")
-    .then(r => r.json());
+        estadosMexico =
+        await fetch("/json/estados_mexico.json")
+        .then(r => r.json());
 
-    cargarPaises();
+        palabrasProhibidas =
+        await fetch("/json/palabras_prohibidas.json")
+        .then(r => r.json());
+
+        cargarPaises();
+
+    }
+    catch(error){
+
+        console.error(
+            "Error cargando JSON:",
+            error
+        );
+
+    }
+
 }
 
 
@@ -542,13 +554,18 @@ function cargarPaises(){
     const selectPais =
     document.getElementById("pais");
 
+    if(!selectPais) return;
+
     paises.forEach(pais => {
 
         const option =
         document.createElement("option");
 
-        option.value = pais;
-        option.textContent = pais;
+        option.value =
+        pais;
+
+        option.textContent =
+        pais;
 
         selectPais.appendChild(option);
 
@@ -563,6 +580,8 @@ function cambiarPais(){
 
     const estado =
     document.getElementById("estado");
+
+    if(!estado) return;
 
     estado.innerHTML = "";
 
@@ -583,20 +602,27 @@ function cambiarPais(){
             const option =
             document.createElement("option");
 
-            option.value = nombre;
-            option.textContent = nombre;
+            option.value =
+            nombre;
+
+            option.textContent =
+            nombre;
 
             estado.appendChild(option);
 
         });
 
-    }else{
+    }
+    else{
 
         const option =
         document.createElement("option");
 
-        option.value = "No aplica";
-        option.textContent = "No aplica";
+        option.value =
+        "No aplica";
+
+        option.textContent =
+        "No aplica";
 
         estado.appendChild(option);
 
@@ -606,17 +632,24 @@ function cambiarPais(){
 
 function generarUsuario(){
 
+    const nombreInput =
+    document.getElementById("nombre");
+
+    if(!nombreInput) return;
+
     const nombre =
-    document.getElementById("nombre")
-    .value
+    nombreInput.value
     .trim()
     .toLowerCase();
 
     if(nombre === ""){
 
-        alert("Ingresa primero tu nombre");
+        alert(
+            "Ingresa primero tu nombre"
+        );
 
         return;
+
     }
 
     const numero =
@@ -628,9 +661,10 @@ function generarUsuario(){
     nombre.replace(/\s+/g,"")
     + numero;
 
-    document.getElementById(
-        "username"
-    ).value = username;
+    document
+    .getElementById("username")
+    .value =
+    username;
 
 }
 
@@ -641,11 +675,12 @@ function usernameValido(username){
 
     return !palabrasProhibidas.some(
         palabra =>
-        username.includes(palabra)
+        username.includes(
+            palabra.toLowerCase()
+        )
     );
 
 }
-
 
 function togglePassword(){
 
@@ -655,27 +690,24 @@ function togglePassword(){
     const icon =
     document.getElementById("iconPassword");
 
+    if(!input || !icon) return;
+
     if(input.type === "password"){
 
         input.type = "text";
 
-        icon.classList.remove(
-            "bi-eye-fill"
-        );
-
-        icon.classList.add(
+        icon.classList.replace(
+            "bi-eye-fill",
             "bi-eye-slash-fill"
         );
 
-    }else{
+    }
+    else{
 
         input.type = "password";
 
-        icon.classList.remove(
-            "bi-eye-slash-fill"
-        );
-
-        icon.classList.add(
+        icon.classList.replace(
+            "bi-eye-slash-fill",
             "bi-eye-fill"
         );
 
@@ -683,58 +715,94 @@ function togglePassword(){
 
 }
 
-document
-.getElementById("registerForm")
-.addEventListener("submit", function(e){
 
-    e.preventDefault();
+const registerForm =
+document.getElementById("registerForm");
 
-    const username =
-    document
-    .getElementById("username")
-    .value;
+if(registerForm){
 
-    const password =
-    document
-    .getElementById("password")
-    .value;
+    registerForm.addEventListener(
+        "submit",
+        function(e){
 
-    const confirmPassword =
-    document
-    .getElementById("confirmPassword")
-    .value;
+            e.preventDefault();
 
-    if(!usernameValido(username)){
+            const username =
+            document
+            .getElementById("username")
+            .value;
 
-        alert(
-            "Nombre de usuario no permitido"
-        );
+            const password =
+            document
+            .getElementById("password")
+            .value;
 
-        return;
-    }
+            const confirmPassword =
+            document
+            .getElementById("confirmPassword")
+            .value;
 
-    if(password !== confirmPassword){
+            const regexPassword =
+            /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&.#_-]).{8,}$/;
 
-        alert(
-            "Las contraseñas no coinciden"
-        );
+            if(
+                !regexPassword.test(password)
+            ){
 
-        return;
-    }
+                alert(
+                    "La contraseña debe tener mínimo 8 caracteres, mayúsculas, minúsculas, números y símbolos."
+                );
 
-    alert(
-        "Cuenta creada correctamente"
+                return;
+
+            }
+
+            if(
+                !usernameValido(username)
+            ){
+
+                alert(
+                    "Nombre de usuario no permitido."
+                );
+
+                return;
+
+            }
+
+            if(
+                password !== confirmPassword
+            ){
+
+                alert(
+                    "Las contraseñas no coinciden."
+                );
+
+                return;
+
+            }
+
+            alert(
+                "Cuenta creada correctamente."
+            );
+
+        }
     );
 
-});
+}
 
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
 
-document.addEventListener("DOMContentLoaded", () => {
+        if(
+            document.getElementById(
+                "registerForm"
+            )
+        ){
 
-    if(document.getElementById("registerForm")){
+            cargarDatosRegistro();
 
-        cargarDatosRegistro();
+        }
 
     }
-
-});
+);
