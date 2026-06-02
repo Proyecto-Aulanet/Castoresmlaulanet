@@ -1285,9 +1285,9 @@ body{
     align-items:center;
     justify-content:center;
 
-    margin-top: 145px;
+    margin-top: 350px;
 
-    position:relative;
+    position:fixed;
 
     z-index:9999;
 }
@@ -1332,6 +1332,219 @@ body{
 }
 
 
+/* =====================================
+   Sopa de Letras
+===================================== */
+
+/* Texto de arriba */
+.texto-responsivo{
+    background: linear-gradient(135deg, #1f6f3d, #2d8a4f);
+
+    color: white;
+
+    font-size: clamp(1rem, 2vw, 1.8rem);
+
+    text-align: center;
+
+    line-height: 1.5;
+
+    padding: 25px 20px;
+
+    border-radius: 25px;
+
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+
+    width: 100%;
+
+    word-break: break-word;
+
+    overflow-wrap: break-word;
+
+    transition: all 0.3s ease;
+}
+
+.texto-responsivo:hover{
+    transform: scale(1.02);
+}
+
+/* Tablets */
+@media (max-width: 768px){
+
+    .texto-responsivo{
+        font-size: 1.2rem;
+        padding: 20px 15px;
+    }
+
+    .container-txt{
+
+        /* Más altura en celular */
+        padding-top: 10%;
+
+        margin-top: 10px;
+
+        border-radius: 10px;
+    }
+
+}
+
+/* Celulares */
+@media (max-width: 576px){
+
+    .texto-responsivo{
+
+        font-size: 0.95rem;
+
+        line-height: 1.4;
+
+        padding:
+        25px 15px 20px 15px;
+
+        border-radius: 18px;
+
+        margin-top: 20px;
+    }
+
+    .container-txt{
+
+        /* Más altura en celular */
+        padding-top: 10%;
+
+        margin-top: 10px;
+
+        border-radius: 10px;
+    }
+
+}
+
+/* Contenedor responsive */
+        .genially-container{
+            position: relative;
+            width: 100%;
+
+            /* Baja la actividad */
+            margin-top: 20px;
+
+            /* Relación responsive */
+            padding-top: 56.25%;
+
+            overflow: hidden;
+
+            border-radius: 20px;
+
+            box-shadow: 0px 4px 20px rgba(0,0,0,0.3);
+        }
+
+        /* iframe */
+        .genially-container iframe{
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+
+            border: none;
+        }
+
+        /* Ajustes para celulares */
+        @media (max-width: 768px){
+
+            .genially-container{
+
+                /* Más altura en celular */
+                padding-top: 140%;
+
+                margin-top: 100px;
+
+                border-radius: 10px;
+            }
+
+        }
+
+
+#tarjetaInfo{
+
+    display:none;
+
+    width:90%;
+
+    max-width:320px;
+
+    margin:10px auto;
+
+    background:#1f6f3d;
+
+    backdrop-filter: blur(10px);
+
+    border:none;
+
+    border-radius:30px;
+
+    padding:25px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.20),
+        0 4px 10px rgba(0,0,0,0.10);
+
+    transition: all .3s ease;
+
+    animation: aparecer .4s ease;
+
+}
+
+/* TÍTULO */
+#tarjetaInfo h3{
+
+    font-size:20px;
+
+    font-weight:700;
+
+    color: #eee;
+
+    margin-bottom:15px;
+
+}
+
+/* TEXTO */
+#tarjetaInfo p{
+
+    font-size:18px;
+
+    color:#eeeeee;
+
+    line-height:1.5;
+
+    margin-bottom:0;
+
+}
+
+/* EFECTO HOVER */
+#tarjetaInfo:hover{
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.25),
+        0 5px 15px rgba(0,0,0,0.12);
+
+}
+
+/* ANIMACIÓN */
+@keyframes aparecer{
+
+    from{
+
+        opacity:0;
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
 
 
 /* =========================
@@ -1487,5 +1700,4 @@ body{
 
         justify-content:center;
     }
-
 }
