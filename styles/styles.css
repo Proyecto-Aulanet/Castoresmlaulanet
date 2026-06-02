@@ -1546,4 +1546,158 @@ body{
 
     }
 
+
+/* =========================
+  Login - inicio
+========================= */
+
+
+/* ===================================== */
+/* CREAR CUENTA */
+/* ===================================== */
+
+.register-container{
+
+    margin-top:130px;
+
+}
+
+.register-card{
+
+    background:#ffffff;
+
+    border-radius:30px;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.15);
+}
+
+/* BOTON REGRESAR */
+
+.register-back-btn{
+
+    background:#1A8653;
+
+    color:white;
+
+    border:none;
+}
+
+.register-back-btn:hover{
+
+    background:#124734;
+
+    color:white;
+}
+
+/* BOTON REGISTRO */
+
+.register-btn{
+
+    background:#124734;
+
+    color:#d6d1cd;
+
+    border:none;
+
+    transition:.3s ease;
+}
+
+.register-btn:hover{
+
+    background:#1A8653;
+
+    color:white;
+
+    transform:translateY(-2px);
+}
+
+/* INPUTS */
+
+.register-card .form-control,
+.register-card .form-select{
+
+    min-height:48px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    .register-card{
+
+        padding:25px;
+    }
+
+}
+
+
+/* =====================================
+   BOTÓN REGRESAR
+===================================== */
+
+.btn-regresar-int{
+
+    display:flex;
+    align-items:center;
+
+    padding:12px 24px;
+
+    background:#ffffff;
+
+    color:#124734;
+
+    border:none;
+
+    border-radius:50px;
+
+    font-family:'PoppinsBold';
+
+    font-size:1rem;
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.15);
+
+    transition:.3s ease;
+}
+
+/* ICONO */
+
+.btn-regresar-int i{
+
+    font-size:1.2rem;
+
+    color:#124734;
+
+    transition:.3s ease;
+}
+
+/* HOVER */
+
+.btn-regresar-int:hover{
+
+    background:#369a75;
+
+    color:#ffffff;
+
+    transform:translateX(-5px);
+}
+
+/* ICONO HOVER */
+
+.btn-regresar-int:hover i{
+
+    color:#e8e6e5;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    .btn-regresar-int{
+
+        width:100%;
+
+        justify-content:center;
+    }
 }

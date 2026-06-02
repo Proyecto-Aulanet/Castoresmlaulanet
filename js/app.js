@@ -476,3 +476,333 @@ function toggleVisibilidad(){
             "bi bi-eye-slash-fill eye-animate";
     }
 }
+
+
+
+/* NOMBRES EN MAYÚSCULAS */
+[
+    "nombre",
+    "apellidoPaterno",
+    "apellidoMaterno"
+].forEach(id => {
+
+    const campo =
+    document.getElementById(id);
+
+    if(campo){
+
+        campo.addEventListener("input", function(){
+
+            this.value = this.value
+            .replace(
+                /[^A-Za-zÁÉÍÓÚáéíóúÑñÜü\s-]/g,
+                ""
+            )
+            .toUpperCase();
+
+        });
+
+    }
+
+});
+
+
+/* JSON REGISTRO */
+
+let paises = [];
+let estadosMexico = [];
+let palabrasProhibidas = [];
+
+async function cargarDatosRegistro(){
+
+    try{
+
+        paises =
+        await fetch("/json/paises.json")
+        .then(r => r.json());
+
+        paises =
+        paises.map(
+            pais => pais.shortName
+        );
+
+        estadosMexico =
+        await fetch("/json/estados_mexico.json")
+        .then(r => r.json());
+
+        palabrasProhibidas =
+        await fetch("/json/palabras_prohibidas.json")
+        .then(r => r.json());
+
+        cargarPaises();
+
+    }
+    catch(error){
+
+        console.error(
+            "Error cargando JSON:",
+            error
+        );
+
+    }
+
+}
+
+
+function cargarPaises(){
+
+    const selectPais =
+    document.getElementById("pais");
+
+    if(!selectPais) return;
+
+    paises.forEach(pais => {
+
+        const option =
+        document.createElement("option");
+
+        option.value =
+        pais;
+
+        option.textContent =
+        pais;
+
+        selectPais.appendChild(option);
+
+    });
+
+}
+
+function cambiarPais(){
+
+    const pais =
+    document.getElementById("pais").value;
+
+    const estado =
+    document.getElementById("estado");
+
+    if(!estado) return;
+
+    estado.innerHTML = "";
+
+    if(pais === "México"){
+
+        const opcion =
+        document.createElement("option");
+
+        opcion.textContent =
+        "Selecciona un estado";
+
+        opcion.value = "";
+
+        estado.appendChild(opcion);
+
+        estadosMexico.forEach(nombre => {
+
+            const option =
+            document.createElement("option");
+
+            option.value =
+            nombre;
+
+            option.textContent =
+            nombre;
+
+            estado.appendChild(option);
+
+        });
+
+    }
+    else{
+
+        const option =
+        document.createElement("option");
+
+        option.value =
+        "No aplica";
+
+        option.textContent =
+        "No aplica";
+
+        estado.appendChild(option);
+
+    }
+
+}
+
+function generarUsuario(){
+
+    const nombreInput =
+    document.getElementById("nombre");
+
+    if(!nombreInput) return;
+
+    const nombre =
+    nombreInput.value
+    .trim()
+    .toLowerCase();
+
+    if(nombre === ""){
+
+        alert(
+            "Ingresa primero tu nombre"
+        );
+
+        return;
+
+    }
+
+    const numero =
+    Math.floor(
+        100 + Math.random() * 900
+    );
+
+    const username =
+    nombre.replace(/\s+/g,"")
+    + numero;
+
+    document
+    .getElementById("username")
+    .value =
+    username;
+
+}
+
+function usernameValido(username){
+
+    username =
+    username.toLowerCase();
+
+    return !palabrasProhibidas.some(
+        palabra =>
+        username.includes(
+            palabra.toLowerCase()
+        )
+    );
+
+}
+
+function togglePassword(){
+
+    const input =
+    document.getElementById("password");
+
+    const icon =
+    document.getElementById("iconPassword");
+
+    if(!input || !icon) return;
+
+    if(input.type === "password"){
+
+        input.type = "text";
+
+        icon.classList.replace(
+            "bi-eye-fill",
+            "bi-eye-slash-fill"
+        );
+
+    }
+    else{
+
+        input.type = "password";
+
+        icon.classList.replace(
+            "bi-eye-slash-fill",
+            "bi-eye-fill"
+        );
+
+    }
+
+}
+
+
+const registerForm =
+document.getElementById("registerForm");
+
+if(registerForm){
+
+    registerForm.addEventListener(
+        "submit",
+        function(e){
+
+            e.preventDefault();
+
+            const username =
+            document
+            .getElementById("username")
+            .value;
+
+            const password =
+            document
+            .getElementById("password")
+            .value;
+
+            const confirmPassword =
+            document
+            .getElementById("confirmPassword")
+            .value;
+
+            const regexPassword =
+            /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&.#_-]).{8,}$/;
+
+            if(
+                !regexPassword.test(password)
+            ){
+
+                alert(
+                    "La contraseña debe tener mínimo 8 caracteres, mayúsculas, minúsculas, números y símbolos."
+                );
+
+                return;
+
+            }
+
+            if(
+                !usernameValido(username)
+            ){
+
+                alert(
+                    "Nombre de usuario no permitido."
+                );
+
+                return;
+
+            }
+
+            if(
+                password !== confirmPassword
+            ){
+
+                alert(
+                    "Las contraseñas no coinciden."
+                );
+
+                return;
+
+            }
+
+            alert(
+                "Cuenta creada correctamente."
+            );
+
+        }
+    );
+
+}
+
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
+
+        if(
+            document.getElementById(
+                "registerForm"
+            )
+        ){
+
+            cargarDatosRegistro();
+
+        }
+
+    }
+);
