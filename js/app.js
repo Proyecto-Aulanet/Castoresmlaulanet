@@ -854,7 +854,7 @@ function animarNahui(){
 
 }
 
-setInterval(animarNahui, 55);
+setInterval(animarNahui, 70);
 
 
 const ctx =
