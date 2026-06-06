@@ -806,3 +806,138 @@ document.addEventListener(
 
     }
 );
+
+
+/*Cerrar sesión en inicio*/
+
+
+function cerrarSesion(){
+
+    localStorage.clear();
+    sessionStorage.clear();
+
+    window.location.href = "/pages_ext/home.html";
+
+}
+
+
+/* frames nahui*/
+let frameActual = 1;
+
+const totalFrames = 58;
+
+let direccion = 1;
+
+function animarNahui(){
+
+    const numero =
+    String(frameActual)
+    .padStart(3,"0");
+
+    document.getElementById("nahuiFrame")
+    .src =
+    `/Recursos/nahui/frames_nahui/ezgif-frame-${numero}.png`;
+
+    frameActual += direccion;
+
+    if(frameActual >= totalFrames){
+
+        direccion = -1;
+
+    }
+
+    if(frameActual <= 1){
+
+        direccion = 1;
+
+    }
+
+}
+
+setInterval(animarNahui, 55);
+
+
+const ctx =
+document.getElementById('xpChart');
+
+new Chart(ctx, {
+
+    type:'bar',
+
+    data:{
+
+        labels:[
+            'L',
+            'M',
+            'M',
+            'J',
+            'V',
+            'S',
+            'D'
+        ],
+
+        datasets:[{
+
+            label:'XP',
+
+            data:[
+                50,
+                120,
+                80,
+                200,
+                170,
+                240,
+                180
+            ]
+
+        }]
+    }
+});
+
+
+
+/* script de progreso*/
+
+function abrirExamen(numero){
+
+    document.getElementById(
+        "tituloExamen"
+    ).textContent =
+    "Examen " + numero;
+
+    const modal =
+    new bootstrap.Modal(
+        document.getElementById(
+            "modalDetalleExamen"
+        )
+    );
+
+    modal.show();
+
+}
+
+/*Tarjeta de progreso*/
+
+
+function descargarTarjeta(){
+
+    html2canvas(
+        document.getElementById(
+            "tarjetaCompartir"
+        )
+    ).then(canvas => {
+
+        const link =
+        document.createElement("a");
+
+        link.download =
+        "aulanet.png";
+
+        link.href =
+        canvas.toDataURL();
+
+        link.click();
+
+    });
+
+}
