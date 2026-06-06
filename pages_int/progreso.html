@@ -309,7 +309,7 @@
 <br>
 
 <!-- PERFIL + COMPARTIR -->
-<section class="container py-5">
+<section class="container py-5 progreso-contenido">
 
     <div class="row g-4">
 
@@ -363,45 +363,45 @@
 
                 </h4>
 
+               <div class="d-grid gap-2">
+
                 <button
-                    class="btn btn-success w-100 mb-2"
-                    data-bs-toggle="modal"
-                    data-bs-target="#modalCompartir">
+                    class="btn btn-success"
+                    onclick="compartirWhatsApp()">
 
                     <i class="bi bi-whatsapp"></i>
-                    WhatsApp
+                    Compartir en WhatsApp
 
                 </button>
 
                 <button
-                    class="btn btn-primary w-100 mb-2"
-                    data-bs-toggle="modal"
-                    data-bs-target="#modalCompartir">
+                    class="btn btn-primary"
+                    onclick="compartirFacebook()">
 
                     <i class="bi bi-facebook"></i>
-                    Facebook
+                    Compartir en Facebook
 
                 </button>
 
                 <button
-                    class="btn btn-dark w-100 mb-2"
-                    data-bs-toggle="modal"
-                    data-bs-target="#modalCompartir">
+                    class="btn btn-dark"
+                    onclick="compartirX()">
 
                     <i class="bi bi-twitter-x"></i>
-                    X
+                    Compartir en X
 
                 </button>
 
                 <button
-                    class="btn btn-outline-success w-100"
-                    data-bs-toggle="modal"
-                    data-bs-target="#modalCompartir">
+                    class="btn btn-outline-success"
+                    onclick="descargarTarjeta()">
 
                     <i class="bi bi-download"></i>
                     Descargar tarjeta
 
                 </button>
+
+            </div>
 
             </div>
 
@@ -595,6 +595,8 @@
 
 </section>
 
+
+
 <div
     class="modal fade"
     id="modalMedallas"
@@ -718,7 +720,7 @@
 </div>
 
 <div
-    class="modal fade"
+    class="modal fade  modal-examen-detalle"
     id="modalDetalleExamen">
 
     <div
@@ -898,53 +900,70 @@
 </div>
 
 
-<div
-    class="modal fade"
-    id="modalCompartir">
+<!-- CONTENEDOR OCULTO PARA EXPORTAR -->
+<div id="contenedor-exportacion">
 
-    <div
-        class="modal-dialog modal-dialog-centered">
+    <div id="tarjetaExportar" class="tarjeta-exportar">
 
-        <div class="modal-content">
+        <div class="tarjeta-header">
 
-            <div class="modal-header">
+            <img
+                src="/Recursos/logos/logo_completo.png"
+                class="logo-share">
+
+        </div>
+
+        <div class="tarjeta-cuerpo">
+
+            <img
+                src="/Recursos/nahui_caras/nahui_feliz.png"
+                class="avatar-share">
+
+                <h2>Julio César</h2>
 
                 <h5>
-
-                    Compartir progreso
-
+                    Castor Experto
+                    <br>
+                    <small>Tlamachtijketl Castor</small>
                 </h5>
 
-            </div>
+                <p class="mensaje-share">
 
-            <div class="modal-body">
+                Estoy aprendiendo náhuatl con
+                Castores Multilingües AUL@NET 🌱
 
-                <div
-                    id="tarjetaCompartir"
-                    class="tarjeta-social">
+                <br><br>
 
-                    <h2>AUL@NET</h2>
+                Nechmachtia in náhuatl ipan
+                Castores Multilingües AUL@NET 🌱
 
-                    <h4>Julio César</h4>
+                <br><br>
 
-                    <p>XP: 5420</p>
+                #Náhuatl
+                #AULNET
+                #CastoresMultilingües
 
-                    <p>Medallas: 6/10</p>
+                </p>
 
-                    <p>Exámenes: 8/10</p>
-
+                <div class="estadistica">
+                    <i class="bi bi-trophy-fill"></i>
+                    XP: 5420
                 </div>
 
-                <button
-                    class="btn btn-success w-100 mt-3"
-                    onclick="descargarTarjeta()">
+                <div class="estadistica">
+                    <i class="bi bi-award-fill"></i>
+                    Medallas / Tetlanextilli: 6/10
+                </div>
 
-                    Descargar imagen
+                <div class="estadistica">
+                    <i class="bi bi-clipboard-check-fill"></i>
+                    Exámenes / Tlatemolistli: 8/10
+                </div>
 
-                </button>
+        </div>
 
-            </div>
-
+        <div class="tarjeta-footer">
+            Castores Multilingües AUL@NET
         </div>
 
     </div>
@@ -1091,6 +1110,7 @@
 
     <!-- html2canvas -->    
     <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+
 
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

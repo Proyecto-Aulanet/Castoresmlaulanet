@@ -941,3 +941,79 @@ function descargarTarjeta(){
     });
 
 }
+
+
+/* Funciones de compartir */
+
+function compartirWhatsApp() {
+
+    const mensaje =
+`Estoy aprendiendo náhuatl gracias a Castores Multilingües AUL@NET 🦫📚
+
+🏆 XP: 5420
+🎖️ Medallas: 6/10
+📝 Exámenes: 8/10
+
+#AULANET
+#Nahuatl
+#CastoresMultilingues`;
+
+    window.open(
+        `https://wa.me/?text=${encodeURIComponent(mensaje)}`,
+        '_blank'
+    );
+}
+
+
+function compartirFacebook(){
+
+    const url =
+    encodeURIComponent(
+        "https://aulanet.mx"
+    );
+
+    window.open(
+        `https://www.facebook.com/sharer/sharer.php?u=${url}`,
+        "_blank"
+    );
+
+}
+
+
+function compartirX(){
+
+    const mensaje =
+    encodeURIComponent(
+        "Estoy aprendiendo náhuatl gracias a Castores Multilingües AUL@NET 🦫📚 #Nahuatl #AULANET"
+    );
+
+    window.open(
+        `https://twitter.com/intent/tweet?text=${mensaje}`,
+        "_blank"
+    );
+
+}
+
+
+function descargarTarjeta() {
+
+    const tarjeta = document.getElementById("tarjetaExportar");
+
+    html2canvas(tarjeta, {
+        scale: 2,
+        useCORS: true,
+        backgroundColor: "#ffffff"
+    })
+    .then(canvas => {
+
+        const enlace = document.createElement("a");
+
+        enlace.download = "progreso_aulanet.png";
+
+        enlace.href = canvas.toDataURL("image/png");
+
+        enlace.click();
+
+    });
+
+}
