@@ -2045,6 +2045,18 @@ body{
    progreso
 ==================================== */
 
+#contenedor-exportacion {
+
+    position: fixed;
+
+    left: -10000px;
+
+    top: 0;
+
+    pointer-events: none;
+
+}
+
 .progreso-card{
 
     background:white;
@@ -2167,5 +2179,161 @@ body{
     height:6px;
 
     background:#A8D84F;
+
+}
+
+.tarjeta-share{
+    background:#124734 !important;
+}
+
+
+.tarjeta-exportar{
+
+    width:1080px;
+
+    height:1350px;
+
+    background:#F7FAF8;
+
+    display:flex;
+
+    flex-direction:column;
+
+    overflow:hidden;
+}
+
+.tarjeta-header{
+
+    height:220px;
+
+    background:linear-gradient(
+        135deg,
+        #124734,
+        #3B8B7A
+    );
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.logo-share{
+
+    width:220px;
+}
+
+.tarjeta-cuerpo{
+
+    flex:1;
+
+    display:flex;
+    flex-direction:column;
+
+    align-items:center;
+
+    padding:40px 80px;
+}
+
+.tarjeta-cuerpo h2{
+
+    margin-top:25px;
+
+    font-size:58px;
+
+    color:#124734;
+}
+
+.tarjeta-cuerpo h5{
+
+    font-size:34px;
+
+    color:#666;
+
+    margin-bottom:40px;
+}
+
+.avatar-share{
+
+    width:180px;
+    height:180px;
+
+    margin-top:-90px;
+
+    background:white;
+
+    border-radius:50%;
+
+    padding:10px;
+
+    box-shadow:0 10px 20px rgba(0,0,0,.15);
+}
+
+.estadistica{
+
+    width:90%;
+
+    background:white;
+
+    border-left:8px solid #3B8B7A;
+
+    border-radius:20px;
+
+    padding:22px;
+
+    margin-bottom:20px;
+
+    font-size:32px;
+
+    font-weight:600;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.tarjeta-footer{
+
+    background:#124734;
+
+    color:white;
+
+    text-align:center;
+
+    padding:20px;
+
+    font-size:20px;
+
+    font-weight:600;
+}
+
+.mensaje-share{
+
+    margin-top:25px;
+
+    font-size:24px;
+
+    color:#555;
+
+    text-align:center;
+
+    max-width:800px;
+}
+
+
+
+
+
+
+
+
+
+
+.modal-examen-detalle .modal-dialog{
+    margin-top:250px;
+}
+
+@media (max-width:991px){
+
+    .progreso-contenido{
+        margin-top:80px;
+    }
 
 }
