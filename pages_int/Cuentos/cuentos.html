@@ -28,7 +28,88 @@
 
 <body>
 
-    <div id="app" class="w-full min-h-full flex flex-col">
+    <!-- ========================= -->
+    <!-- FONDO DECORATIVO -->
+    <!-- ========================= -->
+
+    <div class="fondo-aulanet">
+
+        <!-- LIBRO -->
+
+        <svg class="libro-fondo" viewBox="0 0 512 512">
+
+            <path
+                d="M256 120
+                   C220 90 150 85 100 110
+                   L100 380
+                   C150 355 220 360 256 390
+                   C292 360 362 355 412 380
+                   L412 110
+                   C362 85 292 90 256 120Z"
+                fill="none"
+                stroke="white"
+                stroke-width="6"
+                opacity=".06"/>
+
+            <line
+                x1="256"
+                y1="120"
+                x2="256"
+                y2="390"
+                stroke="white"
+                stroke-width="4"
+                opacity=".06"/>
+
+        </svg>
+
+        <!-- ENGRANAJES -->
+
+        <svg class="engranaje engranaje1" viewBox="0 0 24 24">
+            <path fill="white"
+                d="M19.14,12.94a7.48,7.48,0,0,0,.05-.94a7.48,7.48,0,0,0-.05-.94l2.03-1.58a.5.5,0,0,0,.12-.64l-1.92-3.32a.5.5,0,0,0-.61-.22l-2.39.96a7.28,7.28,0,0,0-1.63-.94L14.5,2.81a.5.5,0,0,0-.5-.41H10a.5.5,0,0,0-.5.41L9.12,5.32a7.28,7.28,0,0,0-1.63.94L5.1,5.3a.5.5,0,0,0-.61.22L2.57,8.84a.5.5,0,0,0,.12.64L4.72,11.06a7.48,7.48,0,0,0-.05.94a7.48,7.48,0,0,0,.05.94L2.69,14.52a.5.5,0,0,0-.12.64l1.92,3.32a.5.5,0,0,0,.61.22l2.39-.96a7.28,7.28,0,0,0,1.63.94l.38,2.51a.5.5,0,0,0,.5.41h4a.5.5,0,0,0,.5-.41l.38-2.51a7.28,7.28,0,0,0,1.63-.94l2.39.96a.5.5,0,0,0,.61-.22l1.92-3.32a.5.5,0,0,0-.12-.64Z"/>
+        </svg>
+
+        <svg class="engranaje engranaje2" viewBox="0 0 24 24">
+            <path fill="white"
+                d="M19.14,12.94a7.48,7.48,0,0,0,.05-.94a7.48,7.48,0,0,0-.05-.94l2.03-1.58a.5.5,0,0,0,.12-.64l-1.92-3.32a.5.5,0,0,0-.61-.22l-2.39.96a7.28,7.28,0,0,0-1.63-.94L14.5,2.81a.5.5,0,0,0-.5-.41H10a.5.5,0,0,0-.5.41L9.12,5.32a7.28,7.28,0,0,0-1.63.94L5.1,5.3a.5.5,0,0,0-.61.22L2.57,8.84a.5.5,0,0,0,.12.64L4.72,11.06a7.48,7.48,0,0,0-.05.94a7.48,7.48,0,0,0,.05.94L2.69,14.52a.5.5,0,0,0-.12.64l1.92,3.32a.5.5,0,0,0,.61.22l2.39-.96a7.28,7.28,0,0,0,1.63.94l.38,2.51a.5.5,0,0,0,.5.41h4a.5.5,0,0,0,.5-.41l.38-2.51a7.28,7.28,0,0,0,1.63-.94l2.39.96a.5.5,0,0,0,.61-.22l1.92-3.32a.5.5,0,0,0-.12-.64Z"/>
+        </svg>
+
+        <!-- PARTICULAS -->
+
+        <div class="particulas">
+
+            <span class="particula verde"></span>
+            <span class="particula azul"></span>
+            <span class="particula amarillo"></span>
+            <span class="particula naranja"></span>
+            <span class="particula blanco"></span>
+            <span class="particula verde"></span>
+            <span class="particula azul"></span>
+            <span class="particula amarillo"></span>
+            <span class="particula naranja"></span>
+            <span class="particula blanco"></span>
+
+            <span class="particula verde"></span>
+            <span class="particula azul"></span>
+            <span class="particula amarillo"></span>
+            <span class="particula naranja"></span>
+            <span class="particula blanco"></span>
+
+            <span class="particula verde"></span>
+            <span class="particula azul"></span>
+            <span class="particula amarillo"></span>
+            <span class="particula naranja"></span>
+            <span class="particula blanco"></span>
+
+            <span class="particula verde"></span>
+            <span class="particula azul"></span>
+            <span class="particula amarillo"></span>
+            <span class="particula naranja"></span>
+            <span class="particula blanco"></span>
+
+        </div>
+
+    </div>
      
         
 <!-- ========================================== -->
@@ -171,7 +252,7 @@
 
                         <!-- INICIO -->
                         <button
-                            onclick="showPage('home')"
+                            onclick="window.location.href='/pages_int/inicio.html'"
                             class="btn navbarint-btn rounded-pill px-4"
                             data-aos="fade-up"
                             data-es="Inicio"
@@ -185,7 +266,7 @@
 
                         <!-- LECCIONES -->
                         <button
-                            onclick="showPage('modules')"
+                            onclick="window.location.href='Lecciones.html'"
                             class="btn navbarint-btn rounded-pill px-4"
                             data-aos="fade-up"
                             data-aos-delay="100"
@@ -200,7 +281,7 @@
 
                         <!-- CUENTOS -->
                         <button
-                            onclick="showPage('stories')"
+                            onclick="window.location.href='cuentos.html'"
                             class="btn navbarint-btn rounded-pill px-4"
                             data-aos="fade-up"
                             data-aos-delay="100"
@@ -215,7 +296,7 @@
 
                         <!-- CULTURA -->
                         <button
-                            onclick="showPage('culture')"
+                            onclick="window.location.href='cultura.html'"
                             class="btn navbarint-btn rounded-pill px-4"
                             data-aos="fade-up"
                             data-aos-delay="200"
@@ -230,7 +311,7 @@
 
                         <!-- PROGRESO -->
                         <button
-                            onclick="showPage('progress')"
+                           onclick="window.location.href='progreso.html'"
                             class="btn navbarint-btn rounded-pill px-4"
                             data-aos="fade-up"
                             data-aos-delay="300"
@@ -306,95 +387,114 @@
         </main>
     </div>
 
+        <div class="container-fluid px-3 px-md-4 mt-3">
+
+            <button 
+            onclick="window.location.href='/pages_int/inicio.html'"
+            class="btn-inicio">
+    
+                <span class="circulo flecha">
+                    <i class="bi bi-chevron-left"></i>
+                </span>
+
+                <span class="texto" data-es="Inicio" data-na="Calli">
+                    Inicio
+                </span>
+
+                <span class="separador"></span>
+
+                <span class="circulo casa">
+                    <i class="bi bi-house"></i>
+                </span>
+
+            </button>
+        </div>
+
     <!-- HERO -->
 
     <section class="container py-5">
 
-        <div class="hero-card">
+    <div class="hero-card">
 
-            <div class="row g-0 align-items-center">
+        <div class="row g-0 align-items-center">
 
-                <div class="col-lg-5">
+            <div class="col-lg-7 order-1 order-lg-2">
 
-                    <div class="hero-content">
+                <div id="heroCarousel"
+                    class="carousel slide"
+                    data-bs-ride="carousel"
+                    data-bs-interval="5000">
 
-                        <h1 class="hero-title" data-es="Bienvenido al mundo de los cuentos" 
-                        data-na="Ximopanolti ipan in tlalticpac tlen tlamachtili huan cuentos.">
-                            Bienvenido al mundo de los cuentos
-                        </h1>
+                    <div class="carousel-inner">
 
-                        <p class="mt-4" data-es="Descubre historias increíbles, personajes fantásticos y enseñanzas
-                            que te acompañarán siempre." 
-                            data-na="Xikmati cualli tlamachtili, tlen mopanōlti, personajes tlen hueyi tlachiyalistli huan tlamachtīlli tlen mitzhuīcaz nochipa.">
-                            Descubre historias increíbles, personajes fantásticos y enseñanzas
-                            que te acompañarán siempre.
-                        </p>
-
-                        <button class="btn-explorar mt-3"
-                        data-bs-toggle="modal"
-        data-bs-target="#modalCuentos"
-                                data-es="Explorar cuentos" 
-                                data-na="Xiktemo tlamachtili">
-                            <i class="bi bi-book"></i>
-                            Explorar cuentos
-                        </button>
-
-                    </div>
-
-                </div>
-
-                <!-- Carrusel -->
-                <div class="col-lg-7">
-
-                    <div id="heroCarousel"
-                        class="carousel slide"
-                        data-bs-ride="carousel"
-                        data-bs-interval="5000">
-
-                        <div class="carousel-inner">
-
-                            <div class="carousel-item active">
-                                <img src="/Recursos/cuentos/nahui_cuento.png"
-                                class="hero-img"
-                                alt="Cuento 1">
-                            </div>
-
-                            <div class="carousel-item">
-                                <img src="/Recursos/cuentos/nahui_cuento.png"
-                                class="hero-img"
-                                alt="Cuento 2">
-                            </div>
-
-                            <div class="carousel-item">
-                                <img src="/Recursos/cuentos/nahui_cuento.png"
-                                class="hero-img"
-                                alt="Cuento 3">
-                            </div>
-
-                            <div class="carousel-item">
-                                <img src="/Recursos/cuentos/nahui_cuento.png"
-                                class="hero-img"
-                                alt="Cuento 4">
-                            </div>
-
+                        <div class="carousel-item active">
+                            <img src="/Recursos/cuentos/nahui_cuento.png"
+                            class="hero-img"
+                            alt="Cuento">
                         </div>
 
-                         <!-- Botones -->
-                        <button class="carousel-control-prev"
-                            type="button"
-                            data-bs-target="#heroCarousel"
-                            data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon"></span>
-                        </button>
+                        <div class="carousel-item">
+                            <img src="/Recursos/cuentos/castor_cuento.png"
+                            class="hero-img"
+                            alt="Cuento">
+                        </div>
 
-                        <button class="carousel-control-next"
-                            type="button"
-                            data-bs-target="#heroCarousel"
-                            data-bs-slide="next">
-                            <span class="carousel-control-next-icon"></span>
-                        </button>
-        
+                        <div class="carousel-item">
+                            <img src="/Recursos/cuentos/venado_cuento.png"
+                            class="hero-img"
+                            alt="Cuento">
+                        </div>
+
+                        <div class="carousel-item">
+                            <img src="/Recursos/cuentos/guacamaya_cuento.png"
+                            class="hero-img"
+                            alt="Cuento">
+                        </div>
+
                     </div>
+
+                     <button class="carousel-control-prev"
+                        type="button"
+                        data-bs-target="#heroCarousel"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+
+                    <button class="carousel-control-next"
+                        type="button"
+                        data-bs-target="#heroCarousel"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+    
+                </div>
+
+            </div>
+
+            <div class="col-lg-5 order-2 order-lg-1">
+
+                <div class="hero-content">
+
+                    <h1 class="hero-title" data-es="Bienvenido al mundo de los cuentos" 
+                    data-na="Ximopanolti ipan in tlalticpac tlen tlamachtili huan cuentos.">
+                        Bienvenido al mundo de los cuentos
+                    </h1>
+
+                    <p class="mt-4" data-es="Descubre historias increíbles, personajes fantásticos y enseñanzas
+                        que te acompañarán siempre." 
+                        data-na="Xikmati cualli tlamachtili, tlen mopanōlti, personajes tlen hueyi tlachiyalistli huan tlamachtīlli tlen mitzhuīcaz nochipa.">
+                        Descubre historias increíbles, personajes fantásticos y enseñanzas
+                        que te acompañarán siempre.
+                    </p>
+
+                    <button class="btn-explorar mt-3"
+                    data-bs-toggle="modal"
+                    data-bs-target="#modalCuentos"
+                            data-es="Explorar cuentos" 
+                            data-na="Xiktemo tlamachtili">
+                        <i class="bi bi-book"></i>
+                        Explorar cuentos
+                    </button>
 
                 </div>
 
@@ -402,7 +502,9 @@
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
     <!-- CUENTOS -->
 
@@ -414,9 +516,11 @@
                 🌿 Cuentos destacados
             </h2>
 
-            <a href="#" class="ver-todos" data-es="Ver todos →" data-na="Xikitta nochi →">
+            <button class="btn-explorar mt-3"
+             class="ver-todos" data-es="Ver todos →" data-na="Xikitta nochi →" data-bs-toggle="modal"
+                    data-bs-target="#modalCuentos">
                 Ver todos →
-            </a>
+            </button>
 
         </div>
 
@@ -500,7 +604,30 @@
 
         </div>
 
+        <div
+            class="d-flex justify-content-start mt-5"
+            data-aos="fade-right">
+
+            <button
+                onclick="window.location.href='/pages_int/inicio.html'"
+                class="btn-regresar-int">
+
+                <i class="bi bi-arrow-left-circle-fill me-2"></i>
+
+                <span
+                    data-es="Regresar"
+                    data-na="Mokuepa">
+
+                    Regresar
+
+                </span>
+
+            </button>
+
+        </div>
+
     </section>
+    
 
     <!-- =========================================
                 FOOTER
@@ -626,6 +753,110 @@
                 </div>
 
             </footer>
+
+            <!-- Ventana Modal -->
+                <div class="modal fade"
+     id="modalCuentos"
+     tabindex="-1"
+     aria-hidden="true">
+
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h4 class="modal-title">
+                    📚 Todos los cuentos
+                </h4>
+
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal">
+                </button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <div class="row g-4">
+
+                    <!-- CUENTO 1 -->
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <div class="cuento-modal-card">
+                            <img src="/Recursos/cuentos/castor_cuento.png" alt="">
+                            <div class="cuento-overlay">
+                                <h6>El último castor</h6>
+                                <button class="btn btn-success btn-sm">
+                                    Leer
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CUENTO 2 -->
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <div class="cuento-modal-card">
+                            <img src="/Recursos/cuentos/perro_cuento.png" alt="">
+                            <div class="cuento-overlay">
+                                <h6>La mariposa mágica</h6>
+                                <button class="btn btn-success btn-sm">
+                                    Leer
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CUENTO 3 -->
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <div class="cuento-modal-card">
+                            <img src="/Recursos/cuentos/venado_cuento.png" alt="">
+                            <div class="cuento-overlay">
+                                <h6>El bosque encantado</h6>
+                                <button class="btn btn-success btn-sm">
+                                    Leer
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CUENTO 4 -->
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <div class="cuento-modal-card">
+                            <img src="/Recursos/cuentos/guacamaya_cuento.png" alt="">
+                            <div class="cuento-overlay">
+                                <h6>El colibrí valiente</h6>
+                                <button class="btn btn-success btn-sm">
+                                    Leer
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CUENTO 5 -->
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <div class="cuento-modal-card">
+                            <img src="/Recursos/cuentos/nahui_cuento.png" alt="">
+                            <div class="cuento-overlay">
+                                <h6>La luna brillante</h6>
+                                <button class="btn btn-success btn-sm">
+                                    Leer
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Agrega más cuentos aquí -->
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
 
     <!-- BOOTSTRAP -->
     <script src="/assets/js/bootstrap.bundle.min.js"></script>

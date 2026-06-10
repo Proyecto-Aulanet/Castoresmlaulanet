@@ -1716,6 +1716,91 @@ body{
    Página de cuentos
 ===================================== */
 
+.btn-inicio{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 80px;
+
+    width: fit-content;
+
+    padding: 10px 16px;
+    border: none;
+    border-radius: 50px;
+
+    background: #ffffff;
+    box-shadow: 0 4px 12px rgba(0,0,0,.12);
+
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.btn-inicio:hover{
+    transform: translateY(-2px);
+}
+
+.circulo{
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1rem;
+}
+
+.flecha{
+    background: #0a4d3c;
+    color: white;
+}
+
+.casa{
+    background: #edf3ef;
+    color: #0a4d3c;
+}
+
+.texto{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #0a4d3c;
+}
+
+.separador{
+    width: 2px;
+    height: 28px;
+    background: #d9e3dc;
+    border-radius: 10px;
+}
+
+/* Celulares */
+@media (max-width: 576px){
+
+    .btn-inicio{
+        padding: 8px 12px;
+        gap: 8px;
+        margin-top: 200px;
+    }
+
+    .circulo{
+        width: 32px;
+        height: 32px;
+        font-size: .85rem;
+    }
+
+    .texto{
+        font-size: .9rem;
+    }
+
+    .separador{
+        height: 22px;
+    }
+}
+
 /* HERO */
 
 .hero-card{
@@ -1723,7 +1808,7 @@ body{
     backdrop-filter:blur(10px);
     border-radius:25px;
     overflow:hidden;
-    margin-top: 90px;
+    margin-top: 10px;
 }
 
 .hero-content{
@@ -1740,10 +1825,11 @@ body{
     width:100%;
     height:100%;
     object-fit:cover;
+    display: block;
 }
 
 .btn-explorar{
-    background:#2ebc68;
+    background:#007a31;
     color:white;
     border:none;
     border-radius:50px;
@@ -1767,6 +1853,60 @@ body{
     width: 10px !important;
     height: 10px !important;
     border-radius: 50%;
+}
+
+.modal-content{
+    border-radius: 25px;
+    border: none;
+    overflow: hidden;
+}
+
+.modal-header{
+    background: #0b5d4b;
+    color: white;
+}
+
+.cuento-modal-card{
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.cuento-modal-card:hover{
+    transform: scale(1.05);
+}
+
+.cuento-modal-card img{
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    display: block;
+}
+
+.cuento-overlay{
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,.75);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    opacity: 0;
+    transition: .3s;
+}
+
+.cuento-modal-card:hover .cuento-overlay{
+    opacity: 1;
+}
+
+.cuento-overlay h6{
+    text-align: center;
+    margin: 0;
+    padding: 0 10px;
 }
 
 /* TITULOS */
