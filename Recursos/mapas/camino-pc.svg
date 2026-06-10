@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 1200 900"
+     width="100%"
+     height="100%">
+
+    <style>
+
+        .sombra{
+            fill:none;
+            stroke:#9E9E9E;
+            stroke-width:16;
+            stroke-linecap:round;
+            stroke-linejoin:round;
+            opacity:.55;
+        }
+
+        .camino-principal{
+            fill:none;
+            stroke:#2563EB;
+            stroke-width:12;
+            stroke-linecap:round;
+            stroke-linejoin:round;
+        }
+
+        .circulo-final{
+            fill:#2563EB;
+        }
+
+        .anillo-inicio{
+            fill:white;
+            stroke:#2563EB;
+            stroke-width:12;
+        }
+
+    </style>
+
+    <!-- SOMBRA -->
+
+    <path
+        class="sombra"
+        transform="translate(0,8)"
+        d="
+        M 350 100
+
+        A 120 120 0 0 0 230 220
+        A 120 120 0 0 0 350 340
+
+        L 850 340
+
+        A 120 120 0 0 1 970 460
+        A 120 120 0 0 1 850 580
+
+        L 420 580
+
+        A 120 120 0 0 0 300 700
+        A 120 120 0 0 0 420 820
+
+        L 750 820
+        " />
+
+    <!-- CAMINO -->
+
+    <path
+        class="camino-principal"
+        d="
+        M 350 100
+
+        A 120 120 0 0 0 230 220
+        A 120 120 0 0 0 350 340
+
+        L 850 340
+
+        A 120 120 0 0 1 970 460
+        A 120 120 0 0 1 850 580
+
+        L 420 580
+
+        A 120 120 0 0 0 300 700
+        A 120 120 0 0 0 420 820
+
+        L 750 820
+        " />
+
+    <!-- META -->
+
+    <circle
+        class="circulo-final"
+        cx="350"
+        cy="100"
+        r="28" />
+
+    <!-- INICIO -->
+
+    <circle
+        class="anillo-inicio"
+        cx="750"
+        cy="820"
+        r="36" />
+
+</svg>

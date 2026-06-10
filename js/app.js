@@ -1017,3 +1017,24 @@ function descargarTarjeta() {
     });
 
 }
+
+
+
+
+/*java para abrir las lecciones*/
+document
+.querySelectorAll('.nivel-svg')
+.forEach(nivel => {
+
+    nivel.addEventListener('click', () => {
+
+        const id = nivel.dataset.id;
+
+        console.log("Nivel:", id);
+
+        // Aquí rediriges
+        // window.location.href = "nivel" + id + ".html";
+
+    });
+
+});
