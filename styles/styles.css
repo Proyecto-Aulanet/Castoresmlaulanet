@@ -2163,7 +2163,7 @@ body{
 /* HERO */
 
 .hero-card{
-    background:rgba(0,0,0,.20);
+    background:#12472b;
     backdrop-filter:blur(10px);
     border-radius:25px;
     overflow:hidden;
@@ -2221,7 +2221,7 @@ body{
 }
 
 .modal-header{
-    background: #0b5d4b;
+    background: #258724;
     color: white;
 }
 
@@ -2283,7 +2283,7 @@ body{
 /* CARDS */
 
 .cuento-card{
-    background:rgba(0,0,0,.20);
+    background: #12472b;
     border-radius:20px;
     overflow:hidden;
     color:white;
@@ -2302,7 +2302,7 @@ body{
 }
 
 .cuento-card a{
-    color:#6df0a0;
+    color:#1df06e;
     text-decoration:none;
 }
 
