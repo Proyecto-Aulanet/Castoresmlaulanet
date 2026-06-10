@@ -8,7 +8,7 @@
     <!-- RESPONSIVE -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Inicio - Castores Multilingües Aul@Net</title>
+    <title>Abecedario - Castores Multilingües Aul@Net</title>
 
     <link rel="icon" href="/Recursos/nahui_caras/nahui_feliz_vector.svg" type="image/png">
 
@@ -25,7 +25,6 @@
     <link rel="stylesheet" href="/styles/styles.css">
 
 </head>
-
 
 <body>
 
@@ -111,8 +110,6 @@
         </div>
 
     </div>      
-     
-        
 <!-- ========================================== -->
 <!--                HEADER MAIN                 -->
 <!-- ========================================== -->
@@ -390,6 +387,465 @@
     </div>
 
 <br>
+
+<section class="mapa-abecedario">
+
+        <div class="titulo-abecedario">
+
+            <h1
+                class="titulo-mapa"
+                data-es="Bosque de las palabras"
+                data-na="Cuauhtlahtolli">
+
+                <i class="bi bi-tree-fill me-2"></i>
+
+                Bosque de las palabras
+
+            </h1>
+
+            <p
+                class="subtitulo-mapa"
+                data-es="Completa las misiones y aprende junto a Nahui"
+                data-na="Xikchiwa nochi tlamachtiltin wan ximomachti ihuan Nahui">
+
+                Completa las misiones y aprende junto a Nahui
+
+            </p>
+
+        </div>
+
+    <div class="contenedor-abecedario">
+
+        <svg
+            class="camino-svg"
+            viewBox="0 0 1200 900"
+            preserveAspectRatio="xMidYMid meet">
+
+            <defs>
+
+                <!-- Verde -->
+
+                <filter id="sombra-verde"
+                        x="-50%"
+                        y="-50%"
+                        width="200%"
+                        height="200%">
+
+                    <feDropShadow
+                        dx="0"
+                        dy="6"
+                        stdDeviation="4"
+                        flood-color="#2E8A00"
+                        flood-opacity="0.45"/>
+
+                </filter>
+
+                <!-- Amarillo -->
+
+                <filter id="sombra-amarilla"
+                        x="-50%"
+                        y="-50%"
+                        width="200%"
+                        height="200%">
+
+                    <feDropShadow
+                        dx="0"
+                        dy="6"
+                        stdDeviation="4"
+                        flood-color="#C6A400"
+                        flood-opacity="0.45"/>
+
+                </filter>
+
+                <!-- Gris -->
+
+                <filter id="sombra-gris"
+                        x="-50%"
+                        y="-50%"
+                        width="200%"
+                        height="200%">
+
+                    <feDropShadow
+                        dx="0"
+                        dy="6"
+                        stdDeviation="4"
+                        flood-color="#8D8D8D"
+                        flood-opacity="0.45"/>
+
+                </filter>
+
+                <!-- Trofeo -->
+
+                <filter id="sombra-trofeo"
+                        x="-50%"
+                        y="-50%"
+                        width="200%"
+                        height="200%">
+
+                    <feDropShadow
+                        dx="0"
+                        dy="6"
+                        stdDeviation="4"
+                        flood-color="#C76B00"
+                        flood-opacity="0.45"/>
+
+                </filter>
+
+            </defs>
+
+            <!-- SOMBRA -->
+
+            <path
+                fill="none"
+                stroke="#9E9E9E"
+                stroke-width="16"
+                opacity=".55"
+                transform="translate(0,8)"
+                d="
+                M 350 100
+                A 120 120 0 0 0 230 220
+                A 120 120 0 0 0 350 340
+                L 850 340
+                A 120 120 0 0 1 970 460
+                A 120 120 0 0 1 850 580
+                L 420 580
+                A 120 120 0 0 0 300 700
+                A 120 120 0 0 0 420 820
+                L 750 820
+                "/>
+
+            <!-- CAMINO -->
+
+            <path
+                fill="none"
+                stroke="#2563EB"
+                stroke-width="12"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="
+                M 350 100
+                A 120 120 0 0 0 230 220
+                A 120 120 0 0 0 350 340
+                L 850 340
+                A 120 120 0 0 1 970 460
+                A 120 120 0 0 1 850 580
+                L 420 580
+                A 120 120 0 0 0 300 700
+                A 120 120 0 0 0 420 820
+                L 750 820
+                "/>
+
+            <!-- META -->
+
+            <circle
+                cx="350"
+                cy="100"
+                r="28"
+                fill="#2563EB"/>
+
+            <!-- INICIO -->
+
+            <circle
+                cx="750"
+                cy="820"
+                r="50"
+                fill="white"
+                stroke="#2563EB"
+                stroke-width="12"/>
+
+            <image
+                href="/Recursos/mapas/casa.png"
+                x="900"
+                y="70"
+                width="120"
+                height="120"/>    
+
+            <image
+                href="/Recursos/mapas/castor.png"
+                x="20"
+                y="420"
+                width="120"
+                height="120"/>
+
+
+
+
+
+            <image
+            href="/Recursos/mapas/arbol.png"
+            x="1020"
+            y="690"
+            width="120"
+            height="120"/>
+
+            <image
+            href="/Recursos/nahui_caras/nahui_feliz.png"
+            x="180"
+            y="30"
+            width="110"
+            height="110"/>
+
+
+            <!-- NIVELES -->
+
+            <!-- NIVEL 1 -->
+
+            <g class="nivel-svg completado" data-id="1">
+
+                <circle cx="350" cy="108" r="50" fill="#2E8A00"/>
+                <circle cx="350" cy="100" r="50" fill="#53D000"/>
+
+                <text
+                    x="350"
+                    y="100"
+                    fill="white"
+                    font-size="30"
+                    font-weight="700"
+                    text-anchor="middle"
+                    dominant-baseline="middle">
+
+                    1
+
+                </text>
+
+            </g>
+
+            <!-- NIVEL 2 -->
+
+            <g class="nivel-svg completado" data-id="2" >
+
+                <circle cx="230" cy="268" r="50" fill="#2E8A00"/>
+                <circle cx="230" cy="260" r="50" fill="#53D000"/>
+
+                <text
+                    x="230"
+                    y="260"
+                    fill="white"
+                    font-size="30"
+                    font-weight="700"
+                    text-anchor="middle"
+                    dominant-baseline="middle">
+
+                    2
+
+                </text>
+
+            </g>
+
+            <!-- NIVEL 3 -->
+
+            <g class="nivel-svg completado" data-id="3">
+
+                <circle cx="520" cy="348" r="50" fill="#2E8A00"/>
+                <circle cx="520" cy="340" r="50" fill="#53D000"/>
+
+                <text
+                    x="520"
+                    y="340"
+                    fill="white"
+                    font-size="30"
+                    font-weight="700"
+                    text-anchor="middle"
+                    dominant-baseline="middle">
+
+                    3
+
+                </text>
+
+            </g>
+
+            <!-- NIVEL 4 -->
+
+            <g class="nivel-svg actual" data-id="4">
+
+                <circle cx="840" cy="348" r="50" fill="#C6A400"/>
+                <circle cx="840" cy="340" r="50" fill="#FFD43B"/>
+
+                <text
+                    x="840"
+                    y="340"
+                    fill="#124734"
+                    font-size="30"
+                    font-weight="700"
+                    text-anchor="middle"
+                    dominant-baseline="middle">
+
+                    4
+
+                </text>
+
+            </g>
+
+            <!-- NIVEL 5 -->
+
+            <g class="nivel-svg bloqueado" data-id="5">
+
+                <circle cx="920" cy="548" r="50" fill="#8D8D8D"/>
+                <circle cx="920" cy="540" r="50" fill="#C7C7C7"/>
+
+                <text
+                    x="920"
+                    y="540"
+                    fill="white"
+                    font-size="30"
+                    font-weight="700"
+                    text-anchor="middle"
+                    dominant-baseline="middle">
+
+                    5
+
+                </text>
+
+            </g>
+
+            <!-- NIVEL 6 -->
+
+            <g class="nivel-svg bloqueado" data-id="6">
+
+                <circle cx="620" cy="588" r="50" fill="#8D8D8D"/>
+                <circle cx="620" cy="580" r="50" fill="#C7C7C7"/>
+
+                <text
+                    x="620"
+                    y="580"
+                    fill="white"
+                    font-size="30"
+                    font-weight="700"
+                    text-anchor="middle"
+                    dominant-baseline="middle">
+
+                    6
+
+                </text>
+
+            </g>
+
+            <!-- NIVEL 7 -->
+
+            <g class="nivel-svg bloqueado" data-id="7">
+
+                <circle cx="360" cy="600" r="50" fill="#8D8D8D"/>
+                <circle cx="360" cy="590" r="50" fill="#C7C7C7"/>
+
+                <text
+                    x="360"
+                    y="590"
+                    fill="white"
+                    font-size="30"
+                    font-weight="700"
+                    text-anchor="middle"
+                    dominant-baseline="middle">
+
+                    7
+
+                </text>
+
+            </g>
+
+            <!-- NIVEL 8 -->
+
+            <g class="nivel-svg bloqueado" data-id="8">
+
+                <circle cx="395" cy="828" r="50" fill="#8D8D8D"/>
+                <circle cx="390" cy="820" r="50" fill="#C7C7C7"/>
+
+                <text
+                    x="390"
+                    y="820"
+                    fill="white"
+                    font-size="30"
+                    font-weight="700"
+                    text-anchor="middle"
+                    dominant-baseline="middle">
+
+                    8
+
+                </text>
+
+            </g>
+
+            <!-- NIVEL 9 -->
+
+            <g class="nivel-svg bloqueado" data-id="9">
+
+                <circle cx="575" cy="828" r="50" fill="#8D8D8D"/>
+                <circle cx="570" cy="820" r="50" fill="#C7C7C7"/>
+
+                <text
+                    x="570"
+                    y="820"
+                    fill="white"
+                    font-size="30"
+                    font-weight="700"
+                    text-anchor="middle"
+                    dominant-baseline="middle">
+
+                    9
+
+                </text>
+
+            </g>
+
+            <!-- TROFEO -->
+
+            <g class="nivel-svg trofeo"
+            data-id="10">
+
+
+                <circle cx="750" cy="820" r="50" fill="#FF9800"/>
+
+                <text
+                    x="750"
+                    y="820"
+                    fill="white"
+                    font-size="34"
+                    font-weight="700"
+                    text-anchor="middle"
+                    dominant-baseline="middle">
+
+                    ★
+
+                </text>
+
+            </g>
+        </svg>
+
+
+
+    </div>
+
+</section>
+
+                <!-- BOTÓN REGRESAR -->
+
+<div
+    class="d-flex justify-content-start mt-5 boton-mapa"
+    data-aos="fade-right">
+
+    <button
+        onclick="window.location.href='home.html'"
+        class="btn-regresar-int">
+
+        <i class="bi bi-arrow-left-circle-fill me-2"></i>
+
+        <span
+            data-es="Regresar"
+            data-na="Mokuepa">
+
+            Regresar
+
+        </span>
+
+    </button>
+
+</div>
+
+
+
+
+
+
+
 
                 <!-- =========================================
                 FOOTER
