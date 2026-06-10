@@ -442,11 +442,18 @@ main{
 
 html,
 body{
-    height:100%;
+    min-height:100%;
+    margin:0;
 }
 
 body{
-    background:#124734;
+    background:linear-gradient(
+        135deg,
+        #1D5A44,
+        #3B8B7A,
+        #7CB5A8
+    );
+
     font-family:'Poppins';
     color:#2e2740;
 }
@@ -1545,6 +1552,7 @@ body{
         transform:translateY(0);
 
     }
+}
 
 }
 /* =========================
@@ -1700,6 +1708,7 @@ body{
 
         justify-content:center;
     }
+
 }
 
 
@@ -1946,5 +1955,465 @@ body{
         padding:30px;
         text-align:center;
     }
+=======
+
+
+}
+
+
+
+
+
+/* ==================================
+   BIENVENIDA
+================================== */
+
+/* =========================
+   BIENVENIDA USUARIO
+========================= */
+
+
+
+.bienve-usuario{
+
+    margin-top:20px;
+    margin-bottom:40px;
+
+}
+
+.bienve-titulo{
+
+    color:#ffffff;
+
+    font-family:'FredokaBold';
+
+    font-size:3rem;
+
+    text-shadow:
+        0 4px 12px rgba(0,0,0,.20);
+
+}
+
+.bienve-nombre{
+
+    color:#ffffff;
+
+    font-weight:600;
+
+    font-size:1.8rem;
+
+    margin-top:10px;
+
+    text-shadow:
+        0 4px 12px rgba(0,0,0,.20);
+
+}
+
+.bienve-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    width:100%;
+
+    border:none;
+
+    border-radius:25px;
+
+    padding:28px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+
+   transform:translateY(10px);
+
+    text-align:left;
+
+    cursor:pointer;
+
+    transition:.35s ease;
+
+    box-shadow:
+        0 12px 0 rgba(0,0,0,.12),
+        0 18px 30px rgba(0,0,0,.18);
+}
+
+/* EFECTO 3D */
+
+.bienve-card:hover{
+
+    transform:
+        translateY(20px);
+
+    box-shadow:
+        0 18px 0 rgba(0,0,0,.10),
+        0 28px 40px rgba(0,0,0,.25);
+}
+
+.bienve-card:active{
+
+    transform:
+        translateY(4px);
+
+    box-shadow:
+        0 6px 0 rgba(0,0,0,.10);
+}
+
+/* ICONO PRINCIPAL */
+
+.bienve-icon{
+
+    font-size:3rem;
+
+    z-index:2;
+}
+
+/* TEXTO */
+
+.bienve-card h4{
+
+    margin:0;
+
+    font-family:'FredokaBold';
+
+    font-size:1.5rem;
+
+    position:relative;
+
+    z-index:2;
+}
+
+/* ICONO DE FONDO */
+
+.bienve-bg-icon{
+
+    position:absolute;
+
+    right:15px;
+
+    bottom:-5px;
+
+    font-size:6rem;
+
+    opacity:.12;
+
+    z-index:1;
+
+    transform:rotate(-15deg);
+}
+
+
+
+/* ====================================
+   COLORES
+==================================== */
+
+.bienve-lecciones{
+
+    background:#A8D84F;
+
+    color:#124734;
+}
+
+.bienve-cuentos{
+
+    background:#F4C319;
+
+    color:#124734;
+}
+
+.bienve-cultura{
+
+    background:#48D0E5;
+
+    color:#124734;
+}
+
+.bienve-progreso{
+
+    background:#FF8265;
+
+    color:#124734;
+}
+
+.bienve-card:hover .bienve-bg-icon{
+
+    transform:
+        scale(1.15)
+        rotate(-15deg);
+
+    transition:.4s;
+}
+
+.bienve-card:hover .bienve-icon{
+
+    transform:scale(1.1);
+
+    transition:.3s;
+}
+
+
+
+/* =========================
+   BOTÓN CERRAR SESIÓN
+========================= */
+/* =========================
+   CERRAR SESIÓN
+========================= */
+
+.logout-btn{
+
+    background:#ffffff;
+
+    color:#124734;
+
+    border:none;
+
+    font-weight:600;
+
+    transition:.3s ease;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.15);
+}
+
+.logout-btn i{
+
+    color:#124734;
+}
+
+.logout-btn:hover{
+
+    background:#ff8605;
+
+    color:#ffffff;
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 15px 30px rgba(0,0,0,.20);
+}
+
+.logout-btn:hover i{
+
+    color:#ffffff;
+}
+
+/* ====================================
+   VIDEO MASCOTA
+==================================== */
+
+.contenedor-mascota{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    width:100%;
+
+
+    position:relative;
+    top:50px;
+
+}
+
+.nahui-frame{
+
+    width:100%;
+
+    max-width:380px;
+
+    height:auto;
+
+    display:block;
+
+    margin:auto;
+
+}
+
+
+
+@media (max-width:991px){
+
+    .nahui-frame{
+
+        max-width:500px;
+        width:100%;
+
+    }
+
+        .bienve-card{
+
+        transform:translateY(40);
+
+    }
+
+    .bienve-card:hover{
+
+        transform:translateY(35px);
+
+    }
+
+
+
+    .bienve-columna{
+
+        transform:translateY(70px);
+
+    }
+ 
+
+
+        .row.justify-content-center{
+
+        row-gap:25px;
+
+    }
+
+        .bienve-usuario{
+
+        margin-top:150px;
+
+    }
+
+
+}
+
+
+
+/* ====================================
+   progreso
+==================================== */
+
+.progreso-card{
+
+    background:white;
+
+    border-radius:25px;
+
+    padding:25px;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.08);
+
+    transition:.3s;
+}
+
+.progreso-card:hover{
+
+    transform:translateY(-3px);
+
+    filter:brightness(.97);
+}
+
+.nivel-banner{
+
+    height:120px;
+
+    border-radius:20px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #124734,
+        #3B8B7A
+    );
+
+    margin-bottom:20px;
+}
+
+.avatar-progreso{
+
+    width:120px;
+
+    margin-top:-80px;
+}
+
+.medallas-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:10px;
+}
+
+.medalla-slot{
+
+    aspect-ratio:1;
+
+    background:#E9F3EF;
+
+    border-radius:15px;
+}
+
+.ranking-item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    padding:10px 0;
+
+    border-bottom:
+    1px solid #eee;
+}
+
+.camino-aprendizaje{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin-top:30px;
+}
+
+.nodo{
+
+    width:50px;
+
+    height:50px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:white;
+
+    font-weight:bold;
+}
+
+.completado{
+
+    background:#3B8B7A;
+}
+
+.progreso{
+
+    background:#FF8265;
+}
+
+.linea{
+
+    width:70px;
+
+    height:6px;
+
+    background:#A8D84F;
 
 }
