@@ -1038,3 +1038,89 @@ document
     });
 
 });
+
+// ===================================================
+// LÓGICA DE CONTROL PARA EL CHAT DE IA (AMIGO NAHUI)
+// ===================================================
+
+/**
+ * Muestra u oculta la ventana del chatbox
+ */
+function toggleChatbox() {
+    const chatbox = document.getElementById('chatbox-container');
+    if (chatbox) {
+        chatbox.classList.toggle('d-none');
+        chatbox.classList.toggle('d-flex');
+        
+        // Auto-scroll al fondo al abrir
+        if (chatbox.classList.contains('d-flex')) {
+            const chatBody = document.getElementById('chatbox-body');
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+    }
+}
+
+/**
+ * Maneja el envío de mensajes e integra la simulación de respuesta de la IA
+ */
+function enviarMensajeIA(event) {
+    event.preventDefault(); // Evita que la página se recargue
+
+    const input = document.getElementById('chatbox-input');
+    const chatBody = document.getElementById('chatbox-body');
+    const mensajeTexto = input.value.trim();
+
+    if (!mensajeTexto) return;
+
+    // 1. Agregar el mensaje del Usuario al chat
+    const usuarioDiv = document.createElement('div');
+    usuarioDiv.className = 'bg-success text-white p-2 rounded-3 align-self-end text-break';
+    usuarioDiv.style.maxWidth = '85%';
+    usuarioDiv.style.fontSize = '0.9rem';
+    usuarioDiv.textContent = mensajeTexto;
+    chatBody.appendChild(usuarioDiv);
+
+    // Limpiar el input inmediatamente
+    input.value = '';
+    chatBody.scrollTop = chatBody.scrollHeight;
+
+    // 2. Crear y agregar indicador de "Escribiendo..." para Nahui
+    const escribiendoDiv = document.createElement('div');
+    escribiendoDiv.className = 'bg-secondary text-white p-2 rounded-3 align-self-start fst-italic';
+    escribiendoDiv.style.maxWidth = '85%';
+    escribiendoDiv.style.fontSize = '0.9rem';
+    escribiendoDiv.id = 'nahui-escribiendo';
+    escribiendoDiv.textContent = 'Amigo Nahui está escribiendo...';
+    chatBody.appendChild(escribiendoDiv);
+    chatBody.scrollTop = chatBody.scrollHeight;
+
+    // 3. Simulación de respuesta de la IA (Reemplaza este setTimeout por tu fetch/API real en el futuro)
+    setTimeout(() => {
+        // Eliminar indicador de escribiendo
+        const indicador = document.getElementById('nahui-escribiendo');
+        if (indicador) indicador.remove();
+
+        // Generar respuesta simulada orientada al Náhuatl
+        let respuestaNahui = "¡Quema! (¡Sí!) Comprendo lo que dices. Estoy aquí para ayudarte a practicar y resolver tus dudas sobre la lengua náhuatl. ¿Te gustaría repasar vocabulario o alguna lección?";
+
+        // Respuestas rápidas basadas en palabras clave sencillas
+        const textoMin = mensajeTexto.toLowerCase();
+        if (textoMin.includes('hola') || textoMin.includes('piyali')) {
+            respuestaNahui = "¡Piyali! (¡Hola!) Qué alegría tenerte de vuelta por aquí. ¿Qué palabra o frase te gustaría aprender hoy?";
+        } else if (textoMin.includes('gracias') || textoMin.includes('tlazocamati')) {
+            respuestaNahui = "¡Tlazocamati huel miac! (¡Muchas gracias a ti!) Sigue esforzándote mucho con tus misiones.";
+        } else if (textoMin.includes('adios') || textoMin.includes('nochi')) {
+            respuestaNahui = "¡Timouitazqueh! (¡Nos vemos luego!). Cuídate mucho y recuerda seguir practicando.";
+        }
+
+        // Agregar la respuesta de Nahui a la interfaz
+        const nahuiDiv = document.createElement('div');
+        nahuiDiv.className = 'bg-secondary text-white p-2 rounded-3 align-self-start';
+        nahuiDiv.style.maxWidth = '85%';
+        nahuiDiv.style.fontSize = '0.9rem';
+        nahuiDiv.textContent = respuestaNahui;
+        
+        chatBody.appendChild(nahuiDiv);
+        chatBody.scrollTop = chatBody.scrollHeight;
+    }, 1500); // 1.5 segundos de retraso para simular pensamiento
+}
