@@ -13,7 +13,7 @@
     <link rel="icon" href="/Recursos/nahui_caras/nahui_feliz_vector.svg" type="image/png">
 
     <!-- BOOTSTRAP -->
-    <link class="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
 
     <!-- BOOTSTRAP ICONS -->
     <link rel="stylesheet" href="/assets/icons/font/bootstrap-icons.css">
@@ -113,114 +113,111 @@
     </div>      
      
         
-<!-- ========================================== -->
-<!--                HEADER MAIN                 -->
-<!-- ========================================== -->
+    <!-- ========================================== -->
+    <!--                HEADER MAIN                 -->
+    <!-- ========================================== -->
 
-<header class="header-main sticky-top shadow-lg">
+    <header class="header-main sticky-top shadow-lg">
 
-    <div class="container">
+        <div class="container">
 
-        <!-- FILA SUPERIOR -->
-        <div
-            class="headerint-top d-flex justify-content-between align-items-star flex-wrap gap-3 py-3">
+            <!-- FILA SUPERIOR -->
+            <div class="headerint-top d-flex justify-content-between align-items-start flex-wrap gap-3 py-3">
 
-            <!-- LOGO -->
-            <div class="headerint-logo">
+                <!-- LOGO -->
+                <div class="headerint-logo">
 
-                <img
-                    src="/Recursos/logos/logo_completo_svg.svg"
-                    alt="logo"
-                    class="img-fluid"
-                    style="max-width:185px;"
-                    data-aos="fade-right">
+                    <img
+                        src="/Recursos/logos/logo_completo_svg.svg"
+                        alt="logo"
+                        class="img-fluid"
+                        style="max-width:185px;"
+                        data-aos="fade-right">
 
-            </div>
+                </div>
 
-            <!-- ESTADÍSTICAS -->
-            <div
-                class="headerint-stats d-flex align-items-center justify-content-center gap-3 flex-wrap"
-                data-aos="fade-up">
+                <!-- ESTADÍSTICAS -->
+                <div class="headerint-stats d-flex align-items-center justify-content-center gap-3 flex-wrap" data-aos="fade-up">
 
-                <!-- RACHA -->
-                <div class="stat-item headerint-racha">
+                    <!-- RACHA -->
+                    <div class="stat-item headerint-racha">
 
-                    <i class="bi bi-fire stat-icon text-warning"></i>
+                        <i class="bi bi-fire stat-icon text-warning"></i>
 
-                    <div>
+                        <div>
 
-                        <small
-                            class="stat-label"
-                            data-es="Racha"
-                            data-na="Tlatzintli">
+                            <small
+                                class="stat-label"
+                                data-es="Racha"
+                                data-na="Tlatzintli">
 
-                            Racha
+                                Racha
 
-                        </small>
+                            </small>
 
-                        <span
-                            id="streak-display"
-                            class="stat-value">
+                            <span
+                                id="streak-display"
+                                class="stat-value">
 
-                            0
+                                0
 
-                        </span>
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <!-- XP -->
+                    <div class="stat-item headerint-xp">
+
+                        <i class="bi bi-stars stat-icon text-warning"></i>
+
+                        <div>
+
+                            <small
+                                class="stat-label"
+                                data-es="Experiencia"
+                                data-na="Machiyotl">
+
+                                Experiencia
+
+                            </small>
+
+                            <span
+                                id="xp-display"
+                                class="stat-value">
+
+                                0
+
+                            </span>
+
+                        </div>
 
                     </div>
 
                 </div>
 
-                <!-- XP -->
-                <div class="stat-item headerint-xp">
+                <!-- PERFIL -->
+                <div class="perfil-header" data-aos="fade-left">
 
-                    <i class="bi bi-stars stat-icon text-warning"></i>
+                    <div class="perfil-avatar">
 
-                    <div>
+                        <i class="bi bi-person-fill"></i>
 
-                        <small
-                            class="stat-label"
-                            data-es="Experiencia"
-                            data-na="Machiyotl">
+                    </div>
 
-                            Experiencia
-
-                        </small>
+                    <div class="perfil-info d-none d-md-block">
 
                         <span
-                            id="xp-display"
-                            class="stat-value">
+                            class="perfil-nombre"
+                            data-es="Invitado"
+                            data-na="Tlapowalistli">
 
-                            0
+                            Invitado
 
                         </span>
 
                     </div>
-
-                </div>
-
-            </div>
-
-            <!-- PERFIL -->
-            <div
-                class="perfil-header"
-                data-aos="fade-left">
-
-                <div class="perfil-avatar">
-
-                    <i class="bi bi-person-fill"></i>
-
-                </div>
-
-                <div class="perfil-info d-none d-md-block">
-
-                    <span
-                        class="perfil-nombre"
-                        data-es="Invitado"
-                        data-na="Tlapowalistli">
-
-                        Invitado
-
-                    </span>
 
                 </div>
 
@@ -228,443 +225,407 @@
 
         </div>
 
-    </div>
-
-</header>
+    </header>
 
 
 
-<!-- MAIN -->
-<main class="container py-5">
+    <!-- MAIN -->
+    <main class="container py-5">
 
-    
+        <!-- BOTONES SUPERIORES -->
+        <div class="d-flex justify-content-between align-items-center mb-4">
 
-    <!-- BOTONES SUPERIORES -->
-    <div class="d-flex justify-content-between align-items-center mb-4">
+            <!-- BOTÓN TRADUCTOR -->
+            <div class="presen-traductor-int">
 
+                <button
+                    class="btn btn-light rounded-circle traductor-btn"
+                    onclick="presenToggleMenu()"
+                    data-aos="zoom-in">
 
-        <!-- BOTÓN TRADUCTOR -->
-        <div class="presen-traductor-int">
+                    <i class="bi bi-translate"></i>
+
+                </button>
+
+                <!-- MENÚ -->
+                <div class="presen-menu-int" id="presenMenuIdioma">
+
+                    <ul class="list-unstyled m-0">
+
+                        <li onclick="presenCambiarModo('es')">
+                            Español
+                        </li>
+
+                        <li onclick="presenCambiarModo('na')">
+                            Náhuatl
+                        </li>
+
+                        <li onclick="presenCambiarModo('es-na')">
+                            Español + Náhuatl
+                        </li>
+
+                        <li onclick="presenCambiarModo('na-es')">
+                            Náhuatl + Español
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <br>
+
+        <!-- BIENVENIDA USUARIO -->
+        <div class="container text-center bienve-usuario" data-aos="fade-down">
+
+            <h1
+                class="bienve-titulo"
+                data-es="¡Bienvenido!"
+                data-na="¡Ximopanolti!">
+
+                ¡Bienvenido!
+
+            </h1>
+
+            <h3
+                class="bienve-nombre"
+                id="nombreUsuario">
+
+                [Nombre del usuario]
+
+            </h3>
+
+        </div>
+
+        <div class="bienve-panel py-5">
+
+            <div class="container">
+
+                <div class="row justify-content-center align-items-center g-4">
+
+                    <!-- IZQUIERDA -->
+                    <div class="col-12 col-lg-4 order-1 bienve-columna">
+
+                        <div class="d-flex flex-column gap-5">
+
+                            <!-- LECCIONES -->
+                            <button onclick="window.location.href='Lecciones.html'" class="bienve-card bienve-lecciones">
+
+                                <i class="bi bi-book-fill bienve-bg-icon"></i>
+
+                                <div class="bienve-icon">
+                                    <i class="bi bi-book-fill"></i>
+                                </div>
+
+                                <div>
+                                    <h4
+                                        data-es="Lecciones"
+                                        data-na="Temachtilli">
+                                        Lecciones
+                                    </h4>
+                                </div>
+
+                            </button>
+
+                            <!-- CUENTOS -->
+                            <button onclick="window.location.href='/pages_int/Cuentos/cuentos.html'" class="bienve-card bienve-cuentos">
+
+                                <i class="bi bi-journal-richtext bienve-bg-icon"></i>
+
+                                <div class="bienve-icon">
+                                    <i class="bi bi-journal-richtext"></i>
+                                </div>
+
+                                <div>
+                                    <h4
+                                        data-es="Cuentos"
+                                        data-na="Tlahtolli">
+                                        Cuentos
+                                    </h4>
+                                </div>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <!-- MASCOTA -->
+                    <div class="col-12 col-lg-4 order-3 order-lg-2 bienve-columna">
+
+                        <div class="contenedor-mascota" data-aos="zoom-in" data-aos-duration="1000">
+
+                            <img
+                                id="nahuiFrame"
+                                class="nahui-frame"
+                                src="/Recursos/nahui/frames_nahui/ezgif-frame-001.png"
+                                alt="Nahui">
+
+                        </div>
+
+                    </div>
+
+                    <!-- DERECHA -->
+                    <div class="col-12 col-lg-4 order-2 order-lg-3 bienve-columna">
+
+                        <div class="d-flex flex-column gap-5">
+
+                            <!-- CULTURA -->
+                            <button onclick="window.location.href='cultura.html'" class="bienve-card bienve-cultura">
+
+                                <i class="bi bi-globe-americas bienve-bg-icon"></i>
+
+                                <div class="bienve-icon">
+                                    <i class="bi bi-globe-americas"></i>
+                                </div>
+
+                                <div>
+                                    <h4
+                                        data-es="Cultura"
+                                        data-na="Yancuic Tlamatiliztli">
+                                        Cultura
+                                    </h4>
+                                </div>
+
+                            </button>
+
+                            <!-- PROGRESO -->
+                            <button onclick="window.location.href='progreso.html'" class="bienve-card bienve-progreso">
+
+                                <i class="bi bi-bar-chart-fill bienve-bg-icon"></i>
+
+                                <div class="bienve-icon">
+                                    <i class="bi bi-bar-chart-fill"></i>
+                                </div>
+
+                                <div>
+                                    <h4
+                                        data-es="Progreso"
+                                        data-na="Nemiliztli">
+                                        Progreso
+                                    </h4>
+                                </div>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- BOTÓN CERRAR SESIÓN -->
+        <div class="text-center mt-5">
 
             <button
-                class="btn btn-light rounded-circle traductor-btn"
-                onclick="presenToggleMenu()"
-                data-aos="zoom-in">
+                class="btn logout-btn rounded-pill px-4 py-2"
+                data-bs-toggle="modal"
+                data-bs-target="#logoutModal">
 
-                <i class="bi bi-translate"></i>
+                <i class="bi bi-box-arrow-right me-2"></i>
+
+                <span
+                    data-es="Cerrar sesión"
+                    data-na="Kisa sesión">
+
+                    Cerrar sesión
+
+                </span>
 
             </button>
 
-            <!-- MENÚ -->
-            <div
-                class="presen-menu-int"
-                id="presenMenuIdioma">
-
-                <ul class="list-unstyled m-0">
-
-                    <li onclick="presenCambiarModo('es')">
-                        Español
-                    </li>
-
-                    <li onclick="presenCambiarModo('na')">
-                        Náhuatl
-                    </li>
-
-                    <li onclick="presenCambiarModo('es-na')">
-                        Español + Náhuatl
-                    </li>
-
-                    <li onclick="presenCambiarModo('na-es')">
-                        Náhuatl + Español
-                    </li>
-
-                </ul>
-
-            </div>
-
         </div>
 
-    </div>
-        </main>
-    </div>
-<br>
+        <!-- MODAL CERRAR SESIÓN -->
+        <div class="modal fade" id="logoutModal" tabindex="-1">
 
-<!-- BIENVENIDA USUARIO -->
-<div
-    class="container text-center bienve-usuario"
-    data-aos="fade-down">
+            <div class="modal-dialog modal-dialog-centered">
 
-    <h1
-        class="bienve-titulo"
-        data-es="¡Bienvenido!"
-        data-na="¡Ximopanolti!">
+                <div class="modal-content">
 
-        ¡Bienvenido!
+                    <div class="modal-header">
 
-    </h1>
+                        <h5
+                            class="modal-title"
+                            data-es="Confirmar cierre de sesión"
+                            data-na="Moneki tikchiwas kisa sesión">
 
-    <h3
-        class="bienve-nombre"
-        id="nombreUsuario">
+                            Confirmar cierre de sesión
 
-        [Nombre del usuario]
+                        </h5>
 
-    </h3>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal">
+                        </button>
 
-</div>
+                    </div>
 
-<div class="bienve-panel py-5">
+                    <div
+                        class="modal-body"
+                        data-es="¿Estás seguro de que deseas cerrar sesión?"
+                        data-na="¿Melawak tikneki tikisas de sesión?">
 
-    <div class="container">
+                        ¿Estás seguro de que deseas cerrar sesión?
 
-        <div class="row justify-content-center align-items-center g-4">
+                    </div>
 
-            <!-- IZQUIERDA -->
-            <div class="col-12 col-lg-4 order-1 bienve-columna">
+                    <div class="modal-footer">
 
-                <div class="d-flex flex-column gap-5">
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            data-bs-dismiss="modal">
 
-                    <!-- LECCIONES -->
-                    <button onclick="window.location.href='Lecciones.html'" class="bienve-card bienve-lecciones">
-                        
+                            <span
+                                data-es="Cancelar"
+                                data-na="Axkan">
 
-                        <i class="bi bi-book-fill bienve-bg-icon"></i>
+                                Cancelar
 
-                        <div class="bienve-icon">
-                            <i class="bi bi-book-fill"></i>
-                        </div>
+                            </span>
 
-                        <div>
-                            <h4
-                                data-es="Lecciones"
-                                data-na="Temachtilli">
-                                Lecciones
-                            </h4>
-                        </div>
+                        </button>
 
-                    </button>
+                        <button
+                            type="button"
+                            class="btn btn-danger"
+                            onclick="window.location.href='/pages_ext/home.html'">
 
-                    <!-- CUENTOS -->
-                    <button onclick="window.location.href='/pages_int/Cuentos/cuentos.html'" class="bienve-card bienve-cuentos">
+                            <i class="bi bi-door-open-fill me-2"></i>
 
-                        <i class="bi bi-journal-richtext bienve-bg-icon"></i>
+                            <span
+                                data-es="Sí, cerrar sesión"
+                                data-na="Kemaj, kisa sesión">
 
-                        <div class="bienve-icon">
-                            <i class="bi bi-journal-richtext"></i>
-                        </div>
+                                Sí, cerrar sesión
 
-                        <div>
-                            <h4
-                                data-es="Cuentos"
-                                data-na="Tlahtolli">
-                                Cuentos
-                            </h4>
-                        </div>
+                            </span>
 
-                    </button>
+                        </button>
+
+                    </div>
 
                 </div>
 
             </div>
 
-            <!-- MASCOTA -->
-            <div class="col-12 col-lg-4 order-3 order-lg-2 bienve-columna">
+        </div>
 
-                <div
-                    class="contenedor-mascota"
-                    data-aos="zoom-in"
-                    data-aos-duration="1000">
+    </main>
+
+
+    <!-- =========================================
+        FOOTER
+    ========================================= -->
+
+    <footer class="footer-main mt-5">
+
+        <div class="container py-4">
+
+            <div class="row align-items-center text-center text-md-start gy-4">
+
+                <div class="col-12 col-md-4" data-aos="fade-right">
 
                     <img
-                        id="nahuiFrame"
-                        class="nahui-frame"
-                        src="/Recursos/nahui/frames_nahui/ezgif-frame-001.png"
-                        alt="Nahui">
+                        src="/Recursos/logos/logo_completo_svg.svg"
+                        alt="Aul@Net"
+                        class="img-fluid footer-logo">
+
+                    <img
+                        src="/Recursos/logos/utp_svg.svg"
+                        alt="Aul@Net"
+                        class="img-fluid footer-logo-utp">
+
+                </div>
+
+                <!-- INFORMACIÓN -->
+                <div class="col-12 col-md-5" data-aos="fade-left">
+
+                    <p class="footer-text mb-2">
+
+                        <i class="bi bi-geo-alt-fill me-2"></i>
+
+                        Antiguo Camino a la Resurrección No. 1002-A  
+                        Zona Industrial Puebla Oriente, Puebla, México CP 72300
+
+                    </p>
+
+                    <p class="footer-text mb-0">
+
+                        <i class="bi bi-envelope-fill me-2"></i>
+
+                        <a href="mailto:aulanetoficialpue@gmail.com" class="footer-link">
+
+                            aulanetoficialpue@gmail.com
+
+                        </a>
+
+                    </p>
+
+                </div>
+
+                <!-- REDES / ENLACES -->
+                <div class="col-12 col-md-3" data-aos="fade-right">
+
+                    <div class="d-flex justify-content-center justify-content-md-end gap-3">
+
+                        <a href="https://www.utpuebla.edu.mx/" target="_blank" class="footer-social">
+
+                            <i class="bi bi-globe"></i>
+
+                        </a>
+
+                        <a href="https://www.facebook.com/profile.php?id=61589668907732" class="footer-social">
+
+                            <i class="bi bi-facebook"></i>
+
+                        </a>
+
+                        <a href="https://www.instagram.com/nahuinetof/?utm_source=ig_web_button_share_sheet" class="footer-social">
+
+                            <i class="bi bi-instagram"></i>
+
+                        </a>
+
+                        <a href="https://www.youtube.com/@AulaNetOficial" class="footer-social">
+
+                            <i class="bi bi-youtube"></i>
+
+                        </a>
+
+                    </div>
 
                 </div>
 
             </div>
 
-            <!-- DERECHA -->
-            <div class="col-12 col-lg-4 order-2 order-lg-3 bienve-columna">
+            <!-- COPYRIGHT -->
+            <hr class="footer-divider">
 
-                <div class="d-flex flex-column gap-5">
+            <div class="text-center">
 
-                    <!-- CULTURA -->
-                    <button onclick="window.location.href='cultura.html'" class="bienve-card bienve-cultura">
+                <small class="footer-copy">
 
-                        <i class="bi bi-globe-americas bienve-bg-icon"></i>
+                    © 2026 Universidad Tecnológica de Puebla.  
+                    Todos los derechos reservados.
 
-                        <div class="bienve-icon">
-                            <i class="bi bi-globe-americas"></i>
-                        </div>
-
-                        <div>
-                            <h4
-                                data-es="Cultura"
-                                data-na="Yancuic Tlamatiliztli">
-                                Cultura
-                            </h4>
-                        </div>
-
-                    </button>
-
-                    <!-- PROGRESO -->
-                    <button onclick="window.location.href='progreso.html'" class="bienve-card bienve-progreso">
-                        
-
-                        <i class="bi bi-bar-chart-fill bienve-bg-icon"></i>
-
-                        <div class="bienve-icon">
-                            <i class="bi bi-bar-chart-fill"></i>
-                        </div>
-
-                        <div>
-                            <h4
-                                data-es="Progreso"
-                                data-na="Nemiliztli">
-                                Progreso
-                            </h4>
-                        </div>
-
-                    </button>
-
-                </div>
+                </small>
 
             </div>
 
         </div>
 
-    </div>
+    </footer>
 
-</div>
-
-            <!-- BOTÓN CERRAR SESIÓN -->
-                <div class="text-center mt-5 ">
-
-                    <button
-                        class="btn logout-btn rounded-pill px-4 py-2"
-                        data-bs-toggle="modal"
-                        data-bs-target="#logoutModal">
-
-                        <i class="bi bi-box-arrow-right me-2"></i>
-
-                        <span
-                            data-es="Cerrar sesión"
-                            data-na="Kisa sesión">
-
-                            Cerrar sesión
-
-                        </span>
-
-                    </button>
-
-                </div>
-                <!-- MODAL CERRAR SESIÓN -->
-                <div
-                    class="modal fade"
-                    id="logoutModal"
-                    tabindex="-1">
-
-                    <div class="modal-dialog modal-dialog-centered">
-
-                        <div class="modal-content">
-
-                            <div class="modal-header">
-
-                                <h5
-                                    class="modal-title"
-                                    data-es="Confirmar cierre de sesión"
-                                    data-na="Moneki tikchiwas kisa sesión">
-
-                                    Confirmar cierre de sesión
-
-                                </h5>
-
-                                <button
-                                    type="button"
-                                    class="btn-close"
-                                    data-bs-dismiss="modal">
-                                </button>
-
-                            </div>
-
-                            <div
-                                class="modal-body"
-                                data-es="¿Estás seguro de que deseas cerrar sesión?"
-                                data-na="¿Melawak tikneki tikisas de sesión?">
-
-                                ¿Estás seguro de que deseas cerrar sesión?
-
-                            </div>
-
-                            <div class="modal-footer">
-
-                                <button
-                                    type="button"
-                                    class="btn btn-secondary"
-                                    data-bs-dismiss="modal">
-
-                                    <span
-                                        data-es="Cancelar"
-                                        data-na="Axkan">
-
-                                        Cancelar
-
-                                    </span>
-
-                                </button>
-
-                                <button
-                                    type="button"
-                                    class="btn btn-danger"
-                                    onclick="window.location.href='/pages_ext/home.html'"">
-
-                                    <i class="bi bi-door-open-fill me-2"></i>
-
-                                    <span
-                                        data-es="Sí, cerrar sesión"
-                                        data-na="Kemaj, kisa sesión">
-
-                                        Sí, cerrar sesión
-
-                                    </span>
-
-                                </button>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <!-- =========================================
-                FOOTER
-            ========================================= -->
-
-            <footer class="footer-main mt-5">
-
-                <div class="container py-4">
-
-                    <div class="row align-items-center text-center text-md-start gy-4">
-
-
-                        <div class="col-12 col-md-4"
-                        data-aos="fade-right">
-
-                            <img
-                                src="/Recursos/logos/logo_completo_svg.svg"
-                                alt="Aul@Net"
-                                class="img-fluid footer-logo">
-
-
-                             <img
-                                src="/Recursos/logos/utp_svg.svg"
-                                alt="Aul@Net"
-                                class="img-fluid footer-logo-utp">
-
-  
-
-                        </div>
-
-                        <!-- INFORMACIÓN -->
-
-                        <div class="col-12 col-md-5"
-                        data-aos="fade-left">
-
-                            <p class="footer-text mb-2">
-
-                                <i class="bi bi-geo-alt-fill me-2"></i>
-
-                                Antiguo Camino a la Resurrección No. 1002-A  
-                                Zona Industrial Puebla Oriente, Puebla, México CP 72300
-
-                            </p>
-
-                            <p class="footer-text mb-0">
-
-                                <i class="bi bi-envelope-fill me-2"></i>
-
-                                <a
-                                    href="mailto:aulanetoficialpue@gmail.com"
-                                    class="footer-link">
-
-                                    aulanetoficialpue@gmail.com
-
-                                </a>
-
-                            </p>
-
-                        </div>
-
-                        <!-- REDES / ENLACES -->
-
-                        <div class="col-12 col-md-3"
-                        data-aos="fade-right">
-
-                            <div
-                                class="d-flex justify-content-center justify-content-md-end gap-3">
-
-                                <a
-                                    href="https://www.utpuebla.edu.mx/"
-                                    target="_blank"
-                                    class="footer-social">
-
-                                    <i class="bi bi-globe"></i>
-
-                                </a>
-
-                                <a
-                                    href="https://www.facebook.com/profile.php?id=61589668907732"
-                                    class="footer-social">
-
-                                    <i class="bi bi-facebook"></i>
-
-                                </a>
-
-                                <a
-                                    href="https://www.instagram.com/nahuinetof/?utm_source=ig_web_button_share_sheet"
-                                    class="footer-social">
-
-                                    <i class="bi bi-instagram"></i>
-
-                                </a>
-
-                                <a
-                                    href="https://www.youtube.com/@AulaNetOficial"
-                                    class="footer-social">
-
-                                    <i class="bi bi-youtube"></i>
-
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <!-- COPYRIGHT -->
-
-                    <hr class="footer-divider" >
-
-                    <div class="text-center">
-
-                        <small class="footer-copy" >
-
-                            © 2026 Universidad Tecnológica de Puebla.  
-                            Todos los derechos reservados.
-
-                        </small>
-
-                    </div>
-
-                </div>
-
-            </footer>
 
     <!-- =================================================== -->
     <!-- COMPONENTE FLOTANTE: CHAT DE IA (AMIGO NAHUI)       -->
