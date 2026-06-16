@@ -356,7 +356,7 @@
 
             <i
                 id="iconoVisibilidad"
-                class="bi bi-eye-fill">
+                class="bi bi-lightbulb">
 
             </i>
 
@@ -649,21 +649,34 @@
 
     <!-- Sopa de Letras -->
     <script>
-        function toggleVisibilidad(){
+        let encendido = false;
+
+function toggleVisibilidad() {
 
     const tarjeta = document.getElementById("tarjetaInfo");
+    const icono = document.getElementById("iconoVisibilidad");
+    const boton = document.getElementById("btnVisibilidad");
 
-    if(tarjeta.style.display === "none"){
+    encendido = !encendido;
+
+    if (encendido) {
 
         tarjeta.style.display = "block";
 
-    }else{
+        icono.className = "bi bi-lightbulb-fill";
+        boton.classList.add("encendido");
+
+    } else {
 
         tarjeta.style.display = "none";
 
-    }
+        icono.className = "bi bi-lightbulb";
+        boton.classList.remove("encendido");
 
     }
+}
+
+    
 
 </script>
 

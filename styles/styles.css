@@ -2170,6 +2170,17 @@ body{
 
 /* HERO */
 
+.visibility-btn {
+    width: 65px;
+    height: 65px;
+    transition: all 0.3s ease;
+}
+
+.visibility-btn.encendido {
+    box-shadow: 0 0 20px #ffd700,
+                0 0 40px #ffd700;
+}
+
 .hero-card{
     background:#12472b;
     backdrop-filter:blur(10px);
