@@ -231,194 +231,7 @@ document.addEventListener(
     }
 );
 
-// =====================================
-// MOSTRAR PAGINAS
-// =====================================
 
-function showPage(page){
-
-    document
-        .querySelectorAll(".page-section")
-        .forEach(section => {
-
-            section.classList.add("hidden");
-
-        });
-
-    document
-        .getElementById(`page-${page}`)
-        .classList.remove("hidden");
-}
-
-// =====================================
-// OBTENER CATEGORIAS
-// =====================================
-
-async function obtenerCategorias(){
-
-    try{
-
-        const response = await fetch(
-            "php/obtener_categorias.php"
-        );
-
-        const categorias = await response.json();
-
-        renderCategorias(categorias);
-
-    }catch(error){
-
-        console.log(error);
-
-    }
-}
-
-// =====================================
-// RENDER CATEGORIAS
-// =====================================
-
-function renderCategorias(categorias){
-
-    const container =
-        document.getElementById("modules-grid");
-
-    container.innerHTML = "";
-
-    categorias.forEach(categoria => {
-
-        container.innerHTML += `
-
-            <div class="col-12 col-md-6 col-lg-3">
-
-                <div
-                    onclick="obtenerMisiones(${categoria.idcategoria})"
-                    class="lesson-card card border-0 shadow-lg h-100 overflow-hidden cursor-pointer">
-
-                    <div
-                        class="bg-success text-white text-center p-4">
-
-                        <img
-                            src="${categoria.imagen}"
-                            class="rounded-circle mb-3 object-fit-cover"
-                            style="
-                                width:100px;
-                                height:100px;
-                                object-fit:cover;
-                            ">
-
-                        <h3
-                            class="fw-bold fs-4">
-
-                            ${categoria.nombre_esp}
-
-                        </h3>
-
-                        <p class="small mt-2 mb-0">
-
-                            ${categoria.descripcion_esp}
-
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        `;
-    });
-}
-
-// =====================================
-// OBTENER MISIONES
-// =====================================
-
-async function obtenerMisiones(idcategoria){
-
-    try{
-
-        const response = await fetch(
-            `php/obtener_misiones.php?idcategoria=${idcategoria}`
-        );
-
-        const misiones = await response.json();
-
-        renderMisiones(misiones);
-
-        showPage("missions");
-
-    }catch(error){
-
-        console.log(error);
-
-    }
-}
-
-// =====================================
-// RENDER MISIONES
-// =====================================
-
-function renderMisiones(misiones){
-
-    const container =
-        document.getElementById("missions-container");
-
-    container.innerHTML = "";
-
-    misiones.forEach(mision => {
-
-        container.innerHTML += `
-
-            <div
-                class="card border-0 shadow-lg rounded-4 p-4 mb-4">
-
-                <div
-                    class="row align-items-center g-4">
-
-                    <div class="col-12 col-md-3 text-center">
-
-                        <img
-                            src="${mision.imagen}"
-                            class="img-fluid rounded-4"
-                            style="
-                                width:140px;
-                                height:140px;
-                                object-fit:cover;
-                            ">
-
-                    </div>
-
-                    <div class="col-12 col-md-9">
-
-                        <h2
-                            class="fw-bold text-success">
-
-                            ${mision.nombre_esp}
-
-                        </h2>
-
-                        <h3
-                            class="fw-bold text-warning">
-
-                            ${mision.nombre_nah}
-
-                        </h3>
-
-                        <p class="text-secondary mt-3">
-
-                            ${mision.descripcion_esp}
-
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        `;
-    });
-}
 
 /*Scroll en header animacion*/
 
@@ -1123,4 +936,318 @@ function enviarMensajeIA(event) {
         chatBody.appendChild(nahuiDiv);
         chatBody.scrollTop = chatBody.scrollHeight;
     }, 1500); // 1.5 segundos de retraso para simular pensamiento
+}
+
+
+
+
+
+
+
+
+// =====================================
+// ENRUTADOR VISTAS: MOSTRAR PAGINAS
+// =====================================
+
+function showPage(page) {
+    document.querySelectorAll(".page-section").forEach(section => {
+        section.classList.add("hidden");
+    });
+
+    const targetPage = document.getElementById(`page-${page}`);
+    if (targetPage) {
+        targetPage.classList.remove("hidden");
+    }
+
+    if (page === 'modules') {
+        obtenerCategorias();
+    }
+
+    const navbarCollapse = document.getElementById("menuNavbar");
+    if (navbarCollapse && navbarCollapse.classList.contains("show")) {
+        const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+        if (bsCollapse) bsCollapse.hide();
+    }
+}
+
+
+// =====================================
+// OBTENER CATEGORIAS
+// =====================================
+
+async function obtenerCategorias() {
+    try {
+        const response = await fetch("../php/obtener_categorias.php");
+        const categories = await response.json();
+
+        renderCategorias(categories);
+
+        const idiomaGuardado = localStorage.getItem("idiomaSeleccionado");
+        if (idiomaGuardado) presenCambiarModo(idiomaGuardado);
+
+    } catch (error) {
+        console.error("Error obteniendo categorías:", error);
+    }
+}
+
+
+// =====================================
+// RENDER CATEGORIAS
+// =====================================
+
+function renderCategorias(categorias) {
+    const container = document.getElementById("modules-grid");
+    if (!container) return;
+
+    container.innerHTML = "";
+
+    categorias.forEach(categoria => {
+        const rtaImagen = categoria.imagen.includes('../') ? categoria.imagen : `../Recursos/logos_lecciones/${categoria.imagen}`;
+        
+        container.innerHTML += `
+            <div class="col-12 col-md-6 col-lg-3">
+                <div onclick="obtenerMisiones(${categoria.idcategoria})"
+                     class="lesson-card card border-0 shadow-lg h-100 overflow-hidden cursor-pointer">
+                    <div class="bg-success text-white text-center p-4">
+                        <img src="${rtaImagen}"
+                             class="rounded-circle mb-3"
+                             style="width:100px; height:100px; object-fit:cover;">
+                        <h3 class="fw-bold fs-4">${categoria.nombre_esp}</h3>
+                        <p class="small mt-2 mb-0">${categoria.descripcion_esp}</p>
+                    </div>
+                </div>
+            </div>
+        `;
+    });
+}
+
+
+// =====================================
+// Lecciones
+// =====================================
+
+// =====================================
+// OBTENER MISIONES
+// =====================================
+
+async function obtenerMisiones(idcategoria) {
+    try {
+        const response = await fetch(`../php/obtener_misiones.php?idcategoria=${idcategoria}`);
+        const misiones = await response.json();
+
+        renderMisiones(misiones);
+        showPage("missions");
+
+    } catch (error) {
+        console.error("Error obteniendo misiones:", error);
+    }
+}
+
+
+// =====================================
+// RENDER MISIONES (CORREGIDO)
+// =====================================
+
+function renderMisiones(misiones) {
+    const container = document.getElementById("missions-container");
+    if (!container) return;
+
+    container.innerHTML = "";
+
+    misiones.forEach(mision => {
+        // Escapamos strings para evitar rupturas en el HTML estructurado
+        const nombreEspEscapado = mision.nombre_esp.replace(/'/g, "\\'").replace(/"/g, '&quot;');
+        const nombreNahEscapado = mision.nombre_nah.replace(/'/g, "\\'").replace(/"/g, '&quot;');
+        const descEspEscapada = mision.descripcion_esp.replace(/'/g, "\\'").replace(/"/g, '&quot;');
+        const descNahEscapada = mision.descripcion_nah ? mision.descripcion_nah.replace(/'/g, "\\'").replace(/"/g, '&quot;') : '';
+        
+        // CORRECCIÓN: Escapamos y empaquetamos de forma segura la nueva columna de la BD
+        const contextoEspEscapado = mision.contexto_esp ? mision.contexto_esp.replace(/'/g, "\\'").replace(/"/g, '&quot;') : '';
+
+        const rtaMisionImg = mision.imagen.includes('../') ? mision.imagen : `../Recursos/${mision.imagen}`;
+
+        container.innerHTML += `
+            <div class="card border-0 shadow-lg rounded-4 p-4 mb-4 cursor-pointer mission-clickable-card"
+                 data-idmision="${mision.idmision}"
+                 data-nombre-esp="${nombreEspEscapado}"
+                 data-nombre-nah="${nombreNahEscapado}"
+                 data-desc-esp="${descEspEscapada}"
+                 data-desc-nah="${descNahEscapada}"
+                 data-contexto-esp="${contextoEspEscapado}"> <div class="row align-items-center g-4">
+                    <div class="col-12 col-md-3 text-center">
+                        <img src="${rtaMisionImg}"
+                             class="img-fluid rounded-4"
+                             style="width:140px; height:140px; object-fit:cover;">
+                    </div>
+                    <div class="col-12 col-md-9">
+                        <h2 class="fw-bold text-success">${mision.nombre_esp}</h2> 
+                        <h3 class="fw-bold text-warning">${mision.nombre_nah}</h3> 
+                        <p class="text-secondary mt-3">${mision.descripcion_esp}</p>
+                    </div>
+                </div>
+            </div>
+        `;
+    });
+}
+
+
+// =====================================
+// CONTROLADOR: VER CONTEXTO DE LA MISIÓN (CORREGIDO)
+// =====================================
+
+function verContextoMision(idmision, nombreEsp, nombreNah, contextoEsp, descNah) {
+    if (!idmision) return;
+
+    const titleEs = document.getElementById("context-title-es");
+    const titleNa = document.getElementById("context-title-na");
+    const descEs = document.getElementById("context-desc-es");
+    const descNa = document.getElementById("context-desc-na");
+
+    if (titleEs) titleEs.textContent = nombreEsp;
+    if (titleNa) titleNa.textContent = nombreNah;
+    
+    // SOLUCIÓN DEFINITIVA: Vaciamos por completo estas etiquetas para que la 
+    // descripción exterior no se pinte adentro y evitemos la duplicidad de pantallas
+    if (descEs) descEs.textContent = ""; 
+    if (descNa) descNa.textContent = "";
+
+    const vocabContainer = document.getElementById("context-vocabulario");
+    if (vocabContainer) {
+        vocabContainer.innerHTML = `
+            <div class="text-center py-4 bg-light rounded-4 text-dark p-3">
+                <i class="bi bi-info-circle-fill text-success fs-1"></i>
+                <p class="fw-bold mt-3 fs-5">¡Prepárate para el desafío!</p>
+                
+                <p class="text-secondary px-3 mb-0">${contextoEsp}</p>
+            </div>
+        `;
+    }
+
+    const actionsContainer = document.getElementById("context-actions");
+    if (actionsContainer) {
+        const nombreSeguro = nombreEsp.replace(/'/g, "\\'");
+        actionsContainer.innerHTML = `
+            <button onclick="iniciarCuestionario(${idmision}, '${nombreSeguro}')" 
+                    class="btn btn-warning text-dark fw-bold rounded-pill px-5 py-3 fs-5 shadow w-100 transition-all">
+                Iniciar Evaluación <i class="bi bi-lightning-charge-fill ms-2"></i>
+            </button>
+        `;
+    }
+
+    showPage("context");
+}
+
+
+// =====================================
+// CONTROLADOR INTERACTIVO DEL QUIZ
+// =====================================
+
+async function iniciarCuestionario(idmision, nombreMision) {
+    try {
+        const response = await fetch(`../php/obtener_preguntas.php?idmision=${idmision}`);
+        preguntasMisionActual = await response.json();
+
+        if (!preguntasMisionActual || preguntasMisionActual.length === 0) {
+            alert("¡Hola! Muy pronto se cargarán las preguntas asignadas a esta misión en la base de datos.");
+            return;
+        }
+
+        indicePreguntaActual = 0;
+        respuestasCorrectasTotales = 0;
+        
+        const quizTitle = document.getElementById("quiz-mision-title");
+        const qContainer = document.getElementById("quiz-question-container");
+        const rContainer = document.getElementById("quiz-results-container");
+
+        if (quizTitle) quizTitle.textContent = nombreMision;
+        if (qContainer) qContainer.classList.remove("hidden");
+        if (rContainer) rContainer.classList.add("hidden");
+
+        mostrarPreguntaActual();
+        showPage("quiz");
+
+    } catch (error) {
+        console.error("Error obteniendo reactivos del cuestionario:", error);
+    }
+}
+
+function mostrarPreguntaActual() {
+    const totalPreguntas = preguntasMisionActual.length;
+    const pregunta = preguntasMisionActual[indicePreguntaActual];
+
+    const progressText = document.getElementById("quiz-progress-text");
+    const progressBar = document.getElementById("quiz-progress-bar");
+    const questionText = document.getElementById("quiz-question-text");
+    const opcionesContainer = document.getElementById("quiz-options-container");
+
+    if (progressText) progressText.textContent = `Pregunta ${indicePreguntaActual + 1} de ${totalPreguntas}`;
+    if (progressBar) {
+        const porcentajeProgreso = (indicePreguntaActual / totalPreguntas) * 100;
+        progressBar.style.width = `${porcentajeProgreso}%`;
+    }
+    if (questionText) questionText.textContent = pregunta.pregunta;
+    if (!opcionesContainer) return;
+    
+    opcionesContainer.innerHTML = "";
+
+    const opciones = [
+        { texto: pregunta.opcion_correcta, esCorrecta: true },
+        { texto: pregunta.opcion_b, esCorrecta: false },
+        { texto: pregunta.opcion_c, esCorrecta: false }
+    ];
+    
+    // Mezclar las respuestas aleatoriamente
+    opciones.sort(() => Math.random() - 0.5);
+
+    opciones.forEach(opcion => {
+        const btn = document.createElement("button");
+        btn.className = "btn btn-outline-success text-start p-3 rounded-3 fs-5 fw-medium shadow-sm option-btn w-100 style-leccion-btn";
+        btn.textContent = opcion.texto;
+        btn.onclick = () => verificarRespuestaUsuario(opcion.esCorrecta, btn);
+        opcionesContainer.appendChild(btn);
+    });
+}
+
+function verificarRespuestaUsuario(esCorrecta, botonPresionado) {
+    const botones = document.querySelectorAll(".option-btn");
+    botones.forEach(b => b.disabled = true);
+
+    if (esCorrecta) {
+        botonPresionado.classList.replace("btn-outline-success", "btn-success");
+        respuestasCorrectasTotales++;
+    } else {
+        botonPresionado.classList.replace("btn-outline-success", "btn-danger");
+        botones.forEach(b => {
+            if (b.textContent === preguntasMisionActual[indicePreguntaActual].opcion_correcta) {
+                b.classList.replace("btn-outline-success", "btn-success");
+            }
+        });
+    }
+
+    setTimeout(() => {
+        indicePreguntaActual++;
+        if (indicePreguntaActual < preguntasMisionActual.length) {
+            mostrarPreguntaActual();
+        } else {
+            finalizarCuestionario();
+        }
+    }, 1400);
+}
+
+function finalizarCuestionario() {
+    const progressBar = document.getElementById("quiz-progress-bar");
+    const progressText = document.getElementById("quiz-progress-text");
+    const qContainer = document.getElementById("quiz-question-container");
+    const scoreTexto = document.getElementById("quiz-results-score");
+    const rContainer = document.getElementById("quiz-results-container");
+
+    if (progressBar) progressBar.style.width = "100%";
+    if (progressText) progressText.textContent = "¡Terminado!";
+    if (qContainer) qContainer.classList.add("hidden");
+    
+    if (scoreTexto) {
+        scoreTexto.textContent = `Lograste contestar de forma correcta ${respuestasCorrectasTotales} de ${preguntasMisionActual.length} reactivos. ¡Buen trabajo practicando tu náhuatl!`;
+    }
+    
+    if (rContainer) rContainer.classList.remove("hidden");
 }
