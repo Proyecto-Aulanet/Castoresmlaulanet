@@ -1545,7 +1545,7 @@ body{
         transform:translateY(0);
 
     }
-
+}
 
 /* =========================
   Login - inicio
@@ -1557,9 +1557,7 @@ body{
 /* ===================================== */
 
 .register-container{
-
     margin-top:130px;
-
 }
 
 .register-card{
