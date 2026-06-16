@@ -26,9 +26,91 @@
 
 </head>
 
+
 <body>
 
-    <div id="app" class="w-full min-h-full flex flex-col">
+    <!-- ========================= -->
+    <!-- FONDO DECORATIVO -->
+    <!-- ========================= -->
+
+    <div class="fondo-aulanet">
+
+        <!-- LIBRO -->
+
+        <svg class="libro-fondo" viewBox="0 0 512 512">
+
+            <path
+                d="M256 120
+                   C220 90 150 85 100 110
+                   L100 380
+                   C150 355 220 360 256 390
+                   C292 360 362 355 412 380
+                   L412 110
+                   C362 85 292 90 256 120Z"
+                fill="none"
+                stroke="white"
+                stroke-width="6"
+                opacity=".06"/>
+
+            <line
+                x1="256"
+                y1="120"
+                x2="256"
+                y2="390"
+                stroke="white"
+                stroke-width="4"
+                opacity=".06"/>
+
+        </svg>
+
+        <!-- ENGRANAJES -->
+
+        <svg class="engranaje engranaje1" viewBox="0 0 24 24">
+            <path fill="white"
+                d="M19.14,12.94a7.48,7.48,0,0,0,.05-.94a7.48,7.48,0,0,0-.05-.94l2.03-1.58a.5.5,0,0,0,.12-.64l-1.92-3.32a.5.5,0,0,0-.61-.22l-2.39.96a7.28,7.28,0,0,0-1.63-.94L14.5,2.81a.5.5,0,0,0-.5-.41H10a.5.5,0,0,0-.5.41L9.12,5.32a7.28,7.28,0,0,0-1.63.94L5.1,5.3a.5.5,0,0,0-.61.22L2.57,8.84a.5.5,0,0,0,.12.64L4.72,11.06a7.48,7.48,0,0,0-.05.94a7.48,7.48,0,0,0,.05.94L2.69,14.52a.5.5,0,0,0-.12.64l1.92,3.32a.5.5,0,0,0,.61.22l2.39-.96a7.28,7.28,0,0,0,1.63.94l.38,2.51a.5.5,0,0,0,.5.41h4a.5.5,0,0,0,.5-.41l.38-2.51a7.28,7.28,0,0,0,1.63-.94l2.39.96a.5.5,0,0,0,.61-.22l1.92-3.32a.5.5,0,0,0-.12-.64Z"/>
+        </svg>
+
+        <svg class="engranaje engranaje2" viewBox="0 0 24 24">
+            <path fill="white"
+                d="M19.14,12.94a7.48,7.48,0,0,0,.05-.94a7.48,7.48,0,0,0-.05-.94l2.03-1.58a.5.5,0,0,0,.12-.64l-1.92-3.32a.5.5,0,0,0-.61-.22l-2.39.96a7.28,7.28,0,0,0-1.63-.94L14.5,2.81a.5.5,0,0,0-.5-.41H10a.5.5,0,0,0-.5.41L9.12,5.32a7.28,7.28,0,0,0-1.63.94L5.1,5.3a.5.5,0,0,0-.61.22L2.57,8.84a.5.5,0,0,0,.12.64L4.72,11.06a7.48,7.48,0,0,0-.05.94a7.48,7.48,0,0,0,.05.94L2.69,14.52a.5.5,0,0,0-.12.64l1.92,3.32a.5.5,0,0,0,.61.22l2.39-.96a7.28,7.28,0,0,0,1.63.94l.38,2.51a.5.5,0,0,0,.5.41h4a.5.5,0,0,0,.5-.41l.38-2.51a7.28,7.28,0,0,0,1.63-.94l2.39.96a.5.5,0,0,0,.61-.22l1.92-3.32a.5.5,0,0,0-.12-.64Z"/>
+        </svg>
+
+        <!-- PARTICULAS -->
+
+        <div class="particulas">
+
+            <span class="particula verde"></span>
+            <span class="particula azul"></span>
+            <span class="particula amarillo"></span>
+            <span class="particula naranja"></span>
+            <span class="particula blanco"></span>
+            <span class="particula verde"></span>
+            <span class="particula azul"></span>
+            <span class="particula amarillo"></span>
+            <span class="particula naranja"></span>
+            <span class="particula blanco"></span>
+
+            <span class="particula verde"></span>
+            <span class="particula azul"></span>
+            <span class="particula amarillo"></span>
+            <span class="particula naranja"></span>
+            <span class="particula blanco"></span>
+
+            <span class="particula verde"></span>
+            <span class="particula azul"></span>
+            <span class="particula amarillo"></span>
+            <span class="particula naranja"></span>
+            <span class="particula blanco"></span>
+
+            <span class="particula verde"></span>
+            <span class="particula azul"></span>
+            <span class="particula amarillo"></span>
+            <span class="particula naranja"></span>
+            <span class="particula blanco"></span>
+
+        </div>
+
+    </div>      
 
 <!-- HEADER -->
 <header
@@ -57,50 +139,60 @@
 
 </header>
 
-                    <div class="d-flex justify-content-end w-100">
+<!-- MAIN -->
+<main class="container py-5">
 
-                        <div class="presen-traductor">
+    
 
-                            <!-- BOTÓN -->
-                            <button
-                                class="btn rounded-circle traductor-btn"
-                                onclick="presenToggleMenu()"
-                                data-aos="zoom-in">
+    <!-- BOTONES SUPERIORES -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
 
-                                <i class="bi bi-translate"></i>
 
-                            </button>
+        <!-- BOTÓN TRADUCTOR -->
+        <div class="presen-traductor-int">
 
-                            <!-- MENÚ -->
-                            <div
-                                class="presen-menu"
-                                id="presenMenuIdioma">
+            <button
+                class="btn btn-light rounded-circle traductor-btn"
+                onclick="presenToggleMenu()"
+                data-aos="zoom-in">
 
-                                <ul class="list-unstyled m-0">
+                <i class="bi bi-translate"></i>
 
-                                    <li onclick="presenCambiarModo('es')">
-                                        Español
-                                    </li>
+            </button>
 
-                                    <li onclick="presenCambiarModo('na')">
-                                        Náhuatl
-                                    </li>
+            <!-- MENÚ -->
+            <div
+                class="presen-menu-int"
+                id="presenMenuIdioma">
 
-                                    <li onclick="presenCambiarModo('es-na')">
-                                        Español + Náhuatl
-                                    </li>
+                <ul class="list-unstyled m-0">
 
-                                    <li onclick="presenCambiarModo('na-es')">
-                                        Náhuatl + Español
-                                    </li>
+                    <li onclick="presenCambiarModo('es')">
+                        Español
+                    </li>
 
-                                </ul>
+                    <li onclick="presenCambiarModo('na')">
+                        Náhuatl
+                    </li>
 
-                            </div>
+                    <li onclick="presenCambiarModo('es-na')">
+                        Español + Náhuatl
+                    </li>
 
-                        </div>
+                    <li onclick="presenCambiarModo('na-es')">
+                        Náhuatl + Español
+                    </li>
 
-                    </div>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+        </main>
+    </div>
+
 
 <!-- ===================================== -->
 <!--           CREAR CUENTA                -->
@@ -127,7 +219,7 @@
                     <!-- REGRESAR -->
 
                     <button
-                        onclick="showPage('home.html')"
+                        onclick="window.location.href='home.html'"
                         class="btn register-back-btn rounded-pill">
 
                         <i class="bi bi-arrow-left-circle-fill me-2"></i>
@@ -484,7 +576,8 @@
 
                         <button
                             type="submit"
-                            class="btn register-btn btn-lg rounded-pill px-5">
+                            class="btn register-btn btn-lg rounded-pill px-5
+                            onclick="window.location.href='/pages_int/inicio.html'>
 
                             <i class="bi bi-person-plus-fill me-2"></i>
 
@@ -515,7 +608,7 @@
             data-aos="fade-right">
 
             <button
-                onclick="showPage('home')"
+                onclick="window.location.href='home.html'"
                 class="btn-regresar-int">
 
                 <i class="bi bi-arrow-left-circle-fill me-2"></i>
