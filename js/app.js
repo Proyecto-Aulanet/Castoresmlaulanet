@@ -1251,3 +1251,456 @@ function finalizarCuestionario() {
     
     if (rContainer) rContainer.classList.remove("hidden");
 }
+
+//==================
+// Perfil
+//==================
+
+//==================
+// IDIOMA
+//==================
+
+function perfilprinTexto(es, na){
+
+const idioma =
+localStorage.getItem("idiomaSeleccionado")
+||
+localStorage.getItem("idioma")
+||
+"es";
+
+return idioma.toLowerCase() === "na"
+? na
+: es;
+
+}
+
+let abiertas = false;
+
+function perfilprinMostrarMasMedallas() {
+
+    const extras =
+        document.querySelectorAll(
+            ".perfilprin-medalla-extra"
+        );
+
+    abiertas = !abiertas;
+
+    extras.forEach(e => {
+
+        e.classList.toggle("d-none");
+
+    });
+
+    document.getElementById(
+        "btnVerMas"
+    ).innerHTML = abiertas
+
+        ? "Ver menos"
+
+        : "Ver más";
+
+}
+
+
+
+//==================
+// EDITAR INFO
+//==================
+
+function perfilprinEditarInformacion(){
+
+Swal.fire({
+
+title:
+
+perfilprinTexto(
+"¿Editar contraseña?",
+"¿Tikpatlas tlatzakuilli?"
+),
+
+text:
+
+perfilprinTexto(
+"Solo podrás modificar la contraseña",
+"San huel tikpatlas motlatzakuilli"
+),
+
+icon:"question",
+
+showCancelButton:true,
+
+confirmButtonText:
+
+perfilprinTexto(
+"Editar",
+"Xikpatla"
+),
+
+cancelButtonText:
+
+perfilprinTexto(
+"Cancelar",
+"Xikmokuepa"
+),
+
+confirmButtonColor:"#2ebc68"
+
+})
+
+.then(r=>{
+
+if(r.isConfirmed){
+
+const input=
+
+document.getElementById(
+"perfilprinPassword"
+);
+
+input.disabled=false;
+
+input.focus();
+
+document
+.getElementById(
+"perfilprinGuardar"
+)
+.classList
+.remove(
+"d-none"
+);
+
+}
+
+});
+
+}
+
+
+
+//==================
+// GUARDAR
+//==================
+
+function perfilprinGuardarInformacion(){
+
+const pass=
+
+document
+.getElementById(
+"perfilprinPassword"
+)
+.value;
+
+if(pass.length<6){
+
+Swal.fire({
+
+icon:"warning",
+
+title:
+
+perfilprinTexto(
+"Contraseña inválida",
+"Tlatzakuilli amo kuali"
+),
+
+text:
+
+perfilprinTexto(
+"Mínimo 6 caracteres",
+"Xikpia chikuasen caracteres"
+
+)
+
+});
+
+return;
+
+}
+
+Swal.fire({
+
+title:
+
+perfilprinTexto(
+"¿Guardar cambios?",
+"¿Tikpiyawas tlamantli?"
+),
+
+icon:"question",
+
+showCancelButton:true,
+
+confirmButtonText:
+
+perfilprinTexto(
+"Guardar",
+"Xikpiyawa"
+),
+
+cancelButtonText:
+
+perfilprinTexto(
+"Cancelar",
+"Xikmokuepa"
+),
+
+confirmButtonColor:"#2ebc68"
+
+})
+
+.then(r=>{
+
+if(r.isConfirmed){
+
+document
+.getElementById(
+"perfilprinPassword"
+)
+.disabled=true;
+
+document
+.getElementById(
+"perfilprinGuardar"
+)
+.classList
+.add(
+"d-none"
+);
+
+Swal.fire({
+
+icon:"success",
+
+title:
+
+perfilprinTexto(
+"Información actualizada",
+"Tlanextilistli yancuic"
+
+)
+
+});
+
+}
+
+});
+
+}
+
+
+
+//==================
+// ELIMINAR
+//==================
+
+function perfilprinEliminarCuenta(){
+
+Swal.fire({
+
+title:
+
+perfilprinTexto(
+"¿Eliminar cuenta?",
+"¿Tikpoloas cuenta?"
+),
+
+text:
+
+perfilprinTexto(
+"Esta acción no se puede deshacer",
+"Ayo huel mokuepas"
+),
+
+icon:"warning",
+
+showCancelButton:true,
+
+confirmButtonColor:"#d33",
+
+confirmButtonText:
+
+perfilprinTexto(
+"Eliminar",
+"Xikpoloa"
+),
+
+cancelButtonText:
+
+perfilprinTexto(
+"Cancelar",
+"Xikmokuepa"
+)
+
+})
+
+.then(r=>{
+
+if(r.isConfirmed){
+
+Swal.fire({
+
+icon:"success",
+
+title:
+
+perfilprinTexto(
+"Cuenta eliminada",
+"Cuenta opoliw"
+
+)
+
+});
+
+}
+
+});
+
+}
+
+
+
+//==================
+// MODAL ICONOS
+//==================
+
+let perfilprinIcono = null;
+
+
+
+function perfilprinAbrirSelectorIcono() {
+
+    const modal = new bootstrap.Modal(
+
+        document.getElementById(
+            "perfilprinModalIconos"
+        )
+
+    );
+
+    modal.show();
+
+}
+
+//==================
+// MODAL MEDALLAS
+//==================
+
+function perfilprinAbrirModalMedallas(){
+
+new bootstrap.Modal(
+
+document.getElementById(
+"perfilprinModalMedallas"
+
+)
+
+).show();
+
+}
+
+
+
+//==================
+// SELECCIÓN
+//==================
+
+document
+.querySelectorAll(
+".perfilprin-icon-grid img"
+)
+
+.forEach(img => {
+
+    img.addEventListener(
+
+        "click",
+
+        () => {
+
+            document
+            .querySelectorAll(
+                ".perfilprin-icon-grid img"
+            )
+            .forEach(i => {
+
+                i.style.border =
+
+                "4px solid transparent";
+
+            });
+
+            img.style.border =
+
+            "4px solid #2ebc68";
+
+            perfilprinIcono = img.src;
+
+        }
+
+    );
+
+});
+
+
+
+//==================
+// GUARDAR ICONO
+//==================
+
+function perfilprinGuardarIcono(){
+
+if(!perfilprinIcono){
+
+Swal.fire({
+
+icon:"warning",
+
+title:
+
+perfilprinTexto(
+"Selecciona un icono",
+"Xikpejpena se tlaixiptla"
+)
+
+});
+
+return;
+
+}
+
+document
+.getElementById(
+"perfilprinAvatar"
+)
+.src=
+
+perfilprinIcono;
+
+bootstrap
+.Modal
+.getInstance(
+
+document.getElementById(
+"perfilprinModalIconos"
+
+)
+
+).hide();
+
+Swal.fire({
+
+icon:"success",
+
+title:
+
+perfilprinTexto(
+"Icono actualizado",
+"Tlaixiptla yancuic"
+)
+
+});
+
+}
