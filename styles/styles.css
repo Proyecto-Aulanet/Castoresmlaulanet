@@ -1623,6 +1623,25 @@ body{
     font-size:.95rem;
 }
 
+
+.perfil-header button{
+    cursor:pointer;
+}
+
+.perfil-flecha{
+    font-size: .8rem;
+    transition: .3s;
+}
+
+.perfil-header.show .perfil-flecha,
+.perfil-header button[aria-expanded="true"] .perfil-flecha{
+    transform: rotate(180deg);
+}
+
+.dropdown-menu{
+    border-radius:12px;
+}
+
 @media (max-width: 991px){
 
     .perfil-header{
