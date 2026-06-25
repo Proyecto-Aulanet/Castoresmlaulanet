@@ -3227,3 +3227,230 @@ body{
     }
 
 }
+
+/* ========================= */
+/* PERFIL PRINCIPAL */
+/* ========================= */
+
+
+.perfilprin-card{
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(15px);
+padding:40px;
+border-radius:30px;
+}
+
+.perfilprin-avatar{
+width:220px;
+height:220px;
+border-radius:50%;
+object-fit:cover;
+}
+
+.perfilprin-seccion{
+background:rgba(255,255,255,.08);
+padding:30px;
+border-radius:25px;
+}
+
+.perfilprin-medallas-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(100px,1fr));
+gap:15px;
+}
+
+.perfilprin-medallas-grid img{
+width:100%;
+max-width:100px;
+margin:auto;
+}
+
+.perfilprin-icon-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:15px;
+}
+
+.perfilprin-icon-grid img{
+
+width:100px;
+height:100px;
+
+cursor:pointer;
+
+border-radius:50%;
+
+border:4px solid transparent;
+
+transition:.3s;
+
+}
+
+.perfilprin-icon-grid img:hover{
+
+border-color:#16743d;
+
+}
+
+/* MODALES */
+
+.modal-content{
+
+border-radius:25px;
+
+background:#ffffff;
+
+color:white;
+
+}
+
+.modal-header{
+
+border:none;
+
+}
+
+.modal-footer{
+
+border:none;
+
+}
+
+.btn-close{
+
+filter:invert(1);
+
+}
+
+/* CEL */
+
+@media(max-width:768px){
+
+.modal-dialog{
+
+margin:25px;
+
+}
+
+.perfilprin-icon-grid{
+
+grid-template-columns:
+repeat(2,1fr);
+
+}
+
+}
+
+/* ========================= */
+/* RESPONSIVE PERFIL */
+/* SOLO TELÉFONO */
+/* ========================= */
+
+@media (max-width:768px){
+
+/* Baja toda la card */
+
+.perfilprin-card{
+
+margin-top:120px;
+
+padding:28px;
+
+border-radius:25px;
+
+}
+
+/* Avatar */
+
+.perfilprin-avatar{
+
+width:170px;
+
+height:170px;
+
+}
+
+/* Espaciado interno */
+
+.perfilprin-seccion{
+
+padding:22px;
+
+}
+
+/* Inputs */
+
+.perfilprin-seccion input{
+
+font-size:15px;
+
+padding:12px;
+
+}
+
+/* Botones */
+
+.perfilprin-card button{
+
+width:100%;
+
+margin-top:10px;
+
+}
+
+/* Medallas */
+
+.perfilprin-medallas-grid{
+
+grid-template-columns:
+repeat(2,1fr);
+
+gap:20px;
+
+}
+
+.perfilprin-medallas-grid img{
+
+max-width:90px;
+
+}
+
+/* Iconos modal */
+
+.perfilprin-icon-grid{
+
+grid-template-columns:
+repeat(2,1fr);
+
+}
+
+.perfilprin-icon-grid img{
+
+width:85px;
+
+height:85px;
+
+}
+
+/* Texto */
+
+.perfilprin-card h2{
+
+font-size:28px;
+
+}
+
+.perfilprin-card h4{
+
+font-size:22px;
+
+}
+
+.perfilprin-card p,
+.perfilprin-card label{
+
+font-size:15px;
+
+}
+
+}

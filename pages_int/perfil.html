@@ -8,7 +8,7 @@
     <!-- RESPONSIVE -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Progreso - Castores Multilingües Aul@Net</title>
+    <title>Perfil - Castores Multilingües Aul@Net</title>
 
     <link rel="icon" href="/Recursos/nahui_caras/nahui_feliz_vector.svg" type="image/png">
 
@@ -386,279 +386,240 @@
         </div>
 
     </div>
-</main>
+        </main>
     </div>
+
+    
 <br>
 
-<!-- PERFIL + COMPARTIR -->
-<section class="container py-5 progreso-contenido">
+<!-- PERFIL -->
 
-    <div class="row g-4">
+<div class="container py-5">
 
-        <!-- ===================== -->
-        <!-- COLUMNA IZQUIERDA -->
-        <!-- ===================== -->
-        <div class="col-12 col-lg-3">
+<div class="perfilprin-card mx-auto">
 
-            <!-- PERFIL -->
-            <div
-                class="progreso-card text-center mb-4"
-                data-aos="fade-right">
+<div class="row g-5">
 
-                <div class="nivel-banner">
-                    <!-- Imagen del nivel -->
-                </div>
+<!-- PERFIL -->
 
-                <img
-                    src="/Recursos/avatar.png"
-                    class="avatar-progreso">
+<div class="col-lg-4 text-center">
 
-                <h3>Castor Experto</h3>
+<div class="perfilprin-avatar-container" data-aos="zoom-in">
 
-                <p>XP Total: 5,420</p>
+<img
+id="perfilprinAvatar"
+src="../Recursos/iconos/avatar1.png"
+class="perfilprin-avatar">
 
-                <div class="progress">
+<button
+class="btn btn-warning rounded-pill mt-4 animate__animated animate__pulse animate__infinite"
+onclick="perfilprinAbrirSelectorIcono()">
 
-                    <div
-                        class="progress-bar"
-                        style="width:65%">
+<i class="bi bi-pencil-square me-2"></i>
 
-                    </div>
+<span
+data-es="Cambiar icono"
+data-na="Xikpatla tlaixiptla">
 
-                </div>
+Cambiar icono
 
-                <small>65% al siguiente nivel</small>
+</span>
 
-            </div>
+</button>
 
-            <!-- COMPARTIR -->
-            <div
-                class="progreso-card text-center"
-                data-aos="fade-right"
-                data-aos-delay="150">
+</div>
 
-                <h4
-                    data-es="Compartir progreso"
-                    data-na="Mochiua progreso">
+<h2 class="text-white mt-4">
+Castor Usuario
+</h2>
 
-                    Compartir progreso
+<p class="text-light">
+Nivel 12
+</p>
 
-                </h4>
+</div>
 
-               <div class="d-grid gap-2">
+<!-- INFORMACIÓN -->
 
-                <button
-                    class="btn btn-success"
-                    onclick="compartirWhatsApp()">
+<div class="col-lg-8">
 
-                    <i class="bi bi-whatsapp"></i>
-                    Compartir en WhatsApp
+<div class="perfilprin-seccion">
 
-                </button>
+<div class="d-flex justify-content-between align-items-center mb-4">
 
-                <button
-                    class="btn btn-primary"
-                    onclick="compartirFacebook()">
+<h4 class="text-white">
 
-                    <i class="bi bi-facebook"></i>
-                    Compartir en Facebook
+<span
+data-es="Información"
+data-na="Tlanextilistli">
 
-                </button>
+Información
 
-                <button
-                    class="btn btn-dark"
-                    onclick="compartirX()">
+</span>
 
-                    <i class="bi bi-twitter-x"></i>
-                    Compartir en X
+</h4>
 
-                </button>
+<button
+id="perfilprinBtnEditar"
+class="btn btn-success rounded-pill"
+onclick="perfilprinEditarInformacion()">
 
-                <button
-                    class="btn btn-outline-success"
-                    onclick="descargarTarjeta()">
+<i class="bi bi-pencil-square me-2"></i>
 
-                    <i class="bi bi-download"></i>
-                    Descargar tarjeta
+<span
+data-es="Editar información"
+data-na="Xikpatla tlanextilistli">
 
-                </button>
+Editar información
 
-            </div>
+</span>
 
-            </div>
+</button>
 
-        </div>
+</div>
 
-        <!-- ===================== -->
-        <!-- COLUMNA CENTRO -->
-        <!-- ===================== -->
-        <div class="col-12 col-lg-6">
+<div class="row">
 
-            <!-- PUNTAJE SEMANAL -->
-            <div
-                class="progreso-card mb-4"
-                data-aos="fade-up">
+<div class="col-md-6 mb-3">
+<label class="text-white">Nombre</label>
+<input class="form-control" value="Julio" disabled>
+</div>
 
-            <h4
-                data-es="Puntaje semanal"
-                data-na="Motlanilistli semanalki">
+<div class="col-md-6 mb-3">
+<label class="text-white">Apellido</label>
+<input class="form-control" value="García Trinidad" disabled>
+</div>
 
-                Puntaje semanal
+<div class="col-md-6 mb-3">
+<label class="text-white">Usuario</label>
+<input class="form-control" value="castor123" disabled>
+</div>
 
-            </h4>
+<div class="col-md-6 mb-3">
+<label class="text-white">Correo</label>
+<input class="form-control" value="usuario@email.com" disabled>
+</div>
 
-                <canvas id="xpChart"></canvas>
+<div class="col-md-12">
 
-            </div>
+<label class="text-white">
 
-            <!-- EXÁMENES -->
-            <div
-                class="progreso-card"
-                data-aos="fade-up">
+<span
+data-es="Contraseña"
+data-na="Tlatzakuilli">
 
-                <div class="d-flex justify-content-between align-items-center">
+Contraseña
 
-                    <h4
-                        data-es="Exámenes"
-                        data-na="Tlatemolistli">
+</span>
 
-                        Exámenes
+</label>
 
-                    </h4>
+<input
+id="perfilprinPassword"
+type="password"
+class="form-control"
+value="123456"
+disabled>
 
-                    <button
-                        class="btn btn-success"
-                        data-bs-toggle="modal"
-                        data-bs-target="#modalExamenes">
+</div>
 
-                        Ver todos
+</div>
 
-                    </button>
+<div
+id="perfilprinGuardar"
+class="mt-4 d-none">
 
-                </div>
+<button
+class="btn btn-success rounded-pill px-5"
+onclick="perfilprinGuardarInformacion()">
 
-                <div class="camino-aprendizaje">
+<i class="bi bi-check-circle-fill me-2"></i>
 
-                    <div class="nodo completado">1</div>
+<span
+data-es="Guardar cambios"
+data-na="Xikpiyawa tlamantli">
 
-                    <div class="linea"></div>
+Guardar cambios
 
-                    <div class="nodo completado">2</div>
+</span>
 
-                    <div class="linea"></div>
+</button>
 
-                    <div class="nodo progreso">3</div>
+</div>
 
-                </div>
+</div>
 
-            </div>
+<!-- MEDALLAS -->
 
-        </div>
+<div class="perfilprin-seccion mt-4">
 
-        <!-- ===================== -->
-        <!-- COLUMNA DERECHA -->
-        <!-- ===================== -->
-        <div class="col-12 col-lg-3">
+<div class="d-flex justify-content-between">
 
-            <!-- MEDALLAS -->
-            <div
-                class="progreso-card mb-4"
-                data-aos="fade-left">
+<h4 class="text-white">
+Medallas
+</h4>
 
-                <div class="d-flex justify-content-between align-items-center">
+<button
+id="btnVerMas"
+class="btn btn-outline-light rounded-pill"
+onclick="perfilprinAbrirModalMedallas()">
 
-                    <h4
-                        data-es="Medallas"
-                        data-na="Medallas">
+Ver más
 
-                        Medallas
+</button>
 
-                    </h4>
+</div>
 
-                    <button
-                        class="btn btn-success"
-                        data-bs-toggle="modal"
-                        data-bs-target="#modalMedallas">
+<div class="perfilprin-medallas-grid mt-4">
 
-                        Ver todas
+<img src="../Recursos/medallas/medalla1.png">
+<img src="../Recursos/medallas/medalla2.png">
+<img src="../Recursos/medallas/medalla3.png">
+<img src="../Recursos/medallas/medalla4.png">
+<img src="../Recursos/medallas/medalla5.png">
 
-                    </button>
+<img class="perfilprin-medalla-extra d-none" src="../Recursos/medallas/medalla6.png">
+<img class="perfilprin-medalla-extra d-none" src="../Recursos/medallas/medalla7.png">
+<img class="perfilprin-medalla-extra d-none" src="../Recursos/medallas/medalla8.png">
+<img class="perfilprin-medalla-extra d-none" src="../Recursos/medallas/medalla9.png">
+<img class="perfilprin-medalla-extra d-none" src="../Recursos/medallas/medalla10.png">
 
-                </div>
+</div>
 
-                <div class="medallas-grid">
+</div>
 
-                    <div class="medalla-slot"></div>
-                    <div class="medalla-slot"></div>
-                    <div class="medalla-slot"></div>
-                    <div class="medalla-slot"></div>
-                    <div class="medalla-slot"></div>
-                    <div class="medalla-slot"></div>
+<div class="text-center mt-5">
 
-                </div>
+<button
+class="btn btn-danger rounded-pill px-5 py-3"
+onclick="perfilprinEliminarCuenta()">
 
-            </div>
+<i class="bi bi-trash-fill me-2"></i>
 
-            <!-- RANKING -->
-            <div
-                class="progreso-card"
-                data-aos="fade-left"
-                data-aos-delay="150">
+<span
+data-es="Eliminar cuenta"
+data-na="Xikpoloa cuenta">
 
-                <div class="d-flex justify-content-between align-items-center">
+Eliminar cuenta
 
-                    <h4
-                        data-es="Ranking"
-                        data-na="Tlatepanilistli">
+</span>
 
-                        Ranking
+</button>
 
-                    </h4>
+</div>
 
-                    <button
-                        class="btn btn-success"
-                        data-bs-toggle="modal"
-                        data-bs-target="#modalRanking">
+</div>
 
-                        Ver más
+</div>
 
-                    </button>
+</div>
 
-                </div>
-
-                <div class="ranking-item">
-
-                    🇲🇽 Julio
-                    <span>5420 XP</span>
-
-                </div>
-
-                <div class="ranking-item">
-
-                    🇺🇸 Alex
-                    <span>5310 XP</span>
-
-                </div>
-
-                <div class="ranking-item">
-
-                    🇨🇦 Emma
-                    <span>5200 XP</span>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-                <div
+        <div
             class="d-flex justify-content-start mt-5"
             data-aos="fade-right">
 
             <button
-                onclick="window.location.href='inicio.html'"
+                onclick="window.location.href='/pages_int/inicio.html'"
                 class="btn-regresar-int">
 
                 <i class="bi bi-arrow-left-circle-fill me-2"></i>
@@ -675,387 +636,161 @@
 
         </div>
 
-</section>
+</div>
 
 
+
+
+
+<!-- MODAL ICONOS -->
 
 <div
-    class="modal fade"
-    id="modalMedallas"
-    tabindex="-1">
+class="modal fade"
+id="perfilprinModalIconos"
+tabindex="-1">
 
-    <div
-        class="modal-dialog modal-xl modal-dialog-centered">
+<div class="modal-dialog modal-dialog-centered">
 
-        <div class="modal-content">
+<div class="modal-content">
 
-            <div class="modal-header">
+<!-- HEADER -->
 
-                <h5
-                    class="modal-title"
-                    data-es="Colección de Medallas"
-                    data-na="Tetlanextilli">
+<div class="modal-header">
 
-                    Colección de Medallas
+<h5
+class="modal-title"
+data-es="Seleccionar icono"
+data-na="Xikpejpena tlaixiptla">
 
-                </h5>
+Seleccionar icono
 
-                <button
-                    class="btn-close"
-                    data-bs-dismiss="modal">
-                </button>
+</h5>
 
-            </div>
+<button
+type="button"
+class="btn-close"
+data-bs-dismiss="modal">
 
-            <div class="modal-body">
-
-                <div class="row g-3">
-
-                    <!-- REPETIR 10 -->
-
-                    <div class="col-6 col-md-3">
-
-                        <div class="medalla-card">
-
-                            <img
-                                src=""
-                                class="img-fluid">
-
-                            <h6>Medalla 1</h6>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
+</button>
 
 </div>
+
+<!-- BODY -->
+
+<div class="modal-body">
+
+<div class="perfilprin-icon-grid">
+
+<img src="../Recursos/iconos/avatar1.png">
+<img src="../Recursos/iconos/avatar2.png">
+<img src="../Recursos/iconos/avatar3.png">
+<img src="../Recursos/iconos/avatar4.png">
+<img src="../Recursos/iconos/avatar5.png">
+<img src="../Recursos/iconos/avatar6.png">
+
+</div>
+
+</div>
+
+<!-- FOOTER -->
+
+<div class="modal-footer">
+
+<button
+class="btn btn-secondary"
+data-bs-dismiss="modal">
+
+Cerrar
+
+</button>
+
+<button
+class="btn btn-success"
+onclick="perfilprinGuardarIcono()">
+
+Guardar
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- MODAL MEDALLAS -->
 
 <div
-    class="modal fade"
-    id="modalExamenes">
-
-    <div
-        class="modal-dialog modal-xl">
-
-        <div class="modal-content">
-
-            <div class="modal-header">
-
-                <h5
-                    data-es="Todos los Exámenes"
-                    data-na="Tlatemolistli">
-
-                    Todos los Exámenes
-
-                </h5>
-
-                <button
-                    class="btn-close"
-                    data-bs-dismiss="modal">
-                </button>
-
-            </div>
-
-            <div class="modal-body">
-
-                <div class="camino-completo">
-
-                    <button
-                        class="btn btn-success examen-btn"
-                        onclick="abrirExamen(1)">
-
-                        Examen 1
-
-                    </button>
-
-                    <button
-                        class="btn btn-success examen-btn"
-                        onclick="abrirExamen(2)">
-
-                        Examen 2
-
-                    </button>
-
-                    <button
-                        class="btn btn-success examen-btn"
-                        onclick="abrirExamen(3)">
-
-                        Examen 3
-
-                    </button>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
+class="modal fade"
+id="perfilprinModalMedallas"
+tabindex="-1">
 
 <div
-    class="modal fade  modal-examen-detalle"
-    id="modalDetalleExamen">
+class="modal-dialog
+modal-dialog-centered
+modal-lg">
 
-    <div
-        class="modal-dialog modal-lg">
+<div class="modal-content">
 
-        <div class="modal-content">
+<div class="modal-header">
 
-            <div class="modal-header">
+<h5
+class="modal-title text-white"
+data-es="Todas las medallas"
+data-na="Nochi medallas">
 
-                <h5 id="tituloExamen">
+Todas las medallas
 
-                    Examen
+</h5>
 
-                </h5>
+<button
+type="button"
+class="btn-close"
+data-bs-dismiss="modal">
 
-                <button
-                    class="btn-close"
-                    data-bs-dismiss="modal">
-                </button>
-
-            </div>
-
-            <div class="modal-body">
-
-                <ul
-                    class="nav nav-tabs">
-
-                    <li class="nav-item">
-
-                        <button
-                            class="nav-link active"
-                            data-bs-toggle="tab"
-                            data-bs-target="#miResultado">
-
-                            Mi Resultado
-
-                        </button>
-
-                    </li>
-
-                    <li class="nav-item">
-
-                        <button
-                            class="nav-link"
-                            data-bs-toggle="tab"
-                            data-bs-target="#rankingExamen">
-
-                            Ranking
-
-                        </button>
-
-                    </li>
-
-                </ul>
-
-                <div class="tab-content mt-4">
-
-                    <div
-                        class="tab-pane fade show active"
-                        id="miResultado">
-
-                        <h3>95</h3>
-
-                        <p>Tiempo: 12 min</p>
-
-                    </div>
-
-                    <div
-                        class="tab-pane fade"
-                        id="rankingExamen">
-
-                        <table
-                            class="table">
-
-                            <thead>
-
-                                <tr>
-
-                                    <th>Usuario</th>
-                                    <th>País</th>
-                                    <th>Tiempo</th>
-                                    <th>Calificación</th>
-
-                                </tr>
-
-                            </thead>
-
-                            <tbody>
-
-                                <tr>
-
-                                    <td>Julio</td>
-                                    <td>🇲🇽</td>
-                                    <td>12 min</td>
-                                    <td>95</td>
-
-                                </tr>
-
-                            </tbody>
-
-                        </table>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
+</button>
 
 </div>
 
-<div
-    class="modal fade"
-    id="modalRanking">
+<div class="modal-body">
 
-    <div
-        class="modal-dialog modal-xl">
+<div class="perfilprin-medallas-grid">
 
-        <div class="modal-content">
+<img src="../Recursos/medallas/medalla1.png">
+<img src="../Recursos/medallas/medalla2.png">
+<img src="../Recursos/medallas/medalla3.png">
+<img src="../Recursos/medallas/medalla4.png">
+<img src="../Recursos/medallas/medalla5.png">
 
-            <div class="modal-header">
-
-                <h5>
-
-                    Ranking Mundial
-
-                </h5>
-
-                <button
-                    class="btn-close"
-                    data-bs-dismiss="modal">
-                </button>
-
-            </div>
-
-            <div class="modal-body">
-
-                <table class="table">
-
-                    <thead>
-
-                        <tr>
-
-                            <th>#</th>
-                            <th>Bandera</th>
-                            <th>Usuario</th>
-                            <th>XP</th>
-
-                        </tr>
-
-                    </thead>
-
-                    <tbody>
-
-                        <tr>
-
-                            <td>1</td>
-                            <td>🇲🇽</td>
-                            <td>Julio</td>
-                            <td>15000</td>
-
-                        </tr>
-
-                    </tbody>
-
-                </table>
-
-            </div>
-
-        </div>
-
-    </div>
+<img src="../Recursos/medallas/medalla6.png">
+<img src="../Recursos/medallas/medalla7.png">
+<img src="../Recursos/medallas/medalla8.png">
+<img src="../Recursos/medallas/medalla9.png">
+<img src="../Recursos/medallas/medalla10.png">
 
 </div>
 
+</div>
 
-<!-- CONTENEDOR OCULTO PARA EXPORTAR -->
-<div id="contenedor-exportacion">
+<div class="modal-footer">
 
-    <div id="tarjetaExportar" class="tarjeta-exportar">
+<button
+class="btn btn-success"
+data-bs-dismiss="modal">
 
-        <div class="tarjeta-header">
+Cerrar
 
-            <img
-                src="/Recursos/logos/logo_completo.png"
-                class="logo-share">
-
-        </div>
-
-        <div class="tarjeta-cuerpo">
-
-            <img
-                src="/Recursos/nahui_caras/nahui_feliz.png"
-                class="avatar-share">
-
-                <h2>Julio César</h2>
-
-                <h5>
-                    Castor Experto
-                    <br>
-                    <small>Tlamachtijketl Castor</small>
-                </h5>
-
-                <p class="mensaje-share">
-
-                Estoy aprendiendo náhuatl con
-                Castores Multilingües AUL@NET 🌱
-
-                <br><br>
-
-                Nechmachtia in náhuatl ipan
-                Castores Multilingües AUL@NET 🌱
-
-                <br><br>
-
-                #Náhuatl
-                #AULNET
-                #CastoresMultilingües
-
-                </p>
-
-                <div class="estadistica">
-                    <i class="bi bi-trophy-fill"></i>
-                    XP: 5420
-                </div>
-
-                <div class="estadistica">
-                    <i class="bi bi-award-fill"></i>
-                    Medallas / Tetlanextilli: 6/10
-                </div>
-
-                <div class="estadistica">
-                    <i class="bi bi-clipboard-check-fill"></i>
-                    Exámenes / Tlatemolistli: 8/10
-                </div>
-
-        </div>
-
-        <div class="tarjeta-footer">
-            Castores Multilingües AUL@NET
-        </div>
-
-    </div>
+</button>
 
 </div>
 
+</div>
 
+</div>
 
-
-
+</div>
 
 
 
@@ -1190,13 +925,6 @@
     <!-- AOS -->
     <script src="/assets/js/aos.js"></script>
 
-    <!-- html2canvas -->    
-    <script src="/assets/js/html2canvas.min.js"></script>
-
-
-    <!-- Chart.js -->
-    <script src="/assets/js/chart.js"></script>
-
     <!-- INIT AOS -->
     <script>
         AOS.init({
@@ -1204,6 +932,8 @@
             once: true
         });
     </script>
+
+    <script src="/assets/sweetalert/sweetalert2.all.min.js"></script>
 
     <!-- JS -->
     <script src="/js/app.js"></script>
