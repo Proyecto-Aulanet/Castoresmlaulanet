@@ -1,0 +1,113 @@
+/* ========================================================
+   1. TARJETAS DE LAS LECCIONES (.btn-leccion-card)
+   ======================================================== */
+.btn-leccion-card {
+    border: 2px solid #e2e8f0 !important;
+    min-height: 250px !important; /* Altura mínima fija para que se vean imponentes */
+    padding: 1.8rem !important;    /* Espacio interno generoso */
+    background-color: #ffffff !important;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease !important;
+}
+
+/* Efecto al pasar el mouse por encima de la tarjeta */
+.btn-leccion-card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1) !important; 
+    border-color: #198754 !important; /* Cambia al verde llamativo de tu app */
+}
+
+/* Efecto al hacer clic en la tarjeta */
+.btn-leccion-card:active {
+    transform: translateY(-2px);
+}
+
+/* Ilustraciones dentro de las tarjetas */
+.btn-leccion-card img {
+    max-width: 120px !important; /* Tamaño grande para que luzcan tus dibujos personalizados */
+    height: auto !important;
+    object-fit: contain;
+}
+
+/* Títulos de las tarjetas (Abecedario, Saludos, etc.) */
+.btn-leccion-card h2 {
+    color: #0b4c33 !important;   /* Color verde oscuro elegante e institucional */
+    font-size: 1.1rem !important; /* Tamaño de letra equilibrado */
+    font-weight: bold !important; /* Resaltado en negrita */
+    margin-top: 12px !important;  /* Separación de la imagen */
+}
+
+
+/* ========================================================
+   2. BOTONES EN FORMA DE PÍLDORA (Menú de Navegación)
+   ======================================================== */
+.nav-card-pill {
+    background-color: #f1f3f4 !important;
+    color: #0b4c33 !important;
+    border: 2px solid transparent !important;
+    border-radius: 50px !important;
+    padding: 6px 20px !important;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.1), 0 1px 1px rgba(255,255,255,0.2);
+    transition: all 0.2s ease;
+    text-decoration: none !important;
+}
+
+.nav-card-pill:hover {
+    background-color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15) !important;
+    color: #198754 !important;
+}
+
+.nav-card-pill.pagina-actual {
+    background-color: #ffffff !important;
+    border: 2px solid #198754 !important;
+    font-weight: bold;
+}
+
+
+/* ========================================================
+   3. ESTRUCTURA GLOBAL (Body, Contenedor y Footer)
+   ======================================================== */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Obliga al body a abarcar toda la pantalla */
+    margin: 0;
+}
+
+/* Contenedor de las tarjetas */
+main.container {
+    margin-top: 10rem !important; /* Colchón de 10rem para que las tarjetas no se oculten con el menú en Náhuatl */
+    flex: 1 0 auto;               /* Empuja el footer firmemente hacia abajo */
+    position: relative;
+    z-index: 5;
+}
+
+/* Cuadrícula de columnas (Alineación y espacio para botón flotante) */
+.row-cols-2 {
+    position: relative;
+    padding-right: 100px !important; /* Espacio en el extremo derecho para alejar el botón naranja */
+}
+
+/* El Footer se queda abajo */
+.footer-main {
+    flex-shrink: 0; /* Evita que el footer se deforme o se mueva de su lugar */
+}
+
+
+/* ========================================================
+   4. LETRAS DEL MODULO TRADUCTOR (Náhuatl / Español)
+   ======================================================= */
+/* Fuerza a que cualquier texto de tu traductor se pinte de negro */
+[class*="traductor"], 
+[class*="traductor"] *, 
+[id*="traductor"], 
+[id*="traductor"] * {
+    color: #000000 !important;
+    font-weight: bold !important;
+}
