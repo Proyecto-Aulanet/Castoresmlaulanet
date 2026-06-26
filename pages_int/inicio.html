@@ -197,25 +197,59 @@
 
                 </div>
 
-                <!-- PERFIL -->
-                <div class="perfil-header" data-aos="fade-left">
+                    <!-- PERFIL -->
+                    <div class="perfil-header dropdown" data-aos="fade-left">
 
-                    <div class="perfil-avatar">
+                        <!-- BOTÓN -->
+                        <button
+                            class="btn p-0 border-0 bg-transparent d-flex align-items-center"
+                            type="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false">
 
-                        <i class="bi bi-person-fill"></i>
+                            <!-- Avatar -->
+                            <div class="perfil-avatar">
 
-                    </div>
+                                <i class="bi bi-person-fill"></i>
 
-                    <div class="perfil-info d-none d-md-block">
+                            </div>
 
-                        <span
-                            class="perfil-nombre"
-                            data-es="Invitado"
-                            data-na="Tlapowalistli">
+                            <!-- Nombre -->
+                            <div class="perfil-info d-none d-md-block">
 
-                            Invitado
+                                <span
+                                    class="perfil-nombre"
+                                    data-es="Invitado"
+                                    data-na="Tlapowalistli">
 
-                        </span>
+                                    Invitado
+
+                                </span>
+
+                            </div>
+
+                            <!-- Triángulo -->
+                            <i class="bi bi-caret-down-fill ms-2 perfil-flecha"></i>
+
+                        </button>
+
+                        <!-- MENÚ -->
+                        <ul class="dropdown-menu dropdown-menu-end">
+
+                            <li>
+
+                                <!-- Si usas páginas -->
+                                <a class="dropdown-item" href="perfil.html">
+
+                                    <i class="bi bi-person me-2"></i>
+
+                                    Perfil
+
+                                </a>
+
+                            </li>
+
+                        </ul>
 
                     </div>
 
@@ -470,7 +504,7 @@
                     </div>
 
                     <div
-                        class="modal-body"
+                        class="modal-body text-black"
                         data-es="¿Estás seguro de que deseas cerrar sesión?"
                         data-na="¿Melawak tikneki tikisas de sesión?">
 

@@ -196,31 +196,63 @@
 
             </div>
 
-            <!-- PERFIL -->
-            <div
-                class="perfil-header"
-                data-aos="fade-left">
+                    <!-- PERFIL -->
+                    <div class="perfil-header dropdown" data-aos="fade-left">
 
-                <div class="perfil-avatar">
+                        <!-- BOTÓN -->
+                        <button
+                            class="btn p-0 border-0 bg-transparent d-flex align-items-center"
+                            type="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false">
 
-                    <i class="bi bi-person-fill"></i>
+                            <!-- Avatar -->
+                            <div class="perfil-avatar">
+
+                                <i class="bi bi-person-fill"></i>
+
+                            </div>
+
+                            <!-- Nombre -->
+                            <div class="perfil-info d-none d-md-block">
+
+                                <span
+                                    class="perfil-nombre"
+                                    data-es="Invitado"
+                                    data-na="Tlapowalistli">
+
+                                    Invitado
+
+                                </span>
+
+                            </div>
+
+                            <!-- Triángulo -->
+                            <i class="bi bi-caret-down-fill ms-2 perfil-flecha"></i>
+
+                        </button>
+
+                        <!-- MENÚ -->
+                        <ul class="dropdown-menu dropdown-menu-end">
+
+                            <li>
+
+                                <!-- Si usas páginas -->
+                                <a class="dropdown-item" href="perfil.html">
+
+                                    <i class="bi bi-person me-2"></i>
+
+                                    Perfil
+
+                                </a>
+
+                            </li>
+
+                        </ul>
+
+                    </div>
 
                 </div>
-
-                <div class="perfil-info d-none d-md-block">
-
-                    <span
-                        class="perfil-nombre"
-                        data-es="Invitado"
-                        data-na="Tlapowalistli">
-
-                        Invitado
-
-                    </span>
-
-                </div>
-
-            </div>
 
         </div>
 
