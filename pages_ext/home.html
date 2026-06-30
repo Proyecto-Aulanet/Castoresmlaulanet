@@ -214,65 +214,22 @@
                 <!-- CORREO -->
 
                 <div class="mb-3">
-
                     <label class="form-label fw-semibold text-black">
-
-                        <span
-                            data-es="Correo electrónico"
-                            data-na="Correo electrónico">
-
-                            Correo electrónico
-
-                        </span>
-
+                        <span data-es="Correo electrónico" data-na="Correo electrónico">Correo electrónico</span>
                     </label>
-
-                    <input
-                        type="email"
-                        class="form-control rounded-3"
-                        placeholder="ejemplo@email.com">
-
+                    <input type="email" id="loginEmail" class="form-control rounded-3" placeholder="ejemplo@email.com" required>
                 </div>
-
-                <!-- CONTRASEÑA -->
 
                 <div class="mb-4">
-
                     <label class="form-label fw-semibold text-black">
-
-                        <span
-                            data-es="Contraseña"
-                            data-na="Tlatzakuilli">
-
-                            Contraseña
-
-                        </span>
-
+                        <span data-es="Contraseña" data-na="Tlatzakuilli">Contraseña</span>
                     </label>
-
-                    <input
-                        type="password"
-                        class="form-control rounded-3"
-                        placeholder="********">
-
+                    <input type="password" id="loginPassword" class="form-control rounded-3" placeholder="********" required>
                 </div>
 
-                <!-- BOTÓN -->
-
-                <button
-                    class="btn btn-success w-100 rounded-3 py-2"
-                    onclick="window.location.href='/pages_int/inicio.html'">
-
+                <button type="button" id="btnEntrar" class="btn btn-success w-100 rounded-3 py-2">
                     <i class="bi bi-box-arrow-in-right me-2"></i>
-
-                    <span
-                        data-es="Entrar"
-                        data-na="Kalaki">
-
-                        Entrar
-
-                    </span>
-
+                    <span data-es="Entrar" data-na="Kalaki">Entrar</span>
                 </button>
 
             </div>
@@ -623,6 +580,171 @@
 
     <!-- JS -->
     <script src="/js/app.js"></script>
+
+
+
+        <script>
+
+        document
+        .getElementById("btnEntrar")
+
+        .addEventListener(
+        "click",
+
+        async function(){
+
+        const email=
+        document
+        .getElementById(
+        "loginEmail"
+        )
+        .value
+        .trim();
+
+        const password=
+        document
+        .getElementById(
+        "loginPassword"
+        )
+        .value
+        .trim();
+
+        if(
+        !email
+        ||
+        !password
+        ){
+
+        Swal.fire({
+
+        icon:"warning",
+
+        title:
+        "Campos incompletos",
+
+        text:
+        "Ingresa correo y contraseña",
+
+        confirmButtonColor:
+        "#198754"
+
+        });
+
+        return;
+
+        }
+
+        try{
+
+        const response=
+
+        await fetch(
+
+        "/api/login_process.php",
+
+        {
+
+        method:"POST",
+
+        headers:{
+
+        "Content-Type":
+        "application/json"
+
+        },
+
+        credentials:
+        "include",
+
+        body:
+
+        JSON.stringify({
+
+        email,
+        password
+
+        })
+
+        }
+
+        );
+
+        const data=
+        await response.json();
+
+        if(
+        data.status
+        ===
+        "success"
+        ){
+
+        Swal.fire({
+
+        icon:
+        "success",
+
+        title:
+        "Bienvenido",
+
+        text:
+        data.message,
+
+        timer:
+        1500,
+
+        showConfirmButton:
+        false
+
+        });
+
+        setTimeout(()=>{
+
+        window.location.href=
+        data.redirect;
+
+        },1500);
+
+        }else{
+
+        Swal.fire({
+
+        icon:
+        "error",
+
+        title:
+        "Error",
+
+        text:
+        data.message
+
+        });
+
+        }
+
+        }catch(error){
+
+        console.log(error);
+
+        Swal.fire({
+
+        icon:
+        "error",
+
+        title:
+        "Servidor",
+
+        text:
+        "No se pudo conectar"
+
+        });
+
+        }
+
+        }
+
+        );
+
+        </script>
 
 </body>
 
