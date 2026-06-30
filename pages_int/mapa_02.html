@@ -855,7 +855,7 @@
     data-aos="fade-right">
 
     <button
-        onclick="window.location.href='home.html'"
+        onclick="window.location.href='../pages_int/lecciones.html'"
         class="btn-regresar-int">
 
         <i class="bi bi-arrow-left-circle-fill me-2"></i>
@@ -870,15 +870,12 @@
 
     </button>
 
+     <button id="btnSubir" class="boton-subir shadow-lg" onclick="volverArriba()" style="display: none;">
+        <i class="bi bi-arrow-up-short"></i>
+        <span data-es="Subir" data-na="Aco">Subir</span>
+    </button>
+
 </div>
-
-
-
-
-
-
-
-
                 <!-- =========================================
                 FOOTER
             ========================================= -->
@@ -1016,6 +1013,27 @@
             duration: 800,
             once: true
         });
+    </script>
+<script>
+        const botonSubir = document.getElementById("btnSubir");
+
+        // Evento de escucha para detectar cuando el usuario hace scroll hacia abajo
+        window.onscroll = function () {
+            // Si el scroll baja más de 300px se muestra, de lo contrario permanece oculto
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                botonSubir.style.display = "flex";
+            } else {
+                botonSubir.style.display = "none";
+            }
+        };
+
+        // Función que realiza el retorno fluido al inicio (Top: 0)
+        function volverArriba() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
     </script>
 
     <!-- JS -->
