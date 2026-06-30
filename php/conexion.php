@@ -1,19 +1,40 @@
+<?php
 
+header("Content-Type: application/json; charset=UTF-8");
 
- <?php
+$host="localhost";
+$db="nahuatl";
 
-$host = "localhost";
-$user = "root";
-$password = "";
-$database = "nahuatl";
+$user="root";
+$pass="";
 
-$conn = mysqli_connect($host, $user, $password, $database);
+try{
 
-if(!$conn){
-    die("Error de conexión");
+$pdo=new PDO(
+"mysql:host=$host;dbname=$db;charset=utf8mb4",
+$user,
+$pass
+);
+
+$pdo->setAttribute(
+PDO::ATTR_ERRMODE,
+PDO::ERRMODE_EXCEPTION
+);
+
+$pdo->setAttribute(
+PDO::ATTR_DEFAULT_FETCH_MODE,
+PDO::FETCH_ASSOC
+);
+
+}catch(PDOException $e){
+
+http_response_code(500);
+
+echo json_encode([
+"status"=>"error",
+"message"=>"No se pudo conectar."
+]);
+
+exit;
+
 }
-
-// AÑADE ESTA LÍNEA CRÍTICA PARA LOS ACENTOS:
-mysqli_set_charset($conn, "utf8mb4");
-
-?> 
