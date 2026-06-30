@@ -1,46 +1,37 @@
-/* ========================================================
-   1. TARJETAS DE LAS LECCIONES (.btn-leccion-card)
-   ======================================================== */
-.btn-leccion-card {
-    border: 2px solid #e2e8f0 !important;
-    min-height: 250px !important; /* Altura mínima fija para que se vean imponentes */
-    padding: 1.8rem !important;    /* Espacio interno generoso */
-    background-color: #ffffff !important;
-    cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease !important;
+/* ==========================================================================
+   1. ESTRUCTURA GLOBAL (Body, Contenedor y Footer)
+   ========================================================================== */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: hidden; /* Evita desbordamiento horizontal en celulares */
 }
 
-/* Efecto al pasar el mouse por encima de la tarjeta */
-.btn-leccion-card:hover {
-    transform: translateY(-5px); 
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1) !important; 
-    border-color: #198754 !important; /* Cambia al verde llamativo de tu app */
+/* El truco maestro: Aplicamos el colchón directo aquí para empujar las lecciones */
+main.container {
+    flex: 1 0 auto;
+    position: relative;
+    z-index: 5;
+    padding-top: 19rem !important; /* Colchón base gigante para que en celulares libre el menú */
 }
 
-/* Efecto al hacer clic en la tarjeta */
-.btn-leccion-card:active {
-    transform: translateY(-2px);
+/* Espaciado para la cuadrícula interna de tarjetas */
+.row-cols-2 {
+    margin-top: 1rem !important; 
+    position: relative;
+    padding-right: 0 !important;
 }
 
-/* Ilustraciones dentro de las tarjetas */
-.btn-leccion-card img {
-    max-width: 120px !important; /* Tamaño grande para que luzcan tus dibujos personalizados */
-    height: auto !important;
-    object-fit: contain;
+.footer-main {
+    flex-shrink: 0;
+    margin-top: 4rem !important;
 }
 
-/* Títulos de las tarjetas (Abecedario, Saludos, etc.) */
-.btn-leccion-card h2 {
-    color: #0b4c33 !important;   /* Color verde oscuro elegante e institucional */
-    font-size: 1.1rem !important; /* Tamaño de letra equilibrado */
-    font-weight: bold !important; /* Resaltado en negrita */
-    margin-top: 12px !important;  /* Separación de la imagen */
-}
-
-
-/* ========================================================
+/* ==========================================================================
    2. BOTONES EN FORMA DE PÍLDORA (Menú de Navegación)
-   ======================================================== */
+   ========================================================================== */
 .nav-card-pill {
     background-color: #f1f3f4 !important;
     color: #0b4c33 !important;
@@ -51,16 +42,9 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    box-shadow: inset 0 1px 2px rgba(0,0,0,0.1), 0 1px 1px rgba(255,255,255,0.2);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(255, 255, 255, 0.2);
     transition: all 0.2s ease;
     text-decoration: none !important;
-}
-
-.nav-card-pill:hover {
-    background-color: #ffffff !important;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15) !important;
-    color: #198754 !important;
 }
 
 .nav-card-pill.pagina-actual {
@@ -69,45 +53,267 @@
     font-weight: bold;
 }
 
+/* ==========================================================================
+   3. TARJETAS DE LAS LECCIONES (.btn-leccion-card) -> ¡AQUÍ SE SUBIÓ UN POCO EL TAMAÑO!
+   ========================================================================== */
+.btn-leccion-card {
+    border: 2px solid #e2e8f0 !important;
+    min-height: 265px !important; /* Ajustado: Subió de 240px a 265px para dar más presencia */
+    padding: 1.8rem 1.5rem !important; /* Ajustado: Un poco más de aire arriba y abajo */
+    background-color: #ffffff !important;
+    cursor: pointer;
+    border-radius: 15px; /* Bordes suaves estilo lúdico */
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease !important;
+}
 
-/* ========================================================
-   3. ESTRUCTURA GLOBAL (Body, Contenedor y Footer)
-   ======================================================== */
-body {
+.btn-leccion-card:active {
+    transform: translateY(-2px);
+}
+
+.btn-leccion-card img {
+    max-width: 105px !important; /* Ajustado: El icono subió sutilmente de 90px a 105px */
+    height: auto !important;
+    object-fit: contain;
+    width: 100%;
+}
+
+.btn-leccion-card h2 {
+    color: #0b4c33 !important;
+    font-size: 1.15rem !important; /* Ajustado: El texto subió sutilmente de 1rem a 1.15rem */
+    font-weight: bold !important;
+    margin-top: 15px !important; /* Un poquito más de separación con la imagen */
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+/* ==========================================================================
+   4. RESPONSIVE Y TRATAMIENTO DEL MAPA (SVG)
+   ========================================================================== */
+.mapa-abecedario {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+.contenedor-abecedario {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.camino-svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ==========================================================================
+   5. BOTÓN REGRESAR AL MAPA
+   ========================================================================== */
+.boton-mapa {
+    padding-left: 15px;
+    margin-bottom: 25px;
+    position: relative;
+    z-index: 10;
+}
+
+.btn-regresar-int {
+    background-color: #2563EB;
+    color: white !important;
+    border: 3px solid #1D4ED8;
+    border-radius: 50px;
+    padding: 10px 24px;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-regresar-int:hover {
+    background-color: #1D4ED8;
+    transform: scale(1.03);
+}
+
+/* ==========================================================================
+   6. BOTÓN FLOTANTE "SUBIR"
+   ========================================================================== */
+.boton-subir {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 9999 !important;
+    background-color: #53D000;
+    border: 3px solid #2E8A00;
+    color: white !important;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 8px 22px;
+    border-radius: 50px;
+    cursor: pointer;
     display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Obliga al body a abarcar toda la pantalla */
-    margin: 0;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s ease-in-out;
 }
 
-/* Contenedor de las tarjetas */
-main.container {
-    margin-top: 10rem !important; /* Colchón de 10rem para que las tarjetas no se oculten con el menú en Náhuatl */
-    flex: 1 0 auto;               /* Empuja el footer firmemente hacia abajo */
-    position: relative;
-    z-index: 5;
+.boton-subir:hover {
+    background-color: #2E8A00;
+    border-color: #1A5200;
+    transform: translateY(-4px);
+    color: white !important;
 }
 
-/* Cuadrícula de columnas (Alineación y espacio para botón flotante) */
-.row-cols-2 {
-    position: relative;
-    padding-right: 100px !important; /* Espacio en el extremo derecho para alejar el botón naranja */
+.boton-subir .bi-arrow-up-short {
+    font-size: 24px;
+    line-height: 0;
 }
 
-/* El Footer se queda abajo */
-.footer-main {
-    flex-shrink: 0; /* Evita que el footer se deforme o se mueva de su lugar */
-}
-
-
-/* ========================================================
-   4. LETRAS DEL MODULO TRADUCTOR (Náhuatl / Español)
-   ======================================================= */
-/* Fuerza a que cualquier texto de tu traductor se pinte de negro */
-[class*="traductor"], 
-[class*="traductor"] *, 
-[id*="traductor"], 
+/* ==========================================================================
+   7. LETRAS DEL MODULO TRADUCTOR (Náhuatl / Español)
+   ========================================================================== */
+[class*="traductor"],
+[class*="traductor"] *,
+[id*="traductor"],
 [id*="traductor"] * {
     color: #000000 !important;
     font-weight: bold !important;
+}
+
+/* ==========================================================================
+   8. EFECTOS HOVER (Solo computadoras y dispositivos con puntero rígido)
+   ========================================================================== */
+@media (hover: hover) {
+    .btn-leccion-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1) !important;
+        border-color: #198754 !important;
+    }
+    
+    .nav-card-pill:hover {
+        background-color: #ffffff !important;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15) !important;
+        color: #198754 !important;
+    }
+}
+
+/* ==========================================================================
+   9. MEDIA QUERIES (DISEÑO RESPONSIVO ORDENADO)
+   ========================================================================== */
+
+/* --- COMPUTADORAS / PANTALLAS GRANDES --- */
+@media (min-width: 992px) {
+    main.container {
+        padding-top: 14rem !important; 
+    }
+}
+
+/* --- MONITORES MEDIANOS Y TABLETS (Laptop / iPad) --- */
+@media (max-width: 768px) {
+    main.container {
+        padding-top: 17rem !important;
+    }
+
+    .boton-mapa {
+        justify-content: center !important;
+        padding-left: 0;
+        margin-top: 1.5rem !important;
+    }
+
+    .btn-regresar-int {
+        width: 80%;
+        justify-content: center;
+    }
+
+    /* Perfil de Usuario */
+    .perfilprin-card {
+        margin-top: 120px;
+        padding: 28px;
+        border-radius: 25px;
+    }
+
+    .perfilprin-avatar {
+        width: 170px;
+        height: 170px;
+    }
+
+    .perfilprin-seccion {
+        padding: 22px;
+    }
+
+    .perfilprin-seccion input {
+        font-size: 15px;
+        padding: 12px;
+    }
+
+    .perfilprin-card button {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .perfilprin-medallas-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .perfilprin-medallas-grid img {
+        max-width: 90px;
+    }
+
+    .perfilprin-icon-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .perfilprin-icon-grid img {
+        width: 85px;
+        height: 85px;
+    }
+
+    .perfilprin-card h2 {
+        font-size: 28px;
+    }
+
+    .perfilprin-card h4 {
+        font-size: 22px;
+    }
+
+    .perfilprin-card p,
+    .perfilprin-card label {
+        font-size: 15px;
+    }
+}
+
+/* --- CELULARES / PANTALLAS CHICAS --- */
+@media (max-width: 575.98px) {
+    main.container {
+        padding-top: 21rem !important;
+    }
+
+    .btn-leccion-card {
+        min-height: 185px !important; /* Ajustado un pelín también en móvil */
+        padding: 1rem 0.6rem !important;
+    }
+
+    .btn-leccion-card img {
+        max-width: 70px !important;
+    }
+
+    .btn-leccion-card h2 {
+        font-size: 0.9rem !important;
+        margin-top: 8px !important;
+    }
+
+    .boton-subir {
+        bottom: 15px;
+        right: 15px;
+        padding: 6px 16px;
+        font-size: 14px;
+    }
+
+    .boton-subir .bi-arrow-up-short {
+        font-size: 20px;
+    }
 }
