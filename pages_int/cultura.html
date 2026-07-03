@@ -2,7 +2,6 @@
 <html lang="es" class="h-full">
 
 <head>
-
     <meta charset="UTF-8">
 
     <!-- RESPONSIVE -->
@@ -24,12 +23,81 @@
     <!-- CSS -->
     <link rel="stylesheet" href="/styles/styles.css">
 
-    <link rel="stylesheet" href="/styles/estilos.css">
 
 
 </head>
 
 <body>
+    <!-- ========================= -->
+    <!-- FONDO DECORATIVO -->
+    <!-- ========================= -->
+
+    <div class="fondo-aulanet">
+
+        <!-- LIBRO -->
+
+        <svg class="libro-fondo" viewBox="0 0 512 512">
+
+            <path d="M256 120
+                   C220 90 150 85 100 110
+                   L100 380
+                   C150 355 220 360 256 390
+                   C292 360 362 355 412 380
+                   L412 110
+                   C362 85 292 90 256 120Z" fill="none" stroke="white" stroke-width="6" opacity=".06" />
+
+            <line x1="256" y1="120" x2="256" y2="390" stroke="white" stroke-width="4" opacity=".06" />
+
+        </svg>
+
+        <!-- ENGRANAJES -->
+
+        <svg class="engranaje engranaje1" viewBox="0 0 24 24">
+            <path fill="white"
+                d="M19.14,12.94a7.48,7.48,0,0,0,.05-.94a7.48,7.48,0,0,0-.05-.94l2.03-1.58a.5.5,0,0,0,.12-.64l-1.92-3.32a.5.5,0,0,0-.61-.22l-2.39.96a7.28,7.28,0,0,0-1.63-.94L14.5,2.81a.5.5,0,0,0-.5-.41H10a.5.5,0,0,0-.5.41L9.12,5.32a7.28,7.28,0,0,0-1.63.94L5.1,5.3a.5.5,0,0,0-.61.22L2.57,8.84a.5.5,0,0,0,.12.64L4.72,11.06a7.48,7.48,0,0,0-.05.94a7.48,7.48,0,0,0,.05.94L2.69,14.52a.5.5,0,0,0-.12.64l1.92,3.32a.5.5,0,0,0,.61.22l2.39-.96a7.28,7.28,0,0,0,1.63.94l.38,2.51a.5.5,0,0,0,.5.41h4a.5.5,0,0,0,.5-.41l.38-2.51a7.28,7.28,0,0,0,1.63-.94l2.39.96a.5.5,0,0,0,.61-.22l1.92-3.32a.5.5,0,0,0-.12-.64Z" />
+        </svg>
+
+        <svg class="engranaje engranaje2" viewBox="0 0 24 24">
+            <path fill="white"
+                d="M19.14,12.94a7.48,7.48,0,0,0,.05-.94a7.48,7.48,0,0,0-.05-.94l2.03-1.58a.5.5,0,0,0,.12-.64l-1.92-3.32a.5.5,0,0,0-.61-.22l-2.39.96a7.28,7.28,0,0,0-1.63-.94L14.5,2.81a.5.5,0,0,0-.5-.41H10a.5.5,0,0,0-.5.41L9.12,5.32a7.28,7.28,0,0,0-1.63.94L5.1,5.3a.5.5,0,0,0-.61.22L2.57,8.84a.5.5,0,0,0,.12.64L4.72,11.06a7.48,7.48,0,0,0-.05.94a7.48,7.48,0,0,0,.05.94L2.69,14.52a.5.5,0,0,0-.12.64l1.92,3.32a.5.5,0,0,0,.61.22l2.39-.96a7.28,7.28,0,0,0,1.63.94l.38,2.51a.5.5,0,0,0,.5.41h4a.5.5,0,0,0,.5-.41l.38-2.51a7.28,7.28,0,0,0,1.63-.94l2.39.96a.5.5,0,0,0,.61-.22l1.92-3.32a.5.5,0,0,0-.12-.64Z" />
+        </svg>
+
+        <!-- PARTICULAS -->
+
+        <div class="particulas">
+
+            <span class="particula verde"></span>
+            <span class="particula azul"></span>
+            <span class="particula amarillo"></span>
+            <span class="particula naranja"></span>
+            <span class="particula blanco"></span>
+            <span class="particula verde"></span>
+            <span class="particula azul"></span>
+            <span class="particula amarillo"></span>
+            <span class="particula naranja"></span>
+            <span class="particula blanco"></span>
+
+            <span class="particula verde"></span>
+            <span class="particula azul"></span>
+            <span class="particula amarillo"></span>
+            <span class="particula naranja"></span>
+            <span class="particula blanco"></span>
+
+            <span class="particula verde"></span>
+            <span class="particula azul"></span>
+            <span class="particula amarillo"></span>
+            <span class="particula naranja"></span>
+            <span class="particula blanco"></span>
+
+            <span class="particula verde"></span>
+            <span class="particula azul"></span>
+            <span class="particula amarillo"></span>
+            <span class="particula naranja"></span>
+            <span class="particula blanco"></span>
+
+        </div>
+
+    </div>
 
     <div id="app" class="w-full min-h-full flex flex-col">
 
@@ -109,11 +177,8 @@
                     <div class="perfil-header dropdown" data-aos="fade-left">
 
                         <!-- BOTÓN -->
-                        <button
-                            class="btn p-0 border-0 bg-transparent d-flex align-items-center"
-                            type="button"
-                            data-bs-toggle="dropdown"
-                            aria-expanded="false">
+                        <button class="btn p-0 border-0 bg-transparent d-flex align-items-center" type="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
 
                             <!-- Avatar -->
                             <div class="perfil-avatar">
@@ -125,10 +190,7 @@
                             <!-- Nombre -->
                             <div class="perfil-info d-none d-md-block">
 
-                                <span
-                                    class="perfil-nombre"
-                                    data-es="Invitado"
-                                    data-na="Tlapowalistli">
+                                <span class="perfil-nombre" data-es="Invitado" data-na="Tlapowalistli">
 
                                     Invitado
 
@@ -181,57 +243,37 @@
 
                             <div class="navbar-nav gap-2 justify-content-center">
 
-                                <!-- INICIO -->
-                                <button onclick="showPage('home')" class="btn navbarint-btn rounded-pill px-4"
+                                <a href="../pages_int/inicio.html" class="btn navbarint-btn rounded-pill px-4"
                                     data-aos="fade-up" data-es="Inicio" data-na="Pewaloyan">
-
                                     <i class="bi bi-house-fill me-2"></i>
-
                                     Inicio
+                                </a>
 
-                                </button>
-
-                                <!-- LECCIONES -->
-                                <button onclick="showPage('modules')" class="btn navbarint-btn rounded-pill px-4"
+                                <a href="../pages_int/lecciones.html" class="btn navbarint-btn rounded-pill px-4"
                                     data-aos="fade-up" data-aos-delay="100" data-es="Lecciones" data-na="Temachtilli">
-
                                     <i class="bi bi-book-fill me-2"></i>
-
                                     Lecciones
+                                </a>
 
-                                </button>
-
-                                <!-- CUENTOS -->
-                                <button onclick="showPage('stories')" class="btn navbarint-btn rounded-pill px-4"
+                                <a href="../pages_int/Cuentos/cuentos.html" class="btn navbarint-btn rounded-pill px-4"
                                     data-aos="fade-up" data-aos-delay="100" data-es="Cuentos" data-na="Tlahtolli">
-
                                     <i class="bi bi-book-half me-2"></i>
-
                                     Cuentos
+                                </a>
 
-                                </button>
-
-                                <!-- CULTURA -->
-                                <button onclick="showPage('culture')" class="btn navbarint-btn rounded-pill px-4"
+                                <a href="../pages_int/cultura.html" class="btn navbarint-btn rounded-pill px-4"
                                     data-aos="fade-up" data-aos-delay="200" data-es="Cultura"
                                     data-na="Yancuic Tlamachtiliztli">
-
                                     <i class="bi bi-globe-americas me-2"></i>
-
                                     Cultura
+                                </a>
 
-                                </button>
-
-                                <!-- PROGRESO -->
-                                <button onclick="showPage('progress')" class="btn navbarint-btn rounded-pill px-4"
+                                <a href="../pages_int/progreso.html" class="btn navbarint-btn rounded-pill px-4"
                                     data-aos="fade-up" data-aos-delay="300" data-es="Progreso"
                                     data-na="Yancuic Nejnemiliztli">
-
                                     <i class="bi bi-graph-up-arrow me-2"></i>
-
                                     Progreso
-
-                                </button>
+                                </a>
 
                             </div>
 
@@ -247,396 +289,590 @@
 
         <!-- MAIN -->
         <main class="container py-5">
-            
+
 
             <!-- BOTONES SUPERIORES -->
-    
 
-                <!-- BOTÓN TRADUCTOR -->
-                <div class="presen-traductor-int">
 
-                    <button class="btn btn-light rounded-circle traductor-btn" onclick="presenToggleMenu()"
-                        data-aos="zoom-in">
+            <!-- BOTÓN TRADUCTOR -->
+            <div class="presen-traductor-int">
 
-                        <i class="bi bi-translate"></i>
+                <button class="btn btn-light rounded-circle traductor-btn" onclick="presenToggleMenu()"
+                    data-aos="zoom-in">
 
-                    </button>
+                    <i class="bi bi-translate"></i>
 
-                    <!-- MENÚ -->
-                    <div class="presen-menu-int" id="presenMenuIdioma">
+                </button>
 
-                        <ul class="list-unstyled m-0">
+                <!-- MENÚ -->
+                <div class="presen-menu-int" id="presenMenuIdioma">
 
-                            <li onclick="presenCambiarModo('es')">
-                                Español
-                            </li>
+                    <ul class="list-unstyled m-0">
 
-                            <li onclick="presenCambiarModo('na')">
-                                Náhuatl
-                            </li>
+                        <li onclick="presenCambiarModo('es')">
+                            Español
+                        </li>
 
-                            <li onclick="presenCambiarModo('es-na')">
-                                Español + Náhuatl
-                            </li>
+                        <li onclick="presenCambiarModo('na')">
+                            Náhuatl
+                        </li>
 
-                            <li onclick="presenCambiarModo('na-es')">
-                                Náhuatl + Español
-                            </li>
+                        <li onclick="presenCambiarModo('es-na')">
+                            Español + Náhuatl
+                        </li>
 
-                        </ul>
+                        <li onclick="presenCambiarModo('na-es')">
+                            Náhuatl + Español
+                        </li>
 
-                    </div>
+                    </ul>
 
                 </div>
 
             </div>
-        </main>
+
+    </div>
+    </main>
     </div>
 
     <br>
-    
-<!-- ==================== CONTENEDOR PRINCIPAL INTERACTIVO ==================== -->
-<main class="container my-5">
-    
-    <div class="row g-4">
-        
-       <!-- ESTE CONTENEDOR CON 'px-3' (PADDING HORIZONTAL) ES EL TRUCO QUE DICE TU COMPAÑERO -->
-<div class="container px-3 px-sm-0"> 
-    <div class="row g-4 justify-content-center">
 
-        <!-- TU SECCIÓN E STRUCTURA ORIGINAL -->
-        <section class="col-12" id="inicio" data-aos="fade-up" data-aos-duration="1000">
-            <!-- Añadimos 'mx-auto' para centrar y 'border' sutil para reforzar el efecto tarjeta -->
-            <div class="p-4 p-sm-5 mb-2 rounded-5 shadow-lg text-white position-relative overflow-hidden mx-0" 
-                 style="background: linear-gradient(135deg, #5d9e76 0%, #077e37 100%); min-height: auto; display: flex; align-items: center; padding: 30px; margin-top: 70px;">
-                
-                <div class="row align-items-center position-relative w-100 g-4 m-0">
-                    
-                    <!-- IMAGEN: Se vuelve 100% responsiva dentro de su columna -->
-                    <div class="col-12 col-md-4 text-center order-1 order-md-2 p-0">
-                        <div class="position-relative d-inline-block w-100" style="max-width: 280px;">
-                            <img src="/Recursos/img_cultura/entrada.JPG" class="img-fluid rounded-4 shadow-lg border border-white border-opacity-25 w-100" alt="Bienvenidos a La Resurrección" style="height: 220px; object-fit: cover;">
+    <!-- ==================== CONTENEDOR PRINCIPAL INTERACTIVO ==================== -->
+    <main class="container my-5">
+
+        <div class="row g-4">
+
+            <!-- ESTE CONTENEDOR CON 'px-3' (PADDING HORIZONTAL) ES EL TRUCO QUE DICE TU COMPAÑERO -->
+            <div class="container px-3 px-sm-0">
+                <div class="row g-4 justify-content-center">
+
+                    <!-- TU SECCIÓN E STRUCTURA ORIGINAL -->
+                    <section class="col-12" id="inicio" data-aos="fade-up" data-aos-duration="1000">
+                        <!-- Añadimos 'mx-auto' para centrar y 'border' sutil para reforzar el efecto tarjeta -->
+                        <div class="p-4 p-sm-5 mb-2 rounded-5 shadow-lg text-white position-relative overflow-hidden mx-0"
+                            style="background: linear-gradient(135deg, #5d9e76 0%, #077e37 100%); min-height: auto; display: flex; align-items: center; padding: 30px; margin-top: 70px;">
+
+                            <div class="row align-items-center position-relative w-100 g-4 m-0">
+
+                                <!-- IMAGEN: Se vuelve 100% responsiva dentro de su columna -->
+                                <div class="col-12 col-md-4 text-center order-1 order-md-2 p-0">
+                                    <div class="position-relative d-inline-block w-100" style="max-width: 280px;">
+                                        <img src="/Recursos/img_cultura/entrada.JPG"
+                                            class="img-fluid rounded-4 shadow-lg border border-white border-opacity-25 w-100"
+                                            alt="Bienvenidos a La Resurrección"
+                                            style="height: 220px; object-fit: cover;">
+                                    </div>
+                                </div>
+
+                                <!-- TEXTO -->
+                                <div class="col-12 col-md-8 text-center text-md-start order-2 order-md-1 p-0">
+                                    <span
+                                        class="badge bg-warning text-dark px-3 py-2 rounded-pill fw-bold text-uppercase mb-3 tracking-wider shadow-sm"
+                                        style="font-size: 0.75rem;">
+                                        <span data-es="BIENVENIDOS A LA RIQUEZA CULTURAL"
+                                            data-na="XIMOCUEHRUICAN NICAN TOTLALNAN">BIENVENIDOS A LA RIQUEZA
+                                            CULTURAL</span>
+                                    </span>
+
+                                    <!-- Ajustamos el tamaño del título en móvil con clases responsivas de Bootstrap -->
+                                    <h1 class="fw-bold tracking-tight mb-2 h2 h1-md">
+                                        <span data-es="DE LA RESURRECCIÓN" data-na="SAN ISIDRO TLALANTLI">DE LA
+                                            RESURRECCIÓN</span>
+                                    </h1>
+
+                                    <div class="card-subtitle">
+                                        <h3 class="fs-5 fs-md-4 text-warning mb-3">
+                                            <span data-es="Un viaje a la esencia de la cultura náhuatl en Puebla"
+                                                data-na="Se nenemi tlein kualli nahuatlatolli nemilistli nican Puebla">Un
+                                                viaje a la esencia de la cultura náhuatl en Puebla</span>
+                                        </h3>
+                                        <p class="fs-6 fs-md-5 opacity-90 mb-0 leading-relaxed text-start text-md-start"
+                                            style="text-align: justify;">
+                                            <span
+                                                data-es="Nuestra comunidad se enorgullece de preservar y promover sus tradiciones, su lengua materna y su historia ancestral. La Resurrección es un testimonio vivo de la riqueza cultural..."
+                                                data-na="Toaltepe kineki kipia ihuan kitemoa tlein toachtouan tlamatkilistli, totextlatol ihuan nemilistli. La Resurrección ca se yoltoc tlamatiliztli...">
+                                                Nuestra comunidad se enorgullece de preservar y promover sus
+                                                tradiciones, su lengua materna y su historia ancestral. La Resurrección
+                                                es un testimonio vivo de la riqueza cultural...
+                                            </span>
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
                         </div>
-                    </div>
+                    </section>
 
-                    <!-- TEXTO -->
-                    <div class="col-12 col-md-8 text-center text-md-start order-2 order-md-1 p-0">
-                        <span class="badge bg-warning text-dark px-3 py-2 rounded-pill fw-bold text-uppercase mb-3 tracking-wider shadow-sm" style="font-size: 0.75rem;">
-                            <span data-es="BIENVENIDOS A LA RIQUEZA CULTURAL" data-na="XIMOCUEHRUICAN NICAN TOTLALNAN">BIENVENIDOS A LA RIQUEZA CULTURAL</span>
-                        </span>
-                        
-                        <!-- Ajustamos el tamaño del título en móvil con clases responsivas de Bootstrap -->
-                        <h1 class="fw-bold tracking-tight mb-2 h2 h1-md">
-                            <span data-es="DE LA RESURRECCIÓN" data-na="SAN ISIDRO TLALANTLI">DE LA RESURRECCIÓN</span>
-                        </h1>
-                        
-                        <div class="card-subtitle">
-                            <h3 class="fs-5 fs-md-4 text-warning mb-3">
-                                <span data-es="Un viaje a la esencia de la cultura náhuatl en Puebla" data-na="Se nenemi tlein kualli nahuatlatolli nemilistli nican Puebla">Un viaje a la esencia de la cultura náhuatl en Puebla</span>
-                            </h3>
-                            <p class="fs-6 fs-md-5 opacity-90 mb-0 leading-relaxed text-start text-md-start" style="text-align: justify;">
-                                <span data-es="Nuestra comunidad se enorgullece de preservar y promover sus tradiciones, su lengua materna y su historia ancestral. La Resurrección es un testimonio vivo de la riqueza cultural..."
-                                      data-na="Toaltepe kineki kipia ihuan kitemoa tlein toachtouan tlamatkilistli, totextlatol ihuan nemilistli. La Resurrección ca se yoltoc tlamatiliztli...">
-                                     Nuestra comunidad se enorgullece de preservar y promover sus tradiciones, su lengua materna y su historia ancestral. La Resurrección es un testimonio vivo de la riqueza cultural...
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100" id="tarjeta-historia">
+                <div
+                    class="card h-100 border-0 rounded-4 shadow-sm p-4 border-bottom border-5 border-success text-start bg-white d-flex flex-column justify-content-between">
+                    <div>
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <div class="p-3 bg-success text-white rounded-4 shadow-sm"><i class="bi bi-book fs-3"></i>
+                            </div>
+                            <div>
+                                <h3 class="fw-bold fs-4 m-0 text-success" data-es="Historia" data-na="Nemilistli">
+                                    Historia</h3>
+                                <h4 class="text-muted small m-0" data-es="Origen e Identidad Indígena"
+                                    data-na="Achto Toinalhuayo">Origen e Identidad Indígena</h4>
+                            </div>
+                        </div>
+
+                        <div class="text-dark small mb-3">
+                            <p class="mb-0">
+                                <span
+                                    data-es="Descubre el origen de La Resurrección como comunidad indígena reconocida y la preservación viva de la lengua náhuatl."
+                                    data-na="Xikitati canin uicah inin altepetl ihuan nahuatlatolli tlein nemi chicahuac nican.">
+                                    Descubre el origen de La Resurrección como comunidad indígena reconocida y la
+                                    preservación viva de la lengua náhuatl.
                                 </span>
                             </p>
                         </div>
-                    </div>
 
-                </div>
-            </div>
-        </section>
-
-    </div>
-</div>
-
-        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100" id="tarjeta-historia">
-            <div class="card h-100 border-0 rounded-4 shadow-sm p-4 border-bottom border-5 border-success text-start bg-white d-flex flex-column justify-content-between">
-                <div>
-                    <div class="d-flex align-items-center gap-3 mb-3">
-                        <div class="p-3 bg-success text-white rounded-4 shadow-sm"><i class="bi bi-book fs-3"></i></div>
-                        <div>
-                            <h3 class="fw-bold fs-4 m-0 text-success" data-es="Historia" data-na="Nemilistli">Historia</h3>
-                            <h4 class="text-muted small m-0" data-es="Origen e Identidad Indígena" data-na="Achto Toinalhuayo">Origen e Identidad Indígena</h4>
+                        <div class="text-center my-3 bg-light rounded-4 p-2 border">
+                            <img src="/Recursos/img_cultura/nahuipluma.png" class="img-fluid" alt="Mascota Historia"
+                                style="max-height: 110px; object-fit: contain;">
                         </div>
                     </div>
-                    
-                    <div class="text-dark small mb-3">
-                        <p class="mb-0">
-                            <span data-es="Descubre el origen de La Resurrección como comunidad indígena reconocida y la preservación viva de la lengua náhuatl." 
-                                  data-na="Xikitati canin uicah inin altepetl ihuan nahuatlatolli tlein nemi chicahuac nican.">
-                                  Descubre el origen de La Resurrección como comunidad indígena reconocida y la preservación viva de la lengua náhuatl.
+                    <button class="btn btn-success w-100 rounded-pill fw-bold mt-2 py-2 shadow-sm"
+                        onclick="mostrarSeccion('historia')">
+                        <span data-es="¡Explorar apartado!" data-na="¡Xikitati!">¡Explorar apartado!</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200" id="tarjeta-gastronomia">
+                <div
+                    class="card h-100 border-0 rounded-4 shadow-sm p-4 border-bottom border-5 border-warning text-start bg-white d-flex flex-column justify-content-between">
+                    <div>
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <div class="p-3 bg-warning text-dark rounded-4 shadow-sm"><i
+                                    class="bi bi-egg-fried fs-3"></i></div>
+                            <div>
+                                <h3 class="fw-bold fs-4 m-0 text-warning-emphasis" data-es="Gastronomía"
+                                    data-na="Tlacualistli">Gastronomía</h3>
+                                <h4 class="text-muted small m-0" data-es="La Cuna de las 'Memelas'"
+                                    data-na="Ichan Memelameh">La Cuna de las "Memelas"</h4>
+                            </div>
+                        </div>
+
+                        <div class="text-dark small mb-3">
+                            <p class="mb-0">
+                                <span
+                                    data-es="Conoce nuestra enorme identidad gastronómica basada en el maíz nativo y la famosa Feria de la Gordita."
+                                    data-na="Xikixmati tokualli tlacualistli pampa tlaolli ihuan wey Feria de la Gordita nican toteopan.">
+                                    Conoce nuestra enorme identidad gastronómica basada en el maíz nativo y la famosa
+                                    Feria de la Gordita.
+                                </span>
+                            </p>
+                        </div>
+
+                        <div class="text-center my-3 bg-light rounded-4 p-2 border">
+                            <img src="/Recursos/img_cultura/nahuicomiendo.png" class="img-fluid"
+                                alt="Mascota Gastronomía" style="max-height: 110px; object-fit: contain;">
+                        </div>
+                    </div>
+                    <button class="btn btn-warning text-dark w-100 rounded-pill fw-bold mt-2 py-2 shadow-sm"
+                        onclick="mostrarSeccion('gastronomia')">
+                        <span data-es="¡Explorar apartado!" data-na="¡Xikitati!">¡Explorar apartado!</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300" id="tarjeta-arqueologia">
+                <div
+                    class="card h-100 border-0 rounded-4 shadow-sm p-4 border-bottom border-5 border-info text-start bg-white d-flex flex-column justify-content-between">
+                    <div>
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <div class="p-3 bg-info text-white rounded-4 shadow-sm"><i class="bi bi-pin-map fs-3"></i>
+                            </div>
+                            <div>
+                                <h3 class="fw-bold fs-4 m-0 text-info" data-es="Riqueza Arqueológica"
+                                    data-na="Tlamatkilistli Tlalantli">Riqueza Arqueológica</h3>
+                                <h4 class="text-muted small m-0" data-es="Patrimonio Cultural" data-na="Teopantin">
+                                    Patrimonio Cultural</h4>
+                            </div>
+                        </div>
+
+                        <div class="text-dark small mb-3">
+                            <p class="mb-0">
+                                <span
+                                    data-es="Explora los vestigios de la Zona Arqueológica 'La Manzanilla' y los secretos ancestrales del Templo de San Nicolás."
+                                    data-na="Xikitati tlein oquicauh toachtouan ipan La Manzanilla ihuan wey ameyalli ipan teopan.">
+                                    Explora los vestigios de la Zona Arqueológica 'La Manzanilla' y los secretos
+                                    ancestrales del Templo de San Nicolás.
+                                </span>
+                            </p>
+                        </div>
+
+                        <div class="text-center my-3 bg-light rounded-4 p-2 border">
+                            <img src="/Recursos/img_cultura/NahuiArque.png" class="img-fluid" alt="Mascota Arqueología"
+                                style="max-height: 110px; object-fit: contain;">
+                        </div>
+                    </div>
+                    <button class="btn btn-info text-white w-100 rounded-pill fw-bold mt-2 py-2 shadow-sm"
+                        onclick="mostrarSeccion('arqueologia')">
+                        <span data-es="¡Explorar apartado!" data-na="¡Xikitati!">¡Explorar apartado!</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="400" id="tarjeta-historica">
+                <div
+                    class="card h-100 border-0 rounded-4 shadow-sm p-4 border-bottom border-5 border-danger text-start bg-white d-flex flex-column justify-content-between">
+                    <div>
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <div class="p-3 bg-danger text-white rounded-4 shadow-sm"><i
+                                    class="bi bi-hourglass-split fs-3"></i></div>
+                            <div>
+                                <h3 class="fw-bold fs-4 m-0 text-danger" data-es="Riqueza Histórica"
+                                    data-na="Nemilistli Ixpampa">Riqueza Histórica</h3>
+                                <h4 class="text-muted small m-0" data-es="Asentamiento Tepetitla"
+                                    data-na="Tepetitla altepe">Asentamiento Tepetitla</h4>
+                            </div>
+                        </div>
+
+                        <div class="text-dark small mb-3">
+                            <p class="mb-0">
+                                <span
+                                    data-es="Viaja al pasado prehispánico de Tepetitla, antiguo señorío de Cholula, y sus tesoros documentales del siglo XVII."
+                                    data-na="Xipaxialo ipan achto tolalnan Tepetitla pampa Cholula, ihuan kualli amauh nemilistli xiuitl 1641.">
+                                    Viaja al pasado prehispánico de Tepetitla, antiguo señorío de Cholula, y sus tesoros
+                                    documentales del siglo XVII.
+                                </span>
+                            </p>
+                        </div>
+
+                        <div class="text-center my-3 bg-light rounded-4 p-2 border">
+                            <img src="/Recursos/img_cultura/NahuiTrajes.png" class="img-fluid" alt="Mascota Histórica"
+                                style="max-height: 110px; object-fit: contain;">
+                        </div>
+                    </div>
+                    <button class="btn btn-danger w-100 rounded-pill fw-bold mt-2 py-2 shadow-sm"
+                        onclick="mostrarSeccion('historica')">
+                        <span data-es="¡Explorar apartado!" data-na="¡Xikitati!">¡Explorar apartado!</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="500" id="tarjeta-textiles">
+                <div
+                    class="card h-100 border-0 rounded-4 shadow-sm p-4 border-bottom border-5 border-primary text-start bg-white d-flex flex-column justify-content-between">
+                    <div>
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <div class="p-3 bg-primary text-white rounded-4 shadow-sm"><i
+                                    class="bi bi-palette fs-3"></i></div>
+                            <div>
+                                <h3 class="fw-bold fs-4 m-0 text-primary" data-es="Entre Hilos y Colores"
+                                    data-na="Tlapalmeh ihuan Tzotzomatli">Entre Hilos y Colores</h3>
+                                <h4 class="text-muted small m-0" data-es="Indumentaria Tradicional"
+                                    data-na="Cualli tzotzomatli">Indumentaria Tradicional</h4>
+                            </div>
+                        </div>
+
+                        <div class="text-dark small mb-3">
+                            <p class="mb-0">
+                                <span
+                                    data-es="Admira el orgullo de los bordados florales hechos a mano, las faldas plisadas y el misticismo del rebozo tradicional."
+                                    data-na="Xikitati in blusa blanca tlachichihual ika makuilli tlapalmeh hilos, xochimeh ihuan torebozo.">
+                                    Admira el orgullo de los bordados florales hechos a mano, las faldas plisadas y el
+                                    misticismo del rebozo tradicional.
+                                </span>
+                            </p>
+                        </div>
+
+                        <div class="text-center my-3 bg-light rounded-4 p-2 border">
+                            <img src="/Recursos/img_cultura/hue.png" class="img-fluid" alt="Mascota Textiles"
+                                style="max-height: 110px; object-fit: contain;">
+                        </div>
+                    </div>
+                    <button class="btn btn-primary w-100 rounded-pill fw-bold mt-2 py-2 shadow-sm"
+                        onclick="mostrarSeccion('textiles')">
+                        <span data-es="¡Explorar apartado!" data-na="¡Xikitati!">¡Explorar apartado!</span>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="contenedor-interactivo"
+            class="d-none position-fixed top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center p-3"
+            style="background: rgba(0,0,0,0.8); z-index: 2000; backdrop-filter: blur(4px);">
+            <div id="modal-scroll-body"
+                class="card border-0 rounded-5 p-4 shadow-lg text-center bg-white position-relative"
+                style="max-width: 620px; width: 100%; max-height: 92vh; overflow-y: auto;">
+                <button class="btn-close position-absolute top-0 end-0 m-3 fs-5" onclick="cerrarSeccion()"></button>
+
+                <div class="mb-3 text-center">
+                    <img id="modal-mascota-img" src="" class="img-fluid rounded-4 shadow-sm border" alt="Mascota"
+                        style="max-height: 240px; width: auto; object-fit: contain;">
+                </div>
+
+                <h3 class="fw-bold text-dark mb-1">
+                    <span id="m-tit-historia" class="d-none" data-es="Historia" data-na="Nemilistli">Historia</span>
+                    <span id="m-tit-gastronomia" class="d-none" data-es="Gastronomía"
+                        data-na="Tlacualistli">Gastronomía</span>
+                    <span id="m-tit-arqueologia" class="d-none" data-es="Riqueza Arqueológica"
+                        data-na="Tlamatkilistli Tlalantli">Riqueza Arqueológica</span>
+                    <span id="m-tit-historica" class="d-none" data-es="Riqueza Histórica"
+                        data-na="Nemilistli Ixpampa">Riqueza Histórica</span>
+                    <span id="m-tit-textiles" class="d-none" data-es="Entre Hilos y Colores"
+                        data-na="Tlapalmeh ihuan Tzotzomatli">Entre Hilos y Colores</span>
+                </h3>
+
+                <h5 class="text-muted small mb-3">
+                    <span id="m-sub-historia" class="d-none" data-es="Origen e Identidad Indígena"
+                        data-na="Achto Toinalhuayo">Origen e Identidad Indígena</span>
+                    <span id="m-sub-gastronomia" class="d-none" data-es="La Cuna de las 'Memelas'"
+                        data-na="Ichan Memelameh">La Cuna de las "Memelas"</span>
+                    <span id="m-sub-arqueologia" class="d-none" data-es="Patrimonio Cultural"
+                        data-na="Teopantin">Patrimonio Cultural</span>
+                    <span id="m-sub-historica" class="d-none" data-es="Asentamiento Tepetitla"
+                        data-na="Tepetitla altepe">Asentamiento Tepetitla</span>
+                    <span id="m-sub-textiles" class="d-none" data-es="Indumentaria Tradicional"
+                        data-na="Cualli tzotzomatli">Indumentaria Tradicional</span>
+                </h5>
+
+                <div class="text-dark small mb-3 leading-relaxed text-start p-3 bg-light rounded-4 border">
+
+                    <div id="m-txt-historia" class="d-none">
+                        <p class="mb-2"><span data-es="La Resurrección está oficialmente incluida en el Catálogo de Pueblos y Comunidades 
+                                Indígenas de México y reconocida por el Instituto Nacional de los Pueblos Indígenas (INPI). 
+                                Aproximadamente el 85% de su población se identifica como indígena."
+                                data-na="Inin altepetl ca nican ipan toamauh tlein Catálogo de Pueblos y Comunidades Indígenas 
+                                de México, ihuan kineki in INPI tlamatkilistli. Cerca chicueyi kan makuilli tlacameh se ixtlamati kemeh mextlatoltecatl.">
+                                La Resurrección está oficialmente incluida en el Catálogo de Pueblos y Comunidades
+                                Indígenas de México y reconocida por el Instituto Nacional de los Pueblos Indígenas
+                                (INPI). Aproximadamente el 85% de su población se identifica como indígena.
                             </span>
                         </p>
+
+                        <p class="mb-2"><span
+                                data-es="La Resurrección está ubicada al nororiente de la ciudad de Puebla, colinda al poniente con San Aparicio y San Miguel Canoa, al norte con el volcán de La Malinche, al oriente colinda con Xonacatepec y Amozoc y al sur con la ciudad de Puebla. El clima del territorio es templado con lluvias en verano."
+                                data-na="La Resurrección mocajtoc ipan norte-oriente in altepetl Puebla. Ihuan tlalpan ipan poniente motlalia San Aparicio huan San Miguel Canoa, ipan norte motlalia in volcán Malintzin, an oriente motlalia Xonacatepec huan Amozoc, ipan sur motlalia in altepetl Puebla. In ehecatl huan tonalli ipan tlalli ca xocoyotl, an ca atl tlahuilia ipan xopantla.">
+                                La Resurrección está ubicada al nororiente de la ciudad de Puebla,
+                                colinda al poniente con San Aparicio y San Miguel Canoa, al norte con el volcán de La
+                                Malinche, al oriente colinda con Xonacatepec
+                                y Amozoc y al sur con la ciudad de Puebla. El clima del territorio es templado con
+                                lluvias en verano.
+                            </span>
+                        </p>
+                        <p class="mb-2"><span
+                                data-es="Aún hay animales silvestres como el gato montés, ardillas, liebres y cenzontle. Parte del territorio está ubicado en el área del Parque Nacional La Malinche. Los orígenes de la comunidad se remontan a la Hacienda La Manzanilla, construida en el S. XVII, entre otros ranchos."
+                                data-na="Oc nochipa ca yolcatl tlacatl ipan tlalli, quen in miztli cuauhtli (gato montés), tlacuatzin (ardilla), tochtli hueyi (liebre), huan cenzontli (ave de cuatrocientos cantos). Se parte in tlalli mocajtoc ipan Parque Nacional Malintzin. In tlacatl huan altepetl ic cehuia ipan Hacienda La Manzanilla, mochihua ipan siglo XVII, huan oc ce ranchos.">
+                                Aún hay animales silvestres como el gato montés, ardillas, liebres y cenzontle.
+                                Parte del territorio está ubicado en el área del Parque Nacional La Malinche. Los
+                                orígenes de la
+                                comunidad se remontan a la Hacienda La Manzanilla, construida en el S. XVII, entre otros
+                                ranchos.
+                            </span>
+                        </p>
+
+                        <p class="mb-0"><span
+                                data-es="Es de los pocos lugares en la ciudad de Puebla donde todavía se habla y se mantiene vivo el náhuatl. Cerca de la mitad de sus habitantes habla o entiende esta lengua materna."
+                                data-na="Inin tlalantli mextli canin nican altepetl Puebla canin nican nahuatlatolli nemi chicahuac. Tlahco tlacameh nican kipia ihuan kimati totextlatol nahuatl.">Es
+                                de los pocos lugares en la ciudad de Puebla donde todavía se habla y se mantiene vivo el
+                                náhuatl. Cerca de la mitad de sus habitantes habla o entiende esta lengua
+                                materna.</span></p>
                     </div>
 
-                    <div class="text-center my-3 bg-light rounded-4 p-2 border">
-                        <img src="/Recursos/img_cultura/nahuipluma.png" class="img-fluid" alt="Mascota Historia" style="max-height: 110px; object-fit: contain;">
+                    <div id="m-txt-gastronomia" class="d-none">
+                        <p class="mb-2"><span
+                                data-es="La comunidad destaca a nivel estatal por su identidad gastronómica. El corazón de nuestra economía tradicional es gracias al maíz nativo y a las maestras del comal que elaboran la memela perfecta."
+                                data-na="Toaltepe tlacati nican tolalnan pampa tokualli tlacualistli. Totomintequiyotl nemi pampa tlaolli nativo ihuan tocihuameh tlein kichiua kualli memelameh ipan comalli.">La
+                                comunidad destaca a nivel estatal por su identidad gastronómica. El corazón de nuestra
+                                economía tradicional es gracias al maíz nativo y a las maestras del comal que elaboran
+                                la memela perfecta.</span></p>
+                        <p class="mb-2"><span
+                                data-es="La comunidad es famosa por organizar anualmente la Feria de la Gordita (o Feria de la Memela) en la explanada de la parroquia del Señor de la Resurrección, recibiendo a miles de visitantes."
+                                data-na="Toaltepe itokah pampa kichiua xiuitl xiuitl in Feria de la Gordita ixpampa toteopan Señor de la Resurrección, canin kiselia miak tlacameh.">La
+                                comunidad es famosa por organizar anualmente la Feria de la Gordita (o Feria de la
+                                Memela) en la explanada de la parroquia del Señor de la Resurrección, recibiendo a miles
+                                de visitantes.</span></p>
+                        <p class="mb-2"><span
+                                data-es="En la comunidad se siembra maíz, frijol y calabaza. Dentro de la flora se encuentran los árboles de encino, elite y ocote, árboles frutales de durazno, aguacate, zapote, capulín y tejocote."
+                                data-na="Ipan in altepetl quichihua tlaolli (maíz), ayocotl (frijol) huan cayotl (calabaza). Ipan in xochitl huan cuahuitl quipiyah encino, elite huan ocotl. Oc quipiyah cuahuitl xocotl (árboles frutales): durazno, ahuacatl, tzapotl, capolin huan texocotl.">
+                                En la comunidad se siembra maíz, frijol y calabaza. 
+                                Dentro de la flora se encuentran los árboles de encino, elite y ocote, 
+                                árboles frutales de durazno, aguacate, zapote, capulín y tejocote. </span></p>
+                    </div>
+
+                    <div id="m-txt-arqueologia" class="d-none">
+                        <p class="mb-2"><span
+                                data-es="Zona Arqueológica 'La Manzanilla': En sus inmediaciones se localizan vestigios prehispánicos que incluyen un juego de pelota con cerca de 1,800 años de antigüedad."
+                                data-na="Zona Arqueológica 'La Manzanilla': Nican tolalnan actia tlein achto toachtouan tequiti tlein kipia se xahuilli tlacamitetl ika chicueyi yauh xiuitl.">Zona
+                                Arqueológica 'La Manzanilla': En sus inmediaciones se localizan vestigios prehispánicos
+                                que incluyen un juego de pelota con cerca de 1,800 años de antigüedad.</span></p>
+                        <p class="mb-0"><span
+                                data-es="Templo de San Nicolás: Cronistas locales apuntan a que el templo principal fue construido de forma estratégica sobre antiguos ojos de agua de gran valor para los nahuas originarios."
+                                data-na="Templo de San Nicolás: Inin tlateomachtil teopan oquicauh kualli nemilistli; toachtouan tlahtoh kichiua inin teopan ixpampa wey ameyalli.">Templo
+                                de San Nicolás: Cronistas locales apuntan a que el templo principal fue construido de
+                                forma estratégica sobre antiguos ojos de agua de gran valor para los nahuas
+                                originarios.</span></p>
+
+                        <p class="mb-2"><span
+                                data-es="La comunidad tiene vestigios arqueológicos de Juego de Pelota y Teteles en donde se han encontrado osamentas. La Iglesia principal está dedicada a la Resurrección del Señor que se celebra en Semana Santa, también cuentan con capillas como la de La Purísima, San Miguel, El Peregrino y El Calvario. Existe el Parque Industrial de Textiles y Maquilas Automotrices La Resurrección. Referente a su infraestructura, el camino principal está pavimentado, caminos de adoquín, terracería, agua potable, con 3 pozos, luz y drenaje."
+                                data-na="In altepetl La Resurrección quipiya vestigios arqueológicos, quen in tlachtli (Juego de Pelota) huan teteles, ipan ompa motlatzqui in cuatzontli (osamentas). In huey teopan motlatia ipan Resurrección in Totec, huan quicelebra ipan Semana Santa. Oc quipiyah capillas: La Purísima, San Miguel, El Peregrino huan El Calvario. Ca ipan Parque Industrial Textiles huan Maquilas Automotrices La Resurrección. Ipan in tlachihualiztli, in ohtli hueyi ca pavimento, oc ohtli ca adoquín, oc ca tlalli, huan quipiya atl potable, eyi ameyalli (3 pozos), tlahuil (luz) huan tlachializtli (drenaje).">
+                                La comunidad tiene vestigios arqueológicos de Juego de Pelota y Teteles en donde se han
+                                encontrado osamentas. La Iglesia principal está dedicada a la Resurrección del Señor
+                                que se celebra en Semana Santa, también cuentan con capillas como la de La Purísima,
+                                San Miguel, El Peregrino y El Calvario. Existe el Parque Industrial de Textiles y
+                                Maquilas
+                                Automotrices La Resurrección. Referente a su infraestructura, el camino principal está
+                                pavimentado, caminos de adoquín, terracería, agua potable, con 3 pozos, luz y drenaje.
+                            </span></p>
+                    </div>
+
+                    <div id="m-txt-historica" class="d-none">
+                        <p class="mb-2"><span
+                                data-es="En la época prehispánica, el asentamiento original se conocía como Tepetitla o Tepetlita (que significa 'Entre cerros'). El pueblo perteneció originalmente al señorío de Cholula y Tlaxcala."
+                                data-na="Achto mexko tlalantli, toaltepe itokah Tepetitla o Tepetlita (tlein kineki 'Entre cerros'). Inin altepetl tequiti achto pampa Cholula ihuan Tlaxcala.">En
+                                la época prehispánica, el asentamiento original se conocía como Tepetitla o Tepetlita
+                                (que significa 'Entre cerros'). El pueblo perteneció originalmente al señorío de Cholula
+                                y Tlaxcala.</span></p>
+                        <p class="mb-0"><span
+                                data-es="El Archivo Parroquial de la localidad resguarda valiosos documentos históricos de bautismos y matrimonios que datan desde el siglo XVII (1641)."
+                                data-na="Inin Archivo Parroquial tolalnan kipia kualli amauh nemilistli tlein bautismos ihuan matrimonios tlein pehua nican makuilli xiuitl (1641).">El
+                                Archivo Parroquial de la localidad resguarda valiosos documentos históricos de bautismos
+                                y matrimonios que datan desde el siglo XVII (1641).</span></p>
+                        <p class="mb-2"><span
+                                data-es="El día de la Candelaria se presentan los campesinos a la bendición de semillas y el Niño Dios. El Altepil es una celebración que se hace 8 días antes de iniciar La Cuaresma, en esta fiesta se celebra una misa y es la antesala de las celebraciones de la fiesta patronal."
+                                data-na="Ipan in altepetl ipan tonalli Candelaria, motlalia in campesinos para quiselis in semillas huan in Niño Dios. In Altepil ca se huey ilhuitl, mochihua chicueyi tonalli antes de pehua in Cuaresma. Ipan in ilhuitl quichihua se misa, huan ca tlacualiztli para in huey ilhuitl patronal.">
+                                 El día de la Candelaria se presentan los campesinos a la bendición de semillas y 
+                                 el Niño Dios. El Altepil es una celebración que se hace 8 días antes de iniciar 
+                                 La Cuaresma, en esta fiesta se celebra una misa y es la antesala de las 
+                                 celebraciones de la fiesta patronal.</span></p>
+                        <p class="mb-2"><span
+                                data-es="El día de muertos la comunidad realiza la puesta de la ofrenda con pan, fruta, gorditas, mole, carnitas y barbacoa para sus fieles difuntos."
+                                data-na="Ipan tonalli miccailhuitl, in altepetl quichihua ofrenda para in tlaneltocah micqueh. Quipiyah pan, xocotl (fruta), gorditas, molli, nacatl tzopilotl (carnitas) huan barbacoa. Nochi para quiselis in yolcatzitzin tlaneltocah.">
+                                El día de muertos la comunidad realiza la puesta de la ofrenda con pan, 
+                                fruta, gorditas, mole, carnitas y barbacoa para sus fieles difuntos.</span></p>
+                        <p class="mb-2"><span
+                                data-es="También en la ofrenda ponen los utensilios que el difunto usaba, como el ayate, paliacate y herramientas de labranza, para las mujeres se les coloca ropa y las cremas que usaban. "
+                                data-na="Nojquiya ipan ofrenda quipiyah in tlachihualiztli in micqui quimonequia: ayatl, paliacatl, huan tlachihualmeh milpan (instrumentos de labranza). Para in sihuameh quipiyah in tilmatli (ropa) huan in cremahtli tlen quimonequiah.">
+                                También en la ofrenda ponen los utensilios que el difunto usaba, como el ayate, 
+                                paliacate y herramientas de labranza, para las mujeres se les coloca ropa y las cremas
+                                que usaban. </span></p>
+                    </div>
+
+                    <div id="m-txt-textiles" class="d-none">
+                        <p class="mb-0"><span
+                                data-es="En las fiestas patronales y ceremonias especiales las mujeres portan con orgullo la blusa blanca bordada a mano con hilos multicolores (generally con motivos florales o de aves), combinada con faldas plisadas oscuras y el clásico rebozo."
+                                data-na="Keman kichiua toferia ihuan teomachtli, tocihuameh tlahuika ika yolpaki in blusa blanca tlein tlachichihual ika makuilli tlapalmeh hilos (ika xochimeh ihuan totomeh), ika faldas oscuras ihuan torebozo.">En
+                                las fiestas patronales y ceremonias especiales las mujeres portan con orgullo la blusa
+                                blanca bordada a mano con hilos multicolores (generalmente con motivos florales o de
+                                aves), combinada con faldas plisadas oscuras y el clásico rebozo.</span></p>
+                        <p class="mb-0"><span
+                                data-es="Las mujeres suelen portar huipiles bordados, enredos (faldas de lienzo) y rebozos, mientras que en celebraciones aparece el traje de la china poblana con falda de lentejuelas y blusa bordada. Los hombres usan calzón de manta o traje de charro en contextos festivos"
+                                data-na="In sihuameh mochipa quipiyah huipilli tlachihual bordado, huan enredo (cueitl de lienzo) huan rebozo. Ipan huey ilhuitl mochihua in traje china poblana: cueitl de lentejuelas huan huipilli bordado. In tlacameh quipiyah caltzón de manta, o no traje charro ipan huey ilhuitl.">
+                                Las mujeres suelen portar huipiles bordados, enredos (faldas de lienzo) y rebozos, 
+                                mientras que en celebraciones aparece el traje de la china poblana con falda de 
+                                lentejuelas y blusa bordada. Los hombres usan calzón de manta o traje de charro en 
+                                contextos festivos.</span></p>
+                    </div>
+
+                </div>
+
+                <div class="mb-4 text-start">
+                    <div class="row g-2 d-none" id="m-gal-historia">
+                        <div class="col-6"><img src="/Recursos/img_cultura/historia.JPG"
+                                class="img-fluid rounded-3 border w-100" style="height: 100px; object-fit: cover;">
+                        </div>
+                        <div class="col-6"><img src="/Recursos/img_cultura/danza.JPG"
+                                class="img-fluid rounded-3 border w-100" style="height: 100px; object-fit: cover;">
+                        </div>
+                    </div>
+                    <div class="row g-2 d-none" id="m-gal-gastronomia">
+                        <div class="col-6"><img src="/Recursos/img_cultura/memela.JPG"
+                                class="img-fluid rounded-3 border w-100" style="height: 100px; object-fit: cover;">
+                        </div>
+                        <div class="col-6"><img src="/Recursos/img_cultura/memelas3.png"
+                                class="img-fluid rounded-3 border w-100" style="height: 100px; object-fit: cover;">
+                        </div>
+                    </div>
+                    <div class="row g-2 d-none" id="m-gal-arqueologia">
+                        <div class="col-6"><img src="/Recursos/img_cultura/piramides.png"
+                                class="img-fluid rounded-3 border w-100" style="height: 100px; object-fit: cover;">
+                        </div>
+                        <div class="col-6"><img src="/Recursos/img_cultura/iglesia.jpg"
+                                class="img-fluid rounded-3 border w-100" style="height: 100px; object-fit: cover;">
+                        </div>
+                    </div>
+                    <div class="row g-2 d-none" id="m-gal-historica">
+                        <div class="col-6"><img src="/Recursos/img_cultura/pluma.JPG"
+                                class="img-fluid rounded-3 border w-100" style="height: 100px; object-fit: cover;">
+                        </div>
+                        <div class="col-6"><img src="/Recursos/img_cultura/pies.JPG"
+                                class="img-fluid rounded-3 border w-100" style="height: 100px; object-fit: cover;">
+                        </div>
+                    </div>
+                    <div class="row g-2 d-none" id="m-gal-textiles">
+                        <div class="col-6"><img src="/Recursos/img_cultura/mujervestido.jpg"
+                                class="img-fluid rounded-3 border w-100" style="height: 100px; object-fit: cover;">
+                        </div>
+                        <div class="col-6"><img src="/Recursos/img_cultura/trajes.jpg"
+                                class="img-fluid rounded-3 border w-100" style="height: 100px; object-fit: cover;">
+                        </div>
                     </div>
                 </div>
-                <button class="btn btn-success w-100 rounded-pill fw-bold mt-2 py-2 shadow-sm" onclick="mostrarSeccion('historia')">
-                    <span data-es="¡Explorar apartado!" data-na="¡Xikitati!">¡Explorar apartado!</span>
+
+                <button class="btn btn-dark w-100 rounded-pill fw-bold py-2 shadow-sm" onclick="cerrarSeccion()">
+                    <span data-es="Volver al Menú" data-na="Nican mocuepa">Volver al Menú</span>
                 </button>
             </div>
         </div>
 
-        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200" id="tarjeta-gastronomia">
-            <div class="card h-100 border-0 rounded-4 shadow-sm p-4 border-bottom border-5 border-warning text-start bg-white d-flex flex-column justify-content-between">
-                <div>
-                    <div class="d-flex align-items-center gap-3 mb-3">
-                        <div class="p-3 bg-warning text-dark rounded-4 shadow-sm"><i class="bi bi-egg-fried fs-3"></i></div>
-                        <div>
-                            <h3 class="fw-bold fs-4 m-0 text-warning-emphasis" data-es="Gastronomía" data-na="Tlacualistli">Gastronomía</h3>
-                            <h4 class="text-muted small m-0" data-es="La Cuna de las 'Memelas'" data-na="Ichan Memelameh">La Cuna de las "Memelas"</h4>
-                        </div>
-                    </div>
+        <script>
+            function mostrarSeccion(seccion) {
+                const contenedor = document.getElementById('contenedor-interactivo');
+                const cuerpoModal = document.getElementById('modal-scroll-body');
+                const imagen = document.getElementById('modal-mascota-img');
 
-                    <div class="text-dark small mb-3">
-                        <p class="mb-0">
-                            <span data-es="Conoce nuestra enorme identidad gastronómica basada en el maíz nativo y la famosa Feria de la Gordita." 
-                                  data-na="Xikixmati tokualli tlacualistli pampa tlaolli ihuan wey Feria de la Gordita nican toteopan.">
-                                  Conoce nuestra enorme identidad gastronómica basada en el maíz nativo y la famosa Feria de la Gordita.
-                            </span>
-                        </p>
-                    </div>
+                // 1. Ocultamos todos los elementos dinámicos previos del modal antes de abrir
+                const elementosAocultar = cuerpoModal.querySelectorAll('[id^="m-tit-"], [id^="m-sub-"], [id^="m-txt-"], [id^="m-gal-"]');
+                elementosAocultar.forEach(el => el.classList.add('d-none'));
 
-                    <div class="text-center my-3 bg-light rounded-4 p-2 border">
-                        <img src="/Recursos/img_cultura/nahuicomiendo.png" class="img-fluid" alt="Mascota Gastronomía" style="max-height: 110px; object-fit: contain;">
-                    </div>
-                </div>
-                <button class="btn btn-warning text-dark w-100 rounded-pill fw-bold mt-2 py-2 shadow-sm" onclick="mostrarSeccion('gastronomia')">
-                    <span data-es="¡Explorar apartado!" data-na="¡Xikitati!">¡Explorar apartado!</span>
-                </button>
-            </div>
-        </div>
+                // 2. Definimos las imágenes correspondientes a cada mascota
+                const mascotas = {
+                    'historia': '/Recursos/img_cultura/nahuipluma.png',
+                    'gastronomia': '/Recursos/img_cultura/nahuicomiendo.png',
+                    'arqueologia': '/Recursos/img_cultura/NahuiArque.png',
+                    'historica': '/Recursos/img_cultura/NahuiTrajes.png',
+                    'textiles': '/Recursos/img_cultura/hue.png'
+                };
 
-        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300" id="tarjeta-arqueologia">
-            <div class="card h-100 border-0 rounded-4 shadow-sm p-4 border-bottom border-5 border-info text-start bg-white d-flex flex-column justify-content-between">
-                <div>
-                    <div class="d-flex align-items-center gap-3 mb-3">
-                        <div class="p-3 bg-info text-white rounded-4 shadow-sm"><i class="bi bi-pin-map fs-3"></i></div>
-                        <div>
-                            <h3 class="fw-bold fs-4 m-0 text-info" data-es="Riqueza Arqueológica" data-na="Tlamatkilistli Tlalantli">Riqueza Arqueológica</h3>
-                            <h4 class="text-muted small m-0" data-es="Patrimonio Cultural" data-na="Teopantin">Patrimonio Cultural</h4>
-                        </div>
-                    </div>
+                if (mascotas[seccion]) {
+                    imagen.src = mascotas[seccion];
+                }
 
-                    <div class="text-dark small mb-3">
-                        <p class="mb-0">
-                            <span data-es="Explora los vestigios de la Zona Arqueológica 'La Manzanilla' y los secretos ancestrales del Templo de San Nicolás." 
-                                  data-na="Xikitati tlein oquicauh toachtouan ipan La Manzanilla ihuan wey ameyalli ipan teopan.">
-                                  Explora los vestigios de la Zona Arqueológica 'La Manzanilla' y los secretos ancestrales del Templo de San Nicolás.
-                            </span>
-                        </p>
-                    </div>
+                // 3. Activamos exclusivamente los bloques de la sección seleccionada
+                document.getElementById(`m-tit-${seccion}`).classList.remove('d-none');
+                document.getElementById(`m-sub-${seccion}`).classList.remove('d-none');
+                document.getElementById(`m-txt-${seccion}`).classList.remove('d-none');
+                document.getElementById(`m-gal-${seccion}`).classList.remove('d-none');
 
-                    <div class="text-center my-3 bg-light rounded-4 p-2 border">
-                        <img src="/Recursos/img_cultura/NahuiArque.png" class="img-fluid" alt="Mascota Arqueología" style="max-height: 110px; object-fit: contain;">
-                    </div>
-                </div>
-                <button class="btn btn-info text-white w-100 rounded-pill fw-bold mt-2 py-2 shadow-sm" onclick="mostrarSeccion('arqueologia')">
-                    <span data-es="¡Explorar apartado!" data-na="¡Xikitati!">¡Explorar apartado!</span>
-                </button>
-            </div>
-        </div>
+                // 4. Desplegamos el modal general
+                contenedor.classList.remove('d-none');
 
-        <div class="col-md-6" data-aos="fade-up" data-aos-delay="400" id="tarjeta-historica">
-            <div class="card h-100 border-0 rounded-4 shadow-sm p-4 border-bottom border-5 border-danger text-start bg-white d-flex flex-column justify-content-between">
-                <div>
-                    <div class="d-flex align-items-center gap-3 mb-3">
-                        <div class="p-3 bg-danger text-white rounded-4 shadow-sm"><i class="bi bi-hourglass-split fs-3"></i></div>
-                        <div>
-                            <h3 class="fw-bold fs-4 m-0 text-danger" data-es="Riqueza Histórica" data-na="Nemilistli Ixpampa">Riqueza Histórica</h3>
-                            <h4 class="text-muted small m-0" data-es="Asentamiento Tepetitla" data-na="Tepetitla altepe">Asentamiento Tepetitla</h4>
-                        </div>
-                    </div>
-
-                    <div class="text-dark small mb-3">
-                        <p class="mb-0">
-                            <span data-es="Viaja al pasado prehispánico de Tepetitla, antiguo señorío de Cholula, y sus tesoros documentales del siglo XVII." 
-                                  data-na="Xipaxialo ipan achto tolalnan Tepetitla pampa Cholula, ihuan kualli amauh nemilistli xiuitl 1641.">
-                                  Viaja al pasado prehispánico de Tepetitla, antiguo señorío de Cholula, y sus tesoros documentales del siglo XVII.
-                            </span>
-                        </p>
-                    </div>
-
-                    <div class="text-center my-3 bg-light rounded-4 p-2 border">
-                        <img src="/Recursos/img_cultura/NahuiTrajes.png" class="img-fluid" alt="Mascota Histórica" style="max-height: 110px; object-fit: contain;">
-                    </div>
-                </div>
-                <button class="btn btn-danger w-100 rounded-pill fw-bold mt-2 py-2 shadow-sm" onclick="mostrarSeccion('historica')">
-                    <span data-es="¡Explorar apartado!" data-na="¡Xikitati!">¡Explorar apartado!</span>
-                </button>
-            </div>
-        </div>
-
-        <div class="col-md-6" data-aos="fade-up" data-aos-delay="500" id="tarjeta-textiles">
-            <div class="card h-100 border-0 rounded-4 shadow-sm p-4 border-bottom border-5 border-primary text-start bg-white d-flex flex-column justify-content-between">
-                <div>
-                    <div class="d-flex align-items-center gap-3 mb-3">
-                        <div class="p-3 bg-primary text-white rounded-4 shadow-sm"><i class="bi bi-palette fs-3"></i></div>
-                        <div>
-                            <h3 class="fw-bold fs-4 m-0 text-primary" data-es="Entre Hilos y Colores" data-na="Tlapalmeh ihuan Tzotzomatli">Entre Hilos y Colores</h3>
-                            <h4 class="text-muted small m-0" data-es="Indumentaria Tradicional" data-na="Cualli tzotzomatli">Indumentaria Tradicional</h4>
-                        </div>
-                    </div>
-
-                    <div class="text-dark small mb-3">
-                        <p class="mb-0">
-                            <span data-es="Admira el orgullo de los bordados florales hechos a mano, las faldas plisadas y el misticismo del rebozo tradicional." 
-                                  data-na="Xikitati in blusa blanca tlachichihual ika makuilli tlapalmeh hilos, xochimeh ihuan torebozo.">
-                                  Admira el orgullo de los bordados florales hechos a mano, las faldas plisadas y el misticismo del rebozo tradicional.
-                            </span>
-                        </p>
-                    </div>
-
-                    <div class="text-center my-3 bg-light rounded-4 p-2 border">
-                        <img src="/Recursos/img_cultura/hue.png" class="img-fluid" alt="Mascota Textiles" style="max-height: 110px; object-fit: contain;">
-                    </div>
-                </div>
-                <button class="btn btn-primary w-100 rounded-pill fw-bold mt-2 py-2 shadow-sm" onclick="mostrarSeccion('textiles')">
-                    <span data-es="¡Explorar apartado!" data-na="¡Xikitati!">¡Explorar apartado!</span>
-                </button>
-            </div>
-        </div>
-
-    </div>
-
-    <div id="contenedor-interactivo" class="d-none position-fixed top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center p-3" style="background: rgba(0,0,0,0.8); z-index: 2000; backdrop-filter: blur(4px);">
-        <div id="modal-scroll-body" class="card border-0 rounded-5 p-4 shadow-lg text-center bg-white position-relative" style="max-width: 620px; width: 100%; max-height: 92vh; overflow-y: auto;">
-            <button class="btn-close position-absolute top-0 end-0 m-3 fs-5" onclick="cerrarSeccion()"></button>
-            
-            <div class="mb-3 text-center">
-                 <img id="modal-mascota-img" src="" class="img-fluid rounded-4 shadow-sm border" alt="Mascota" style="max-height: 240px; width: auto; object-fit: contain;">
-            </div>
-            
-            <h3 class="fw-bold text-dark mb-1">
-                <span id="m-tit-historia" class="d-none" data-es="Historia" data-na="Nemilistli">Historia</span>
-                <span id="m-tit-gastronomia" class="d-none" data-es="Gastronomía" data-na="Tlacualistli">Gastronomía</span>
-                <span id="m-tit-arqueologia" class="d-none" data-es="Riqueza Arqueológica" data-na="Tlamatkilistli Tlalantli">Riqueza Arqueológica</span>
-                <span id="m-tit-historica" class="d-none" data-es="Riqueza Histórica" data-na="Nemilistli Ixpampa">Riqueza Histórica</span>
-                <span id="m-tit-textiles" class="d-none" data-es="Entre Hilos y Colores" data-na="Tlapalmeh ihuan Tzotzomatli">Entre Hilos y Colores</span>
-            </h3>
-            
-            <h5 class="text-muted small mb-3">
-                <span id="m-sub-historia" class="d-none" data-es="Origen e Identidad Indígena" data-na="Achto Toinalhuayo">Origen e Identidad Indígena</span>
-                <span id="m-sub-gastronomia" class="d-none" data-es="La Cuna de las 'Memelas'" data-na="Ichan Memelameh">La Cuna de las "Memelas"</span>
-                <span id="m-sub-arqueologia" class="d-none" data-es="Patrimonio Cultural" data-na="Teopantin">Patrimonio Cultural</span>
-                <span id="m-sub-historica" class="d-none" data-es="Asentamiento Tepetitla" data-na="Tepetitla altepe">Asentamiento Tepetitla</span>
-                <span id="m-sub-textiles" class="d-none" data-es="Indumentaria Tradicional" data-na="Cualli tzotzomatli">Indumentaria Tradicional</span>
-            </h5>
-            
-            <div class="text-dark small mb-3 leading-relaxed text-start p-3 bg-light rounded-4 border">
-                
-                <div id="m-txt-historia" class="d-none">
-                    <p class="mb-2"><span data-es="La Resurrección está oficialmente incluida en el Catálogo de Pueblos y Comunidades Indígenas de México y reconocida por el Instituto Nacional de los Pueblos Indígenas (INPI). Aproximadamente el 85% de su población se identifica como indígena." data-na="Inin altepetl ca nican ipan toamauh tlein Catálogo de Pueblos y Comunidades Indígenas de México, ihuan kineki in INPI tlamatkilistli. Cerca chicueyi kan makuilli tlacameh se ixtlamati kemeh mextlatoltecatl.">La Resurrección está oficialmente incluida en el Catálogo de Pueblos y Comunidades Indígenas de México y reconocida por el Instituto Nacional de los Pueblos Indígenas (INPI). Aproximadamente el 85% de su población se identifica como indígena.</span></p>
-                    <p class="mb-0"><span data-es="Es de los pocos lugares en la ciudad de Puebla donde todavía se habla y se mantiene vivo el náhuatl. Cerca de la mitad de sus habitantes habla o entiende esta lengua materna." data-na="Inin tlalantli mextli canin nican altepetl Puebla canin nican nahuatlatolli nemi chicahuac. Tlahco tlacameh nican kipia ihuan kimati totextlatol nahuatl.">Es de los pocos lugares en la ciudad de Puebla donde todavía se habla y se mantiene vivo el náhuatl. Cerca de la mitad de sus habitantes habla o entiende esta lengua materna.</span></p>
-                </div>
-
-                <div id="m-txt-gastronomia" class="d-none">
-                    <p class="mb-2"><span data-es="La comunidad destaca a nivel estatal por su identidad gastronómica. El corazón de nuestra economía tradicional es gracias al maíz nativo y a las maestras del comal que elaboran la memela perfecta." data-na="Toaltepe tlacati nican tolalnan pampa tokualli tlacualistli. Totomintequiyotl nemi pampa tlaolli nativo ihuan tocihuameh tlein kichiua kualli memelameh ipan comalli.">La comunidad destaca a nivel estatal por su identidad gastronómica. El corazón de nuestra economía tradicional es gracias al maíz nativo y a las maestras del comal que elaboran la memela perfecta.</span></p>
-                    <p class="mb-0"><span data-es="La comunidad es famosa por organizar anualmente la Feria de la Gordita (o Feria de la Memela) en la explanada de la parroquia del Señor de la Resurrección, recibiendo a miles de visitantes." data-na="Toaltepe itokah pampa kichiua xiuitl xiuitl in Feria de la Gordita ixpampa toteopan Señor de la Resurrección, canin kiselia miak tlacameh.">La comunidad es famosa por organizar anualmente la Feria de la Gordita (o Feria de la Memela) en la explanada de la parroquia del Señor de la Resurrección, recibiendo a miles de visitantes.</span></p>
-                </div>
-
-                <div id="m-txt-arqueologia" class="d-none">
-                    <p class="mb-2"><span data-es="Zona Arqueológica 'La Manzanilla': En sus inmediaciones se localizan vestigios prehispánicos que incluyen un juego de pelota con cerca de 1,800 años de antigüedad." data-na="Zona Arqueológica 'La Manzanilla': Nican tolalnan actia tlein achto toachtouan tequiti tlein kipia se xahuilli tlacamitetl ika chicueyi yauh xiuitl.">Zona Arqueológica 'La Manzanilla': En sus inmediaciones se localizan vestigios prehispánicos que incluyen un juego de pelota con cerca de 1,800 años de antigüedad.</span></p>
-                    <p class="mb-0"><span data-es="Templo de San Nicolás: Cronistas locales apuntan a que el templo principal fue construido de forma estratégica sobre antiguos ojos de agua de gran valor para los nahuas originarios." data-na="Templo de San Nicolás: Inin tlateomachtil teopan oquicauh kualli nemilistli; toachtouan tlahtoh kichiua inin teopan ixpampa wey ameyalli.">Templo de San Nicolás: Cronistas locales apuntan a que el templo principal fue construido de forma estratégica sobre antiguos ojos de agua de gran valor para los nahuas originarios.</span></p>
-                </div>
-
-                <div id="m-txt-historica" class="d-none">
-                    <p class="mb-2"><span data-es="En la época prehispánica, el asentamiento original se conocía como Tepetitla o Tepetlita (que significa 'Entre cerros'). El pueblo perteneció originalmente al señorío de Cholula y Tlaxcala." data-na="Achto mexko tlalantli, toaltepe itokah Tepetitla o Tepetlita (tlein kineki 'Entre cerros'). Inin altepetl tequiti achto pampa Cholula ihuan Tlaxcala.">En la época prehispánica, el asentamiento original se conocía como Tepetitla o Tepetlita (que significa 'Entre cerros'). El pueblo perteneció originalmente al señorío de Cholula y Tlaxcala.</span></p>
-                    <p class="mb-0"><span data-es="El Archivo Parroquial de la localidad resguarda valiosos documentos históricos de bautismos y matrimonios que datan desde el siglo XVII (1641)." data-na="Inin Archivo Parroquial tolalnan kipia kualli amauh nemilistli tlein bautismos ihuan matrimonios tlein pehua nican makuilli xiuitl (1641).">El Archivo Parroquial de la localidad resguarda valiosos documentos históricos de bautismos y matrimonios que datan desde el siglo XVII (1641).</span></p>
-                </div>
-
-                <div id="m-txt-textiles" class="d-none">
-                    <p class="mb-0"><span data-es="En las fiestas patronales y ceremonias especiales las mujeres portan con orgullo la blusa blanca bordada a mano con hilos multicolores (generally con motivos florales o de aves), combinada con faldas plisadas oscuras y el clásico rebozo." data-na="Keman kichiua toferia ihuan teomachtli, tocihuameh tlahuika ika yolpaki in blusa blanca tlein tlachichihual ika makuilli tlapalmeh hilos (ika xochimeh ihuan totomeh), ika faldas oscuras ihuan torebozo.">En las fiestas patronales y ceremonias especiales las mujeres portan con orgullo la blusa blanca bordada a mano con hilos multicolores (generalmente con motivos florales o de aves), combinada con faldas plisadas oscuras y el clásico rebozo.</span></p>
-                </div>
-
-            </div>
-
-            <div class="mb-4 text-start">
-                <div class="row g-2 d-none" id="m-gal-historia">
-                    <div class="col-6"><img src="/Recursos/img_cultura/historia.JPG" class="img-fluid rounded-3 border w-100" style="height: 100px; object-fit: cover;"></div>
-                    <div class="col-6"><img src="/Recursos/img_cultura/danza.JPG" class="img-fluid rounded-3 border w-100" style="height: 100px; object-fit: cover;"></div>
-                </div>
-                <div class="row g-2 d-none" id="m-gal-gastronomia">
-                    <div class="col-6"><img src="/Recursos/img_cultura/memela.JPG" class="img-fluid rounded-3 border w-100" style="height: 100px; object-fit: cover;"></div>
-                    <div class="col-6"><img src="/Recursos/img_cultura/memelas3.png" class="img-fluid rounded-3 border w-100" style="height: 100px; object-fit: cover;"></div>
-                </div>
-                <div class="row g-2 d-none" id="m-gal-arqueologia">
-                    <div class="col-6"><img src="/Recursos/img_cultura/piramides.png" class="img-fluid rounded-3 border w-100" style="height: 100px; object-fit: cover;"></div>
-                    <div class="col-6"><img src="/Recursos/img_cultura/iglesia.jpg" class="img-fluid rounded-3 border w-100" style="height: 100px; object-fit: cover;"></div>
-                </div>
-                <div class="row g-2 d-none" id="m-gal-historica">
-                    <div class="col-6"><img src="/Recursos/img_cultura/pluma.JPG" class="img-fluid rounded-3 border w-100" style="height: 100px; object-fit: cover;"></div>
-                    <div class="col-6"><img src="/Recursos/img_cultura/pies.JPG" class="img-fluid rounded-3 border w-100" style="height: 100px; object-fit: cover;"></div>
-                </div>
-                <div class="row g-2 d-none" id="m-gal-textiles">
-                    <div class="col-6"><img src="/Recursos/img_cultura/mujervestido.jpg" class="img-fluid rounded-3 border w-100" style="height: 100px; object-fit: cover;"></div>
-                    <div class="col-6"><img src="/Recursos/img_cultura/trajes.jpg" class="img-fluid rounded-3 border w-100" style="height: 100px; object-fit: cover;"></div>
-                </div>
-            </div>
-            
-            <button class="btn btn-dark w-100 rounded-pill fw-bold py-2 shadow-sm" onclick="cerrarSeccion()">
-                 <span data-es="Volver al Menú" data-na="Nican mocuepa">Volver al Menú</span>
-            </button>
-        </div>
-    </div>
-
-    <script>
-        function mostrarSeccion(seccion) {
-            const contenedor = document.getElementById('contenedor-interactivo');
-            const cuerpoModal = document.getElementById('modal-scroll-body');
-            const imagen = document.getElementById('modal-mascota-img');
-
-            // 1. Ocultamos todos los elementos dinámicos previos del modal antes de abrir
-            const elementosAocultar = cuerpoModal.querySelectorAll('[id^="m-tit-"], [id^="m-sub-"], [id^="m-txt-"], [id^="m-gal-"]');
-            elementosAocultar.forEach(el => el.classList.add('d-none'));
-
-            // 2. Definimos las imágenes correspondientes a cada mascota
-            const mascotas = {
-                'historia': '/Recursos/img_cultura/nahuipluma.png',
-                'gastronomia': '/Recursos/img_cultura/nahuicomiendo.png',
-                'arqueologia': '/Recursos/img_cultura/NahuiArque.png',
-                'historica': '/Recursos/img_cultura/NahuiTrajes.png',
-                'textiles': '/Recursos/img_cultura/hue.png'
-            };
-            
-            if (mascotas[seccion]) {
-                imagen.src = mascotas[seccion];
+                setTimeout(() => {
+                    cuerpoModal.scrollTo({ top: 0, behavior: 'smooth' });
+                }, 50);
             }
 
-            // 3. Activamos exclusivamente los bloques de la sección seleccionada
-            document.getElementById(`m-tit-${seccion}`).classList.remove('d-none');
-            document.getElementById(`m-sub-${seccion}`).classList.remove('d-none');
-            document.getElementById(`m-txt-${seccion}`).classList.remove('d-none');
-            document.getElementById(`m-gal-${seccion}`).classList.remove('d-none');
+            function cerrarSeccion() {
+                document.getElementById('contenedor-interactivo').classList.add('d-none');
+            }
+        </script>
+        <div class="d-flex justify-content-start mt-5" data-aos="fade-right">
 
-            // 4. Desplegamos el modal general
-            contenedor.classList.remove('d-none');
-            
-            setTimeout(() => {
-                cuerpoModal.scrollTo({ top: 0, behavior: 'smooth' });
-            }, 50);
-        }
-
-        function cerrarSeccion() {
-            document.getElementById('contenedor-interactivo').classList.add('d-none');
-        }
-    </script>
-    <div
-            class="d-flex justify-content-start mt-5"
-            data-aos="fade-right">
-
-            <button
-                onclick="window.location.href='/pages_int/inicio.html'"
-                class="btn-regresar-int">
+            <button onclick="window.location.href='/pages_int/inicio.html'" class="btn-regresar-int">
 
                 <i class="bi bi-arrow-left-circle-fill me-2"></i>
 
-                <span
-                    data-es="Regresar"
-                    data-na="Mokuepa">
+                <span data-es="Regresar" data-na="Mokuepa">
 
                     Regresar
 
@@ -646,40 +882,42 @@
 
         </div>
         <!-- ========================================== -->
-<!-- COMPONENTE: BOTÓN VOLVER ARRIBA (SCROLL TO TOP) -->
-<!-- ========================================== -->
+        <!-- COMPONENTE: BOTÓN VOLVER ARRIBA (SCROLL TO TOP) -->
+        <!-- ========================================== -->
 
-<!-- Botón HTML con soporte de traducción -->
-<button id="btn-subir" class="btn btn-success position-fixed bottom-0 end-0 m-4 rounded-pill shadow-lg d-none px-3" onclick="subirInicio()" style="z-index: 1050; height: 50px; display: flex; align-items: center; gap: 8px;">
-    <i class="bi bi-arrow-up fs-5 text-white"></i>
-    <span class="small fw-bold text-white" data-es="Subir" data-na="Ahco">Subir</span>
-</button>
+        <!-- Botón HTML con soporte de traducción -->
+        <button id="btn-subir"
+            class="btn btn-success position-fixed bottom-0 end-0 m-4 rounded-pill shadow-lg d-none px-3"
+            onclick="subirInicio()" style="z-index: 1050; height: 50px; display: flex; align-items: center; gap: 8px;">
+            <i class="bi bi-arrow-up fs-5 text-white"></i>
+            <span class="small fw-bold text-white" data-es="Subir" data-na="Ahco">Subir</span>
+        </button>
 
-<!-- Lógica de JavaScript para el Botón -->
-<script>
-    // Detectar el desplazamiento (scroll) de la página
-    window.addEventListener('scroll', function() {
-        const boton = document.getElementById("btn-subir");
-        
-        // Si el usuario baja más de 300 píxeles, el botón aparece; si vuelve arriba, se oculta
-        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-            boton.classList.remove("d-none");
-        } else {
-            boton.classList.add("d-none");
-        }
-    });
+        <!-- Lógica de JavaScript para el Botón -->
+        <script>
+            // Detectar el desplazamiento (scroll) de la página
+            window.addEventListener('scroll', function () {
+                const boton = document.getElementById("btn-subir");
 
-    // Función para deslizar suavemente hacia el inicio
-    function subirInicio() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth' // Hace que la subida sea fluida y estética
-        });
-    }
-</script>
-</main>
+                // Si el usuario baja más de 300 píxeles, el botón aparece; si vuelve arriba, se oculta
+                if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                    boton.classList.remove("d-none");
+                } else {
+                    boton.classList.add("d-none");
+                }
+            });
 
-<!-- =========================================
+            // Función para deslizar suavemente hacia el inicio
+            function subirInicio() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth' // Hace que la subida sea fluida y estética
+                });
+            }
+        </script>
+    </main>
+
+    <!-- =========================================
                 FOOTER
             ========================================= -->
 
