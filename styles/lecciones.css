@@ -144,8 +144,8 @@ main.container {
     bottom: 25px;
     right: 25px;
     z-index: 9999 !important;
-    background-color: #53D000;
-    border: 3px solid #2E8A00;
+    background-color: #00543d;
+    border: 3px solid #00543d;
     color: white !important;
     font-family: system-ui, -apple-system, sans-serif;
     font-weight: 700;
@@ -160,8 +160,8 @@ main.container {
 }
 
 .boton-subir:hover {
-    background-color: #2E8A00;
-    border-color: #1A5200;
+    background-color: #00543d;
+    border-color: #00543d;
     transform: translateY(-4px);
     color: white !important;
 }
