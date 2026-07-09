@@ -327,13 +327,3 @@
             opacity: 0.6;
             width: 100%;
         }
-        html,
-body{
-    height:100%;
-}
-
-body{
-    background:#124734;
-    font-family:'Poppins';
-    color:#2e2740;
-}
