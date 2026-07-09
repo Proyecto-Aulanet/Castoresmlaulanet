@@ -20,6 +20,10 @@
     <link rel="stylesheet" href="/styles/styles.css">
 
     <style>
+
+        main {
+            margin-top: 60px; 
+        }
         .libro-modal-content::-webkit-scrollbar {
             width: 8px;
         }
@@ -35,6 +39,20 @@
                 padding-top: 10px;
                 padding-bottom: 10px;
             }
+        }
+        /* Botón de audio estilizado sin alterar el diseño original */
+        .btn-audio-cuento {
+            background: none;
+            border: none;
+            color: #8B5A2B;
+            font-size: 1.2rem;
+            cursor: pointer;
+            padding: 0;
+            margin-left: 10px;
+            transition: color 0.2s ease;
+        }
+        .btn-audio-cuento:hover {
+            color: #5c3a21;
         }
     </style>
 
@@ -72,7 +90,7 @@
 
         <svg class="engranaje engranaje1" viewBox="0 0 24 24">
             <path fill="white"
-                d="M19.14,12.94a7.48,7.48,0,0,0,.05-.94a7.48,7.48,0,0,0-.05-.94l2.03-1.58a.5.5,0,0,0,.12-.64l-1.92-3.32a.5.5,0,0,0-.61-.22l-2.39.96a7.28,7.28,0,0,0-1.63-.94L14.5,2.81a.5.5,0,0,0-.5-.41H10a.5.5,0,0,0-.5.41L9.12,5.32a7.28,7.28,0,0,0-1.63.94L5.1,5.3a.5.5,0,0,0-.61.22L2.57,8.84a.5.5,0,0,0,.12.64L4.72,11.06a7.48,7.48,0,0,0-.05.94a7.48,7.48,0,0,0,.05.94L2.69,14.52a.5.5,0,0,0-.12.64l1.92,3.32a.5.5,0,0,0,.61.22l2.39-.96a7.28,7.28,0,0,0,1.63.94l.38,2.51a.5.5,0,0,0,.5.41h4a.5.5,0,0,0,.5-.41l.38-2.51a7.28,7.28,0,0,0,1.63-.94l2.39.96a.5.5,0,0,0,.61-.22l1.92-3.32a.5.5,0,0,0-.12-.64Z"/>
+                d="M19.14,12.94a7.48,7.48,0,0,0,.05-.94a7.48,7.48,0,0,0-.05-.94l2.03-1.58a.5.5,0,0,0,.12-.64l-1.92-3.32a.5.5,0,0,0-.61-.22l-2.39.96a7.28,7.28,0,0,0-1.63-.94L14.5,2.81a.5.5,0,0,0-.5-.41H10a.5.5,0,0,0-.5.41L9.12,5.32a7.28,7.28,0,0,0-1.63.94L5.1,5.3a.5.5,0,0,0-.61.22L2.57,8.84a.5.5,0,0,0,.12.64L4.72,11.06a7.48,7.48,0,0,0-.05.94a7.48,7.48,0,0,0,.05.94L2.69,14.52a.5.5,0,0,0-.12.64l1.92,3.32a.5.5,0,0,0-.61.22l2.39-.96a7.28,7.28,0,0,0,1.63.94l.38,2.51a.5.5,0,0,0,.5.41h4a.5.5,0,0,0,.5-.41l.38-2.51a7.28,7.28,0,0,0,1.63-.94l2.39.96a.5.5,0,0,0,.61-.22l1.92-3.32a.5.5,0,0,0-.12-.64Z"/>
         </svg>
 
         <svg class="engranaje engranaje2" viewBox="0 0 24 24">
@@ -301,19 +319,19 @@
                         <div class="carousel-inner">
 
                             <div class="carousel-item active">
-                                <img class="img-fluid" src="/Recursos/cuentos/nahui_cuento.png" class="hero-img" alt="Cuento">
+                                <img class="img-fluid" src="/Recursos/cuentos/ajolote.png" class="hero-img" alt="Cuento">
                             </div>
 
                             <div class="carousel-item">
-                                <img class="img-fluid" src="/Recursos/cuentos/castor_cuento.png" class="hero-img" alt="Cuento">
+                                <img class="img-fluid" src="/Recursos/cuentos/arbol.png" class="hero-img" alt="Cuento">
                             </div>
 
                             <div class="carousel-item">
-                                <img class="img-fluid" src="/Recursos/cuentos/venado_cuento.png" class="hero-img" alt="Cuento">
+                                <img class="img-fluid" src="/Recursos/cuentos/el principito.png" class="hero-img" alt="Cuento">
                             </div>
 
                             <div class="carousel-item">
-                                <img class="img-fluid" src="/Recursos/cuentos/guacamaya_cuento.png" class="hero-img" alt="Cuento">
+                                <img class="img-fluid" src="/Recursos/cuentos/liebre y tortuga.png" class="hero-img" alt="Cuento">
                             </div>
 
                         </div>
@@ -357,7 +375,7 @@
 
     </section>
 
-    <section class="container mt-4">
+    <section class="container py-4">
 
         <div class="d-flex justify-content-between align-items-center mb-4">
 
@@ -375,7 +393,7 @@
 
             <div class="col-md-6 col-lg-3">
                 <div class="cuento-card">
-                    <img class="img-fluid" src="/Recursos/cuentos/nahui_cuento.png" alt="El origen de la luz">
+                    <img class="img-fluid" src="/Recursos/cuentos/el origen de la luz.png" alt="El origen de la luz">
                     <div class="p-3">
                         <h4 data-es="El hombre que buscaba el origen de la luz" data-na="In tlacatl tlen oquinequia quimatis campa nemi in tlanextli">
                             El hombre que buscaba el origen de la luz
@@ -395,7 +413,7 @@
 
             <div class="col-md-6 col-lg-3">
                 <div class="cuento-card">
-                    <img class="img-fluid" src="/Recursos/cuentos/guacamaya_cuento.png" alt="La serpiente y el curandero">
+                    <img class="img-fluid" src="/Recursos/cuentos/serpiente y curandero.png" alt="La serpiente y el curandero">
                     <div class="p-3">
                         <h4 data-es="La serpiente y el curandero del pueblo" data-na="In coahuitl huan in ticitl tlen altepetl">
                             La serpiente y el curandero del pueblo
@@ -415,7 +433,7 @@
 
             <div class="col-md-6 col-lg-3">
                 <div class="cuento-card">
-                    <img class="img-fluid" src="/Recursos/cuentos/venado_cuento.png" alt="El préstamo de la noche y la luz">
+                    <img class="img-fluid" src="/Recursos/cuentos/el prestamo de la noche.png" alt="El préstamo de la noche y la luz">
                     <div class="p-3">
                         <h4 data-es="El préstamo de la noche y la luz" data-na="In tlaneuhtli tlen yohuac huan in tlahuilli">
                             El préstamo de la noche y la luz
@@ -435,15 +453,15 @@
 
             <div class="col-md-6 col-lg-3">
                 <div class="cuento-card">
-                    <img class="img-fluid" src="/Recursos/cuentos/castor_cuento.png" alt="El coyote y la luna brillante">
+                    <img class="img-fluid" src="/Recursos/cuentos/flores.png" alt="Las flores que curaron el alma de la tierra">
                     <div class="p-3">
-                        <h4 data-es="El coyote y la luna brillante" data-na="In coyotl huan in metztli tlahuiliahtli">
-                            El coyote y la luna brillante
+                        <h4 data-es="Las flores que curaron el alma de la tierra" data-na="In xochimeh tlen tlein quichiya in tlalli">
+                            Las flores que curaron el alma de la tierra
                         </h4>
-                        <p data-es="La historia de un coyote que deseaba alcanzar el cielo y aprendió una valiosa lección." data-na="In tlamachtili tlen ce coyotl tlen quinequia patlanis ipan ilhuicatl.">
-                            La historia de un coyote que deseaba alcanzar el cielo y aprendió una valiosa lección.
+                        <p data-es="La historia de Pedro y Lucas, y la gran lección de respeto que les dio nuestra madre tierra." data-na="Nemiyan ome tlacameh, Pedro huan Lucas, tlen oquipiah hueyi cualantli ipampa ce tlalmetl.">
+                            La historia de Pedro y Lucas, y la gran lección de respeto que les dio nuestra madre tierra.
                         </p>
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#modalLibroCoyote">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#modalLibroFloresTierra">
                             <i class="bi bi-book"></i> 
                             <p data-es="Leer cuento" data-na="Xikpohua tlamachtili">
                                 Leer cuento
@@ -545,7 +563,7 @@
 
                     <div class="col-6 col-md-4 col-lg-3">
                         <div class="cuento-modal-card">
-                            <img class="img-fluid" src="/Recursos/cuentos/nahui_cuento.png" alt="El origen de la luz">
+                            <img class="img-fluid" src="/Recursos/cuentos/el origen de la luz.png" alt="El origen de la luz">
                             <div class="cuento-overlay">
                                 <h6 data-es="El origen de la luz" data-na="In tlanextli">El origen de la luz</h6>
                                 <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalLibroOrigenLuz">
@@ -557,7 +575,7 @@
 
                     <div class="col-6 col-md-4 col-lg-3">
                         <div class="cuento-modal-card">
-                            <img class="img-fluid" src="/Recursos/cuentos/guacamaya_cuento.png" alt="La serpiente y el curandero">
+                            <img class="img-fluid" src="/Recursos/cuentos/serpiente y curandero.png" alt="La serpiente y el curandero">
                             <div class="cuento-overlay">
                                 <h6 data-es="La serpiente y el curandero" data-na="In coahuitl huan in ticitl">La serpiente y el curandero</h6>
                                 <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalLibroSerpiente">
@@ -569,7 +587,7 @@
 
                     <div class="col-6 col-md-4 col-lg-3">
                         <div class="cuento-modal-card">
-                            <img class="img-fluid" src="/Recursos/cuentos/venado_cuento.png" alt="El préstamo de la noche y la luz">
+                            <img class="img-fluid" src="/Recursos/cuentos/el prestamo de la noche.png" alt="El préstamo de la noche y la luz">
                             <div class="cuento-overlay">
                                 <h6 data-es="El préstamo de la noche" data-na="In tlaneuhtli tlen yohuac">El préstamo de la noche</h6>
                                 <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalLibroPrestamo">
@@ -581,17 +599,31 @@
 
                     <div class="col-6 col-md-4 col-lg-3">
                         <div class="cuento-modal-card">
-                            <img class="img-fluid" src="/Recursos/cuentos/perro_cuento.png" alt="La liebre y la tortuga">
+                            <img class="img-fluid" src="/Recursos/cuentos/liebre y tortuga.png" alt="La liebre y la tortuga">
                             <div class="cuento-overlay">
-                                <h6 data-es="La liebre y la tortuga" data-na="La liebre y la tortuga">La liebre y la tortuga</h6>
-                                <button class="btn btn-success btn-sm">Leer</button>
+                                <h6 data-es="La liebre y la tortuga" data-na="In tochtli huan in ayótli">La liebre y la tortuga</h6>
+                                <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalLibroLiebreTortuga">
+                                    Leer
+                                </button>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-6 col-md-4 col-lg-3">
                         <div class="cuento-modal-card">
-                            <img class="img-fluid" src="/Recursos/cuentos/perro_cuento.png" alt="El tecolote que perdió su canto">
+                            <img class="img-fluid" src="/Recursos/cuentos/bruja.png" alt="La bruja de fuego y la partera limpia">
+                            <div class="cuento-overlay">
+                                <h6 data-es="La bruja de fuego y la partera" data-na="In tlahuipochtli huan in ticitl">La bruja y la partera</h6>
+                                <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalLibroBrujaPartera">
+                                    Leer
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <div class="cuento-modal-card">
+                            <img class="img-fluid" src="/Recursos/cuentos/tecolote.png" alt="El tecolote que perdió su canto">
                             <div class="cuento-overlay">
                                 <h6 data-es="El tecolote que perdió su canto" data-na="In tecolotl tlen oquipolo icuic">El tecolote que perdió su canto</h6>
                                 <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalLibroTecolote">
@@ -603,17 +635,19 @@
 
                     <div class="col-6 col-md-4 col-lg-3">
                         <div class="cuento-modal-card">
-                            <img class="img-fluid" src="/Recursos/cuentos/castor_cuento.png" alt="El último castor">
+                            <img class="img-fluid" src="/Recursos/cuentos/el principito.png" alt="El último castor">
                             <div class="cuento-overlay">
-                                <h6 data-es="El último castor" data-na="In Sāyōj Castor">El último castor</h6>
-                                <button class="btn btn-success btn-sm">Leer</button>
+                                <h6 data-es="El principito" data-na=" In Piltzintli">El principito</h6>
+                                <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalLibroPrincipito">
+                                    Leer
+                                </button>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-6 col-md-4 col-lg-3">
                         <div class="cuento-modal-card">
-                            <img class="img-fluid" src="/Recursos/cuentos/guacamaya_cuento.png" alt="El hombre que secó el manantial">
+                            <img class="img-fluid" src="/Recursos/cuentos/manantial.png" alt="El hombre que secó el manantial">
                             <div class="cuento-overlay">
                                 <h6 data-es="El hombre que secó el manantial" data-na="In tlacatl tlen oquixitini in ameyalli">El hombre que secó el manantial</h6>
                                 <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalLibroManantial">
@@ -625,10 +659,94 @@
 
                     <div class="col-6 col-md-4 col-lg-3">
                         <div class="cuento-modal-card">
-                            <img class="img-fluid" src="/Recursos/cuentos/castor_cuento.png" alt="El coyote y la luna brillante">
+                            <img class="img-fluid" src="/Recursos/cuentos/el coyote y la luna.png" alt="El coyote y la luna brillante">
                             <div class="cuento-overlay">
                                 <h6 data-es="El coyote y la luna brillante" data-na="In coyotl huan in metztli tlahuiliahtli">El coyote y la luna brillante</h6>
                                 <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalLibroCoyote">
+                                    Leer
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <div class="cuento-modal-card">
+                            <img class="img-fluid" src="/Recursos/cuentos/flores.png" alt="Las flores que curaron el alma de la tierra">
+                            <div class="cuento-overlay">
+                                <h6 data-es="Las flores que curaron el alma de la tierra" data-na="In xochimeh tlen tlein quichiya in tlalli">Las flores que curaron el alma</h6>
+                                <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalLibroFloresTierra">
+                                    Leer
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <div class="cuento-modal-card">
+                            <img class="img-fluid" src="/Recursos/cuentos/gato nahual.png" alt="El gato nahual y el misterio del maíz">
+                            <div class="cuento-overlay">
+                                <h6 data-es="El gato nahual y el misterio" data-na="In nahualmiton huan in tlayolli">El gato nahual y el maíz</h6>
+                                <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalLibroGatoNahual">
+                                    Leer
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <div class="cuento-modal-card">
+                            <img class="img-fluid" src="/Recursos/cuentos/ajolote.png" alt="El ajolote y el río que muere">
+                            <div class="cuento-overlay">
+                                <h6 data-es="El ajolote y el río que muere" data-na="In axolotl huan in atoyatl tlen miqui">El ajolote y el río</h6>
+                                <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalLibroAjoloteRio">
+                                    Leer
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <div class="cuento-modal-card">
+                            <img class="img-fluid" src="/Recursos/cuentos/hombre.png" alt="El hombre que perdió su corazón en la guerra">
+                            <div class="cuento-overlay">
+                                <h6 data-es="El hombre que perdió su corazón" data-na="In tlacatl tlen oquipolo iyolo ipan in yaoyotl">El hombre y la guerra</h6>
+                                <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalLibroHombreGuerra">
+                                    Leer
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <div class="cuento-modal-card">
+                            <img class="img-fluid" src="/Recursos/cuentos/arbol.png" alt="El árbol que habla por la noche">
+                            <div class="cuento-overlay">
+                                <h6 data-es="El árbol que habla por la noche" data-na="In cuahuitl tlen tlatlahtoa yohuac">El árbol de la noche</h6>
+                                <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalLibroArbolNoche">
+                                    Leer
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <div class="cuento-modal-card">
+                            <img class="img-fluid" src="/Recursos/cuentos/muerte.png" alt="El árbol que habla por la noche">
+                            <div class="cuento-overlay">
+                                <h6 data-es="El hombre que se encontró con la muerte" data-na="In tlacatl ten ouquimonamicti in miquiztli">El hombre y la muerte</h6>
+                                <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalLibroHombreMuerte">
+                                    Leer
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <div class="cuento-modal-card">
+                            <img class="img-fluid" src="/Recursos/cuentos/pueblo.png" alt="El árbol que habla por la noche">
+                            <div class="cuento-overlay">
+                                <h6 data-es="El espíritu del pueblo y los ancestros" data-na="In itonal in altepetl huan in tocolhuan">El espíritu del pueblo y los ancestros</h6>
+                                <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalLibroEspirituAncestros">
                                     Leer
                                 </button>
                             </div>
@@ -662,10 +780,13 @@
                     
                     <div class="col-md-6 pe-md-4 style-pagina-libro">
                         <div class="d-flex justify-content-between align-items-center mb-3">
-                            <span class="badge bg-success">Náhuatl</span>
+                            <div class="d-flex align-items-center">
+                                <span class="badge bg-success">Náhuatl</span>
+                                <button class="btn-audio-cuento" onclick="reproducirTexto(this)"><i class="bi bi-play-circle-fill"></i></button>
+                            </div>
                             <small style="color: #8B5A2B; font-weight: bold;">Nemiyan</small>
                         </div>
-                        <div style="font-family: 'Georgia', serif; font-size: 1.1rem; line-height: 1.8; color: #2c1d11; text-align: justify;">
+                        <div class="texto-narrar" style="font-family: 'Georgia', serif; font-size: 1.1rem; line-height: 1.8; color: #2c1d11; text-align: justify;">
                             <p><strong>1.</strong> Ce tlacatl tlen itoca Juan. Yehhuatl tlahuel tlalnamiquiya, macamo quitlazohtlaya in tequiti ipan ixtlahuatl; quinequia quimatis campa hualauh in tonatiuh huan in metztli, huan campa mocahua in tlanextli ihcuac in yohualli tlaneci. Ceh tona, quicahualteuac ichan, iconehuan huan icihuauh, huan yajqui ipan in tepetl hueyi tlen quipia ce oztotl ihtic iyolo.</p>
                             
                             <p>Ipan ohtli, Juan oquimonamicti ce huehue tlacatl tlen oquipia ce hueyi quemitl chipahuac huan ce tlaxictli tletl ipan imauh. In huehue quili: "¿Campa tiya, Juan? In ohtli tlen tictequiti tlahuel hueca huan mochan moxitiniya chipahuac." Juan oquilihtli ca icualantli: "Nicnequi nacis campa nemi in tlanextli, nicnequi niquitzquiz in tonatiuh ipan nomauh ipampa nicnequi nitequitis chicahuac huan aicma nictolinis tomin."</p>
@@ -680,10 +801,13 @@
 
                     <div class="col-md-6 ps-md-4 style-pagina-libro">
                         <div class="d-flex justify-content-between align-items-center mb-3">
-                            <span class="badge bg-secondary">Español</span>
+                            <div class="d-flex align-items-center">
+                                <span class="badge bg-secondary">Español</span>
+                                <button class="btn-audio-cuento" onclick="reproducirTexto(this)"><i class="bi bi-play-circle-fill"></i></button>
+                            </div>
                             <small style="color: #8B5A2B; font-weight: bold;">Vivía</small>
                         </div>
-                        <div style="font-family: 'Georgia', serif; font-size: 1.1rem; line-height: 1.8; color: #2c1d11; text-align: justify;">
+                        <div class="texto-narrar" style="font-family: 'Georgia', serif; font-size: 1.1rem; line-height: 1.8; color: #2c1d11; text-align: justify;">
                             <p>Un hombre llamado Juan. Era muy pensativo, pero no le gustaba el trabajo del campo; quería saber de dónde venían el sol y la luna, y dónde se guardaba la luz cuando la noche caía. Un día, dejó su casa, a sus hijos y a su esposa, y se fue hacia el gran cerro que tiene una cueva en su interior.</p>
                             
                             <p>En el camino, Juan se encontró con un anciano que llevaba una gran capa blanca y una pequeña brasa de fuego en la mano. El anciano le dijo: "¿A dónde vas, Juan? El camino que caminas es muy largo y tu casa se está quedando vacía." Juan le respondió con orgullo: "Quiero llegar a donde vive la luz, quiero atrapar al sol con mis manos porque deseo ser poderoso y jamás padecer por dinero."</p>
@@ -723,10 +847,13 @@
                     
                     <div class="col-md-6 pe-md-4 style-pagina-libro">
                         <div class="d-flex justify-content-between align-items-center mb-3">
-                            <span class="badge bg-success">Náhuatl</span>
+                            <div class="d-flex align-items-center">
+                                <span class="badge bg-success">Náhuatl</span>
+                                <button class="btn-audio-cuento" onclick="reproducirTexto(this)"><i class="bi bi-play-circle-fill"></i></button>
+                            </div>
                             <small style="color: #8B5A2B; font-weight: bold;">Ipan ce altepetl</small>
                         </div>
-                        <div style="font-family: 'Georgia', serif; font-size: 1.1rem; line-height: 1.8; color: #2c1d11; text-align: justify;">
+                        <div class="texto-narrar" style="font-family: 'Georgia', serif; font-size: 1.1rem; line-height: 1.8; color: #2c1d11; text-align: justify;">
                             <p><strong>2.</strong> Ipan ce altepetl tlen nemi in faldas de la Matlalcueye, nemiya ce tlacatl tlen itoca Don Mateo. Yehhuatl oquipia ce cuali tonal: oquimatia patli tlen cuauhtitlan huan quipalehuiahtli in cocoxqueh. Nochtin in tlacameh quimahuiztiaya ipampa iyolo oquipia chipahuac atl. Huelis, in tomin oquixitini iyolo. Mateo oquipecahuac quitzatzi tomin chicahuac ipan in icnotlacameh tlen ahmo oquipiah tlein quicuas.</p>
                             
                             <p>Ceh yohualli, ihcuac Mateo oquipiahtli ce hueyi tlacualiztli ipan ichan, ce cihuatl oquitzatzi ihtic itentli: "Don Mateo, xinechpalehui, noconetzin tlahuel icoxohua huan miqui." Mateo oquili: "Tla ahmo ticpia macuilli tomin huan ce totolin, ahmo niyaz mochan." In cihuatl ochocac huan oyajqui ipan in yohualli.</p>
@@ -741,17 +868,20 @@
 
                     <div class="col-md-6 ps-md-4 style-pagina-libro">
                         <div class="d-flex justify-content-between align-items-center mb-3">
-                            <span class="badge bg-secondary">Español</span>
+                            <div class="d-flex align-items-center">
+                                <span class="badge bg-secondary">Español</span>
+                                <button class="btn-audio-cuento" onclick="reproducirTexto(this)"><i class="bi bi-play-circle-fill"></i></button>
+                            </div>
                             <small style="color: #8B5A2B; font-weight: bold;">En un pueblo</small>
                         </div>
-                        <div style="font-family: 'Georgia', serif; font-size: 1.1rem; line-height: 1.8; color: #2c1d11; text-align: justify;">
-                            <p>En un pueblo ubicado en las faldas de La Malinche, vivía un hombre llamado Don Mateo. Él tenía un gran don espiritual: conocía las plantas medicinales del bosque y curaba a los enfermos. Toda la gente lo respected porque su corazón era limpio como el agua cristalina. Sin embargo, la ambición terminó por cambiarlo. Mateo comenzó a cobrar mucho dinero a los campesinos pobres que no tenían ni para comer.</p>
+                        <div class="texto-narrar" style="font-family: 'Georgia', serif; font-size: 1.1rem; line-height: 1.8; color: #2c1d11; text-align: justify;">
+                            <p>En un pueblo ubicado en las faldas de La Malinche, vivía un hombre llamado Don Mateo. Él tenía un gran don espiritual: conocía las plantas medicinales del bosque y curaba a los enfermos. Toda la gente lo respetaba porque su corazón era limpio como el agua cristalina. Sin embargo, la ambición terminó por cambiarlo. Mateo comenzó a cobrar mucho dinero a los campesinos pobres que no tenían ni para comer.</p>
                             
                             <p>Una noche, mientras Mateo disfrutaba de un gran banquete en su casa, una mujer llamó desesperada a su puerta: "Don Mateo, ayúdeme por favor, mi hijo tiene una fiebre muy alta y se está muriendo." Mateo le respondió con frialdad: "Si no tienes quinientos pesos y un guajolote, no iré a tu casa." La mujer lloró amargamente y se perdió en la oscuridad de la noche.</p>
                             
                             <p>A la mañana siguiente, Mateo fue al bosque a buscar plantas. De repente, vio a una enorme serpiente cuyos ojos brillaban como el fuego. La serpiente habló con una voz profunda: "Mateo, tú que recibiste el don de la curación directamente en tu corazón, ahora lo usas para adorar al dinero. Los niños que dejas desamparados son mis hijos." Mateo, aterrorizado, tiró su canasta e intentó huir, pero la serpiente lo alcanzó y le rodeó la pierna.</p>
                             
-                            <p>La serpiente mordió a Mateo; no lo mató, pero atrapó su don espiritual y lo hundió bajo la tierra. Mateo regresó a su casa, pero jamás volvió a recordar el secreto de las plantas medicinales; cada vez que intentaba curar a alguien, olvidaba las recetas. Así comprendió que el don de luz que el creador nos da es para servir a la comunidad y no para enriquecerse con el dolor de los demás.</p>
+                            <p>La serpiente mordió a Mateo; no lo mató, pero atrapó su don espiritual y lo hundió bajo la tierra. Mateo regreso a su casa, pero jamás volvió a recordar el secreto de las plantas medicinales; cada vez que intentaba curar a alguien, olvidaba las recetas. Así comprendió que el don de luz que el creador nos da es para servir a la comunidad y no para enriquecerse con el dolor de los demás.</p>
                         </div>
                     </div>
 
@@ -784,13 +914,16 @@
                     
                     <div class="col-md-6 pe-md-4 style-pagina-libro">
                         <div class="d-flex justify-content-between align-items-center mb-3">
-                            <span class="badge bg-success">Náhuatl</span>
+                            <div class="d-flex align-items-center">
+                                <span class="badge bg-success">Náhuatl</span>
+                                <button class="btn-audio-cuento" onclick="reproducirTexto(this)"><i class="bi bi-play-circle-fill"></i></button>
+                            </div>
                             <small style="color: #8B5A2B; font-weight: bold;">Maria</small>
                         </div>
-                        <div style="font-family: 'Georgia', serif; font-size: 1.1rem; line-height: 1.8; color: #2c1d11; text-align: justify;">
+                        <div class="texto-narrar" style="font-family: 'Georgia', serif; font-size: 1.1rem; line-height: 1.8; color: #2c1d11; text-align: justify;">
                             <p><strong>3.</strong> Nemiya ce cihuatl tlen itoca Maria. Yehhuatl oquipolo itatzin, tlen oquitzatziaya chicahuac ipan iyolo. Maria tlahuel ochocaya nochtin in tonah, aicma quinequia tlacualiztli huan quitlaliaya icualantli ipan in altepetl. Quihtoaya: "¿Ipampa tlein in Miquiztli oquihuicac notatzin huan oquicauh in tlacameh tlen ahmo cuali nemih?"</p>
                             
-                            <p>Ipan in yohualli tlen Mikailhuitl (Día de Muertos), Maria oquichihuac ce hueyi tlamanaliztli, huelis ahmo oquitlali copalli, oquipia icualantli. Ihcuac omochi tlaco-yohuac (media noche), quicac ce tlatzotzonaliztli tlen tlahuel tztic huan oquitta tlein ihtic icaltentli oquipiahtli ce pantli tlacameh chipahuac. Ompa, ipan tlatzachtli, oquitta itatzin.</p>
+                            <p>Ipan in yohualli tlen Mikailhuitl (Día de Muertos), Maria oquichihuac ce hueyi tlamanaliztli, huan oquitlali copalli, oquipia icualantli. Ihcuac omochi tlaco-yohuac (media noche), quicac ce tlatzotzonaliztli tlen tlahuel tztic huan oquitta tlein ihtic icaltentli oquipiahtli ce pantli tlacameh chipahuac. Ompa, ipan tlatzachtli, oquitta itatzin.</p>
                             
                             <p>Huelis itatzin ahmo oquipiahtli tlanextli. Quixitiniya ce cuali tzacualtin tlen oquipia chipahuac atl, huan in atl omochi zoquitl ipampa in chocahuiliztli tlen Maria. Itatzin oquimotepitzqui imauh huan quili: "Maria, noconeu, ahmo xichoca ocachi. Mochocaca quichihua tlein noohtli omochi zoquitl huan ahmo huelis niyaz campa nemi in tlanextli. Nimitztlaneuhtia noyolo axcan, xinechmaca moichicahuatiliztli huan xinechcahua nicochis."</p>
                             
@@ -802,13 +935,16 @@
 
                     <div class="col-md-6 ps-md-4 style-pagina-libro">
                         <div class="d-flex justify-content-between align-items-center mb-3">
-                            <span class="badge bg-secondary">Español</span>
+                            <div class="d-flex align-items-center">
+                                <span class="badge bg-secondary">Español</span>
+                                <button class="btn-audio-cuento" onclick="reproducirTexto(this)"><i class="bi bi-play-circle-fill"></i></button>
+                            </div>
                             <small style="color: #8B5A2B; font-weight: bold;">María</small>
                         </div>
-                        <div style="font-family: 'Georgia', serif; font-size: 1.1rem; line-height: 1.8; color: #2c1d11; text-align: justify;">
+                        <div class="texto-narrar" style="font-family: 'Georgia', serif; font-size: 1.1rem; line-height: 1.8; color: #2c1d11; text-align: justify;">
                             <p>Un día vivía una mujer llamada María. Ella había perdido a su padre, a quien amaba con toda su alma. María lloraba amargamente todos los días, había perdido el apetito y guardaba un profundo rencor contra el mundo. Decía con amargura: "¿Por qué la Muerte se llevó a mi padre, que era un hombre bueno, y dejó aquí a personas que hacen el mal?"</p>
                             
-                            <p>En la noche de Todos los Santos (Día de Muertos), María preparó una gran ofrenda, pero no encendió el copal porque su corazón seguía lleno de rabia. Cuando llegó la medianoche, escuchó una música muy mística y fría, y al mirar hacia el umbral de su puerta, vio una fila de personas vestidas de blanco. En medio de esa procesión, vio aparecer a su padre.</p>
+                            <p>En la noche de Todos los Santos (Día de Muertos), María preparó una gran ofrenda, pero no encendió el copal porque su corazón seguía lleno de rabia. Cuando llegó la medianoche, escuchó una música muy mística y fría, y al mirar hacia el umbral de su puerta, vio una fila de personas vestivas de blanco. En medio de esa procesión, vio aparecer a su padre.</p>
                             
                             <p>Sin embargo, su padre no irradiaba luz. Cargaba un cántaro de agua que se había convertido en lodo debido a las lágrimas constantes de María. El padre se acercó, tomó las manos de su hija y le dijo: "María, hija mía, te suplico que ya no llores más por mí. Tu llanto incesante hace que mi camino se vuelva lodoso y pesado, y no me dejas avanzar hacia el lugar de la luz eterna. Te pido prestado tu dolor hoy: dame tu paz y déjame descansar en mi sueño."</p>
                             
@@ -845,10 +981,13 @@
                     
                     <div class="col-md-6 pe-md-4 style-pagina-libro">
                         <div class="d-flex justify-content-between align-items-center mb-3">
-                            <span class="badge bg-success">Náhuatl</span>
+                            <div class="d-flex align-items-center">
+                                <span class="badge bg-success">Náhuatl</span>
+                                <button class="btn-audio-cuento" onclick="reproducirTexto(this)"><i class="bi bi-play-circle-fill"></i></button>
+                            </div>
                             <small style="color: #8B5A2B; font-weight: bold;">Tecolotl</small>
                         </div>
-                        <div style="font-family: 'Georgia', serif; font-size: 1.1rem; line-height: 1.8; color: #2c1d11; text-align: justify;">
+                        <div class="texto-narrar" style="font-family: 'Georgia', serif; font-size: 1.1rem; line-height: 1.8; color: #2c1d11; text-align: justify;">
                             <p><strong>5.</strong> Ipan ce hueyi ahuatl tlen nemi ipan in ohtli yajqui in altepetl, nemiya ce tecolotl tlen oquipia ce cuali cuicatl. Ihcuac yehhuatl tlatzotzonaya yohuac, in tlacameh tlen oquipiah chocahuiliztli ipan iyolo oquimatihque pacayeliztli. Huelis, ce tona, ce tlacatl oquili in tecolotl tlein icuic oquipiahtli miquiztli, huan in tlacameh quimahuiliayah.</p>
                             
                             <p>In tecolotl omoyolcacuah chicahuac. Quilcauh icuic, huan iyolo omocauh tlayohuatl. Aicma oquitzatzi ihtic in yohualli. In caltin omocauhque tztic huan in tlacameh aicma oquipiah cuali tlalnamiquiliztli. Ce huehue tlacatl, tlen oquimatia in tlanahuatilli tlen yolcatl, oyajqui ihtic in ahuatl huan oquili: "Tecolotl, mocuic ahmo quihuica miquiztli. Mocuic ce patli tlen tictlalia ipan iyolo in tlacameh ipampa ahmo quimahuiztizque in yohualli. Xicuica occepa."</p>
@@ -861,10 +1000,13 @@
 
                     <div class="col-md-6 ps-md-4 style-pagina-libro">
                         <div class="d-flex justify-content-between align-items-center mb-3">
-                            <span class="badge bg-secondary">Español</span>
+                            <div class="d-flex align-items-center">
+                                <span class="badge bg-secondary">Español</span>
+                                <button class="btn-audio-cuento" onclick="reproducirTexto(this)"><i class="bi bi-play-circle-fill"></i></button>
+                            </div>
                             <small style="color: #8B5A2B; font-weight: bold;">Tecolote</small>
                         </div>
-                        <div style="font-family: 'Georgia', serif; font-size: 1.1rem; line-height: 1.8; color: #2c1d11; text-align: justify;">
+                        <div class="texto-narrar" style="font-family: 'Georgia', serif; font-size: 1.1rem; line-height: 1.8; color: #2c1d11; text-align: justify;">
                             <p>En un gran encino que estaba junto al camino hacia el pueblo, vivía un tecolote que poseía un canto hermoso. Cuando él cantaba por las noches, las personas que tenían tristeza en su corazón sentían un gran consuelo. Sin embargo, un día, un hombre le dijo al tecolote que su canto traía la muerte y que la gente le tenía miedo.</p>
                             
                             <p>El tecolote se entristeció profundamente. Olvidó su canto y su corazón se quedó en la oscuridad. Ya no cantó más en las noches. Las casas se volvieron frías y la gente ya no tenía buenos pensamientos. Un anciano del pueblo, que conocía los secretos de los animales, fue al encino y le dijo: "Tecolotl, tu canto no trae la muerte. Tu canto es una medicina que pones en el corazón de los hombres para que no le teman a la oscuridad. Canta de nuevo."</p>
@@ -902,10 +1044,13 @@
                     
                     <div class="col-md-6 pe-md-4 style-pagina-libro">
                         <div class="d-flex justify-content-between align-items-center mb-3">
-                            <span class="badge bg-success">Náhuatl</span>
+                            <div class="d-flex align-items-center">
+                                <span class="badge bg-success">Náhuatl</span>
+                                <button class="btn-audio-cuento" onclick="reproducirTexto(this)"><i class="bi bi-play-circle-fill"></i></button>
+                            </div>
                             <small style="color: #8B5A2B; font-weight: bold;">Don Roque</small>
                         </div>
-                        <div style="font-family: 'Georgia', serif; font-size: 1.1rem; line-height: 1.8; color: #2c1d11; text-align: justify;">
+                        <div class="texto-narrar" style="font-family: 'Georgia', serif; font-size: 1.1rem; line-height: 1.8; color: #2c1d11; text-align: justify;">
                             <p><strong>7.</strong> Don Roque oquipiahtli ce hueyi tlalmetl campa nemiya ce cuali ameyalli tlen oquimacac atl chipahuac nochtin in altepetl. Huelis, Don Roque omocuep cualantli huan oquili in tlacameh tlein in atl oquipiahtli tomin, huan tla ahmo oquipiah tomin, ahmo huelis quicuasque. Oquitlali ce hueyi tepamitl tlen tetl ipampa in ameyalli omocauh ihtic itlal.</p>
                             
                             <p>In tlacameh ochocaque huan oquitlatlauhtique in teotl. Ipan in yohualli, in ameyalli oquitzatzihtli ihtic in tlalli huan oyajqui ocachi ihtic in oztotl. Moztla tlaneci, in tlalmetl tlen Don Roque omocuep zoquitl catzactli huan in ameyalli omouac. Don Roque quinequia quixitinis in tetl, huelis in atl aicma omocuep.</p>
@@ -918,10 +1063,13 @@
 
                     <div class="col-md-6 ps-md-4 style-pagina-libro">
                         <div class="d-flex justify-content-between align-items-center mb-3">
-                            <span class="badge bg-secondary">Español</span>
+                            <div class="d-flex align-items-center">
+                                <span class="badge bg-secondary">Español</span>
+                                <button class="btn-audio-cuento" onclick="reproducirTexto(this)"><i class="bi bi-play-circle-fill"></i></button>
+                            </div>
                             <small style="color: #8B5A2B; font-weight: bold;">Don Roque</small>
                         </div>
-                        <div style="font-family: 'Georgia', serif; font-size: 1.1rem; line-height: 1.8; color: #2c1d11; text-align: justify;">
+                        <div class="texto-narrar" style="font-family: 'Georgia', serif; font-size: 1.1rem; line-height: 1.8; color: #2c1d11; text-align: justify;">
                             <p>Don Roque tenía un gran terreno donde brotaba un hermoso manantial que daba agua limpia a todo el pueblo. Sin embargo, Don Roque se volvió codicioso y le dijo a la gente que el agua costaría dinero, y que si no pagaban, no podrían tomarla. Construyó una gran barda de piedra para que el manantial quedara encerrado en su propiedad.</p>
                             
                             <p>La gente lloró y le rezó a los guardianes espirituales. Por la noche, el manantial habló desde la tierra y se hundió profundamente hacia las cuevas. Al día siguiente, el terreno de Don Roque se convirtió en lodo seco y el manantial desapareció. Don Roque quiso romper las piedras, pero el agua nunca regresó.</p>
@@ -959,10 +1107,13 @@
                     
                     <div class="col-md-6 pe-md-4 style-pagina-libro">
                         <div class="d-flex justify-content-between align-items-center mb-3">
-                            <span class="badge bg-success">Náhuatl</span>
+                            <div class="d-flex align-items-center">
+                                <span class="badge bg-success">Náhuatl</span>
+                                <button class="btn-audio-cuento" onclick="reproducirTexto(this)"><i class="bi bi-play-circle-fill"></i></button>
+                            </div>
                             <small style="color: #8B5A2B; font-weight: bold;">Coyotl</small>
                         </div>
-                        <div style="font-family: 'Georgia', serif; font-size: 1.1rem; line-height: 1.8; color: #2c1d11; text-align: justify;">
+                        <div class="texto-narrar" style="font-family: 'Georgia', serif; font-size: 1.1rem; line-height: 1.8; color: #2c1d11; text-align: justify;">
                             <p><strong>8.</strong> Ce coyotl tlen nemiya ipan in ixtlahuatl tlahuel quitlazohtlaya in metztli ihcuac oquipiahtli ce hueyi tlanextli. In coyotl quinequia patlanis ipan ilhuicatl ipampa quinequia mocuahuiloz ihuan tonantzin metztli. Nochtin in yohuac, oquitzatziya chicahuac, huelis in metztli nemiya hueca huan ahmo oquicac icuic.</p>
                             
                             <p>Ceh yohualli, in metztli oquixitini ce cuali ohtli ca tlahuilli tlen oyajqui ihtic ce oztotl hueyi. In coyotl oyajqui ompa, huelis in oztotl ahmo oquipiahtli ilhuicatl, oquipiahtli ce hueyi tlacualli tlen oquipiahtli in miquiztli. In tecolotl, tlen oquittahtli nochi, oquili in coyotl: "Ahmo xiya ompa, coyotl. In metztli tlahuiliahtli nochtin, ahmo motech. Motequiti nemi ipan ixtlahuatl."</p>
@@ -975,15 +1126,656 @@
 
                     <div class="col-md-6 ps-md-4 style-pagina-libro">
                         <div class="d-flex justify-content-between align-items-center mb-3">
-                            <span class="badge bg-secondary">Español</span>
+                            <div class="d-flex align-items-center">
+                                <span class="badge bg-secondary">Español</span>
+                                <button class="btn-audio-cuento" onclick="reproducirTexto(this)"><i class="bi bi-play-circle-fill"></i></button>
+                            </div>
                             <small style="color: #8B5A2B; font-weight: bold;">Coyote</small>
                         </div>
-                        <div style="font-family: 'Georgia', serif; font-size: 1.1rem; line-height: 1.8; color: #2c1d11; text-align: justify;">
+                        <div class="texto-narrar" style="font-family: 'Georgia', serif; font-size: 1.1rem; line-height: 1.8; color: #2c1d11; text-align: justify;">
                             <p>Un coyote que vivía en la llanura amaba profundamente a la luna cuando mostraba su máximo esplendor. El coyote quería volar al cielo para estar junto a ella. Todas las noches le aullaba con fuerza, pero la luna estaba muy lejos y no escuchaba su canto.</p>
                             
-                            <p>Una noche, la luna proyectó un reflejo de luz que entraba directamente en una cueva profunda. El coyote corrió hacia allá, pero la cueva no conducía al cielo; albergaba un abismo peligroso. El tecolote, que lo observaba todo, le advirtió: "No vayas ahí, coyote. La luna ilumina a todos, no te pertenece. Tu lugar está en la llanura."</p>
+                            <p>Una noche, la luna proyeto un reflejo de luz que entraba directamente en una cueva profunda. El coyote corrió hacia allá, pero la cueva no conducía al cielo; albergaba un abismo peligroso. El tecolote, que lo observaba todo, le advirtió: "No vayas ahí, coyote. La luna ilumina a todos, no te pertenece. Tu lugar está en la llanura."</p>
                             
                             <p>El coyote escuchó al tecolote, se detuvo y aulló con alivio y agradecimiento. Allí comprendió que la belleza de la luna es para guiar a todos los animales y hombres, y que su deber era cantarle desde la tierra y no desde el cielo.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="modal-footer border-0 d-flex justify-content-between px-4" style="background: #f5edd6; font-family: 'Georgia', serif; color: #8B5A2B;">
+                <span>pág. 1</span>
+                <span>pág. 2</span>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="modalLibroFloresTierra" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content libro-modal-content" style="background: #fdf6e2; border: 8px solid #8B5A2B; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+            
+            <div class="modal-header border-0 d-flex justify-content-between align-items-center px-4" style="background: #f5edd6;">
+                <h5 class="m-0" style="font-family: 'Georgia', serif; font-weight: bold; color: #5c3a21 !important;">
+                    📖 In xochimeh tlen tlein quichiya in tlalli / Las flores que curaron el alma de la tierra
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" style="filter: sepia(1);"></button>
+            </div>
+
+            <div class="modal-body p-4" style="max-height: 70vh; overflow-y: auto;">
+                <div class="row g-4 position-relative">
+                    
+                    <div class="col-md-6 pe-md-4 style-pagina-libro">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div class="d-flex align-items-center">
+                                <span class="badge bg-success">Náhuatl</span>
+                                <button class="btn-audio-cuento" onclick="reproducirTexto(this)"><i class="bi bi-play-circle-fill"></i></button>
+                            </div>
+                            <small style="color: #8B5A2B; font-weight: bold;">Pedro huan Lucas</small>
+                        </div>
+                        <div class="texto-narrar" style="font-family: 'Georgia', serif; font-size: 1.1rem; line-height: 1.8; color: #2c1d11; text-align: justify;">
+                            <p><strong>9.</strong> Nemiyan ome tlacameh, Pedro huan Lucas, tlen oquipiah hueyi cualantli ipampa ce tlalmetl ipan in ixtlahuatl. Pedro quihtoaya tlein in tlalli oquipia itonal ipampa itatzin oquimacac, huan Lucas quilihtli tlein yehhuatl oquicouac ca tomin chicahuac. Nochtin in tonah, in tlacameh tlatzotzonayah ca cuahuitl huan tetl, huan in ixtlahuatl omoyolcacuah, aicma oquixitinihtli in cuali tlayolli.</p>
+                            
+                            <p>Ceh yohualli, ihcuac in metztli tlahuiliahtli chipahuac, Pedro huan Lucas oyajque ipan in tlalmetl quinequiah mocuahuilozque. Ompa quicacque ce chocahuiliztli tlen tlahuel tztic hualiahtli ihtic in tlalli. Omotepitzquique huan oquittaque tlein in xochimeh tlen ixtlahuatl ochocayah eztli. In tlalli oquitzatzi ca huelis chicahuac ehecatl: "In cualantli tlen nemi ipan inyolo in tlacameh, quimictiya noneyolhuan. Tla ahmo xitlatlepanitazque nochi, nimitztlaliaz ce yohualli tlen aicma tlanecis."</p>
+                            
+                            <p>In tlacameh omomauhtique chicahuac, oquicahuilique in cuahuitl huan oquiquitzquique inmahuan. Oquimatahque tlein in tlalli ahmo itechcopa ce tlacatl, yehhuatl tonantzin tlen techmaca tlacualli. Ompa oquitzatzihtli tlayolcocoliztli, oquitlalique copalli huan xochitl tlapali, huan moztla tlaneci in tlayolli omochi cualtzin huan chicahuac.</p>
+                        </div>
+                    </div>
+
+                    <div class="d-none d-md-block position-absolute start-50 top-0 bottom-0 p-0" style="width: 2px; background: linear-gradient(to bottom, rgba(139,90,43,0), rgba(139,90,43,0.3) 15%, rgba(139,90,43,0.3) 85%, rgba(139,90,43,0)); box-shadow: -1px 0 3px rgba(0,0,0,0.15);"></div>
+
+                    <div class="col-md-6 ps-md-4 style-pagina-libro">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div class="d-flex align-items-center">
+                                <span class="badge bg-secondary">Español</span>
+                                <button class="btn-audio-cuento" onclick="reproducirTexto(this)"><i class="bi bi-play-circle-fill"></i></button>
+                            </div>
+                            <small style="color: #8B5A2B; font-weight: bold;">Pedro y Lucas</small>
+                        </div>
+                        <div class="texto-narrar" style="font-family: 'Georgia', serif; font-size: 1.1rem; line-height: 1.8; color: #2c1d11; text-align: justify;">
+                            <p>Vivían dos hombres, Pedro y Lucas, que tenían un gran pleito por los límites de un terreno en el campo. Pedro decía que la tierra le pertenecía porque su padre se la había heredado, y Lucas afirmaba que él la había comprado con mucho dinero. Todos los días, los hombres peleaban con insultos y piedras, y el campo se entristeció, dejando de dar buen maíz.</p>
+                            
+                            <p>Una noche, mientras la luna iluminaba con claridad, Pedro y Lucas fueron al terreno con la intención de agredirse. De pronto, escucharon un lamento muy frío que brotaba de las entrañas de la tierra. Se detuvieron y vieron que las flores del campo lloraban sangre. La tierra habló a través de un fuerte viento: "El odio que habita en el corazón de los hombres está matando mi espíritu. Si no respetan mi suelo, les daré una noche eterna que jamás verá el amanecer."</p>
+                            
+                            <p>Los hombres se asustaron muchísimo, tiraron las armas y se tomaron de las manos. Comprendieron que la tierra no le pertenece a ningún hombre, sino que ella es nuestra madre que nos da alimento. Allí pidieron perdón, ofrendaron copal y flores de colores, y a la mañana siguiente el maíz creció hermoso y fuerte.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="modal-footer border-0 d-flex justify-content-between px-4" style="background: #f5edd6; font-family: 'Georgia', serif; color: #8B5A2B;">
+                <span>pág. 1</span>
+                <span>pág. 2</span>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="modalLibroBrujaPartera" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content libro-modal-content" style="background: #fdf6e2; border: 8px solid #8B5A2B; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+            
+            <div class="modal-header border-0 d-flex justify-content-between align-items-center px-4" style="background: #f5edd6;">
+                <h5 class="m-0" style="font-family: 'Georgia', serif; font-weight: bold; color: #5c3a21 !important;">
+                    📖 In tlahuipochtli huan in ticitl chipahuac / La bruja de fuego y la partera limpia
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" style="filter: sepia(1);"></button>
+            </div>
+
+            <div class="modal-body p-4" style="max-height: 70vh; overflow-y: auto;">
+                <div class="row g-4 position-relative">
+                    
+                    <div class="col-md-6 pe-md-4 style-pagina-libro">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div class="d-flex align-items-center">
+                                <span class="badge bg-success">Náhuatl</span>
+                                <button class="btn-audio-cuento" onclick="reproducirTexto(this)"><i class="bi bi-play-circle-fill"></i></button>
+                            </div>
+                            <small style="color: #8B5A2B; font-weight: bold;">Doña Juana</small>
+                        </div>
+                        <div class="texto-narrar" style="font-family: 'Georgia', serif; font-size: 1.1rem; line-height: 1.8; color: #2c1d11; text-align: justify;">
+                            <p><strong>10.</strong> Doña Juana ce cihuatl huehue tlen oquipalehuiaya in tlacameh ihcuac quipiah coconeh. Yehhuatl oquipia ce cuali tonal huan ce tlanextli tlen oquimacac in teotl. Ceh yohualli, ihcuac nemiya tlahuel tztic ehecatl, oquitta ce hueyi tletl tlen omohuicac ipan icuitlapan in cali. Oquimat tlein in tlahuipochtli oquinequia quicuas in tonal tlen ce conetzin tlen omochihtli icualca.</p>
+                            
+                            <p>Doña Juana ahmo omomauhti. Oquiquitzqui ce cuali cuahuitl, oquitlali ce machiotl tlen cruz ca tlayolli huan copalli ipan in tlecaxitl, huan oquitzatzi ca chicahuac tlahtolli: "Ta, tlahuipochtli, tlen tictlalia cualantli ipan in yohualli, ahmo tiquitzquiz in conetzin. In conetzin quipia itatzin huan itatzin tonantzin tlalli tlen quipalehuia."</p>
+                            
+                            <p>In tletl oquixitini ce chicahuac lamento, huan omocuep ce cihuatl tlen oquipiahtli ixtololohuan catzactli. In tlahuipochtli ochololo ipan in tepemeh huan aicma omocuep ipan in altepetl, ipampa oquimat tlein in ticitl Doña Juana oquipiahtli ce cuali chicahualiztli tlen oquipalehuiaya nochtin in coconeh tlen La Resurrección.</p>
+                        </div>
+                    </div>
+
+                    <div class="d-none d-md-block position-absolute start-50 top-0 bottom-0 p-0" style="width: 2px; background: linear-gradient(to bottom, rgba(139,90,43,0), rgba(139,90,43,0.3) 15%, rgba(139,90,43,0.3) 85%, rgba(139,90,43,0)); box-shadow: -1px 0 3px rgba(0,0,0,0.15);"></div>
+
+                    <div class="col-md-6 ps-md-4 style-pagina-libro">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div class="d-flex align-items-center">
+                                <span class="badge bg-secondary">Español</span>
+                                <button class="btn-audio-cuento" onclick="reproducirTexto(this)"><i class="bi bi-play-circle-fill"></i></button>
+                            </div>
+                            <small style="color: #8B5A2B; font-weight: bold;">Doña Juana</small>
+                        </div>
+                        <div class="texto-narrar" style="font-family: 'Georgia', serif; font-size: 1.1rem; line-height: 1.8; color: #2c1d11; text-align: justify;">
+                            <p>Doña Juana era una anciana que ayudaba a las mujeres cuando daban a luz. Ella poseía un espíritu fuerte y una luz que el creador le había otorgado. Una noche, mientras soplaba un viento muy frío, vio una gran bola de fuego que se posaba sobre el techo de una casa. Supo de inmediato que la tlahuipochtli quería robar el espíritu de un recién nacido.</p>
+                            
+                            <p>Doña Juana no tuvo miedo. Tomó un bastón de madera, formó una cruz con granos de maíz y puso copal en el fogón, gritando con voz firme: "Tú, bruja de fuego, que siembras la maldad en la noche, no tocarás a este niño. El niño tiene la protección de sus padres y de nuestra madre tierra."</p>
+                            
+                            <p>El fuego lanzó un fuerte lamento y se transformó por un instante en una mujer de mirada sombría. La bruja huyó hacia los cerros y jamás regresó al pueblo, porque supo que la partera Doña Juana tenía una fuerza limpia que protegía a todos los niños de la comunidad.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="modal-footer border-0 d-flex justify-content-between px-4" style="background: #f5edd6; font-family: 'Georgia', serif; color: #8B5A2B;">
+                <span>pág. 1</span>
+                <span>pág. 2</span>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="modalLibroGatoNahual" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content libro-modal-content" style="background: #fdf6e2; border: 8px solid #8B5A2B; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+            
+            <div class="modal-header border-0 d-flex justify-content-between align-items-center px-4" style="background: #f5edd6;">
+                <h5 class="m-0" style="font-family: 'Georgia', serif; font-weight: bold; color: #5c3a21 !important;">
+                    📖 In nahualmiton huan in tlayolli / El gato nahual y el misterio del maíz
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" style="filter: sepia(1);"></button>
+            </div>
+
+            <div class="modal-body p-4" style="max-height: 70vh; overflow-y: auto;">
+                <div class="row g-4 position-relative">
+                    
+                    <div class="col-md-6 pe-md-4 style-pagina-libro">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div class="d-flex align-items-center">
+                                <span class="badge bg-success">Náhuatl</span>
+                                <button class="btn-audio-cuento" onclick="reproducirTexto(this)"><i class="bi bi-play-circle-fill"></i></button>
+                            </div>
+                            <small style="color: #8B5A2B; font-weight: bold;">Manuel</small>
+                        </div>
+                        <div class="texto-narrar" style="font-family: 'Georgia', serif; font-size: 1.1rem; line-height: 1.8; color: #2c1d11; text-align: justify;">
+                            <p><strong>11.</strong> Ce tlacatl tlen itoca Manuel oquittahtli tlein nochtin in yohuac, ce miston hueyi huan catzactli oquichtequia in cuali tlayolli tlen oquipiahtli ipan itzacualtin. Manuel oquipiahtli ce cuali machiotl tlen oquichihua icualca, yecan oquixitini ce ohtli ca tlayolli huan oquichiyac ca ce chicahuac cuahuitl ipan imauh.</p>
+                            
+                            <p>Ihcuac omochi tlaco-yohuac, in miston oquixitini in caltentli. Manuel oquicahuilli ce chicahuac tlatzotzonaliztli ca cuahuitl ipan icxitl. In miston oquitzatzi ca huelis tlacatl huan ochololo ipan in yohualli. Moztla tlaneci, Manuel oyajqui ipan in altepetl huan oquitta icompa Juan tlen oquipia ce cualantli ipan icxitl huan ahmo huelis caminaya.</p>
+                            
+                            <p>Manuel ahmo oquilihtli tleh, huelis oquitlali ce cuali tlamanaliztli ca copalli huan tlayolli ipan ichan. Oquimat tlein icompa oquipiahtli ce nahual tonal, huan oquili tlein in tlayolli ce teotl tlen monequi tictlepanitazque, ahmo tiquichtequis ipampa in nahualiyotl quihuica miquiztli.</p>
+                        </div>
+                    </div>
+
+                    <div class="d-none d-md-block position-absolute start-50 top-0 bottom-0 p-0" style="width: 2px; background: linear-gradient(to bottom, rgba(139,90,43,0), rgba(139,90,43,0.3) 15%, rgba(139,90,43,0.3) 85%, rgba(139,90,43,0)); box-shadow: -1px 0 3px rgba(0,0,0,0.15);"></div>
+
+                    <div class="col-md-6 ps-md-4 style-pagina-libro">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div class="d-flex align-items-center">
+                                <span class="badge bg-secondary">Español</span>
+                                <button class="btn-audio-cuento" onclick="reproducirTexto(this)"><i class="bi bi-play-circle-fill"></i></button>
+                            </div>
+                            <small style="color: #8B5A2B; font-weight: bold;">Manuel</small>
+                        </div>
+                        <div class="texto-narrar" style="font-family: 'Georgia', serif; font-size: 1.1rem; line-height: 1.8; color: #2c1d11; text-align: justify;">
+                            <p>Un hombre llamado Manuel notó que todas las noches, un gato grande y negro robaba el mejor maíz que tenía guardado en sus trojes. Manuel ideó un plan; trazó un camino con granos de maíz y esperó oculto con un grueso palo en la mano.</p>
+                            
+                            <p>Cuando llegó la medianoche, el gato cruzó el umbral. Manuel le dio un fuerte golpe en la pata. El gato lanzó un grito que sonaba humano y huyó cojeando en la oscuridad. Al día siguiente, Manuel fue al centro del pueblo y vio a su compadre Juan, quien tenía una grave herida en el pie y no podía caminar.</p>
+                            
+                            <p>Manuel no dijo nada, pero colocó una ofrenda de copal y maíz en su casa. Entendió que su compadre poseía el espíritu de un nahual, y reflexionó que el maíz es sagrado y debe respetarse; robarlo mediante la brujería solo acarrea la perdición del alma.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="modal-footer border-0 d-flex justify-content-between px-4" style="background: #f5edd6; font-family: 'Georgia', serif; color: #8B5A2B;">
+                <span>pág. 1</span>
+                <span>pág. 2</span>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="modalLibroAjoloteRio" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content libro-modal-content" style="background: #fdf6e2; border: 8px solid #8B5A2B; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+            
+            <div class="modal-header border-0 d-flex justify-content-between align-items-center px-4" style="background: #f5edd6;">
+                <h5 class="m-0" style="font-family: 'Georgia', serif; font-weight: bold; color: #5c3a21 !important;">
+                    📖 In axolotl huan in atoyatl tlen miqui / El ajolote y el río que muere
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" style="filter: sepia(1);"></button>
+            </div>
+
+            <div class="modal-body p-4" style="max-height: 70vh; overflow-y: auto;">
+                <div class="row g-4 position-relative">
+                    
+                    <div class="col-md-6 pe-md-4 style-pagina-libro">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div class="d-flex align-items-center">
+                                <span class="badge bg-success">Náhuatl</span>
+                                <button class="btn-audio-cuento" onclick="reproducirTexto(this)"><i class="bi bi-play-circle-fill"></i></button>
+                            </div>
+                            <small style="color: #8B5A2B; font-weight: bold;">Axolotl</small>
+                        </div>
+                        <div class="texto-narrar" style="font-family: 'Georgia', serif; font-size: 1.1rem; line-height: 1.8; color: #2c1d11; text-align: justify;">
+                            <p><strong>12.</strong> Ihtic ce ameyalli hueca ipan in tepetl, nemiya ce axolotl chipahuac tlen oquipiaxtli ixtololohuan tlapali quemeh chalchihuitl. In huehuetqueh quihtoayah tlein acayehuatl oquipiahtli in yollotli tlen in atoyatl. Huelis, in tlacameh tlen omochihtlique caltin qui-iquitzquique in ameyalli ca zoquitl huan tlamatli catzactli.</p>
+                            
+                            <p>In axolotl omoyolcacuah chicahuac, huan ipatli omocuep catzactli. In atoyatl omochi chicahuac tztic huan in michin omique. Ce tlacatl tlalnamiqui, oquittahtli in axolotl tlen ochocaya ihtic in zoquitl huan oquili: "Xinechpalehui, axolotl, in altepetl miqui ipampa ahmo quipia atl." In axolotl quili: "Tla in tlacameh ahmo quichipahuazque noyolo, in atl miquis huan in altepetl noihuan."</p>
+                            
+                            <p>In tlatcatl omohuicac in altepetl huan nochtin in tlacameh oyajque ipan in atoyatl. Oquixitinihtlique in zoquitl, oquitlalique xochitl huan oquichipahuacque in ameyalli. In axolotl omocuep chipahuac huan in atl omohuicac occepa ca tlanextli.</p>
+                        </div>
+                    </div>
+
+                    <div class="d-none d-md-block position-absolute start-50 top-0 bottom-0 p-0" style="width: 2px; background: linear-gradient(to bottom, rgba(139,90,43,0), rgba(139,90,43,0.3) 15%, rgba(139,90,43,0.3) 85%, rgba(139,90,43,0)); box-shadow: -1px 0 3px rgba(0,0,0,0.15);"></div>
+
+                    <div class="col-md-6 ps-md-4 style-pagina-libro">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div class="d-flex align-items-center">
+                                <span class="badge bg-secondary">Español</span>
+                                <button class="btn-audio-cuento" onclick="reproducirTexto(this)"><i class="bi bi-play-circle-fill"></i></button>
+                            </div>
+                            <small style="color: #8B5A2B; font-weight: bold;">Ajolote</small>
+                        </div>
+                        <div class="texto-narrar" style="font-family: 'Georgia', serif; font-size: 1.1rem; line-height: 1.8; color: #2c1d11; text-align: justify;">
+                            <p>Dentro de un manantial lejano en el cerro, vivía un ajolote blanco que tenía ojos de color jade. Los ancianos decían que él custodiaba el corazón del río. Sin embargo, los hombres que construyeron casas cerca comenzaron a ensuciar el manantial con lodo y desperdicios.</p>
+                            
+                            <p>El ajolote se entristeció profundamente y su piel se volvió oscura. El río se tornó frío y los peces murieron. Un hombre sabio vio al ajolote llorando en el lodo y le dijo: "Ayúdanos, ajolote, el pueblo muere porque no tiene agua." El ajolote respondió: "Si los hombres no limpian mi hogar, el agua morirá y el pueblo también."</p>
+                            
+                            <p>El hombre regresó al pueblo y convocó a toda la gente para ir al río. Retiraron los desperdicios, plantaron flores y limpiaron el manantial. El ajolote recuperó su blancura y el agua volvió a correr con un brillo cristalino.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="modal-footer border-0 d-flex justify-content-between px-4" style="background: #f5edd6; font-family: 'Georgia', serif; color: #8B5A2B;">
+                <span>pág. 1</span>
+                <span>pág. 2</span>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="modalLibroHombreGuerra" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content libro-modal-content" style="background: #fdf6e2; border: 8px solid #8B5A2B; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+            
+            <div class="modal-header border-0 d-flex justify-content-between align-items-center px-4" style="background: #f5edd6;">
+                <h5 class="m-0" style="font-family: 'Georgia', serif; font-weight: bold; color: #5c3a21 !important;">
+                    📖 In tlacatl tlen oquipolo iyolo ipan in yaoyotl / El hombre que perdió su corazón en la guerra
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" style="filter: sepia(1);"></button>
+            </div>
+
+            <div class="modal-body p-4" style="max-height: 70vh; overflow-y: auto;">
+                <div class="row g-4 position-relative">
+                    
+                    <div class="col-md-6 pe-md-4 style-pagina-libro">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div class="d-flex align-items-center">
+                                <span class="badge bg-success">Náhuatl</span>
+                                <button class="btn-audio-cuento" onclick="reproducirTexto(this)"><i class="bi bi-play-circle-fill"></i></button>
+                            </div>
+                            <small style="color: #8B5A2B; font-weight: bold;">Francisco</small>
+                        </div>
+                        <div class="texto-narrar" style="font-family: 'Georgia', serif; font-size: 1.1rem; line-height: 1.8; color: #2c1d11; text-align: justify;">
+                            <p><strong>13.</strong> Ce tlacatl tlen itoca Francisco omocuep ipan ichan ihcuac oquipixce hueyi yaoyotl (guerra) ipan in altepetl hueca. Francisco ahmo ochocaya, ahmo tlatlahtoahtli huan iyolo omocuep tetl. Icihuauh huan itatzin oquitlalique cuali tlacualli huan copalli, huelis Francisco mocahuahtli quemeh ce mictli tlen caminaya ipan in cali.</p>
+                            
+                            <p>Ceh yohualli, Francisco oyajqui ipan in cuauhtitlan huan oquimonamicti ce hueyi ocelotl. In ocelotl oquipiahtli ce cuali tlanextli ipan ixtololohuan huan quili: "Francisco, tiquitzquic cualantli huan miquiztli ipan moyolo, yecan motonal ochololo. Tla ahmo xichoca, motonal miquis ihtic in oztotl." In ocelotl oquixitini ce chicahuac lamento tlen oquiquitzqui Francisco iyolo.</p>
+                            
+                            <p>Francisco oquipecahuac ochocac chicahuac, oquicuicac nochtin in chocahuiliztli tlen oquipiahtli ihtic iyolo ipampa in yaoyotl. Ihcuac oquitlali nochi ichocaca, itonal omocuep ipan iyolo huan omocuep ichan ca cuali pacayeliztli, huan omochihtli occepa ce cuali tlacatl tlen tequitiaya cualtzin.</p>
+                        </div>
+                    </div>
+
+                    <div class="d-none d-md-block position-absolute start-50 top-0 bottom-0 p-0" style="width: 2px; background: linear-gradient(to bottom, rgba(139,90,43,0), rgba(139,90,43,0.3) 15%, rgba(139,90,43,0.3) 85%, rgba(139,90,43,0)); box-shadow: -1px 0 3px rgba(0,0,0,0.15);"></div>
+
+                    <div class="col-md-6 ps-md-4 style-pagina-libro">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div class="d-flex align-items-center">
+                                <span class="badge bg-secondary">Español</span>
+                                <button class="btn-audio-cuento" onclick="reproducirTexto(this)"><i class="bi bi-play-circle-fill"></i></button>
+                            </div>
+                            <small style="color: #8B5A2B; font-weight: bold;">Francisco</small>
+                        </div>
+                        <div class="texto-narrar" style="font-family: 'Georgia', serif; font-size: 1.1rem; line-height: 1.8; color: #2c1d11; text-align: justify;">
+                            <p>Un hombre llamado Francisco regresó a su hogar después de vivir una gran guerra en un lugar lejano. Francisco no lloraba, no hablaba y su corazón se había vuelto de piedra. Su esposa y su padre le preparaban buena comida y encendían copal, pero Francisco se comportaba como un muerto que caminaba por la casa.</p>
+                            
+                            <p>Una noche, Francisco fue al bosque y se topó con un gran jaguar. El jaguar tenía una luz intensa en sus ojos y le dijo: "Francisco, guardaste el odio and la muerte en tu pecho, por eso tu espíritu huyó. Si no lloras, tu alma morirá atrapada en el olvido." El jaguar lanzó un rugido profundo que conmovió las entrañas de Francisco.</p>
+                            
+                            <p>Francisco rompió en un llanto incontrolable, liberando toda la tristeza y el horror que había guardado por la guerra. Cuando terminó de desahogarse, su espíritu regresó a su cuerpo. Volvió a su casa en paz y se convirtió nuevamente en el hombre trabajador y bondadoso de antes.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="modal-footer border-0 d-flex justify-content-between px-4" style="background: #f5edd6; font-family: 'Georgia', serif; color: #8B5A2B;">
+                <span>pág. 1</span>
+                <span>pág. 2</span>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="modalLibroArbolNoche" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content libro-modal-content" style="background: #fdf6e2; border: 8px solid #8B5A2B; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+            
+            <div class="modal-header border-0 d-flex justify-content-between align-items-center px-4" style="background: #f5edd6;">
+                <h5 class="m-0" style="font-family: 'Georgia', serif; font-weight: bold; color: #5c3a21 !important;">
+                    📖 In cuahuitl tlen tlatlahtoa yohuac / El árbol que habla por la noche
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" style="filter: sepia(1);"></button>
+            </div>
+
+            <div class="modal-body p-4" style="max-height: 70vh; overflow-y: auto;">
+                <div class="row g-4 position-relative">
+                    
+                    <div class="col-md-6 pe-md-4 style-pagina-libro">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div class="d-flex align-items-center">
+                                <span class="badge bg-success">Náhuatl</span>
+                                <button class="btn-audio-cuento" onclick="reproducirTexto(this)"><i class="bi bi-play-circle-fill"></i></button>
+                            </div>
+                            <small style="color: #8B5A2B; font-weight: bold;">Ahuatl</small>
+                        </div>
+                        <div class="texto-narrar" style="font-family: 'Georgia', serif; font-size: 1.1rem; line-height: 1.8; color: #2c1d11; text-align: justify;">
+                            <p><strong>14.</strong> Ipan in cuauhtitlan tlen La Resurrección, nemiya ce hueyi ahuatl (encino) tlen oquipiahtli mactlacuilli xihuitl. In tlacameh quihtoayah tlein in ahuatl tlatlahtoahtli ihcuac in ehecatl tlahuel tztic nemi yohuac. Ce tlacatl tlen oquipiahtli chicahuac tlalnamiquiliztli, oyajqui quicaca tlein quihtoa in cuahuitl ipampa quinequiahtli quimatis in tlanahuatilli tlen huehuetqueh.</p>
+                            
+                            <p>In ahuatl oquili ca chicahuac ehecatl: "In tlacameh quixitinihtli in cuauhmeh ipampa quichihuazque tomin, huan quilcauhque tlein in cuauhmeh techmacah ehecatl huan atl. Tla in cuauhtitlan miqui, in altepetl miquis noihuan." In tlacatl omomauhti ipampa oquimat tlein yehhuatl noihuan oquixitinihtli cuauhmeh chipahuac.</p>
+                            
+                            <p>In tlacatl omohuicac ichan huan oquilihtli in altepetl nochtin tlein oquicac. Ompa, in tlacameh oquichihuahque ce cuali tlanahuatilli: ahmo quixitinizque in cuauhmeh tlen quipiah iyolo, huan oquitlalique yancuic cuauhmeh ipan in tepetl ipampa in cuali nemiliztli.</p>
+                        </div>
+                    </div>
+
+                    <div class="d-none d-md-block position-absolute start-50 top-0 bottom-0 p-0" style="width: 2px; background: linear-gradient(to bottom, rgba(139,90,43,0), rgba(139,90,43,0.3) 15%, rgba(139,90,43,0.3) 85%, rgba(139,90,43,0)); box-shadow: -1px 0 3px rgba(0,0,0,0.15);"></div>
+
+                    <div class="col-md-6 ps-md-4 style-pagina-libro">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div class="d-flex align-items-center">
+                                <span class="badge bg-secondary">Español</span>
+                                <button class="btn-audio-cuento" onclick="reproducirTexto(this)"><i class="bi bi-play-circle-fill"></i></button>
+                            </div>
+                            <small style="color: #8B5A2B; font-weight: bold;">Encino</small>
+                        </div>
+                        <div class="texto-narrar" style="font-family: 'Georgia', serif; font-size: 1.1rem; line-height: 1.8; color: #2c1d11; text-align: justify;">
+                            <p>En el bosque de La Resurrección, vivía un gran encino que tenía cientos de años. La gente decía que el árbol hablaba cuando el viento soplaba frío por la noche. Un hombre muy curioso fue a escucharlo porque quería conocer los secretos de los antepasados.</p>
+                            
+                            <p>El encino le habló a través del viento: "Los hombres talan los árboles para hacer dinero, y olvidan que nosotros les damos el aire y el agua. Si el bosque muere, el pueblo morirá también." El hombre se sintió avergonzado porque él también había talado árboles sin necesidad.</p>
+                            
+                            <p>El hombre regresó y le contó a toda la comunidad lo que había escuchado. Desde entonces, los pobladores hicieron un acuerdo: no talar los árboles antiguos y reforestar el cerro para garantizar la vida de las futuras generaciones.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="modal-footer border-0 d-flex justify-content-between px-4" style="background: #f5edd6; font-family: 'Georgia', serif; color: #8B5A2B;">
+                <span>pág. 1</span>
+                <span>pág. 2</span>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalLibroHombreMuerte" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content libro-modal-content" style="background: #fdf6e2; border: 8px solid #8B5A2B; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+            
+            <div class="modal-header border-0 d-flex justify-content-between align-items-center px-4" style="background: #f5edd6;">
+                <h5 class="m-0" style="font-family: 'Georgia', serif; font-weight: bold; color: #5c3a21 !important;">
+                    📖 In tlacatl tlen oquimonamicti in miquiztli / El hombre que se encontró con la muerte
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" style="filter: sepia(1);"></button>
+            </div>
+
+            <div class="modal-body p-4" style="max-height: 70vh; overflow-y: auto;">
+                <div class="row g-4 position-relative">
+                    
+                    <!-- Página Izquierda: Náhuatl -->
+                    <div class="col-md-6 pe-md-4 style-pagina-libro">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div class="d-flex align-items-center">
+                                <span class="badge bg-success">Náhuatl</span>
+                                <button class="btn-audio-cuento" onclick="reproducirTexto(this)"><i class="bi bi-play-circle-fill"></i></button>
+                            </div>
+                            <small style="color: #8B5A2B; font-weight: bold;">Miquiztli</small>
+                        </div>
+                        <div class="texto-narrar" style="font-family: 'Georgia', serif; font-size: 1.1rem; line-height: 1.8; color: #2c1d11; text-align: justify;">
+                            <p>Ce tlacatl tlen tlahuel icnotl nemiya ipan in ohtli hueca. Ceh tona, oquimonamicti ce cihuatl tlen oquipiahtli ce hueyi quemitl chipahuac huan ixtololohuan tlapali quemeh citlali. In cihuatl oquili: "Nimitztlalia ce don, Mateo. Tiquittas aquin miquis: tla nechitta moicxitl, in cocoxqui yolis; tla nechitta mochan, in cocoxqui miquis."</p>
+                            
+                            <p>Mateo omochihtli ce cuali ticitl. Huelis, ce tona, ce hueyi rico tlacatl tlen oquipiahtli chicahuac tomin omococohua. In rico oquili: "Tla ticpatis noneyolhuan, nimitzmacas nochi notomin." Mateo oyajqui ipan ical, huan oquittahtli tlein in miquiztli oquipiahtli mochan in cocoxqui.</p>
+                            
+                            <p>Mateo, ipampa quinequiahtli in tomin, oquixitini in cama ipampa in miquiztli omocauh ipan icxitl. In miquiztli oquicualani chicahuac huan oquili: "Mateo, tiquiztini in tlanahuatilli ipampa tomin. Axcan, motonal tiyaz noneyolhuan." Mateo omic ipan in yohualli ipampa quilcauh tlein ca miquiztli ahmo huelis tictlaliahtli ohtli catzactli.</p>
+                        </div>
+                    </div>
+
+                    <!-- Línea divisoria central del libro -->
+                    <div class="d-none d-md-block position-absolute start-50 top-0 bottom-0 p-0" style="width: 2px; background: linear-gradient(to bottom, rgba(139,90,43,0), rgba(139,90,43,0.3) 15%, rgba(139,90,43,0.3) 85%, rgba(139,90,43,0)); box-shadow: -1px 0 3px rgba(0,0,0,0.15);"></div>
+
+                    <!-- Página Derecha: Español -->
+                    <div class="col-md-6 ps-md-4 style-pagina-libro">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div class="d-flex align-items-center">
+                                <span class="badge bg-secondary">Español</span>
+                                <button class="btn-audio-cuento" onclick="reproducirTexto(this)"><i class="bi bi-play-circle-fill"></i></button>
+                            </div>
+                            <small style="color: #8B5A2B; font-weight: bold;">Muerte</small>
+                        </div>
+                        <div class="texto-narrar" style="font-family: 'Georgia', serif; font-size: 1.1rem; line-height: 1.8; color: #2c1d11; text-align: justify;">
+                            <p>Un hombre muy pobre caminaba por un sendero desolado cuando se encontró con una mujer que vestía una capa blanca y tenía ojos brillantes como estrellas. La mujer le dijo: "Te daré un don, Mateo. Sabrás quién ha de morir: si me ves a los pies del enfermo, vivirá; si me ves a la cabecera, morirá."</p>
+                            
+                            <p>Mateo se convirtió en un curandero famoso. Un día, un hombre muy rico enfermó de gravedad y le prometió: "Si me salvas la vida, te daré toda mi fortuna." Mateo fue a verlo y notó que la muerte estaba posicionada justo en la cabecera del enfermo.</p>
+                            
+                            <p>Llevado por la ambición del dinero, Mateo giró la cama rápidamente para que la muerte quedara a los pies. La muerte se enfureció y le dijo: "Mateo, traicionaste nuestro acuerdo por unas monedas. Ahora, tu espíritu ocupará su lugar." Mateo murió esa misma noche, comprendiendo que con el destino y la muerte no se puede comerciar.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="modal-footer border-0 d-flex justify-content-between px-4" style="background: #f5edd6; font-family: 'Georgia', serif; color: #8B5A2B;">
+                <span>pág. 1</span>
+                <span>pág. 2</span>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalLibroEspirituAncestros" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content libro-modal-content" style="background: #fdf6e2; border: 8px solid #8B5A2B; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+            
+            <div class="modal-header border-0 d-flex justify-content-between align-items-center px-4" style="background: #f5edd6;">
+                <h5 class="m-0" style="font-family: 'Georgia', serif; font-weight: bold; color: #5c3a21 !important;">
+                    📖 In itonal in altepetl huan in tocolhuan / El espíritu del pueblo y los ancestros
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" style="filter: sepia(1);"></button>
+            </div>
+
+            <div class="modal-body p-4" style="max-height: 70vh; overflow-y: auto;">
+                <div class="row g-4 position-relative">
+                    
+                    <!-- Página Izquierda: Náhuatl -->
+                    <div class="col-md-6 pe-md-4 style-pagina-libro">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div class="d-flex align-items-center">
+                                <span class="badge bg-success">Náhuatl</span>
+                                <button class="btn-audio-cuento" onclick="reproducirTexto(this)"><i class="bi bi-play-circle-fill"></i></button>
+                            </div>
+                            <small style="color: #8B5A2B; font-weight: bold;">Tocolhuan</small>
+                        </div>
+                        <div class="texto-narrar" style="font-family: 'Georgia', serif; font-size: 1.1rem; line-height: 1.8; color: #2c1d11; text-align: justify;">
+                            <p>Ipan in altepetl, in tlacameh oquipehcahuacque quilcauhhtli in macehualtlahtolli (náhuatl) huan in tlamanaliztli tlen tocolhuan oquichihuahque icualca. In altepetl omocuep tlayohuatl, huan in cuauhmeh huan in ameyalli omouacquehtli ipampa in tonaltin tlen tocolhuan oyajquehtli ipan in tepetl hueca huan aicma omocuepquehtli.</p>
+                            
+                            <p>Ce yohualli tlen tlahuel tztic, nochtin in huehuetqueh tlen altepetl oquichihuahque ce hueyi tlamanaliztli ipan in caltentli tlen in altepetl. Oquitlalique copalli tlen tlanextli, oquicuicaquehtli in macehualcuicatl huan oquitlatlauhtiquextli in tocolhuan ca tlayolcocoliztli huan chipahuac yollotli.</p>
+                            
+                            <p>In tocolhuan oquicacquehtli in tlatzotzonaliztli huan omocuepquehtli ipan in altepetl ca ce chicahuac ehecatl tlen oquimacac yancuic tlanextli. In tlacameh oquimatque tlein in macehualtlahtolli huan in tlamanaliztli ce chicahualiztli huan itonal in altepetl, huan monequi tictlepanitazque ipampa cuali nemiliztli.</p>
+                        </div>
+                    </div>
+
+                    <!-- Línea divisoria central del libro -->
+                    <div class="d-none d-md-block position-absolute start-50 top-0 bottom-0 p-0" style="width: 2px; background: linear-gradient(to bottom, rgba(139,90,43,0), rgba(139,90,43,0.3) 15%, rgba(139,90,43,0.3) 85%, rgba(139,90,43,0)); box-shadow: -1px 0 3px rgba(0,0,0,0.15);"></div>
+
+                    <!-- Página Derecha: Español -->
+                    <div class="col-md-6 ps-md-4 style-pagina-libro">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div class="d-flex align-items-center">
+                                <span class="badge bg-secondary">Español</span>
+                                <button class="btn-audio-cuento" onclick="reproducirTexto(this)"><i class="bi bi-play-circle-fill"></i></button>
+                            </div>
+                            <small style="color: #8B5A2B; font-weight: bold;">Ancestros</small>
+                        </div>
+                        <div class="texto-narrar" style="font-family: 'Georgia', serif; font-size: 1.1rem; line-height: 1.8; color: #2c1d11; text-align: justify;">
+                            <p>En la comunidad, las nuevas generaciones comenzaron a olvidar la lengua náhuatl y las ceremonias sagradas que los antepasados practicaban con respeto. El pueblo comenzó a perder su alegría, los árboles se marchitaron y los manantiales escasearon, porque los espíritus de los ancestros se retiraron hacia las montañas más lejanas.</p>
+                            
+                            <p>Una noche de invierno muy fría, los ancianos que aún conservaban el conocimiento se reunieron en la entrada principal del pueblo para colocar una gran ofrenda. Encendieron copal, entonaron cantos tradicionales en náhuatl y pidieron el perdón y el regreso de los guardianes espirituales con total sinceridad.</p>
+                            
+                            <p>Los ancestros escucharon la música y regresaron al pueblo a través de un viento renovador que trajo prosperidad. Los habitantes comprendieron entonces que la lengua náhuatl y las tradiciones heredadas constituyen la fuerza vital y la identidad del pueblo, comprometiéndose a preservarlas para mantener viva su historia.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="modal-footer border-0 d-flex justify-content-between px-4" style="background: #f5edd6; font-family: 'Georgia', serif; color: #8B5A2B;">
+                <span>pág. 1</span>
+                <span>pág. 2</span>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalLibroPrincipito" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content libro-modal-content" style="background: #fdf6e2; border: 8px solid #8B5A2B; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+            
+            <div class="modal-header border-0 d-flex justify-content-between align-items-center px-4" style="background: #f5edd6;">
+                <h5 class="m-0" style="font-family: 'Georgia', serif; font-weight: bold; color: #5c3a21 !important;">
+                    📖 In Piltzintli / El Principito
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" style="filter: sepia(1);"></button>
+            </div>
+
+            <div class="modal-body p-4" style="max-height: 70vh; overflow-y: auto;">
+                <div class="row g-4 position-relative">
+                    
+                    <!-- Página Izquierda: Náhuatl -->
+                    <div class="col-md-6 pe-md-4 style-pagina-libro">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div class="d-flex align-items-center">
+                                <span class="badge bg-success">Náhuatl</span>
+                                <button class="btn-audio-cuento" onclick="reproducirTexto(this)"><i class="bi bi-play-circle-fill"></i></button>
+                            </div>
+                            <small style="color: #8B5A2B; font-weight: bold;">Piltzintli</small>
+                        </div>
+                        <div class="texto-narrar" style="font-family: 'Georgia', serif; font-size: 1.1rem; line-height: 1.8; color: #2c1d11; text-align: justify;">
+                            <p>Ihcuac nehuatl niquipiahtli chicuace xihuitl, niquihcuilohui centetl coatl tlen oquiquah centetl hueyi elefantetzin; in tlacameh oquihtoahque ca oquipiahtli ixnezca centetl sombrero huan ahmo omomauhtique. Ipampa inon, nictlalihtli nocaliz huan nimoquexteco ipan in ixtlahuatl Sahara, campa centetl piltzintli ohualajqui huan oquilihtli ca yehuatl huelis quittahtli in elefantetzin ihtec in coatl.</p>
+                            
+                            <p>In piltzintli oquipixtli centetl chikititlah sitlali itoca Asteroide B-612. Ipan inon sitlaltzin nemih yei tepetitlah huan baobabs cuauhmeh tlen monequi tiquonxitinizque icualca ipampa ahmo quixitinizque in tlaltipactli. Noihuan, ompa oualajqui centetl chipahuac xochitl tlen oquipiahtli huelic ihueyaliz, huan in piltzintli oquitzitquili chicahuac ca tlayolcocoliztli huan tlatelepanitztli nochtin tonaltin.</p>
+                            
+                            <p>Ihcuac in piltzintli oyajqui tlatemohua occequi sitlaltin, oquimonamicti centetl coatl tlapali ipan in ixtlahuatl. In coatl oquili ca yehhuatl quipia chicahualiztli ipampa quicuepaz centetl tlacatl campa ohualajqui. In piltzintli oquimatque ca in tlein tlahuel monequi ahmo huelis tiquittas ca moixtololohuan, yece ca moyollotli, ihcuac oquonamicti in aviador huan oquitlahtlauhti centetl ichcatl.</p>
+                        </div>
+                    </div>
+
+                    <!-- Línea divisoria central del libro -->
+                    <div class="d-none d-md-block position-absolute start-50 top-0 bottom-0 p-0" style="width: 2px; background: linear-gradient(to bottom, rgba(139,90,43,0), rgba(139,90,43,0.3) 15%, rgba(139,90,43,0.3) 85%, rgba(139,90,43,0)); box-shadow: -1px 0 3px rgba(0,0,0,0.15);"></div>
+
+                    <!-- Página Derecha: Español -->
+                    <div class="col-md-6 ps-md-4 style-pagina-libro">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div class="d-flex align-items-center">
+                                <span class="badge bg-secondary">Español</span>
+                                <button class="btn-audio-cuento" onclick="reproducirTexto(this)"><i class="bi bi-play-circle-fill"></i></button>
+                            </div>
+                            <small style="color: #8B5A2B; font-weight: bold;">Principito</small>
+                        </div>
+                        <div class="texto-narrar" style="font-family: 'Georgia', serif; font-size: 1.1rem; line-height: 1.8; color: #2c1d11; text-align: justify;">
+                            <p>Cuando tenía seis años, dibujé una serpiente boa que devoraba a un elefante; los adultos pensaron que era un sombrero y no tuvieron miedo. Por eso, me convertí en aviador y terminé varado en el desierto del Sahara, donde apareció un pequeño principito que, a diferencia de los demás, pudo ver perfectamente al elefante dentro de la serpiente.</p>
+                            
+                            <p>El principito venía del Asteroide B-612, un planeta diminuto con tres volcanes y peligrosos árboles baobabs que debía arrancar cada mañana para evitar que destruyeran su hogar. En ese lugar también brotó una planta única: una hermosa rosa muy orgullosa y fragante, a la cual él cuidaba con devoción protegiéndola del viento bajo un biombo de cristal.</p>
+                            
+                            <p>Durante su viaje por otros mundos antes de llegar a la Tierra, conoció a una serpiente dorada en el desierto que le prometió devolverlo a su estrella con su mordedura. Así, mientras el aviador intentaba reparar su avión, el niño le enseñó que lo esencial es invisible a los ojos y le pidió que le dibujara un cordero para llevarlo de vuelta con su flor.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="modal-footer border-0 d-flex justify-content-between px-4" style="background: #f5edd6; font-family: 'Georgia', serif; color: #8B5A2B;">
+                <span>pág. 1</span>
+                <span>pág. 2</span>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalLibroLiebreTortuga" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content libro-modal-content" style="background: #fdf6e2; border: 8px solid #8B5A2B; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+            
+            <div class="modal-header border-0 d-flex justify-content-between align-items-center px-4" style="background: #f5edd6;">
+                <h5 class="m-0" style="font-family: 'Georgia', serif; font-weight: bold; color: #5c3a21 !important;">
+                    📖 In Tochtli huan in Ayōtli / La liebre y la tortuga
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" style="filter: sepia(1);"></button>
+            </div>
+
+            <div class="modal-body p-4" style="max-height: 70vh; overflow-y: auto;">
+                <div class="row g-4 position-relative">
+                    
+                    <!-- Página Izquierda: Náhuatl -->
+                    <div class="col-md-6 pe-md-4 style-pagina-libro">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div class="d-flex align-items-center">
+                                <span class="badge bg-success">Náhuatl</span>
+                                <button class="btn-audio-cuento" onclick="reproducirTexto(this)"><i class="bi bi-play-circle-fill"></i></button>
+                            </div>
+                            <small style="color: #8B5A2B; font-weight: bold;">Ayōtli</small>
+                        </div>
+                        <div class="texto-narrar" style="font-family: 'Georgia', serif; font-size: 1.1rem; line-height: 1.8; color: #2c1d11; text-align: justify;">
+                            <p>Se tonalli, se tōchtli niman moneki, huan nochipa kipināhuaya se ayōtli pampa yōliyaya yōlīk. —¡Amo queman tinechtlāniz ipan se motlalōlli! —quihtōya in tōchtli. Se tonalli, in ayōtli quinanquili: —Amo niman nimitzpatlani, zan amo niccāhua notekipanol. Nimitznotza ipan motlalōlli.</p>
+                            
+                            <p>Nochi yolkameh omosentlalijkeh para kitaskeh in motlalōlli. Ikuak opeuh, in tōchtli niman omotlaloh, huan san niman okikāw ka ikuitl in ayōtli. Pampa omomachiliaya para tlatlanis, omosewi itlampa se kuahuitl. —In ayōtli huehca yehcoz —oquimolhui. Niman in ayōtli oyajki san ichtaka, san se se, amo omoketz.</p>
+                            
+                            <p>Satepan, in tōchtli omixitih, huan omotlaloh chicawak, pero in ayōtli ya oasiko itech in tlami. Nochi yolkameh opakikeh ika in ayōtli, huan in tōchtli omomachti amo moneki mopināhua nion motlaneltokas miyek.</p>
+                        </div>
+                    </div>
+
+                    <!-- Línea divisoria central del libro -->
+                    <div class="d-none d-md-block position-absolute start-50 top-0 bottom-0 p-0" style="width: 2px; background: linear-gradient(to bottom, rgba(139,90,43,0), rgba(139,90,43,0.3) 15%, rgba(139,90,43,0.3) 85%, rgba(139,90,43,0)); box-shadow: -1px 0 3px rgba(0,0,0,0.15);"></div>
+
+                    <!-- Página Derecha: Español -->
+                    <div class="col-md-6 ps-md-4 style-pagina-libro">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div class="d-flex align-items-center">
+                                <span class="badge bg-secondary">Español</span>
+                                <button class="btn-audio-cuento" onclick="reproducirTexto(this)"><i class="bi bi-play-circle-fill"></i></button>
+                            </div>
+                            <small style="color: #8B5A2B; font-weight: bold;">Tortuga</small>
+                        </div>
+                        <div class="texto-narrar" style="font-family: 'Georgia', serif; font-size: 1.1rem; line-height: 1.8; color: #2c1d11; text-align: justify;">
+                            <p>Había una vez una liebre muy rápida que siempre se burlaba de una tortuga por caminar despacio. —¡Nunca podrás ganarme en una carrera! —decía la liebre riéndose. Un día, la tortuga respondió: —Tal vez no sea tan rápida como tú, pero nunca me rindo. Te reto a una carrera.</p>
+                            
+                            <p>Todos los animales del bosque se reunieron para ver la competencia. Al comenzar la carrera, la liebre salió corriendo a toda velocidad y pronto dejó muy atrás a la tortuga. Como estaba segura de que ganaría, decidió descansar bajo un árbol. —La tortuga tardará mucho en llegar —pensó. Mientras tanto, la tortuga siguió caminando paso a paso, sin detenerse.</p>
+                            
+                            <p>Después de un rato, la liebre despertó y corrió lo más rápido que pudo hacia la meta, pero ya era demasiado tarde. La tortuga había llegado primero. Todos los animales aplaudieron a la tortuga, y la liebre comprendió que no debía confiarse ni burlarse de los demás.</p>
                         </div>
                     </div>
 
@@ -1011,6 +1803,56 @@
     </script>
 
     <script src="/js/app.js"></script>
+
+    <script>
+        function reproducirTexto(boton) {
+            window.speechSynthesis.cancel();
+
+            const contenedorPadre = boton.closest('.style-pagina-libro');
+            const bloqueTexto = contenedorPadre.querySelector('.texto-narrar');
+            
+            if (!bloqueTexto) return;
+
+            const icono = boton.querySelector('i');
+            const esReproduciendo = icono.classList.contains('bi-stop-circle-fill');
+
+            if (esReproduciendo) {
+                icono.className = 'bi bi-play-circle-fill';
+                return; 
+            }
+
+            document.querySelectorAll('.btn-audio-cuento i').forEach(i => {
+                i.className = 'bi bi-play-circle-fill';
+            });
+
+            const textoALeer = bloqueTexto.innerText;
+            const mensaje = new SpeechSynthesisUtterance(textoALeer);
+            
+            mensaje.lang = 'es-MX';
+            mensaje.rate = 0.9; 
+
+            mensaje.onstart = () => {
+                icono.className = 'bi bi-stop-circle-fill';
+            };
+            mensaje.onend = () => {
+                icono.className = 'bi bi-play-circle-fill';
+            };
+            mensaje.onerror = () => {
+                icono.className = 'bi bi-play-circle-fill';
+            };
+
+            window.speechSynthesis.speak(mensaje);
+        }
+
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('hidden.bs.modal', () => {
+                window.speechSynthesis.cancel();
+                document.querySelectorAll('.btn-audio-cuento i').forEach(i => {
+                    i.className = 'bi bi-play-circle-fill';
+                });
+            });
+        });
+    </script>
 
 </body>
 
