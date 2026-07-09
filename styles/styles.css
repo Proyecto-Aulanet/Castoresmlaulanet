@@ -25,7 +25,6504 @@
 /* =========================
   home - Inicio              
 ========================= */
+/*==========================================================
+        ¿QUÉ ES CASTORES MULTILINGÜES AUL@NET
+        DISEÑO NUEVO
+==========================================================*/
 
+
+.about-section{
+
+    padding:100px 0;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+
+/*==========================================================
+        BADGE
+==========================================================*/
+
+
+.about-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    padding:12px 26px;
+
+    border-radius:50px;
+
+    background:linear-gradient(
+        135deg,
+        #ff9f1c,
+        #f97316
+    );
+
+    color:white;
+
+    font-weight:700;
+
+    font-size:1rem;
+
+    box-shadow:
+    0 12px 30px rgba(249,115,22,.35);
+
+}
+
+
+
+/*==========================================================
+        TITULO
+==========================================================*/
+
+
+.about-title{
+
+    color:white;
+
+    font-size:2.8rem;
+
+    font-weight:900;
+
+    text-shadow:
+    0 5px 18px rgba(0,0,0,.25);
+
+}
+
+
+.about-line{
+
+    width:120px;
+
+    height:6px;
+
+    margin:20px auto 0;
+
+    border-radius:20px;
+
+    background:white;
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,.2);
+
+}
+
+
+
+/*==========================================================
+        NAHUI
+==========================================================*/
+
+
+.nahui-container{
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    min-height:360px;
+
+}
+
+
+
+.nahui-circle{
+
+    position:absolute;
+
+    width:300px;
+
+    height:300px;
+
+    background:white;
+
+    border-radius:50%;
+
+    box-shadow:
+
+    0 25px 50px rgba(0,0,0,.20),
+
+    0 0 0 10px rgba(255,255,255,.18);
+
+
+    animation:
+    circleFloat 5s ease-in-out infinite;
+
+}
+
+
+
+.about-img{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:330px;
+
+    animation:
+
+    floatNahui 4s ease-in-out infinite;
+
+}
+
+
+
+.nahui-name{
+
+    margin-top:15px;
+
+    color:white;
+
+    font-weight:800;
+
+    font-size:1.4rem;
+
+}
+
+
+
+.nahui-role{
+
+    color:white;
+
+    opacity:.85;
+
+}
+
+
+
+
+
+/*==========================================================
+        TARJETA INFORMACION
+==========================================================*/
+
+
+.about-text-card{
+
+
+    background:rgba(255,255,255,.95);
+
+
+    border-radius:30px;
+
+
+    padding:38px;
+
+
+    box-shadow:
+
+    0 20px 50px rgba(0,0,0,.18);
+
+
+}
+
+
+
+.about-text-card h4{
+
+    color:#198754;
+
+    font-weight:800;
+
+    font-size:1.5rem;
+
+}
+
+
+
+.about-text-card p{
+
+
+    color:#555;
+
+
+    line-height:1.9;
+
+
+    font-size:1.05rem;
+
+
+}
+
+
+
+
+
+/*==========================================================
+        PILARES
+==========================================================*/
+
+
+.pillar-card{
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    gap:18px;
+
+
+    padding:20px;
+
+
+    border-radius:25px;
+
+
+    color:white;
+
+
+    min-height:100px;
+
+
+    box-shadow:
+
+
+    0 15px 35px rgba(0,0,0,.15);
+
+
+    transition:.4s;
+
+
+    overflow:hidden;
+
+
+    position:relative;
+
+
+}
+
+
+
+.pillar-card::before{
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    width:120px;
+
+
+    height:120px;
+
+
+    border-radius:50%;
+
+
+    background:rgba(255,255,255,.15);
+
+
+    right:-40px;
+
+
+    top:-40px;
+
+
+}
+
+
+
+.pillar-card:hover{
+
+
+    transform:translateY(-8px);
+
+
+}
+
+
+
+.pillar-card i{
+
+
+    font-size:2.2rem;
+
+
+    background:rgba(255,255,255,.20);
+
+
+    width:55px;
+
+
+    height:55px;
+
+
+    border-radius:18px;
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    flex-shrink:0;
+
+
+}
+
+
+
+
+.pillar-card h5{
+
+
+    margin:0;
+
+
+    font-size:1.15rem;
+
+
+    font-weight:800;
+
+
+}
+
+
+
+.pillar-card small{
+
+
+    opacity:.9;
+
+
+}
+
+
+
+
+/* COLORES */
+
+
+.education{
+
+
+    background:
+    linear-gradient(
+        135deg,
+        #22c55e,
+        #15803d
+    );
+
+
+}
+
+
+
+.technology{
+
+
+    background:
+    linear-gradient(
+        135deg,
+        #60a5fa,
+        #2563eb
+    );
+
+
+}
+
+
+
+.culture{
+
+
+    background:
+    linear-gradient(
+        135deg,
+        #fb923c,
+        #ea580c
+    );
+
+
+}
+
+
+
+.inclusion{
+
+
+    background:
+    linear-gradient(
+        135deg,
+        #facc15,
+        #eab308
+    );
+
+
+    color:#3d3d3d;
+
+
+}
+
+
+
+.inclusion i{
+
+    background:rgba(255, 255, 255, 0.35);
+
+}
+
+
+
+/*==========================================================
+        ANIMACIONES
+==========================================================*/
+
+
+@keyframes floatNahui{
+
+
+0%{
+
+transform:translateY(0);
+
+}
+
+
+50%{
+
+transform:translateY(-15px);
+
+}
+
+
+100%{
+
+transform:translateY(0);
+
+}
+
+
+}
+
+
+
+@keyframes circleFloat{
+
+
+0%{
+
+transform:translateY(0);
+
+}
+
+
+50%{
+
+transform:translateY(10px);
+
+}
+
+
+100%{
+
+transform:translateY(0);
+
+}
+
+
+}
+
+
+
+
+/*==========================================================
+        RESPONSIVE
+==========================================================*/
+
+
+@media(max-width:576px){
+
+
+.about-title{
+
+    font-size:2.1rem;
+
+}
+
+
+
+.nahui-circle{
+
+    width:260px;
+
+    height:260px;
+
+}
+
+
+
+.about-img{
+
+    max-width:250px;
+
+}
+
+
+
+.about-text-card{
+
+    padding:28px;
+
+}
+
+
+}
+
+
+
+
+
+@media(max-width:576px){
+
+
+.about-section{
+
+    padding:70px 0;
+
+}
+
+
+
+.about-title{
+
+    font-size:1.7rem;
+
+}
+
+
+
+.about-badge{
+
+    font-size:.9rem;
+
+}
+
+
+
+.nahui-circle{
+
+    width:220px;
+
+    height:220px;
+
+}
+
+
+
+.about-img{
+
+    max-width:220px;
+
+}
+
+
+
+.pillar-card{
+
+
+    padding:18px;
+
+
+}
+
+
+}
+
+
+
+
+
+/*==========================================================
+        OBJETIVO DEL PROYECTO
+==========================================================*/
+
+
+.objective-section{
+
+    padding:100px 0;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+
+
+/*==========================================================
+        BADGE
+==========================================================*/
+
+
+.objective-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    padding:12px 25px;
+
+    border-radius:50px;
+
+    background:linear-gradient(
+        135deg,
+        #f97316,
+        #ea580c
+    );
+
+    color:white;
+
+    font-weight:700;
+
+    box-shadow:
+
+    0 12px 30px rgba(249,115,22,.35);
+
+}
+
+
+
+
+/*==========================================================
+        TITULO
+==========================================================*/
+
+
+.objective-title{
+
+    color:white;
+
+    font-size:2.8rem;
+
+    font-weight:900;
+
+    text-shadow:
+
+    0 5px 18px rgba(0,0,0,.25);
+
+}
+
+
+
+.objective-line{
+
+
+    width:120px;
+
+
+    height:6px;
+
+
+    border-radius:50px;
+
+
+    background:white;
+
+
+    margin:20px auto 0;
+
+
+}
+
+
+
+/*==========================================================
+        TEXTO PRINCIPAL
+==========================================================*/
+
+
+.objective-main{
+
+
+    background:rgba(255,255,255,.95);
+
+
+    border-radius:35px;
+
+
+    padding:35px 45px;
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    gap:25px;
+
+
+    box-shadow:
+
+
+    0 20px 50px rgba(0,0,0,.18);
+
+
+
+}
+
+
+
+.objective-main i{
+
+
+    min-width:70px;
+
+
+    height:70px;
+
+
+    border-radius:22px;
+
+
+    background:
+
+
+    linear-gradient(
+        135deg,
+        #22c55e,
+        #15803d
+    );
+
+
+    color:white;
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    justify-content:center;
+
+
+    font-size:2rem;
+
+
+
+}
+
+
+
+.objective-main p{
+
+
+    margin:0;
+
+
+    color:#555;
+
+
+    line-height:1.9;
+
+
+    font-size:1.08rem;
+
+
+
+}
+
+
+
+
+/*==========================================================
+        TARJETAS OBJETIVOS
+==========================================================*/
+
+
+.objective-card{
+
+
+    height:100%;
+
+
+    border-radius:30px;
+
+
+    padding:35px 25px;
+
+
+    color:white;
+
+
+    text-align:center;
+
+
+    position:relative;
+
+
+    overflow:hidden;
+
+
+    transition:.4s;
+
+
+    box-shadow:
+
+
+    0 15px 35px rgba(0,0,0,.15);
+
+
+
+}
+
+
+
+.objective-card::before{
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    width:140px;
+
+
+    height:140px;
+
+
+    border-radius:50%;
+
+
+    background:rgba(255,255,255,.15);
+
+
+    top:-50px;
+
+
+    right:-40px;
+
+
+
+}
+
+
+
+
+.objective-card:hover{
+
+
+    transform:translateY(-10px);
+
+
+}
+
+
+
+
+/* ICONO */
+
+
+.objective-icon{
+
+
+    width:80px;
+
+
+    height:80px;
+
+
+    margin:0 auto 20px;
+
+
+    border-radius:25px;
+
+
+    background:rgba(255,255,255,.20);
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    font-size:35px;
+
+
+
+}
+
+
+
+
+
+.objective-card h4{
+
+
+    font-weight:800;
+
+
+    margin-bottom:15px;
+
+
+}
+
+
+
+.objective-card p{
+
+
+    line-height:1.7;
+
+
+    margin:0;
+
+
+    font-size:.98rem;
+
+
+}
+
+
+
+
+
+/*==========================================================
+        COLORES
+==========================================================*/
+
+
+.preserve{
+
+
+    background:
+
+
+    linear-gradient(
+        135deg,
+        #22c55e,
+        #15803d
+    );
+
+
+}
+
+
+
+.strengthen{
+
+
+    background:
+
+
+    linear-gradient(
+        135deg,
+        #3b82f6,
+        #1d4ed8
+    );
+
+
+}
+
+
+
+.spread{
+
+
+    background:
+
+
+    linear-gradient(
+        135deg,
+        #fb923c,
+        #ea580c
+    );
+
+
+}
+
+
+
+
+/*==========================================================
+        ANIMACIONES
+==========================================================*/
+
+
+.objective-card:hover .objective-icon{
+
+
+    transform:
+
+    rotate(8deg)
+
+    scale(1.1);
+
+
+    transition:.4s;
+
+
+}
+
+
+
+/*==========================================================
+        RESPONSIVE
+==========================================================*/
+
+
+@media(max-width:991px){
+
+
+    .objective-title{
+
+        font-size:2.2rem;
+
+    }
+
+
+
+    .objective-main{
+
+        padding:30px;
+
+    }
+
+
+}
+
+
+
+
+@media(max-width:576px){
+
+
+    .objective-section{
+
+        padding:70px 0;
+
+    }
+
+
+
+    .objective-title{
+
+        font-size:1.7rem;
+
+    }
+
+
+
+    .objective-main{
+
+
+        flex-direction:column;
+
+
+        text-align:center;
+
+
+    }
+
+
+
+    .objective-main p{
+
+
+        font-size:1rem;
+
+    }
+
+
+}
+
+/*==========================================================
+        UBICACIÓN Y VARIANTE LINGÜÍSTICA
+==========================================================*/
+
+
+.location-section{
+
+    padding:100px 0;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+
+
+/*==========================================================
+        TITULO
+==========================================================*/
+
+
+.location-badge{
+
+
+    display:inline-flex;
+
+
+    align-items:center;
+
+
+    padding:12px 25px;
+
+
+    border-radius:50px;
+
+
+    background:linear-gradient(
+        135deg,
+        #16a34a,
+        #15803d
+    );
+
+
+    color:white;
+
+
+    font-weight:700;
+
+
+    box-shadow:
+
+
+    0 12px 30px rgba(22,163,74,.35);
+
+
+}
+
+
+
+
+.location-title{
+
+
+    color:white;
+
+
+    font-size:2.8rem;
+
+
+    font-weight:900;
+
+
+    text-shadow:
+
+
+    0 5px 18px rgba(0,0,0,.25);
+
+
+}
+
+
+
+.location-line{
+
+
+    width:120px;
+
+
+    height:6px;
+
+
+    border-radius:50px;
+
+
+    background:white;
+
+
+    margin:20px auto 0;
+
+
+}
+
+
+
+
+
+/*==========================================================
+        MAPA
+==========================================================*/
+
+.mexico-map{
+
+
+    width:720px;
+
+
+    height:620px;
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+
+    padding:25px;
+
+
+
+
+
+    animation:
+
+
+    globeFloat 5s infinite ease-in-out;
+
+
+}
+
+
+
+
+
+.map-mexico{
+
+
+    width:100%;
+
+
+    height:100%;
+
+
+    object-fit:contain;
+
+
+}
+
+
+.map-container{
+
+
+    height:250px;
+
+
+    position:relative;
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+}
+
+
+
+
+
+.world-circle{
+
+
+    width:280px;
+
+
+    height:280px;
+
+
+    border-radius:50%;
+
+
+    background:
+
+
+    linear-gradient(
+        145deg,
+        rgba(255,255,255,.95),
+        rgba(220,252,231,.9)
+    );
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    box-shadow:
+
+
+    0 25px 60px rgba(0,0,0,.18);
+
+
+    animation:
+
+
+    globeFloat 5s infinite ease-in-out;
+
+
+}
+
+
+
+.world-circle i{
+
+
+    font-size:150px;
+
+
+    color:#16a34a;
+
+
+    opacity:.9;
+
+
+}
+
+
+
+
+
+/*==========================================================
+        PUNTOS DEL MAPA
+==========================================================*/
+
+
+.country-point{
+
+
+    position:absolute;
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    gap:10px;
+
+
+    font-weight:700;
+
+
+    color:white;
+
+
+}
+
+
+
+
+.country-point span{
+
+
+    width:18px;
+
+
+    height:18px;
+
+
+    border-radius:50%;
+
+
+    background:#f97316;
+
+
+    box-shadow:
+
+
+    0 0 0 0 rgba(249,115,22,.7);
+
+
+    animation:pulsePoint 2s infinite;
+
+
+}
+
+
+
+
+
+.country-point p{
+
+
+    margin:0;
+
+
+    background:rgba(0,0,0,.25);
+
+
+    padding:6px 12px;
+
+
+    border-radius:20px;
+
+
+    backdrop-filter:blur(5px);
+
+
+}
+
+
+.country-point1 span{
+
+
+    width:18px;
+
+
+    height:18px;
+
+
+    border-radius:50%;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+.mexico-point{
+
+
+    top:-80px;
+
+
+    left:180px;
+
+    color:#ffffff;
+    
+
+
+}
+
+
+
+
+.puebla-point{
+
+
+    top:200px;
+
+
+    right:140px;
+
+
+}
+
+
+
+.community-point{
+
+
+    bottom:110px;
+
+
+    right:70px;
+
+
+}
+
+
+
+.community-point span{
+
+
+    background:#22c55e;
+
+
+}
+
+
+
+
+
+/*==========================================================
+        LINEAS DE CONEXION
+==========================================================*/
+
+/*==========================================================
+        TEXTO DEL MAPA
+==========================================================*/
+
+
+.map-caption{
+
+
+    margin-top:90px;
+
+
+    color:white;
+
+
+    font-size:1.1rem;
+
+
+    font-weight:700;
+
+
+    text-align:center;
+
+
+    text-shadow:
+
+
+    0 4px 10px rgba(0,0,0,.25);
+
+
+}
+
+
+
+.map-caption i{
+
+
+    color:#f97316;
+
+
+}
+
+
+
+
+
+/*==========================================================
+        TARJETAS INFORMACION
+==========================================================*/
+
+
+.location-info{
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+    gap:20px;
+
+
+}
+
+
+
+
+.location-card{
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    gap:20px;
+
+
+    padding:22px;
+
+
+    border-radius:25px;
+
+
+    color:white;
+
+
+    box-shadow:
+
+
+    0 15px 35px rgba(0,0,0,.15);
+
+
+    transition:.4s;
+
+
+}
+
+
+
+.location-card:hover{
+
+
+    transform:translateX(10px);
+
+
+}
+
+
+
+
+
+.location-icon{
+
+
+    width:65px;
+
+
+    height:65px;
+
+
+    border-radius:20px;
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    justify-content:center;
+
+
+    background:rgba(255,255,255,.20);
+
+
+    font-size:28px;
+
+
+    flex-shrink:0;
+
+
+}
+
+
+
+
+.location-card h5{
+
+
+    font-weight:800;
+
+
+    margin-bottom:8px;
+
+
+}
+
+
+
+
+.location-card p{
+
+
+    margin:0;
+
+
+    line-height:1.6;
+
+
+}
+
+
+
+
+
+.location-green{
+
+
+    background:
+
+
+    linear-gradient(
+        135deg,
+        #22c55e,
+        #15803d
+    );
+
+
+}
+
+
+
+.location-blue{
+
+
+    background:
+
+
+    linear-gradient(
+        135deg,
+        #3b82f6,
+        #1d4ed8
+    );
+
+
+}
+
+
+
+.location-orange{
+
+
+    background:
+
+
+    linear-gradient(
+        135deg,
+        #fb923c,
+        #ea580c
+    );
+
+
+}
+
+
+
+
+
+/*==========================================================
+        ANIMACIONES
+==========================================================*/
+
+
+@keyframes globeFloat{
+
+
+0%{
+
+transform:translateY(0);
+
+}
+
+
+50%{
+
+transform:translateY(-15px);
+
+}
+
+
+100%{
+
+transform:translateY(0);
+
+}
+
+
+}
+
+
+
+
+
+@keyframes pulsePoint{
+
+
+0%{
+
+box-shadow:
+
+0 0 0 0 rgba(249,115,22,.7);
+
+}
+
+
+
+70%{
+
+box-shadow:
+
+0 0 0 20px rgba(249,115,22,0);
+
+}
+
+
+
+100%{
+
+box-shadow:
+
+0 0 0 0 rgba(249,115,22,0);
+
+}
+
+
+}
+
+
+
+
+/*==========================================================
+        RESPONSIVE
+==========================================================*/
+
+
+@media(max-width:576px){
+
+
+.location-title{
+
+
+    font-size:2.2rem;
+
+
+}
+
+
+
+.map-container{
+
+
+    height:350px;
+
+
+}
+
+
+
+/*==========================================================
+        MAPA MÉXICO SVG
+==========================================================*/
+
+
+.mexico-map{
+
+
+    width:720px;
+
+
+    height:620px;
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:25px;
+
+    animation:
+
+
+    globeFloat 5s infinite ease-in-out;
+
+
+}
+
+
+
+
+
+.map-mexico{
+
+
+    width:130%;
+
+
+    height:100%;
+
+
+    object-fit:contain;
+
+
+}
+
+
+
+
+
+
+
+.puebla-point{
+
+    top:215px;
+
+    right:20px;
+
+}
+
+
+
+.community-point{
+
+    bottom:80px;
+
+    right:45px;
+
+}
+
+
+}
+
+
+
+
+@media(max-width:576px){
+
+
+.location-section{
+
+
+    padding:70px 0;
+
+
+}
+
+
+
+.location-title{
+
+
+    font-size:1.7rem;
+
+
+}
+
+
+
+.map-container{
+
+
+    transform:scale(.85);
+
+
+}
+
+
+
+.location-card{
+
+
+    padding:18px;
+
+
+}
+
+
+
+.location-icon{
+
+
+    width:55px;
+
+
+    height:55px;
+
+
+}
+
+
+}
+
+
+
+/*==========================================================
+        LA RESURRECCIÓN, PUEBLA
+==========================================================*/
+
+
+.community-section{
+
+    padding:100px 0;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+
+
+/*==========================================================
+        TITULO
+==========================================================*/
+
+
+.community-badge{
+
+
+    display:inline-flex;
+
+
+    align-items:center;
+
+
+    padding:12px 25px;
+
+
+    border-radius:50px;
+
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #f97316,
+        #ea580c
+    );
+
+
+    color:white;
+
+
+    font-weight:700;
+
+
+    box-shadow:
+
+
+    0 12px 30px rgba(249,115,22,.35);
+
+
+}
+
+
+
+
+.community-title{
+
+
+    color:white;
+
+
+    font-size:2.8rem;
+
+
+    font-weight:900;
+
+
+    text-shadow:
+
+
+    0 5px 18px rgba(0,0,0,.25);
+
+
+}
+
+
+
+.community-line{
+
+
+    width:120px;
+
+
+    height:6px;
+
+
+    background:white;
+
+
+    border-radius:50px;
+
+
+    margin:20px auto 0;
+
+
+}
+
+
+
+
+/*==========================================================
+        TARJETA INFORMACIÓN
+==========================================================*/
+
+
+.community-card{
+
+
+    background:rgba(255,255,255,.95);
+
+
+    border-radius:35px;
+
+
+    padding:40px;
+
+
+    box-shadow:
+
+
+    0 25px 60px rgba(0,0,0,.18);
+
+
+    position:relative;
+
+
+    overflow:hidden;
+
+
+}
+
+
+
+
+
+.community-card::before{
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    width:180px;
+
+
+    height:180px;
+
+
+    background:rgba(34,197,94,.12);
+
+
+    border-radius:50%;
+
+
+    top:-70px;
+
+
+    right:-60px;
+
+
+}
+
+
+
+
+
+.community-icon{
+
+
+    width:75px;
+
+
+    height:75px;
+
+
+    border-radius:25px;
+
+
+    background:
+
+
+    linear-gradient(
+        135deg,
+        #22c55e,
+        #15803d
+    );
+
+
+    color:white;
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    font-size:35px;
+
+
+    margin-bottom:25px;
+
+
+}
+
+
+
+
+
+.community-card h4{
+
+
+    color:#198754;
+
+
+    font-weight:800;
+
+
+    margin-bottom:20px;
+
+
+}
+
+
+
+
+
+.community-card p{
+
+
+    color:#555;
+
+
+    font-size:1.05rem;
+
+
+    line-height:1.9;
+
+
+}
+
+
+
+
+
+
+/*==========================================================
+        ETIQUETAS
+==========================================================*/
+
+
+.community-tags{
+
+
+    display:flex;
+
+
+    flex-wrap:wrap;
+
+
+    gap:12px;
+
+
+    margin-top:25px;
+
+
+}
+
+
+
+.community-tags span{
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    gap:8px;
+
+
+    padding:10px 16px;
+
+
+    border-radius:50px;
+
+
+    background:#f1f5f9;
+
+
+    color:#166534;
+
+
+    font-weight:700;
+
+
+    font-size:.9rem;
+
+
+}
+
+
+
+.community-tags i{
+
+
+    color:#f97316;
+
+
+}
+
+
+
+
+
+/*==========================================================
+        GOOGLE MAPS
+==========================================================*/
+
+
+.map-frame{
+
+
+    overflow:hidden;
+
+
+    border-radius:35px;
+
+
+    box-shadow:
+
+
+    0 25px 60px rgba(0,0,0,.22);
+
+
+    border:8px solid rgba(255,255,255,.85);
+
+
+    background:white;
+
+
+}
+
+
+
+.map-frame iframe{
+
+
+    display:block;
+
+
+    border-radius:25px;
+
+
+}
+
+
+
+
+
+
+/*==========================================================
+        EFECTOS
+==========================================================*/
+
+
+.community-card:hover{
+
+
+    transform:translateY(-8px);
+
+
+    transition:.4s;
+
+
+}
+
+
+
+.map-frame:hover{
+
+
+    transform:scale(1.02);
+
+
+    transition:.4s;
+
+
+}
+
+
+
+
+
+
+/*==========================================================
+        RESPONSIVE
+==========================================================*/
+
+
+@media(max-width:991px){
+
+
+.community-title{
+
+
+    font-size:2.2rem;
+
+
+}
+
+
+
+.community-card{
+
+
+    padding:30px;
+
+
+}
+
+
+
+.map-frame iframe{
+
+
+    height:350px;
+
+
+}
+
+
+}
+
+
+
+
+@media(max-width:576px){
+
+
+.community-section{
+
+
+    padding:70px 0;
+
+
+}
+
+
+
+.community-title{
+
+
+    font-size:1.7rem;
+
+
+}
+
+
+
+.community-card{
+
+
+    padding:25px;
+
+
+}
+
+
+
+.community-tags{
+
+
+    flex-direction:column;
+
+
+}
+
+
+
+.community-tags span{
+
+
+    justify-content:center;
+
+
+}
+
+
+
+.map-frame{
+
+
+    border-width:5px;
+
+
+}
+
+
+
+.map-frame iframe{
+
+
+    height:300px;
+
+
+}
+
+
+}
+
+
+/*==========================================================
+        MÓDULOS AUL@NET
+==========================================================*/
+
+
+.modules-section{
+
+    padding:110px 0;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+
+
+/*==========================================================
+        TITULO
+==========================================================*/
+
+
+.modules-badge{
+
+
+    display:inline-flex;
+
+    align-items:center;
+
+    padding:12px 25px;
+
+    border-radius:50px;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #f97316,
+        #ea580c
+    );
+
+    color:white;
+
+    font-weight:800;
+
+    box-shadow:
+
+    0 12px 30px rgba(249,115,22,.35);
+
+}
+
+
+
+
+.modules-title{
+
+
+    color:white;
+
+    font-size:2.8rem;
+
+    font-weight:900;
+
+    text-shadow:
+
+    0 5px 18px rgba(0,0,0,.25);
+
+}
+
+
+
+.modules-line{
+
+
+    width:120px;
+
+    height:6px;
+
+    border-radius:50px;
+
+    background:white;
+
+    margin:20px auto;
+
+
+}
+
+
+
+.modules-description{
+
+
+    max-width:850px;
+
+    margin:auto;
+
+    color:white;
+
+    font-size:1.1rem;
+
+    line-height:1.8;
+
+    text-shadow:
+
+    0 3px 10px rgba(0,0,0,.25);
+
+}
+
+
+
+
+
+/*==========================================================
+        CARDS MÓDULOS
+==========================================================*/
+
+
+.module-card{
+
+
+    height:100%;
+
+    border-radius:30px;
+
+    padding:35px 25px;
+
+    color:white;
+
+    text-align:center;
+
+    position:relative;
+
+    overflow:hidden;
+
+    box-shadow:
+
+    0 18px 45px rgba(0,0,0,.18);
+
+    transition:.4s;
+
+}
+
+
+
+
+
+.module-card::before{
+
+
+    content:"";
+
+    position:absolute;
+
+    width:140px;
+
+    height:140px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.15);
+
+    top:-50px;
+
+    right:-40px;
+
+
+}
+
+
+
+
+
+.module-card:hover{
+
+
+    transform:translateY(-12px);
+
+}
+
+
+
+
+
+/* COLORES */
+
+
+.lessons{
+
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #22c55e,
+        #15803d
+    );
+
+}
+
+
+
+.culture-module{
+
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #fb923c,
+        #ea580c
+    );
+
+}
+
+
+
+.stories{
+
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #6366f1,
+        #4338ca
+    );
+
+}
+
+
+
+.progress-module{
+
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #facc15,
+        #eab308
+    );
+
+    color:#3d3d3d;
+
+}
+
+
+
+
+
+
+
+/* ICONOS */
+
+
+.module-icon{
+
+
+    width:80px;
+
+    height:80px;
+
+    margin:0 auto 20px;
+
+
+    border-radius:25px;
+
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+
+    font-size:38px;
+
+
+    background:
+
+    rgba(255,255,255,.2);
+
+
+    backdrop-filter:blur(10px);
+
+
+}
+
+
+
+
+
+.progress-module .module-icon{
+
+
+    background:
+
+    rgba(255,255,255,.45);
+
+
+}
+
+
+
+
+.module-card h5{
+
+
+    font-size:1.4rem;
+
+    font-weight:900;
+
+    margin-bottom:15px;
+
+
+}
+
+
+
+
+.module-card p{
+
+
+    font-size:.98rem;
+
+    line-height:1.7;
+
+}
+
+
+
+
+
+/*==========================================================
+        GALERÍA
+==========================================================*/
+
+
+.platform-gallery{
+
+
+    margin-top:70px;
+
+}
+
+
+
+
+
+.gallery-title{
+
+
+    text-align:center;
+
+    color:white;
+
+    font-size:2rem;
+
+    font-weight:900;
+
+    margin-bottom:35px;
+
+    text-shadow:
+
+    0 5px 15px rgba(0,0,0,.25);
+
+}
+
+
+
+
+.gallery-image{
+
+
+    width:100%;
+
+    max-height:780px;
+
+    object-fit:contain;
+
+
+    border-radius:30px;
+
+
+    cursor:pointer;
+
+
+  
+
+
+    padding:15px;
+
+
+
+
+
+    transition:.4s;
+
+
+}
+
+
+
+
+
+.gallery-image:hover{
+
+
+    transform:scale(1.03);
+
+
+}
+
+
+
+
+
+.carousel-control-prev,
+.carousel-control-next{
+
+
+    width:8%;
+
+
+}
+
+
+
+
+
+/*==========================================================
+        MODAL IMAGEN
+==========================================================*/
+
+
+#imageModal .modal-content{
+
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+
+}
+
+
+
+
+
+#modalImage{
+
+
+    max-height:95vh;
+
+    object-fit:contain;
+
+
+}
+
+
+
+
+
+
+/*==========================================================
+        RESPONSIVE
+==========================================================*/
+
+
+@media(max-width:576px){
+
+
+.modules-title{
+
+
+    font-size:2.2rem;
+
+
+}
+
+
+
+.module-card{
+
+
+    padding:30px 20px;
+
+
+}
+
+
+
+.gallery-image{
+
+
+    max-height:720px;
+
+
+}
+
+
+}
+
+
+
+
+@media(max-width:576px){
+
+
+.modules-section{
+
+
+    padding:80px 0;
+
+
+}
+
+
+
+.modules-title{
+
+
+    font-size:1.7rem;
+
+
+}
+
+
+
+.modules-description{
+
+
+    font-size:1rem;
+
+
+}
+
+
+
+.module-icon{
+
+
+    width:70px;
+
+    height:70px;
+
+    font-size:32px;
+
+
+}
+
+
+
+.gallery-title{
+
+
+    font-size:1.5rem;
+
+
+}
+
+
+
+.gallery-image{
+
+
+    padding:8px;
+
+    border-radius:20px;
+
+
+}
+
+
+}
+
+
+/*==========================================================
+        DISPONIBILIDAD MULTIDISPOSITIVO
+==========================================================*/
+
+
+.devices-section{
+
+    padding:90px 0;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+
+
+/*==========================================================
+        TITULO
+==========================================================*/
+
+
+.devices-badge{
+
+
+    display:inline-flex;
+
+    align-items:center;
+
+
+    padding:12px 25px;
+
+
+    border-radius:50px;
+
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #f97316,
+        #ea580c
+    );
+
+
+    color:white;
+
+
+    font-weight:800;
+
+
+    box-shadow:
+
+
+    0 12px 30px rgba(249,115,22,.35);
+
+
+}
+
+
+
+
+
+.devices-title{
+
+
+    color:white;
+
+
+    font-size:2.7rem;
+
+
+    font-weight:900;
+
+
+    text-shadow:
+
+
+    0 5px 18px rgba(0,0,0,.25);
+
+
+}
+
+
+
+
+
+.devices-text{
+
+
+    max-width:850px;
+
+
+    margin:auto;
+
+
+    color:white;
+
+
+    font-size:1.1rem;
+
+
+    line-height:1.8;
+
+
+    text-shadow:
+
+
+    0 4px 12px rgba(0,0,0,.25);
+
+
+}
+
+
+
+
+
+
+
+/*==========================================================
+        CARDS DISPOSITIVOS
+==========================================================*/
+
+
+.device-card{
+
+
+    height:100%;
+
+
+    padding:40px 35px;
+
+
+    border-radius:35px;
+
+
+    text-align:center;
+
+
+    color:white;
+
+
+    position:relative;
+
+
+    overflow:hidden;
+
+
+    box-shadow:
+
+
+    0 25px 60px rgba(0,0,0,.2);
+
+
+    transition:.4s;
+
+
+}
+
+
+
+
+
+.device-card::before{
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    width:180px;
+
+
+    height:180px;
+
+
+    border-radius:50%;
+
+
+    background:rgba(255,255,255,.15);
+
+
+    top:-70px;
+
+
+    right:-60px;
+
+
+}
+
+
+
+
+
+
+.device-card:hover{
+
+
+    transform:translateY(-12px);
+
+
+}
+
+
+
+
+
+
+/*==========================================================
+        COLORES
+==========================================================*/
+
+
+.phone-card{
+
+
+    background:
+
+
+    linear-gradient(
+
+        135deg,
+
+        #22c55e,
+
+        #15803d
+
+    );
+
+
+}
+
+
+
+
+.computer-card{
+
+
+    background:
+
+
+    linear-gradient(
+
+        135deg,
+
+        #6366f1,
+
+        #4338ca
+
+    );
+
+
+}
+
+
+
+
+
+
+
+
+/*==========================================================
+        ICONOS
+==========================================================*/
+
+
+.device-icon{
+
+
+    width:90px;
+
+
+    height:90px;
+
+
+    margin:0 auto 25px;
+
+
+    border-radius:30px;
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    font-size:45px;
+
+
+    background:
+
+
+    rgba(255,255,255,.18);
+
+
+    backdrop-filter:blur(10px);
+
+
+    transition:.4s;
+
+
+}
+
+
+
+
+
+.device-card:hover .device-icon{
+
+
+    transform:scale(1.12) rotate(8deg);
+
+
+}
+
+
+
+
+
+
+
+.device-card h4{
+
+
+    font-size:1.5rem;
+
+
+    font-weight:900;
+
+
+    margin-bottom:18px;
+
+
+}
+
+
+
+
+
+.device-card p{
+
+
+    font-size:1rem;
+
+
+    line-height:1.8;
+
+
+}
+
+
+
+
+
+
+/*==========================================================
+        EFECTO BRILLO
+==========================================================*/
+
+
+.device-card:hover::after{
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    width:250px;
+
+
+    height:250px;
+
+
+    border-radius:50%;
+
+
+    background:rgba(255,255,255,.10);
+
+
+    bottom:-100px;
+
+
+    left:-80px;
+
+
+}
+
+
+
+
+
+
+
+/*==========================================================
+        RESPONSIVE
+==========================================================*/
+
+
+@media(max-width:576px){
+
+
+.devices-title{
+
+
+    font-size:2.2rem;
+
+
+}
+
+
+
+.device-card{
+
+
+    padding:35px 25px;
+
+
+}
+
+
+
+}
+
+
+
+
+
+@media(max-width:576px){
+
+
+.devices-section{
+
+
+    padding:70px 0;
+
+
+}
+
+
+
+.devices-title{
+
+
+    font-size:1.7rem;
+
+
+}
+
+
+
+.devices-text{
+
+
+    font-size:1rem;
+
+
+}
+
+
+
+.device-icon{
+
+
+    width:75px;
+
+
+    height:75px;
+
+
+    font-size:35px;
+
+
+}
+
+
+
+.device-card{
+
+
+    border-radius:25px;
+
+
+}
+
+
+}
+
+
+
+/*==========================================================
+        IMPACTO Y ESTADÍSTICAS AUL@NET
+==========================================================*/
+
+
+.stats-section{
+
+    padding:100px 0;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+
+
+/*==========================================================
+        TITULO
+==========================================================*/
+
+
+.stats-badge{
+
+
+    display:inline-flex;
+
+    align-items:center;
+
+
+    padding:12px 25px;
+
+
+    border-radius:50px;
+
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #0ea5e9,
+        #2563eb
+    );
+
+
+    color:white;
+
+
+    font-weight:800;
+
+
+    box-shadow:
+
+    0 12px 30px rgba(14,165,233,.35);
+
+
+}
+
+
+
+
+
+.stats-title{
+
+
+    color:white;
+
+
+    font-size:2.8rem;
+
+
+    font-weight:900;
+
+
+    text-shadow:
+
+
+    0 5px 18px rgba(0,0,0,.25);
+
+
+}
+
+
+
+
+
+.stats-line{
+
+
+    width:120px;
+
+
+    height:6px;
+
+
+    background:white;
+
+
+    border-radius:50px;
+
+
+    margin:20px auto;
+
+
+}
+
+
+
+
+
+
+/*==========================================================
+        TARJETAS ESTADISTICAS
+==========================================================*/
+
+
+.stat-card{
+
+
+    height:90%;
+
+
+    padding:35px 25px;
+
+
+    border-radius:30px;
+
+
+    text-align:center;
+
+
+    color:white;
+
+
+    position:relative;
+
+
+    overflow:hidden;
+
+
+    box-shadow:
+
+
+    0 20px 50px rgba(0,0,0,.20);
+
+
+    transition:.4s;
+
+
+}
+
+
+
+
+.stat-card::before{
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    width:140px;
+
+
+    height:140px;
+
+
+    background:rgba(255,255,255,.15);
+
+
+    border-radius:50%;
+
+
+    top:-45px;
+
+
+    right:-45px;
+
+
+}
+
+
+
+
+
+.stat-card:hover{
+
+
+    transform:translateY(-12px);
+
+
+}
+
+
+
+
+
+
+/* COLORES */
+
+
+.stat-card.users{
+
+
+    background:
+
+
+    linear-gradient(
+        135deg,
+        #22c55e,
+        #15803d
+    );
+
+
+}
+
+
+
+
+
+.stat-card.countries{
+
+
+    background:
+
+
+    linear-gradient(
+        135deg,
+        #3b82f6,
+        #1d4ed8
+    );
+
+
+}
+
+
+
+
+
+.stat-card.missions{
+
+
+    background:
+
+
+    linear-gradient(
+        135deg,
+        #f97316,
+        #ea580c
+    );
+
+
+}
+
+
+
+
+
+
+
+.stat-card i{
+
+
+    font-size:45px;
+
+
+    margin-bottom:15px;
+
+
+    display:block;
+
+
+}
+
+
+
+
+
+.stat-card h3{
+
+
+    font-size:3rem;
+
+
+    font-weight:900;
+
+
+    margin-bottom:5px;
+
+
+}
+
+
+
+
+
+.stat-card p{
+
+
+    font-size:1rem;
+
+
+    margin:0;
+
+
+}
+
+
+
+
+
+
+/*==========================================================
+        GRAFICAS
+==========================================================*/
+
+
+.chart-card{
+
+
+    background:rgba(255,255,255,.95);
+
+
+    border-radius:35px;
+
+
+    padding:35px;
+
+
+    box-shadow:
+
+
+    0 25px 60px rgba(0,0,0,.18);
+
+
+    height:100%;
+
+
+}
+
+
+
+
+
+.chart-card h4{
+
+
+    text-align:center;
+
+
+    color:#198754;
+
+
+    font-size:1.4rem;
+
+
+    font-weight:900;
+
+
+    margin-bottom:30px;
+
+
+}
+
+
+
+
+
+.chart-card h4 i{
+
+
+    margin-right:10px;
+
+
+}
+
+
+
+
+
+.chart-card canvas{
+
+
+    max-height:350px;
+
+
+}
+
+
+
+
+
+
+/*==========================================================
+        EFECTO DE ENTRADA
+==========================================================*/
+
+
+.stat-card:hover i{
+
+
+    transform:scale(1.15);
+
+
+    transition:.4s;
+
+
+}
+
+
+
+
+
+
+/*==========================================================
+        RESPONSIVE
+==========================================================*/
+
+
+@media(max-width:991px){
+
+
+.stats-title{
+
+
+    font-size:2.2rem;
+
+
+}
+
+
+
+.stat-card h3{
+
+
+    font-size:2.5rem;
+
+
+}
+
+
+
+.chart-card{
+
+
+    padding:25px;
+
+
+}
+
+
+
+}
+
+
+
+
+
+@media(max-width:576px){
+
+
+.stats-section{
+
+
+    padding:70px 0;
+
+
+}
+
+
+
+.stats-title{
+
+
+    font-size:1.7rem;
+
+
+}
+
+
+
+.stats-badge{
+
+
+    font-size:.9rem;
+
+
+}
+
+
+
+.stat-card{
+
+
+    padding:30px 20px;
+
+
+}
+
+
+
+.stat-card h3{
+
+
+    font-size:2.2rem;
+
+
+}
+
+
+
+.chart-card{
+
+
+    border-radius:25px;
+
+
+}
+
+
+
+}
+
+
+/*==========================================================
+        INSTITUCIÓN DESARROLLADORA
+==========================================================*/
+
+
+.institution-section{
+
+    padding:100px 0;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+
+
+/*==========================================================
+        CONTENEDOR PRINCIPAL
+==========================================================*/
+
+
+.institution-card{
+
+
+    padding:70px;
+
+
+    position:relative;
+
+
+    overflow:hidden;
+
+
+}
+
+
+
+.institution-card::before{
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    width:320px;
+
+
+    height:320px;
+
+
+    background:rgba(34,197,94,.12);
+
+
+    border-radius:50%;
+
+
+    top:-150px;
+
+
+    right:-100px;
+
+
+}
+
+
+
+
+
+.institution-card::after{
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    width:250px;
+
+
+    height:250px;
+
+
+    background:rgba(59,130,246,.10);
+
+
+    border-radius:50%;
+
+
+    bottom:-100px;
+
+
+    left:-80px;
+
+
+}
+
+
+
+
+
+
+
+/*==========================================================
+        HEADER INSTITUCIONAL
+==========================================================*/
+
+
+.institution-header{
+
+
+    
+
+
+    padding:25px;
+
+
+
+
+
+    margin-bottom:45px;
+
+
+
+
+
+    position:relative;
+
+
+    z-index:2;
+
+
+}
+
+
+
+
+
+
+/*==========================================================
+        BADGE
+==========================================================*/
+
+
+.institution-badge{
+
+
+    display:inline-flex;
+
+
+    align-items:center;
+
+
+    padding:12px 25px;
+
+
+    border-radius:50px;
+
+
+    background:
+
+
+    linear-gradient(
+        135deg,
+        #f97316,
+        #ea580c
+    );
+
+
+    color:white;
+
+
+    font-weight:800;
+
+
+    box-shadow:
+
+
+    0 12px 30px rgba(249,115,22,.35);
+
+
+}
+
+
+
+
+
+
+
+
+/*==========================================================
+        LOGOS
+==========================================================*/
+
+
+.institution-logos{
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+    align-items:center;
+
+
+    justify-content:center;
+
+
+    gap:25px;
+
+
+}
+
+
+
+
+
+.institution-logo-aulanet{
+
+
+    width:280px;
+
+
+    max-width:100%;
+
+
+    animation:floatInstitution 4s infinite ease-in-out;
+
+
+}
+
+
+
+
+
+.institution-logo-utp{
+
+
+    width:230px;
+
+
+    max-width:90%;
+
+
+    animation:floatInstitution 5s infinite ease-in-out;
+
+
+}
+
+
+
+
+
+.institution-divider{
+
+
+    width:70px;
+
+
+    height:70px;
+
+
+    border-radius:50%;
+
+
+    background:
+
+
+    linear-gradient(
+        135deg,
+        #22c55e,
+        #15803d
+    );
+
+
+    color:white;
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    font-size:32px;
+
+
+    box-shadow:
+
+
+    0 15px 35px rgba(34,197,94,.35);
+
+
+}
+
+
+
+
+
+
+@keyframes floatInstitution{
+
+
+0%{
+
+transform:translateY(0);
+
+}
+
+
+50%{
+
+transform:translateY(-12px);
+
+}
+
+
+100%{
+
+transform:translateY(0);
+
+}
+
+
+}
+
+
+
+
+
+
+
+/*==========================================================
+        TITULO
+==========================================================*/
+
+
+.institution-title{
+
+
+    color:white;
+
+
+    font-size:2.5rem;
+
+
+    font-weight:900;
+
+
+    text-align:center;
+
+
+    text-shadow:
+
+
+    0 5px 15px rgba(0,0,0,.2);
+
+
+}
+
+
+
+
+
+
+/*==========================================================
+        INFORMACION
+==========================================================*/
+
+
+.institution-info{
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+    gap:15px;
+
+
+    margin-top:25px;
+
+
+}
+
+
+
+
+
+.institution-item{
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    gap:15px;
+
+
+    padding:15px 20px;
+
+
+    border-radius:20px;
+
+
+    color:white;
+
+
+    font-weight:700;
+
+
+    box-shadow:
+
+
+    0 10px 25px rgba(0,0,0,.15);
+
+
+    transition:.3s;
+
+
+}
+
+
+
+
+
+.institution-item:hover{
+
+
+    transform:translateY(-6px);
+
+
+}
+
+
+
+
+
+.institution-item i{
+
+
+    width:45px;
+
+
+    height:45px;
+
+
+    border-radius:15px;
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    background:
+
+
+    rgba(255,255,255,.25);
+
+
+    color:white;
+
+
+    font-size:22px;
+
+
+}
+
+
+
+
+
+
+/* COLORES INDIVIDUALES */
+
+
+.career-item{
+
+
+    background:
+
+
+    linear-gradient(
+        135deg,
+        #22c55e,
+        #15803d
+    );
+
+
+}
+
+
+
+.location-item{
+
+
+    background:
+
+
+    linear-gradient(
+        135deg,
+        #3b82f6,
+        #1d4ed8
+    );
+
+
+}
+
+
+
+.innovation-item{
+
+
+    background:
+
+
+    linear-gradient(
+        135deg,
+        #f97316,
+        #ea580c
+    );
+
+
+}
+
+
+
+
+
+
+
+
+/*==========================================================
+        UBICACIÓN
+==========================================================*/
+
+
+.institution-location{
+
+
+    margin-top:70px;
+
+
+    text-align:center;
+
+
+    position:relative;
+
+
+    z-index:2;
+
+
+}
+
+
+
+
+
+.institution-location h4{
+
+
+    color:white;
+
+
+    font-weight:900;
+
+
+    font-size:1.6rem;
+
+
+}
+
+
+
+
+
+.institution-location p{
+
+
+    color:white;
+
+
+    font-size:1.05rem;
+
+
+    margin-bottom:30px;
+
+
+}
+
+
+
+
+
+
+
+/*==========================================================
+        MAPA
+==========================================================*/
+
+
+.institution-map{
+
+
+    overflow:hidden;
+
+
+    border-radius:35px;
+
+
+    box-shadow:
+
+
+    0 25px 60px rgba(0,0,0,.20);
+
+
+    margin-bottom:30px;
+
+    width:100%;
+   
+
+}
+
+
+
+
+
+.institution-map iframe{
+
+
+    width:100%;
+
+
+    height:420px;
+
+
+    border:0;
+
+    display:block;
+   
+    max-width:100%;
+
+
+}
+
+
+
+
+
+
+
+/*==========================================================
+        BOTON MAPA
+==========================================================*/
+
+
+.institution-map-btn{
+
+
+    padding:14px 35px;
+
+
+    border-radius:50px;
+
+
+    background:
+
+
+    linear-gradient(
+        135deg,
+        #f97316,
+        #ea580c
+    );
+
+
+    color:white;
+
+
+    font-weight:800;
+
+
+    box-shadow:
+
+
+    0 15px 35px rgba(249,115,22,.35);
+
+
+    transition:.3s;
+
+
+}
+
+
+
+
+
+.institution-map-btn:hover{
+
+
+    transform:translateY(-5px);
+
+
+    color:white;
+
+
+}
+
+
+
+
+
+
+
+/*==========================================================
+        RESPONSIVE
+==========================================================*/
+
+
+@media(max-width:991px){
+
+
+.institution-card{
+
+
+    padding:45px 30px;
+
+
+}
+
+
+
+
+.institution-title{
+
+
+    font-size:2rem;
+
+
+}
+
+
+
+
+.institution-logo-aulanet{
+
+
+    width:230px;
+
+
+}
+
+
+
+
+.institution-logo-utp{
+
+
+    width:190px;
+
+
+}
+
+
+}
+
+
+
+
+
+
+
+@media(max-width:576px){
+
+
+.institution-section{
+
+
+    padding:70px 0;
+
+
+}
+
+
+
+
+.institution-card{
+
+
+    padding:30px 20px;
+
+
+}
+
+
+
+
+.institution-header{
+
+
+    padding:20px;
+
+
+}
+
+
+
+
+.institution-title{
+
+
+    font-size:1.6rem;
+
+
+}
+
+
+
+
+.institution-item{
+
+
+    font-size:.9rem;
+
+
+}
+
+
+
+
+.institution-map iframe{
+
+
+    height:300px;
+
+
+}
+
+
+
+}
+
+
+
+/*==========================================================
+        EQUIPO DESARROLLADOR
+==========================================================*/
+
+
+.developers-section{
+
+    padding:100px 0;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+
+
+/*==========================================================
+        TITULO
+==========================================================*/
+
+
+.developers-title{
+
+    margin-bottom:60px;
+
+}
+
+
+
+.developers-badge{
+
+
+    display:inline-flex;
+
+    align-items:center;
+
+    padding:12px 28px;
+
+    border-radius:50px;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #f97316,
+        #ea580c
+    );
+
+    color:white;
+
+    font-weight:800;
+
+    box-shadow:
+
+    0 12px 30px rgba(249,115,22,.35);
+
+
+}
+
+
+
+
+.developers-heading{
+
+
+    margin-top:25px;
+
+    color:white;
+
+    font-size:2.5rem;
+
+    font-weight:900;
+
+    text-shadow:
+
+    0 5px 15px rgba(0,0,0,.25);
+
+
+}
+
+
+
+
+
+
+
+/*==========================================================
+        CARD DESARROLLADORES
+==========================================================*/
+
+
+.developer-card{
+
+
+    height:100%;
+
+    padding:35px 25px;
+
+    border-radius:35px;
+
+    text-align:center;
+
+    color:white;
+
+    position:relative;
+
+    overflow:hidden;
+
+    box-shadow:
+
+    0 20px 45px rgba(0,0,0,.20);
+
+
+    transition:.4s;
+
+
+}
+
+
+
+
+
+.developer-card::before{
+
+
+    content:"";
+
+
+    position:absolute;
+
+    width:150px;
+
+    height:150px;
+
+    background:rgba(255,255,255,.15);
+
+    border-radius:50%;
+
+    top:-60px;
+
+    right:-50px;
+
+
+}
+
+
+
+
+
+.developer-card:hover{
+
+
+    transform:translateY(-12px);
+
+
+}
+
+
+
+
+
+/*==========================================================
+        COLORES
+==========================================================*/
+
+
+.card-green{
+
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #22c55e,
+        #15803d
+    );
+
+
+}
+
+
+
+
+
+.card-blue{
+
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #3b82f6,
+        #1d4ed8
+    );
+
+
+}
+
+
+
+
+
+.card-orange{
+
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #fb923c,
+        #ea580c
+    );
+
+
+}
+
+
+
+
+
+.card-yellow{
+
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #facc15,
+        #ca8a04
+    );
+
+    color:#333;
+
+}
+
+
+
+
+
+.card-purple{
+
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #a855f7,
+        #7e22ce
+    );
+
+
+}
+
+
+
+
+
+
+
+/*==========================================================
+        FOTO
+==========================================================*/
+
+
+.developer-photo{
+
+
+    width:150px;
+
+    height:150px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+
+
+    box-shadow:
+
+    0 15px 35px rgba(0,0,0,.25);
+
+
+    margin-bottom:25px;
+
+
+    transition:.4s;
+
+
+}
+
+
+
+
+
+.developer-card:hover .developer-photo{
+
+
+    transform:scale(1.08);
+
+
+}
+
+
+
+
+
+
+/* FOTO VACIA */
+
+
+.empty-photo{
+
+
+    background:
+
+    rgba(255,255,255,.25);
+
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin-left:auto;
+
+    margin-right:auto;
+
+
+    color:white;
+
+    font-size:70px;
+
+
+}
+
+
+
+
+
+
+/*==========================================================
+        TEXTO
+==========================================================*/
+
+
+.developer-card h4{
+
+
+    font-weight:900;
+
+    font-size:1.35rem;
+
+    margin-bottom:10px;
+
+
+}
+
+
+
+
+
+.developer-role{
+
+
+    display:block;
+
+    font-weight:700;
+
+    font-size:.95rem;
+
+    opacity:.95;
+
+    margin-bottom:18px;
+
+
+}
+
+
+
+
+
+.developer-card p{
+
+
+    line-height:1.8;
+
+    font-size:.95rem;
+
+
+}
+
+
+
+
+
+
+
+/*==========================================================
+        REDES SOCIALES
+==========================================================*/
+
+
+.developer-social{
+
+
+    margin-top:25px;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:12px;
+
+
+}
+
+
+
+
+
+.developer-social a{
+
+
+    width:42px;
+
+    height:42px;
+
+    border-radius:50%;
+
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+
+    background:
+
+    rgba(255,255,255,.25);
+
+
+    color:white;
+
+    font-size:20px;
+
+
+    transition:.3s;
+
+
+}
+
+
+
+
+
+.developer-social a:hover{
+
+
+    background:white;
+
+    color:#198754;
+
+    transform:
+
+    translateY(-5px);
+
+
+}
+
+
+
+
+
+
+
+
+/*==========================================================
+        DECORACIÓN
+==========================================================*/
+
+
+.developer-card:hover::before{
+
+
+    transform:scale(1.4);
+
+
+    transition:.5s;
+
+
+}
+
+
+
+
+
+
+
+/*==========================================================
+        RESPONSIVE
+==========================================================*/
+
+
+@media(max-width:991px){
+
+
+.developers-heading{
+
+
+    font-size:2rem;
+
+
+}
+
+
+
+}
+
+
+
+
+
+@media(max-width:576px){
+
+
+.developers-section{
+
+
+    padding:70px 0;
+
+
+}
+
+
+
+
+
+.developers-heading{
+
+
+    font-size:1.6rem;
+
+
+}
+
+
+
+
+
+.developer-card{
+
+
+    padding:30px 20px;
+
+
+}
+
+
+
+
+
+.developer-photo{
+
+
+    width:120px;
+
+    height:120px;
+
+
+}
+
+
+
+}
+
+
+/*==========================================================
+                DOCENTES RESPONSABLES
+==========================================================*/
+
+.teachers-section{
+
+    padding:110px 0;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+/*==========================================================
+                ENCABEZADO
+==========================================================*/
+
+.teachers-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    padding:12px 28px;
+
+    border-radius:50px;
+
+    background:linear-gradient(135deg,#2563eb,#1d4ed8);
+
+    color:white;
+
+    font-weight:800;
+
+    box-shadow:0 15px 35px rgba(37,99,235,.30);
+
+}
+
+.teachers-title{
+
+    color:white;
+
+    font-size:2.8rem;
+
+    font-weight:900;
+
+    margin-bottom:18px;
+
+    text-shadow:0 5px 18px rgba(0,0,0,.20);
+
+}
+
+.teachers-subtitle{
+
+    max-width:900px;
+
+    margin:auto;
+
+    color:rgba(255,255,255,.92);
+
+    font-size:1.08rem;
+
+    line-height:1.9;
+
+}
+
+/*==========================================================
+                TARJETAS
+==========================================================*/
+
+.teacher-card{
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:35px;
+
+    background:white;
+
+    border-radius:30px;
+
+    padding:35px;
+
+    margin-bottom:35px;
+
+    overflow:hidden;
+
+    box-shadow:
+
+    0 18px 45px rgba(0,0,0,.12);
+
+    transition:.35s;
+
+}
+
+.teacher-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:
+
+    0 28px 60px rgba(0,0,0,.18);
+
+}
+
+/*==========================================================
+            LINEA VERTICAL DERECHA
+==========================================================*/
+
+.teacher-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    right:0;
+
+    width:12px;
+
+    height:100%;
+
+}
+
+/*==========================================================
+                COLORES
+==========================================================*/
+
+.teacher-green::after{
+
+    background:#22c55e;
+
+}
+
+.teacher-blue::after{
+
+    background:#2563eb;
+
+}
+
+.teacher-orange::after{
+
+    background:#f97316;
+
+}
+
+.teacher-purple::after{
+
+    background:#9333ea;
+
+}
+
+/*==========================================================
+                FOTO
+==========================================================*/
+
+.teacher-photo{
+
+    flex-shrink:0;
+
+}
+
+.teacher-photo img{
+
+    width:170px;
+
+    height:170px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+
+
+    box-shadow:
+
+    0 18px 35px rgba(0,0,0,.18);
+
+    transition:.4s;
+
+}
+
+.teacher-card:hover .teacher-photo img{
+
+    transform:scale(1.05);
+
+}
+
+/*==========================================================
+                INFORMACION
+==========================================================*/
+
+.teacher-content{
+
+    flex:1;
+
+}
+
+.teacher-content h3{
+
+    font-size:1.6rem;
+
+    font-weight:800;
+
+    color:#222;
+
+    margin-bottom:8px;
+
+}
+
+.teacher-position{
+
+    display:inline-block;
+
+    color:#198754;
+
+    font-weight:700;
+
+    margin-bottom:18px;
+
+}
+
+/*==========================================================
+                ESPECIALIDADES
+==========================================================*/
+
+.teacher-tags{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    margin-bottom:20px;
+
+}
+
+.teacher-tags span{
+
+    padding:8px 16px;
+
+    border-radius:50px;
+
+    background:#eef5ff;
+
+    color:#2563eb;
+
+    font-weight:700;
+
+    font-size:.90rem;
+
+    transition:.3s;
+
+}
+
+.teacher-card:hover .teacher-tags span{
+
+    transform:translateY(-3px);
+
+}
+
+/*==========================================================
+                DESCRIPCION
+==========================================================*/
+
+.teacher-content p{
+
+    color:#555;
+
+    line-height:1.9;
+
+    margin:0;
+
+    font-size:1rem;
+
+}
+
+/*==========================================================
+                RESPONSIVE
+==========================================================*/
+
+@media(max-width:991px){
+
+.teacher-card{
+
+    flex-direction:column;
+
+    text-align:center;
+
+    padding:30px;
+
+}
+
+.teacher-photo img{
+
+    width:150px;
+
+    height:150px;
+
+}
+
+.teacher-tags{
+
+    justify-content:center;
+
+}
+
+}
+
+@media(max-width:576px){
+
+.teachers-section{
+
+    padding:80px 0;
+
+}
+
+.teachers-title{
+
+    font-size:2rem;
+
+}
+
+.teachers-subtitle{
+
+    font-size:1rem;
+
+}
+
+.teacher-card{
+
+    padding:25px;
+
+}
+
+.teacher-content h3{
+
+    font-size:1.3rem;
+
+}
+
+.teacher-photo img{
+
+    width:130px;
+
+    height:130px;
+
+}
+
+.teacher-tags span{
+
+    font-size:.82rem;
+
+    padding:7px 14px;
+
+}
+
+}
+
+
+
+/*==========================================================
+                    COLABORADORES
+==========================================================*/
+
+.collaborators-section{
+
+    padding:110px 0;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+/*==========================================================
+                    ENCABEZADO
+==========================================================*/
+
+.collaborators-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    padding:12px 28px;
+
+    border-radius:50px;
+
+    background:linear-gradient(135deg,#16a34a,#15803d);
+
+    color:white;
+
+    font-weight:800;
+
+    box-shadow:
+    0 15px 35px rgba(22,163,74,.30);
+
+}
+
+.collaborators-title{
+
+    font-size:2.8rem;
+
+    font-weight:900;
+
+    color:white;
+
+    margin-top:25px;
+
+    margin-bottom:18px;
+
+    text-shadow:
+    0 6px 18px rgba(0,0,0,.18);
+
+}
+
+.collaborators-subtitle{
+
+    max-width:900px;
+
+    margin:auto;
+
+    color:rgba(255,255,255,.92);
+
+    line-height:1.9;
+
+    font-size:1.05rem;
+
+}
+
+/*==========================================================
+                    TARJETA
+==========================================================*/
+
+.collaborator-card{
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:40px;
+
+    background:white;
+
+    border-radius:35px;
+
+    padding:40px;
+
+    margin-top:60px;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 25px 60px rgba(0,0,0,.12);
+
+    transition:.35s;
+
+}
+
+.collaborator-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:
+    0 35px 70px rgba(0,0,0,.18);
+
+}
+
+/*==========================================================
+                    ETIQUETA
+==========================================================*/
+
+.collaborator-role{
+
+    position:absolute;
+
+    top:25px;
+
+    right:25px;
+
+    display:flex;
+
+    align-items:center;
+
+    padding:10px 20px;
+
+    border-radius:50px;
+
+    background:linear-gradient(
+    135deg,
+    #2563eb,
+    #1d4ed8);
+
+    color:white;
+
+    font-weight:700;
+
+    box-shadow:
+    0 12px 25px rgba(37,99,235,.30);
+
+}
+
+/*==========================================================
+                    FOTO
+==========================================================*/
+
+.collaborator-photo{
+
+    flex-shrink:0;
+
+}
+
+.collaborator-photo img{
+
+    width:220px;
+
+    height:220px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:8px solid white;
+
+    box-shadow:
+    0 18px 40px rgba(0,0,0,.18);
+
+    transition:.35s;
+
+}
+
+.collaborator-card:hover .collaborator-photo img{
+
+    transform:scale(1.05);
+
+}
+
+/*==========================================================
+                    INFORMACIÓN
+==========================================================*/
+
+.collaborator-info{
+
+    flex:1;
+
+}
+
+.collaborator-info h3{
+
+    font-size:2rem;
+
+    font-weight:800;
+
+    color:#222;
+
+    margin-bottom:8px;
+
+}
+
+.collaborator-position{
+
+    display:inline-block;
+
+    margin-bottom:20px;
+
+    color:#198754;
+
+    font-weight:700;
+
+    font-size:1rem;
+
+}
+
+.collaborator-info p{
+
+    color:#555;
+
+    line-height:1.9;
+
+    font-size:1rem;
+
+}
+
+/*==========================================================
+                ESPECIALIDADES
+==========================================================*/
+
+.collaborator-tags{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    margin-bottom:22px;
+
+}
+
+.collaborator-tags span{
+
+    padding:8px 16px;
+
+    border-radius:50px;
+
+    background:#eaf7ef;
+
+    color:#198754;
+
+    font-weight:700;
+
+    font-size:.90rem;
+
+    transition:.3s;
+
+}
+
+.collaborator-card:hover .collaborator-tags span{
+
+    transform:translateY(-4px);
+
+}
+
+/*==========================================================
+                LOGOS
+==========================================================*/
+
+.collaborator-info h6{
+
+    color:#444;
+
+    font-weight:800;
+
+}
+
+.collaborator-logos{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    flex-wrap:wrap;
+
+    margin-bottom:25px;
+
+}
+
+.collaborator-logos img{
+
+    height:55px;
+
+    background:white;
+
+    padding:8px;
+
+    border-radius:16px;
+
+    box-shadow:
+    0 8px 20px rgba(0,0,0,.10);
+
+    transition:.3s;
+
+}
+
+.collaborator-logos img:hover{
+
+    transform:translateY(-5px);
+
+}
+
+/*==========================================================
+                    REDES
+==========================================================*/
+
+.collaborator-social{
+
+    display:flex;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+}
+
+.collaborator-social a{
+
+    width:48px;
+
+    height:48px;
+
+    border-radius:50%;
+
+    background:#f4f7fb;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:#198754;
+
+    font-size:20px;
+
+    transition:.35s;
+
+    text-decoration:none;
+
+}
+
+.collaborator-social a:hover{
+
+    background:#198754;
+
+    color:white;
+
+    transform:translateY(-5px);
+
+}
+
+/*==========================================================
+                RESPONSIVE
+==========================================================*/
+
+@media(max-width:991px){
+
+.collaborator-card{
+
+    flex-direction:column;
+
+    text-align:center;
+
+    padding:35px;
+
+}
+
+.collaborator-role{
+
+    position:relative;
+
+    top:auto;
+
+    right:auto;
+
+    margin-bottom:25px;
+
+}
+
+.collaborator-photo img{
+
+    width:180px;
+
+    height:180px;
+
+}
+
+.collaborator-tags{
+
+    justify-content:center;
+
+}
+
+.collaborator-logos{
+
+    justify-content:center;
+
+}
+
+.collaborator-social{
+
+    justify-content:center;
+
+}
+
+}
+
+@media(max-width:576px){
+
+.collaborators-section{
+
+    padding:80px 0;
+
+}
+
+.collaborators-title{
+
+    font-size:2rem;
+
+}
+
+.collaborators-subtitle{
+
+    font-size:1rem;
+
+}
+
+.collaborator-card{
+
+    padding:25px;
+
+}
+
+.collaborator-photo img{
+
+    width:150px;
+
+    height:150px;
+
+}
+
+.collaborator-info h3{
+
+    font-size:1.5rem;
+
+}
+
+.collaborator-role{
+
+    font-size:.85rem;
+
+    padding:8px 18px;
+
+}
+
+.collaborator-tags span{
+
+    font-size:.82rem;
+
+}
+
+}
+
+
+/*=========================================
+        AVATAR SIN FOTOGRAFÍA
+=========================================*/
+
+.collaborator-avatar{
+
+    width:220px;
+
+    height:220px;
+
+    border-radius:50%;
+
+    background:linear-gradient(
+    135deg,
+    #22c55e,
+    #15803d);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:white;
+
+    font-size:95px;
+
+    box-shadow:
+    0 18px 40px rgba(0,0,0,.18);
+
+    transition:.35s;
+
+}
+
+.collaborator-card:hover .collaborator-avatar{
+
+    transform:scale(1.05);
+
+}
+
+/*=========================================
+        DISTINTIVO COMUNIDAD
+=========================================*/
+
+.collaborator-community{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    margin-bottom:18px;
+
+    padding:10px 18px;
+
+    border-radius:50px;
+
+    background:#e8f5e9;
+
+    color:#198754;
+
+    font-weight:700;
+
+    box-shadow:
+    0 8px 18px rgba(25,135,84,.12);
+
+}
+
+.collaborator-community i{
+
+    font-size:18px;
+
+}
 
 
 /* =====================================

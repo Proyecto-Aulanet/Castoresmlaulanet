@@ -8,6 +8,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
+//Abrir imagen en modal
+
+function openImage(src){
+
+document.getElementById("modalImage").src=src;
+
+let modal=new bootstrap.Modal(
+document.getElementById("imageModal")
+);
+
+modal.show();
+
+}
 
 
 
@@ -629,7 +642,7 @@ function cerrarSesion(){
     localStorage.clear();
     sessionStorage.clear();
 
-    window.location.href = "/pages_ext/home.html";
+    window.location.href = "/pages_ext/index.html";
 
 }
 
