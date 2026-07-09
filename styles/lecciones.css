@@ -54,16 +54,22 @@ main.container {
 }
 
 /* ==========================================================================
-   3. TARJETAS DE LAS LECCIONES (.btn-leccion-card) -> ¡AQUÍ SE SUBIÓ UN POCO EL TAMAÑO!
+   3. TARJETAS DE LAS LECCIONES (.btn-leccion-card)
    ========================================================================== */
 .btn-leccion-card {
     border: 2px solid #e2e8f0 !important;
-    min-height: 265px !important; /* Ajustado: Subió de 240px a 265px para dar más presencia */
-    padding: 1.8rem 1.5rem !important; /* Ajustado: Un poco más de aire arriba y abajo */
+    height: 320px !important; /* Altura fija para que todas las tarjetas sean uniformes */
+    padding: 10px !important; /* Relleno mínimo para dar todo el espacio a la imagen */
     background-color: #ffffff !important;
     cursor: pointer;
-    border-radius: 15px; /* Bordes suaves estilo lúdico */
+    border-radius: 20px; 
     transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease !important;
+    
+    /* Configuración para empujar la imagen arriba y el texto abajo */
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important; 
+    align-items: center !important;
 }
 
 .btn-leccion-card:active {
@@ -71,17 +77,18 @@ main.container {
 }
 
 .btn-leccion-card img {
-    max-width: 105px !important; /* Ajustado: El icono subió sutilmente de 90px a 105px */
-    height: auto !important;
-    object-fit: contain;
-    width: 100%;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 230px !important; /* Ocupa casi todo el alto de la tarjeta */
+    object-fit: contain !important; /* Asegura que la imagen no se deforme */
 }
 
 .btn-leccion-card h2 {
     color: #0b4c33 !important;
-    font-size: 1.15rem !important; /* Ajustado: El texto subió sutilmente de 1rem a 1.15rem */
+    font-size: 1.15rem !important; 
     font-weight: bold !important;
-    margin-top: 15px !important; /* Un poquito más de separación con la imagen */
+    margin: 0 0 5px 0 !important; /* Pegado abajo con un pequeño margen */
+    text-align: center;
     word-break: break-word;
     overflow-wrap: break-word;
 }
@@ -288,23 +295,20 @@ main.container {
 
 /* --- CELULARES / PANTALLAS CHICAS --- */
 @media (max-width: 575.98px) {
-    main.container {
-        padding-top: 21rem !important;
-    }
-
     .btn-leccion-card {
-        min-height: 185px !important; /* Ajustado un pelín también en móvil */
-        padding: 1rem 0.6rem !important;
+        height: 220px !important;
+        padding: 8px !important;
     }
 
     .btn-leccion-card img {
-        max-width: 70px !important;
+        height: 150px !important; /* Ajuste proporcional para móviles */
     }
 
     .btn-leccion-card h2 {
-        font-size: 0.9rem !important;
-        margin-top: 8px !important;
+        font-size: 0.95rem !important;
+        margin-bottom: 2px !important;
     }
+}
 
     .boton-subir {
         bottom: 15px;
@@ -316,4 +320,3 @@ main.container {
     .boton-subir .bi-arrow-up-short {
         font-size: 20px;
     }
-}
