@@ -23,6 +23,32 @@ modal.show();
 }
 
 
+// =====================================
+// NAVEGACIÓN
+function presenToggleNav(){
+
+    document
+        .getElementById("presenMenuNav")
+        .classList.toggle("show");
+
+}
+
+function scrollToSection(id){
+
+    document
+        .getElementById(id)
+        .scrollIntoView({
+
+            behavior:"smooth"
+
+        });
+
+    document
+        .getElementById("presenMenuNav")
+        .classList.remove("show");
+
+}
+
 
 // =====================================
 // ABRIR / CERRAR MENÚ

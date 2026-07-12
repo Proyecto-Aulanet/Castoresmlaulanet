@@ -185,7 +185,7 @@ main.container {
 [class*="traductor"] *,
 [id*="traductor"],
 [id*="traductor"] * {
-    color: #000000 !important;
+    color: #ffffff !important;
     font-weight: bold !important;
 }
 

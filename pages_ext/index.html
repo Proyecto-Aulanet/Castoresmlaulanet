@@ -214,6 +214,96 @@
 
                     </div>
 
+                    <!-- BOTÓN NAVEGACIÓN -->
+                    <div class="presen-nav">
+
+                        <!-- BOTÓN -->
+
+                        <button
+                            class="btn rounded-circle nav-btn"
+                            onclick="presenToggleNav()"
+                            data-aos="zoom-in">
+
+                            <i class="bi bi-list-ul"></i>
+
+                        </button>
+
+                        <!-- MENÚ -->
+
+                        <div
+                            class="presen-nav-menu"
+                            id="presenMenuNav">
+
+                            <ul class="list-unstyled m-0">
+
+                                <li onclick="scrollToSection('page-home')">
+                                    <i class="bi bi-house-door-fill me-2"></i>
+                                    Inicio
+                                </li>
+
+                                <li onclick="scrollToSection('about')">
+                                    <i class="bi bi-lightbulb-fill me-2"></i>
+                                    ¿Qué es Aul@Net?
+                                </li>
+
+                                <li onclick="scrollToSection('objetivos')">
+                                    <i class="bi bi-bullseye me-2"></i>
+                                    Objetivos
+                                </li>
+
+                                <li onclick="scrollToSection('ubicacion')">
+                                    <i class="bi bi-geo-alt-fill me-2"></i>
+                                    La Resurrección
+                                </li>
+
+                                                                <li onclick="scrollToSection('comunidad')">
+                                    <i class="bi bi-geo-alt-fill me-2"></i>
+                                    Comunidad
+                                </li>
+
+                                                                <li onclick="scrollToSection('disponible')">
+                                    <i class="bi bi-laptop -alt-fill me-2"></i>
+                                    Dispositivos
+                                </li>
+
+                                                                <li onclick="scrollToSection('estadisticas')">
+                                    <i class="bi bi-bar-chart-fill me-2"></i>
+                                    Estadísticas
+                                </li>
+
+                                <li onclick="scrollToSection('modulos')">
+                                    <i class="bi bi-grid-fill me-2"></i>
+                                    Módulos
+                                </li>
+
+
+
+                                <li onclick="scrollToSection('institucion')">
+                                    <i class="bi bi-building-fill me-2"></i>
+                                    Universidad
+                                </li>
+
+                                <li onclick="scrollToSection('desarrolladores')">
+                                    <i class="bi bi-people-fill me-2"></i>
+                                    Desarrolladores
+                                </li>
+
+                                <li onclick="scrollToSection('maestros')">
+                                    <i class="bi bi-mortarboard-fill me-2"></i>
+                                    Maestros
+                                </li>
+
+                                <li onclick="scrollToSection('colaboradores')">
+                                    <i class="bi bi-award-fill me-2"></i>
+                                    Colaboradores
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
 <!-- =========================================
      MODAL LOGIN
 ========================================= -->
@@ -441,7 +531,7 @@
      ¿QUÉ ES CASTORES MULTILINGÜES AUL@NET?
 ============================================================= -->
 
-<section class="about-section">
+<section id="about" class="about-section">
 
     <div class="container">
 
@@ -792,7 +882,7 @@
         OBJETIVO DEL PROYECTO
 ============================================================= -->
 
-<section class="objective-section">
+<section id="objetivos"  class="objective-section">
 
 
     <div class="container">
@@ -1125,7 +1215,7 @@
 ============================================================= -->
 
 
-<section class="location-section">
+<section id="ubicacion" class="location-section">
 
 
     <div class="container">
@@ -1488,7 +1578,7 @@
 ============================================================= -->
 
 
-<section class="community-section">
+<section id="comunidad" class="community-section">
 
 
     <div class="container">
@@ -1709,7 +1799,7 @@
         DISPONIBILIDAD MULTIDISPOSITIVO
 ============================================================= -->
 
-<section class="devices-section">
+<section id="disponible" class="devices-section">
 
 
     <div class="container">
@@ -1927,7 +2017,7 @@
 ============================================================= -->
 
 
-<section class="stats-section">
+<section id="estadisticas" class="stats-section">
 
 
 <div class="container">
@@ -2208,7 +2298,7 @@ Usuarios en México
 ============================================================= -->
 
 
-<section class="modules-section">
+<section id="modulos" class="modules-section">
 
 
     <div class="container">
@@ -2725,7 +2815,7 @@ Usuarios en México
 ============================================================= -->
 
 
-<section class="institution-section">
+<section id="institucion" class="institution-section">
 
 
     <div class="container">
@@ -3118,7 +3208,7 @@ Usuarios en México
 ============================================================= -->
 
 
-<section class="developers-section">
+<section id="desarrolladores" class="developers-section">
 
 
 <div class="container">
@@ -3511,7 +3601,7 @@ Encargado del diseño visual, interfaces y experiencia del usuario dentro de la 
         MAESTROS RESPONSABLES
 ============================================================= -->
 
-<section class="teachers-section">
+<section id="maestros" class="teachers-section">
 
     <div class="container">
 
@@ -3778,7 +3868,7 @@ Encargado del diseño visual, interfaces y experiencia del usuario dentro de la 
         COLABORADORES
 ============================================================= -->
 
-<section class="collaborators-section">
+<section id="colaboradores" class="collaborators-section">
 
     <div class="container">
 
@@ -4114,6 +4204,11 @@ Encargado del diseño visual, interfaces y experiencia del usuario dentro de la 
 
     </div>
 
+                    <button id="btnSubir" class="boton-subir shadow-lg" onclick="volverArriba()" style="display: none;">
+        <i class="bi bi-arrow-up-short"></i>
+        <span data-es="Subir" data-na="Aco">Subir</span>
+    </button>
+
 </section>
 
 
@@ -4158,6 +4253,8 @@ class="img-fluid rounded-4 shadow-lg">
 
 
         </main>
+
+
 
     </div>
 
@@ -4474,6 +4571,28 @@ class="img-fluid rounded-4 shadow-lg">
         );
 
         </script>
+
+            <script>
+        const botonSubir = document.getElementById("btnSubir");
+
+        // Evento de escucha para detectar cuando el usuario hace scroll hacia abajo
+        window.onscroll = function () {
+            // Si el scroll baja más de 300px se muestra, de lo contrario permanece oculto
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                botonSubir.style.display = "flex";
+            } else {
+                botonSubir.style.display = "none";
+            }
+        };
+
+        // Función que realiza el retorno fluido al inicio (Top: 0)
+        function volverArriba() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    </script>
 
 </body>
 
