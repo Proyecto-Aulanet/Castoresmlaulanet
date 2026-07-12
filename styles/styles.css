@@ -10495,3 +10495,457 @@ padding:8px;
 
 }
 
+
+/* ===========Colores col_1-2======================== */
+
+
+/*==========================================
+        TARJETAS COLORES ENTORNO
+==========================================*/
+
+
+.clickable-color-card{
+
+    border:none;
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    cursor:pointer;
+
+    transition:all .3s ease;
+
+    background:white;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+}
+
+
+
+.clickable-color-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 15px 30px rgba(0,0,0,.15);
+
+}
+
+
+
+/* IMAGEN DE LAS TARJETAS */
+
+.clickable-color-card img{
+
+    width:100%;
+
+    height:170px;
+
+    object-fit:cover;
+
+    transition:.4s ease;
+
+}
+
+
+
+.clickable-color-card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+
+
+
+/* CUERPO DE TARJETA */
+
+.clickable-color-card .card-body{
+
+    padding:20px;
+
+}
+
+
+
+.clickable-color-card h4{
+
+    font-weight:700;
+
+    margin-bottom:10px;
+
+    color:#124734;
+
+}
+
+
+
+.clickable-color-card p{
+
+    font-size:.95rem;
+
+    min-height:45px;
+
+}
+
+
+
+/* BOTON VER */
+
+.clickable-color-card button{
+
+    margin-top:10px;
+
+    padding:8px 25px;
+
+    font-weight:600;
+
+}
+
+
+
+/* ANIMACION DE ENTRADA */
+
+.clickable-color-card{
+
+    animation:aparecerTarjeta .6s ease;
+
+}
+
+
+
+@keyframes aparecerTarjeta{
+
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+/*==========================================
+        TARJETA PAISAJE VIDEO
+==========================================*/
+
+
+.card-video-entorno{
+
+    position:relative;
+
+}
+
+
+
+.card-video-entorno::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(0,0,0,.15);
+
+}
+
+
+
+.card-video-entorno .card-body{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+
+
+
+/*==========================================
+        RESPONSIVE
+==========================================*/
+
+
+@media(max-width:576px){
+
+
+    .clickable-color-card img{
+
+        height:130px;
+
+    }
+
+
+    .clickable-color-card .card-body{
+
+        padding:15px;
+
+    }
+
+
+    .clickable-color-card h4{
+
+        font-size:1.1rem;
+
+    }
+
+
+    .clickable-color-card p{
+
+        font-size:.85rem;
+
+    }
+
+
+}
+
+
+/*========= Colores col_1-3========= */
+
+
+.explorador-entorno{
+
+position:relative;
+
+max-width:900px;
+
+margin:auto;
+
+}
+
+
+.paisaje-entorno{
+
+width:100%;
+
+border-radius:30px;
+
+box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+}
+
+
+
+.punto-color{
+
+position:absolute;
+
+border:none;
+
+background:white;
+
+width:45px;
+
+height:45px;
+
+border-radius:50%;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:25px;
+
+color:#198754;
+
+cursor:pointer;
+
+box-shadow:0 5px 15px rgba(0,0,0,.25);
+
+animation:pulso 2s infinite;
+
+}
+
+
+
+.punto-verde-claro{
+
+top:46%;
+
+left:30%;
+
+}
+
+
+.punto-verde-oscuro{
+
+top:40%;
+
+left:65%;
+
+}
+
+
+.punto-cafe{
+
+bottom:7%;
+
+left:49%;
+
+}
+
+
+.punto-azul{
+
+top:13%;
+
+right:50%;
+
+}
+
+
+.punto-morado{
+
+bottom:20%;
+
+right:25%;
+
+}
+
+
+
+@keyframes pulso{
+
+0%{
+
+transform:scale(1);
+
+}
+
+
+50%{
+
+transform:scale(1.15);
+
+}
+
+
+100%{
+
+transform:scale(1);
+
+}
+
+}
+
+
+
+/* ==========================================
+   EXPLORADOR ENTORNO - CELULAR
+========================================== */
+
+@media(max-width:576px){
+
+
+.explorador-entorno{
+
+    width:100%;
+
+    max-width:100%;
+
+}
+
+
+
+.paisaje-entorno{
+
+    width:100%;
+
+    border-radius:20px;
+
+}
+
+
+
+.punto-color{
+
+    width:35px;
+
+    height:35px;
+
+    font-size:18px;
+
+}
+
+
+
+/* VERDE CLARO */
+
+.punto-verde-claro{
+
+    top:35%;
+
+    left:28%;
+
+}
+
+
+
+/* VERDE OSCURO */
+
+.punto-verde-oscuro{
+
+    top: 50px;
+
+    left:65%;
+
+}
+
+
+
+/* CAFE */
+
+.punto-cafe{
+
+   
+
+    bottom:7%;
+
+    left:42%;
+
+}
+
+
+
+/* AZUL */
+
+.punto-azul{
+
+    top: 10px;
+
+    right:45%;
+
+}
+
+
+
+/* MORADO */
+
+.punto-morado{
+
+    bottom: 25px;
+
+    right:15%;
+
+}
+
+
+}
