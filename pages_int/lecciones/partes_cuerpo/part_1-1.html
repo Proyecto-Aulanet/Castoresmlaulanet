@@ -8,7 +8,7 @@
     <!-- RESPONSIVE -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>SLeccion - 1 - Castores Multilingües Aul@Net</title>
+    <title>PLeccion - 1 - Castores Multilingües Aul@Net</title>
 
     <link rel="icon" href="/Recursos/nahui_caras/nahui_feliz_vector.svg" type="image/png">
 
@@ -422,198 +422,304 @@
 
 <br>
 
-<section class="container py-5">
+<section class="container seccion-colores mt-5 pt-5">
 
-    <!-- ENCABEZADO -->
-<div class="row mb-5 justify-content-center  titulo-saludos">
 
-    <div class="col-lg-10  mt-5 mt-lg-0">
+<!-- ENCABEZADO -->
 
-        <div class="bg-white rounded-4 shadow-sm p-4 border-start border-4 border-primary text-center">
+<div class="row mb-5 text-center justify-content-center"
+data-aos="fade-up">
 
-            <i class="bi bi-chat-dots-fill fs-1 text-primary"></i>
 
-            <h2
-            class="fw-bold mt-3"
-            data-es="Saludos Básicos"
-            data-na="Tlapalolistli">
+<div class="col-12 col-md-10
+bg-white
+p-4
+rounded-4
+shadow-sm
+border-start
+border-4
+border-danger">
 
-            Saludos Básicos
 
-            </h2>
+<div class="d-flex 
+justify-content-center 
+align-items-center 
+gap-3 
+mb-3">
 
-            <p
-            class="lead text-muted mb-0"
-            data-es="Aprende a saludar de acuerdo con el momento del día mediante conversaciones cotidianas."
-            data-na="Ximomachti quen titlapaloloa ipan sejse tonalli ika tlatolmelahualiztli.">
 
-            Aprende a saludar de acuerdo con el momento del día mediante conversaciones cotidianas.
+<i class="bi bi-person-bounding-box text-danger fs-2"></i>
 
-            </p>
 
-        </div>
+<h2
+class="fw-bold m-0"
+data-es="Cabeza y rostro"
+data-na="Kuaitl huan Ixtli">
 
-    </div>
+Cabeza y rostro
+
+</h2>
+
 
 </div>
 
 
 
-    <!-- TARJETAS -->
+<p
+class="lead text-muted mb-0"
+data-es="Aprende a identificar las principales partes de la cabeza y el rostro en náhuatl mediante una exploración interactiva."
+data-na="Ximomachti in itoka kuaitl huan ixtli ika se tlamachtiliztli tlen monechiko.">
 
-    <div class="row g-4 justify-content-center">
 
-        <!-- MAÑANA -->
+Aprende a identificar las principales partes de la cabeza y el rostro en náhuatl mediante una exploración interactiva.
 
-        <div class="col-md-4">
 
-            <div class="card saludo-card h-100 text-center">
+</p>
 
-                <div class="card-body">
 
-                    <i class="bi bi-sunrise-fill saludo-icono text-warning"></i>
+</div>
 
-                    <h3
-                    class="mt-3"
-                    data-es="Buenos días"
-                    data-na="Cualli tonalli">
 
-                    Buenos días
+</div>
 
-                    </h3>
 
-                    <p
-                    data-es="Saludos utilizados durante la mañana."
-                    data-na="Tlapalolistli tlen mopiah ipan ijnaloc tonalli.">
 
-                    Saludos utilizados durante la mañana.
 
-                    </p>
 
-                    <button
-                    class="btn btn-warning rounded-pill"
+<!-- EXPLORADOR DEL ROSTRO -->
 
-                    onclick="abrirConversacion('manana')">
 
-                        Explorar
+<div class="explorador-cuerpo">
 
-                    </button>
 
-                </div>
+<img
+src="/Recursos/cuerpo/cabeza.png"
+class="img-fluid imagen-cuerpo"
+alt="Partes de la cabeza y rostro">
 
-            </div>
 
-        </div>
 
 
 
-        <!-- TARDE -->
+<!-- CABELLO -->
 
-        <div class="col-md-4">
+<button
+class="punto-cuerpo punto-cabello"
+onclick="mostrarParte(
+'Tsonkalli',
+'Cabello',
+'El cabello protege la cabeza y nos ayuda a conservar el calor del cuerpo.',
+'In tsonkalli quipalehuia in tzontecomatl huan techmaka totoniyotl.',
+'/Recursos/cuerpo/cabello.png',
+'/Recursos/audios/colores/azul.ogg',
+'#198754'
+)">
 
-            <div class="card saludo-card h-100 text-center">
+<i class="bi bi-plus-circle-fill"></i>
 
-                <div class="card-body">
+</button>
 
-                    <i class="bi bi-brightness-high-fill saludo-icono text-orange"></i>
 
-                    <h3
-                    data-es="Buenas tardes"
-                    data-na="Cualli tiotlak">
 
-                    Buenas tardes
+<!-- CEJAS -->
 
-                    </h3>
+<button
+class="punto-cuerpo punto-ceja"
+onclick="mostrarParte(
+'Ixkuame',
+'Cejas',
+'Las cejas ayudan a proteger los ojos del sudor y forman parte de las expresiones del rostro.',
+'In ixkuame quipalehuia in ixtelolotl huan quipalehuia amo ma calaqui ahuayotl ipan ixtli.',
+'/Recursos/cuerpo/cejas.png',
+'/Recursos/audios/cuerpo/cejas.ogg',
+'#198754'
+)">
 
-                    <p
-                    data-es="Saludos utilizados durante la tarde."
-                    data-na="Tlapalolistli tlen mopiah ipan tiotlak.">
+<i class="bi bi-plus-circle-fill"></i>
 
-                    Saludos utilizados durante la tarde.
+</button>
 
-                    </p>
 
-                    <button
-                    class="btn btn-success rounded-pill"
 
-                    onclick="abrirConversacion('tarde')">
+<!-- OJOS -->
 
-                        Explorar
+<button
+class="punto-cuerpo punto-ojo"
+onclick="mostrarParte(
+'Ixtelolotl',
+'Ojos',
+'Los ojos nos permiten observar personas, lugares y todo lo que existe a nuestro alrededor.',
+'In ixtelolotl techpalehuia ticitta masehualme, tlalmeh huan nochi tlen techyahualoa.',
+'/Recursos/cuerpo/ojos.png',
+'/Recursos/audios/cuerpo/ojos.ogg',
+'#0d6efd'
+)">
 
-                    </button>
+<i class="bi bi-plus-circle-fill"></i>
 
-                </div>
+</button>
 
-            </div>
 
-        </div>
 
+<!-- NARIZ -->
 
+<button
+class="punto-cuerpo punto-nariz"
+onclick="mostrarParte(
+'Yakatl',
+'Nariz',
+'La nariz nos ayuda a respirar y percibir diferentes aromas de nuestro entorno.',
+'In yakatl techpalehuia timoijiyotia huan ticmati in ajwiakayotl tlen techyahualoa.',
+'/Recursos/cuerpo/nariz.png',
+'/Recursos/audios/cuerpo/nariz.ogg',
+'#ffc107'
+)">
 
-        <!-- NOCHE -->
+<i class="bi bi-plus-circle-fill"></i>
 
-        <div class="col-md-4">
+</button>
 
-            <div class="card saludo-card h-100 text-center">
 
-                <div class="card-body">
 
-                    <i class="bi bi-moon-stars-fill saludo-icono text-primary"></i>
+<!-- OREJA -->
 
-                    <h3
-                    data-es="Buenas noches"
-                    data-na="Cualli yohualli">
+<button
+class="punto-cuerpo punto-oreja"
+onclick="mostrarParte(
+'Nakas',
+'Oreja',
+'Las orejas nos permiten escuchar sonidos, voces y elementos de la naturaleza.',
+'In nakas techpalehuia ticcaqui tlajtolli, tlatzotzonalli huan tlapitzalli tlen nemi ipan toaltepetl.',
+'/Recursos/cuerpo/oreja.png',
+'/Recursos/audios/cuerpo/oreja.ogg',
+'#6f42c1'
+)">
 
-                    Buenas noches
+<i class="bi bi-plus-circle-fill"></i>
 
-                    </h3>
+</button>
 
-                    <p
-                    data-es="Saludos utilizados durante la noche."
-                    data-na="Tlapalolistli tlen mopiah ipan yohualli.">
 
-                    Saludos utilizados durante la noche.
 
-                    </p>
+<!-- BOCA -->
 
-                    <button
-                    class="btn btn-primary rounded-pill"
+<button
+class="punto-cuerpo punto-boca"
+onclick="mostrarParte(
+'Kamak',
+'Boca',
+'La boca nos permite hablar, expresar emociones y alimentarnos.',
+'In kamak techpalehuia titlahtoa, ticnextia toyolpakilis huan titlacua.',
+'/Recursos/cuerpo/boca.png',
+'/Recursos/audios/cuerpo/boca.ogg',
+'#dc3545'
+)">
 
-                    onclick="abrirConversacion('noche')">
+<i class="bi bi-plus-circle-fill"></i>
 
-                        Explorar
+</button>
 
-                    </button>
 
-                </div>
 
-            </div>
+<!-- DIENTES -->
 
-        </div>
+<button
+class="punto-cuerpo punto-dientes"
+onclick="mostrarParte(
+'Tlantli',
+'Dientes',
+'Los dientes ayudan a cortar y masticar los alimentos.',
+'In tlantli techpalehuia tictequi huan ticmasehua tlacualistli.',
+'/Recursos/cuerpo/dientes.png',
+'/Recursos/audios/cuerpo/dientes.ogg',
+'#f8f9fa'
+)">
 
-    </div>
+<i class="bi bi-plus-circle-fill"></i>
 
-            <!-- REGRESAR -->
+</button>
 
-            <div class="d-flex justify-content-start mt-5">
 
-                <button
-                onclick="window.location.href='/pages_int/inicio.html'"
-                class="btn-regresar-int">
 
-                    <i class="bi bi-arrow-left-circle-fill me-2"></i>
 
-                    <span
-                    data-es="Regresar"
-                    data-na="Mokuepa">
 
-                    Regresar
 
-                    </span>
 
-                </button>
+<!-- MENTÓN -->
 
-            </div>
+<button
+class="punto-cuerpo punto-menton"
+onclick="mostrarParte(
+'Tentzon',
+'Mentón',
+'El mentón forma parte inferior del rostro y ayuda a definir su forma.',
+'In tentzon eli se parte tlen ixtli huan quichihua ma cuali mota in tzontecomatl.',
+'/Recursos/cuerpo/menton.png',
+'/Recursos/audios/cuerpo/menton.ogg',
+'#20c997'
+)">
+
+<i class="bi bi-plus-circle-fill"></i>
+
+</button>
+
+
+
+<!-- CUELLO -->
+
+<button
+class="punto-cuerpo punto-cuello"
+onclick="mostrarParte(
+'Kekuech',
+'Cuello',
+'El cuello une la cabeza con el resto del cuerpo y permite moverla.',
+'In kekuech quiilpilia in tzontecomatl ihuan in cenca toacayotl huan techpalehuia timolini.',
+'/Recursos/cuerpo/cuello.png',
+'/Recursos/audios/cuerpo/cuello.ogg',
+'#6610f2'
+)">
+
+<i class="bi bi-plus-circle-fill"></i>
+
+</button>
+
+
+</div>
+
+
+
+
+
+
+<!-- REGRESAR -->
+
+<div class="d-flex justify-content-start mt-5">
+
+
+<button
+onclick="window.location.href='/pages_int/inicio.html'"
+class="btn-regresar-int">
+
+
+<i class="bi bi-arrow-left-circle-fill me-2"></i>
+
+
+<span
+data-es="Regresar"
+data-na="Mokuepa">
+
+Regresar
+
+</span>
+
+
+</button>
+
+
+</div>
+
+
+
 
 </section>
 
@@ -748,323 +854,146 @@
     <!-- AOS -->
     <script src="/assets/js/aos.js"></script>
 
-    <script src="/assets/sweetalert/sweetalert2.all.min.js"></script>  
-
-
-    <script>
-    function reproducirAudio(audio, velocidad){
-
-    let sonido = new Audio(audio);
-
-    sonido.playbackRate = velocidad;
-
-    sonido.play()
-    .catch(function(error){
-
-        console.log(error);
-
-    });
-
-}
-
-</script>
+    <script src="/assets/sweetalert/sweetalert2.all.min.js"></script>    
 
     <script>
 
-   function abrirConversacion(tipo){
 
-let titulo="";
-let color="";
-let audio="";
+        // ==========================================
+        // REPRODUCIR AUDIO
+        // ==========================================
 
-let html="";
 
-if(tipo=="manana"){
+        function reproducirAudio(audio, velocidad){
 
-titulo="☀️ Buenos días";
 
-color="#ffc107";
+        let sonido = new Audio(audio);
 
-audio="/Recursos/audios/saludos/manana.ogg";
 
-html=`
+        sonido.playbackRate = velocidad;
 
-<div class="chat">
 
-<div class="mensaje">
+        sonido.play()
 
-<div class="avatar">
-👩
-</div>
+        .catch(function(error){
 
-<div class="burbuja-chat">
+        console.log("Error al reproducir audio:", error);
 
-<h5>Niltze.</h5>
+        });
 
-<small>Hola.</small>
 
-</div>
+        }
 
-</div>
 
 
 
-<div class="mensaje derecha">
 
-<div class="avatar">
-👨
-</div>
+        // ==========================================
+        // MOSTRAR PARTE DEL CUERPO
+        // ==========================================
 
-<div class="burbuja-chat">
 
-<h5>Cualli tonalli.</h5>
-
-<small>Buenos días.</small>
-
-</div>
-
-</div>
-
-
-
-<div class="mensaje">
-
-<div class="avatar">
-👩
-</div>
-
-<div class="burbuja-chat">
-
-<h5>¿Quenin tiitztoc?</h5>
-
-<small>¿Cómo estás?</small>
-
-</div>
-
-</div>
-
-
-
-<div class="mensaje derecha">
-
-<div class="avatar">
-👨
-</div>
-
-<div class="burbuja-chat">
-
-<h5>Cualli niitztoc.</h5>
-
-<small>Estoy bien.</small>
-
-</div>
-
-</div>
-
-</div>
-
-`;
-}
-
-
-
-if(tipo=="tarde"){
-
-titulo="🌤️ Buenas tardes";
-
-color="#198754";
-
-audio="/Recursos/audios/saludos/tarde.ogg";
-
-html=`
-
-<div class="chat">
-
-<div class="mensaje">
-
-<div class="avatar">👧</div>
-
-<div class="burbuja-chat">
-
-<h5>Cualli tiotlak.</h5>
-
-<small>Buenas tardes.</small>
-
-</div>
-
-</div>
-
-<div class="mensaje derecha">
-
-<div class="avatar">👨</div>
-
-<div class="burbuja-chat">
-
-<h5>Cualli tiotlak.</h5>
-
-<small>Buenas tardes.</small>
-
-</div>
-
-</div>
-
-<div class="mensaje">
-
-<div class="avatar">👧</div>
-
-<div class="burbuja-chat">
-
-<h5>¿Quenin tiitztoc?</h5>
-
-<small>¿Cómo estás?</small>
-
-</div>
-
-</div>
-
-<div class="mensaje derecha">
-
-<div class="avatar">👨</div>
-
-<div class="burbuja-chat">
-
-<h5>Cualli niitztoc.</h5>
-
-<small>Estoy bien.</small>
-
-</div>
-
-</div>
-
-</div>
-
-`;
-
-}
-
-
-
-if(tipo=="noche"){
-
-titulo="🌙 Buenas noches";
-
-color="#0d6efd";
-
-audio="/Recursos/audios/colores/azul.ogg";
-
-html=`
-
-<div class="chat">
-
-<div class="mensaje">
-
-<div class="avatar">👩</div>
-
-<div class="burbuja-chat">
-
-<h5>Cualli yohualli.</h5>
-
-<small>Buenas noches.</small>
-
-</div>
-
-</div>
-
-<div class="mensaje derecha">
-
-<div class="avatar">👨</div>
-
-<div class="burbuja-chat">
-
-<h5>Cualli yohualli.</h5>
-
-<small>Buenas noches.</small>
-
-</div>
-
-</div>
-
-<div class="mensaje">
-
-<div class="avatar">👩</div>
-
-<div class="burbuja-chat">
-
-<h5>Timotaseh?</h5>
-
-<small>¿Descansarás?</small>
-
-</div>
-
-</div>
-
-<div class="mensaje derecha">
-
-<div class="avatar">👨</div>
-
-<div class="burbuja-chat">
-
-<h5>Quema, tlazohcamati.</h5>
-
-<small>Sí, gracias.</small>
-
-</div>
-
-</div>
-
-</div>
-
-`;
-
-}
-
+        function mostrarParte(
+nahuatl,
+titulo,
+descripcion_es,
+descripcion_na,
+imagen,
+audio,
+color
+){
 
 
 Swal.fire({
 
-title:titulo,
+title:nahuatl,
 
 html:`
 
-${html}
+<div
+style="
+width:150px;
+height:150px;
+margin:auto;
+border-radius:30px;
+overflow:hidden;
+box-shadow:0 8px 20px rgba(0,0,0,.25);
+">
 
-<div class="mt-4 d-flex justify-content-center gap-2">
+<img
+src="${imagen}"
+style="
+width:100%;
+height:100%;
+object-fit:cover;
+">
+
+</div>
+
+
+<h3 class="mt-3">
+${titulo}
+</h3>
+
+
+<p>
+${descripcion_es}
+</p>
+
+
+<p class="text-muted">
+${descripcion_na}
+</p>
+
+
+
+<div class="d-flex justify-content-center gap-2">
+
 
 <button
 class="btn btn-success rounded-pill"
 onclick="reproducirAudio('${audio}',1)">
 
-<i class="bi bi-play-fill"></i>
+<i class="bi bi-volume-up-fill"></i>
 
-Escuchar conversación
+Escuchar
 
 </button>
+
+
 
 <button
 class="btn btn-warning rounded-pill"
 onclick="reproducirAudio('${audio}',0.5)">
 
-<i class="bi bi-speedometer"></i>
+<i class="bi bi-volume-down-fill"></i>
 
 Lento
 
 </button>
 
+
 </div>
+
 
 `,
 
-width:"42rem",
+confirmButtonText:"Continuar",
 
 confirmButtonColor:color,
 
-confirmButtonText:"Cerrar"
+showConfirmButton:true,
+
+width:"35rem"
+
 
 });
 
+
 }
 
-    </script>
+
+        </script>
 
     <!-- INIT AOS -->
     <script>

@@ -8,7 +8,7 @@
     <!-- RESPONSIVE -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>SLeccion - 1 - Castores Multilingües Aul@Net</title>
+    <title>PLeccion - 2 Castores Multilingües Aul@Net</title>
 
     <link rel="icon" href="/Recursos/nahui_caras/nahui_feliz_vector.svg" type="image/png">
 
@@ -422,198 +422,293 @@
 
 <br>
 
-<section class="container py-5">
+<section class="container seccion-colores mt-5 pt-5">
 
-    <!-- ENCABEZADO -->
-<div class="row mb-5 justify-content-center  titulo-saludos">
 
-    <div class="col-lg-10  mt-5 mt-lg-0">
+<!-- ENCABEZADO -->
 
-        <div class="bg-white rounded-4 shadow-sm p-4 border-start border-4 border-primary text-center">
+<div class="row mb-5 justify-content-center"
+data-aos="fade-up">
 
-            <i class="bi bi-chat-dots-fill fs-1 text-primary"></i>
 
-            <h2
-            class="fw-bold mt-3"
-            data-es="Saludos Básicos"
-            data-na="Tlapalolistli">
+<div class="col-lg-10">
 
-            Saludos Básicos
 
-            </h2>
+<div class="bg-white rounded-4 shadow-sm p-4 border-start border-4 border-success text-center">
 
-            <p
-            class="lead text-muted mb-0"
-            data-es="Aprende a saludar de acuerdo con el momento del día mediante conversaciones cotidianas."
-            data-na="Ximomachti quen titlapaloloa ipan sejse tonalli ika tlatolmelahualiztli.">
 
-            Aprende a saludar de acuerdo con el momento del día mediante conversaciones cotidianas.
+<i class="bi bi-person-standing fs-1 text-success"></i>
 
-            </p>
 
-        </div>
+<h2
+class="fw-bold mt-3"
+data-es="Tronco y Extremidades"
+data-na="Tlakayotl huan imahuame">
 
-    </div>
+Tronco y Extremidades
+
+</h2>
+
+
+
+<p
+class="lead text-muted mb-0"
+data-es="Descubre los nombres de los brazos, manos, piernas, pies y otras partes del cuerpo humano en náhuatl."
+data-na="Xicmati in intoca imahuame, metzmeh, xotl huan occequi nepapan tlamantli tlen totlakayo.">
+
+Descubre los nombres de los brazos, manos, piernas, pies y otras partes del cuerpo humano en náhuatl.
+
+</p>
+
+
+</div>
+
+
+</div>
+
 
 </div>
 
 
 
-    <!-- TARJETAS -->
 
-    <div class="row g-4 justify-content-center">
 
-        <!-- MAÑANA -->
+<!-- EXPLORADOR DEL CUERPO -->
 
-        <div class="col-md-4">
 
-            <div class="card saludo-card h-100 text-center">
+<div class="explorador-cuerpo">
 
-                <div class="card-body">
 
-                    <i class="bi bi-sunrise-fill saludo-icono text-warning"></i>
+<img
+src="/Recursos/cuerpo/tronco_extremidades.png"
+class="paisaje-cuerpo"
+alt="Tronco y extremidades">
 
-                    <h3
-                    class="mt-3"
-                    data-es="Buenos días"
-                    data-na="Cualli tonalli">
 
-                    Buenos días
+<!-- HOMBRO -->
 
-                    </h3>
+<button
+class="punto-cuerpo punto-hombro"
+onclick="mostrarParte(
+'Acolli',
+'Hombro',
+'El hombro une el brazo con el tronco y permite realizar movimientos.',
+'In acolli quiilpia in maitl ihuan totlakayo huan techpalehuia timolini.',
+'/Recursos/cuerpo/hombro.png',
+'/Recursos/audios/colores/azul.ogg',
+'#198754'
+)">
 
-                    <p
-                    data-es="Saludos utilizados durante la mañana."
-                    data-na="Tlapalolistli tlen mopiah ipan ijnaloc tonalli.">
+<i class="bi bi-plus-circle-fill"></i>
 
-                    Saludos utilizados durante la mañana.
+</button>
 
-                    </p>
 
-                    <button
-                    class="btn btn-warning rounded-pill"
 
-                    onclick="abrirConversacion('manana')">
 
-                        Explorar
 
-                    </button>
+<!-- BRAZO -->
 
-                </div>
+<button
+class="punto-cuerpo punto-brazo"
+onclick="mostrarParte(
+'Maitl',
+'Brazo',
+'El brazo nos permite levantar objetos y realizar diferentes actividades.',
+'In maitl techpalehuia ticana tlamantli huan ticchihua nepapan tequitl.',
+'/Recursos/cuerpo/brazo.png',
+'/Recursos/audios/cuerpo/brazo.ogg',
+'#0d6efd'
+)">
 
-            </div>
+<i class="bi bi-plus-circle-fill"></i>
 
-        </div>
+</button>
 
 
 
-        <!-- TARDE -->
 
-        <div class="col-md-4">
 
-            <div class="card saludo-card h-100 text-center">
+<!-- MANO -->
 
-                <div class="card-body">
+<button
+class="punto-cuerpo punto-mano"
+onclick="mostrarParte(
+'Mapilli',
+'Mano',
+'La mano permite tocar, sujetar objetos y realizar actividades diarias.',
+'In mapilli techpalehuia ticmati, ticitzquia tlamantli huan ticchihua mochi tonalli tequitl.',
+'/Recursos/cuerpo/mano.png',
+'/Recursos/audios/cuerpo/mano.ogg',
+'#ffc107'
+)">
 
-                    <i class="bi bi-brightness-high-fill saludo-icono text-orange"></i>
+<i class="bi bi-plus-circle-fill"></i>
 
-                    <h3
-                    data-es="Buenas tardes"
-                    data-na="Cualli tiotlak">
+</button>
 
-                    Buenas tardes
 
-                    </h3>
 
-                    <p
-                    data-es="Saludos utilizados durante la tarde."
-                    data-na="Tlapalolistli tlen mopiah ipan tiotlak.">
 
-                    Saludos utilizados durante la tarde.
 
-                    </p>
+<!-- PECHO -->
 
-                    <button
-                    class="btn btn-success rounded-pill"
+<button
+class="punto-cuerpo punto-pecho"
+onclick="mostrarParte(
+'Elpan',
+'Pecho',
+'El pecho es la parte frontal del tronco donde se encuentran órganos importantes.',
+'In elpan eli se parte tlen totlakayo campa kate miyac tlamantli ipan tonacayo.',
+'/Recursos/cuerpo/pecho.png',
+'/Recursos/audios/cuerpo/pecho.ogg',
+'#dc3545'
+)">
 
-                    onclick="abrirConversacion('tarde')">
+<i class="bi bi-plus-circle-fill"></i>
 
-                        Explorar
+</button>
 
-                    </button>
 
-                </div>
 
-            </div>
 
-        </div>
 
+<!-- ESPALDA -->
 
+<button
+class="punto-cuerpo punto-espalda"
+onclick="mostrarParte(
+'Cuitlapantli',
+'Espalda',
+'La espalda sostiene nuestro cuerpo y protege la columna vertebral.',
+'In cuitlapantli quiyolchicahua totlakayo huan quipalehuia in cuitlaxcolli.',
+'/Recursos/cuerpo/espalda.png',
+'/Recursos/audios/cuerpo/espalda.ogg',
+'#6f42c1'
+)">
 
-        <!-- NOCHE -->
+<i class="bi bi-plus-circle-fill"></i>
 
-        <div class="col-md-4">
+</button>
 
-            <div class="card saludo-card h-100 text-center">
 
-                <div class="card-body">
 
-                    <i class="bi bi-moon-stars-fill saludo-icono text-primary"></i>
 
-                    <h3
-                    data-es="Buenas noches"
-                    data-na="Cualli yohualli">
 
-                    Buenas noches
+<!-- CINTURA -->
 
-                    </h3>
+<button
+class="punto-cuerpo punto-cintura"
+onclick="mostrarParte(
+'Cuitlaxcolli',
+'Cintura',
+'La cintura conecta la parte superior e inferior del cuerpo.',
+'In cuitlaxcolli quiilpia in tlahco huan in tlatzintla tlen totlakayo.',
+'/Recursos/cuerpo/cintura.png',
+'/Recursos/audios/cuerpo/cintura.ogg',
+'#20c997'
+)">
 
-                    <p
-                    data-es="Saludos utilizados durante la noche."
-                    data-na="Tlapalolistli tlen mopiah ipan yohualli.">
+<i class="bi bi-plus-circle-fill"></i>
 
-                    Saludos utilizados durante la noche.
+</button>
 
-                    </p>
 
-                    <button
-                    class="btn btn-primary rounded-pill"
 
-                    onclick="abrirConversacion('noche')">
 
-                        Explorar
 
-                    </button>
+<!-- PIERNA -->
 
-                </div>
+<button
+class="punto-cuerpo punto-pierna"
+onclick="mostrarParte(
+'Metztli',
+'Pierna',
+'Las piernas permiten caminar, correr y desplazarnos.',
+'In metztli techpalehuia tinemi, timotlaloa huan timolini.',
+'/Recursos/cuerpo/pierna.png',
+'/Recursos/audios/cuerpo/pierna.ogg',
+'#fd7e14'
+)">
 
-            </div>
+<i class="bi bi-plus-circle-fill"></i>
 
-        </div>
+</button>
 
-    </div>
 
-            <!-- REGRESAR -->
 
-            <div class="d-flex justify-content-start mt-5">
 
-                <button
-                onclick="window.location.href='/pages_int/inicio.html'"
-                class="btn-regresar-int">
 
-                    <i class="bi bi-arrow-left-circle-fill me-2"></i>
+<!-- RODILLA -->
 
-                    <span
-                    data-es="Regresar"
-                    data-na="Mokuepa">
+<button
+class="punto-cuerpo punto-rodilla"
+onclick="mostrarParte(
+'Tlanextli',
+'Rodilla',
+'La rodilla permite doblar y mover la pierna.',
+'In tlanextli techpalehuia ticuepa huan timolini ika metztli.',
+'/Recursos/cuerpo/rodilla.png',
+'/Recursos/audios/cuerpo/rodilla.ogg',
+'#6610f2'
+)">
 
-                    Regresar
+<i class="bi bi-plus-circle-fill"></i>
 
-                    </span>
+</button>
 
-                </button>
 
-            </div>
+
+
+
+<!-- PIE -->
+
+<button
+class="punto-cuerpo punto-pie"
+onclick="mostrarParte(
+'Xotl',
+'Pie',
+'El pie nos ayuda a mantenernos de pie y caminar.',
+'In xotl techpalehuia timoketsa huan tinemi.',
+'/Recursos/cuerpo/pie.png',
+'/Recursos/audios/cuerpo/pie.ogg',
+'#198754'
+)">
+
+<i class="bi bi-plus-circle-fill"></i>
+
+</button>
+
+
+
+</div>
+
+
+
+<!-- REGRESAR -->
+
+<div class="d-flex justify-content-start mt-5">
+
+<button
+onclick="window.location.href='/pages_int/inicio.html'"
+class="btn-regresar-int">
+
+
+<i class="bi bi-arrow-left-circle-fill me-2"></i>
+
+<span
+data-es="Regresar"
+data-na="Mokuepa">
+
+Regresar
+
+</span>
+
+
+</button>
+
+</div>
+
 
 </section>
 
@@ -748,323 +843,179 @@
     <!-- AOS -->
     <script src="/assets/js/aos.js"></script>
 
-    <script src="/assets/sweetalert/sweetalert2.all.min.js"></script>  
-
+    <script src="/assets/sweetalert/sweetalert2.all.min.js"></script>    
 
     <script>
-    function reproducirAudio(audio, velocidad){
 
-    let sonido = new Audio(audio);
 
-    sonido.playbackRate = velocidad;
+        // ==========================================
+        // REPRODUCIR AUDIO
+        // ==========================================
 
-    sonido.play()
-    .catch(function(error){
+
+        function reproducirAudio(audio, velocidad){
+
+
+        let sonido = new Audio(audio);
+
+
+        sonido.playbackRate = velocidad;
+
+
+        sonido.play()
+
+        .catch(function(error){
 
         console.log(error);
 
-    });
+        });
 
-}
 
-</script>
+        }
 
-    <script>
 
-   function abrirConversacion(tipo){
 
-let titulo="";
-let color="";
-let audio="";
 
-let html="";
 
-if(tipo=="manana"){
+        // ==========================================
+        // MOSTRAR PARTE DEL CUERPO
+        // ==========================================
 
-titulo="☀️ Buenos días";
 
-color="#ffc107";
+        function mostrarParte(
+        nahuatl,
+        titulo,
+        descripcion,
+        descripcionNahuatl,
+        imagen,
+        audio,
+        color
+        ){
 
-audio="/Recursos/audios/saludos/manana.ogg";
 
-html=`
 
-<div class="chat">
+        Swal.fire({
 
-<div class="mensaje">
 
-<div class="avatar">
-👩
-</div>
+        title:nahuatl,
 
-<div class="burbuja-chat">
 
-<h5>Niltze.</h5>
+        html:`
 
-<small>Hola.</small>
 
-</div>
+        <div class="text-center">
 
-</div>
 
 
+        <img
 
-<div class="mensaje derecha">
+        src="${imagen}"
 
-<div class="avatar">
-👨
-</div>
+        class="img-fluid rounded-4 mb-3"
 
-<div class="burbuja-chat">
+        style="
+        max-width:180px;
+        box-shadow:0 8px 20px rgba(0,0,0,.20);
+        "
 
-<h5>Cualli tonalli.</h5>
+        >
 
-<small>Buenos días.</small>
 
-</div>
 
-</div>
+        <h3 class="fw-bold">
 
+        ${titulo}
 
+        </h3>
 
-<div class="mensaje">
 
-<div class="avatar">
-👩
-</div>
 
-<div class="burbuja-chat">
+        <p class="text-muted">
 
-<h5>¿Quenin tiitztoc?</h5>
+        ${descripcion}
 
-<small>¿Cómo estás?</small>
+        </p>
 
-</div>
 
-</div>
 
+        <p>
 
+        ${descripcionNahuatl}
 
-<div class="mensaje derecha">
+        </p>
 
-<div class="avatar">
-👨
-</div>
 
-<div class="burbuja-chat">
 
-<h5>Cualli niitztoc.</h5>
+        <div class="d-flex justify-content-center gap-2 mt-3">
 
-<small>Estoy bien.</small>
 
-</div>
 
-</div>
+        <button
 
-</div>
+        class="btn btn-success rounded-pill"
 
-`;
-}
+        onclick="reproducirAudio('${audio}',1)"
 
+        >
 
 
-if(tipo=="tarde"){
+        <i class="bi bi-volume-up-fill"></i>
 
-titulo="🌤️ Buenas tardes";
+        Escuchar
 
-color="#198754";
 
-audio="/Recursos/audios/saludos/tarde.ogg";
+        </button>
 
-html=`
 
-<div class="chat">
 
-<div class="mensaje">
 
-<div class="avatar">👧</div>
+        <button
 
-<div class="burbuja-chat">
+        class="btn btn-warning rounded-pill"
 
-<h5>Cualli tiotlak.</h5>
+        onclick="reproducirAudio('${audio}',0.5)"
 
-<small>Buenas tardes.</small>
+        >
 
-</div>
 
-</div>
+        <i class="bi bi-speedometer"></i>
 
-<div class="mensaje derecha">
+        Lento
 
-<div class="avatar">👨</div>
 
-<div class="burbuja-chat">
+        </button>
 
-<h5>Cualli tiotlak.</h5>
 
-<small>Buenas tardes.</small>
 
-</div>
+        </div>
 
-</div>
 
-<div class="mensaje">
 
-<div class="avatar">👧</div>
+        </div>
 
-<div class="burbuja-chat">
 
-<h5>¿Quenin tiitztoc?</h5>
+        `,
 
-<small>¿Cómo estás?</small>
 
-</div>
+        width:"38rem",
 
-</div>
 
-<div class="mensaje derecha">
+        confirmButtonColor:color,
 
-<div class="avatar">👨</div>
 
-<div class="burbuja-chat">
+        confirmButtonText:"Aceptar"
 
-<h5>Cualli niitztoc.</h5>
 
-<small>Estoy bien.</small>
 
-</div>
+        });
 
-</div>
 
-</div>
 
-`;
+        }
 
-}
 
 
-
-if(tipo=="noche"){
-
-titulo="🌙 Buenas noches";
-
-color="#0d6efd";
-
-audio="/Recursos/audios/colores/azul.ogg";
-
-html=`
-
-<div class="chat">
-
-<div class="mensaje">
-
-<div class="avatar">👩</div>
-
-<div class="burbuja-chat">
-
-<h5>Cualli yohualli.</h5>
-
-<small>Buenas noches.</small>
-
-</div>
-
-</div>
-
-<div class="mensaje derecha">
-
-<div class="avatar">👨</div>
-
-<div class="burbuja-chat">
-
-<h5>Cualli yohualli.</h5>
-
-<small>Buenas noches.</small>
-
-</div>
-
-</div>
-
-<div class="mensaje">
-
-<div class="avatar">👩</div>
-
-<div class="burbuja-chat">
-
-<h5>Timotaseh?</h5>
-
-<small>¿Descansarás?</small>
-
-</div>
-
-</div>
-
-<div class="mensaje derecha">
-
-<div class="avatar">👨</div>
-
-<div class="burbuja-chat">
-
-<h5>Quema, tlazohcamati.</h5>
-
-<small>Sí, gracias.</small>
-
-</div>
-
-</div>
-
-</div>
-
-`;
-
-}
-
-
-
-Swal.fire({
-
-title:titulo,
-
-html:`
-
-${html}
-
-<div class="mt-4 d-flex justify-content-center gap-2">
-
-<button
-class="btn btn-success rounded-pill"
-onclick="reproducirAudio('${audio}',1)">
-
-<i class="bi bi-play-fill"></i>
-
-Escuchar conversación
-
-</button>
-
-<button
-class="btn btn-warning rounded-pill"
-onclick="reproducirAudio('${audio}',0.5)">
-
-<i class="bi bi-speedometer"></i>
-
-Lento
-
-</button>
-
-</div>
-
-`,
-
-width:"42rem",
-
-confirmButtonColor:color,
-
-confirmButtonText:"Cerrar"
-
-});
-
-}
-
-    </script>
+        </script>
 
     <!-- INIT AOS -->
     <script>
