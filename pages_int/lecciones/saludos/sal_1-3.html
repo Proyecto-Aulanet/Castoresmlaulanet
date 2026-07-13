@@ -422,52 +422,168 @@
 
 <br>
 
-<section class="container seccion-colores mt-5 pt-5">
-
+<section class="container py-5">
 
 
 <!-- ENCABEZADO -->
 
-<div class="row mb-5 text-center justify-content-center"
-data-aos="fade-up">
+<div class="row mb-5 justify-content-center despedidas-titulo">
+
+    <div class="col-lg-10">
+
+        <div 
+        class="bg-white rounded-4 shadow-sm p-4 border-start border-4 border-success text-center">
 
 
-<div class="col-12 col-md-10
-bg-white
-p-4
-rounded-4
-shadow-sm
-border-start
-border-4
-border-warning">
+            <i class="bi bi-hand-thumbs-up-fill fs-1 text-success"></i>
 
 
-<div class="d-flex justify-content-center align-items-center gap-3 mb-3">
+            <h2
+            class="fw-bold mt-3"
+            data-es="Despedidas y cortesía"
+            data-na="Tlatlaliztli huan tlatlamatiliztli">
 
-<i class="bi bi-brightness-high-fill text-warning fs-2"></i>
+            Despedidas y cortesía
+
+            </h2>
 
 
-<h2 class="fw-bold m-0"
-data-es="Explora los tonos y colores del entorno"
-data-na="Xiquitta in tlapalme tlen toaltepetl">
+            <p
+            class="lead text-muted mb-0"
+            data-es="Aprende expresiones para despedirte, agradecer y mostrar respeto en conversaciones cotidianas."
+            data-na="Ximomachti quen ticmocuitlahuia, ticmaca tlazohcamati huan ticnextia tlatlamatiliztli.">
 
-Explora los tonos y colores del entorno
+            Aprende expresiones para despedirte, agradecer y mostrar respeto en conversaciones cotidianas.
 
-</h2>
+            </p>
 
+
+        </div>
+
+    </div>
 
 </div>
 
 
-<p class="lead text-muted mb-0"
-data-es="Descubre cómo la luz, la sombra y las texturas pueden cambiar la apariencia de los colores que observamos a nuestro alrededor."
-data-na="Xicmati quen tlahuilli, tlayohuilotl huan tlamantli quipatlalia in tlapalme.">
 
-Descubre cómo la luz, la sombra y las texturas pueden cambiar la apariencia de los colores que observamos a nuestro alrededor.
+
+<!-- TARJETAS -->
+
+<div class="row g-4 justify-content-center">
+
+
+
+<!-- HASTA LUEGO -->
+
+
+<div class="col-md-4">
+
+
+<div class="card saludo-card h-100 text-center p-4">
+
+
+<div class="saludo-icono text-success">
+
+<i class="bi bi-hand-thumbs-up"></i>
+
+</div>
+
+
+
+<h3
+data-es="Hasta luego"
+data-na="Nimitzitas sempa">
+
+Hasta luego
+
+</h3>
+
+
+
+<p
+data-es="Aprende expresiones para despedirte cuando volverás a ver a alguien."
+data-na="Ximomachti quen titlalia se tlahcuilolli ica se occe tonalli.">
+
+Aprende expresiones para despedirte cuando volverás a ver a alguien.
 
 </p>
 
 
+
+<button
+class="btn btn-success rounded-pill mt-auto"
+
+onclick="abrirDespedida('luego')">
+
+
+<i class="bi bi-chat-dots-fill"></i>
+
+Practicar
+
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<!-- GRACIAS -->
+
+
+<div class="col-md-4">
+
+
+<div class="card saludo-card h-100 text-center p-4">
+
+
+<div class="saludo-icono text-warning">
+
+<i class="bi bi-heart-fill"></i>
+
+</div>
+
+
+
+<h3
+data-es="Gracias y cortesía"
+data-na="Tlazohcamati">
+
+Gracias y cortesía
+
+</h3>
+
+
+
+<p
+data-es="Aprende a agradecer y responder con respeto."
+data-na="Ximomachti quen ticmaca tlazohcamati huan tictlahtoa ika tlatlamatiliztli.">
+
+Aprende a agradecer y responder con respeto.
+
+</p>
+
+
+
+<button
+class="btn btn-warning rounded-pill mt-auto"
+
+onclick="abrirDespedida('gracias')">
+
+
+<i class="bi bi-chat-heart-fill"></i>
+
+Practicar
+
+
+</button>
+
+
 </div>
 
 
@@ -476,135 +592,102 @@ Descubre cómo la luz, la sombra y las texturas pueden cambiar la apariencia de 
 
 
 
-<!-- EXPLORADOR -->
 
-<div class="explorador-entorno">
-
-
-<img 
-src="/Recursos/colores_entorno/paisaje.png"
-class="img-fluid paisaje-entorno"
-alt="Paisaje del entorno">
+<!-- RETIRARSE -->
 
 
-<!-- VERDE CLARO -->
+<div class="col-md-4">
+
+
+<div class="card saludo-card h-100 text-center p-4">
+
+
+<div class="saludo-icono text-primary">
+
+<i class="bi bi-door-open-fill"></i>
+
+</div>
+
+
+
+<h3
+data-es="Al retirarse"
+data-na="Niyaz">
+
+Al retirarse
+
+</h3>
+
+
+
+<p
+data-es="Expresiones utilizadas cuando una persona se despide de un lugar."
+data-na="Tlahtolli tlen monequi icuac se tlacatl quisa ipan se lugar.">
+
+Expresiones utilizadas cuando una persona se despide de un lugar.
+
+</p>
+
+
 
 <button
-class="punto-color punto-verde-claro"
-onclick="mostrarTono(
-'Xoxoktik',
-'Verde claro de hojas nuevas',
-'Este tono aparece en hojas jóvenes, plantas pequeñas y cultivos que están creciendo.',
-'/Recursos/audios/colores/verde.ogg',
-'#8bcf45'
-)">
+class="btn btn-primary rounded-pill mt-auto"
 
-<i class="bi bi-plus-circle-fill"></i>
-
-</button>
+onclick="abrirDespedida('salir')">
 
 
+<i class="bi bi-chat-dots-fill"></i>
 
-<!-- VERDE OSCURO -->
+Practicar
 
-<button
-class="punto-color punto-verde-oscuro"
-onclick="mostrarTono(
-'Xoxoktik',
-'Verde intenso de árboles',
-'Se observa en árboles grandes, arbustos y plantas con muchas hojas.',
-'/Recursos/audios/colores/verde.ogg',
-'#14532d'
-)">
-
-<i class="bi bi-plus-circle-fill"></i>
-
-</button>
-
-
-
-<!-- CAFE -->
-
-<button
-class="punto-color punto-cafe"
-onclick="mostrarTono(
-'Koyotik',
-'Café de la tierra y madera',
-'Está presente en troncos, ramas, tierra seca y superficies de madera.',
-'/Recursos/audios/colores/cafe.ogg',
-'#8b5e3c'
-)">
-
-<i class="bi bi-plus-circle-fill"></i>
-
-</button>
-
-
-
-<!-- AZUL -->
-
-<button
-class="punto-color punto-azul"
-onclick="mostrarTono(
-'Yauitl',
-'Azul del cielo',
-'El cielo puede verse más claro o más intenso dependiendo de la luz del día.',
-'/Recursos/audios/colores/azul.ogg',
-'#0d6efd'
-)">
-
-<i class="bi bi-plus-circle-fill"></i>
-
-</button>
-
-
-
-<!-- MORADO -->
-
-<button
-class="punto-color punto-morado"
-onclick="mostrarTono(
-'Kamotik',
-'Morado de las flores',
-'Este color aparece en algunas flores y plantas del entorno.',
-'/Recursos/audios/colores/morado.ogg',
-'#6f42c1'
-)">
-
-<i class="bi bi-plus-circle-fill"></i>
 
 </button>
 
 
 </div>
+
+
+</div>
+
+
+
+
+</div>
+
+
 
 
 
 <!-- REGRESAR -->
 
+
 <div class="d-flex justify-content-start mt-5">
 
-    <button
-    onclick="window.location.href='/pages_int/inicio.html'"
-    class="btn-regresar-int">
 
-        <i class="bi bi-arrow-left-circle-fill me-2"></i>
+<button
+onclick="window.location.href='/pages_int/inicio.html'"
+class="btn-regresar-int">
 
-        <span
-        data-es="Regresar"
-        data-na="Mokuepa">
 
-        Regresar
+<i class="bi bi-arrow-left-circle-fill me-2"></i>
 
-        </span>
 
-    </button>
+<span
+data-es="Regresar"
+data-na="Mokuepa">
+
+Regresar
+
+</span>
+
+
+</button>
+
 
 </div>
 
 
 </section>
-
 
                 <!-- =========================================
                 FOOTER
@@ -739,6 +822,368 @@ onclick="mostrarTono(
 
     <script src="/assets/sweetalert/sweetalert2.all.min.js"></script>    
 
+        <script>
+        function reproducirAudio(audio, velocidad){
+
+        let sonido = new Audio(audio);
+
+        sonido.playbackRate = velocidad;
+
+        sonido.play()
+        .catch(function(error){
+
+            console.log(error);
+
+        });
+
+    }
+
+    </script>
+
+    <script>
+        function abrirDespedida(tipo){
+
+        let titulo="";
+        let color="#198754";
+        let audio="";
+        let html="";
+
+
+
+        /*=========================================
+        HASTA LUEGO
+        =========================================*/
+
+        if(tipo=="luego"){
+
+        titulo="Hasta luego";
+
+        color="#198754";
+
+        audio="/Recursos/audios/colores/azul.ogg";
+
+        html=`
+
+        <div class="chat">
+
+        <div class="mensaje">
+
+        <div class="avatar">
+        👩
+        </div>
+
+        <div class="burbuja-chat">
+
+        <h5>Niyaz.</h5>
+
+        <small>Ya me voy.</small>
+
+        </div>
+
+        </div>
+
+
+
+        <div class="mensaje derecha">
+
+        <div class="avatar">
+        👨
+        </div>
+
+        <div class="burbuja-chat">
+
+        <h5>Nimitzitas sempa.</h5>
+
+        <small>Hasta luego.</small>
+
+        </div>
+
+        </div>
+
+
+
+        <div class="mensaje">
+
+        <div class="avatar">
+        👩
+        </div>
+
+        <div class="burbuja-chat">
+
+        <h5>Cualli tonalli.</h5>
+
+        <small>Que tengas un buen día.</small>
+
+        </div>
+
+        </div>
+
+
+
+        <div class="mensaje derecha">
+
+        <div class="avatar">
+        👨
+        </div>
+
+        <div class="burbuja-chat">
+
+        <h5>Tlazohcamati.</h5>
+
+        <small>Gracias.</small>
+
+        </div>
+
+        </div>
+
+        </div>
+
+        `;
+
+        }
+
+
+
+        /*=========================================
+        GRACIAS Y CORTESÍA
+        =========================================*/
+
+        if(tipo=="gracias"){
+
+        titulo="Gracias y cortesía";
+
+        color="#ffc107";
+
+        audio="/Recursos/audios/despedidas/gracias.ogg";
+
+        html=`
+
+        <div class="chat">
+
+        <div class="mensaje">
+
+        <div class="avatar">
+        👦
+        </div>
+
+        <div class="burbuja-chat">
+
+        <h5>Tlazohcamati.</h5>
+
+        <small>Gracias.</small>
+
+        </div>
+
+        </div>
+
+
+
+        <div class="mensaje derecha">
+
+        <div class="avatar">
+        👩
+        </div>
+
+        <div class="burbuja-chat">
+
+        <h5>Amo tlen.</h5>
+
+        <small>De nada.</small>
+
+        </div>
+
+        </div>
+
+
+
+        <div class="mensaje">
+
+        <div class="avatar">
+        👦
+        </div>
+
+        <div class="burbuja-chat">
+
+        <h5>Piyali.</h5>
+
+        <small>Que estés bien.</small>
+
+        </div>
+
+        </div>
+
+
+
+        <div class="mensaje derecha">
+
+        <div class="avatar">
+        👩
+        </div>
+
+        <div class="burbuja-chat">
+
+        <h5>Noihqui.</h5>
+
+        <small>Igualmente.</small>
+
+        </div>
+
+        </div>
+
+        </div>
+
+        `;
+
+        }
+
+
+
+        /*=========================================
+        AL RETIRARSE
+        =========================================*/
+
+        if(tipo=="salir"){
+
+        titulo="Al retirarse";
+
+        color="#0d6efd";
+
+        audio="/Recursos/audios/despedidas/salir.ogg";
+
+        html=`
+
+        <div class="chat">
+
+        <div class="mensaje">
+
+        <div class="avatar">
+        👨
+        </div>
+
+        <div class="burbuja-chat">
+
+        <h5>Niyaz.</h5>
+
+        <small>Me retiro.</small>
+
+        </div>
+
+        </div>
+
+
+
+        <div class="mensaje derecha">
+
+        <div class="avatar">
+        👩
+        </div>
+
+        <div class="burbuja-chat">
+
+        <h5>Cualli yohualli.</h5>
+
+        <small>Buenas noches.</small>
+
+        </div>
+
+        </div>
+
+
+
+        <div class="mensaje">
+
+        <div class="avatar">
+        👨
+        </div>
+
+        <div class="burbuja-chat">
+
+        <h5>Piyali.</h5>
+
+        <small>Cuídate.</small>
+
+        </div>
+
+        </div>
+
+
+
+        <div class="mensaje derecha">
+
+        <div class="avatar">
+        👩
+        </div>
+
+        <div class="burbuja-chat">
+
+        <h5>Tlazohcamati.</h5>
+
+        <small>Gracias.</small>
+
+        </div>
+
+        </div>
+
+        </div>
+
+        `;
+
+        }
+
+
+
+        /*=========================================
+        MODAL
+        =========================================*/
+
+        Swal.fire({
+
+        title:titulo,
+
+        html:`
+
+        ${html}
+
+        <div class="mt-4 d-flex justify-content-center gap-2">
+
+        <button
+        class="btn btn-success rounded-pill"
+        onclick="reproducirAudio('${audio}',1)">
+
+        <i class="bi bi-play-fill"></i>
+
+        Escuchar conversación
+
+        </button>
+
+
+
+        <button
+        class="btn btn-warning rounded-pill"
+        onclick="reproducirAudio('${audio}',0.5)">
+
+        <i class="bi bi-speedometer2"></i>
+
+        Lento
+
+        </button>
+
+        </div>
+
+        `,
+
+        width:"42rem",
+
+        confirmButtonText:"Cerrar",
+
+        confirmButtonColor:color
+
+        });
+
+        }
+
+    </script>
+
     <!-- INIT AOS -->
     <script>
         AOS.init({
@@ -746,110 +1191,6 @@ onclick="mostrarTono(
             once: true
         });
     </script>
-
-    <script>
-
-
-function reproducirAudio(audio, velocidad){
-
-    let sonido = new Audio(audio);
-
-    sonido.playbackRate = velocidad;
-
-    sonido.play()
-    .catch(error=>{
-
-        console.log("Error al reproducir audio:", error);
-
-    });
-
-}
-
-
-
-function mostrarTono(
-nahuatl,
-titulo,
-descripcion,
-audio,
-color
-){
-
-
-Swal.fire({
-
-title:nahuatl,
-
-
-html:`
-
-<div 
-style="
-width:150px;
-height:150px;
-background:${color};
-border-radius:30px;
-margin:auto;
-box-shadow:0 8px 20px rgba(0,0,0,.25);
-">
-</div>
-
-
-<h3 class="mt-3">
-${titulo}
-</h3>
-
-
-<p>
-${descripcion}
-</p>
-
-
-<div class="d-flex justify-content-center gap-2">
-
-
-<button 
-class="btn btn-success rounded-pill"
-onclick="reproducirAudio('${audio}',1)">
-
-<i class="bi bi-volume-up-fill"></i>
-
-Escuchar
-
-</button>
-
-
-
-<button 
-class="btn btn-warning rounded-pill"
-onclick="reproducirAudio('${audio}',0.5)">
-
-<i class="bi bi-volume-down-fill"></i>
-
-Lento
-
-</button>
-
-
-</div>
-
-
-`,
-
-confirmButtonText:"Continuar",
-
-confirmButtonColor:color,
-
-width:"35rem"
-
-
-});
-
-
-}
-
-
-</script>
 
     <!-- JS -->
     <script src="/js/app.js"></script>

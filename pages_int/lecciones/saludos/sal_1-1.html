@@ -422,189 +422,200 @@
 
 <br>
 
-<section class="container seccion-colores mt-5 pt-5">
+<section class="container py-5">
 
+    <!-- ENCABEZADO -->
+<div class="row mb-5 justify-content-center  titulo-saludos">
 
+    <div class="col-lg-10  mt-5 mt-lg-0">
 
-<!-- ENCABEZADO -->
+        <div class="bg-white rounded-4 shadow-sm p-4 border-start border-4 border-primary text-center">
 
-<div class="row mb-5 text-center justify-content-center"
-data-aos="fade-up">
+            <i class="bi bi-chat-dots-fill fs-1 text-primary"></i>
 
+            <h2
+            class="fw-bold mt-3"
+            data-es="Saludos Básicos"
+            data-na="Tlapalolistli">
 
-<div class="col-12 col-md-10
-bg-white
-p-4
-rounded-4
-shadow-sm
-border-start
-border-4
-border-warning">
+            Saludos Básicos
 
+            </h2>
 
-<div class="d-flex justify-content-center align-items-center gap-3 mb-3">
+            <p
+            class="lead text-muted mb-0"
+            data-es="Aprende a saludar de acuerdo con el momento del día mediante conversaciones cotidianas."
+            data-na="Ximomachti quen titlapaloloa ipan sejse tonalli ika tlatolmelahualiztli.">
 
-<i class="bi bi-brightness-high-fill text-warning fs-2"></i>
+            Aprende a saludar de acuerdo con el momento del día mediante conversaciones cotidianas.
 
+            </p>
 
-<h2 class="fw-bold m-0"
-data-es="Explora los tonos y colores del entorno"
-data-na="Xiquitta in tlapalme tlen toaltepetl">
+        </div>
 
-Explora los tonos y colores del entorno
-
-</h2>
-
-
-</div>
-
-
-<p class="lead text-muted mb-0"
-data-es="Descubre cómo la luz, la sombra y las texturas pueden cambiar la apariencia de los colores que observamos a nuestro alrededor."
-data-na="Xicmati quen tlahuilli, tlayohuilotl huan tlamantli quipatlalia in tlapalme.">
-
-Descubre cómo la luz, la sombra y las texturas pueden cambiar la apariencia de los colores que observamos a nuestro alrededor.
-
-</p>
-
-
-</div>
-
+    </div>
 
 </div>
 
 
 
+    <!-- TARJETAS -->
 
-<!-- EXPLORADOR -->
+    <div class="row g-4 justify-content-center">
 
-<div class="explorador-entorno">
+        <!-- MAÑANA -->
 
+        <div class="col-md-4">
 
-<img 
-src="/Recursos/colores_entorno/paisaje.png"
-class="img-fluid paisaje-entorno"
-alt="Paisaje del entorno">
+            <div class="card saludo-card h-100 text-center">
 
+                <div class="card-body">
 
-<!-- VERDE CLARO -->
+                    <i class="bi bi-sunrise-fill saludo-icono text-warning"></i>
 
-<button
-class="punto-color punto-verde-claro"
-onclick="mostrarTono(
-'Xoxoktik',
-'Verde claro de hojas nuevas',
-'Este tono aparece en hojas jóvenes, plantas pequeñas y cultivos que están creciendo.',
-'/Recursos/audios/colores/verde.ogg',
-'#8bcf45'
-)">
+                    <h3
+                    class="mt-3"
+                    data-es="Buenos días"
+                    data-na="Cualli tonalli">
 
-<i class="bi bi-plus-circle-fill"></i>
+                    Buenos días
 
-</button>
+                    </h3>
 
+                    <p
+                    data-es="Saludos utilizados durante la mañana."
+                    data-na="Tlapalolistli tlen mopiah ipan ijnaloc tonalli.">
 
+                    Saludos utilizados durante la mañana.
 
-<!-- VERDE OSCURO -->
+                    </p>
 
-<button
-class="punto-color punto-verde-oscuro"
-onclick="mostrarTono(
-'Xoxoktik',
-'Verde intenso de árboles',
-'Se observa en árboles grandes, arbustos y plantas con muchas hojas.',
-'/Recursos/audios/colores/verde.ogg',
-'#14532d'
-)">
+                    <button
+                    class="btn btn-warning rounded-pill"
 
-<i class="bi bi-plus-circle-fill"></i>
+                    onclick="abrirConversacion('manana')">
 
-</button>
+                        Explorar
 
+                    </button>
 
+                </div>
 
-<!-- CAFE -->
+            </div>
 
-<button
-class="punto-color punto-cafe"
-onclick="mostrarTono(
-'Koyotik',
-'Café de la tierra y madera',
-'Está presente en troncos, ramas, tierra seca y superficies de madera.',
-'/Recursos/audios/colores/cafe.ogg',
-'#8b5e3c'
-)">
-
-<i class="bi bi-plus-circle-fill"></i>
-
-</button>
+        </div>
 
 
 
-<!-- AZUL -->
+        <!-- TARDE -->
 
-<button
-class="punto-color punto-azul"
-onclick="mostrarTono(
-'Yauitl',
-'Azul del cielo',
-'El cielo puede verse más claro o más intenso dependiendo de la luz del día.',
-'/Recursos/audios/colores/azul.ogg',
-'#0d6efd'
-)">
+        <div class="col-md-4">
 
-<i class="bi bi-plus-circle-fill"></i>
+            <div class="card saludo-card h-100 text-center">
 
-</button>
+                <div class="card-body">
+
+                    <i class="bi bi-brightness-high-fill saludo-icono text-orange"></i>
+
+                    <h3
+                    data-es="Buenas tardes"
+                    data-na="Cualli tiotlak">
+
+                    Buenas tardes
+
+                    </h3>
+
+                    <p
+                    data-es="Saludos utilizados durante la tarde."
+                    data-na="Tlapalolistli tlen mopiah ipan tiotlak.">
+
+                    Saludos utilizados durante la tarde.
+
+                    </p>
+
+                    <button
+                    class="btn btn-success rounded-pill"
+
+                    onclick="abrirConversacion('tarde')">
+
+                        Explorar
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
 
 
 
-<!-- MORADO -->
+        <!-- NOCHE -->
 
-<button
-class="punto-color punto-morado"
-onclick="mostrarTono(
-'Kamotik',
-'Morado de las flores',
-'Este color aparece en algunas flores y plantas del entorno.',
-'/Recursos/audios/colores/morado.ogg',
-'#6f42c1'
-)">
+        <div class="col-md-4">
 
-<i class="bi bi-plus-circle-fill"></i>
+            <div class="card saludo-card h-100 text-center">
 
-</button>
+                <div class="card-body">
 
+                    <i class="bi bi-moon-stars-fill saludo-icono text-primary"></i>
 
-</div>
+                    <h3
+                    data-es="Buenas noches"
+                    data-na="Cualli yohualli">
 
+                    Buenas noches
 
+                    </h3>
 
-<!-- REGRESAR -->
+                    <p
+                    data-es="Saludos utilizados durante la noche."
+                    data-na="Tlapalolistli tlen mopiah ipan yohualli.">
 
-<div class="d-flex justify-content-start mt-5">
+                    Saludos utilizados durante la noche.
 
-    <button
-    onclick="window.location.href='/pages_int/inicio.html'"
-    class="btn-regresar-int">
+                    </p>
 
-        <i class="bi bi-arrow-left-circle-fill me-2"></i>
+                    <button
+                    class="btn btn-primary rounded-pill"
 
-        <span
-        data-es="Regresar"
-        data-na="Mokuepa">
+                    onclick="abrirConversacion('noche')">
 
-        Regresar
+                        Explorar
 
-        </span>
+                    </button>
 
-    </button>
+                </div>
 
-</div>
+            </div>
 
+        </div>
+
+    </div>
+
+            <!-- REGRESAR -->
+
+            <div class="d-flex justify-content-start mt-5">
+
+                <button
+                onclick="window.location.href='/pages_int/inicio.html'"
+                class="btn-regresar-int">
+
+                    <i class="bi bi-arrow-left-circle-fill me-2"></i>
+
+                    <span
+                    data-es="Regresar"
+                    data-na="Mokuepa">
+
+                    Regresar
+
+                    </span>
+
+                </button>
+
+            </div>
 
 </section>
-
 
                 <!-- =========================================
                 FOOTER
@@ -737,7 +748,323 @@ onclick="mostrarTono(
     <!-- AOS -->
     <script src="/assets/js/aos.js"></script>
 
-    <script src="/assets/sweetalert/sweetalert2.all.min.js"></script>    
+    <script src="/assets/sweetalert/sweetalert2.all.min.js"></script>  
+
+
+    <script>
+    function reproducirAudio(audio, velocidad){
+
+    let sonido = new Audio(audio);
+
+    sonido.playbackRate = velocidad;
+
+    sonido.play()
+    .catch(function(error){
+
+        console.log(error);
+
+    });
+
+}
+
+</script>
+
+    <script>
+
+   function abrirConversacion(tipo){
+
+let titulo="";
+let color="";
+let audio="";
+
+let html="";
+
+if(tipo=="manana"){
+
+titulo="☀️ Buenos días";
+
+color="#ffc107";
+
+audio="/Recursos/audios/saludos/manana.ogg";
+
+html=`
+
+<div class="chat">
+
+<div class="mensaje">
+
+<div class="avatar">
+👩
+</div>
+
+<div class="burbuja-chat">
+
+<h5>Niltze.</h5>
+
+<small>Hola.</small>
+
+</div>
+
+</div>
+
+
+
+<div class="mensaje derecha">
+
+<div class="avatar">
+👨
+</div>
+
+<div class="burbuja-chat">
+
+<h5>Cualli tonalli.</h5>
+
+<small>Buenos días.</small>
+
+</div>
+
+</div>
+
+
+
+<div class="mensaje">
+
+<div class="avatar">
+👩
+</div>
+
+<div class="burbuja-chat">
+
+<h5>¿Quenin tiitztoc?</h5>
+
+<small>¿Cómo estás?</small>
+
+</div>
+
+</div>
+
+
+
+<div class="mensaje derecha">
+
+<div class="avatar">
+👨
+</div>
+
+<div class="burbuja-chat">
+
+<h5>Cualli niitztoc.</h5>
+
+<small>Estoy bien.</small>
+
+</div>
+
+</div>
+
+</div>
+
+`;
+}
+
+
+
+if(tipo=="tarde"){
+
+titulo="🌤️ Buenas tardes";
+
+color="#198754";
+
+audio="/Recursos/audios/saludos/tarde.ogg";
+
+html=`
+
+<div class="chat">
+
+<div class="mensaje">
+
+<div class="avatar">👧</div>
+
+<div class="burbuja-chat">
+
+<h5>Cualli tiotlak.</h5>
+
+<small>Buenas tardes.</small>
+
+</div>
+
+</div>
+
+<div class="mensaje derecha">
+
+<div class="avatar">👨</div>
+
+<div class="burbuja-chat">
+
+<h5>Cualli tiotlak.</h5>
+
+<small>Buenas tardes.</small>
+
+</div>
+
+</div>
+
+<div class="mensaje">
+
+<div class="avatar">👧</div>
+
+<div class="burbuja-chat">
+
+<h5>¿Quenin tiitztoc?</h5>
+
+<small>¿Cómo estás?</small>
+
+</div>
+
+</div>
+
+<div class="mensaje derecha">
+
+<div class="avatar">👨</div>
+
+<div class="burbuja-chat">
+
+<h5>Cualli niitztoc.</h5>
+
+<small>Estoy bien.</small>
+
+</div>
+
+</div>
+
+</div>
+
+`;
+
+}
+
+
+
+if(tipo=="noche"){
+
+titulo="🌙 Buenas noches";
+
+color="#0d6efd";
+
+audio="/Recursos/audios/colores/azul.ogg";
+
+html=`
+
+<div class="chat">
+
+<div class="mensaje">
+
+<div class="avatar">👩</div>
+
+<div class="burbuja-chat">
+
+<h5>Cualli yohualli.</h5>
+
+<small>Buenas noches.</small>
+
+</div>
+
+</div>
+
+<div class="mensaje derecha">
+
+<div class="avatar">👨</div>
+
+<div class="burbuja-chat">
+
+<h5>Cualli yohualli.</h5>
+
+<small>Buenas noches.</small>
+
+</div>
+
+</div>
+
+<div class="mensaje">
+
+<div class="avatar">👩</div>
+
+<div class="burbuja-chat">
+
+<h5>Timotaseh?</h5>
+
+<small>¿Descansarás?</small>
+
+</div>
+
+</div>
+
+<div class="mensaje derecha">
+
+<div class="avatar">👨</div>
+
+<div class="burbuja-chat">
+
+<h5>Quema, tlazohcamati.</h5>
+
+<small>Sí, gracias.</small>
+
+</div>
+
+</div>
+
+</div>
+
+`;
+
+}
+
+
+
+Swal.fire({
+
+title:titulo,
+
+html:`
+
+${html}
+
+<div class="mt-4 d-flex justify-content-center gap-2">
+
+<button
+class="btn btn-success rounded-pill"
+onclick="reproducirAudio('${audio}',1)">
+
+<i class="bi bi-play-fill"></i>
+
+Escuchar conversación
+
+</button>
+
+<button
+class="btn btn-warning rounded-pill"
+onclick="reproducirAudio('${audio}',0.5)">
+
+<i class="bi bi-speedometer"></i>
+
+Lento
+
+</button>
+
+</div>
+
+`,
+
+width:"42rem",
+
+confirmButtonColor:color,
+
+confirmButtonText:"Cerrar"
+
+});
+
+}
+
+    </script>
 
     <!-- INIT AOS -->
     <script>
@@ -746,110 +1073,6 @@ onclick="mostrarTono(
             once: true
         });
     </script>
-
-    <script>
-
-
-function reproducirAudio(audio, velocidad){
-
-    let sonido = new Audio(audio);
-
-    sonido.playbackRate = velocidad;
-
-    sonido.play()
-    .catch(error=>{
-
-        console.log("Error al reproducir audio:", error);
-
-    });
-
-}
-
-
-
-function mostrarTono(
-nahuatl,
-titulo,
-descripcion,
-audio,
-color
-){
-
-
-Swal.fire({
-
-title:nahuatl,
-
-
-html:`
-
-<div 
-style="
-width:150px;
-height:150px;
-background:${color};
-border-radius:30px;
-margin:auto;
-box-shadow:0 8px 20px rgba(0,0,0,.25);
-">
-</div>
-
-
-<h3 class="mt-3">
-${titulo}
-</h3>
-
-
-<p>
-${descripcion}
-</p>
-
-
-<div class="d-flex justify-content-center gap-2">
-
-
-<button 
-class="btn btn-success rounded-pill"
-onclick="reproducirAudio('${audio}',1)">
-
-<i class="bi bi-volume-up-fill"></i>
-
-Escuchar
-
-</button>
-
-
-
-<button 
-class="btn btn-warning rounded-pill"
-onclick="reproducirAudio('${audio}',0.5)">
-
-<i class="bi bi-volume-down-fill"></i>
-
-Lento
-
-</button>
-
-
-</div>
-
-
-`,
-
-confirmButtonText:"Continuar",
-
-confirmButtonColor:color,
-
-width:"35rem"
-
-
-});
-
-
-}
-
-
-</script>
 
     <!-- JS -->
     <script src="/js/app.js"></script>
