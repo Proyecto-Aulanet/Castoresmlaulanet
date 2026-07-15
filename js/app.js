@@ -1743,3 +1743,25 @@ perfilprinTexto(
 });
 
 }
+
+function interactuarImagen(img) {
+    const contenedor = img.parentElement;
+
+    // Si no está expandida, la expandimos
+    if (!contenedor.classList.contains('expandida')) {
+        contenedor.classList.add('expandida');
+    }
+}
+
+// Esta función es activada por el clic en la 'X'
+function cerrarImagen(btn) {
+    const contenedor = btn.parentElement;
+    
+    // Si está expandida, la cerramos
+    if (contenedor.classList.contains('expandida')) {
+        contenedor.classList.remove('expandida');
+    } else {
+        // Opcional: Si hacen clic en el icono de lupa, también expande
+        interactuarImagen(contenedor.querySelector('img'));
+    }
+}
