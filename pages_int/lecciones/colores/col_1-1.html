@@ -8,7 +8,7 @@
     <!-- RESPONSIVE -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Inicio - Castores Multilingües Aul@Net</title>
+    <title>CLeccion - 1 - Castores Multilingües Aul@Net</title>
 
     <link rel="icon" href="/Recursos/nahui_caras/nahui_feliz_vector.svg" type="image/png">
 
@@ -463,12 +463,12 @@
 
             </div>
 
-            <p
+            <p 
                 class="lead text-muted mb-0"
-                data-es="¡Bienvenidos! Presiona sobre cada tarjeta para escuchar su pronunciación correcta en náhuatl y descubrir cómo se escribe su nombre."
-                data-na="¡Xihualacan! Xitonaliz nican tlapalme pampa ticcaquiz quen motenehua huan quen mohcuiloa.">
+                data-es="¡Descubre el mundo de los colores! Explora cada tarjeta para conocer cómo se escribe y pronuncia su nombre en español y náhuatl, y aprende cómo aparecen en nuestro entorno."
+                data-na="¡Xiquitta in tlapalme! Xitlatzontequi ipan ce tlapalli pampa ticmati quen mohcuiloa huan motenehua ipan español huan náhuatl, huan ticmati quen monextia ipan toaltepetl.">
 
-                ¡Bienvenidos! Presiona sobre cada tarjeta para escuchar su pronunciación correcta en náhuatl y descubrir cómo se escribe su nombre.
+                ¡Descubre el mundo de los colores! Explora cada tarjeta para conocer cómo se escribe y pronuncia su nombre en español y náhuatl, y aprende cómo aparecen en nuestro entorno.
 
             </p>
 
@@ -483,7 +483,7 @@
         row-cols-2
         row-cols-sm-2
         row-cols-md-3
-        row-cols-lg-4
+        row-cols-lg-2
         g-3
         justify-content-center">
 
@@ -499,7 +499,7 @@
         <div class="card-body">
         <h4 data-es="Rojo" data-na="Chichiltik">Rojo</h4>
         <button class="btn btn-outline-danger rounded-pill">
-        Escuchar
+        Ver
         </button>
         </div>
 
@@ -519,7 +519,7 @@
         <div class="card-body">
         <h4 data-es="Azul" data-na="Yauitl">Azul</h4>
         <button class="btn btn-outline-primary rounded-pill">
-        Escuchar
+        Ver
         </button>
         </div>
 
@@ -539,7 +539,7 @@
         <div class="card-body">
         <h4 data-es="Amarillo" data-na="Kostik">Amarillo</h4>
         <button class="btn btn-outline-warning rounded-pill">
-        Escuchar
+        Ver
         </button>
         </div>
 
@@ -559,7 +559,7 @@
         <div class="card-body">
         <h4 data-es="Verde" data-na="Xoxoktik">Verde</h4>
         <button class="btn btn-outline-success rounded-pill">
-        Escuchar
+        Ver
         </button>
         </div>
 
@@ -579,7 +579,7 @@
         <div class="card-body">
         <h4 data-es="Naranja" data-na="Chichilkostik">Naranja</h4>
         <button class="btn btn-outline-warning rounded-pill">
-        Escuchar
+        Ver
         </button>
         </div>
 
@@ -608,7 +608,7 @@
 
         <button class="btn btn-outline-secondary rounded-pill">
 
-        Escuchar
+        Ver
 
         </button>
 
@@ -630,7 +630,7 @@
         <div class="card-body">
         <h4 data-es="Café" data-na="Koyotik">Café</h4>
         <button class="btn btn-outline-dark rounded-pill">
-        Escuchar
+        Ver
         </button>
         </div>
 
@@ -650,7 +650,7 @@
         <div class="card-body">
         <h4 data-es="Gris" data-na="Nextic">Gris</h4>
         <button class="btn btn-outline-secondary rounded-pill">
-        Escuchar
+        Ver
         </button>
         </div>
 
@@ -670,7 +670,7 @@
         <div class="card-body">
         <h4 data-es="Negro" data-na="Tliltik">Negro</h4>
         <button class="btn btn-outline-dark rounded-pill">
-        Escuchar
+        Ver
         </button>
         </div>
 
@@ -701,7 +701,7 @@
 
         <button class="btn btn-outline-secondary rounded-pill">
 
-        Escuchar
+        Ver
 
         </button>
 
@@ -883,6 +883,18 @@
 
         <script>
 
+        function reproducirAudio(audio, velocidad){
+
+            let sonido = new Audio(audio);
+
+            sonido.playbackRate = velocidad;
+
+            sonido.play()
+            .catch(()=>{});
+
+        }
+
+
         function reproducirYMostrar(
         nahuatl,
         espanol,
@@ -890,20 +902,41 @@
         audio
         ){
 
-        new Audio(audio)
-        .play()
-        .catch(()=>{});
-
         Swal.fire({
 
-        title:nahuatl,
+        title: nahuatl,
 
         html:`
+
         <p style="font-size:1.5rem">
 
         <strong>${espanol}</strong>
 
         </p>
+
+
+        <div class="d-flex justify-content-center gap-2 mt-3">
+
+        <button 
+        class="btn btn-success rounded-pill"
+        onclick="reproducirAudio('${audio}',1)">
+
+        <i class="bi bi-volume-up-fill"></i>
+        Escuchar
+
+        </button>
+
+
+        <button 
+        class="btn btn-warning rounded-pill"
+        onclick="reproducirAudio('${audio}',0.5)">
+
+        <i class="bi bi-volume-down-fill"></i>
+        Lento
+
+        </button>
+
+        </div>
 
 
         `,
@@ -921,7 +954,6 @@
         }
 
         </script>
-
 
 
 </body>

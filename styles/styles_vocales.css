@@ -1,0 +1,259 @@
+
+        .libro-fondo {
+            position: absolute;
+            bottom: -50px;
+            right: -50px;
+            width: 400px;
+            height: 400px;
+            pointer-events: none;
+        }
+
+        .engranaje {
+            position: absolute;
+            fill: rgba(255, 255, 255, 0.05);
+            pointer-events: none;
+        }
+
+        .engranaje1 {
+            top: 10%;
+            left: 5%;
+            width: 120px;
+            animation: rotate 20s linear infinite;
+        }
+
+        .engranaje2 {
+            bottom: 15%;
+            left: 15%;
+            width: 80px;
+            animation: rotate-reverse 15s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes rotate-reverse {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(-360deg); }
+        }
+
+       
+        /* SECCIONES DINÁMICAS */
+        .section-panel {
+            display: none;
+        }
+
+        .section-panel.active {
+            display: block;
+        }
+
+        /* TARJETAS DE VOCALES ESTRICTAMENTE CUADRADAS Y MULTICOLORES */
+        .vowel-square-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 25px;
+            width: 100%;
+        }
+
+        .vowel-square-card {
+            background: #ffffff;
+            border-radius: 25px;
+            padding: 25px;
+            aspect-ratio: 1 / 1; /* Forzar proporción cuadrada */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            transition: all 0.25s ease;
+            cursor: pointer;
+            border: 3px solid transparent;
+        }
+
+        .vowel-square-card:hover {
+            transform: scale(1.05);
+            border-color: #ff9f00;
+            box-shadow: 0 12px 30px rgba(255, 159, 0, 0.25);
+        }
+
+        .vowel-letter-badge {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            font-weight: 700;
+            color: white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Colores degradados alternativos para las tarjetas */
+        .vowel-a { background: linear-gradient(135deg, #c33764 0%, #1d2671 100%); }
+        .vowel-e { background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); }
+        .vowel-i { background: linear-gradient(135deg, #fc4a1a 0%, #f7b733 100%); }
+        .vowel-o { background: linear-gradient(135deg, #7f00ff 0%, #e100ff 100%); }
+
+        .vowel-square-card p {
+            font-size: 14px;
+            color: #475569;
+            line-height: 1.4;
+            margin: 15px 0 0 0;
+            font-weight: 500;
+        }
+
+        .btn-action-aulanet {
+            background-color: #ff9f00;
+            color: white;
+            border: none;
+            border-radius: 14px;
+            padding: 10px 25px;
+            font-weight: 700;
+            transition: all 0.2s ease;
+        }
+
+        .btn-action-aulanet:hover {
+            background-color: #e08c00;
+            color: white;
+        }
+
+        /* DISEÑO DE CONTENEDOR INTERACTIVO PARA EL CARRUSEL */
+        .interactive-board {
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 35px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        }
+
+        .carousel-view-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .interactive-word-card {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 24px;
+            padding: 30px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .illustration-box {
+            width: 200px;
+            height: 200px;
+            border-radius: 20%;
+            overflow: hidden;
+            background: #e2e8f0;
+            border: 5px solid #ff9f00;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+        }
+
+        .illustration-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .word-meta {
+            text-align: left;
+            flex-grow: 1;
+        }
+
+        .word-title-nahuatl {
+            font-size: 44px;
+            font-weight: 800;
+            color: #093f2e;
+            margin: 0;
+        }
+
+        .word-meaning-es {
+            font-size: 22px;
+            color: #ff7a00;
+            font-weight: 600;
+            margin: 5px 0 20px 0;
+        }
+
+        .voice-engine-panel {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .btn-voice-trigger {
+            background: #04aa6d;
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 16px;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 6px 12px rgba(4, 170, 109, 0.2);
+            transition: all 0.2s;
+        }
+
+        .btn-voice-trigger:hover {
+            background: #038c5a;
+            transform: scale(1.03);
+        }
+
+        .btn-pace-setting {
+            background: #e2e8f0;
+            border: 2px solid #cbd5e1;
+            color: #475569;
+            padding: 12px 20px;
+            border-radius: 16px;
+            font-weight: 700;
+            transition: all 0.2s;
+        }
+
+        .btn-pace-setting.active {
+            background: #ff7a00;
+            color: white;
+            border-color: #ff7a00;
+            box-shadow: 0 4px 10px rgba(255,122,0,0.2);
+        }
+
+        .chevron-round-btn {
+            background: #093f2e;
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            transition: all 0.2s;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .chevron-round-btn:hover {
+            background: #ff9f00;
+            transform: scale(1.05);
+        }
+
+        /* AJUSTES ADICIONALES PARA EL REFACTOR */
+        .footer-logo, .footer-logo-utp {
+            max-width: 140px;
+            margin: 5px;
+        }
+        /* Quita el fondo o degradado del contenedor del botón */
+.modal-body .audio-container {
+    background: transparent !important;
+    padding: 20px 0;
+}
