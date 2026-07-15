@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="es" class="h-full">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <!-- RESPONSIVE -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Inicio - Castores Multilingües Aul@Net</title>
+
+    <link rel="icon" href="/Recursos/nahui_caras/nahui_feliz_vector.svg" type="image/png">
+
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+
+    <!-- BOOTSTRAP ICONS -->
+    <link rel="stylesheet" href="/assets/icons/font/bootstrap-icons.css">
+
+    <!-- AOS -->
+    <link rel="stylesheet" href="/assets/css/aos.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/styles/styles.css">
+
+    <style>
+         .theory-card {
+            background-color: #ffffff;
+            border: none;
+            border-radius: 25px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .theory-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+        }
+
+        .btn-explore {
+            background-color: #ff9f00;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 30px;
+            font-weight: bold;
+            transition: all 0.2s ease;
+        }
+
+        .btn-explore:hover {
+            background-color: #e08c00;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        /* SECCIONES DINÁMICAS Y TRANSICIONES */
+        .section-panel {
+            display: none;
+        }
+
+        .section-panel.active {
+            display: block;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* TARJETAS DE VOCALES ESTRICTAMENTE CUADRADAS Y MULTICOLORES */
+        .vowel-square-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+            width: 100%;
+        }
+
+        .vowel-square-card {
+            border-radius: 25px;
+            padding: 25px;
+            aspect-ratio: 1 / 1; /* Forzar proporción cuadrada exacta */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            transition: all 0.25s ease;
+            cursor: pointer;
+            border: 3px solid transparent;
+        }
+
+        .vowel-square-card:hover {
+            transform: scale(1.05);
+            border-color: #ffffff;
+            box-shadow: 0 12px 30px rgba(255, 255, 255, 0.25);
+        }
+
+        /* IMÁGENES DENTRO DE LAS TARJETAS */
+        .vowel-card-img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            margin-bottom: 10px;
+            transition: transform 0.2s ease;
+        }
+
+        .vowel-square-card:hover .vowel-card-img {
+            transform: scale(1.1);
+        }
+
+        /* GAMA DE COLORES DEGRADADOS PARA LAS TARJETAS CUADRADAS */
+        .card-vowel-a { 
+            background: linear-gradient(135deg, #c33764 0%, #1d2671 100%); 
+        }
+        .card-vowel-e { 
+            background: linear-gradient(135deg, #11998e 0%, #74e338 100%); 
+        }
+        .card-vowel-i { 
+            background: linear-gradient(135deg, #662f18 0%, #eec36e 100%); 
+        }
+        .card-vowel-o { 
+            background: linear-gradient(135deg, #7f00ff 0%, #e100ff 100%); 
+        }
+
+        /* TEXTOS ADAPTADOS PARA LOS FONDOS MULTICOLORES */
+        .vowel-square-card p {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.95) !important;
+            line-height: 1.45;
+            margin: 10px 0 0 0;
+            font-weight: 500;
+        }
+
+        .btn-action-aulanet {
+            background-color: #ffffff;
+            color: #1d2671;
+            border: none;
+            border-radius: 14px;
+            padding: 8px 25px;
+            font-weight: 700;
+            transition: all 0.2s ease;
+        }
+
+        .card-vowel-e .btn-action-aulanet { color: #11998e; }
+        .card-vowel-i .btn-action-aulanet { color: #fc4a1a; }
+        .card-vowel-o .btn-action-aulanet { color: #7f00ff; }
+
+        .btn-action-aulanet:hover {
+            background-color: #ff9f00;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        /* DISEÑO DE CONTENEDOR INTERACTIVO PARA EL CARRUSEL */
+        .interactive-board {
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 35px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        }
+
+        .carousel-view-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .interactive-word-card {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 24px;
+            padding: 30px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .interactive-word-card {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+            .carousel-view-box {
+                gap: 10px;
+            }
+        }
+
+        .illustration-box {
+            width: 200px;
+            height: 200px;
+            border-radius: 24px;
+            overflow: hidden;
+            background: #e2e8f0;
+            border: 5px solid #ff9f00;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+        }
+
+        .illustration-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .word-meta {
+            text-align: left;
+            flex-grow: 1;
+        }
+
+        @media (max-width: 768px) {
+            .word-meta {
+                text-align: center;
+            }
+        }
+
+        .word-title-nahuatl {
+            font-size: 44px;
+            font-weight: 800;
+            color: #093f2e;
+            margin: 0;
+        }
+
+        .word-meaning-es {
+            font-size: 22px;
+            color: #ff7a00;
+            font-weight: 600;
+            margin: 5px 0 20px 0;
+        }
+
+        .voice-engine-panel {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 768px) {
+            .voice-engine-panel {
+                justify-content: center;
+            }
+        }
+
+        .btn-voice-trigger {
+            background: #04aa6d;
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 16px;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 6px 12px rgba(4, 170, 109, 0.2);
+            transition: all 0.2s;
+        }
+
+        .btn-voice-trigger:hover {
+            background: #038c5a;
+            transform: scale(1.03);
+        }
+
+        .btn-pace-setting {
+            background: #e2e8f0;
+            border: 2px solid #cbd5e1;
+            color: #475569;
+            padding: 12px 20px;
+            border-radius: 16px;
+            font-weight: 700;
+            transition: all 0.2s;
+        }
+
+        .btn-pace-setting.active {
+            background: #ff7a00;
+            color: white;
+            border-color: #ff7a00;
+            box-shadow: 0 4px 10px rgba(255,122,0,0.2);
+        }
+
+        .chevron-round-btn {
+            background: #093f2e;
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            transition: all 0.2s;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .chevron-round-btn:hover {
+            background: #ff9f00;
+            transform: scale(1.05);
+        }
+
+        /* AJUSTES DE CORRECCIÓN */
+        .footer-logo, .footer-logo-utp {
+            max-width: 140px;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <!-- ========================= -->
+    <!-- FONDO DECORATIVO -->
+    <!-- ========================= -->
+
+    <div class="fondo-aulanet">
+
+        <!-- LIBRO -->
+
+        <svg class="libro-fondo" viewBox="0 0 512 512">
+
+            <path
+                d="M256 120
+                   C220 90 150 85 100 110
+                   L100 380
+                   C150 355 220 360 256 390
+                   C292 360 362 355 412 380
+                   L412 110
+                   C362 85 292 90 256 120Z"
+                fill="none"
+                stroke="white"
+                stroke-width="6"
+                opacity=".06"/>
+
+            <line
+                x1="256"
+                y1="120"
+                x2="256"
+                y2="390"
+                stroke="white"
+                stroke-width="4"
+                opacity=".06"/>
+
+        </svg>
+
+        <!-- ENGRANAJES -->
+
+        <svg class="engranaje engranaje1" viewBox="0 0 24 24">
+            <path fill="white"
+                d="M19.14,12.94a7.48,7.48,0,0,0,.05-.94a7.48,7.48,0,0,0-.05-.94l2.03-1.58a.5.5,0,0,0,.12-.64l-1.92-3.32a.5.5,0,0,0-.61-.22l-2.39.96a7.28,7.28,0,0,0-1.63-.94L14.5,2.81a.5.5,0,0,0-.5-.41H10a.5.5,0,0,0-.5.41L9.12,5.32a7.28,7.28,0,0,0-1.63.94L5.1,5.3a.5.5,0,0,0-.61.22L2.57,8.84a.5.5,0,0,0,.12.64L4.72,11.06a7.48,7.48,0,0,0-.05.94a7.48,7.48,0,0,0,.05.94L2.69,14.52a.5.5,0,0,0-.12.64l1.92,3.32a.5.5,0,0,0,.61.22l2.39-.96a7.28,7.28,0,0,0,1.63.94l.38,2.51a.5.5,0,0,0,.5.41h4a.5.5,0,0,0,.5-.41l.38-2.51a7.28,7.28,0,0,0,1.63-.94l2.39.96a.5.5,0,0,0,.61-.22l1.92-3.32a.5.5,0,0,0-.12-.64Z"/>
+        </svg>
+
+        <svg class="engranaje engranaje2" viewBox="0 0 24 24">
+            <path fill="white"
+                d="M19.14,12.94a7.48,7.48,0,0,0,.05-.94a7.48,7.48,0,0,0-.05-.94l2.03-1.58a.5.5,0,0,0,.12-.64l-1.92-3.32a.5.5,0,0,0-.61-.22l-2.39.96a7.28,7.28,0,0,0-1.63-.94L14.5,2.81a.5.5,0,0,0-.5-.41H10a.5.5,0,0,0-.5.41L9.12,5.32a7.28,7.28,0,0,0-1.63.94L5.1,5.3a.5.5,0,0,0-.61.22L2.57,8.84a.5.5,0,0,0,.12.64L4.72,11.06a7.48,7.48,0,0,0-.05.94a7.48,7.48,0,0,0,.05.94L2.69,14.52a.5.5,0,0,0-.12.64l1.92,3.32a.5.5,0,0,0,.61.22l2.39-.96a7.28,7.28,0,0,0,1.63.94l.38,2.51a.5.5,0,0,0,.5.41h4a.5.5,0,0,0,.5-.41l.38-2.51a7.28,7.28,0,0,0,1.63-.94l2.39.96a.5.5,0,0,0,.61-.22l1.92-3.32a.5.5,0,0,0-.12-.64Z"/>
+        </svg>
+
+        <!-- PARTICULAS -->
+
+        <div class="particulas">
+
+            <span class="particula verde"></span>
+            <span class="particula azul"></span>
+            <span class="particula amarillo"></span>
+            <span class="particula naranja"></span>
+            <span class="particula blanco"></span>
+            <span class="particula verde"></span>
+            <span class="particula azul"></span>
+            <span class="particula amarillo"></span>
+            <span class="particula naranja"></span>
+            <span class="particula blanco"></span>
+
+            <span class="particula verde"></span>
+            <span class="particula azul"></span>
+            <span class="particula amarillo"></span>
+            <span class="particula naranja"></span>
+            <span class="particula blanco"></span>
+
+            <span class="particula verde"></span>
+            <span class="particula azul"></span>
+            <span class="particula amarillo"></span>
+            <span class="particula naranja"></span>
+            <span class="particula blanco"></span>
+
+            <span class="particula verde"></span>
+            <span class="particula azul"></span>
+            <span class="particula amarillo"></span>
+            <span class="particula naranja"></span>
+            <span class="particula blanco"></span>
+
+        </div>
+
+    </div>      
+     
+        
+<!-- ========================================== -->
+<!--                HEADER MAIN                 -->
+<!-- ========================================== -->
+
+<header class="header-main sticky-top shadow-lg">
+
+    <div class="container">
+
+        <!-- FILA SUPERIOR -->
+        <div
+            class="headerint-top d-flex justify-content-between align-items-star flex-wrap gap-3 py-3">
+
+            <!-- LOGO -->
+            <div class="headerint-logo">
+
+                <img
+                    src="/Recursos/logos/logo_completo_svg.svg"
+                    alt="logo"
+                    class="img-fluid"
+                    style="max-width:185px;"
+                    data-aos="fade-right">
+
+            </div>
+
+            <!-- ESTADÍSTICAS -->
+            <div
+                class="headerint-stats d-flex align-items-center justify-content-center gap-3 flex-wrap"
+                data-aos="fade-up">
+
+                <!-- RACHA -->
+                <div class="stat-item headerint-racha">
+
+                    <i class="bi bi-fire stat-icon text-warning"></i>
+
+                    <div>
+
+                        <small
+                            class="stat-label"
+                            data-es="Racha"
+                            data-na="Tlatzintli">
+
+                            Racha
+
+                        </small>
+
+                        <span
+                            id="streak-display"
+                            class="stat-value">
+
+                            0
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <!-- XP -->
+                <div class="stat-item headerint-xp">
+
+                    <i class="bi bi-stars stat-icon text-warning"></i>
+
+                    <div>
+
+                        <small
+                            class="stat-label"
+    data-es="Puntaje" data-na="Tlapōhualli">
+
+                                    Puntaje
+
+                        </small>
+
+                        <span
+                            id="xp-display"
+                            class="stat-value">
+
+                            0
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+                    <!-- PERFIL -->
+                    <div class="perfil-header dropdown" data-aos="fade-left">
+
+                        <!-- BOTÓN -->
+                        <button
+                            class="btn p-0 border-0 bg-transparent d-flex align-items-center"
+                            type="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false">
+
+                            <!-- Avatar -->
+                            <div class="perfil-avatar">
+
+                                <i class="bi bi-person-fill"></i>
+
+                            </div>
+
+                            <!-- Nombre -->
+                            <div class="perfil-info d-none d-md-block">
+
+                                <span
+                                    class="perfil-nombre"
+                                    data-es="Invitado"
+                                    data-na="Tlapowalistli">
+
+                                    Invitado
+
+                                </span>
+
+                            </div>
+
+                            <!-- Triángulo -->
+                            <i class="bi bi-caret-down-fill ms-2 perfil-flecha"></i>
+
+                        </button>
+
+                        <!-- MENÚ -->
+                        <ul class="dropdown-menu dropdown-menu-end">
+
+                            <li>
+
+                                <!-- Si usas páginas -->
+                                <a class="dropdown-item" href="perfil.html">
+
+                                    <i class="bi bi-person me-2"></i>
+
+                                    Perfil
+
+                                </a>
+
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+        </div>
+
+        <!-- NAVBAR -->
+        <nav class="navbar navbar-expand-lg navbarint justify-content-center">
+
+            <div class="container-fluid justify-content-center">
+
+                <!-- BOTÓN HAMBURGUESA -->
+                    <button
+                    class="navbar-toggler navbarint-toggler mx-auto"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#menuNavbar">
+
+                    <i class="bi bi-chevron-down"></i>
+
+                </button>
+
+                <!-- MENÚ -->
+                <div
+                    class="collapse navbar-collapse justify-content-center"
+                    id="menuNavbar">
+
+                    <div class="navbar-nav gap-2 justify-content-center">
+
+                        <!-- INICIO -->
+                        <button
+                            onclick="window.location.href='/pages_int/inicio.html'"
+                            class="btn navbarint-btn rounded-pill px-4"
+                            data-aos="fade-up"
+                            data-es="Inicio"
+                            data-na="Pewaloyan">
+
+                            <i class="bi bi-house-fill me-2"></i>
+
+                            Inicio
+
+                        </button>
+
+                        <!-- LECCIONES -->
+                        <button
+                            onclick="window.location.href='Lecciones.html'"
+                            class="btn navbarint-btn rounded-pill px-4"
+                            data-aos="fade-up"
+                            data-aos-delay="100"
+                            data-es="Lecciones"
+                            data-na="Temachtilli">
+
+                            <i class="bi bi-book-fill me-2"></i>
+
+                            Lecciones
+
+                        </button>
+
+                        <!-- CUENTOS -->
+                        <button
+                            onclick="window.location.href='cuentos.html'"
+                            class="btn navbarint-btn rounded-pill px-4"
+                            data-aos="fade-up"
+                            data-aos-delay="100"
+                            data-es="Cuentos"
+                            data-na="Tlahtolli">
+
+                            <i class="bi bi-book-half me-2"></i>
+
+                            Cuentos
+
+                        </button>
+
+                        <!-- CULTURA -->
+                        <button
+                            onclick="window.location.href='cultura.html'"
+                            class="btn navbarint-btn rounded-pill px-4"
+                            data-aos="fade-up"
+                            data-aos-delay="200"
+                            data-es="Cultura"
+                            data-na="Yancuic Tlamachtiliztli">
+
+                            <i class="bi bi-globe-americas me-2"></i>
+
+                            Cultura
+
+                        </button>
+
+                        <!-- PROGRESO -->
+                        <button
+                            onclick="window.location.href='progreso.html'"
+                            class="btn navbarint-btn rounded-pill px-4"
+                            data-aos="fade-up"
+                            data-aos-delay="300"
+                            data-es="Progreso"
+                            data-na="Yancuic Nejnemiliztli">
+
+                            <i class="bi bi-graph-up-arrow me-2"></i>
+
+                            Progreso
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+    </div>
+
+</header>
+
+<!-- MAIN -->
+<main class="container py-5">
+
+    <!-- BOTONES SUPERIORES -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+
+        <!-- BOTÓN TRADUCTOR -->
+        <div class="presen-traductor-int">
+
+            <button
+                class="btn btn-light rounded-circle traductor-btn"
+                onclick="presenToggleMenu()"
+                data-aos="zoom-in">
+
+                <i class="bi bi-translate"></i>
+
+            </button>
+
+            <!-- MENÚ -->
+            <div
+                class="presen-menu-int"
+                id="presenMenuIdioma">
+
+                <ul class="list-unstyled m-0">
+
+                    <li onclick="presenCambiarModo('es')">
+                        Español
+                    </li>
+
+                    <li onclick="presenCambiarModo('na')">
+                        Náhuatl
+                    </li>
+
+                    <li onclick="presenCambiarModo('es-na')">
+                        Español + Náhuatl
+                    </li>
+
+                    <li onclick="presenCambiarModo('na-es')">
+                        Náhuatl + Español
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+     <div class="d-flex justify-content-between align-items-center mb-5">
+            <div>
+                <h2 class="text-white fw-bold m-0" id="main-section-title" data-es="Abecedario Náhuatl: Vocales" data-na="Nahuatlahtolli Machiyotl: Totlahtolameh">Abecedario Náhuatl: Vocales</h2>
+                <p class="text-white-50 m-0" id="main-section-subtitle" data-es="Teoría 1: Vocales en Acción" data-na="Teoría 1: Totlahtolameh macehualiztli">Teoría 1: Vocales en Acción</p>
+            </div>
+
+            <!-- TRADUCTOR MULTILEVEL -->
+            <div class="presen-traductor-int">
+                <button class="btn btn-light rounded-circle traductor-btn" onclick="presenToggleMenu()" data-aos="zoom-in">
+                    <i class="bi bi-translate"></i>
+                </button>
+                <div class="presen-menu-int" id="presenMenuIdioma">
+                    <ul class="list-unstyled m-0">
+                        <li onclick="presenCambiarModo('es')">Español</li>
+                        <li onclick="presenCambiarModo('na')">Náhuatl</li>
+                        <li onclick="presenCambiarModo('es-na')">Español + Náhuatl</li>
+                        <li onclick="presenCambiarModo('na-es')">Náhuatl + Español</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================================= -->
+        <!-- PANEL DE SELECCIÓN DE VOCALES (TARJETAS CUADRADAS MULTICOLORES CON IMAGEN LIMPIA) -->
+        <!-- ========================================================= -->
+        <div id="panel-vowels-selection" class="section-panel active">
+            <div class="vowel-square-grid">
+                
+                <!-- Tarjeta Cuadrada A -->
+                <div class="vowel-square-card card-vowel-a" onclick="startVowelLesson('A')" data-aos="zoom-in">
+                    <!-- Ruta local para tu icono en VS Code, con un respaldo provisorio de alta calidad de Aul@Net -->
+                    <img src="/Recursos/alfabeto/nahui.A.png" onerror="this.onerror=null; this.src='http://googleusercontent.com/image_collection/image_retrieval/13370210793431281354_0'" class="vowel-card-img" alt="Vocal A">
+                    <p data-es="La letra A en náhuatl se pronuncia clara y fuerte como en 'Atl' (Agua)." data-na="In machiyotl A chicahuac huan yoli kenin 'Atl' (Agua).">La letra A en náhuatl se pronuncia clara y fuerte como en 'Atl' (Agua).</p>
+                    <button class="btn btn-action-aulanet mt-3" data-es="Aprender" data-na="Machtia">Aprender</button>
+                </div>
+
+                <!-- Tarjeta Cuadrada E -->
+                <div class="vowel-square-card card-vowel-e" onclick="startVowelLesson('E')" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="/Recursos/alfabeto/nahui.E.png" onerror="this.onerror=null; this.src='http://googleusercontent.com/image_collection/image_retrieval/11534151129378631510_0'" class="vowel-card-img" alt="Vocal E">
+                    <p data-es="La letra E en náhuatl suena de forma intermedia, idéntica al español." data-na="In machiyotl E neneuhqui tlan caxtillantlahtolli.">La letra E en náhuatl suena de forma intermedia, idéntica al español.</p>
+                    <button class="btn btn-action-aulanet mt-3" data-es="Aprender" data-na="Machtia">Aprender</button>
+                </div>
+
+                <!-- Tarjeta Cuadrada I -->
+                <div class="vowel-square-card card-vowel-i" onclick="startVowelLesson('I')" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="/Recursos/alfabeto/nahui.I.png" onerror="this.onerror=null; this.src='http://googleusercontent.com/image_collection/image_retrieval/4122289897427107455_0'" class="vowel-card-img" alt="Vocal I">
+                    <p data-es="La letra I es muy común, dándole agudeza y brillo a los sustantivos." data-na="In machiyotl I quipia nahuatlahtolli totlahtolameh.">La letra I es muy común, dándole agudeza y brillo a los sustantivos.</p>
+                    <button class="btn btn-action-aulanet mt-3" data-es="Aprender" data-na="Machtia">Aprender</button>
+                </div>
+
+                <!-- Tarjeta Cuadrada O -->
+                <div class="vowel-square-card card-vowel-o" onclick="startVowelLesson('O')" data-aos="zoom-in" data-aos-delay="300">
+                    <img src="/Recursos/alfabeto/nahui.O.png" onerror="this.onerror=null; this.src='http://googleusercontent.com/image_collection/image_retrieval/7734734210765797892_0'" class="vowel-card-img" alt="Vocal O">
+                    <p data-es="La letra O puede tener variaciones ligeras de sonido parecidas a la 'U'." data-na="In machiyotl O neneuhqui huan machiyotl U.">La letra O puede tener variaciones ligeras de sonido parecidas a la 'U'.</p>
+                    <button class="btn btn-action-aulanet mt-3" data-es="Aprender" data-na="Machtia">Aprender</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================================= -->
+        <!-- PANEL INTERACTIVO: CARRUSEL DE PALABRAS DE VOCALES -->
+        <!-- ========================================================= -->
+        <div id="panel-vowels-carousel" class="section-panel">
+            <div class="mb-4 text-start">
+                <button class="btn btn-outline-light rounded-pill px-4 py-2" onclick="switchPanel('panel-vowels-selection')">
+                    <i class="bi bi-arrow-left me-2"></i> <span data-es="Volver a las Vocales" data-na="Xan totlahtolameh">Volver a las Vocales</span>
+                </button>
+            </div>
+
+            <div class="interactive-board">
+                <div class="carousel-view-box">
+                    <!-- Flecha Izquierda -->
+                    <button class="chevron-round-btn" onclick="slideCarouselPrev()"><i class="bi bi-chevron-left"></i></button>
+
+                    <!-- Tarjeta de Contenido Activo -->
+                    <div class="interactive-word-card">
+                        <div class="illustration-box">
+                            <img id="wordImage" alt="Ilustración de Agua" src="/Recursos/alfabeto/agua.jpg">
+                        </div>
+                        <div class="word-meta">
+                            <h3 class="word-title-nahuatl" id="wordNahuatl">Atl</h3>
+                            <p class="word-meaning-es" id="wordSpanish" data-es="Significado: Agua" data-na="Kizani: Atl">Significado: Agua</p>
+                            
+                            <!-- Reproductor de Voz -->
+                            <div class="voice-engine-panel">
+                                <button class="btn-voice-trigger" onclick="speakActiveWord()">
+                                    <i class="bi bi-volume-up-fill fs-5"></i>
+                                    <span data-es="Escuchar Audio" data-na="Xikaki tlahtolli">Escuchar Audio</span>
+                                </button>
+                                <button class="btn-pace-setting" id="paceToggle" onclick="toggleSpeechPace()">
+                                    <i class="bi bi-turtle-fill"></i> <span data-es="Lento" data-na="Yolichtic">Lento</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Flecha Derecha -->
+                    <button class="chevron-round-btn" onclick="slideCarouselNext()"><i class="bi bi-chevron-right"></i></button>
+                </div>
+                
+                <div class="d-flex justify-content-between align-items-center mt-4 border-top pt-3">
+                    <span class="text-muted fw-bold" id="carouselProgressText">Palabra 1 de 5</span>
+                    <button class="btn btn-outline-dark rounded-pill px-4" onclick="switchPanel('panel-vowels-selection')" data-es="Elegir otra Vocal" data-na="Xakitah okce totlahtolli">Elegir otra Vocal</button>
+                </div>
+            </div>
+        </div>
+        <audio id="audioPlayer"></audio>
+        </main>
+    </div>
+
+<br>
+
+                <!-- =========================================
+                FOOTER
+            ========================================= -->
+
+            <footer class="footer-main mt-5">
+
+                <div class="container py-4">
+
+                    <div class="row align-items-center text-center text-md-start gy-4">
+
+
+                        <div class="col-12 col-md-4"
+                        data-aos="fade-right">
+
+                            <img
+                                src="/Recursos/logos/logo_completo_svg.svg"
+                                alt="Aul@Net"
+                                class="img-fluid footer-logo">
+
+
+                             <img
+                                src="/Recursos/logos/utp_svg.svg"
+                                alt="Aul@Net"
+                                class="img-fluid footer-logo-utp">
+
+  
+
+                        </div>
+
+                        <!-- INFORMACIÓN -->
+
+                        <div class="col-12 col-md-5"
+                        data-aos="fade-left">
+
+                            <p class="footer-text mb-2">
+
+                                <i class="bi bi-geo-alt-fill me-2"></i>
+
+                                Antiguo Camino a la Resurrección No. 1002-A  
+                                Zona Industrial Puebla Oriente, Puebla, México CP 72300
+
+                            </p>
+
+                            <p class="footer-text mb-0">
+
+                                <i class="bi bi-envelope-fill me-2"></i>
+
+                                <a
+                                    href="mailto:aulanetoficialpue@gmail.com"
+                                    class="footer-link">
+
+                                    aulanetoficialpue@gmail.com
+
+                                </a>
+
+                            </p>
+
+                        </div>
+
+                        <!-- REDES / ENLACES -->
+
+                        <div class="col-12 col-md-3"
+                        data-aos="fade-right">
+
+                            <div
+                                class="d-flex justify-content-center justify-content-md-end gap-3">
+
+                                <a
+                                    href="https://www.utpuebla.edu.mx/"
+                                    target="_blank"
+                                    class="footer-social">
+
+                                    <i class="bi bi-globe"></i>
+
+                                </a>
+
+                                <a
+                                    href="https://www.facebook.com/profile.php?id=61589668907732"
+                                    class="footer-social">
+
+                                    <i class="bi bi-facebook"></i>
+
+                                </a>
+
+                                <a
+                                    href="https://www.instagram.com/nahuinetof/?utm_source=ig_web_button_share_sheet"
+                                    class="footer-social">
+
+                                    <i class="bi bi-instagram"></i>
+
+                                </a>
+
+                                <a
+                                    href="https://www.youtube.com/@AulaNetOficial"
+                                    class="footer-social">
+
+                                    <i class="bi bi-youtube"></i>
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- COPYRIGHT -->
+
+                    <hr class="footer-divider" >
+
+                    <div class="text-center">
+
+                        <small class="footer-copy" >
+
+                            © 2026 Universidad Tecnológica de Puebla.  
+                            Todos los derechos reservados.
+
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </footer>
+<!-- BOOTSTRAP BUNDLE JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="/assets/js/aos.js"></script>
+
+    <!-- SWEETALERT -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/assets/sweetalert/sweetalert2.all.min.js"></script>
+    <!-- INIT AOS -->
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
+
+    <!-- JS -->
+    <script src="/js/app.js"></script>
+
+    <script>
+     
+
+        // CONTROL DE REPRODUCCIÓN POR SÍNTESIS DE VOZ (NORMAL / LENTO)
+        let isPaceSlow = false;
+
+        function toggleSpeechPace() {
+            isPaceSlow = !isPaceSlow;
+            const paceBtn = document.getElementById('paceToggle');
+            if (isPaceSlow) {
+                paceBtn.classList.add('active');
+            } else {
+                paceBtn.classList.remove('active');
+            }
+        }
+
+        function speakWord(word, isSlow = false) {
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel(); // Detiene audios anteriores en cola
+                const speech = new SpeechSynthesisUtterance(word);
+                speech.lang = 'es-MX'; // Excelente acentuación nativa para sonidos de lenguas mexicanas
+                speech.rate = isSlow ? 0.45 : 0.85;
+                window.speechSynthesis.speak(speech);
+            } else {
+                console.warn("Navegador no compatible con reproducción de audio.");
+            }
+        }
+
+        // BASE DE DATOS DE LAS VOCALES (5 PALABRAS POR VOCAL CON SUS IMÁGENES EXTRAÍDAS)
+       const vowelDatabase = {
+    A: [
+        { word: "Atl", es: "Agua", na: "Atl", img: "/Recursos/alfabeto/agua.jpg", audio: "/Recursos/audios/abecedario/ATK.ogg", audioSlow: "/Recursos/audio/A/atl_slow.mp3" },
+        { word: "Acatl", es: "Caña", na: "Acatl", img: "/Recursos/alfabeto/cana.jpg", audio: "/Recursos/audios/abecedario/ACATL.ogg", audioSlow: "/Recursos/audio/A/acatl_slow.mp3" },
+        { word: "Azcatl", es: "Hormiga", na: "Azcatl", img: "/Recursos/alfabeto/hrmiga.jpg", audio: "/Recursos/audios/abecedario/hormiga.ogg", audioSlow: "/Recursos/audio/A/azcatl_slow.mp3" },
+        { word: "Amatl", es: "Papel", na: "Amatl", img: "/Recursos/alfabeto/papel.jpg", audio: "/Recursos/audios/abecedario/AMATL.ogg", audioSlow: "/Recursos/audio/A/amstl_slow.mp3" },
+        { word: "Axolotl", es: "Ajolote", na: "Axolotl", img: "/Recursos/alfabeto/AJO.jpg", audio: "/Recursos/audios/abecedario/ajolote.ogg", audioSlow: "/Recursos/audio/A/axolotl_slow.mp3" }
+    ],
+    E: [
+        { word: "Epatl", es: "Zorrillo", na: "Epatl", img: "/Recursos/alfabeto/zorrillo.jpg", audio: "/Recursos/audios/abecedario/epatl.ogg", audioSlow: "/Recursos/audio/E/epatl_slow.mp3" },
+        { word: "Etl", es: "Frijol", na: "Etl", img: "/Recursos/alfabeto/frijol.jpg", audio: "/Recursos/audios/abecedario/etl.ogg", audioSlow: "/Recursos/audio/E/etl_slow.mp3" },
+        { word: "Ehecatl", es: "Viento", na: "Ehecatl", img: "/Recursos/alfabeto/viento.jpg", audio: "/Recursos/audios/abecedario/ehecatl.ogg", audioSlow: "/Recursos/audio/E/ehecatl_slow.mp3" },
+        { word: "Elotl", es: "Elote", na: "Elotl", img: "/Recursos/alfabeto/elote.jpg", audio: "/Recursos/audios/abecedario/elotl.ogg", audioSlow: "/Recursos/audio/E/elotl_slow.mp3" },
+         { word: "Exotl", es: "Ejote", na: "Exotl", img: "/Recursos/alfabeto/ejote.jpg", audio: "/Recursos/audios/abecedario/exotl.ogg", audioSlow: "/Recursos/audio/E/exotl_slow.mp3" }
+            ],
+    
+    I: [
+        { word: "Icpatl", es: "Hilo", na: "Icpatl", img: "/Recursos/alfabeto/hilo.jpg", audio: "/Recursos/audios/abecedario/Icpatl.ogg", audioSlow: "/Recursos/audio/I/itzcuintli_slow.mp3" },
+        { word: "Ichcatl", es: "Algodón", na: "Ichcatl", img: "/Recursos/alfabeto/algodon.jpg" , audio: "/Recursos/audios/abecedario/Ichcatl.ogg", audioSlow: "/Recursos/audio/I/ichcatl_slow.mp3" },
+         { word: "Icxitl", es: "Pie", na: "Icxitl", img: "/Recursos/alfabeto/pie.jpg", audio: "/Recursos/audios/abecedario/Icxitl.ogg", audioSlow: "/Recursos/audio/I/iztactli_slow.mp3" },
+        { word: "Ihuitl", es: "Pluma", na: "Ihuitl", img: "/Recursos/alfabeto/pluma.jpg", audio: "/Recursos/audios/abecedario/Ihuitl.ogg", audioSlow: "/Recursos/audio/I/icxilli_slow.mp3" },
+        { word: "Iztatl", es: "Sal", na: "Iztatl", img: "/Recursos/alfabeto/sal.jpg", audio: "/Recursos/audios/abecedario/Iztatl.ogg", audioSlow: "/Recursos/audio/I/ilhuicatl_slow.mp3" }
+            ],
+    
+    O: [
+                { word: "Ocotl", es: "Pino", na: "Ocotl", img: "/Recursos/alfabeto/pino.jpg", audio: "/Recursos/audios/abecedario/Ocotl.ogg", audioSlow: "/Recursos/audio/O/ocotl_slow.mp3" },
+                { word: "Ocoxochitl", es: "Flor de pino", na: "Ocoxochitl", img: "/Recursos/alfabeto/flor de pino.jpg", audio: "/Recursos/audios/abecedario/Ocoxochitl.ogg", audioSlow: "/Recursos/audio/O/ocoxochitl_slow.mp3" },
+                { word: "Ohuitl", es: "Caña de azucar", na: "Ohuitl", img: "/Recursos/alfabeto/cana de azucar.jpg", audio: "/Recursos/audios/abecedario/Ohuitl.ogg", audioSlow: "/Recursos/audio/O/ohuitl_slow.mp3" },
+                { word: "Omitl", es: "Hueso", na: "Omitl", img: "/Recursos/alfabeto/hueso.jpg", audio: "/Recursos/audios/abecedario/Omitl.ogg", audioSlow: "/Recursos/audio/O/omitl_slow.mp3" },
+                { word: "Oztotl", es: "Cueva", na: "Oztotl", img: "/Recursos/alfabeto/cueva.jpg", audio: "/Recursos/audios/abecedario/Oztotl.ogg", audioSlow: "/Recursos/audio/O/oztotl_slow.mp3" }
+            ]
+};
+
+// CONTROL DE VELOCIDAD
+function toggleSpeechPace() {
+    isPaceSlow = !isPaceSlow;
+    const paceBtn = document.getElementById('paceToggle');
+    paceBtn.classList.toggle('active', isPaceSlow);
+    speakActiveWord(); // Reproduce al cambiar la velocidad
+}
+
+// REPRODUCTOR DE AUDIO (LOCAL O SÍNTESIS)
+function speakWord(word, isSlow = false) {
+    const audioPlayer = document.getElementById('audioPlayer');
+    const item = vowelDatabase[activeVowel] ? vowelDatabase[activeVowel][carouselIdx] : null;
+
+    if (item && item.audio) {
+        // Usa archivo local
+        audioPlayer.src = isSlow ? item.audioSlow : item.audio;
+        audioPlayer.play().catch(e => console.warn("Error al reproducir:", e));
+    } else {
+        // Fallback a síntesis si no hay archivo
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.cancel();
+            const speech = new SpeechSynthesisUtterance(word);
+            speech.lang = 'es-MX';
+            speech.rate = isSlow ? 0.45 : 0.85;
+            window.speechSynthesis.speak(speech);
+        }
+    }
+}
+
+// CARRUSEL Y NAVEGACIÓN
+function startVowelLesson(vowel) {
+    activeVowel = vowel;
+    carouselIdx = 0;
+    switchPanel('panel-vowels-carousel');
+    renderCarouselItem();
+    setTimeout(speakActiveWord, 500);
+}
+
+function renderCarouselItem() {
+    if (!activeVowel) return;
+    const item = vowelDatabase[activeVowel][carouselIdx];
+    document.getElementById('wordNahuatl').textContent = item.word;
+    document.getElementById('wordImage').src = item.img;
+    
+    const meaningSpan = document.getElementById('wordSpanish');
+    meaningSpan.textContent = `Significado: ${item.es}`; // Ajusta esto según tu sistema de idiomas
+    document.getElementById('carouselProgressText').textContent = `Palabra ${carouselIdx + 1} de ${vowelDatabase[activeVowel].length}`;
+}
+
+function slideCarouselNext() {
+    carouselIdx = (carouselIdx + 1) % vowelDatabase[activeVowel].length;
+    renderCarouselItem();
+    speakActiveWord();
+}
+
+function slideCarouselPrev() {
+    carouselIdx = (carouselIdx - 1 + vowelDatabase[activeVowel].length) % vowelDatabase[activeVowel].length;
+    renderCarouselItem();
+    speakActiveWord();
+}
+
+// CONTROL DE PANELES
+function switchPanel(panelId) {
+    document.querySelectorAll('.section-panel').forEach(p => p.classList.remove('active'));
+    document.getElementById(panelId).classList.add('active');
+}
+
+function speakActiveWord() {
+    if (!activeVowel) return;
+    const word = vowelDatabase[activeVowel][carouselIdx].word;
+    speakWord(word, isPaceSlow);
+}
+       
+    
+           
+          
+
+           
+    
+    </script>
+
+</body>
+
+</html>
