@@ -781,44 +781,110 @@
                 <div class="mb-4 text-start">
                     <div class="row g-2 d-none" id="m-gal-historia">
                         <div class="col-12">
-                            <video src="/Recursos/videos_cultura/vide_historia.mp4"
-                                class="img-fluid rounded-3 border w-100" controls autoplay loop muted playsinline>
-                            </video>
+                            <a href="https://youtube.com/shorts/grFAXusjgtg?feature=share" target="_blank"
+                                rel="noopener noreferrer"
+                                class="tarjeta-video-yt d-block rounded-3 overflow-hidden position-relative border">
+
+                                <img src="https://img.youtube.com/vi/grFAXusjgtg/maxresdefault.jpg"
+                                    alt="Ver historia en YouTube" class="img-fluid w-100 d-block">
+
+                                <div
+                                    class="capa-play position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                                    <div
+                                        class="icono-play d-flex align-items-center justify-content-center rounded-circle">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white"
+                                            class="bi bi-play-fill" viewBox="0 0 16 16">
+                                            <path
+                                                d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
                     </div>
 
                     <div class="row g-2 d-none" id="m-gal-gastronomia">
-                        <div class="col-6"><img src="/Recursos/img_cultura/memela.JPG"
-                                class="img-fluid rounded-3 border w-100">
+                        <div class="col-6 position-relative">
+                            <div class="img-wrapper">
+                                <img src="/Recursos/img_cultura/memela.JPG"
+                                    class="img-fluid rounded-3 border w-100 img-interactiva"
+                                    onclick="interactuarImagen(this)">
+                                <button class="btn-interaccion" onclick="cerrarImagen(this)"></button>
+                            </div>
                         </div>
-                        <div class="col-6"><img src="/Recursos/img_cultura/memelas3.png"
-                                class="img-fluid rounded-3 border w-100">
+
+                        <div class="col-6 position-relative">
+                            <div class="img-wrapper">
+                                <img src="/Recursos/img_cultura/memelas3.png"
+                                    class="img-fluid rounded-3 border w-100 img-interactiva"
+                                    onclick="interactuarImagen(this)">
+                                <button class="btn-interaccion" onclick="cerrarImagen(this)"></button>
+                            </div>
                         </div>
                     </div>
+                    //
                     <div class="row g-2 d-none" id="m-gal-arqueologia">
-                        <div class="col-6"><img src="/Recursos/img_cultura/piramides.png"
-                                class="img-fluid rounded-3 border w-100">
+                        <div class="col-6 position-relative">
+                            <div class="img-wrapper">
+                                <img src="/Recursos/img_cultura/piramides.png"
+                                    class="img-fluid rounded-3 border w-100 img-interactiva"
+                                    onclick="interactuarImagen(this)">
+                                <button class="btn-interaccion" onclick="cerrarImagen(this)"></button>
+                            </div>
                         </div>
-                        <div class="col-6"><img src="/Recursos/img_cultura/iglesia.jpg"
-                                class="img-fluid rounded-3 border w-100">
+                        <div class="col-6 position-relative">
+                            <div class="img-wrapper">
+                                <img src="/Recursos/img_cultura/iglesia.jpg"
+                                    class="img-fluid rounded-3 border w-100 img-interactiva"
+                                    onclick="interactuarImagen(this)">
+                                <button class="btn-interaccion" onclick="cerrarImagen(this)"></button>
+                            </div>
                         </div>
                     </div>
+                    //
                     <div class="row g-2 d-none" id="m-gal-historica">
-                        <div class="col-6"><img src="/Recursos/img_cultura/pluma.JPG"
-                                class="img-fluid rounded-3 border w-100">
-                        </div>
-                        <div class="col-6"><img src="/Recursos/img_cultura/pies.JPG"
-                                class="img-fluid rounded-3 border w-100">
+                        <div class="col-12">
+                            <a href="https://youtu.be/Y1NF1w-sID4" target="_blank" rel="noopener noreferrer"
+                                class="tarjeta-video-yt d-block rounded-3 overflow-hidden position-relative border">
+
+                                <img src="https://img.youtube.com/vi/Y1NF1w-sID4/hqdefault.jpg"
+                                    alt="Ver video en YouTube" class="img-fluid w-100 d-block">
+
+                                <div
+                                    class="capa-play position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                                    <div
+                                        class="icono-play d-flex align-items-center justify-content-center rounded-circle">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white"
+                                            class="bi bi-play-fill" viewBox="0 0 16 16">
+                                            <path
+                                                d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
                     </div>
+                    //
                     <div class="row g-2 d-none" id="m-gal-textiles">
-                        <div class="col-6"><img src="/Recursos/img_cultura/mujervestido.jpg"
-                                class="img-fluid rounded-3 border w-100">
+                        <div class="col-6 position-relative">
+                            <div class="img-wrapper">
+                                <img src="/Recursos/img_cultura/mujervestido.jpg"
+                                    class="img-fluid rounded-3 border w-100 img-interactiva"
+                                    onclick="interactuarImagen(this)">
+                                <button class="btn-interaccion" onclick="cerrarImagen(this)"></button>
+                            </div>
                         </div>
-                        <div class="col-6"><img src="/Recursos/img_cultura/trajes.jpg"
-                                class="img-fluid rounded-3 border w-100">
+
+                        <div class="col-6 position-relative">
+                            <div class="img-wrapper">
+                                <img src="/Recursos/img_cultura/trajes.jpg"
+                                    class="img-fluid rounded-3 border w-100 img-interactiva"
+                                    onclick="interactuarImagen(this)">
+                                <button class="btn-interaccion" onclick="cerrarImagen(this)"></button>
+                            </div>
                         </div>
                     </div>
+                    //
                 </div>
 
                 <button class="btn btn-dark w-100 rounded-pill fw-bold py-2 shadow-sm" onclick="cerrarSeccion()">
