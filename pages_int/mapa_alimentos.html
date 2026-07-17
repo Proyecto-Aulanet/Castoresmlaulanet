@@ -543,7 +543,7 @@
                 L 420 580
                 A 120 120 0 0 0 300 700
                 A 120 120 0 0 0 420 820
-                L 750 820
+                L 1000 820
                 "/>
 
             <!-- CAMINO -->
@@ -564,7 +564,7 @@
                 L 420 580
                 A 120 120 0 0 0 300 700
                 A 120 120 0 0 0 420 820
-                L 750 820
+                L 1000 820
                 "/>
 
             <!-- META -->
@@ -578,7 +578,7 @@
             <!-- INICIO -->
 
             <circle
-                cx="750"
+                cx="950"
                 cy="820"
                 r="50"
                 fill="white"
@@ -623,7 +623,7 @@
             <!-- NIVEL 1 -->
 
             <g class="nivel-svg completado" data-id="1"
-            onclick="window.location.href='/lecciones/saludos/sal_1-1.html'">          
+            onclick="window.location.href='/lecciones/colores/col_1-1.html'">          
 
                 <!-- Se agrego esto para que pueda funcionar el boton de los niveles -->
                 <rect x="300" y="50" width="100" height="100" fill="transparent" />
@@ -649,7 +649,7 @@
             <!-- NIVEL 2 -->
 
             <g class="nivel-svg completado" data-id="2" 
-            onclick="window.location.href='/lecciones/saludos/sal_1-1.html'">
+            onclick="window.location.href='/lecciones/colores/col_1-1.html'">
 
             <!-- Se agrego esto para que pueda funcionar el boton de los niveles -->
                 <rect x="180" y="210" width="100" height="100" fill="transparent" />
@@ -675,7 +675,7 @@
             <!-- NIVEL 3 -->
 
             <g class="nivel-svg completado" data-id="3"
-            onclick="window.location.href='/lecciones/saludos/sal_juego1.html'">
+            onclick="window.location.href='/lecciones/colores/col_juego1.html'">
 
             <!-- Se agrego esto para que pueda funcionar el boton de los niveles -->
                 <rect x="470" y="290" width="100" height="100" fill="transparent" />
@@ -701,7 +701,7 @@
             <!-- NIVEL 4 -->
 
             <g class="nivel-svg actual" data-id="4"
-            onclick="window.location.href='/lecciones/saludos/sal_1-2.html'">
+            onclick="window.location.href='/lecciones/colores/col_1-2.html'">
 
                 <!-- Se agrego esto para que pueda funcionar el boton de los niveles -->
                 <rect x="790" y="290" width="100" height="100" fill="transparent" />
@@ -727,7 +727,7 @@
             <!-- NIVEL 5 -->
 
             <g class="nivel-svg bloqueado" data-id="5"
-            onclick="window.location.href='/lecciones/saludos/sal_1-2.html'">
+            onclick="window.location.href='/lecciones/colores/col_1-2.html'">
 
                 <!-- Se agrego esto para que pueda funcionar el boton de los niveles -->
                 <rect x="870" y="490" width="100" height="100" fill="transparent" />
@@ -753,7 +753,7 @@
             <!-- NIVEL 6 -->
 
             <g class="nivel-svg bloqueado" data-id="6"
-            onclick="window.location.href='/lecciones/saludos/sal_juego2.html'">
+            onclick="window.location.href='/lecciones/colores/col_juego2.html'">
 
                 <!-- Se agrego esto para que pueda funcionar el boton de los niveles -->
                 <rect x="570" y="530" width="100" height="100" fill="transparent" />
@@ -778,7 +778,8 @@
 
             <!-- NIVEL 7 -->
 
-            <g class="nivel-svg bloqueado" data-id="7">
+            <g class="nivel-svg bloqueado" data-id="7"
+            onclick="window.location.href='/lecciones/colores/col_1-3.html'">
 
                 <!-- Se agrego esto para que pueda funcionar el boton de los niveles -->
                 <rect x="310" y="540" width="100" height="100" fill="transparent" />
@@ -827,10 +828,10 @@
             </g>
 
             <!-- NIVEL 9 -->
-<!--
+
             <g class="nivel-svg bloqueado" data-id="9">
 
-                  Se agrego esto para que pueda funcionar el boton de los niveles 
+                 <!-- Se agrego esto para que pueda funcionar el boton de los niveles -->
                 <rect x="520" y="770" width="100" height="100" fill="transparent" />
 
                 <circle cx="575" cy="828" r="50" fill="#8D8D8D"/>
@@ -849,32 +850,44 @@
 
                 </text>
 
-            </g> -->
-
-            <!-- TROFEO -->
-
-            <g class="nivel-svg trofeo"
-            data-id="10">
-
-             <!-- Se agrego esto para que pueda funcionar el boton de los niveles -->
-                <rect x="700" y="770" width="100" height="100" fill="transparent" />
-
-                <circle cx="750" cy="820" r="50" fill="#FF9800"/>
-
-                <text
-                    x="750"
-                    y="820"
-                    fill="white"
-                    font-size="34"
-                    font-weight="700"
-                    text-anchor="middle"
-                    dominant-baseline="middle">
-
-                    ★
-
-                </text>
-
             </g>
+
+            <!-- NIVEL 10 -->
+
+                <g class="nivel-svg bloqueado" data-id="10">
+
+                    <!-- Se agrego esto para que pueda funcionar el boton de los niveles -->
+                <rect x="720" y="770" width="100" height="100" fill="transparent" />
+
+                    <circle cx="775" cy="828" r="50" fill="#8D8D8D" />
+                    <circle cx="770" cy="820" r="50" fill="#C7C7C7" />
+
+                    <text x="770" y="820" fill="white" font-size="30" font-weight="700" text-anchor="middle"
+                        dominant-baseline="middle">
+
+                        10
+
+                    </text>
+
+                </g>
+
+                <!-- TROFEO -->
+
+                <g class="nivel-svg trofeo" data-id="10">
+
+                    <!-- Se agrego esto para que pueda funcionar el boton de los niveles -->
+                <rect x="900" y="770" width="100" height="100" fill="transparent" />
+                
+                    <circle cx="950" cy="820" r="50" fill="#FF9800" />
+
+                    <text x="950" y="820" fill="white" font-size="34" font-weight="700" text-anchor="middle"
+                        dominant-baseline="middle">
+
+                        ★
+
+                    </text>
+
+                </g>
         </svg>
 
 
@@ -1081,40 +1094,47 @@
             const nivel4 = document.querySelector('[data-id="4"]');
             const nivel5 = document.querySelector('[data-id="5"]');
             const nivel6 = document.querySelector('[data-id="6"]');
+            const nivel7 = document.querySelector('[data-id="7"]');
 
             if (nivel1) {
                 nivel1.addEventListener('click', () => {
-                    window.location.href = 'lecciones/saludos/sal_1-1.html';
+                    window.location.href = 'lecciones/colores/col_1-1.html';
                 });
             }
 
             if (nivel2) {
                 nivel2.addEventListener('click', () => {
-                    window.location.href = 'lecciones/saludos/sal_1-1.html';
+                    window.location.href = 'lecciones/colores/col_1-1.html';
                 });
             }
 
             if (nivel3) {
                 nivel3.addEventListener('click', () => {
-                    window.location.href = 'lecciones/saludos/sal_juego1.html';
+                    window.location.href = 'lecciones/colores/col_juego1.html';
                 });
             }
 
             if (nivel4) {
                 nivel4.addEventListener('click', () => {
-                    window.location.href = 'lecciones/saludos/sal_1-2.html';
+                    window.location.href = 'lecciones/colores/col_1-2.html';
                 });
             }
 
              if (nivel5) {
                 nivel5.addEventListener('click', () => {
-                    window.location.href = 'lecciones/saludos/sal_1-2.html';
+                    window.location.href = 'lecciones/colores/col_1-2.html';
                 });
             }
 
              if (nivel6) {
                 nivel6.addEventListener('click', () => {
-                    window.location.href = 'lecciones/saludos/sal_juego2.html';
+                    window.location.href = 'lecciones/colores/col_juego2.html';
+                });
+            }
+
+            if (nivel7) {
+                nivel7.addEventListener('click', () => {
+                    window.location.href = 'lecciones/colores/col_1-3.html';
                 });
             }
 

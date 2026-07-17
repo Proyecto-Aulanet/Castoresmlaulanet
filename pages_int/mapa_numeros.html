@@ -543,7 +543,7 @@
                 L 420 580
                 A 120 120 0 0 0 300 700
                 A 120 120 0 0 0 420 820
-                L 750 820
+                L 1000 820
                 "/>
 
             <!-- CAMINO -->
@@ -564,7 +564,7 @@
                 L 420 580
                 A 120 120 0 0 0 300 700
                 A 120 120 0 0 0 420 820
-                L 750 820
+                L 1000 820
                 "/>
 
             <!-- META -->
@@ -578,7 +578,7 @@
             <!-- INICIO -->
 
             <circle
-                cx="750"
+                cx="950"
                 cy="820"
                 r="50"
                 fill="white"
@@ -852,30 +852,42 @@
 
             </g>
 
-            <!-- TROFEO -->
+            <!-- NIVEL 10 -->
 
-            <g class="nivel-svg trofeo"
-            data-id="10">
+                <g class="nivel-svg bloqueado" data-id="10">
 
-             <!-- Se agrego esto para que pueda funcionar el boton de los niveles -->
-                <rect x="700" y="770" width="100" height="100" fill="transparent" />
+                    <!-- Se agrego esto para que pueda funcionar el boton de los niveles -->
+                <rect x="720" y="770" width="100" height="100" fill="transparent" />
 
-                <circle cx="750" cy="820" r="50" fill="#FF9800"/>
+                    <circle cx="775" cy="828" r="50" fill="#8D8D8D" />
+                    <circle cx="770" cy="820" r="50" fill="#C7C7C7" />
 
-                <text
-                    x="750"
-                    y="820"
-                    fill="white"
-                    font-size="34"
-                    font-weight="700"
-                    text-anchor="middle"
-                    dominant-baseline="middle">
+                    <text x="770" y="820" fill="white" font-size="30" font-weight="700" text-anchor="middle"
+                        dominant-baseline="middle">
 
-                    ★
+                        10
 
-                </text>
+                    </text>
 
-            </g>
+                </g>
+
+                <!-- TROFEO -->
+
+                <g class="nivel-svg trofeo" data-id="10">
+
+                    <!-- Se agrego esto para que pueda funcionar el boton de los niveles -->
+                <rect x="900" y="770" width="100" height="100" fill="transparent" />
+                
+                    <circle cx="950" cy="820" r="50" fill="#FF9800" />
+
+                    <text x="950" y="820" fill="white" font-size="34" font-weight="700" text-anchor="middle"
+                        dominant-baseline="middle">
+
+                        ★
+
+                    </text>
+
+                </g>
         </svg>
 
 
