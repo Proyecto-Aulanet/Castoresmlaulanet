@@ -114,22 +114,22 @@
 
         /* GAMA DE COLORES DEGRADADOS PARA LAS TARJETAS CUADRADAS */
         .card-vowel-a { 
-            background: linear-gradient(135deg, #c33764 0%, #1d2671 100%); 
+            background: linear-gradient(135deg, #d67474 0%, #ffffff 100%); 
         }
         .card-vowel-e { 
-            background: linear-gradient(135deg, #11998e 0%, #74e338 100%); 
+            background: linear-gradient(135deg, #f3d573 0%, #ffffff 100%); 
         }
         .card-vowel-i { 
-            background: linear-gradient(135deg, #662f18 0%, #eec36e 100%); 
+            background: linear-gradient(135deg, #90d86e 0%, #ffffff 100%); 
         }
         .card-vowel-o { 
-            background: linear-gradient(135deg, #7f00ff 0%, #e100ff 100%); 
+            background: linear-gradient(135deg, #8078ed 0%, #ffffff 100%); 
         }
 
         /* TEXTOS ADAPTADOS PARA LOS FONDOS MULTICOLORES */
         .vowel-square-card p {
             font-size: 14px;
-            color: rgba(255, 255, 255, 0.95) !important;
+            color: rgba(0, 0, 0, 0.95) !important;
             line-height: 1.45;
             margin: 10px 0 0 0;
             font-weight: 500;
@@ -1121,14 +1121,7 @@ function speakActiveWord() {
     if (!activeVowel) return;
     const word = vowelDatabase[activeVowel][carouselIdx].word;
     speakWord(word, isPaceSlow);
-}
-       
-    
-           
-          
-
-           
-    
+}  
     </script>
 
 </body>
