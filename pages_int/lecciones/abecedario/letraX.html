@@ -419,83 +419,163 @@
     </div><br><br><br><br><br><br><br><br><br>
     <!-- Contenedor principal de la sección de la "X" -->
 <!-- Contenedor de la sección "X" unificada en una sola tarjeta de gran impacto -->
+
 <div class="container py-5">
+
   <div class="row justify-content-center">
+
     <div class="col-12 col-lg-9">
-      
+
+     
+
       <!-- Tarjeta Mezclada: Todo en uno -->
+
       <div class="card border-0 shadow-sm overflow-hidden" style="border-radius: 28px; background-color: #FFF3E0; border: 2px solid #FFE0B2 !important;">
-        
+
+       
+
         <!-- PARTE SUPERIOR: Teoría y Presentación del Sonido (Estilo Tarjeta 1) -->
+
         <div class="card-header border-0 p-5 text-center position-relative" style="background-color: #ffffff; border-radius: 28px 28px 0 0;">
+
           <div class="mb-3">
+
             <!-- Icono decorativo de flor para Xóchitl -->
-            <span class="display-4" style="color: #FF5722;">🌸</span>
+
+            <span class="display-4"> <img src="/Recursos/alfabeto/equis.png" alt="Equis con Nahui " class="img-fluid" style="max-height: 300px;"></span>
+
           </div>
+
           <h2 class="fw-bold mb-3" style="color: #1a1a1a;"
-              data-es="El sonido de la 'X'" 
+
+              data-es="El sonido de la 'X'"
+
               data-na="In nahuatiltzintli 'X'">
+
             El sonido de la "X"
+
           </h2>
+
           <p class="text-muted mx-auto" style="font-size: 1.05rem; line-height: 1.6; max-width: 650px;"
+
              data-es="En náhuatl, la letra 'X' no suena como en español. Su pronunciación es idéntica al sonido 'sh' en inglés (como en 'show'). Deja salir el aire de forma suave y continua."
+
              data-na="Ipan nahuatlahtolli, in nahuatiltzintli 'X' amo nahuati ken ipan caxtillahtolli. Inin tlatzotzonalis nahuati ken 'sh' ipan inglestlahtolli. Xicchiua se yamanic ehecatl tlahco tlen motlantzitzinhuan.">
+
             En náhuatl, la letra "X" no suena como en español. Su pronunciación es idéntica al sonido "sh" en inglés (como en "show"). Deja salir el aire de forma suave y continua.
+
           </p>
-          
+
+         
+
           <!-- Línea decorativa sutil de transición -->
+
           <div class="mx-auto mt-4" style="width: 60px; height: 4px; background-color: #FFCC80; border-radius: 2px;"></div>
+
         </div>
 
+
+
         <!-- PARTE INFERIOR: Práctica Interactiva (Estilo Tarjeta 2) -->
+
         <div class="card-body p-5 text-center position-relative d-flex flex-column justify-content-between" style="min-height: 420px;">
-          
+
+         
+
           <!-- Botón flotante para escuchar el audio de la palabra actual -->
+
           <button class="btn-audio-speaker" aria-label="Escuchar pronunciación" onclick="reproducirAudioX()" style="top: 25px; right: 25px;">
+
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#E65100" class="bi bi-volume-up-fill" viewBox="0 0 16 16">
+
               <path d="M11.536 14.01A8.47 8.47 0 0 0 14 10.246a8.47 8.47 0 0 0-2.464-3.764.5.5 0 0 0-.707.707 7.47 7.47 0 0 1 2.17 3.057 7.47 7.47 0 0 1-2.17 3.057.5.5 0 0 0 .707.707m-2.12-2.121A5.48 5.48 0 0 0 11 10.246a5.48 5.48 0 0 0-1.584-3.15.5.5 0 0 0-.707.707 4.48 4.48 0 0 1 1.293 2.443 4.48 4.48 0 0 1-1.293 2.443.5.5 0 0 0 .707.707M10 10.246a3.5 3.5 0 0 0-1.012-2.121.5.5 0 0 0-.707.707 2.48 2.48 0 0 1 .719 1.414.5.5 0 0 0 .937.193z"/>
+
               <path d="M4 4a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .5.5h1.586l4.707 4.707C10.923 17.333 12 16.893 12 15V1a12 12 0 0 0-1.707-.707L5.586 5zm1.5-3v8.586l-3.354-3.354A.5.5 0 0 0 1.793 6H.5a.5.5 0 0 0 0 1h1.293a.5.5 0 0 0 .353-.146z"/>
+
             </svg>
+
           </button>
 
+
+
           <span class="text-uppercase fw-semibold tracking-wider d-block mb-3" style="font-size: 0.85rem; color: #E65100;"
-                data-es="Practica la pronunciación con este carrusel" 
+
+                data-es="Practica la pronunciación con este carrusel"
+
                 data-na="Ximomachti kenin tlahtoa nican">
+
             Practica la pronunciación con este carrusel
+
           </span>
-          
           <!-- Área de la ilustración con transiciones -->
+
           <div class="my-4">
-            <img id="img-x-mezclada" src="img/xochitl.png" alt="Ilustración" class="img-fluid" style="max-height: 140px; object-fit: contain; transition: opacity 0.2s ease;">
+
+            <img id="img-x-mezclada"  alt="Ilustración" class="img-fluid" style="max-height: 140px; object-fit: contain; transition: opacity 0.2s ease;">
+
+          </div>
+          <!-- Bloque de palabras y significados dinámicos -->
+
+          <div class="mb-4">
+
+            <p class="text-muted mb-1" style="font-size: 0.95rem;" id="intro-traduccion-x-mezclada">
+
+              La palabra "<span id="label-x-actual">Xochitl</span>" significa en español:
+
+            </p>
+
+            <h1 id="palabra-x-actual" class="display-3 fw-bold mb-2" style="color: #E65100; letter-spacing: -1px;">Xochitl</h1>
+
+            <p id="nota-x-actual" class="text-muted small mx-auto" style="max-width: 500px;">Se lee "shóchitl" deslizando el aire suavemente.</p>
+
+           
+
+            <div class="py-2 px-4 d-inline-block rounded-pill mt-2" style="background-color: #FFE0B2;">
+
+              <span id="significado-x-actual" class="fw-bold" style="color: #E65100; font-size: 1.3rem;">Significado: Flor</span>
+
+            </div>
+
           </div>
 
-          <!-- Bloque de palabras y significados dinámicos -->
-          <div class="mb-4">
-            <p class="text-muted mb-1" style="font-size: 0.95rem;" id="intro-traduccion-x-mezclada">
-              La palabra "<span id="label-x-actual">Xochitl</span>" significa en español:
-            </p>
-            <h1 id="palabra-x-actual" class="display-3 fw-bold mb-2" style="color: #E65100; letter-spacing: -1px;">Xochitl</h1>
-            <p id="nota-x-actual" class="text-muted small mx-auto" style="max-width: 500px;">Se lee "shóchitl" deslizando el aire suavemente.</p>
-            
-            <div class="py-2 px-4 d-inline-block rounded-pill mt-2" style="background-color: #FFE0B2;">
-              <span id="significado-x-actual" class="fw-bold" style="color: #E65100; font-size: 1.3rem;">Significado: Flor</span>
-            </div>
-          </div>
+
 
           <!-- Controles inferiores de navegación (Estilo píldora flotante) -->
+
           <div class="d-flex justify-content-between align-items-center mt-3 mx-auto" style="width: 100%; max-width: 320px;">
-            <button class="btn-nav" style="border: 1px solid #FFCC80; background: #fff; width: 44px; height: 44px; border-radius: 50%;" aria-label="Anterior" onclick="navegarX(-1)">
+
+            <button class="btn-nav" style="border: 1px solid #d73131;; background: #faa6d5; width: 44px; height: 44px; border-radius: 50%;" aria-label="Anterior" onclick="navegarX(-1)">
+
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#E65100" class="bi bi-chevron-left" viewBox="0 0 16 16">
+
                 <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.707.707l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+
               </svg>
+
             </button>
+
             <span id="contador-x-mezclado" class="text-muted fw-bold" style="font-size: 0.95rem;">1 de 10</span>
-            <button class="btn-nav" style="border: 1px solid #FFCC80; background: #fff; width: 44px; height: 44px; border-radius: 50%;" aria-label="Siguiente" onclick="navegarX(1)">
+
+            <button class="btn-nav" style="border: 1px solid #d73131; background: #faa6d5; width: 44px; height: 44px; border-radius: 50%;" aria-label="Siguiente" onclick="navegarX(1)">
+
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#E65100" class="bi bi-chevron-right" viewBox="0 0 16 16">
+
                 <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 3.354a.5.5 0 0 1 0-.708z"/>
+
               </svg>
+
             </button>
+
           </div>
+
+
+
+        </div>
+
+
+
+<!-- Etiqueta de audio necesaria para el JS -->
+<audio id="audioPlayerX"></audio>
 
         </div>
       </div>
@@ -507,6 +587,26 @@
   </div>
 </div>
         </main>
+          <section class="container">
+        <div
+            class="d-flex justify-content-start mt-5"
+            data-aos="fade-right">
+
+            <button
+                onclick="window.location.href='/pages_int/mapa_abecedario.html'"
+                class="btn-regresar-int">
+
+                <i class="bi bi-arrow-left-circle-fill me-2"></i>
+
+                <span
+                    data-es="Regresar"
+                    data-na="Mokuepa">
+
+                    Regresar
+
+                </span>
+
+            </button>
     </div>
 
 <br>
@@ -654,6 +754,7 @@
 
     <!-- JS -->
     <script src="/js/app.js"></script>
+    
     <script>
         // Catálogo de 10 palabras con "X" representativas del Náhuatl
 // Vocabulario para el componente mezclado de la "X"
@@ -664,8 +765,8 @@ const palabrasXMezcladas = [
     significadoNA: "Xochitl",
     notaES: "Pronuncia 'shóchitl'. Junta el sonido de la 'sh' con la 'o' y termina con 'tl'.",
     notaNA: "Xiquihtto 'shóchitl'. Xiccentlali in 'sh' ica 'o' ihuan xitlamici ica '-tl'.",
-    imagen: "img/xochitl.png",
-    audio: "audios/xochitl.mp3"
+    imagen: "/Recursos/alfabeto/flor.jpg",
+    audio: "/Recursos/audios/abecedario/ATK.ogg"
   },
   {
     palabra: "Xitomatl",
@@ -673,7 +774,7 @@ const palabrasXMezcladas = [
     significadoNA: "Xitomatl",
     notaES: "Origen de la palabra jitomate. Suena 'shi-tó-matl'.",
     notaNA: "Nican wallauh in tlahtolli jitomate. Nahuati 'shi-tó-matl'.",
-    imagen: "img/xitomatl.png",
+    imagen: "/Recursos/alfabeto/jitomate.jpg",
     audio: "audios/xitomatl.mp3"
   },
   {
@@ -682,7 +783,7 @@ const palabrasXMezcladas = [
     significadoNA: "Xonacatl",
     notaES: "Suena 'sho-ná-catl'. ¡Evita pronunciarlo como la 'j' de jirafa!",
     notaNA: "Nahuati 'sho-ná-catl'. ¡Amo xicchiua ken 'j' ipan caxtillahtolli!",
-    imagen: "img/xonacatl.png",
+    imagen: "/Recursos/alfabeto/cebolla.jpg",
     audio: "audios/xonacatl.mp3"
   },
   {
@@ -691,7 +792,7 @@ const palabrasXMezcladas = [
     significadoNA: "Xalli",
     notaES: "Se pronuncia 'shá-lli'. Recuerda que la doble 'l' se alarga un poquito.",
     notaNA: "Nahuati 'shá-lli'. Xiccohcihuic in 'l' tlahco, amo nahuati ken 'y'.",
-    imagen: "img/xalli.png",
+    imagen: "/Recursos/alfabeto/arena.jpg",
     audio: "audios/xalli.mp3"
   },
   {
@@ -700,7 +801,7 @@ const palabrasXMezcladas = [
     significadoNA: "Xilotl",
     notaES: "Suena 'shí-lotl'. Es el maíz tierno cuando brotan sus caballitos.",
     notaNA: "Nahuati 'shí-lotl'. In elotl tlen yamanic ihuan quixtia itzonic.",
-    imagen: "img/xilotl.png",
+    imagen: "/Recursos/alfabeto/jilote.jpg",
     audio: "audios/xilotl.mp3"
   },
   {
@@ -709,7 +810,7 @@ const palabrasXMezcladas = [
     significadoNA: "Xocomecatl",
     notaES: "Literalmente es 'el lazo o cordel de frutas agrias'. Suena 'sho-co-mé-catl'.",
     notaNA: "Quihtoznequi 'mecatl tlen xococ'. Nahuati 'sho-co-mé-catl'.",
-    imagen: "img/xocomecatl.png",
+    imagen: "/Recursos/alfabeto/uva.jpg",
     audio: "audios/xocomecatl.mp3"
   },
   {
@@ -718,7 +819,7 @@ const palabrasXMezcladas = [
     significadoNA: "Xoloitzcuintli",
     notaES: "Una de nuestras palabras más famosas. Suena 'sho-lo-its-cuín-tli'.",
     notaNA: "Se tlahtolli hueyi yehce qualzin. Nahuati 'sho-lo-its-cuín-tli'.",
-    imagen: "img/xoloitzcuintli.png",
+    imagen: "/Recursos/alfabeto/xoloitzcuencle.jpg",
     audio: "audios/xoloitzcuintli.mp3"
   },
   {
@@ -727,7 +828,7 @@ const palabrasXMezcladas = [
     significadoNA: "Xoxouhqui",
     notaES: "Se pronuncia 'sho-shóuh-qui'. El sonido de la 'X' se repite al inicio.",
     notaNA: "Nahuati 'sho-shóuh-qui'. In nahuatiltzintli 'X' mochiua omepa.",
-    imagen: "img/xoxouhqui.png",
+    imagen: "/Recursos/alfabeto/verde.jpg",
     audio: "audios/xoxouhqui.mp3"
   },
   {
@@ -736,7 +837,7 @@ const palabrasXMezcladas = [
     significadoNA: "Xoctli",
     notaES: "Pronuncia 'shóc-tli'. La 'c' suena como un golpe de aire suave (saltillo).",
     notaNA: "Nahuati 'shóc-tli'. In nahuatiltzintli 'c' se yamanic ehecatl (saltillo).",
-    imagen: "img/xoctli.png",
+    imagen: "/Recursos/alfabeto/olla.jpg",
     audio: "audios/xoctli.mp3"
   },
   {
@@ -745,7 +846,7 @@ const palabrasXMezcladas = [
     significadoNA: "Xicalli",
     notaES: "Origen de la palabra jícara. Se pronuncia 'shi-cá-lli'.",
     notaNA: "Nican wallauh in tlahtolli jícara. Nahuati 'shi-cá-lli'.",
-    imagen: "img/xicalli.png",
+    imagen: "/Recursos/alfabeto/jicara.jpg",
     audio: "audios/xicalli.mp3"
   }
 ];
@@ -808,19 +909,19 @@ function navegarX(direccion) {
   renderXMezclada();
 }
 
-function reproducirAudioX() {
-  const item = palabrasXMezcladas[indiceXMezclado];
-
-  if (audioXMezclado) {
-    audioXMezclado.pause();
-    audioXMezclado.currentTime = 0;
-  }
-
-  audioXMezclado = new Audio(item.audio);
-
-  audioXMezclado.play().catch(error => {
-    console.warn(`No se pudo reproducir: "${item.audio}". Verifica la ruta del archivo.`);
-  });
+function reproducirAudioX(velocidad = 1) {
+    const item = palabrasXMezcladas[indiceXMezclado];
+    const audioPlayer = document.getElementById('audioPlayerX');
+    
+    // 1. Asignamos la fuente (sin la barra inicial / para asegurar ruta relativa)
+    // Asegúrate de que item.audio tenga la ruta correcta, ej: "Recursos/audios/..."
+    audioPlayer.src = item.audio; 
+    
+    // 2. Control de velocidad
+    audioPlayer.playbackRate = velocidad;
+    
+    // 3. Reproducir
+    audioPlayer.play().catch(e => console.warn("Error al cargar audio:", e));
 }
 
 // Integración con el sistema de idioma global
