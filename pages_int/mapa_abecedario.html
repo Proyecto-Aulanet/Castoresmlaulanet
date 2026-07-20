@@ -473,8 +473,7 @@
 
                 <!-- NIVEL 1 -->
 
-                <g class="nivel-svg completado" data-id="1"
-                onclick="window.location.href='/Tem1_Abecedario/Leccion1.2.html'">
+                <g class="nivel-svg completado" data-id="1">
 
                     <!-- Se agrego esto para que pueda funcionar el boton de los niveles -->
                     <rect x="300" y="50" width="100" height="100" fill="transparent" />
@@ -493,8 +492,7 @@
 
                 <!-- NIVEL 2 -->
 
-                <g class="nivel-svg bloqueado" data-id="2"
-                    onclick="window.location.href='/Tem1_Abecedario/Leccion1.2.html'">
+                <g class="nivel-svg bloqueado" data-id="2">
 
                     <!-- Se agrego esto para que pueda funcionar el boton de los niveles -->
                     <rect x="180" y="210" width="100" height="100" fill="transparent" />
@@ -513,8 +511,7 @@
 
                 <!-- NIVEL 3 -->
 
-                <g class="nivel-svg bloqueado" data-id="3"
-                    onclick="window.location.href='/Tem1_Abecedario/Leccion1.3.html'">
+                <g class="nivel-svg bloqueado" data-id="3">
 
                     <!-- Se agrego esto para que pueda funcionar el boton de los niveles -->
                     <rect x="470" y="290" width="100" height="100" fill="transparent" />
@@ -666,7 +663,7 @@
 
                 <!-- TROFEO -->
 
-                <g class="nivel-svg trofeo" data-id="10">
+                <g class="nivel-svg trofeo" data-id="11">
 
                     <!-- Se agrego esto para que pueda funcionar el boton de los niveles -->
                 <rect x="900" y="770" width="100" height="100" fill="transparent" />
@@ -810,33 +807,7 @@
 
     </footer>
 
-    <script>
-        window.addEventListener('load', () => {
-
-            const nivel1 = document.querySelector('[data-id="1"]');
-            const nivel2 = document.querySelector('[data-id="2"]');
-            const nivel3 = document.querySelector('[data-id="3"]');
-
-            if (nivel1) {
-                nivel1.addEventListener('click', () => {
-                    window.location.href = 'lecciones/abecedario/vocales1.html';
-                });
-            }
-
-            if (nivel2) {
-                nivel2.addEventListener('click', () => {
-                    window.location.href = 'Tem1_Abecedario/Leccion1.2.html';
-                });
-            }
-
-            if (nivel3) {
-                nivel3.addEventListener('click', () => {
-                    window.location.href = 'Tem1_Abecedario/Leccion1.3.html';
-                });
-            }
-
-        });
-    </script>
+    
 
     <!-- BOOTSTRAP -->
     <script src="/assets/js/bootstrap.bundle.min.js"></script>
@@ -872,6 +843,84 @@
                 behavior: 'smooth'
             });
         }
+    </script>
+
+    <!-- Sirve para los niveles -->
+    <script>
+        window.addEventListener('load', () => {
+
+            const nivel1 = document.querySelector('[data-id="1"]');
+            const nivel2 = document.querySelector('[data-id="2"]');
+            const nivel3 = document.querySelector('[data-id="3"]');
+            const nivel4 = document.querySelector('[data-id="4"]');
+            const nivel5 = document.querySelector('[data-id="5"]');
+            const nivel6 = document.querySelector('[data-id="6"]');
+            const nivel7 = document.querySelector('[data-id="7"]');
+            const nivel8 = document.querySelector('[data-id="8"]');
+            const nivel9 = document.querySelector('[data-id="9"]');
+            const nivel10 = document.querySelector('[data-id="10"]');
+
+            if (nivel1) {
+                nivel1.addEventListener('click', () => {
+                    window.location.href = 'lecciones/abecedario/vocales1.html';
+                });
+            }
+
+            if (nivel2) {
+                nivel2.addEventListener('click', () => {
+                    window.location.href = 'lecciones/abecedario/col_1-1.html';
+                });
+            }
+
+            if (nivel3) {
+                nivel3.addEventListener('click', () => {
+                    window.location.href = 'lecciones/abecedario/abe_juego1.html';
+                });
+            }
+
+            if (nivel4) {
+                nivel4.addEventListener('click', () => {
+                    window.location.href = 'lecciones/abecedario/letrasTL.html';
+                });
+            }
+
+             if (nivel5) {
+                nivel5.addEventListener('click', () => {
+                    window.location.href = 'lecciones/abecedario/col_1-2.html';
+                });
+            }
+
+             if (nivel6) {
+                nivel6.addEventListener('click', () => {
+                    window.location.href = 'lecciones/abecedario/abe_juego2.html';
+                });
+            }
+
+            if (nivel7) {
+                nivel7.addEventListener('click', () => {
+                    window.location.href = 'lecciones/abecedario/letraH.html';
+                });
+            }
+
+            if (nivel8) {
+                nivel8.addEventListener('click', () => {
+                    window.location.href = 'lecciones/abecedario/.html';
+                });
+            }
+
+            if (nivel9) {
+                nivel9.addEventListener('click', () => {
+                    window.location.href = 'lecciones/abecedario/abe_juego3.html';
+                });
+            }
+
+            if (nivel10) {
+                nivel10.addEventListener('click', () => {
+                    window.location.href = 'lecciones/abecedario/letraX.html';
+                });
+            }
+
+        });
     </script>
 
     <!-- JS -->
