@@ -658,44 +658,6 @@
 
     </footer>
 
-
-    <!-- =================================================== -->
-    <!-- COMPONENTE FLOTANTE: CHAT DE IA (AMIGO NAHUI)       -->
-    <!-- =================================================== -->
-    <div class="position-fixed bottom-0 end-0 m-4" style="z-index: 1050;">
-        <button id="chat-toggle-btn" class="btn btn-success rounded-circle shadow-lg d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;" onclick="toggleChatbox()">
-            <i class="bi bi-robot fs-3"></i>
-        </button>
-
-        <div id="chatbox-container" class="card bg-dark border-success shadow-lg d-none flex-column rounded-4" style="width: 360px; height: 480px; position: absolute; bottom: 75px; right: 0;">
-            <div class="card-header bg-success text-white d-flex justify-content-between align-items-center py-3 rounded-top-4">
-                <div class="d-flex align-items-center gap-2">
-                    <img src="/Recursos/nahui_caras/nahui_feliz_vector.svg" alt="Nahui" style="width: 30px; height: 30px; border-radius: 50%; background: white; padding: 2px;">
-                    <div>
-                        <h6 class="m-0 fw-bold">Amigo Nahui</h6>
-                        <small class="opacity-75" style="font-size: 0.75rem;">Tutor de Náhuatl</small>
-                    </div>
-                </div>
-                <button type="button" class="btn-close btn-close-white" onclick="toggleChatbox()"></button>
-            </div>
-
-            <div id="chatbox-body" class="card-body p-3 overflow-y-auto d-flex flex-column gap-2" style="background-color: #1a1d20;">
-                <div class="bg-secondary text-white p-2 rounded-3 align-self-start" style="max-width: 85%; font-size: 0.9rem;">
-                    ¡Piyali! Notoica Amigo Nahui. ¿Tlein ticnequi ticmatiz tlen nahuatlahtolli?
-                </div>
-            </div>
-
-            <div class="card-footer bg-dark border-top border-secondary p-2 rounded-bottom-4">
-                <form id="chatbox-form" onsubmit="enviarMensajeIA(event)" class="d-flex gap-2">
-                    <input type="text" id="chatbox-input" class="form-control bg-secondary text-white border-0" placeholder="Aman xitlahtolchihua..." autocomplete="off" required>
-                    <button type="submit" class="btn btn-success d-flex align-items-center justify-content-center">
-                        <i class="bi bi-send-fill"></i>
-                    </button>
-                </form>
-            </div>
-        </div>
-    </div>
-
     <!-- BOOTSTRAP -->
     <script src="/assets/js/bootstrap.bundle.min.js"></script>
 
@@ -712,6 +674,14 @@
 
     <!-- JS -->
     <script src="/js/app.js"></script>
+
+    <!-- chat bot -->
+    <script type="module" src="https://cdn.landbot.io/landbot-3/landbot-3.0.0.mjs"></script>
+    <script type="module">
+        var myLandbot = new Landbot.Livechat({
+            configUrl: 'https://storage.googleapis.com/landbot.online/v3/H-3480209-4YCUH03KYKADJIE9/index.json',
+        });
+    </script>
 
 </body>
 

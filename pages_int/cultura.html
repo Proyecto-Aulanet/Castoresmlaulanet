@@ -337,7 +337,6 @@
     </main>
     </div>
 
-    <br>
 
     <!-- ==================== CONTENEDOR PRINCIPAL INTERACTIVO ==================== -->
     <main class="container my-5">
@@ -368,13 +367,12 @@
 
                                 <!-- TEXTO -->
                                 <div class="col-12 col-md-8 text-center text-md-start order-2 order-md-1 p-0">
-                                    <span
-                                        class="badge bg-warning text-dark px-3 py-2 rounded-pill fw-bold text-uppercase mb-3 tracking-wider shadow-sm"
-                                        style="font-size: 0.75rem;">
-                                        <span data-es="BIENVENIDOS A LA RIQUEZA CULTURAL"
-                                            data-na="XIMOCUEHRUICAN NICAN TOTLALNAN">BIENVENIDOS A LA RIQUEZA
-                                            CULTURAL</span>
-                                    </span>
+                                    class="badge bg-warning text-dark px-3 py-2 rounded-pill fw-bold text-uppercase mb-3
+                                    tracking-wider shadow-sm"
+                                    style="font-size: 0.75rem;">
+                                    <span data-es="BIENVENIDOS A LA RIQUEZA CULTURAL"
+                                        data-na="XIMOCUEHRUICAN NICAN TOTLALNAN">BIENVENIDOS A LA RIQUEZA
+                                        CULTURAL</span>
 
                                     <!-- Ajustamos el tamaño del título en móvil con clases responsivas de Bootstrap -->
                                     <h1 class="fw-bold tracking-tight mb-2 h2 h1-md">
@@ -843,25 +841,42 @@
                     </div>
                     //
                     <div class="row g-2 d-none" id="m-gal-historica">
-                        <div class="col-12">
-                            <a href="https://youtu.be/Y1NF1w-sID4" target="_blank" rel="noopener noreferrer"
-                                class="tarjeta-video-yt d-block rounded-3 overflow-hidden position-relative border">
+                        <!-- Primera Imagen Interactiva -->
+                        <div class="col-6 position-relative">
+                            <div class="img-wrapper">
+                                <img src="/Recursos/img_cultura/imgcult.jpeg"
+                                    class="img-fluid rounded-3 border w-100 img-interactiva"
+                                    alt="Descripción histórica 1" onclick="interactuarImagen(this)">
+                                <button class="btn-interaccion" onclick="cerrarImagen(this)"></button>
+                            </div>
+                        </div>
 
-                                <img src="https://img.youtube.com/vi/Y1NF1w-sID4/hqdefault.jpg"
-                                    alt="Ver video en YouTube" class="img-fluid w-100 d-block">
+                        <!-- Segunda Imagen Interactiva -->
+                        <div class="col-6 position-relative">
+                            <div class="img-wrapper">
+                                <img src="/Recursos/img_cultura/imgCul.jpeg"
+                                    class="img-fluid rounded-3 border w-100 img-interactiva"
+                                    alt="Descripción histórica 2" onclick="interactuarImagen(this)">
+                                <button class="btn-interaccion" onclick="cerrarImagen(this)"></button>
+                            </div>
+                        </div>
 
-                                <div
-                                    class="capa-play position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
-                                    <div
-                                        class="icono-play d-flex align-items-center justify-content-center rounded-circle">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white"
-                                            class="bi bi-play-fill" viewBox="0 0 16 16">
-                                            <path
-                                                d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z" />
-                                        </svg>
-                                    </div>
-                                </div>
-                            </a>
+                        <div class="col-6 position-relative">
+                            <div class="img-wrapper">
+                                <img src="/Recursos/img_cultura/historia.JPG"
+                                    class="img-fluid rounded-3 border w-100 img-interactiva"
+                                    alt="Descripción histórica 2" onclick="interactuarImagen(this)">
+                                <button class="btn-interaccion" onclick="cerrarImagen(this)"></button>
+                            </div>
+                        </div>
+
+                        <div class="col-6 position-relative">
+                            <div class="img-wrapper">
+                                <img src="/Recursos/img_cultura/danza.JPG"
+                                    class="img-fluid rounded-3 border w-100 img-interactiva"
+                                    alt="Descripción histórica 2" onclick="interactuarImagen(this)">
+                                <button class="btn-interaccion" onclick="cerrarImagen(this)"></button>
+                            </div>
                         </div>
                     </div>
                     //
@@ -883,6 +898,24 @@
                                 <button class="btn-interaccion" onclick="cerrarImagen(this)"></button>
                             </div>
                         </div>
+
+                        <div class="col-6 position-relative">
+                            <div class="img-wrapper">
+                                <img src="/Recursos/img_cultura/vestidos.jpg"
+                                    class="img-fluid rounded-3 border w-100 img-interactiva"
+                                    onclick="interactuarImagen(this)">
+                                <button class="btn-interaccion" onclick="cerrarImagen(this)"></button>
+                            </div>
+                        </div>
+
+                        <div class="col-6 position-relative">
+                            <div class="img-wrapper">
+                                <img src="/Recursos/img_cultura/huehues.jpg"
+                                    class="img-fluid rounded-3 border w-100 img-interactiva"
+                                    onclick="interactuarImagen(this)">
+                                <button class="btn-interaccion" onclick="cerrarImagen(this)"></button>
+                            </div>
+                        </div>
                     </div>
                     //
                 </div>
@@ -892,10 +925,8 @@
                 </button>
             </div>
 
-            
-        </div>
 
-        
+        </div>
 
         <script>
             function mostrarSeccion(seccion) {

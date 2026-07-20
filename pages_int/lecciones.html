@@ -474,6 +474,14 @@
     <!-- JS -->
     <script src="/js/app.js"></script>
 
+    <!-- chat bot -->
+    <script type="module" src="https://cdn.landbot.io/landbot-3/landbot-3.0.0.mjs"></script>
+    <script type="module">
+        var myLandbot = new Landbot.Livechat({
+            configUrl: 'https://storage.googleapis.com/landbot.online/v3/H-3480209-4YCUH03KYKADJIE9/index.json',
+        });
+    </script>
+
 </body>
 
 </html>
