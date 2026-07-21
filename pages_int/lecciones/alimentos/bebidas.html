@@ -424,13 +424,11 @@
     
     <!-- Encabezado de Categoría -->
     <div class="col-12 text-center mb-4">
-      <span class="badge px-3 py-2 rounded-pill mb-2" style="background-color: #E1F5FE; color: #0277BD; font-weight: 700;">
-        TRADUCCIÓN EXCLUSIVA: ESPAÑOL ➔ NÁHUATL
-      </span>
-      <h2 class="fw-bold" style="color: #01579B;">Bebidas Tradicionales</h2>
-      <p class="text-muted mx-auto" style="max-width: 580px;">
+     
+      <h2 class="fw-bold" style="color: #5dd980;">Bebidas Tradicionales</h2>
+      <p class="text-muted mx-auto" style="max-width: 580px; background-color: #FFFDE7; border-radius: 10px; padding: 15px; border: 1px solid #FFF59D;">
         Descubre cómo nombrar los elíxires, caldos dulces y aguas de frutas en la variante náhuatl. ¡Fíjate en las raíces poéticas del agua!
-      </p>
+       </p>
     </div>
 
     <!-- Rejilla de tarjetas dinámicas -->
@@ -643,14 +641,13 @@
     <!-- JS -->
     <script src="/js/app.js"></script>
     <script>
-        const bebidasDatos = [
+   const bebidasDatos = [
   {
     espanol: "Agua",
     nahuatl: "Atl",
     pronunciacion: "atl",
     literal: "Agua / Fluido vital",
     descripcion: "La raíz primordial. En la cosmovisión nahua, el agua no solo quita la sed, sino que es un elemento sagrado que sostiene la vida.",
-    audio: "/Recursos/audios/abecedario/ATK.ogg",
     imagen: "https://images.unsplash.com/photo-1548839140-29a749e1cf4d?auto=format&fit=crop&w=400&q=80"
   },
   {
@@ -659,7 +656,6 @@
     pronunciacion: "a-tó-lli",
     literal: "Agua desleída o aguada con maíz",
     descripcion: "Bebida ancestral espesada con masa de maíz nixtamalizado, servida bien caliente para acompañar el desayuno.",
-    audio: "audios/bebidas/atolli.mp3",
     imagen: "https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcSVG58dIPw3av24N4Z2UXqWaI3RAD-lcakVU1EpoCwQpAvA6SUDtDToWuUE2jN_XQppoOQ7BdzeL88kqnA"
   },
   {
@@ -668,7 +664,6 @@
     pronunciacion: "cho-có-latl",
     literal: "Agua de cacao amarga / espumosa",
     descripcion: "Tradicionalmente preparado batiendo cacao con agua calientita en un jarro de barro usando un molinillo de madera hasta sacar espuma.",
-    audio: "audios/bebidas/chocolatl.mp3",
     imagen: "/Recursos/alimentos/chocolate.jpg"
   },
   {
@@ -677,7 +672,6 @@
     pronunciacion: "xo-chi-hua-látl",
     literal: "Agua de frutos dulces",
     descripcion: "Cualquier agua fresca preparada moliendo frutas de la temporada con un toque de azúcar, ideal para las tardes calurosas.",
-    audio: "audios/bebidas/xochihualatl.mp3",
     imagen: "/Recursos/alimentos/frutas.jpg"
   },
   {
@@ -686,7 +680,6 @@
     pronunciacion: "chi-chi-hua-látl",
     literal: "Agua de seno o de chichi",
     descripcion: "Metáfora hermosa que describe la leche a partir de 'chichihualistli' (seno materno/ubre) combinada con el sufijo del agua.",
-    audio: "audios/bebidas/chichihualatl.mp3",
     imagen: "https://images.unsplash.com/photo-1563636619-e9143da7973b?auto=format&fit=crop&w=400&q=80"
   },
   {
@@ -695,8 +688,7 @@
     pronunciacion: "óc-tli",
     literal: "Vino de maguey o bebida fermentada",
     descripcion: "La bebida de los dioses. Licor blanco y espeso obtenido de la fermentación del aguamiel extraído del corazón del maguey pulquero.",
-    audio: "audios/bebidas/octli.mp3",
-     imagen: "/Recursos/alimentos/pulque.jpg"
+    imagen: "/Recursos/alimentos/pulque.jpg"
   },
   {
     espanol: "Agua de Jamaica",
@@ -704,16 +696,14 @@
     pronunciacion: "ja-ma-iá-tl",
     literal: "Agua de flor de Jamaica",
     descripcion: "Adaptación moderna del nombre de la flor fusionada con la raíz 'atl' para referirse a esta clásica infusión helada y ácida.",
-    audio: "audios/bebidas/jamaiatl.mp3",
     imagen: "/Recursos/alimentos/jamaica.jpg"
   },
   {
-    espanol: "Aguardiente / Mezcal",
+    espanol: "Aguardiente o Mezcal",
     nahuatl: "Popoctli atl",
     pronunciacion: "po-póc-tli átl",
     literal: "Agua que ahúma o agua de humo",
     descripcion: "Expresión regional para describir los destilados fuertes de agave debido a su característico perfil aromático y sabor ahumado.",
-    audio: "audios/bebidas/popoctli_atl.mp3",
     imagen: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=400&q=80"
   },
   {
@@ -722,7 +712,6 @@
     pronunciacion: "tzo-pe-lí-catl",
     literal: "Agua muy dulce",
     descripcion: "Neologismo descriptivo para las bebidas embotelladas y azucaradas modernas, combinando 'tzopelic' (dulce) con 'atl'.",
-    audio: "audios/bebidas/tzopelicatl.mp3",
     imagen: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=400&q=80"
   },
   {
@@ -731,10 +720,51 @@
     pronunciacion: "ca-fé-tzin",
     literal: "Café de olla / Café venerado",
     descripcion: "Préstamo lingüístico que adopta el sufijo reverencial para denotar aprecio por el café de olla sazonado con canela y piloncillo.",
-    audio: "audios/bebidas/cafetzin.mp3",
     imagen: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=400&q=80"
   }
 ];
+
+// Cargar las voces de la síntesis del navegador de forma asíncrona
+let vocesDisponibles = [];
+function obtenerVoces() {
+  vocesDisponibles = window.speechSynthesis.getVoices();
+}
+if ('speechSynthesis' in window) {
+  window.speechSynthesis.onvoiceschanged = obtenerVoces;
+  obtenerVoces();
+}
+
+// Función que genera el audio bilingüe (Náhuatl + Significado en Español)
+function hablarBebida(nahuatl, espanol) {
+  if (!('speechSynthesis' in window)) {
+    console.warn("Tu navegador no soporta la generación de voz.");
+    return;
+  }
+
+  // Detener reproducciones anteriores para evitar amontonar audios
+  window.speechSynthesis.cancel();
+
+  // Texto que pronunciará el asistente
+  const textoAFrasear = `${nahuatl}. Significa: ${espanol}.`;
+  const utterance = new SpeechSynthesisUtterance(textoAFrasear);
+
+  // Seleccionar la mejor voz de alta calidad (Google, Microsoft Neural u Online de México)
+  const vozOptima = vocesDisponibles.find(v => 
+    v.lang.startsWith('es-MX') && (v.name.includes('Google') || v.name.includes('Natural') || v.name.includes('Online'))
+  ) || vocesDisponibles.find(v => v.lang.startsWith('es-MX')) || vocesDisponibles.find(v => v.lang.startsWith('es'));
+
+  if (vozOptima) {
+    utterance.voice = vozOptima;
+  }
+
+  utterance.lang = 'es-MX';
+  
+  // Parámetros para darle la calidez y fluidez tipo asistente inteligente (Alexa/Google Assistant)
+  utterance.rate = 0.9;   // Velocidad ligeramente pausada para buena dicción
+  utterance.pitch = 1.05; // Tono amable y natural
+
+  window.speechSynthesis.speak(utterance);
+}
 
 function cargarModuloBebidas() {
   const grid = document.getElementById("grid-bebidas");
@@ -746,7 +776,7 @@ function cargarModuloBebidas() {
       <div class="col">
         <div class="card h-100 card-bebida overflow-hidden">
           <div class="row g-0 h-100">
-            <!-- Columna de Imagen (Concepto en Español) -->
+            <!-- Columna de Imagen -->
             <div class="col-4 position-relative">
               <img src="${item.imagen}" class="w-100 h-100" style="object-fit: cover; position: absolute;" alt="${item.espanol}">
             </div>
@@ -761,9 +791,11 @@ function cargarModuloBebidas() {
                 <div>
                   <strong class="text-primary d-block small" style="font-size: 0.75rem;">NÁHUATL:</strong>
                   <span class="fs-5 fw-bold text-dark">${item.nahuatl}</span>
-                  <span class="d-block text-muted style="font-size: 0.7rem;">"${item.pronunciacion}"</span>
+                  <span class="d-block text-muted" style="font-size: 0.7rem;">"${item.pronunciacion}"</span>
                 </div>
-                <button class="btn-audio-bebida text-white d-flex align-items-center justify-content-center" onclick="reproducirAudioBebida('${item.audio}')">
+                <!-- Al presionar el botón dirá: "Atl. Significa: Agua." con voz fluida -->
+                <button class="btn-audio-bebida text-white d-flex align-items-center justify-content-center" 
+                        onclick="hablarBebida('${item.nahuatl}', '${item.espanol}')">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
                     <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
                   </svg>
@@ -775,16 +807,6 @@ function cargarModuloBebidas() {
       </div>
     `;
   });
-}
-
-let audioBebida = null;
-function reproducirAudioBebida(url) {
-  if (audioBebida) {
-    audioBebida.pause();
-    audioBebida.currentTime = 0;
-  }
-  audioBebida = new Audio(url);
-  audioBebida.play().catch(e => console.log("Archivo de audio interactivo no encontrado"));
 }
 
 document.addEventListener("DOMContentLoaded", cargarModuloBebidas);

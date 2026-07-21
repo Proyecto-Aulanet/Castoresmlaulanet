@@ -645,14 +645,13 @@
     <!-- JS -->
     <script src="/js/app.js"></script>
 <script>
-    const vegetalesDatos = [
+   const vegetalesDatos = [
   {
     espanol: "Aguacate",
     nahuatl: "Ahuacatl",
     pronunciacion: "a-huá-catl",
     literal: "Testículo (por su forma colgante en el árbol)",
     descripcion: "Fruto sagrado y pilar de la alimentación mesoamericana. La palabra actual en español es una adaptación directa del náhuatl.",
-    audio: "audios/vegetales/ahuacatl.mp3",
     imagen: "https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcQJvioZVI-0HzmV2hzbYD4qqaTSx2a-F4yLdSQGALlmw3NO4p1Npm7-FQ-LbO-8s9kjr24GF3AKmM3gAWc"
   },
   {
@@ -661,15 +660,14 @@
     pronunciacion: "xi-tó-matl",
     literal: "Tomate con ombligo",
     descripcion: "Se refiere específicamente al tomate rojo grande. La raíz 'xictli' (ombligo) hace alusión a la cicatriz que deja el pedúnculo.",
-    audio: "audios/vegetales/xitomatl.mp3",
-    imagen: "/Recursos/alfabeto/jitomate.jpg" },
+    imagen: "/Recursos/alfabeto/jitomate.jpg"
+  },
   {
     espanol: "Chile",
     nahuatl: "Chilli",
     pronunciacion: "chí-lli",
     literal: "Chile / Pimiento picante",
     descripcion: "El alma de la cocina mexicana. En las variantes de Puebla, la 'll' suena alargada o sostenida, no como la 'y' del español.",
-    audio: "audios/vegetales/chilli.mp3",
     imagen: "https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcQo086_YL2hZoyrAl5NRq2qN9gORdunNfNrMALgqAWeOu25Ninsdl1BR1AL-6Qz7zKDU4gCnN3JynzxzpI"
   },
   {
@@ -678,7 +676,6 @@
     pronunciacion: "a-yó-tzin",
     literal: "Calabacita tierna o venerada",
     descripcion: "Deriva de 'ayotl' (calabaza) y el sufijo afectivo/reverencial '-tzin', utilizado comúnmente para referirse a las variedades pequeñas de la milpa.",
-    audio: "audios/vegetales/ayotzin.mp3",
     imagen: "https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcTopZ7DtQmPPVqf-VmZvuj75GuhhD1mnoRct1RpIQxUyWGfhLM0rKbjl-L2RciE9gCLfVJjYDys6JrhZNk"
   },
   {
@@ -687,32 +684,31 @@
     pronunciacion: "xo-ná-catl",
     literal: "Planta con bulbo picante",
     descripcion: "Aunque la cebolla común llegó con la conquista, el término se aplicaba originalmente a las cebolletas silvestres del campo mesoamericano.",
-    audio: "audios/vegetales/xonacatl.mp3",
-   imagen: "/Recursos/alfabeto/cebolla.jpg"},
+    imagen: "/Recursos/alfabeto/cebolla.jpg"
+  },
   {
     espanol: "Tomate Verde",
     nahuatl: "Miltomatl",
     pronunciacion: "mil-tó-matl",
     literal: "Tomate de milpa",
     descripcion: "Es el tomate pequeño con cáscara de hoja, indispensable para las salsas verdes tradicionales que acompañan los guisos.",
-    audio: "audios/vegetales/miltomatl.mp3",
-    imagen: "/Recursos/alimentos/tomate.jpg" },
+    imagen: "/Recursos/alimentos/tomate.jpg"
+  },
   {
     espanol: "Nopal",
     nahuatl: "Nohpalli",
     pronunciacion: "noh-pál-li",
     literal: "Penca de nopal",
     descripcion: "Cactácea emblemática de México. En náhuatl, el sonido 'h' (saltillo) representa una pequeña pausa de aire antes de pronunciar la siguiente sílaba.",
-    audio: "audios/vegetales/nohpalli.mp3",
-   imagen: "/Recursos/alimentos/nopal.jpg"  },
+    imagen: "/Recursos/alimentos/nopal.jpg"
+  },
   {
-    espanol: "Quelite / Verdura de hoja",
+    espanol: "Quelite o Verdura de hoja",
     nahuatl: "Quilitl",
     pronunciacion: "quí-litl",
     literal: "Planta tierna comestible",
     descripcion: "Nombre genérico para las hojas verdes comestibles del campo (como las verdolagas o el pápalo), ampliamente consumidas en Puebla.",
-    audio: "audios/vegetales/quilitl.mp3",
-    imagen: "/Recursos/alimentos/quelites.jpg" 
+    imagen: "/Recursos/alimentos/quelites.jpg"
   },
   {
     espanol: "Chayote",
@@ -720,18 +716,56 @@
     pronunciacion: "cha-yó-tli",
     literal: "Calabaza espinosa",
     descripcion: "Fruto de enredadera con una semilla tierna en su interior. Excelente fuente de hidratación cocinado en caldos.",
-    audio: "audios/vegetales/chayotli.mp3",
-   imagen: "/Recursos/alimentos/chayote.jpg"  },
+    imagen: "/Recursos/alimentos/chayote.jpg"
+  },
   {
     espanol: "Plátano",
     nahuatl: "Zocohual",
     pronunciacion: "zo-có-hual",
     literal: "Fruta dulce (neologismo regional)",
     descripcion: "Al ser una fruta introducida, las comunidades adaptaron descriptores locales de dulzor para identificar el plátano en su hablar cotidiano.",
-    audio: "audios/vegetales/zocohual.mp3",
     imagen: "https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?auto=format&fit=crop&w=400&q=80"
   }
 ];
+
+// Cargar las voces disponibles del navegador
+let vocesDisponiblesVegetales = [];
+function obtenerVocesVegetales() {
+  vocesDisponiblesVegetales = window.speechSynthesis.getVoices();
+}
+if ('speechSynthesis' in window) {
+  window.speechSynthesis.onvoiceschanged = obtenerVocesVegetales;
+  obtenerVocesVegetales();
+}
+
+// Función de voz fluida estilo asistente (Alexa/Google)
+function hablarVegetal(nahuatl, espanol) {
+  if (!('speechSynthesis' in window)) return;
+
+  // Detener reproducciones activas
+  window.speechSynthesis.cancel();
+
+  // Limpiar variaciones con "/" como "Quelite / Verdura de hoja" -> dice sólo "Quelite"
+  const espanolLimpio = espanol.split('/')[0].trim();
+  const textoAFrasear = `${nahuatl}. Significa: ${espanolLimpio}.`;
+
+  const utterance = new SpeechSynthesisUtterance(textoAFrasear);
+
+  // Seleccionar la voz de mejor calidad
+  const vozOptima = vocesDisponiblesVegetales.find(v => 
+    v.lang.startsWith('es-MX') && (v.name.includes('Google') || v.name.includes('Natural') || v.name.includes('Online'))
+  ) || vocesDisponiblesVegetales.find(v => v.lang.startsWith('es-MX')) || vocesDisponiblesVegetales.find(v => v.lang.startsWith('es'));
+
+  if (vozOptima) {
+    utterance.voice = vozOptima;
+  }
+
+  utterance.lang = 'es-MX';
+  utterance.rate = 0.9;   // Modulación fluida y legible
+  utterance.pitch = 1.05; // Tono amable
+
+  window.speechSynthesis.speak(utterance);
+}
 
 function cargarModuloVegetales() {
   const grid = document.getElementById("grid-vegetales");
@@ -756,10 +790,11 @@ function cargarModuloVegetales() {
                 <span class="d-block badge-traduccion px-2 py-0.5">${item.nahuatl}</span>
                 <span class="text-muted" style="font-size: 0.75rem;">Pronuncia: <strong>"${item.pronunciacion}"</strong></span>
               </div>
-              <button class="btn-audio-milpa text-white" onclick="reproducirAudioMilpa('${item.audio}')">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-volume-up-fill" viewBox="0 0 16 16">
-                  <path d="M11.536 14.01A8.47 8.47 0 0 0 14 10.246a8.47 8.47 0 0 0-2.464-3.764.5.5 0 0 0-.707.707 7.47 7.47 0 0 1 2.17 3.057 7.47 7.47 0 0 1-2.17 3.057.5.5 0 0 0 .707.707m-2.12-2.121A5.48 5.48 0 0 0 11 10.246a5.48 5.48 0 0 0-1.584-3.15.5.5 0 0 0-.707.707 4.48 4.48 0 0 1 1.293 2.443 4.48 4.48 0 0 1-1.293 2.443.5.5 0 0 0 .707.707M10 10.246a3.5 3.5 0 0 0-1.012-2.121.5.5 0 0 0-.707.707 2.48 2.48 0 0 1 .719 1.414.5.5 0 0 0 .937.193z"/>
-                  <path d="M4 4a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .5.5h1.586l4.707 4.707C10.923 17.333 12 16.893 12 15V1a12 12 0 0 0-1.707-.707L5.586 5zm1.5-3v8.586l-3.354-3.354A.5.5 0 0 0 1.793 6H.5a.5.5 0 0 0 0 1h1.293a.5.5 0 0 0 .353-.146z"/>
+              <!-- Botón con reproducción de voz sintética -->
+              <button class="btn-audio-milpa text-white d-flex align-items-center justify-content-center" 
+                      onclick="hablarVegetal('${item.nahuatl}', '${item.espanol}')">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+                  <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
                 </svg>
               </button>
             </div>
@@ -768,16 +803,6 @@ function cargarModuloVegetales() {
       </div>
     `;
   });
-}
-
-let audioMilpa = null;
-function reproducirAudioMilpa(url) {
-  if (audioMilpa) {
-    audioMilpa.pause();
-    audioMilpa.currentTime = 0;
-  }
-  audioMilpa = new Audio(url);
-  audioMilpa.play().catch(e => console.log("Ruta de audio no disponible"));
 }
 
 document.addEventListener("DOMContentLoaded", cargarModuloVegetales);

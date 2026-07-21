@@ -423,10 +423,10 @@
     
     <!-- Título de la Sección -->
     <div class="col-12 col-lg-10 text-center mb-2">
-      <h2 class="fw-bold" style="color: #3E2723;" data-es="La Construcción de las Decenas (11-20)">
+      <h2 class="fw-bold" style="color: #f3d10d;" data-es="La Construcción de las Decenas (11-20)">
         La Construcción de las Decenas (11-20)
       </h2>
-      <p class="text-muted mx-auto" style="max-width: 700px;">
+      <p class="text-muted mx-auto" style="max-width: 580px; background-color: #FFFDE7; border-radius: 10px; padding: 15px; border: 1px solid #FFF59D;">
         Mira cómo se suman los números: del 11 al 14 se usa el 10 como base; el 15 es un nuevo pivote; y el 20 representa la primera cuenta completa (un hombre entero).
       </p>
     </div>
@@ -726,112 +726,116 @@
 const decenasData = [
   {
     numero: 11,
-    palabra: "Mahtlactli once",
+    palabra: "Matlactli huan ce",
     formula: "10 + 1",
-    pronunciacion: "mah-tlác-tli on-se",
-    imagen: "/Recursos/numeros/once.png", // Cambia por tu ruta real
-    explicacionES: "Se compone de <strong>Mahtlactli</strong> (10), la partícula de unión <strong>on</strong> (y) y <strong>ce</strong> (1). Literalmente: 'diez y uno'.",
-    explicacionNA: "Mochihua ica <strong>Mahtlactli</strong> (10), in nahuatilozontli <strong>on</strong> (ihuan) ihuan <strong>ce</strong> (1). Quihtoznequi: 'mahtlactli ihuan se'.",
-    audio: "audios/numeros/mahtlactli_once.mp3"
+    pronunciacion: "mah-tlác-tli huan se",
+    imagen: "/Recursos/numeros/once.png",
+    explicacionES: "Se compone de <strong>Matlactli</strong> (10), el nexo <strong>huan</strong> (y) y <strong>ce</strong> (1).",
+    explicacionNA: "Mochihua ica <strong>Matlactli</strong> (10), in nexo <strong>huan</strong> ihuan <strong>ce</strong> (1)."
   },
   {
     numero: 12,
-    palabra: "Mahtlactli omome",
+    palabra: "Matlactli huan ome",
     formula: "10 + 2",
-    pronunciacion: "mah-tlác-tli o-mó-me",
+    pronunciacion: "mah-tlác-tli huan ó-me",
     imagen: "/Recursos/numeros/doce.png",
-    explicacionES: "Se compone de <strong>Mahtlactli</strong> (10) + el nexo <strong>om</strong> + <strong>ome</strong> (2). Literalmente: 'diez y dos'.",
-    explicacionNA: "Mochihua ica <strong>Mahtlactli</strong> (10) ihuan <strong>ome</strong> (2). Quihtoznequi: 'mahtlactli ihuan ome'.",
-    audio: "audios/numeros/mahtlactli_omome.mp3"
+    explicacionES: "Se compone de <strong>Matlactli</strong> (10), el nexo <strong>huan</strong> (y) y <strong>ome</strong> (2).",
+    explicacionNA: "Mochihua ica <strong>Matlactli</strong> (10), in nexo <strong>huan</strong> ihuan <strong>ome</strong> (2)."
   },
   {
     numero: 13,
-    palabra: "Mahtlactli omeyi",
+    palabra: "Matlactli huan yei",
     formula: "10 + 3",
-    pronunciacion: "mah-tlác-tli o-mé-yi",
+    pronunciacion: "mah-tlác-tli huan yé-i",
     imagen: "/Recursos/numeros/trece.png",
-    explicacionES: "Se compone de <strong>Mahtlactli</strong> (10) + el nexo <strong>om</strong> + <strong>yeyi</strong> (3). Literalmente: 'diez y tres'.",
-    explicacionNA: "Mochihua ica <strong>Mahtlactli</strong> (10) ihuan <strong>yeyi</strong> (3). Quihtoznequi: 'mahtlactli ihuan yeyi'.",
-    audio: "audios/numeros/mahtlactli_omeyi.mp3"
+    explicacionES: "Se compone de <strong>Matlactli</strong> (10), el nexo <strong>huan</strong> (y) y <strong>yei</strong> (3).",
+    explicacionNA: "Mochihua ica <strong>Matlactli</strong> (10), in nexo <strong>huan</strong> ihuan <strong>yei</strong> (3)."
   },
   {
     numero: 14,
-    palabra: "Mahtlactli onnahui",
+    palabra: "Matlactli huan nahui",
     formula: "10 + 4",
-    pronunciacion: "mah-tlác-tli on-ná-hui",
+    pronunciacion: "mah-tlác-tli huan ná-hui",
     imagen: "/Recursos/numeros/catorce.png",
-    explicacionES: "Se compone de <strong>Mahtlactli</strong> (10) + el nexo <strong>on</strong> + <strong>nahui</strong> (4). Literalmente: 'diez y cuatro'.",
-    explicacionNA: "Mochihua ica <strong>Mahtlactli</strong> (10) ihuan <strong>nahui</strong> (4). Quihtoznequi: 'mahtlactli ihuan nahui'.",
-    audio: "audios/numeros/mahtlactli_onnahui.mp3"
+    explicacionES: "Se compone de <strong>Matlactli</strong> (10), el nexo <strong>huan</strong> (y) y <strong>nahui</strong> (4).",
+    explicacionNA: "Mochihua ica <strong>Matlactli</strong> (10), in nexo <strong>huan</strong> ihuan <strong>nahui</strong> (4)."
   },
   {
     numero: 15,
-    palabra: "Caxtolli",
-    formula: "15 (Pivote)",
-    pronunciacion: "cax-tól-li",
+    palabra: "Matlactli huan macuilli",
+    formula: "10 + 5",
+    pronunciacion: "mah-tlác-tli huan ma-cuíl-li",
     imagen: "/Recursos/numeros/quince.png",
-    explicacionES: "Es un número base por sí mismo. Al igual que el 5, representa un nuevo punto de apoyo en el conteo.",
-    explicacionNA: "In tlapohualli tlayectli chicatoc. Queme in macuilli, yehuatl se yancuic tlapohualli tlen motlatia.",
-    audio: "audios/numeros/caxtolli.mp3"
+    explicacionES: "Se compone de <strong>Matlactli</strong> (10), el nexo <strong>huan</strong> (y) y <strong>macuilli</strong> (5).",
+    explicacionNA: "Mochihua ica <strong>Matlactli</strong> (10), in nexo <strong>huan</strong> ihuan <strong>macuilli</strong> (5)."
   },
   {
     numero: 16,
-    palabra: "Caxtolli once",
-    formula: "15 + 1",
-    pronunciacion: "cax-tól-li on-se",
+    palabra: "Matlactli huan chicuace",
+    formula: "10 + 6",
+    pronunciacion: "mah-tlác-tli huan chi-cuá-ce",
     imagen: "/Recursos/numeros/dieciseis.png",
-    explicacionES: "Se compone de <strong>Caxtolli</strong> (15), el nexo <strong>on</strong> (y) y <strong>ce</strong> (1). Significa: 'quince y uno'.",
-    explicacionNA: "Mochihua ica <strong>Caxtolli</strong> (15) ihuan <strong>ce</strong> (1). Quihtoznequi: 'caxtolli ihuan se'.",
-    audio: "audios/numeros/caxtolli_once.mp3"
+    explicacionES: "Se compone de <strong>Matlactli</strong> (10), el nexo <strong>huan</strong> (y) y <strong>chicuace</strong> (6).",
+    explicacionNA: "Mochihua ica <strong>Matlactli</strong> (10), in nexo <strong>huan</strong> ihuan <strong>chicuace</strong> (6)."
   },
   {
     numero: 17,
-    palabra: "Caxtolli omome",
-    formula: "15 + 2",
-    pronunciacion: "cax-tól-li o-mó-me",
+    palabra: "Matlactli huan chicome",
+    formula: "10 + 7",
+    pronunciacion: "mah-tlác-tli huan chi-có-me",
     imagen: "/Recursos/numeros/diecisiete.png",
-    explicacionES: "Se compone de <strong>Caxtolli</strong> (15) + el nexo <strong>om</strong> + <strong>ome</strong> (2). Significa: 'quince y dos'.",
-    explicacionNA: "Mochihua ica <strong>Caxtolli</strong> (15) ihuan <strong>ome</strong> (2). Quihtoznequi: 'caxtolli ihuan ome'.",
-    audio: "audios/numeros/caxtolli_omome.mp3"
+    explicacionES: "Se compone de <strong>Matlactli</strong> (10), el nexo <strong>huan</strong> (y) y <strong>chicome</strong> (7).",
+    explicacionNA: "Mochihua ica <strong>Matlactli</strong> (10), in nexo <strong>huan</strong> ihuan <strong>chicome</strong> (7)."
   },
   {
     numero: 18,
-    palabra: "Caxtolli omeyi",
-    formula: "15 + 3",
-    pronunciacion: "cax-tól-li o-mé-yi",
+    palabra: "Matlactli huan chicuei",
+    formula: "10 + 8",
+    pronunciacion: "mah-tlác-tli huan chi-cué-i",
     imagen: "/Recursos/numeros/dieciocho.png",
-    explicacionES: "Se compone de <strong>Caxtolli</strong> (15) + el nexo <strong>om</strong> + <strong>yeyi</strong> (3). Significa: 'quince y tres'.",
-    explicacionNA: "Mochihua ica <strong>Caxtolli</strong> (15) ihuan <strong>yeyi</strong> (3). Quihtoznequi: 'caxtolli ihuan yeyi'.",
-    audio: "audios/numeros/caxtolli_omeyi.mp3"
+    explicacionES: "Se compone de <strong>Matlactli</strong> (10), el nexo <strong>huan</strong> (y) y <strong>chicuei</strong> (8).",
+    explicacionNA: "Mochihua ica <strong>Matlactli</strong> (10), in nexo <strong>huan</strong> ihuan <strong>chicuei</strong> (8)."
   },
   {
     numero: 19,
-    palabra: "Caxtolli onnahui",
-    formula: "15 + 4",
-    pronunciacion: "cax-tól-li on-ná-hui",
+    palabra: "Matlactli huan chicnahui",
+    formula: "10 + 9",
+    pronunciacion: "mah-tlác-tli huan chic-ná-hui",
     imagen: "/Recursos/numeros/diecinueve.png",
-    explicacionES: "Se compone de <strong>Caxtolli</strong> (15) + el nexo <strong>on</strong> + <strong>nahui</strong> (4). Significa: 'quince y cuatro'.",
-    explicacionNA: "Mochihua ica <strong>Caxtolli</strong> (15) ihuan <strong>nahui</strong> (4). Quihtoznequi: 'caxtolli ihuan nahui'.",
-    audio: "audios/numeros/caxtolli_onnahui.mp3"
+    explicacionES: "Se compone de <strong>Matlactli</strong> (10), el nexo <strong>huan</strong> (y) y <strong>chicnahui</strong> (9).",
+    explicacionNA: "Mochihua ica <strong>Matlactli</strong> (10), in nexo <strong>huan</strong> ihuan <strong>chicnahui</strong> (9)."
   },
   {
     numero: 20,
     palabra: "Cempohualli",
-    formula: "20 (Completo)",
+    formula: "20 (1 cuenta)",
     pronunciacion: "sem-po-huál-li",
     imagen: "/Recursos/numeros/veinte.png",
-    explicacionES: "Viene de <strong>Cem</strong> (una) y <strong>pohualli</strong> (cuenta). Representa los 20 dedos de una persona entera. El fin del ciclo.",
-    explicacionNA: "Mochihua tlen <strong>Cem</strong> (se) ihuan <strong>pohualli</strong> (tlapohualiztli). Quihtoznequi se tlacatl ixquichca imahuan ihuan icxihuan.",
-    audio: "audios/numeros/cempohualli.mp3"
+    explicacionES: "Significa <strong>una cuenta</strong> entera (20 unidades). Representa la base del sistema vigesimal.",
+    explicacionNA: "Quihtoznequi <strong>se tlapohualiztli</strong> (20). Yehuatl in tzintiliztli tlen tlapohualiztli."
   }
 ];
 
 let indiceDecenaActual = 0;
-let audioDecena = null;
-if (typeof idiomaActual === 'undefined') { var idiomaActual = 'es'; }
+
+if (typeof idiomaActual === 'undefined') { 
+  var idiomaActual = 'es'; 
+}
+
+// Cargar voces del navegador
+let vocesDisponiblesDecenas = [];
+function obtenerVocesDecenas() {
+  vocesDisponiblesDecenas = window.speechSynthesis.getVoices();
+}
+if ('speechSynthesis' in window) {
+  window.speechSynthesis.onvoiceschanged = obtenerVocesDecenas;
+  obtenerVocesDecenas();
+}
 
 function inicializarListaFormulas() {
   const container = document.getElementById("lista-formulas-numeros");
+  if (!container) return;
+  
   container.innerHTML = "";
   decenasData.forEach((item, index) => {
     const btn = document.createElement("button");
@@ -854,31 +858,30 @@ function renderDecenaActual() {
   const contador = document.getElementById("contador-decenas");
   const imgElement = document.getElementById("imagen-decena-actual");
 
-  // Efecto básico de fade para la imagen
-  imgElement.style.opacity = 0.3;
-  setTimeout(() => {
-    imgElement.src = item.imagen;
-    imgElement.alt = `Representación del número ${item.numero} - ${item.palabra}`;
-    imgElement.style.opacity = 1;
-  }, 100);
-
-  // Actualizar contenido de texto
-  badgeFormula.textContent = `N: ${item.numero} ➔ ${item.formula}`;
-  palabraDecena.textContent = item.palabra;
-  pronunciacion.textContent = `Pronunciación: "${item.pronunciacion}"`;
-  contador.textContent = `${item.numero} de 20`;
-
-  if (idiomaActual === 'na') {
-    introDecena.textContent = `Ipan nahuatlahtolli, in tlapohualli caxtillan tlatenehua:`;
-    tituloDesglose.textContent = "Quen mochihua in tlapohualli:";
-    explicacion.innerHTML = item.explicacionNA;
-  } else {
-    introDecena.textContent = `En náhuatl, el número seleccionado se dice:`;
-    tituloDesglose.textContent = "Desglose del número:";
-    explicacion.innerHTML = item.explicacionES;
+  if (imgElement) {
+    imgElement.style.opacity = 0.3;
+    setTimeout(() => {
+      imgElement.src = item.imagen;
+      imgElement.alt = `Representación del número ${item.numero} - ${item.palabra}`;
+      imgElement.style.opacity = 1;
+    }, 100);
   }
 
-  // Sincronizar botones de la lista lateral
+  if (badgeFormula) badgeFormula.textContent = `N: ${item.numero} ➔ ${item.formula}`;
+  if (palabraDecena) palabraDecena.textContent = item.palabra;
+  if (pronunciacion) pronunciacion.textContent = `Pronunciación: "${item.pronunciacion}"`;
+  if (contador) contador.textContent = `${item.numero} de 20`;
+
+  if (idiomaActual === 'na') {
+    if (introDecena) introDecena.textContent = `Ipan nahuatlahtolli, in tlapohualli caxtillan tlatenehua:`;
+    if (tituloDesglose) tituloDesglose.textContent = "Quen mochihua in tlapohualli:";
+    if (explicacion) explicacion.innerHTML = item.explicacionNA;
+  } else {
+    if (introDecena) introDecena.textContent = `En náhuatl, el número seleccionado se dice:`;
+    if (tituloDesglose) tituloDesglose.textContent = "Desglose del número:";
+    if (explicacion) explicacion.innerHTML = item.explicacionES;
+  }
+
   const botones = document.querySelectorAll("#lista-formulas-numeros .btn-formula-item");
   botones.forEach((btn, idx) => {
     if (idx === indiceDecenaActual) {
@@ -890,39 +893,64 @@ function renderDecenaActual() {
   });
 }
 
+function detenerVozDecena() {
+  if ('speechSynthesis' in window) {
+    window.speechSynthesis.cancel();
+  }
+}
+
 function seleccionarDecenaPorIndice(index) {
-  detenerAudioDecena();
+  detenerVozDecena();
   indiceDecenaActual = index;
   renderDecenaActual();
 }
 
 function navegarDecena(direccion) {
-  detenerAudioDecena();
+  detenerVozDecena();
   indiceDecenaActual += direccion;
   if (indiceDecenaActual >= decenasData.length) indiceDecenaActual = 0;
   else if (indiceDecenaActual < 0) indiceDecenaActual = decenasData.length - 1;
   renderDecenaActual();
 }
 
-function detenerAudioDecena() {
-  if (audioDecena) {
-    audioDecena.pause();
-    audioDecena.currentTime = 0;
-  }
-}
-
+// Reproduce únicamente: "Palabra Náhuatl, Número Español"
 function reproducirAudioDecena() {
+  if (!('speechSynthesis' in window)) return;
+
+  window.speechSynthesis.cancel();
+
   const item = decenasData[indiceDecenaActual];
-  detenerAudioDecena();
-  audioDecena = new Audio(item.audio);
-  audioDecena.play().catch(e => console.warn(`No se reprodujo el audio: ${item.audio}`));
+  const textoAFrasear = `${item.palabra}, ${item.numero}`;
+
+  const utterance = new SpeechSynthesisUtterance(textoAFrasear);
+
+  const vozOptima = vocesDisponiblesDecenas.find(v => 
+    v.lang.startsWith('es-MX') && (v.name.includes('Google') || v.name.includes('Natural') || v.name.includes('Online'))
+  ) || vocesDisponiblesDecenas.find(v => v.lang.startsWith('es-MX')) || vocesDisponiblesDecenas.find(v => v.lang.startsWith('es'));
+
+  if (vozOptima) {
+    utterance.voice = vozOptima;
+  }
+
+  utterance.lang = 'es-MX';
+  utterance.rate = 0.9;
+  utterance.pitch = 1.0;
+
+  window.speechSynthesis.speak(utterance);
 }
 
-// Vinculación con los controles de idioma del proyecto principal
 const originalAlternarIdiomaDecenas = typeof alternarIdioma === 'function' ? alternarIdioma : null;
+
 alternarIdioma = function(idioma) {
-  if (originalAlternarIdiomaDecenas) originalAlternarIdiomaDecenas(idioma);
-  else idiomaActual = idioma;
+  if (originalAlternarIdiomaDecenas) {
+    originalAlternarIdiomaDecenas(idioma);
+  } else {
+    idiomaActual = idioma;
+    const elementos = document.querySelectorAll("[data-es]");
+    elementos.forEach(el => {
+      el.innerHTML = (idioma === 'na') ? el.getAttribute("data-na") : el.getAttribute("data-es");
+    });
+  }
   renderDecenaActual();
 }
 

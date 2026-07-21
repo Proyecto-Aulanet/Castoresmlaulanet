@@ -424,11 +424,9 @@
     
     <!-- Encabezado de Categoría -->
     <div class="col-12 text-center mb-4">
-      <span class="badge px-3 py-2 rounded-pill mb-2" style="background-color: #FFFDE7; color: #FBC02D; font-weight: 700; border: 1px solid #FFF59D;">
-        TRADUCCIÓN EXCLUSIVA: ESPAÑOL ➔ NÁHUATL
-      </span>
+      
       <h2 class="fw-bold" style="color: #F57F17;">Derivados y Alimentos de Maíz</h2>
-      <p class="text-muted mx-auto" style="max-width: 580px;">
+      <p class="text-muted mx-auto" style="max-width: 580px; background-color: #FFFDE7; border-radius: 10px; padding: 15px; border: 1px solid #FFF59D;">
         La planta sagrada que nos da identidad. Explora los nombres originales de los alimentos que nacen de la milpa y la masa nixtamalizada.
       </p>
     </div>
@@ -645,14 +643,13 @@
     <!-- JS -->
     <script src="/js/app.js"></script>
 <script>
-    const maizDatos = [
+   const maizDatos = [
   {
     espanol: "Maíz (en general)",
     nahuatl: "Tlaolli",
     pronunciacion: "tla-ó-lli",
     literal: "Grano desgranado / Sustento seco",
     descripcion: "El grano maduro ya seco y listo para ser desgranado. Es la base lingüística y alimenticia de casi toda la cocina tradicional.",
-    audio: "audios/maiz/tlaolli.mp3",
     imagen: "/Recursos/alimentos/maiz.jpg"
   },
   {
@@ -661,16 +658,14 @@
     pronunciacion: "tlax-cá-lli",
     literal: "Cosa cocida en comal / Pan de maíz",
     descripcion: "El disco de masa nixtamalizada cocido perfectamente sobre el comal caliente. Elemento indispensable en cada comida de la región.",
-    audio: "audios/maiz/tlaxcalli.mp3",
     imagen: "/Recursos/alimentos/tortillas.jpg"
   },
   {
-    espanol: "Elote (Tierno)",
+    espanol: "Elote",
     nahuatl: "Elotl",
     pronunciacion: "é-lotl",
     literal: "Mazorca de maíz tierna",
     descripcion: "La mazorca cuando sus granos aún están suaves, jugosos y dulces. Ideal para comer hervido con tequesquite o asado a las brasas.",
-    audio: "audios/maiz/elotl.mp3",
     imagen: "https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcQY5ouJiPVlO_8NnV3l2SUl-9qi8TQe4JkjmGe9Fx5BCPNfC0BPXsiai1hOtNq55Pk5B6cR6iVawMJKc0I"
   },
   {
@@ -679,7 +674,6 @@
     pronunciacion: "ta-má-lli",
     literal: "Envoltorio / Cosa envuelta",
     descripcion: "Porción de masa batida, rellena de salsa o carne, envuelta cuidadosamente en hojas de mazorca (totomoxtle) y cocida al vapor.",
-    audio: "audios/maiz/tamalli.mp3",
     imagen: "https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcQ-G_zJNI-n6MvS2J-ktjhJfNbPa4SbwMXbIQ5_DlOB8PYPlaRczcxjXKd6P50twahWkPd88-baOWt0iKU"
   },
   {
@@ -688,26 +682,7 @@
     pronunciacion: "tíx-tli",
     literal: "Harina húmeda / Masa molida",
     descripcion: "El resultado de moler los granos nixtamalizados en el metate. Su textura tersa permite moldear tortillas, tlacoyos y antojitos.",
-    audio: "audios/maiz/tixtli.mp3",
     imagen: "/Recursos/alimentos/masa.jpg"
-  },
-  {
-    espanol: "Tlacoyo",
-    nahuatl: "Tlatlaoyotl",
-    pronunciacion: "tlat-laó-yotl",
-    literal: "Tortilla rellena / Empanada de maíz",
-    descripcion: "Antojito grueso y ovalado relleno de frijoles, habas o requesón, cocido al comal y cubierto con salsa, queso y nopales.",
-    audio: "audios/maiz/tlatlaoyotl.mp3",
-   imagen: "/Recursos/alimentos/tlacoyo.jpg"
-  },
-  {
-    espanol: "Taco",
-    nahuatl: "Tlaxcalyotl",
-    pronunciacion: "tlax-cal-yó-tl",
-    literal: "Preparación envuelta en tortilla",
-    descripcion: "El acto culinario de envolver cualquier guisado o carne dentro de una tortilla caliente, derivado directamente de la raíz 'tlaxcalli'.",
-    audio: "audios/maiz/tlaxcalyotl.mp3",
-    imagen: "https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcS5JoY10i9WgcYXUDyf27-G0rzLD5b46yqZsJ_xPwSxxYMR4RgLd_mVJwUEcEE0ff3099sEw606ThO5Gzg"
   },
   {
     espanol: "Pozole",
@@ -715,28 +690,48 @@
     pronunciacion: "po-zó-lli",
     literal: "Espumoso / Hervido con espuma",
     descripcion: "Caldo tradicional preparado con granos de maíz de la variedad cacahuazintle, los cuales estallan en forma de flor al hervir.",
-    audio: "audios/maiz/pozolli.mp3",
     imagen: "/Recursos/alimentos/pozole.jpg"
-  },
-  {
-    espanol: "Esquites",
-    nahuatl: "Izquitl",
-    pronunciacion: "íz-quitl",
-    literal: "Maíz tostado o cocido en comal",
-    descripcion: "Granos de elote tierno cocinados con epazote, chile y sal. Originalmente tostados, hoy en día preparados en caldito reconfortante.",
-    audio: "audios/maiz/izquitl.mp3",
-    imagen: "/Recursos/alimentos/esquite.jpg"
-  },
-  {
-    espanol: "Hoja seca de maíz (Totomoxtle)",
-    nahuatl: "Totomoxtli",
-    pronunciacion: "to-to-móx-tli",
-    literal: "Hoja seca y crujiente de la mazorca",
-    descripcion: "Las cubiertas secas de la mazorca que se limpian y remojan para envolver los tamales o conservar alimentos.",
-    audio: "audios/maiz/totomoxtli.mp3",
-   imagen: "/Recursos/alimentos/hoja.jpg"
   }
 ];
+
+// Cargar voces del navegador
+let vocesDisponiblesMaiz = [];
+function obtenerVocesMaiz() {
+  vocesDisponiblesMaiz = window.speechSynthesis.getVoices();
+}
+if ('speechSynthesis' in window) {
+  window.speechSynthesis.onvoiceschanged = obtenerVocesMaiz;
+  obtenerVocesMaiz();
+}
+
+// Función de voz fluida (Alexa / Asistente) para el módulo de Maíz
+function hablarMaiz(nahuatl, espanol) {
+  if (!('speechSynthesis' in window)) return;
+
+  // Detener audios anteriores
+  window.speechSynthesis.cancel();
+
+  // Limpiar el paréntesis de "Maíz (en general)" para que la voz no lea "(en general)" si no quieres
+  const espanolLimpio = espanol.split('(')[0].trim();
+  const textoAFrasear = `${nahuatl}. Significa: ${espanolLimpio}.`;
+  
+  const utterance = new SpeechSynthesisUtterance(textoAFrasear);
+
+  // Seleccionar la mejor voz de México (Google, Microsoft Neural, etc.)
+  const vozOptima = vocesDisponiblesMaiz.find(v => 
+    v.lang.startsWith('es-MX') && (v.name.includes('Google') || v.name.includes('Natural') || v.name.includes('Online'))
+  ) || vocesDisponiblesMaiz.find(v => v.lang.startsWith('es-MX')) || vocesDisponiblesMaiz.find(v => v.lang.startsWith('es'));
+
+  if (vozOptima) {
+    utterance.voice = vozOptima;
+  }
+
+  utterance.lang = 'es-MX';
+  utterance.rate = 0.9;   // Modulación fluida
+  utterance.pitch = 1.05; // Tono amable
+
+  window.speechSynthesis.speak(utterance);
+}
 
 function cargarModuloMaiz() {
   const grid = document.getElementById("grid-maiz");
@@ -748,7 +743,7 @@ function cargarModuloMaiz() {
       <div class="col">
         <div class="card h-100 card-maiz overflow-hidden">
           <div class="row g-0 h-100">
-            <!-- Columna de Imagen (Concepto en Español) -->
+            <!-- Columna de Imagen -->
             <div class="col-4 position-relative">
               <img src="${item.imagen}" class="w-100 h-100" style="object-fit: cover; position: absolute;" alt="${item.espanol}">
             </div>
@@ -763,13 +758,13 @@ function cargarModuloMaiz() {
                 <div>
                   <strong class="text-success d-block small" style="font-size: 0.75rem; color: #2E7D32 !important;">NÁHUATL:</strong>
                   <span class="fs-5 fw-bold text-dark">${item.nahuatl}</span>
-                  <span class="d-block text-muted style="font-size: 0.7rem;">"${item.pronunciacion}"</span>
+                  <span class="d-block text-muted" style="font-size: 0.7rem;">"${item.pronunciacion}"</span>
                 </div>
-                <button class="btn-audio-maiz d-flex align-items-center justify-content-center" onclick="reproducirAudioMaiz('${item.audio}')">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-volume-up-fill" viewBox="0 0 16 16">
-                    <path d="M11.536 14.01A8.473 8.473 0 0 0 14 8c0-2.29-.91-4.365-2.37-5.88l-.707.707A7.472 7.472 0 0 1 13 8a7.471 7.471 0 0 1-2.171 5.303l.707.707z"/>
-                    <path d="M10.121 12.596A6.48 6.48 0 0 0 12 8a6.48 6.48 0 0 0-1.879-4.596l-.707.707A5.478 5.478 0 0 1 11 8a5.478 5.478 0 0 1-1.586 3.889l.707.707z"/>
-                    <path d="M6.231 4.066a.5.5 0 0 1 .53.1L9.23 6.666A.5.5 0 0 1 9.5 7v2a.5.5 0 0 1-.27.434l-2.468 2.5a.5.5 0 0 1-.762-.306l-1.5-6.5a.5.5 0 0 1 .431-.562z"/>
+                <!-- Botón con voz inteligente -->
+                <button class="btn-audio-maiz d-flex align-items-center justify-content-center" 
+                        onclick="hablarMaiz('${item.nahuatl}', '${item.espanol}')">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+                    <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
                   </svg>
                 </button>
               </div>
@@ -779,16 +774,6 @@ function cargarModuloMaiz() {
       </div>
     `;
   });
-}
-
-let audioMaiz = null;
-function reproducirAudioMaiz(url) {
-  if (audioMaiz) {
-    audioMaiz.pause();
-    audioMaiz.currentTime = 0;
-  }
-  audioMaiz = new Audio(url);
-  audioMaiz.play().catch(e => console.log("Archivo de audio interactivo no encontrado"));
 }
 
 document.addEventListener("DOMContentLoaded", cargarModuloMaiz);
