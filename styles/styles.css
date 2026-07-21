@@ -11958,7 +11958,47 @@ bottom:3%;
 left:34%;
 
 }
+}
 
+/* ==========================================
+   AJUSTES RESPONSIVOS PARA DISPOSITIVOS MÓVILES
+   ========================================== */
 
+/* 1. Reducir el margen superior rígido en celulares y tablets */
+@media (max-width: 768px) {
+  main.container {
+    margin-top: 20px !important; /* En celular baja a un espacio normal */
+  }
 
+  /* Ajuste de títulos para que no se corten en pantallas pequeñas */
+  #inicio-estaciones h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* 2. Mantener imágenes fluidas e impecables */
+.carousel-inner img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9; /* Mantiene la proporción ideal en cualquier pantalla */
+  object-fit: cover;
+}
+
+/* 3. Asegurar que las tarjetas ocupen el espacio disponible sin salirse */
+.card {
+  word-wrap: break-word;
+  overflow: hidden;
+}
+
+/* 4. Ventana Modal Emergente adaptable */
+#contenedor-interactivo > div {
+  max-width: 90% !important; /* Para que en celulares con pantallas pequeñas no toque los bordes */
+}
+
+/* 5. Estilos flexibles para los botones de la parte inferior (Regresar / Subir) */
+@media (max-width: 576px) {
+  .btn-regresar-int {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+  }
 }
