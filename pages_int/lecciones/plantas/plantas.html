@@ -691,126 +691,127 @@
     </div>
 
 
-    <!-- ==================== CONTENEDOR MODAL DINÁMICO CON AUDIO INTEGRADO ==================== -->
-    <div id="contenedor-interactivo"
-        class="d-none position-fixed top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center p-3"
-        style="background: rgba(0,0,0,0.8); z-index: 2000; backdrop-filter: blur(4px);">
-        <div id="modal-scroll-body" class="card border-0 rounded-5 p-4 shadow-lg text-center bg-white position-relative"
-            style="max-width: 550px; width: 100%; max-height: 92vh; overflow-y: auto;">
+    <!-- ==================== CONTENEDOR MODAL COMPACTO EQUILIBRADO ==================== -->
+<div id="contenedor-interactivo"
+    class="d-none position-fixed top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center p-3"
+    style="background: rgba(0,0,0,0.75); z-index: 2000; backdrop-filter: blur(5px);">
 
-            <!-- Botón de cerrar superior (X) -->
-            <button class="btn-close position-absolute top-0 end-0 m-3 fs-5" onclick="cerrarSeccion()"></button>
+    <!-- Ventana con ancho ideal de 420px (Compacta y bien proporcionada) -->
+    <div id="modal-scroll-body"
+        class="card border-0 rounded-4 p-4 shadow-lg text-center bg-white position-relative"
+        style="width: 420px; max-width: 90vw; max-height: 85vh; overflow-y: auto;">
 
-            <!-- Imagen del Día / Mascota Dinámica -->
-            <div class="mb-3 text-center">
-                <img id="modal-mascota-img" src="" class="img-fluid rounded-4 shadow-sm border"
-                    style="max-height: 180px; width: auto; object-fit: contain;">
+        <!-- Botón de cerrar superior (X) -->
+        <button class="btn-close position-absolute top-0 end-0 m-3" style="transform: scale(0.85);" onclick="cerrarSeccion()"></button>
+
+        <!-- TÍTULOS Y SUBTÍTULOS DINÁMICOS -->
+        <h4 class="fw-bold text-dark mb-0 mt-1 fs-5">
+            <span id="m-tit-xinachtli" class="d-none" data-es="Xinachtli" data-na="Xinachtli">Xinachtli</span>
+            <span id="m-tit-miahuatl" class="d-none" data-es="Miahuatl" data-na="Miahuatl">Miahuatl</span>
+            <span id="m-tit-elotl" class="d-none" data-es="Elotl" data-na="Elotl">Elotl</span>
+            <span id="m-tit-cintli" class="d-none" data-es="Cintli" data-na="Cintli">Cintli</span>
+            <span id="m-tit-olotl" class="d-none" data-es="Olotl" data-na="Olotl">Olotl</span>
+            <span id="m-tit-totomoxtle" class="d-none" data-es="Ixtlacatl / Tlalcualyotl" data-na="Ixtlacatl / Tlalcualyotl">Ixtlacatl / Tlalcualyotl</span>
+        </h4>
+
+        <p class="text-muted small mb-3">
+            <span id="m-sub-xinachtli" class="d-none" data-es="La Semilla Esencial" data-na="Yancuic Xinachtli">Yancuic Xinachtli</span>
+            <span id="m-sub-miahuatl" class="d-none" data-es="La Flor Alta del Maíz" data-na="Ahco Xochitl">Ahco Xochitl</span>
+            <span id="m-sub-elotl" class="d-none" data-es="El Fruto Celic" data-na="Celic Tlaolli">Celic Tlaolli</span>
+            <span id="m-sub-cintli" class="d-none" data-es="La Mazorca Seca" data-na="Chicahuac Cintli">Chicahuac Cintli</span>
+            <span id="m-sub-olotl" class="d-none" data-es="El Centro del Maíz" data-na="Iyollo Cintli">Iyollo Cintli</span>
+            <span id="m-sub-totomoxtle" class="d-none" data-es="Hojas de Resguardo" data-na="Totomoxtli Isol">Totomoxtli Isol</span>
+        </p>
+
+        <!-- 1. TEXTO EXPLICATIVO -->
+        <div class="text-dark small mb-3 p-3 bg-light rounded-3 border text-start" style="font-size: 0.9rem;">
+
+            <!-- Audio Xinachtli -->
+            <div id="m-txt-xinachtli" class="d-none" data-audio="/Recursos/audios/plantas/semilla.ogg">
+                <p class="mb-0">
+                    <span data-es="Xinachtli: La semilla del maíz (o semilla en general) reservada cuidadosamente para la siembra."
+                          data-na="Xinachtli: In tachtli tlein cualli mopian pampa se tictocaz totlalnan.">
+                        Xinachtli: In tachtli tlein cualli mopian pampa se tictocaz totlalnan.
+                    </span>
+                </p>
             </div>
 
-            <!-- TÍTULOS Y SUBTÍTULOS DINÁMICOS -->
-            <h3 class="fw-bold text-dark mb-1">
-                <span id="m-tit-xinachtli" class="d-none" data-es="Xinachtli" data-na="Xinachtli">Xinachtli</span>
-                <span id="m-tit-miahuatl" class="d-none" data-es="Miahuatl" data-na="Miahuatl">Miahuatl</span>
-                <span id="m-tit-elotl" class="d-none" data-es="Elotl" data-na="Elotl">Elotl</span>
-                <span id="m-tit-cintli" class="d-none" data-es="Cintli" data-na="Cintli">Cintli</span>
-                <span id="m-tit-olotl" class="d-none" data-es="Olotl" data-na="Olotl">Olotl</span>
-                <span id="m-tit-totomoxtle" class="d-none" data-es="Ixtlacatl / Tlalcualyotl"
-                    data-na="Ixtlacatl / Tlalcualyotl">Ixtlacatl / Tlalcualyotl</span>
-            </h3>
-
-            <h5 class="text-muted small mb-3">
-                <span id="m-sub-xinachtli" class="d-none" data-es="La Semilla Esencial" data-na="Yancuic Xinachtli">La
-                    Semilla Esencial</span>
-                <span id="m-sub-miahuatl" class="d-none" data-es="La Flor Alta del Maíz" data-na="Ahco Xochitl">La Flor
-                    Alta del Maíz</span>
-                <span id="m-sub-elotl" class="d-none" data-es="El Fruto Celic" data-na="Celic Tlaolli">El Fruto
-                    Celic</span>
-                <span id="m-sub-cintli" class="d-none" data-es="La Mazorca Seca" data-na="Chicahuac Cintli">La Mazorca
-                    Seca</span>
-                <span id="m-sub-olotl" class="d-none" data-es="El Centro del Maíz" data-na="Iyollo Cintli">El Centro del
-                    Maíz</span>
-                <span id="m-sub-totomoxtle" class="d-none" data-es="Hojas de Resguardo" data-na="Totomoxtli Isol">Hojas
-                    de Resguardo</span>
-            </h5>
-
-            <!-- 1. TEXTO EXPLICATIVO (Rutas de audios lógicas configuradas) -->
-            <div class="text-dark small mb-4 p-3 bg-light rounded-4 border text-start">
-
-                <!-- Audio Xinachtli -->
-                <div id="m-txt-xinachtli" class="d-none" data-audio="/Recursos/audios/plantas/semilla.ogg">
-                    <p class="mb-0"><span
-                            data-es="Xinachtli: La semilla del maíz (o semilla en general) reservada cuidadosamente para la siembra."
-                            data-na="Xinachtli: In tachtli tlein cualli mopian pampa se tictocaz totlalnan.">Xinachtli:
-                            La semilla del maíz (o semilla en general) reservada cuidadosamente para la siembra.</span>
-                    </p>
-                </div>
-
-                <!-- Audio Miahuatl -->
-                <div id="m-txt-miahuatl" class="d-none" data-audio="/Recursos/audios/plantas/flor del maiz.ogg">
-                    <p class="mb-0"><span
-                            data-es="Miahuatl: La espiga o flor del maíz que aparece en la parte alta de la planta."
-                            data-na="Miahuatl: In xochitl tlaolli tlein pan neci ahco ipan icuac milmilli.">Miahuatl: La
-                            espiga o flor del maíz que aparece en la parte alta de la planta.</span></p>
-                </div>
-
-                <!-- Audio Elotl -->
-                <div id="m-txt-elotl" class="d-none" data-audio="/Recursos/audios/plantas/elote.ogg">
-                    <p class="mb-0"><span
-                            data-es="Elotl: El elote (el fruto tierno cuando los granos están suaves y llenos de leche)."
-                            data-na="Elotl: In tlaolli tlein oc celic iwan xinachtli quipia chichihualatl.">Elotl: El
-                            elote (el fruto tierno cuando los granos están suaves y llenos de leche).</span></p>
-                </div>
-
-                <!-- Audio Cintli -->
-                <div id="m-txt-cintli" class="d-none" data-audio="/Recursos/audios/plantas/maizmaduro.ogg">
-                    <p class="mb-0"><span
-                            data-es="Cintli: La mazorca de maíz ya madura y seca, lista para cosecharse y nixtamalizarse."
-                            data-na="Cintli: In chicahuac tlaolli tlein ya huacqui iwan cualli ic nextamalli.">Cintli:
-                            La mazorca de maíz ya madura y seca, lista para cosecharse y nixtamalizarse.</span></p>
-                </div>
-
-                <!-- Audio Olotl -->
-                <div id="m-txt-olotl" class="d-none" data-audio="/Recursos/audios/plantas/olote.ogg">
-                    <p class="mb-0"><span
-                            data-es="Olotl: El olote (el corazón o centro de la mazorca una vez que se le quitan los granos)."
-                            data-na="Olotl: In iyollo in cintli icuac ya tiquisquiah nochimeh in tlaolmeih.">Olotl: El
-                            olote (el corazón o centro de la mazorca una vez que se le quitan los granos).</span></p>
-                </div>
-
-                <!-- Audio Totomoxtle -->
-                <div id="m-txt-totomoxtle" class="d-none"
-                    data-audio="/Recursos/audios/plantas/hojas_secas_de_mazorca.ogg">
-                    <p class="mb-0"><span
-                            data-es="Ixtlacatl / Tlalcualyotl: Las hojas secas que envuelven la mazorca (el totomoxtle)."
-                            data-na="Ixtlacatl / Tlalcualyotl: In totomoxtli tlein quiquimiloa in cintli icuac ya chicahuac.">Ixtlacatl
-                            / Tlalcualyotl: Las hojas secas que envuelven la mazorca (el totomoxtle).</span></p>
-                </div>
-
+            <!-- Audio Miahuatl -->
+            <div id="m-txt-miahuatl" class="d-none" data-audio="/Recursos/audios/plantas/flor del maiz.ogg">
+                <p class="mb-0">
+                    <span data-es="Miahuatl: La espiga o flor del maíz que aparece en la parte alta de la planta."
+                          data-na="Miahuatl: In xochitl tlaolli tlein pan neci ahco ipan icuac milmilli.">
+                        Miahuatl: In xochitl tlaolli tlein pan neci ahco ipan icuac milmilli.
+                    </span>
+                </p>
             </div>
 
-            <!-- 2. BOTONES DE AUDIO -->
-            <div class="d-flex justify-content-center gap-2 mb-4">
-                <button id="btn-audio-normal" onclick="reproducirAudioDia(1.0)"
-                    class="btn btn-success rounded-pill d-flex align-items-center gap-2 px-4 py-2 fw-semibold shadow-sm text-white">
-                    <i class="bi bi-volume-up-fill fs-5"></i> <span data-es="Escuchar"
-                        data-na="Xicquici">Escuchar</span>
-                </button>
-                <button id="btn-audio-lento" onclick="reproducirAudioDia(0.6)"
-                    class="btn btn-warning rounded-pill d-flex align-items-center gap-2 px-4 py-2 fw-semibold shadow-sm text-dark">
-                    <i class="bi bi-tortoise-fill fs-5"></i> <span data-es="Lento" data-na="Yolic">Lento</span>
-                </button>
+            <!-- Audio Elotl -->
+            <div id="m-txt-elotl" class="d-none" data-audio="/Recursos/audios/plantas/elote.ogg">
+                <p class="mb-0">
+                    <span data-es="Elotl: El elote (el fruto tierno cuando los granos están suaves y llenos de leche)."
+                          data-na="Elotl: In tlaolli tlein oc celic iwan xinachtli quipia chichihualatl.">
+                        Elotl: In tlaolli tlein oc celic iwan xinachtli quipia chichihualatl.
+                    </span>
+                </p>
             </div>
 
-            <!-- 3. BOTÓN DE CIERRE GENERAL -->
-            <div class="d-flex justify-content-center">
-                <button class="btn btn-dark px-5 rounded-pill fw-bold py-2 shadow-sm" onclick="cerrarSeccion()"
-                    style="min-width: 200px;">
-                    <span data-es="Volver al Menú" data-na="Nican mocuepa">Volver al Menú</span>
-                </button>
+            <!-- Audio Cintli -->
+            <div id="m-txt-cintli" class="d-none" data-audio="/Recursos/audios/plantas/maizmaduro.ogg">
+                <p class="mb-0">
+                    <span data-es="Cintli: La mazorca de maíz ya madura y seca, lista para cosecharse y nixtamalizarse."
+                          data-na="Cintli: In chicahuac tlaolli tlein ya huacqui iwan cualli ic nextamalli.">
+                        Cintli: In chicahuac tlaolli tlein ya huacqui iwan cualli ic nextamalli.
+                    </span>
+                </p>
+            </div>
+
+            <!-- Audio Olotl -->
+            <div id="m-txt-olotl" class="d-none" data-audio="/Recursos/audios/plantas/olote.ogg">
+                <p class="mb-0">
+                    <span data-es="Olotl: El olote (el corazón o centro de la mazorca una vez que se le quitan los granos)."
+                          data-na="Olotl: In iyollo in cintli icuac ya tiquisquiah nochimeh in tlaolmeih.">
+                        Olotl: In iyollo in cintli icuac ya tiquisquiah nochimeh in tlaolmeih.
+                    </span>
+                </p>
+            </div>
+
+            <!-- Audio Totomoxtle -->
+            <div id="m-txt-totomoxtle" class="d-none" data-audio="/Recursos/audios/plantas/hojas_secas_de_mazorca.ogg">
+                <p class="mb-0">
+                    <span data-es="Ixtlacatl / Tlalcualyotl: Las hojas secas que envuelven la mazorca (el totomoxtle)."
+                          data-na="Ixtlacatl / Tlalcualyotl: In totomoxtli tlein quiquimiloa in cintli icuac ya chicahuac.">
+                        Ixtlacatl / Tlalcualyotl: In totomoxtli tlein quiquimiloa in cintli icuac ya chicahuac.
+                    </span>
+                </p>
             </div>
 
         </div>
+
+        <!-- 2. BOTONES DE AUDIO EN LA MISMA FILA (HORIZONTAL) -->
+        <div class="d-flex gap-2 mb-2">
+            <!-- Botón Escuchar -->
+            <button id="btn-audio-normal" onclick="reproducirAudioDia(1.0)"
+                class="btn btn-success rounded-pill d-flex align-items-center justify-content-center gap-1 py-2 fw-semibold shadow-sm text-white flex-fill small">
+                <i class="bi bi-volume-up-fill fs-6"></i>
+                <span data-es="Escuchar" data-na="Xicquici">Xicquici</span>
+            </button>
+
+            <!-- Botón Lento -->
+            <button id="btn-audio-lento" onclick="reproducirAudioDia(0.6)"
+                class="btn btn-warning rounded-pill d-flex align-items-center justify-content-center gap-1 py-2 fw-semibold shadow-sm text-dark flex-fill small">
+                <i class="bi bi-tortoise-fill fs-6"></i>
+                <span data-es="Lento" data-na="Yolic">Yolic</span>
+            </button>
+        </div>
+
+        <!-- 3. BOTÓN VOLVER AL MENÚ ABAJO -->
+        <button class="btn btn-dark rounded-pill fw-bold py-2 shadow-sm w-100 small" onclick="cerrarSeccion()">
+            <span data-es="Volver al Menú" data-na="Nican mocuepa">Nican mocuepa</span>
+        </button>
+
     </div>
+</div>
 
     <!-- =========================================
                 FOOTER
