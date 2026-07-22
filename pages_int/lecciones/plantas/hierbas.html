@@ -107,82 +107,101 @@
 
 
         <!-- ========================================== -->
-        <!--                HEADER MAIN                 -->
-        <!-- ========================================== -->
+<!--                HEADER MAIN                 -->
+<!-- ========================================== -->
 
-        <header class="header-main sticky-top shadow-lg">
+<header class="header-main sticky-top shadow-lg">
 
-            <div class="container">
+    <div class="container">
 
-                <!-- FILA SUPERIOR -->
-                <div class="headerint-top d-flex justify-content-between align-items-star flex-wrap gap-3 py-3">
+        <!-- FILA SUPERIOR -->
+        <div
+            class="headerint-top d-flex justify-content-between align-items-star flex-wrap gap-3 py-3">
 
-                    <!-- LOGO -->
-                    <div class="headerint-logo">
+            <!-- LOGO -->
+            <div class="headerint-logo">
 
-                        <img src="/Recursos/logos/logo_completo_svg.svg" alt="logo" class="img-fluid"
-                            style="max-width:185px;" data-aos="fade-right">
+                <img
+                    src="/Recursos/logos/logo_completo_svg.svg"
+                    alt="logo"
+                    class="img-fluid"
+                    style="max-width:185px;"
+                    data-aos="fade-right">
+
+            </div>
+
+            <!-- ESTADÍSTICAS -->
+            <div
+                class="headerint-stats d-flex align-items-center justify-content-center gap-3 flex-wrap"
+                data-aos="fade-up">
+
+                <!-- RACHA -->
+                <div class="stat-item headerint-racha">
+
+                    <i class="bi bi-fire stat-icon text-warning"></i>
+
+                    <div>
+
+                        <small
+                            class="stat-label"
+                            data-es="Racha"
+                            data-na="Tlatzintli">
+
+                            Racha
+
+                        </small>
+
+                        <span
+                            id="streak-display"
+                            class="stat-value">
+
+                            0
+
+                        </span>
 
                     </div>
 
-                    <!-- ESTADÍSTICAS -->
-                    <div class="headerint-stats d-flex align-items-center justify-content-center gap-3 flex-wrap"
-                        data-aos="fade-up">
+                </div>
 
-                        <!-- RACHA -->
-                        <div class="stat-item headerint-racha">
+                <!-- XP -->
+                <div class="stat-item headerint-xp">
 
-                            <i class="bi bi-fire stat-icon text-warning"></i>
+                    <i class="bi bi-stars stat-icon text-warning"></i>
 
-                            <div>
+                    <div>
 
-                                <small class="stat-label" data-es="Racha" data-na="Tlatzintli">
-
-                                    Racha
-
-                                </small>
-
-                                <span id="streak-display" class="stat-value">
-
-                                    0
-
-                                </span>
-
-                            </div>
-
-                        </div>
-
-                        <!-- XP -->
-                        <div class="stat-item headerint-xp">
-
-                            <i class="bi bi-stars stat-icon text-warning"></i>
-
-                            <div>
-
-                                <small class="stat-label" data-es="Puntaje" data-na="Tlapōhualli">
+                        <small
+                            class="stat-label"
+                            data-es="Puntaje"
+                            data-na="Tlapōhualli">
 
                                     Puntaje
 
-                                </small>
+                        </small>
 
-                                <span id="xp-display" class="stat-value">
+                        <span
+                            id="xp-display"
+                            class="stat-value">
 
-                                    0
+                            0
 
-                                </span>
-
-                            </div>
-
-                        </div>
+                        </span>
 
                     </div>
+
+                </div>
+
+            </div>
 
                     <!-- PERFIL -->
                     <div class="perfil-header dropdown" data-aos="fade-left">
 
                         <!-- BOTÓN -->
-                        <button class="btn p-0 border-0 bg-transparent d-flex align-items-center" type="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
+                        <button
+                            class="btn p-0 border-0 bg-transparent d-flex align-items-center"
+                            type="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false">
 
                             <!-- Avatar -->
                             <div class="perfil-avatar">
@@ -194,7 +213,10 @@
                             <!-- Nombre -->
                             <div class="perfil-info d-none d-md-block">
 
-                                <span class="perfil-nombre" data-es="Invitado" data-na="Tlapowalistli">
+                                <span
+                                    class="perfil-nombre"
+                                    data-es="Invitado"
+                                    data-na="Tlapowalistli">
 
                                     Invitado
 
@@ -229,67 +251,121 @@
 
                 </div>
 
-                <!-- NAVBAR -->
-                <nav class="navbar navbar-expand-lg navbarint justify-content-center">
+        </div>
 
-                    <div class="container-fluid justify-content-center">
+        <!-- NAVBAR -->
+        <nav class="navbar navbar-expand-lg navbarint justify-content-center">
 
-                        <!-- BOTÓN HAMBURGUESA -->
-                        <button class="navbar-toggler navbarint-toggler mx-auto" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#menuNavbar">
+            <div class="container-fluid justify-content-center">
 
-                            <i class="bi bi-chevron-down"></i>
+                <!-- BOTÓN HAMBURGUESA -->
+                    <button
+                    class="navbar-toggler navbarint-toggler mx-auto"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#menuNavbar">
 
-                        </button>
+                    <i class="bi bi-chevron-down"></i>
 
-                        <!-- MENÚ -->
-                        <div class="collapse navbar-collapse justify-content-center" id="menuNavbar">
+                </button>
 
-                            <div class="navbar-nav gap-2 justify-content-center">
+                <!-- MENÚ -->
+                <div
+                    class="collapse navbar-collapse justify-content-center"
+                    id="menuNavbar">
 
-                                <a href="../pages_int/inicio.html" class="btn navbarint-btn rounded-pill px-4"
-                                    data-aos="fade-up" data-es="Inicio" data-na="Pewaloyan">
-                                    <i class="bi bi-house-fill me-2"></i>
-                                    Inicio
-                                </a>
+                    <div class="navbar-nav gap-2 justify-content-center">
 
-                                <a href="../pages_int/lecciones.html" class="btn navbarint-btn rounded-pill px-4"
-                                    data-aos="fade-up" data-aos-delay="100" data-es="Lecciones" data-na="Temachtilli">
-                                    <i class="bi bi-book-fill me-2"></i>
-                                    Lecciones
-                                </a>
+                    <!-- INICIO -->
+                    <button
+                        type="button"
+                        onclick="window.location.href='/pages_int/inicio.html'"
+                        class="btn navbarint-btn rounded-pill px-4"
+                        data-aos="fade-up"
+                        data-es="Inicio"
+                        data-na="Pewaloyan">
 
-                                <a href="../pages_int/Cuentos/cuentos.html" class="btn navbarint-btn rounded-pill px-4"
-                                    data-aos="fade-up" data-aos-delay="100" data-es="Cuentos" data-na="Tlahtolli">
-                                    <i class="bi bi-book-half me-2"></i>
-                                    Cuentos
-                                </a>
+                        <i class="bi bi-house-fill me-2"></i>
 
-                                <a href="../pages_int/cultura.html" class="btn navbarint-btn rounded-pill px-4"
-                                    data-aos="fade-up" data-aos-delay="200" data-es="Cultura"
-                                    data-na="Yancuic Tlamachtiliztli">
-                                    <i class="bi bi-globe-americas me-2"></i>
-                                    Cultura
-                                </a>
+                        Inicio
 
-                                <a href="../pages_int/progreso.html" class="btn navbarint-btn rounded-pill px-4"
-                                    data-aos="fade-up" data-aos-delay="300" data-es="Progreso"
-                                    data-na="Yancuic Nejnemiliztli">
-                                    <i class="bi bi-graph-up-arrow me-2"></i>
-                                    Progreso
-                                </a>
+                    </button>
 
-                            </div>
+                    <!-- LECCIONES -->
+                    <button
+                        type="button"
+                        onclick="window.location.href='/pages_int/Lecciones.html'"
+                        class="btn navbarint-btn rounded-pill px-4"
+                        data-aos="fade-up"
+                        data-aos-delay="100"
+                        data-es="Lecciones"
+                        data-na="Temachtilli">
 
-                        </div>
+                        <i class="bi bi-book-fill me-2"></i>
+
+                        Lecciones
+
+                    </button>
+
+                    <!-- CUENTOS -->
+                    <button
+                        type="button"
+                        onclick="window.location.href='/pages_int/Cuentos/cuentos.html'"
+                        class="btn navbarint-btn rounded-pill px-4"
+                        data-aos="fade-up"
+                        data-aos-delay="100"
+                        data-es="Cuentos"
+                        data-na="Tlahtolli">
+
+                        <i class="bi bi-book-half me-2"></i>
+
+                        Cuentos
+
+                    </button>
+
+                    <!-- CULTURA -->
+                    <button
+                        type="button"
+                        onclick="window.location.href='/pages_int/cultura.html'"
+                        class="btn navbarint-btn rounded-pill px-4"
+                        data-aos="fade-up"
+                        data-aos-delay="200"
+                        data-es="Cultura"
+                        data-na="Yancuic Tlamachtiliztli">
+
+                        <i class="bi bi-globe-americas me-2"></i>
+
+                        Cultura
+
+                    </button>
+
+                    <!-- PROGRESO -->
+                    <button
+                        type="button"
+                        onclick="window.location.href='/pages_int/progreso.html'"
+                        class="btn navbarint-btn rounded-pill px-4"
+                        data-aos="fade-up"
+                        data-aos-delay="300"
+                        data-es="Progreso"
+                        data-na="Yancuic Nejnemiliztli">
+
+                        <i class="bi bi-graph-up-arrow me-2"></i>
+
+                        Progreso
+
+                    </button>
 
                     </div>
 
-                </nav>
+                </div>
 
             </div>
 
-        </header>
+        </nav>
+
+    </div>
+
+</header>
 
         <!-- MAIN -->
         <main class="container py-5">
@@ -576,25 +652,30 @@
     <!-- =======================================================================
      CONTENEDOR DE ACCIONES INFERIORES: EXTREMO IZQUIERDO Y EXTREMO DERECHO
      ======================================================================= -->
-    <div class="container-fluid pb-5 pt-3">
-        <div class="px-4">
-            <div class="d-flex justify-content-between align-items-center w-100">
+    <section class="container">
+        <div
+            class="d-flex justify-content-start mt-5"
+            data-aos="fade-right">
 
-                <!-- Botón Izquierdo: Regresar -->
-                <button onclick="window.location.href='/pages_int/inicio.html'" class="btn-regresar-int">
-                    <i class="bi bi-arrow-left-circle-fill me-2"></i>
-                    <span data-es="Regresar" data-na="Mokuepa"> Regresar </span>
-                </button>
+            <button
+                onclick="window.location.href='/pages_int/mapa_plantas.html'"
+                class="btn-regresar-int">
 
-                <!-- Botón Derecho: Subir -->
-                <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" class="btn-regresar-int">
-                    <i class="bi bi-arrow-up-circle-fill me-2"></i>
-                    <span data-es="Subir" data-na="Tlejco"> Subir </span>
-                </button>
+                <i class="bi bi-arrow-left-circle-fill me-2"></i>
 
-            </div>
+                <span
+                    data-es="Regresar"
+                    data-na="Mokuepa">
+
+                    Regresar
+
+                </span>
+
+            </button>
+
         </div>
-    </div>
+
+    </section>
     <!-- =========================================
                 FOOTER
             ========================================= -->
