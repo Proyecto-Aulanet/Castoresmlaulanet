@@ -11965,9 +11965,9 @@ left:34%;
    ========================================== */
 
 /* 1. Reducir el margen superior rígido en celulares y tablets */
-@media (max-width: 768px) {
+@media (max-width: 300px) {
   main.container {
-    margin-top: 20px !important; /* En celular baja a un espacio normal */
+    margin-top: 10px !important; /* En celular baja a un espacio normal */
   }
 
   /* Ajuste de títulos para que no se corten en pantallas pequeñas */
@@ -11980,7 +11980,7 @@ left:34%;
 .carousel-inner img {
   width: 100%;
   height: auto;
-  aspect-ratio: 16 / 9; /* Mantiene la proporción ideal en cualquier pantalla */
+ /* Mantiene la proporción ideal en cualquier pantalla */
   object-fit: cover;
 }
 
@@ -11992,7 +11992,7 @@ left:34%;
 
 /* 4. Ventana Modal Emergente adaptable */
 #contenedor-interactivo > div {
-  max-width: 90% !important; /* Para que en celulares con pantallas pequeñas no toque los bordes */
+  max-width: 80% !important; /* Para que en celulares con pantallas pequeñas no toque los bordes */
 }
 
 /* 5. Estilos flexibles para los botones de la parte inferior (Regresar / Subir) */
@@ -12001,4 +12001,89 @@ left:34%;
     padding: 8px 12px;
     font-size: 0.85rem;
   }
+}
+
+
+@media (max-width:768px){
+
+    #inicio{
+
+        padding-top:120px;
+
+    }
+
+}
+
+/* PC */
+.seccion-cuentos{
+
+    margin-top:60px;
+
+}
+
+/* Teléfono */
+@media (max-width:768px){
+
+    .seccion-cuentos{
+
+        margin-top:200px;
+
+    }
+
+}
+
+
+/*==========================================
+        CUENTOS - MÓVIL
+==========================================*/
+
+@media (max-width:768px){
+
+    /* Menos espacio dentro de la tarjeta */
+    .hero-card{
+
+        padding:20px 15px;
+
+    }
+
+    /* Reduce la separación entre la imagen y el texto */
+    .hero-card .row{
+
+        row-gap:15px !important;
+
+    }
+
+    /* Imagen más grande */
+    .hero-card .carousel-item img{
+
+        width:100%;
+        max-width:340px;
+        margin:auto;
+        display:block;
+
+    }
+
+    /* Menos espacio arriba del texto */
+    .hero-content{
+
+        margin-top:5px;
+        text-align:center;
+
+    }
+
+    /* Reduce el margen del párrafo */
+    .hero-content p{
+
+        margin-top:12px !important;
+        margin-bottom:18px;
+
+    }
+
+    /* Título un poco más compacto */
+    .hero-title{
+
+        margin-bottom:10px;
+
+    }
+
 }

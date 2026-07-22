@@ -686,6 +686,27 @@
 
     </section>
 
+        <!-- ==================== MODAL VISOR DE IMÁGENES ==================== -->
+    <div class="modal fade" id="modalImagenVisor" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content bg-transparent border-0 shadow-none">
+                <div class="modal-body text-center p-0 position-relative">
+                    <!-- Botón para cerrar -->
+                    <button type="button"
+                        class="btn-close btn-close-white position-absolute top-0 end-0 m-3 z-3 bg-dark p-2 rounded-circle opacity-100 shadow"
+                        data-bs-dismiss="modal" aria-label="Close"></button>
+
+                    <!-- Imagen en alta resolución -->
+                    <img id="imagenModalVista" src="" class="img-fluid rounded-4 shadow-lg border border-2 border-white"
+                        style="max-height: 80vh; object-fit: contain;" alt="Planta">
+
+                    <!-- Título descriptivo -->
+                    <p id="tituloModalVista" class="text-white mt-3 fw-bold fs-5 text-shadow"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- =========================================
                 FOOTER
             ========================================= -->
