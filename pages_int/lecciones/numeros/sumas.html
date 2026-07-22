@@ -298,7 +298,7 @@
 
                         <!-- LECCIONES -->
                         <button
-                            onclick="window.location.href='Lecciones.html'"
+                            onclick="window.location.href='/pages_int/lecciones.html'"
                             class="btn navbarint-btn rounded-pill px-4"
                             data-aos="fade-up"
                             data-aos-delay="100"
@@ -313,7 +313,7 @@
 
                         <!-- CUENTOS -->
                         <button
-                            onclick="window.location.href='cuentos.html'"
+                            onclick="window.location.href='/pages_int/Cuentos/cuentos.html'"
                             class="btn navbarint-btn rounded-pill px-4"
                             data-aos="fade-up"
                             data-aos-delay="100"
@@ -328,7 +328,7 @@
 
                         <!-- CULTURA -->
                         <button
-                            onclick="window.location.href='cultura.html'"
+                            onclick="window.location.href='/pages_int/cultura.html'"
                             class="btn navbarint-btn rounded-pill px-4"
                             data-aos="fade-up"
                             data-aos-delay="200"
@@ -343,7 +343,7 @@
 
                         <!-- PROGRESO -->
                         <button
-                            onclick="window.location.href='progreso.html'"
+                            onclick="window.location.href='/pages_int/progreso.html'"
                             class="btn navbarint-btn rounded-pill px-4"
                             data-aos="fade-up"
                             data-aos-delay="300"
@@ -424,10 +424,11 @@
     
     <!-- Título y Contexto Pedagógico -->
     <div class="col-12 col-lg-10 text-center mb-2">
-      <h2 class="fw-bold" style="color: #1B5E20;">
+      <h2 class="fw-bold" style="color: #23f69b;">
         Tlapohualtlaliliztli: Sumas Básicas en Náhuatl
       </h2>
-      <p class="text-muted mx-auto" style="max-width: 700px;">
+       <p class="text-muted mx-auto" style="max-width: 580px; background-color: #FFFDE7; border-radius: 10px; padding: 15px; border: 1px solid #FFF59D;">
+     
         En la lengua náhuatl, sumar se asocia con "juntar o alinear cuentas". Selecciona una operación para ver cómo interactúan los números y cómo se pronuncia el resultado.
       </p>
     </div>
@@ -738,8 +739,7 @@ const sumasEjercicios = [
     resNahuatl: "Chicome",
     pronunciacion: "chí-co-me",
     explicacionES: "<strong>¡Suma Base 5!</strong> En náhuatl, el 7 se construye fusionando la raíz de <strong>Chicuace</strong> (que viene de 5, macuilli) más <strong>ome</strong> (2). Literalmente: 'Cinco y dos'.",
-    explicacionNA: "In tlapohualli chicome mochihua ica <strong>Chic-</strong> (macuilli) ihuan <strong>ome</strong>. Tlatenehua: 'macuilli ihuan ome'.",
-    audio: "audios/sumas/suma_7.mp3"
+    explicacionNA: "In tlapohualli chicome mochihua ica <strong>Chic-</strong> (macuilli) ihuan <strong>ome</strong>. Tlatenehua: 'macuilli ihuan ome'."
   },
   {
     n1: 5,
@@ -750,8 +750,7 @@ const sumasEjercicios = [
     resNahuatl: "Chiconahui",
     pronunciacion: "chi-có-nah-ui",
     explicacionES: "Siguiendo la estructura quinaria (base 5), sumarle 4 a 5 nos da <strong>Chiconahui</strong>. Raíz <strong>Chic-</strong> (5) + <strong>nahui</strong> (4).",
-    explicacionNA: "Mochihua ica in tlapohualli <strong>Chic-</strong> (macuilli) ihuan <strong>nahui</strong> (4) tlen caxtillan tlatenehua 9.",
-    audio: "audios/sumas/suma_9.mp3"
+    explicacionNA: "Mochihua ica in tlapohualli <strong>Chic-</strong> (macuilli) ihuan <strong>nahui</strong> (4) tlen caxtillan tlatenehua 9."
   },
   {
     n1: 10,
@@ -759,23 +758,21 @@ const sumasEjercicios = [
     n2: 1,
     n2Nahuatl: "Ce",
     res: 11,
-    resNahuatl: "Mahtlactli once",
+    resNahuatl: "Mahtlactli huan ce",
     pronunciacion: "mah-tlác-tli on-se",
     explicacionES: "<strong>¡Suma Base 10!</strong> Al pasar del diez, se usa el nexo conector <strong>on / om</strong>. Por tanto, 10 + 1 resulta exactamente en <strong>Mahtlactli once</strong> ('diez y uno').",
-    explicacionNA: "Ipan tlapohualli tlen quipia mahtlactli, tictlaliaj in nexotl <strong>on</strong>. Mochiua: 'mahtlactli ihuan se'.",
-    audio: "audios/sumas/suma_11.mp3"
+    explicacionNA: "Ipan tlapohualli tlen quipia mahtlactli, tictlaliaj in nexotl <strong>on</strong>. Mochiua: 'mahtlactli ihuan se'."
   },
   {
     n1: 10,
     n1Nahuatl: "Mahtlactli",
     n2: 3,
-    n2Nahuatl: "Yeyi",
+    n2Nahuatl: "Yei",
     res: 13,
-    resNahuatl: "Mahtlactli omeyi",
+    resNahuatl: "Mahtlactli huan yei ",
     pronunciacion: "mah-tlác-tli o-mé-yi",
     explicacionES: "Aquí el conector cambia fonéticamente a <strong>om-</strong> porque el número tres inicia con 'y' (yeyi), facilitando la transición: <strong>Mahtlactli omeyi</strong>.",
-    explicacionNA: "In nahuatilozontli mocuepa <strong>om-</strong> ipampa in yeyi tlein pehua ica yeyi. Mochiua: 'mahtlactli ihuan yeyi'.",
-    audio: "audios/sumas/suma_13.mp3"
+    explicacionNA: "In nahuatilozontli mocuepa <strong>om-</strong> ipampa in yeyi tlein pehua ica yeyi. Mochiua: 'mahtlactli ihuan yeyi'."
   },
   {
     n1: 15,
@@ -786,8 +783,7 @@ const sumasEjercicios = [
     resNahuatl: "Cempohualli",
     pronunciacion: "sem-po-huál-li",
     explicacionES: "<strong>¡La cuenta completa!</strong> Sumar 15 (un punto clave del cuerpo) con 5 resulta en 20 (<strong>Cempohualli</strong>), que significa 'una cuenta entera de dedos' (los 10 de las manos y 10 de los pies).",
-    explicacionNA: "In caxtolli ihuan macuilli quinequi quihtoznequi 20: <strong>Cempohualli</strong>. Se ixquichca tlacatl ipan tlapohualiztli.",
-    audio: "audios/sumas/suma_20.mp3"
+    explicacionNA: "In caxtolli ihuan macuilli quinequi quihtoznequi 20: <strong>Cempohualli</strong>. Se ixquichca tlacatl ipan tlapohualiztli."
   },
   {
     n1: 5,
@@ -798,20 +794,18 @@ const sumasEjercicios = [
     resNahuatl: "Chicuace",
     pronunciacion: "chi-cuá-ce",
     explicacionES: "El origen del 6 demuestra cómo funciona la base 5: se toma el prefijo <strong>Chic-</strong> (cinco) y se le añade directamente <strong>ce</strong> (uno). Literalmente es 'cinco y uno'.",
-    explicacionNA: "In tlapohualli chicuace pehua ica <strong>Chic-</strong> (macuilli) ihuan motlalia <strong>ce</strong> (1). Quihtoznequi: 'macuilli ihuan se'.",
-    audio: "audios/sumas/suma_6.mp3"
+    explicacionNA: "In tlapohualli chicuace pehua ica <strong>Chic-</strong> (macuilli) ihuan motlalia <strong>ce</strong> (1). Quihtoznequi: 'macuilli ihuan se'."
   },
   {
     n1: 5,
     n1Nahuatl: "Macuilli",
     n2: 3,
-    n2Nahuatl: "Yeyi",
+    n2Nahuatl: "Yei",
     res: 8,
-    resNahuatl: "Chicoueyi",
+    resNahuatl: "Chicueyi",
     pronunciacion: "chi-có-hue-yi",
     explicacionES: "Igual que los anteriores de base 5, combinamos el prefijo de cantidad de una mano <strong>Chic-</strong> con el número 3 (<strong>yeyi</strong>), suavizándose fonéticamente como <strong>Chicoueyi</strong>.",
-    explicacionNA: "Mochihua ica in tlapohualli <strong>Chic-</strong> (macuilli) ihuan <strong>yeyi</strong> (3) tlen caxtillan tlatenehua ochocientos anozo 8.",
-    audio: "audios/sumas/suma_8.mp3"
+    explicacionNA: "Mochihua ica in tlapohualli <strong>Chic-</strong> (macuilli) ihuan <strong>yeyi</strong> (3) tlen caxtillan tlatenehua ochocientos anozo 8."
   },
   {
     n1: 10,
@@ -819,11 +813,10 @@ const sumasEjercicios = [
     n2: 2,
     n2Nahuatl: "Ome",
     res: 12,
-    resNahuatl: "Mahtlactli omome",
+    resNahuatl: "Mahtlactli huan ome",
     pronunciacion: "mah-tlác-tli o-mó-me",
     explicacionES: "Al sumar 2 a la base 10, volvemos a emplear la partícula conectora. Debido a que 'ome' empieza con vocal, se enlaza usando la forma <strong>om-</strong> generando <strong>Mahtlactli omome</strong>.",
-    explicacionNA: "Ipan inin tlapohualli tictlaliaj in nexotl <strong>om-</strong> ipampa ome pehua ica vocal. Mochiua: 'mahtlactli ihuan ome'.",
-    audio: "audios/sumas/suma_12.mp3"
+    explicacionNA: "Ipan inin tlapohualli tictlaliaj in nexotl <strong>om-</strong> ipampa ome pehua ica vocal. Mochiua: 'mahtlactli ihuan ome'."
   },
   {
     n1: 10,
@@ -831,11 +824,10 @@ const sumasEjercicios = [
     n2: 4,
     n2Nahuatl: "Nahui",
     res: 14,
-    resNahuatl: "Mahtlactli onnahui",
+    resNahuatl: "Mahtlactli huan nahui",
     pronunciacion: "mah-tlác-tli on-ná-hui",
     explicacionES: "Sumando 4 a nuestra base 10, la regla indica usar la variante conectora <strong>on-</strong> delante de la consonante 'n' de nahui, estructurándose como <strong>Mahtlactli onnahui</strong>.",
-    explicacionNA: "Mochihua ica <strong>Mahtlactli</strong> (10) ihuan in nexotl <strong>on-</strong> ihuan <strong>nahui</strong> (4). Quihtoznequi: 'mahtlactli ihuan nahui'.",
-    audio: "audios/sumas/suma_14.mp3"
+    explicacionNA: "Mochihua ica <strong>Mahtlactli</strong> (10) ihuan in nexotl <strong>on-</strong> ihuan <strong>nahui</strong> (4). Quihtoznequi: 'mahtlactli ihuan nahui'."
   },
   {
     n1: 15,
@@ -843,21 +835,33 @@ const sumasEjercicios = [
     n2: 1,
     n2Nahuatl: "Ce",
     res: 16,
-    resNahuatl: "Caxtolli once",
+    resNahuatl: "Caxtolli huan ce",
     pronunciacion: "cax-tól-li on-se",
     explicacionES: "Al superar la base intermedia 15 (<strong>Caxtolli</strong>), se hereda la misma regla del diez: añadimos el conector <strong>on-</strong> seguido del número sobrante. En este caso: 'quince y uno'.",
-    explicacionNA: "In tlapohualli caxtolli once mochihua quen mahtlactli: tictlaliaj in nexotl <strong>on-</strong> ihuan <strong>ce</strong>. Caxtolli ihuan se.",
-    audio: "audios/sumas/suma_16.mp3"
+    explicacionNA: "In tlapohualli caxtolli once mochihua quen mahtlactli: tictlaliaj in nexotl <strong>on-</strong> ihuan <strong>ce</strong>. Caxtolli ihuan se."
   }
 ];
 
 let indiceSumaActual = 0;
-let audioSuma = null;
-if (typeof idiomaActual === 'undefined') { var idiomaActual = 'es'; }
 
-// Crea la barra de ejercicios rápidos en la parte superior
+if (typeof idiomaActual === 'undefined') { 
+  var idiomaActual = 'es'; 
+}
+
+// Cargar voces disponibles del navegador
+let vocesDisponiblesSumas = [];
+function obtenerVocesSumas() {
+  vocesDisponiblesSumas = window.speechSynthesis.getVoices();
+}
+if ('speechSynthesis' in window) {
+  window.speechSynthesis.onvoiceschanged = obtenerVocesSumas;
+  obtenerVocesSumas();
+}
+
 function inicializarSelectorSumas() {
   const container = document.getElementById("selector-ejercicios-sumas");
+  if (!container) return;
+
   container.innerHTML = "";
 
   sumasEjercicios.forEach((ejercicio, index) => {
@@ -869,47 +873,52 @@ function inicializarSelectorSumas() {
   });
 }
 
-// Carga los datos e inicia el redibujo visual
 function renderSumaActual() {
   const item = sumasEjercicios[indiceSumaActual];
 
-  // Elementos HTML del frontend
-  document.getElementById("num-1-digito").textContent = item.n1;
-  document.getElementById("num-1-nahuatl").textContent = item.n1Nahuatl;
+  const elemN1Digito = document.getElementById("num-1-digito");
+  const elemN1Nahuatl = document.getElementById("num-1-nahuatl");
+  const elemN2Digito = document.getElementById("num-2-digito");
+  const elemN2Nahuatl = document.getElementById("num-2-nahuatl");
+  const elemResDigito = document.getElementById("resultado-total-digito");
+  const elemResNahuatl = document.getElementById("resultado-total-nahuatl");
+  const elemPronunciacion = document.getElementById("resultado-pronunciacion");
+  const elemLabelIgual = document.getElementById("label-resultado-igual");
+  const elemExplicacion = document.getElementById("explicacion-gramatical-suma");
+
+  if (elemN1Digito) elemN1Digito.textContent = item.n1;
+  if (elemN1Nahuatl) elemN1Nahuatl.textContent = item.n1Nahuatl;
   
-  document.getElementById("num-2-digito").textContent = item.n2;
-  document.getElementById("num-2-nahuatl").textContent = item.n2Nahuatl;
+  if (elemN2Digito) elemN2Digito.textContent = item.n2;
+  if (elemN2Nahuatl) elemN2Nahuatl.textContent = item.n2Nahuatl;
 
-  document.getElementById("resultado-total-digito").textContent = item.res;
-  document.getElementById("resultado-total-nahuatl").textContent = item.resNahuatl;
-  document.getElementById("resultado-pronunciacion").textContent = `Se pronuncia: "${item.pronunciacion}"`;
+  if (elemResDigito) elemResDigito.textContent = item.res;
+  if (elemResNahuatl) elemResNahuatl.textContent = item.resNahuatl;
+  if (elemPronunciacion) elemPronunciacion.textContent = `Se pronuncia: "${item.pronunciacion}"`;
 
-  // Cambiar textos según traducción activa
   if (idiomaActual === 'na') {
-    document.getElementById("label-resultado-igual").textContent = "In tlapohualiztli mochihua:";
-    document.getElementById("explicacion-gramatical-suma").innerHTML = item.explicacionNA;
+    if (elemLabelIgual) elemLabelIgual.textContent = "In tlapohualiztli mochihua:";
+    if (elemExplicacion) elemExplicacion.innerHTML = item.explicacionNA;
   } else {
-    document.getElementById("label-resultado-igual").textContent = "El resultado es igual a:";
-    document.getElementById("explicacion-gramatical-suma").innerHTML = item.explicacionES;
+    if (elemLabelIgual) elemLabelIgual.textContent = "El resultado es igual a:";
+    if (elemExplicacion) elemExplicacion.innerHTML = item.explicacionES;
   }
 
-  // Actualizar clase activa en los botones superiores
   const botones = document.querySelectorAll("#selector-ejercicios-sumas .btn-suma-ejercicio");
   botones.forEach((btn, idx) => {
     if (idx === indiceSumaActual) btn.classList.add("btn-suma-active");
     else btn.classList.remove("btn-suma-active");
   });
 
-  // Pintar los frijoles/puntos gráficos
   redibujarPuntosGraficos(item.n1, item.n2);
 }
 
-// Genera los elementos visuales interactivos simulando cuentas antiguas
 function redibujarPuntosGraficos(cantidad1, cantidad2) {
   const contenedor = document.getElementById("contenedor-bloques-graficos");
-  contenedor.innerHTML = ""; // Limpiar el contenedor
+  if (!contenedor) return;
 
-  // Generar puntos del primer bloque (Verdes)
+  contenedor.innerHTML = "";
+
   for (let i = 0; i < cantidad1; i++) {
     const punto = document.createElement("div");
     punto.className = "punto-grafico punto-grupo-1";
@@ -917,7 +926,6 @@ function redibujarPuntosGraficos(cantidad1, cantidad2) {
     contenedor.appendChild(punto);
   }
 
-  // Generar puntos del segundo bloque (Naranjas)
   for (let j = 0; j < cantidad2; j++) {
     const punto = document.createElement("div");
     punto.className = "punto-grafico punto-grupo-2";
@@ -925,13 +933,18 @@ function redibujarPuntosGraficos(cantidad1, cantidad2) {
     contenedor.appendChild(punto);
   }
 
-  // Efecto de animación secuencial por CSS al aparecer
   const todosLosPuntos = contenedor.querySelectorAll(".punto-grafico");
   todosLosPuntos.forEach((punto, index) => {
     setTimeout(() => {
       punto.style.transform = "scale(1)";
-    }, index * 40); // Animación en cascada elegante
+    }, index * 40);
   });
+}
+
+function detenerAudioSuma() {
+  if ('speechSynthesis' in window) {
+    window.speechSynthesis.cancel();
+  }
 }
 
 function seleccionarSuma(index) {
@@ -940,30 +953,43 @@ function seleccionarSuma(index) {
   renderSumaActual();
 }
 
-function detenerAudioSuma() {
-  if (audioSuma) {
-    audioSuma.pause();
-    audioSuma.currentTime = 0;
-  }
-}
-
+// Reproduce: "N1 ihuan N2, ResultadoNáhuatl, NúmeroResultado" 
+// Ejemplo: "Macuilli ihuan Ome, Chicome, 7"
 function reproducirAudioSuma() {
-  const item = sumasEjercicios[indiceSumaActual];
-  detenerAudioSuma();
+  if (!('speechSynthesis' in window)) return;
 
-  audioSuma = new Audio(item.audio);
-  audioSuma.play().catch(e => console.warn(`Audio no encontrado: ${item.audio}`));
+  window.speechSynthesis.cancel();
+
+  const item = sumasEjercicios[indiceSumaActual];
+  
+  // Estructura: "Número1 ihuan Número2, ResultadoNáhuatl, ResultadoNúmero"
+  const textoAFrasear = `${item.n1Nahuatl} ihuan ${item.n2Nahuatl}, ${item.resNahuatl}, ${item.res}`;
+
+  const utterance = new SpeechSynthesisUtterance(textoAFrasear);
+
+  const vozOptima = vocesDisponiblesSumas.find(v => 
+    v.lang.startsWith('es-MX') && (v.name.includes('Google') || v.name.includes('Natural') || v.name.includes('Online'))
+  ) || vocesDisponiblesSumas.find(v => v.lang.startsWith('es-MX')) || vocesDisponiblesSumas.find(v => v.lang.startsWith('es'));
+
+  if (vozOptima) {
+    utterance.voice = vozOptima;
+  }
+
+  utterance.lang = 'es-MX';
+  utterance.rate = 0.85; // Un ritmo ligeramente pausado para mejor comprensión
+  utterance.pitch = 1.0;
+
+  window.speechSynthesis.speak(utterance);
 }
 
-// Coordinación con el alternador de idiomas de tu App de Nahuatl
 const originalAlternarIdiomaSumas = typeof alternarIdioma === 'function' ? alternarIdioma : null;
+
 alternarIdioma = function(idioma) {
   if (originalAlternarIdiomaSumas) originalAlternarIdiomaSumas(idioma);
   else idiomaActual = idioma;
   renderSumaActual();
 }
 
-// Iniciar aplicación al cargar el DOM
 document.addEventListener("DOMContentLoaded", () => {
   inicializarSelectorSumas();
   renderSumaActual();

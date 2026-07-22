@@ -772,103 +772,123 @@
     <!-- =======================================================================
      2. VENTANA EMERGENTE / MODAL INTEGRADO CON CONTROLES AVANZADOS DE AUDIO
      ======================================================================= -->
-    <div id="contenedor-interactivo"
-        class="position-fixed top-50 start-50 translate-middle bg-white p-4 rounded-4 shadow-lg d-none"
-        style="z-index: 1060; width: 92%; max-width: 450px; border: 3px solid #e9ecef;">
+<div id="contenedor-interactivo"
+    class="position-fixed top-50 start-50 translate-middle bg-white p-4 rounded-4 shadow-lg d-none"
+    style="z-index: 1060; width: 92%; max-width: 450px; border: 3px solid #e9ecef;">
 
-        <!-- Elemento oculto global que maneja el audio en segundo plano -->
-        <audio id="audio-control-global"></audio>
+    <!-- Elemento oculto global que maneja el audio en segundo plano -->
+    <audio id="audio-control-global"></audio>
 
-        <!-- ENCABEZADO: Título descriptivo e Icono de Cerrar Avanzado -->
-        <div class="d-flex justify-content-between align-items-center mb-3 pb-2 border-bottom">
-            <span class="fw-bold text-secondary text-uppercase small tracking-wider"><i
-                    class="bi bi-translate me-1"></i> Pronunciación</span>
-            <!-- BOTÓN CERRAR VENTANA -->
-            <button type="button"
-                class="btn btn-sm btn-outline-secondary rounded-circle d-flex align-items-center justify-content-center"
-                style="width: 32px; height: 32px;" onclick="cerrarModalFamilia()">
-                <i class="bi bi-x-lg"></i>
+    <!-- ENCABEZADO: Título descriptivo e Icono de Cerrar Avanzado -->
+    <div class="d-flex justify-content-between align-items-center mb-3 pb-2 border-bottom">
+        <span class="fw-bold text-secondary text-uppercase small tracking-wider">
+            <i class="bi bi-translate me-1"></i> Pronunciación
+        </span>
+        <!-- BOTÓN CERRAR VENTANA -->
+        <button type="button"
+            class="btn btn-sm btn-outline-secondary rounded-circle d-flex align-items-center justify-content-center"
+            style="width: 32px; height: 32px;" onclick="cerrarModalFamilia()">
+            <i class="bi bi-x-lg"></i>
+        </button>
+    </div>
+
+    <!-- SECCIÓN DE CONTENIDO INTERCAMBIABLE DINÁMICAMENTE -->
+    <div id="dinamico-modal-content" class="text-center py-2">
+
+        <!-- Datos Abuelo -->
+        <div id="m-block-abuelo" class="d-none" data-audio="/Recursos/audios/sociedad/abuelo.ogg">
+            <div class="mb-3 d-flex justify-content-center">
+                <img src="/Recursos/img_sociedad/abuelo.jpeg" alt="Abuelo" class="img-fluid rounded-4 shadow-sm" style="max-height: 120px; object-fit: contain;">
+            </div>
+            <h2 class="fw-extrabold text-dark mb-1 h3" style="font-weight:800;">Abuelo</h2>
+            <div class="fs-3 fw-bold text-success animate__animated animate__pulse animate__infinite">Coltzin</div>
+        </div>
+
+        <!-- Datos Abuela -->
+        <div id="m-block-abuela" class="d-none" data-audio="/Recursos/audios/sociedad/abuela.ogg">
+            <div class="mb-3 d-flex justify-content-center">
+                <img src="/Recursos/img_sociedad/abuela.jpeg" alt="Abuela" class="img-fluid rounded-4 shadow-sm" style="max-height: 120px; object-fit: contain;">
+            </div>
+            <h2 class="fw-extrabold text-dark mb-1 h3" style="font-weight:800;">Abuela</h2>
+            <div class="fs-3 fw-bold text-warning animate__animated animate__pulse animate__infinite" style="color:#ca9a05 !important;">Cihtli</div>
+        </div>
+
+        <!-- Datos Papá -->
+        <div id="m-block-papa" class="d-none" data-audio="/Recursos/audios/sociedad/padre.ogg">
+            <div class="mb-3 d-flex justify-content-center">
+                <img src="/Recursos/img_sociedad/papa.jpeg" alt="Papá" class="img-fluid rounded-4 shadow-sm" style="max-height: 120px; object-fit: contain;">
+            </div>
+            <h2 class="fw-extrabold text-dark mb-1 h3" style="font-weight:800;">Papá</h2>
+            <div class="fs-3 fw-bold text-info animate__animated animate__pulse animate__infinite">Tatzin</div>
+        </div>
+
+        <!-- Datos Mamá -->
+        <div id="m-block-mama" class="d-none" data-audio="/Recursos/audios/sociedad/madre.ogg">
+            <div class="mb-3 d-flex justify-content-center">
+                <img src="/Recursos/img_sociedad/mama.jpeg" alt="Mamá" class="img-fluid rounded-4 shadow-sm" style="max-height: 120px; object-fit: contain;">
+            </div>
+            <h2 class="fw-extrabold text-dark mb-1 h3" style="font-weight:800;">Mamá</h2>
+            <div class="fs-3 fw-bold text-danger animate__animated animate__pulse animate__infinite">Nanatzin</div>
+        </div>
+
+        <!-- Datos Hermano -->
+        <div id="m-block-hermano" class="d-none" data-audio="/Recursos/audios/sociedad/hermano.ogg">
+            <div class="mb-3 d-flex justify-content-center">
+                <img src="/Recursos/img_sociedad/hermano.jpeg" alt="Hermano" class="img-fluid rounded-4 shadow-sm" style="max-height: 120px; object-fit: contain;">
+            </div>
+            <h2 class="fw-extrabold text-dark mb-1 h3" style="font-weight:800;">Hermano</h2>
+            <div class="fs-3 fw-bold text-primary animate__animated animate__pulse animate__infinite">Icniuhtli</div>
+        </div>
+
+        <!-- Datos Tío -->
+        <div id="m-block-tio" class="d-none" data-audio="/Recursos/audios/sociedad/tio.ogg">
+            <div class="mb-3 d-flex justify-content-center">
+                <img src="/Recursos/img_sociedad/tio.jpeg" alt="Tío" class="img-fluid rounded-4 shadow-sm" style="max-height: 120px; object-fit: contain;">
+            </div>
+            <h2 class="fw-extrabold text-dark mb-1 h3" style="font-weight:800;">Tío</h2>
+            <div class="fs-3 fw-bold animate__animated animate__pulse animate__infinite" style="color: #6f42c1;">Tlahtli</div>
+        </div>
+
+        <!-- Datos Tía -->
+        <div id="m-block-tia" class="d-none" data-audio="/Recursos/audios/sociedad/tia.ogg">
+            <div class="mb-3 d-flex justify-content-center">
+                <img src="/Recursos/img_sociedad/tia.jpeg" alt="Tía" class="img-fluid rounded-4 shadow-sm" style="max-height: 120px; object-fit: contain;">
+            </div>
+            <h2 class="fw-extrabold text-dark mb-1 h3" style="font-weight:800;">Tía</h2>
+            <div class="fs-3 fw-bold animate__animated animate__pulse animate__infinite" style="color: #d63384;">Tlahli / Ahihtli</div>
+        </div>
+
+        <!-- Datos Sobrino -->
+        <div id="m-block-sobrino" class="d-none" data-audio="/Recursos/audios/sociedad/sobrino.ogg">
+            <div class="mb-3 d-flex justify-content-center">
+                <img src="/Recursos/img_sociedad/sobrino.jpeg" alt="Sobrino" class="img-fluid rounded-4 shadow-sm" style="max-height: 120px; object-fit: contain;">
+            </div>
+            <h2 class="fw-extrabold text-dark mb-1 h3" style="font-weight:800;">Sobrino o Sobrina</h2>
+            <div class="fs-3 fw-bold animate__animated animate__pulse animate__infinite" style="color: #fd7e14;">Machtli</div>
+        </div>
+
+    </div>
+
+    <!-- PANEL DE BOTONES INTERACTIVOS DE AUDIO (ESTILO DUOLINGO) -->
+    <div class="row g-3 mt-3 pt-3 border-top justify-content-center">
+        <!-- BOTÓN: ESCUCHAR AUDIO NORMAL -->
+        <div class="col-6">
+            <button type="button" onclick="reproducirAudioFamilia(1.0)"
+                class="btn btn-audio-action w-100 py-2 rounded-3 text-white fw-bold text-nowrap"
+                style="background-color: #0d6efd; border-bottom: 4px solid #0b5ed7;">
+                <i class="bi bi-volume-up-fill fs-5 me-1"></i> Normal
             </button>
         </div>
-
-        <!-- SECCIÓN DE CONTENIDO INTERCAMBIABLE DINÁMICAMENTE -->
-        <div id="dinamico-modal-content" class="text-center py-2">
-
-            <!-- Datos Abuelo -->
-            <div id="m-block-abuelo" class="d-none" data-audio="/Recursos/audios/sociedad/abuelo.ogg">
-                <h2 class="fw-extrabold text-dark mb-1 h3" style="font-weight:800;">Abuelo</h2>
-                <div class="fs-3 fw-bold text-success animate__animated animate__pulse animate__infinite">Coltzin</div>
-            </div>
-
-            <!-- Datos Abuela -->
-            <div id="m-block-abuela" class="d-none" data-audio="/Recursos/audios/sociedad/abuela.ogg">
-                <h2 class="fw-extrabold text-dark mb-1 h3" style="font-weight:800;">Abuela</h2>
-                <div class="fs-3 fw-bold text-warning animate__animated animate__pulse animate__infinite"
-                    style="color:#ca9a05 !important;">Cihtli</div>
-            </div>
-
-            <!-- Datos Papá -->
-            <div id="m-block-papa" class="d-none" data-audio="/Recursos/audios/sociedad/padre.ogg">
-                <h2 class="fw-extrabold text-dark mb-1 h3" style="font-weight:800;">Papá</h2>
-                <div class="fs-3 fw-bold text-info animate__animated animate__pulse animate__infinite">Tatzin</div>
-            </div>
-
-            <!-- Datos Mamá -->
-            <div id="m-block-mama" class="d-none" data-audio="/Recursos/audios/sociedad/madre.ogg">
-                <h2 class="fw-extrabold text-dark mb-1 h3" style="font-weight:800;">Mamá</h2>
-                <div class="fs-3 fw-bold text-danger animate__animated animate__pulse animate__infinite">Nanatzin</div>
-            </div>
-
-            <!-- Datos Hermano -->
-            <div id="m-block-hermano" class="d-none" data-audio="/Recursos/audios/sociedad/hermano.ogg">
-                <h2 class="fw-extrabold text-dark mb-1 h3" style="font-weight:800;">Hermano</h2>
-                <div class="fs-3 fw-bold text-primary animate__animated animate__pulse animate__infinite">Icniuhtli
-                </div>
-            </div>
-
-            <!-- Datos Tío -->
-            <div id="m-block-tio" class="d-none" data-audio="/Recursos/audios/sociedad/tio.ogg">
-                <h2 class="fw-extrabold text-dark mb-1 h3" style="font-weight:800;">Tío</h2>
-                <div class="fs-3 fw-bold animate__animated animate__pulse animate__infinite" style="color: #6f42c1;">
-                    Tlahtli</div>
-            </div>
-
-            <!-- Datos Tía -->
-            <div id="m-block-tia" class="d-none" data-audio="/Recursos/audios/sociedad/tia.ogg">
-                <h2 class="fw-extrabold text-dark mb-1 h3" style="font-weight:800;">Tía</h2>
-                <div class="fs-3 fw-bold animate__animated animate__pulse animate__infinite" style="color: #d63384;">
-                    Tlahli / Ahihtli</div>
-            </div>
-
-            <!-- Datos Sobrino -->
-            <div id="m-block-sobrino" class="d-none" data-audio="/Recursos/audios/sociedad/sobrino.ogg">
-                <h2 class="fw-extrabold text-dark mb-1 h3" style="font-weight:800;">Sobrino o Sobrina</h2>
-                <div class="fs-3 fw-bold animate__animated animate__pulse animate__infinite" style="color: #fd7e14;">
-                    Machtli</div>
-            </div>
-
-        </div>
-
-        <!-- PANEL DE BOTONES INTERACTIVOS DE AUDIO (ESTILO DUOLINGO) -->
-        <div class="row g-3 mt-3 pt-3 border-top justify-content-center">
-            <!-- BOTÓN: ESCUCHAR AUDIO NORMAL -->
-            <div class="col-6">
-                <button type="button" onclick="reproducirAudioFamilia(1.0)"
-                    class="btn btn-audio-action w-100 py-2 rounded-3 text-white fw-bold text-nowrap"
-                    style="background-color: #0d6efd; border-bottom: 4px solid #0b5ed7;">
-                    <i class="bi bi-volume-up-fill fs-5 me-1"></i> Normal
-                </button>
-            </div>
-            <!-- BOTÓN: ESCUCHAR AUDIO LENTO -->
-            <div class="col-6">
-                <button type="button" onclick="reproducirAudioFamilia(0.5)"
-                    class="btn btn-audio-action w-100 py-2 rounded-3 text-dark fw-bold text-nowrap"
-                    style="background-color: #ffc107; border-bottom: 4px solid #caa105;">
-                    <i class="bi bi-turtle-fill fs-5 me-1"></i> Más lento
-                </button>
-            </div>
+        <!-- BOTÓN: ESCUCHAR AUDIO LENTO -->
+        <div class="col-6">
+            <button type="button" onclick="reproducirAudioFamilia(0.5)"
+                class="btn btn-audio-action w-100 py-2 rounded-3 text-dark fw-bold text-nowrap"
+                style="background-color: #ffc107; border-bottom: 4px solid #caa105;">
+                <i class="bi bi-turtle-fill fs-5 me-1"></i> Más lento
+            </button>
         </div>
     </div>
+</div>
 
     <!-- =======================================================================
      3. ESTILOS CSS CREATIVOS

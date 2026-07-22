@@ -644,51 +644,34 @@
     <!-- JS -->
     <script src="/js/app.js"></script>
     <script>
-        const vocabularioH = [
+    // =======================================================================
+// 1. ARREGLO DE VOCABULARIO PARA LA LETRA "H" (8 PALABRAS)
+// =======================================================================
+const vocabularioH = [
   {
-    palabra: "Ehuahuatl",
-    formatoHTML: "Ehua<span style='color: #E65100; font-weight: bold;'>h</span>uatl",
-    significadoES: "Piel / Cáscara",
-    significadoNA: "Ehuatl",
-    notaES: "Corta el aire un momento justo después de la primera 'a'.",
-    notaNA: "Xictetzi ehecatl niman ihcuac tiquihtoa in yancuic 'a'.",
-    imagen: "/Recursos/alfabeto/piel.jpg",
-    audio: "/Recursos/audios/abecedario/ehuahuatl.ogg"
+    palabra: "Ahuacatl",
+    formatoHTML: "A<span style='color: #E65100; font-weight: bold;'>h</span>uacatl",
+    significadoES: "Aguacate",
+    significadoNA: "Ahuacatl",
+    notaES: "La 'h' suena suavecita como un suspiro. Se pronuncia 'A-hua-catl'.",
+    notaNA: "In 'h' nahuati yamanic. Xiquihtto 'A-hua-catl'.",
+    imagen: "/Recursos/alfabeto/aguacate.jpg",
+    audio: "/Recursos/audios/abecedario/aguacate.ogg"
   },
   {
-    palabra: "Ahuiac",
-    formatoHTML: "A<span style='color: #E65100; font-weight: bold;'>h</span>uiac",
-    significadoES: "Sabroso / Oloroso",
-    significadoNA: "Ahuiac",
-    notaES: "Haz una pausa suave en la 'a' antes de decir 'uiac'.",
-    notaNA: "Xicchiua se yamanic tetzico ipan 'a' achtopa tiquihtoz 'uiac'.",
-    imagen: "/Recursos/alfabeto/olor.jpg",
-    audio: "/Recursos/audios/abecedario/ahuiac.ogg"
-  },
-  {
-    palabra: "Ohtli",
-    formatoHTML: "O<span style='color: #E65100; font-weight: bold;'>h</span>tli",
-    significadoES: "Camino",
-    significadoNA: "Ohtli",
-    notaES: "El aire se corta después de la 'o', antes de pronunciar 'tli'.",
-    notaNA: "In ehecatl motetzicoa zampa in 'o', achtopa tiquihtoz 'tli'.",
-    imagen: "/Recursos/alfabeto/camino.jpg",
-    audio: "/Recursos/audios/abecedario/ohtli.ogg"
-  },
-  {
-    palabra: "Tlahuilli",
-    formatoHTML: "Tla<span style='color: #E65100; font-weight: bold;'>h</span>uilli",
-    significadoES: "Luz / Claridad",
-    significadoNA: "Tlahuilli",
-    notaES: "Pausa suave después de la primera sílaba 'tla'.",
-    notaNA: "Yamanic tetzico zampa in yancuic tlatzotzonalis 'tla'.",
-    imagen: "/Recursos/alfabeto/luz.jpg",
-    audio: "/Recursos/audios/abecedario/tlahuilli.ogg"
+    palabra: "Ahuehuetl",
+    formatoHTML: "A<span style='color: #E65100; font-weight: bold;'>h</span>ue<span style='color: #E65100; font-weight: bold;'>h</span>uetl",
+    significadoES: "Ahuehuete (Árbol sabino)",
+    significadoNA: "Ahuehuetl",
+    notaES: "Tiene doble 'h' aspirada. Se pronuncia 'A-hue-hue-tl'.",
+    notaNA: "Pia omepa 'h' yamanic. Xiquihtto 'A-hue-hue-tl'.",
+    imagen: "/Recursos/alfabeto/arbol.jpg",
+    audio: "/Recursos/audios/abecedario/arbol.ogg"
   },
   {
     palabra: "Ehecatl",
     formatoHTML: "E<span style='color: #E65100; font-weight: bold;'>h</span>ecatl",
-    significadoES: "Viento",
+    significadoES: "Viento / Aire",
     significadoNA: "Ehecatl",
     notaES: "Suena como un suspiro sordo entre las dos letras 'e'.",
     notaNA: "Nahuati ken se tlatzotzonalis sordo tlahco tlen omeletra 'e'.",
@@ -696,54 +679,54 @@
     audio: "/Recursos/audios/abecedario/ehecatl.ogg"
   },
   {
-    palabra: "Ciahuitl",
-    formatoHTML: "Cia<span style='color: #E65100; font-weight: bold;'>h</span>uitl",
-    significadoES: "Fatiga / Cansancio",
-    significadoNA: "Ciahuitl",
-    notaES: "Marca el corte de respiración en la 'a' antes del cierre '-uitl'.",
-    notaNA: "Xictlalia in tetzico ipan 'a' achtopa titlamiz ica '-uitl'.",
-    imagen: "/Recursos/alfabeto/cansado.jpg",
-    audio: "/Recursos/audios/abecedario/ciahuitl.ogg"
+    palabra: "Ehuatl",
+    formatoHTML: "E<span style='color: #E65100; font-weight: bold;'>h</span>uatl",
+    significadoES: "Piel / Cáscara",
+    significadoNA: "Ehuatl",
+    notaES: "Suena suave al inicio de la sílaba. Pronuncia 'E-huatl'.",
+    notaNA: "Nahuati yamanic pehua itlahtol. Xiquihtto 'E-huatl'.",
+    imagen: "/Recursos/alfabeto/piel.jpg",
+    audio: "/Recursos/audios/abecedario/piel.ogg"
   },
   {
-    palabra: "Tehuatl",
-    formatoHTML: "Te<span style='color: #E65100; font-weight: bold;'>h</span>uatl",
-    significadoES: "Tú",
-    significadoNA: "Tehuatl",
-    notaES: "Corta suavemente el sonido en la 'e' antes de continuar con 'uatl'.",
-    notaNA: "Xictetzi yamanic ipan 'e' achtopa tiquihtoz 'uatl'.",
-    imagen: "/Recursos/alfabeto/you.jpg",
-    audio: "/Recursos/audios/abecedario/tehuatl.ogg"
+    palabra: "Ichcatl",
+    formatoHTML: "Ic<span style='color: #E65100; font-weight: bold;'>h</span>catl",
+    significadoES: "Algodón / Oveja",
+    significadoNA: "Ichcatl",
+    notaES: "La 'h' acompaña a la 'c' formando la 'ch'. Se pronuncia 'Ich-catl'.",
+    notaNA: "In 'h' mochiua 'ch' ica in 'c'. Nahuati 'Ich-catl'.",
+    imagen: "/Recursos/alfabeto/algodon.jpg",
+    audio: "/Recursos/audios/abecedario/ichcatl.ogg"
   },
   {
-    palabra: "Xihuitl",
-    formatoHTML: "Xi<span style='color: #E65100; font-weight: bold;'>h</span>uitl",
-    significadoES: "Año / Hierba / Turquesa",
-    significadoNA: "Xihuitl",
-    notaES: "El saltillo va después de 'xi'. Es una palabra con varios significados.",
-    notaNA: "In tetzico wallauh zampa 'xi'. Se tlahtolli tlen cequi can significados.",
-    imagen: "/Recursos/alfabeto/hierba.jpg",
-    audio: "/Recursos/audios/abecedario/xihuitl.ogg"
+    palabra: "Ihuitl",
+    formatoHTML: "I<span style='color: #E65100; font-weight: bold;'>h</span>uitl",
+    significadoES: "Pluma (de ave)",
+    significadoNA: "Ihuitl",
+    notaES: "Suena con una pequeña aspiración de aire. Pronuncia 'I-huitl'.",
+    notaNA: "Ica tepitzin ehecatl. Xiquihtto 'I-huitl'.",
+    imagen: "/Recursos/alfabeto/pluma.jpg",
+    audio: "/Recursos/audios/abecedario/ihuitl.ogg"
   },
   {
-    palabra: "Cuahuitl",
-    formatoHTML: "Cua<span style='color: #E65100; font-weight: bold;'>h</span>uitl",
-    significadoES: "Árbol / Madera",
-    significadoNA: "Cuahuitl",
-    notaES: "Corta la respiración brevemente después de 'cua' y pronuncia 'uitl'.",
-    notaNA: "Xictetzi in yollohtli achitzin zampa 'cua' ihuan xiquihtto 'uitl'.",
-    imagen: "/Recursos/alfabeto/madera.jpg",
-    audio: "/Recursos/audios/abecedario/cuahuitl.ogg"
+    palabra: "Ohuitl",
+    formatoHTML: "O<span style='color: #E65100; font-weight: bold;'>h</span>uitl",
+    significadoES: "Caña de azúcar / Dificultad",
+    significadoNA: "Ohuitl",
+    notaES: "La 'h' le da una pausa suave de aire. Se pronuncia 'O-huitl'.",
+    notaNA: "In 'h' quitemaca se cebada yamanic. Nahuati 'O-huitl'.",
+    imagen: "/Recursos/alfabeto/cana de azucar.jpg",
+    audio: "/Recursos/audios/abecedario/Ohuitl.ogg"
   },
   {
-    palabra: "Yohualli",
-    formatoHTML: "Yo<span style='color: #E65100; font-weight: bold;'>h</span>ualli",
-    significadoES: "Noche",
-    significadoNA: "Yohualli",
-    notaES: "Pronuncia la 'yo', haz la pausa del saltillo y termina con 'ualli'.",
-    notaNA: "Xiquihtto 'yo', xicchiua in tetzico ihuan xitlamici ica 'ualli'.",
-    imagen: "/Recursos/alfabeto/noche.jpg",
-    audio: "/Recursos/audios/abecedario/yohualli.ogg"
+    palabra: "Olohuatl",
+    formatoHTML: "Olo<span style='color: #E65100; font-weight: bold;'>h</span>uatl",
+    significadoES: "Mazorca desgranada",
+    significadoNA: "Olohuatl",
+    notaES: "Lleva 'h' intermedia suave. Se pronuncia 'O-lo-huatl'.",
+    notaNA: "Pia 'h' tlahco yamanic. Nahuati 'O-lo-huatl'.",
+    imagen: "/Recursos/alfabeto/mazorca.jpg",
+    audio: "/Recursos/audios/abecedario/maorca.ogg"
   }
 ];
 
@@ -805,7 +788,7 @@ function cargarTarjetasH() {
       </div>
     `;
     
-    // Agregamos un bonito efecto hover desde JS
+    // Agregamos un efecto hover desde JS
     const cardEl = col.querySelector('.card');
     cardEl.addEventListener('mouseenter', () => cardEl.style.transform = 'translateY(-5px)');
     cardEl.addEventListener('mouseleave', () => cardEl.style.transform = 'translateY(0)');
@@ -813,7 +796,6 @@ function cargarTarjetasH() {
     contenedor.appendChild(col);
   });
 }
-
 // =======================================================================
 // 3. REPRODUCIR AUDIO LOCAL (COMPARTIDO)
 // =======================================================================

@@ -298,7 +298,7 @@
 
                         <!-- LECCIONES -->
                         <button
-                            onclick="window.location.href='Lecciones.html'"
+                            onclick="window.location.href='/pages_int/lecciones.html'"
                             class="btn navbarint-btn rounded-pill px-4"
                             data-aos="fade-up"
                             data-aos-delay="100"
@@ -313,7 +313,7 @@
 
                         <!-- CUENTOS -->
                         <button
-                            onclick="window.location.href='cuentos.html'"
+                            onclick="window.location.href='/pages_int/Cuentos/cuentos.html'"
                             class="btn navbarint-btn rounded-pill px-4"
                             data-aos="fade-up"
                             data-aos-delay="100"
@@ -328,7 +328,7 @@
 
                         <!-- CULTURA -->
                         <button
-                            onclick="window.location.href='cultura.html'"
+                            onclick="window.location.href='/pages_int/cultura.html'"
                             class="btn navbarint-btn rounded-pill px-4"
                             data-aos="fade-up"
                             data-aos-delay="200"
@@ -343,7 +343,7 @@
 
                         <!-- PROGRESO -->
                         <button
-                            onclick="window.location.href='progreso.html'"
+                            onclick="window.location.href='/pages_int/progreso.html'"
                             class="btn navbarint-btn rounded-pill px-4"
                             data-aos="fade-up"
                             data-aos-delay="300"
@@ -676,101 +676,100 @@
 const numerosMezclados = [
   {
     palabra: "Ce",
-    significadoES: "Uno (1)",
+    significadoES: "Uno ",
     significadoNA: "Se (1)",
     notaES: "Se pronuncia tal como suena: 'se'. Es el origen de todo conteo.",
     notaNA: "Nahuati 'se'. Ipan in tlapohualiztli yehuatl tlen mochiua achto.",
-    imagen: "/Recursos/numeros/uno.png",
-    audio: "audios/numeros/ce.mp3"
+    imagen: "/Recursos/numeros/uno.png"
   },
   {
     palabra: "Ome",
-    significadoES: "Dos (2)",
+    significadoES: "Dos ",
     significadoNA: "Ome (2)",
     notaES: "Se pronuncia 'ó-me'. Representa la dualidad.",
     notaNA: "Nahuati 'ó-me'. Quihtoznequi ome tlamantli.",
-    imagen: "/Recursos/numeros/dos.png",
-    audio: "audios/numeros/ome.mp3"
+    imagen: "/Recursos/numeros/dos.png"
   },
   {
-    palabra: "Yeyi",
-    significadoES: "Tres (3)",
-    significadoNA: "Yeyi (3)",
+    palabra: "Yei",
+    significadoES: "Tres ",
+    significadoNA: "Yei (3)",
     notaES: "Se pronuncia 'yé-yi'. En algunas variantes también se escribe 'Eyi'.",
     notaNA: "Nahuati 'yé-yi'. Noihuan uelis mocihuas 'Eyi' ipan sequin altepeme.",
-    imagen: "/Recursos/numeros/tres.png",
-    audio: "audios/numeros/yeyi.mp3"
+    imagen: "/Recursos/numeros/tres.png"
   },
   {
     palabra: "Nahui",
-    significadoES: "Cuatro (4)",
+    significadoES: "Cuatro ",
     significadoNA: "Nahui (4)",
     notaES: "Se pronuncia 'ná-hui'. Número sagrado que representa los cuatro rumbos.",
     notaNA: "Nahuati 'ná-hui'. Tlen nahui canah tlen in tlalticpactli.",
-    imagen: "/Recursos/numeros/cuatro.png",
-    audio: "audios/numeros/nahui.mp3"
+    imagen: "/Recursos/numeros/cuatro.png"
   },
   {
     palabra: "Macuilli",
-    significadoES: "Cinco (5)",
+    significadoES: "Cinco ",
     significadoNA: "Macuilli (5)",
     notaES: "Se pronuncia 'ma-cuí-lli'. Significa literalmente 'lo que toma la mano'.",
     notaNA: "Nahuati 'ma-cuí-lli'. Quihtoznequi 'tlen quicui in maitl'.",
-    imagen: "/Recursos/numeros/cinco.png",
-    audio: "audios/numeros/macuilli.mp3"
+    imagen: "/Recursos/numeros/cinco.png"
   },
   {
     palabra: "Chicuace",
-    significadoES: "Seis (6)",
+    significadoES: "Seis ",
     significadoNA: "Chicuace (6)",
     notaES: "Suena 'chi-cuá-se'. Es una suma: 'Chicu' (cinco) + 'ce' (uno) = 6.",
     notaNA: "Nahuati 'chi-cuá-se'. Centlalamis: 'Chicu' (cinco) ihuan 'ce' (uno).",
-    imagen: "/Recursos/numeros/seis.png",
-    audio: "audios/numeros/chicuace.mp3"
+    imagen: "/Recursos/numeros/seis.png"
   },
   {
     palabra: "Chicome",
-    significadoES: "Siete (7)",
+    significadoES: "Siete",
     significadoNA: "Chicome (7)",
     notaES: "Suena 'chi-có-me'. Viene de 'Chicu' (cinco) + 'ome' (dos) = 7.",
     notaNA: "Nahuati 'chi-có-me'. Centlalamis: 'Chicu' (cinco) ihuan 'ome' (dos).",
-    imagen: "/Recursos/numeros/siete.png",
-    audio: "audios/numeros/chicome.mp3"
+    imagen: "/Recursos/numeros/siete.png"
   },
   {
     palabra: "Chicueyi",
-    significadoES: "Ocho (8)",
+    significadoES: "Ocho ",
     significadoNA: "Chicueyi (8)",
     notaES: "Suena 'chi-cué-yi'. Viene de 'Chicu' (cinco) + 'yeyi' (tres) = 8.",
     notaNA: "Nahuati 'chi-cué-yi'. Centlalamis: 'Chicu' (cinco) ihuan 'yeyi' (tres).",
-    imagen: "/Recursos/numeros/ocho.png",
-    audio: "audios/numeros/chicueyi.mp3"
+    imagen: "/Recursos/numeros/ocho.png"
   },
   {
     palabra: "Chicnahui",
-    significadoES: "Nueve (9)",
+    significadoES: "Nueve ",
     significadoNA: "Chicnahui (9)",
     notaES: "Suena 'chic-ná-hui'. Viene de 'Chicu' (cinco) + 'nahui' (cuatro) = 9.",
     notaNA: "Nahuati 'chic-ná-hui'. Centlalamis: 'Chicu' (cinco) ihuan 'nahui' (cuatro).",
-    imagen: "/Recursos/numeros/nueve.png",
-    audio: "audios/numeros/chicnahui.mp3"
+    imagen: "/Recursos/numeros/nueve.png"
   },
   {
     palabra: "Mahtlactli",
-    significadoES: "Diez (10)",
+    significadoES: "Diez ",
     significadoNA: "Mahtlactli (10)",
     notaES: "Suena 'mah-tlác-tli'. La 'h' es un saltillo (pequeño suspiro). Representa las dos manos juntas.",
     notaNA: "Nahuati 'mah-tlác-tli'. In 'h' yehce se saltillo. Quihtoznequi omeme imahuan tlacatl.",
-    imagen: "/Recursos/numeros/diez.png",
-    audio: "audios/numeros/mahtlactli.mp3"
+    imagen: "/Recursos/numeros/diez.png"
   }
 ];
 
 let indiceNumeroMezclado = 0;
-let audioNumeroMezclado = null;
 
 if (typeof idiomaActual === 'undefined') {
   var idiomaActual = 'es'; 
+}
+
+// Cargar las voces disponibles del navegador
+let vocesDisponiblesNumeros = [];
+function obtenerVocesNumeros() {
+  vocesDisponiblesNumeros = window.speechSynthesis.getVoices();
+}
+if ('speechSynthesis' in window) {
+  window.speechSynthesis.onvoiceschanged = obtenerVocesNumeros;
+  obtenerVocesNumeros();
 }
 
 function renderNumeroMezclado() {
@@ -784,34 +783,36 @@ function renderNumeroMezclado() {
   const contadorElement = document.getElementById("contador-num-mezclado");
   const introElement = document.getElementById("intro-traduccion-num-mezclado");
 
+  if (!imgElement) return;
+
   // Transición suave de opacidad
   imgElement.style.opacity = 0;
   
   setTimeout(() => {
     imgElement.src = item.imagen;
     imgElement.alt = `Ilustración para el número ${item.palabra}`;
-    labelElement.textContent = item.palabra;
-    nahuatlElement.textContent = item.palabra;
+    if (labelElement) labelElement.textContent = item.palabra;
+    if (nahuatlElement) nahuatlElement.textContent = item.palabra;
     
     if (idiomaActual === 'na') {
-      introElement.innerHTML = `In tlapohualli "<span id="label-num-actual">${item.palabra}</span>" quihtoznequi caxtillan:`;
-      notaElement.textContent = item.notaNA;
-      significadoElement.textContent = `Inquihtonez: ${item.significadoNA}`;
+      if (introElement) introElement.innerHTML = `In tlapohualli "<span id="label-num-actual">${item.palabra}</span>" quihtoznequi caxtillan:`;
+      if (notaElement) notaElement.textContent = item.notaNA;
+      if (significadoElement) significadoElement.textContent = `Inquihtonez: ${item.significadoNA}`;
     } else {
-      introElement.innerHTML = `El número "<span id="label-num-actual">${item.palabra}</span>" significa en español:`;
-      notaElement.textContent = item.notaES;
-      significadoElement.textContent = `Significado: ${item.significadoES}`;
+      if (introElement) introElement.innerHTML = `El número "<span id="label-num-actual">${item.palabra}</span>" significa en español:`;
+      if (notaElement) notaElement.textContent = item.notaES;
+      if (significadoElement) significadoElement.textContent = `Significado: ${item.significadoES}`;
     }
 
-    contadorElement.textContent = `${indiceNumeroMezclado + 1} de ${numerosMezclados.length}`;
+    if (contadorElement) contadorElement.textContent = `${indiceNumeroMezclado + 1} de ${numerosMezclados.length}`;
     imgElement.style.opacity = 1;
   }, 150);
 }
 
 function navegarNumero(direccion) {
-  if (audioNumeroMezclado) {
-    audioNumeroMezclado.pause();
-    audioNumeroMezclado.currentTime = 0;
+  // Cancelar voz si el usuario cambia rápido de número
+  if ('speechSynthesis' in window) {
+    window.speechSynthesis.cancel();
   }
 
   indiceNumeroMezclado += direccion;
@@ -825,22 +826,39 @@ function navegarNumero(direccion) {
   renderNumeroMezclado();
 }
 
+// Función de reproducción de voz adaptativa (se ajusta al idioma activo)
 function reproducirAudioNumero() {
-  const item = numerosMezclados[indiceNumeroMezclado];
+  if (!('speechSynthesis' in window)) return;
 
-  if (audioNumeroMezclado) {
-    audioNumeroMezclado.pause();
-    audioNumeroMezclado.currentTime = 0;
+  window.speechSynthesis.cancel();
+
+  const item = numerosMezclados[indiceNumeroMezclado];
+  let textoAFrasear = "";
+
+  if (idiomaActual === 'na') {
+    textoAFrasear = `${item.palabra}. Quihtoznequi: ${item.significadoNA}.`;
+  } else {
+    textoAFrasear = `${item.palabra}. Significa: ${item.significadoES}.`;
   }
 
-  audioNumeroMezclado = new Audio(item.audio);
+  const utterance = new SpeechSynthesisUtterance(textoAFrasear);
 
-  audioNumeroMezclado.play().catch(error => {
-    console.warn(`No se pudo reproducir: "${item.audio}". Verifica la ruta del archivo.`);
-  });
+  const vozOptima = vocesDisponiblesNumeros.find(v => 
+    v.lang.startsWith('es-MX') && (v.name.includes('Google') || v.name.includes('Natural') || v.name.includes('Online'))
+  ) || vocesDisponiblesNumeros.find(v => v.lang.startsWith('es-MX')) || vocesDisponiblesNumeros.find(v => v.lang.startsWith('es'));
+
+  if (vozOptima) {
+    utterance.voice = vozOptima;
+  }
+
+  utterance.lang = 'es-MX';
+  utterance.rate = 0.9;
+  utterance.pitch = 1.05;
+
+  window.speechSynthesis.speak(utterance);
 }
 
-// Integración segura con el botón global de alternar idioma
+// Integración con el alternador global de idioma
 const originalAlternarIdiomaNum = typeof alternarIdioma === 'function' ? alternarIdioma : null;
 
 alternarIdioma = function(idioma) {
