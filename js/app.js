@@ -370,7 +370,7 @@ async function cargarDatosRegistro(){
     try{
 
         paises =
-        await fetch("/json/paises.json")
+        await fetch("../json/paises.json")
         .then(r => r.json());
 
         paises =
@@ -379,11 +379,11 @@ async function cargarDatosRegistro(){
         );
 
         estadosMexico =
-        await fetch("/json/estados_mexico.json")
+        await fetch("../json/estados_mexico.json")
         .then(r => r.json());
 
         palabrasProhibidas =
-        await fetch("/json/palabras_prohibidas.json")
+        await fetch("../json/palabras_prohibidas.json")
         .then(r => r.json());
 
         cargarPaises();
@@ -688,7 +688,7 @@ function animarNahui(){
 
     document.getElementById("nahuiFrame")
     .src =
-    `/Recursos/nahui/frames_nahui/ezgif-frame-${numero}.png`;
+    `../Recursos/nahui/frames_nahui/ezgif-frame-${numero}.png`;
 
     frameActual += direccion;
 
