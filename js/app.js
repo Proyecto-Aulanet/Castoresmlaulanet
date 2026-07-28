@@ -10,22 +10,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //Abrir imagen en modal
 
-function openImage(src){
+function openImage(src) {
 
-document.getElementById("modalImage").src=src;
+    document.getElementById("modalImage").src = src;
 
-let modal=new bootstrap.Modal(
-document.getElementById("imageModal")
-);
+    let modal = new bootstrap.Modal(
+        document.getElementById("imageModal")
+    );
 
-modal.show();
+    modal.show();
 
 }
 
 
 // =====================================
 // NAVEGACIÓN
-function presenToggleNav(){
+function presenToggleNav() {
 
     document
         .getElementById("presenMenuNav")
@@ -33,13 +33,13 @@ function presenToggleNav(){
 
 }
 
-function scrollToSection(id){
+function scrollToSection(id) {
 
     document
         .getElementById(id)
         .scrollIntoView({
 
-            behavior:"smooth"
+            behavior: "smooth"
 
         });
 
@@ -54,7 +54,7 @@ function scrollToSection(id){
 // ABRIR / CERRAR MENÚ
 // =====================================
 
-function presenToggleMenu(){
+function presenToggleMenu() {
 
     // Obtener menú
     const menu =
@@ -72,7 +72,7 @@ function presenToggleMenu(){
 // CAMBIAR IDIOMA
 // =====================================
 
-function presenCambiarModo(modo){
+function presenCambiarModo(modo) {
 
     // Guardar idioma seleccionado
     // en localStorage
@@ -103,39 +103,39 @@ function presenCambiarModo(modo){
         // ELEMENTOS SOLO SIMPLE
         // =================================
 
-        if(el.classList.contains("solo-simple")){
+        if (el.classList.contains("solo-simple")) {
 
             // SI EL MODO CONTIENE ESPAÑOL
-            if(
+            if (
                 modo === "es" ||
                 modo === "es-na"
-            ){
+            ) {
 
                 el.textContent = es;
             }
 
             // SI EL MODO CONTIENE NÁHUATL
-            if(
+            if (
                 modo === "na" ||
                 modo === "na-es"
-            ){
+            ) {
 
                 el.textContent = na;
             }
 
             return;
-        }    
+        }
 
         // =================================
         // CASO ESPECIAL:
         // BOTONES DE TRAJES / AVATARES
         // =================================
 
-        if(
+        if (
             el.classList.contains(
                 "avatar-btn"
             )
-        ){
+        ) {
 
             const span =
                 el.querySelector(
@@ -143,19 +143,19 @@ function presenCambiarModo(modo){
                 );
 
             // SOLO ESPAÑOL
-            if(modo === "es"){
+            if (modo === "es") {
 
                 span.textContent = es;
             }
 
             // SOLO NÁHUATL
-            if(modo === "na"){
+            if (modo === "na") {
 
                 span.textContent = na;
             }
 
             // ESPAÑOL + NÁHUATL
-            if(modo === "es-na"){
+            if (modo === "es-na") {
 
                 span.innerHTML =
 
@@ -169,7 +169,7 @@ function presenCambiarModo(modo){
             }
 
             // NÁHUATL + ESPAÑOL
-            if(modo === "na-es"){
+            if (modo === "na-es") {
 
                 span.innerHTML =
 
@@ -191,19 +191,19 @@ function presenCambiarModo(modo){
         // =================================
 
         // SOLO ESPAÑOL
-        if(modo === "es"){
+        if (modo === "es") {
 
             el.textContent = es;
         }
 
         // SOLO NÁHUATL
-        if(modo === "na"){
+        if (modo === "na") {
 
             el.textContent = na;
         }
 
         // ESPAÑOL + NÁHUATL
-        if(modo === "es-na"){
+        if (modo === "es-na") {
 
             el.innerHTML =
 
@@ -217,7 +217,7 @@ function presenCambiarModo(modo){
         }
 
         // NÁHUATL + ESPAÑOL
-        if(modo === "na-es"){
+        if (modo === "na-es") {
 
             el.innerHTML =
 
@@ -249,7 +249,7 @@ function presenCambiarModo(modo){
 
 document.addEventListener(
     "DOMContentLoaded",
-    function(){
+    function () {
 
         // Obtener idioma guardado
         const idiomaGuardado =
@@ -260,7 +260,7 @@ document.addEventListener(
 
         // Si existe idioma guardado
         // aplicarlo automáticamente
-        if(idiomaGuardado){
+        if (idiomaGuardado) {
 
             presenCambiarModo(
                 idiomaGuardado
@@ -304,7 +304,7 @@ window.addEventListener("scroll", () => {
 
 let visible = true;
 
-function toggleVisibilidad(){
+function toggleVisibilidad() {
 
     const icono =
         document.getElementById("iconoVisibilidad");
@@ -317,12 +317,12 @@ function toggleVisibilidad(){
 
     icono.classList.add("eye-animate");
 
-    if(visible){
+    if (visible) {
 
         icono.className =
             "bi bi-eye-fill eye-animate";
 
-    }else{
+    } else {
 
         icono.className =
             "bi bi-eye-slash-fill eye-animate";
@@ -339,18 +339,18 @@ function toggleVisibilidad(){
 ].forEach(id => {
 
     const campo =
-    document.getElementById(id);
+        document.getElementById(id);
 
-    if(campo){
+    if (campo) {
 
-        campo.addEventListener("input", function(){
+        campo.addEventListener("input", function () {
 
             this.value = this.value
-            .replace(
-                /[^A-Za-zÁÉÍÓÚáéíóúÑñÜü\s-]/g,
-                ""
-            )
-            .toUpperCase();
+                .replace(
+                    /[^A-Za-zÁÉÍÓÚáéíóúÑñÜü\s-]/g,
+                    ""
+                )
+                .toUpperCase();
 
         });
 
@@ -365,31 +365,31 @@ let paises = [];
 let estadosMexico = [];
 let palabrasProhibidas = [];
 
-async function cargarDatosRegistro(){
+async function cargarDatosRegistro() {
 
-    try{
-
-        paises =
-        await fetch("/json/paises.json")
-        .then(r => r.json());
+    try {
 
         paises =
-        paises.map(
-            pais => pais.shortName
-        );
+            await fetch("../json/paises.json")
+                .then(r => r.json());
+
+        paises =
+            paises.map(
+                pais => pais.shortName
+            );
 
         estadosMexico =
-        await fetch("/json/estados_mexico.json")
-        .then(r => r.json());
+            await fetch("../json/estados_mexico.json")
+                .then(r => r.json());
 
         palabrasProhibidas =
-        await fetch("/json/palabras_prohibidas.json")
-        .then(r => r.json());
+            await fetch("../json/palabras_prohibidas.json")
+                .then(r => r.json());
 
         cargarPaises();
 
     }
-    catch(error){
+    catch (error) {
 
         console.error(
             "Error cargando JSON:",
@@ -401,23 +401,23 @@ async function cargarDatosRegistro(){
 }
 
 
-function cargarPaises(){
+function cargarPaises() {
 
     const selectPais =
-    document.getElementById("pais");
+        document.getElementById("pais");
 
-    if(!selectPais) return;
+    if (!selectPais) return;
 
     paises.forEach(pais => {
 
         const option =
-        document.createElement("option");
+            document.createElement("option");
 
         option.value =
-        pais;
+            pais;
 
         option.textContent =
-        pais;
+            pais;
 
         selectPais.appendChild(option);
 
@@ -425,25 +425,25 @@ function cargarPaises(){
 
 }
 
-function cambiarPais(){
+function cambiarPais() {
 
     const pais =
-    document.getElementById("pais").value;
+        document.getElementById("pais").value;
 
     const estado =
-    document.getElementById("estado");
+        document.getElementById("estado");
 
-    if(!estado) return;
+    if (!estado) return;
 
     estado.innerHTML = "";
 
-    if(pais === "México"){
+    if (pais === "México") {
 
         const opcion =
-        document.createElement("option");
+            document.createElement("option");
 
         opcion.textContent =
-        "Selecciona un estado";
+            "Selecciona un estado";
 
         opcion.value = "";
 
@@ -452,29 +452,29 @@ function cambiarPais(){
         estadosMexico.forEach(nombre => {
 
             const option =
-            document.createElement("option");
+                document.createElement("option");
 
             option.value =
-            nombre;
+                nombre;
 
             option.textContent =
-            nombre;
+                nombre;
 
             estado.appendChild(option);
 
         });
 
     }
-    else{
+    else {
 
         const option =
-        document.createElement("option");
+            document.createElement("option");
 
         option.value =
-        "No aplica";
+            "No aplica";
 
         option.textContent =
-        "No aplica";
+            "No aplica";
 
         estado.appendChild(option);
 
@@ -482,19 +482,19 @@ function cambiarPais(){
 
 }
 
-function generarUsuario(){
+function generarUsuario() {
 
     const nombreInput =
-    document.getElementById("nombre");
+        document.getElementById("nombre");
 
-    if(!nombreInput) return;
+    if (!nombreInput) return;
 
     const nombre =
-    nombreInput.value
-    .trim()
-    .toLowerCase();
+        nombreInput.value
+            .trim()
+            .toLowerCase();
 
-    if(nombre === ""){
+    if (nombre === "") {
 
         alert(
             "Ingresa primero tu nombre"
@@ -505,46 +505,46 @@ function generarUsuario(){
     }
 
     const numero =
-    Math.floor(
-        100 + Math.random() * 900
-    );
+        Math.floor(
+            100 + Math.random() * 900
+        );
 
     const username =
-    nombre.replace(/\s+/g,"")
-    + numero;
+        nombre.replace(/\s+/g, "")
+        + numero;
 
     document
-    .getElementById("username")
-    .value =
-    username;
+        .getElementById("username")
+        .value =
+        username;
 
 }
 
-function usernameValido(username){
+function usernameValido(username) {
 
     username =
-    username.toLowerCase();
+        username.toLowerCase();
 
     return !palabrasProhibidas.some(
         palabra =>
-        username.includes(
-            palabra.toLowerCase()
-        )
+            username.includes(
+                palabra.toLowerCase()
+            )
     );
 
 }
 
-function togglePassword(){
+function togglePassword() {
 
     const input =
-    document.getElementById("password");
+        document.getElementById("password");
 
     const icon =
-    document.getElementById("iconPassword");
+        document.getElementById("iconPassword");
 
-    if(!input || !icon) return;
+    if (!input || !icon) return;
 
-    if(input.type === "password"){
+    if (input.type === "password") {
 
         input.type = "text";
 
@@ -554,7 +554,7 @@ function togglePassword(){
         );
 
     }
-    else{
+    else {
 
         input.type = "password";
 
@@ -569,37 +569,37 @@ function togglePassword(){
 
 
 const registerForm =
-document.getElementById("registerForm");
+    document.getElementById("registerForm");
 
-if(registerForm){
+if (registerForm) {
 
     registerForm.addEventListener(
         "submit",
-        function(e){
+        function (e) {
 
             e.preventDefault();
 
             const username =
-            document
-            .getElementById("username")
-            .value;
+                document
+                    .getElementById("username")
+                    .value;
 
             const password =
-            document
-            .getElementById("password")
-            .value;
+                document
+                    .getElementById("password")
+                    .value;
 
             const confirmPassword =
-            document
-            .getElementById("confirmPassword")
-            .value;
+                document
+                    .getElementById("confirmPassword")
+                    .value;
 
             const regexPassword =
-            /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&.#_-]).{8,}$/;
+                /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&.#_-]).{8,}$/;
 
-            if(
+            if (
                 !regexPassword.test(password)
-            ){
+            ) {
 
                 alert(
                     "La contraseña debe tener mínimo 8 caracteres, mayúsculas, minúsculas, números y símbolos."
@@ -609,9 +609,9 @@ if(registerForm){
 
             }
 
-            if(
+            if (
                 !usernameValido(username)
-            ){
+            ) {
 
                 alert(
                     "Nombre de usuario no permitido."
@@ -621,9 +621,9 @@ if(registerForm){
 
             }
 
-            if(
+            if (
                 password !== confirmPassword
-            ){
+            ) {
 
                 alert(
                     "Las contraseñas no coinciden."
@@ -646,11 +646,11 @@ document.addEventListener(
     "DOMContentLoaded",
     () => {
 
-        if(
+        if (
             document.getElementById(
                 "registerForm"
             )
-        ){
+        ) {
 
             cargarDatosRegistro();
 
@@ -663,7 +663,7 @@ document.addEventListener(
 /*Cerrar sesión en inicio*/
 
 
-function cerrarSesion(){
+function cerrarSesion() {
 
     localStorage.clear();
     sessionStorage.clear();
@@ -680,25 +680,25 @@ const totalFrames = 58;
 
 let direccion = 1;
 
-function animarNahui(){
+function animarNahui() {
 
     const numero =
-    String(frameActual)
-    .padStart(3,"0");
+        String(frameActual)
+            .padStart(3, "0");
 
     document.getElementById("nahuiFrame")
-    .src =
-    `/Recursos/nahui/frames_nahui/ezgif-frame-${numero}.png`;
+        .src =
+        `../Recursos/nahui/frames_nahui/ezgif-frame-${numero}.png`;
 
     frameActual += direccion;
 
-    if(frameActual >= totalFrames){
+    if (frameActual >= totalFrames) {
 
         direccion = -1;
 
     }
 
-    if(frameActual <= 1){
+    if (frameActual <= 1) {
 
         direccion = 1;
 
@@ -710,15 +710,15 @@ setInterval(animarNahui, 70);
 
 
 const ctx =
-document.getElementById('xpChart');
+    document.getElementById('xpChart');
 
 new Chart(ctx, {
 
-    type:'bar',
+    type: 'bar',
 
-    data:{
+    data: {
 
-        labels:[
+        labels: [
             'L',
             'M',
             'M',
@@ -728,11 +728,11 @@ new Chart(ctx, {
             'D'
         ],
 
-        datasets:[{
+        datasets: [{
 
-            label:'XP',
+            label: 'XP',
 
-            data:[
+            data: [
                 50,
                 120,
                 80,
@@ -750,19 +750,19 @@ new Chart(ctx, {
 
 /* script de progreso*/
 
-function abrirExamen(numero){
+function abrirExamen(numero) {
 
     document.getElementById(
         "tituloExamen"
     ).textContent =
-    "Examen " + numero;
+        "Examen " + numero;
 
     const modal =
-    new bootstrap.Modal(
-        document.getElementById(
-            "modalDetalleExamen"
-        )
-    );
+        new bootstrap.Modal(
+            document.getElementById(
+                "modalDetalleExamen"
+            )
+        );
 
     modal.show();
 
@@ -771,7 +771,7 @@ function abrirExamen(numero){
 /*Tarjeta de progreso*/
 
 
-function descargarTarjeta(){
+function descargarTarjeta() {
 
     html2canvas(
         document.getElementById(
@@ -780,13 +780,13 @@ function descargarTarjeta(){
     ).then(canvas => {
 
         const link =
-        document.createElement("a");
+            document.createElement("a");
 
         link.download =
-        "aulanet.png";
+            "aulanet.png";
 
         link.href =
-        canvas.toDataURL();
+            canvas.toDataURL();
 
         link.click();
 
@@ -800,7 +800,7 @@ function descargarTarjeta(){
 function compartirWhatsApp() {
 
     const mensaje =
-`Estoy aprendiendo náhuatl gracias a Castores Multilingües AUL@NET 🦫📚
+        `Estoy aprendiendo náhuatl gracias a Castores Multilingües AUL@NET 🦫📚
 
 🏆 XP: 5420
 🎖️ Medallas: 6/10
@@ -817,12 +817,12 @@ function compartirWhatsApp() {
 }
 
 
-function compartirFacebook(){
+function compartirFacebook() {
 
     const url =
-    encodeURIComponent(
-        "https://aulanet.mx"
-    );
+        encodeURIComponent(
+            "https://aulanet.mx"
+        );
 
     window.open(
         `https://www.facebook.com/sharer/sharer.php?u=${url}`,
@@ -832,12 +832,12 @@ function compartirFacebook(){
 }
 
 
-function compartirX(){
+function compartirX() {
 
     const mensaje =
-    encodeURIComponent(
-        "Estoy aprendiendo náhuatl gracias a Castores Multilingües AUL@NET 🦫📚 #Nahuatl #AULANET"
-    );
+        encodeURIComponent(
+            "Estoy aprendiendo náhuatl gracias a Castores Multilingües AUL@NET 🦫📚 #Nahuatl #AULANET"
+        );
 
     window.open(
         `https://twitter.com/intent/tweet?text=${mensaje}`,
@@ -856,17 +856,17 @@ function descargarTarjeta() {
         useCORS: true,
         backgroundColor: "#ffffff"
     })
-    .then(canvas => {
+        .then(canvas => {
 
-        const enlace = document.createElement("a");
+            const enlace = document.createElement("a");
 
-        enlace.download = "progreso_aulanet.png";
+            enlace.download = "progreso_aulanet.png";
 
-        enlace.href = canvas.toDataURL("image/png");
+            enlace.href = canvas.toDataURL("image/png");
 
-        enlace.click();
+            enlace.click();
 
-    });
+        });
 
 }
 
@@ -875,21 +875,21 @@ function descargarTarjeta() {
 
 /*java para abrir las lecciones*/
 document
-.querySelectorAll('.nivel-svg')
-.forEach(nivel => {
+    .querySelectorAll('.nivel-svg')
+    .forEach(nivel => {
 
-    nivel.addEventListener('click', () => {
+        nivel.addEventListener('click', () => {
 
-        const id = nivel.dataset.id;
+            const id = nivel.dataset.id;
 
-        console.log("Nivel:", id);
+            console.log("Nivel:", id);
 
-        // Aquí rediriges
-        // window.location.href = "nivel" + id + ".html";
+            // Aquí rediriges
+            // window.location.href = "nivel" + id + ".html";
+
+        });
 
     });
-
-});
 
 // ===================================================
 // LÓGICA DE CONTROL PARA EL CHAT DE IA (AMIGO NAHUI)
@@ -903,7 +903,7 @@ function toggleChatbox() {
     if (chatbox) {
         chatbox.classList.toggle('d-none');
         chatbox.classList.toggle('d-flex');
-        
+
         // Auto-scroll al fondo al abrir
         if (chatbox.classList.contains('d-flex')) {
             const chatBody = document.getElementById('chatbox-body');
@@ -971,7 +971,7 @@ function enviarMensajeIA(event) {
         nahuiDiv.style.maxWidth = '85%';
         nahuiDiv.style.fontSize = '0.9rem';
         nahuiDiv.textContent = respuestaNahui;
-        
+
         chatBody.appendChild(nahuiDiv);
         chatBody.scrollTop = chatBody.scrollHeight;
     }, 1500); // 1.5 segundos de retraso para simular pensamiento
@@ -1042,7 +1042,7 @@ function renderCategorias(categorias) {
 
     categorias.forEach(categoria => {
         const rtaImagen = categoria.imagen.includes('../') ? categoria.imagen : `../Recursos/logos_lecciones/${categoria.imagen}`;
-        
+
         container.innerHTML += `
             <div class="col-12 col-md-6 col-lg-3">
                 <div onclick="obtenerMisiones(${categoria.idcategoria})"
@@ -1099,7 +1099,7 @@ function renderMisiones(misiones) {
         const nombreNahEscapado = mision.nombre_nah.replace(/'/g, "\\'").replace(/"/g, '&quot;');
         const descEspEscapada = mision.descripcion_esp.replace(/'/g, "\\'").replace(/"/g, '&quot;');
         const descNahEscapada = mision.descripcion_nah ? mision.descripcion_nah.replace(/'/g, "\\'").replace(/"/g, '&quot;') : '';
-        
+
         // CORRECCIÓN: Escapamos y empaquetamos de forma segura la nueva columna de la BD
         const contextoEspEscapado = mision.contexto_esp ? mision.contexto_esp.replace(/'/g, "\\'").replace(/"/g, '&quot;') : '';
 
@@ -1144,10 +1144,10 @@ function verContextoMision(idmision, nombreEsp, nombreNah, contextoEsp, descNah)
 
     if (titleEs) titleEs.textContent = nombreEsp;
     if (titleNa) titleNa.textContent = nombreNah;
-    
+
     // SOLUCIÓN DEFINITIVA: Vaciamos por completo estas etiquetas para que la 
     // descripción exterior no se pinte adentro y evitemos la duplicidad de pantallas
-    if (descEs) descEs.textContent = ""; 
+    if (descEs) descEs.textContent = "";
     if (descNa) descNa.textContent = "";
 
     const vocabContainer = document.getElementById("context-vocabulario");
@@ -1193,7 +1193,7 @@ async function iniciarCuestionario(idmision, nombreMision) {
 
         indicePreguntaActual = 0;
         respuestasCorrectasTotales = 0;
-        
+
         const quizTitle = document.getElementById("quiz-mision-title");
         const qContainer = document.getElementById("quiz-question-container");
         const rContainer = document.getElementById("quiz-results-container");
@@ -1226,7 +1226,7 @@ function mostrarPreguntaActual() {
     }
     if (questionText) questionText.textContent = pregunta.pregunta;
     if (!opcionesContainer) return;
-    
+
     opcionesContainer.innerHTML = "";
 
     const opciones = [
@@ -1234,7 +1234,7 @@ function mostrarPreguntaActual() {
         { texto: pregunta.opcion_b, esCorrecta: false },
         { texto: pregunta.opcion_c, esCorrecta: false }
     ];
-    
+
     // Mezclar las respuestas aleatoriamente
     opciones.sort(() => Math.random() - 0.5);
 
@@ -1283,11 +1283,11 @@ function finalizarCuestionario() {
     if (progressBar) progressBar.style.width = "100%";
     if (progressText) progressText.textContent = "¡Terminado!";
     if (qContainer) qContainer.classList.add("hidden");
-    
+
     if (scoreTexto) {
         scoreTexto.textContent = `Lograste contestar de forma correcta ${respuestasCorrectasTotales} de ${preguntasMisionActual.length} reactivos. ¡Buen trabajo practicando tu náhuatl!`;
     }
-    
+
     if (rContainer) rContainer.classList.remove("hidden");
 }
 
@@ -1299,18 +1299,18 @@ function finalizarCuestionario() {
 // IDIOMA
 //==================
 
-function perfilprinTexto(es, na){
+function perfilprinTexto(es, na) {
 
-const idioma =
-localStorage.getItem("idiomaSeleccionado")
-||
-localStorage.getItem("idioma")
-||
-"es";
+    const idioma =
+        localStorage.getItem("idiomaSeleccionado")
+        ||
+        localStorage.getItem("idioma")
+        ||
+        "es";
 
-return idioma.toLowerCase() === "na"
-? na
-: es;
+    return idioma.toLowerCase() === "na"
+        ? na
+        : es;
 
 }
 
@@ -1335,9 +1335,9 @@ function perfilprinMostrarMasMedallas() {
         "btnVerMas"
     ).innerHTML = abiertas
 
-        ? "Ver menos"
+            ? "Ver menos"
 
-        : "Ver más";
+            : "Ver más";
 
 }
 
@@ -1347,72 +1347,72 @@ function perfilprinMostrarMasMedallas() {
 // EDITAR INFO
 //==================
 
-function perfilprinEditarInformacion(){
+function perfilprinEditarInformacion() {
 
-Swal.fire({
+    Swal.fire({
 
-title:
+        title:
 
-perfilprinTexto(
-"¿Editar contraseña?",
-"¿Tikpatlas tlatzakuilli?"
-),
+            perfilprinTexto(
+                "¿Editar contraseña?",
+                "¿Tikpatlas tlatzakuilli?"
+            ),
 
-text:
+        text:
 
-perfilprinTexto(
-"Solo podrás modificar la contraseña",
-"San huel tikpatlas motlatzakuilli"
-),
+            perfilprinTexto(
+                "Solo podrás modificar la contraseña",
+                "San huel tikpatlas motlatzakuilli"
+            ),
 
-icon:"question",
+        icon: "question",
 
-showCancelButton:true,
+        showCancelButton: true,
 
-confirmButtonText:
+        confirmButtonText:
 
-perfilprinTexto(
-"Editar",
-"Xikpatla"
-),
+            perfilprinTexto(
+                "Editar",
+                "Xikpatla"
+            ),
 
-cancelButtonText:
+        cancelButtonText:
 
-perfilprinTexto(
-"Cancelar",
-"Xikmokuepa"
-),
+            perfilprinTexto(
+                "Cancelar",
+                "Xikmokuepa"
+            ),
 
-confirmButtonColor:"#2ebc68"
+        confirmButtonColor: "#2ebc68"
 
-})
+    })
 
-.then(r=>{
+        .then(r => {
 
-if(r.isConfirmed){
+            if (r.isConfirmed) {
 
-const input=
+                const input =
 
-document.getElementById(
-"perfilprinPassword"
-);
+                    document.getElementById(
+                        "perfilprinPassword"
+                    );
 
-input.disabled=false;
+                input.disabled = false;
 
-input.focus();
+                input.focus();
 
-document
-.getElementById(
-"perfilprinGuardar"
-)
-.classList
-.remove(
-"d-none"
-);
+                document
+                    .getElementById(
+                        "perfilprinGuardar"
+                    )
+                    .classList
+                    .remove(
+                        "d-none"
+                    );
 
-}
+            }
 
-});
+        });
 
 }
 
@@ -1422,110 +1422,110 @@ document
 // GUARDAR
 //==================
 
-function perfilprinGuardarInformacion(){
+function perfilprinGuardarInformacion() {
 
-const pass=
+    const pass =
 
-document
-.getElementById(
-"perfilprinPassword"
-)
-.value;
+        document
+            .getElementById(
+                "perfilprinPassword"
+            )
+            .value;
 
-if(pass.length<6){
+    if (pass.length < 6) {
 
-Swal.fire({
+        Swal.fire({
 
-icon:"warning",
+            icon: "warning",
 
-title:
+            title:
 
-perfilprinTexto(
-"Contraseña inválida",
-"Tlatzakuilli amo kuali"
-),
+                perfilprinTexto(
+                    "Contraseña inválida",
+                    "Tlatzakuilli amo kuali"
+                ),
 
-text:
+            text:
 
-perfilprinTexto(
-"Mínimo 6 caracteres",
-"Xikpia chikuasen caracteres"
+                perfilprinTexto(
+                    "Mínimo 6 caracteres",
+                    "Xikpia chikuasen caracteres"
 
-)
+                )
 
-});
+        });
 
-return;
+        return;
 
-}
+    }
 
-Swal.fire({
+    Swal.fire({
 
-title:
+        title:
 
-perfilprinTexto(
-"¿Guardar cambios?",
-"¿Tikpiyawas tlamantli?"
-),
+            perfilprinTexto(
+                "¿Guardar cambios?",
+                "¿Tikpiyawas tlamantli?"
+            ),
 
-icon:"question",
+        icon: "question",
 
-showCancelButton:true,
+        showCancelButton: true,
 
-confirmButtonText:
+        confirmButtonText:
 
-perfilprinTexto(
-"Guardar",
-"Xikpiyawa"
-),
+            perfilprinTexto(
+                "Guardar",
+                "Xikpiyawa"
+            ),
 
-cancelButtonText:
+        cancelButtonText:
 
-perfilprinTexto(
-"Cancelar",
-"Xikmokuepa"
-),
+            perfilprinTexto(
+                "Cancelar",
+                "Xikmokuepa"
+            ),
 
-confirmButtonColor:"#2ebc68"
+        confirmButtonColor: "#2ebc68"
 
-})
+    })
 
-.then(r=>{
+        .then(r => {
 
-if(r.isConfirmed){
+            if (r.isConfirmed) {
 
-document
-.getElementById(
-"perfilprinPassword"
-)
-.disabled=true;
+                document
+                    .getElementById(
+                        "perfilprinPassword"
+                    )
+                    .disabled = true;
 
-document
-.getElementById(
-"perfilprinGuardar"
-)
-.classList
-.add(
-"d-none"
-);
+                document
+                    .getElementById(
+                        "perfilprinGuardar"
+                    )
+                    .classList
+                    .add(
+                        "d-none"
+                    );
 
-Swal.fire({
+                Swal.fire({
 
-icon:"success",
+                    icon: "success",
 
-title:
+                    title:
 
-perfilprinTexto(
-"Información actualizada",
-"Tlanextilistli yancuic"
+                        perfilprinTexto(
+                            "Información actualizada",
+                            "Tlanextilistli yancuic"
 
-)
+                        )
 
-});
+                });
 
-}
+            }
 
-});
+        });
 
 }
 
@@ -1535,67 +1535,67 @@ perfilprinTexto(
 // ELIMINAR
 //==================
 
-function perfilprinEliminarCuenta(){
+function perfilprinEliminarCuenta() {
 
-Swal.fire({
+    Swal.fire({
 
-title:
+        title:
 
-perfilprinTexto(
-"¿Eliminar cuenta?",
-"¿Tikpoloas cuenta?"
-),
+            perfilprinTexto(
+                "¿Eliminar cuenta?",
+                "¿Tikpoloas cuenta?"
+            ),
 
-text:
+        text:
 
-perfilprinTexto(
-"Esta acción no se puede deshacer",
-"Ayo huel mokuepas"
-),
+            perfilprinTexto(
+                "Esta acción no se puede deshacer",
+                "Ayo huel mokuepas"
+            ),
 
-icon:"warning",
+        icon: "warning",
 
-showCancelButton:true,
+        showCancelButton: true,
 
-confirmButtonColor:"#d33",
+        confirmButtonColor: "#d33",
 
-confirmButtonText:
+        confirmButtonText:
 
-perfilprinTexto(
-"Eliminar",
-"Xikpoloa"
-),
+            perfilprinTexto(
+                "Eliminar",
+                "Xikpoloa"
+            ),
 
-cancelButtonText:
+        cancelButtonText:
 
-perfilprinTexto(
-"Cancelar",
-"Xikmokuepa"
-)
+            perfilprinTexto(
+                "Cancelar",
+                "Xikmokuepa"
+            )
 
-})
+    })
 
-.then(r=>{
+        .then(r => {
 
-if(r.isConfirmed){
+            if (r.isConfirmed) {
 
-Swal.fire({
+                Swal.fire({
 
-icon:"success",
+                    icon: "success",
 
-title:
+                    title:
 
-perfilprinTexto(
-"Cuenta eliminada",
-"Cuenta opoliw"
+                        perfilprinTexto(
+                            "Cuenta eliminada",
+                            "Cuenta opoliw"
 
-)
+                        )
 
-});
+                });
 
-}
+            }
 
-});
+        });
 
 }
 
@@ -1627,16 +1627,16 @@ function perfilprinAbrirSelectorIcono() {
 // MODAL MEDALLAS
 //==================
 
-function perfilprinAbrirModalMedallas(){
+function perfilprinAbrirModalMedallas() {
 
-new bootstrap.Modal(
+    new bootstrap.Modal(
 
-document.getElementById(
-"perfilprinModalMedallas"
+        document.getElementById(
+            "perfilprinModalMedallas"
 
-)
+        )
 
-).show();
+    ).show();
 
 }
 
@@ -1647,41 +1647,41 @@ document.getElementById(
 //==================
 
 document
-.querySelectorAll(
-".perfilprin-icon-grid img"
-)
+    .querySelectorAll(
+        ".perfilprin-icon-grid img"
+    )
 
-.forEach(img => {
+    .forEach(img => {
 
-    img.addEventListener(
+        img.addEventListener(
 
-        "click",
+            "click",
 
-        () => {
+            () => {
 
-            document
-            .querySelectorAll(
-                ".perfilprin-icon-grid img"
-            )
-            .forEach(i => {
+                document
+                    .querySelectorAll(
+                        ".perfilprin-icon-grid img"
+                    )
+                    .forEach(i => {
 
-                i.style.border =
+                        i.style.border =
 
-                "4px solid transparent";
+                            "4px solid transparent";
 
-            });
+                    });
 
-            img.style.border =
+                img.style.border =
 
-            "4px solid #2ebc68";
+                    "4px solid #2ebc68";
 
-            perfilprinIcono = img.src;
+                perfilprinIcono = img.src;
 
-        }
+            }
 
-    );
+        );
 
-});
+    });
 
 
 
@@ -1689,58 +1689,58 @@ document
 // GUARDAR ICONO
 //==================
 
-function perfilprinGuardarIcono(){
+function perfilprinGuardarIcono() {
 
-if(!perfilprinIcono){
+    if (!perfilprinIcono) {
 
-Swal.fire({
+        Swal.fire({
 
-icon:"warning",
+            icon: "warning",
 
-title:
+            title:
 
-perfilprinTexto(
-"Selecciona un icono",
-"Xikpejpena se tlaixiptla"
-)
+                perfilprinTexto(
+                    "Selecciona un icono",
+                    "Xikpejpena se tlaixiptla"
+                )
 
-});
+        });
 
-return;
+        return;
 
-}
+    }
 
-document
-.getElementById(
-"perfilprinAvatar"
-)
-.src=
+    document
+        .getElementById(
+            "perfilprinAvatar"
+        )
+        .src =
 
-perfilprinIcono;
+        perfilprinIcono;
 
-bootstrap
-.Modal
-.getInstance(
+    bootstrap
+        .Modal
+        .getInstance(
 
-document.getElementById(
-"perfilprinModalIconos"
+            document.getElementById(
+                "perfilprinModalIconos"
 
-)
+            )
 
-).hide();
+        ).hide();
 
-Swal.fire({
+    Swal.fire({
 
-icon:"success",
+        icon: "success",
 
-title:
+        title:
 
-perfilprinTexto(
-"Icono actualizado",
-"Tlaixiptla yancuic"
-)
+            perfilprinTexto(
+                "Icono actualizado",
+                "Tlaixiptla yancuic"
+            )
 
-});
+    });
 
 }
 
@@ -1756,7 +1756,7 @@ function interactuarImagen(img) {
 // Esta función es activada por el clic en la 'X'
 function cerrarImagen(btn) {
     const contenedor = btn.parentElement;
-    
+
     // Si está expandida, la cerramos
     if (contenedor.classList.contains('expandida')) {
         contenedor.classList.remove('expandida');
@@ -1765,3 +1765,77 @@ function cerrarImagen(btn) {
         interactuarImagen(contenedor.querySelector('img'));
     }
 }
+
+document.getElementById('registerForm').addEventListener('submit', async function (e) {
+    e.preventDefault(); // Evita recargar la página
+
+    // 1. Obtener y estructurar los datos del formulario
+    const datosRegistro = {
+        nombre: document.getElementById('nombre').value,
+        apellidoPaterno: document.getElementById('apellidoPaterno').value,
+        apellidoMaterno: document.getElementById('apellidoMaterno').value,
+        fechaNacimiento: document.getElementById('fechaNacimiento').value,
+        username: document.getElementById('username').value,
+        pais: document.getElementById('pais').value,
+        estado: document.getElementById('estado').value,
+        email: document.getElementById('email').value,
+        password: document.getElementById('password').value
+    };
+
+    // Validación opcional: verificar que las contraseñas coincidan antes de enviar
+    const confirmPassword = document.getElementById('confirmPassword').value;
+    if (datosRegistro.password !== confirmPassword) {
+        alert('Las contraseñas no coinciden');
+        return;
+    }
+
+    try {
+        // 2. Enviar los datos a la API mediante POST
+        const respuesta = await fetch('https://tu-api.com/api/registro', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(datosRegistro) // Convertimos el objeto a JSON
+        });
+
+        const resultado = await respuesta.json();
+
+        if (respuesta.ok) {
+            alert('Usuario registrado con éxito');
+            // Redirigir o limpiar formulario si es necesario
+        } else {
+            alert('Error en el registro: ' + resultado.mensaje);
+        }
+
+    } catch (error) {
+        console.error('Error al conectar con la API:', error);
+    }
+});
+
+document.getElementById('registerForm').addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    // 1. Juntas los datos del formulario
+    const datos = {
+        nombre: document.getElementById('nombre').value,
+        apellidoPaterno: document.getElementById('apellidoPaterno').value,
+        apellidoMaterno: document.getElementById('apellidoMaterno').value,
+        fechaNacimiento: document.getElementById('fechaNacimiento').value,
+        username: document.getElementById('username').value,
+        pais: document.getElementById('pais').value,
+        estado: document.getElementById('estado').value,
+        email: document.getElementById('email').value,
+        password: document.getElementById('password').value
+    };
+
+    // 2. Se los envías a register_process.php
+    const respuesta = await fetch('../php/register_process.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(datos)
+    });
+
+    const resultado = await respuesta.json();
+    alert(resultado.mensaje);
+});
