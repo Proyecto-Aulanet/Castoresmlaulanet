@@ -947,8 +947,6 @@
 
 
 
-
-
                     <!-- FORTALECER -->
 
 
@@ -1009,9 +1007,6 @@
 
 
                     </div>
-
-
-
 
 
 
@@ -2012,93 +2007,35 @@
 
 
                 <!-- GRAFICAS -->
+<div class="row g-4 justify-content-between align-items-center">
 
+    <!-- GLOBAL -->
+    <div class="col-12 col-lg-5">
+        <div class="chart-card p-4 shadow-sm rounded">
+            <h4>
+                <i class="bi bi-globe-americas me-2"></i>
+                <span data-es="Alcance global" data-na="Tlaltipaktli">
+                    Alcance global
+                </span>
+            </h4>
+            <canvas id="globalChart"></canvas>
+        </div>
+    </div>
 
-                <div class="row g-4">
+    <!-- MEXICO -->
+    <div class="col-12 col-lg-5">
+        <div class="chart-card p-4 shadow-sm rounded">
+            <h4>
+                <i class="bi bi-map me-2"></i>
+                <span data-es="Usuarios en México" data-na="Mexihko">
+                    Usuarios en México
+                </span>
+            </h4>
+            <canvas id="mexicoChart"></canvas>
+        </div>
+    </div>
 
-
-
-
-
-                    <!-- GLOBAL -->
-
-
-                    <div class="col-lg-5">
-
-
-                        <div class="chart-card">
-
-
-                            <h4>
-
-
-                                <i class="bi bi-globe-americas"></i>
-
-
-                                <span data-es="Alcance global" data-na="Tlaltipaktli">
-
-                                    Alcance global
-
-                                </span>
-
-
-                            </h4>
-
-
-                            <canvas id="globalChart"></canvas>
-
-
-                        </div>
-
-
-                    </div>
-
-
-
-
-
-
-
-
-                    <!-- MEXICO -->
-
-
-                    <div class="col-lg-5">
-
-
-                        <div class="chart-card">
-
-
-                            <h4>
-
-
-                                <i class="bi bi-map"></i>
-
-
-                                <span data-es="Usuarios en México" data-na="Mexihko">
-
-                                    Usuarios en México
-
-                                </span>
-
-
-                            </h4>
-
-
-
-                            <canvas id="mexicoChart"></canvas>
-
-
-                        </div>
-
-
-                    </div>
-
-
-
-
-                </div>
-
+</div>
 
 
             </div>
@@ -3943,10 +3880,6 @@
 
 
         </div>
-
-
-
-
     </main>
 
 
@@ -4345,6 +4278,11 @@
             });
         }
     </script>
+
+    //rankin 
+    <script src="../js/estadisticas.js"></script>
+    <!-- Librería Chart.js para dibujar gráficas -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </body>
 
