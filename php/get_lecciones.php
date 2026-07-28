@@ -9,7 +9,7 @@ try {
     switch ($accion) {
 
         // ==============================================================
-        // obtener la lista de lecciones con su examen asignado
+        // 1. Obtener la lista de lecciones con su examen asignado
         // ==============================================================
         case 'listar':
             $stmt = $pdo->query("
@@ -29,22 +29,21 @@ try {
 
             echo json_encode([
                 "status" => "success",
-                "data" => $misiones
+                "data"   => $misiones
             ]);
             break;
 
         // ==============================================================
-        // obtiene las preguntas del examen segun el id de la leccion
+        // 2. Obtener las preguntas del examen según el ID de la lección
         // ==============================================================
         case 'preguntas':
-            $idleccion = isset($_GET['idleccion']) ? intval($_GET['idleccion']) : ($input['idleccion'] ?? 0);
+            $idleccion = isset($_GET['idleccion']) ? intval($_GET['idleccion']) : intval($input['idleccion'] ?? 0);
 
             if ($idleccion <= 0) {
                 echo json_encode(["status" => "error", "message" => "Se requiere un ID de lección válido"]);
                 exit;
             }
 
-            // busca las preguntas ligadas a la lección (idmision)
             $stmt = $pdo->prepare("
                 SELECT idpregunta, idexamen, idmision, texto_esp, texto_nah, puntaje 
                 FROM Pregunta 
@@ -55,19 +54,19 @@ try {
 
             echo json_encode([
                 "status" => "success",
-                "data" => $preguntas
+                "data"   => $preguntas
             ]);
             break;
 
         // ==============================================================
-        //  finalizar examen, guardar racha, avance y medalla
+        // 3. Finalizar examen, guardar intento, avance, racha y medalla
         // ==============================================================
         case 'guardar_resultado':
-            $idusuario   = $input['idusuario'] ?? $_POST['idusuario'] ?? 0;
-            $idleccion   = $input['idleccion'] ?? $_POST['idleccion'] ?? 0;
-            $idexamen    = $input['idexamen'] ?? $_POST['idexamen'] ?? 0;
-            $puntos      = $input['puntos'] ?? $_POST['puntos'] ?? 0;
-            $idmedalla   = $input['idmedalla'] ?? $_POST['idmedalla'] ?? null; // ID de la medalla de la lección
+            $idusuario   = intval($input['idusuario'] ?? $_POST['idusuario'] ?? 0);
+            $idleccion   = intval($input['idleccion'] ?? $_POST['idleccion'] ?? 0);
+            $idexamen    = intval($input['idexamen'] ?? $_POST['idexamen'] ?? 0);
+            $puntos      = intval($input['puntos'] ?? $_POST['puntos'] ?? 0);
+            $idmedalla   = isset($input['idmedalla']) ? intval($input['idmedalla']) : null;
             $hora_inicio = $input['hora_inicio'] ?? $_POST['hora_inicio'] ?? date('Y-m-d H:i:s');
 
             if ($idusuario <= 0 || $idleccion <= 0 || $idexamen <= 0) {
@@ -77,14 +76,12 @@ try {
 
             $pdo->beginTransaction();
 
-            // A. Registrar Intento (Corregido: ahora incluye $hora_inicio)
             $stmtIntento = $pdo->prepare("
                 INSERT INTO IntentoExamen (idusuario, idexamen, hora_inicio, hora_fin, puntaje) 
                 VALUES (?, ?, ?, NOW(), ?)
             ");
             $stmtIntento->execute([$idusuario, $idexamen, $hora_inicio, $puntos]);
 
-            // B. Registrar Puntaje
             $stmtPuntaje = $pdo->prepare("
                 INSERT INTO Puntaje (idusuario, idexamen, puntos, fecha) 
                 VALUES (?, ?, ?, NOW())
@@ -92,7 +89,6 @@ try {
             $stmtPuntaje->execute([$idusuario, $idexamen, $puntos]);
             $idpuntaje = $pdo->lastInsertId();
 
-            // C. Registrar Racha Diaria
             $stmtRacha = $pdo->prepare("
                 INSERT INTO Racha (idusuario, fecha, dia_completado) 
                 VALUES (?, CURRENT_DATE(), TRUE)
@@ -104,7 +100,6 @@ try {
             $stmtGetRacha->execute([$idusuario]);
             $idracha = $stmtGetRacha->fetch(PDO::FETCH_ASSOC)['idracha'] ?? null;
 
-            // D. Registrar/Actualizar Avance de la Lección
             $stmtVerificar = $pdo->prepare("SELECT idleccion_usuario FROM Lecciones_usuario WHERE idusuario = ? AND idmision = ?");
             $stmtVerificar->execute([$idusuario, $idleccion]);
             $progresoExistente = $stmtVerificar->fetch(PDO::FETCH_ASSOC);
@@ -124,9 +119,8 @@ try {
                 $stmtInsert->execute([$idusuario, $idleccion, $idexamen, $idpuntaje, $idracha]);
             }
 
-            // E. ASIGNAR MEDALLA AL USUARIO AL FINALIZAR
             $medallaOtorgada = false;
-            if ($idmedalla) {
+            if ($idmedalla && $idmedalla > 0) {
                 $stmtMedalla = $pdo->prepare("
                     INSERT IGNORE INTO Usuario_Medalla (idusuario, idmedalla, fecha_obtenida) 
                     VALUES (?, ?, NOW())
@@ -138,10 +132,46 @@ try {
             $pdo->commit();
 
             echo json_encode([
-                "status" => "success",
-                "message" => "¡Lección completada!",
+                "status"           => "success",
+                "message"          => "¡Lección completada y examen registrado!",
                 "medalla_otorgada" => $medallaOtorgada,
-                "idpuntaje" => $idpuntaje
+                "idpuntaje"        => $idpuntaje
+            ]);
+            break;
+
+        // ==============================================================
+        // 4. Reporte completo: Exámenes + Lección + Tiempo + Procedencia
+        // ==============================================================
+        case 'reporte_examenes':
+            $stmt = $pdo->query("
+                SELECT 
+                    ie.idintento,
+                    CONCAT(u.nombre, ' ', u.apellidop, ' ', u.apellidom) AS nombre_completo,
+                    u.username,
+                    COALESCE(p.nombre, 'Sin especificar') AS pais,
+                    COALESCE(e.nombre, 'Sin especificar') AS estado,
+                    m.nombre_esp AS leccion_categoria,
+                    m.nombre_nah AS leccion_nahuatl,
+                    ex.idexamen,
+                    ie.puntaje,
+                    ie.hora_inicio,
+                    ie.hora_fin,
+                    TIMEDIFF(ie.hora_fin, ie.hora_inicio) AS tiempo_tardado,
+                    TIMESTAMPDIFF(SECOND, ie.hora_inicio, ie.hora_fin) AS segundos_totales
+                FROM IntentoExamen ie
+                INNER JOIN Usuario u ON ie.idusuario = u.idusuario
+                LEFT JOIN Pais p ON u.idpais = p.idpais
+                LEFT JOIN Estado e ON u.idestado = e.idestado
+                INNER JOIN Examen ex ON ie.idexamen = ex.idexamen
+                INNER JOIN Mision m ON ex.idmision = m.idmision
+                ORDER BY ie.hora_fin DESC
+            ");
+
+            $reporte = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            echo json_encode([
+                "status" => "success",
+                "data"   => $reporte
             ]);
             break;
 
@@ -154,6 +184,10 @@ try {
     if ($pdo->inTransaction()) {
         $pdo->rollBack();
     }
-    echo json_encode(["status" => "error", "message" => "Error interno: " . $e->getMessage()]);
+    http_response_code(500);
+    echo json_encode([
+        "status"  => "error", 
+        "message" => "Error interno del servidor: " . $e->getMessage()
+    ]);
 }
 ?>
