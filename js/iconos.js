@@ -1,7 +1,11 @@
 let mascotaSeleccionada = null;
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
+
     cargarMascotasDesdeAPI();
+
+    cargarFotoPerfil();
+
 });
 
 function cargarMascotasDesdeAPI() {
@@ -26,7 +30,7 @@ function cargarMascotasDesdeAPI() {
 
 function renderizarMascotas(listaMascotas) {
     const contenedorGrid = document.getElementById('perfilprinIconGrid');
-    
+
     if (!contenedorGrid) {
         console.error('No se encontró el contenedor #perfilprinIconGrid en el HTML');
         return;
@@ -44,7 +48,7 @@ function renderizarMascotas(listaMascotas) {
         img.src = item.url;
         img.alt = item.nombre;
         img.dataset.nombreArchivo = item.nombre;
-        
+
         img.style.cursor = 'pointer';
 
         img.addEventListener('click', () => {
@@ -65,26 +69,69 @@ function renderizarMascotas(listaMascotas) {
 }
 
 function perfilprinGuardarIcono() {
+
     if (!mascotaSeleccionada) {
-        alert('Por favor, selecciona un icono antes de guardar.');
+
+        alert("Selecciona un icono");
+
         return;
+
     }
 
-    console.log('Icono listo para enviarse a la BD:', mascotaSeleccionada);
+    fetch("../php/mascotas.php", {
 
-    fetch('../backend/guardar_foto_perfil.php', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ foto: mascotaSeleccionada })
+        method: "POST",
+
+        headers: {
+            "Content-Type": "application/json"
+        },
+
+        body: JSON.stringify({
+
+            foto: mascotaSeleccionada
+
+        })
+
     })
-    .then(res => res.json())
-    .then(data => {
-    });
 
-    // Cerrar el modal con Bootstrap
-    const modalElement = document.getElementById('perfilprinModalIconos');
-    if (modalElement) {
-        const modalInstance = bootstrap.Modal.getInstance(modalElement) || new bootstrap.Modal(modalElement);
-        modalInstance.hide();
-    }
+        .then(r => r.json())
+
+        .then(data => {
+
+            if (data.success) {
+
+                document.getElementById("fotoPerfil").src = data.ruta;
+
+                bootstrap.Modal.getInstance(
+                    document.getElementById("perfilprinModalIconos")
+                ).hide();
+
+            } else {
+
+                alert(data.message);
+
+            }
+
+        });
+
+}
+
+function cargarFotoPerfil() {
+
+    fetch("../backend/obtener_foto_perfil.php")
+
+        .then(r => r.json())
+
+        .then(data => {
+
+            if (data.success) {
+
+                document.getElementById("fotoPerfil").src =
+
+                    "../Recursos/mascotas/" + data.foto;
+
+            }
+
+        });
+
 }

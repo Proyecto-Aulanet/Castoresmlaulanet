@@ -1,5 +1,5 @@
 <?php
-
+header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
 $host = "localhost";
@@ -14,24 +14,13 @@ try {
         $pass
     );
 
-    $pdo->setAttribute(
-        PDO::ATTR_ERRMODE,
-        PDO::ERRMODE_EXCEPTION
-    );
-
-    $pdo->setAttribute(
-        PDO::ATTR_DEFAULT_FETCH_MODE,
-        PDO::FETCH_ASSOC
-    );
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
 } catch (PDOException $e) {
-    http_response_code(500);
-
     echo json_encode([
         "status" => "error",
-        "message" => "No se pudo conectar.",
-        "detalle" => $e->getMessage()
+        "message" => "No se pudo conectar a la base de datos: " . $e->getMessage()
     ]);
-
     exit;
 }

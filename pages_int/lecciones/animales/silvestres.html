@@ -259,8 +259,9 @@
                                     Lecciones
                                 </a>
 
-                                <a href="../../../pages_int/Cuentos/cuentos.html" class="btn navbarint-btn rounded-pill px-4"
-                                    data-aos="fade-up" data-aos-delay="100" data-es="Cuentos" data-na="Tlahtolli">
+                                <a href="../../../pages_int/Cuentos/cuentos.html"
+                                    class="btn navbarint-btn rounded-pill px-4" data-aos="fade-up" data-aos-delay="100"
+                                    data-es="Cuentos" data-na="Tlahtolli">
                                     <i class="bi bi-book-half me-2"></i>
                                     Cuentos
                                 </a>
@@ -445,8 +446,8 @@
                         <!-- IMAGEN DE LA TARJETA -->
                         <div class="w-100 overflow-hidden d-flex align-items-center justify-content-center bg-light"
                             style="height: 220px;">
-                            <img src="../../../Recursos/img_animales/serpiente.png" alt="Coatl" class="mw-100 mh-100 p-2"
-                                style="object-fit: contain; object-position: center;">
+                            <img src="../../../Recursos/img_animales/serpiente.png" alt="Coatl"
+                                class="mw-100 mh-100 p-2" style="object-fit: contain; object-position: center;">
                         </div>
 
                         <div class="p-4 pb-0">
@@ -494,8 +495,8 @@
                         <!-- IMAGEN DE LA TARJETA -->
                         <div class="w-100 overflow-hidden d-flex align-items-center justify-content-center bg-light"
                             style="height: 220px;">
-                            <img src="../../../Recursos/img_animales/camaleon.png" alt="Tapayaxin" class="mw-100 mh-100 p-2"
-                                style="object-fit: contain; object-position: center;">
+                            <img src="../../../Recursos/img_animales/camaleon.png" alt="Tapayaxin"
+                                class="mw-100 mh-100 p-2" style="object-fit: contain; object-position: center;">
                         </div>
 
                         <div class="p-4 pb-0">
@@ -592,8 +593,8 @@
                         <!-- IMAGEN DE LA TARJETA -->
                         <div class="w-100 overflow-hidden d-flex align-items-center justify-content-center bg-light"
                             style="height: 220px;">
-                            <img src="../../../Recursos/img_animales/mosquito.png" alt="Moyotl" class="mw-100 mh-100 p-2"
-                                style="object-fit: contain; object-position: center;">
+                            <img src="../../../Recursos/img_animales/mosquito.png" alt="Moyotl"
+                                class="mw-100 mh-100 p-2" style="object-fit: contain; object-position: center;">
                         </div>
 
                         <div class="p-4 pb-0">
@@ -700,25 +701,38 @@
     <!-- =======================================================================
      CONTENEDOR DE ACCIONES INFERIORES: EXTREMO IZQUIERDO Y EXTREMO DERECHO
      ======================================================================= -->
-    <div class="container-fluid pb-5 pt-3">
-        <div class="px-4">
-            <div class="d-flex justify-content-between align-items-center w-100">
+    <section class="container">
+        <!-- Alineación flex: Regresar a la izquierda; Subir y Completar a la derecha con espacio entre ellos -->
+        <div class="d-flex justify-content-between align-items-center mt-5" data-aos="fade-up">
 
-                <!-- Botón Izquierdo: Regresar -->
-                <button onclick="window.location.href='../../../pages_int/mapa_animales.html'" class="btn-regresar-int">
+            <!-- LADO IZQUIERDO: Botón Regresar -->
+            <div>
+                <button onclick="window.location.href='../../../pages_int/mapa_abecedario.html'"
+                    class="btn-regresar-int">
                     <i class="bi bi-arrow-left-circle-fill me-2"></i>
-                    <span data-es="Regresar" data-na="Mokuepa"> Regresar </span>
+                    <span data-es="Regresar" data-na="Mokuepa">Regresar</span>
                 </button>
+            </div>
 
-                <!-- Botón Derecho: Subir -->
+            <!-- LADO DERECHO: Botones Subir y Completar (con gap para separarlos perfectamente) -->
+            <div class="d-flex gap-3 align-items-center">
+                <!-- Botón Subir -->
                 <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" class="btn-regresar-int">
                     <i class="bi bi-arrow-up-circle-fill me-2"></i>
-                    <span data-es="Subir" data-na="Tlejco"> Subir </span>
+                    <span data-es="Subir" data-na="Tlejco">Subir</span>
                 </button>
 
+                <!-- Botón Completar Lección -->
+                <button onclick="completarMision(1, 1)" class="btn-regresar-int">
+                    <span data-es="Completar Lección" data-na="Tlamiti Machtiolli">Completar Lección</span>
+                    <i class="bi bi-check-circle-fill ms-2"></i>
+                </button>
             </div>
+
         </div>
-    </div>
+    </section>
+
+    <br>
     <!-- =========================================
                 FOOTER
             ========================================= -->
@@ -732,7 +746,8 @@
 
                 <div class="col-12 col-md-4" data-aos="fade-right">
 
-                    <img src="../../../Recursos/logos/logo_completo_svg.svg" alt="Aul@Net" class="img-fluid footer-logo">
+                    <img src="../../../Recursos/logos/logo_completo_svg.svg" alt="Aul@Net"
+                        class="img-fluid footer-logo">
 
 
                     <img src="../../../Recursos/logos/utp_svg.svg" alt="Aul@Net" class="img-fluid footer-logo-utp">
@@ -838,11 +853,9 @@
         });
     </script>
     <script>
-        // Detectar el desplazamiento (scroll) de la página
         window.addEventListener('scroll', function () {
             const boton = document.getElementById("btn-subir");
 
-            // Si el usuario baja más de 300 píxeles, el botón aparece; si vuelve arriba, se oculta
             if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
                 boton.classList.remove("d-none");
             } else {
@@ -850,33 +863,24 @@
             }
         });
 
-        // Función para deslizar suavemente hacia el inicio
         function subirInicio() {
             window.scrollTo({
                 top: 0,
-                behavior: 'smooth' // Hace que la subida sea fluida y estética
+                behavior: 'smooth'
             });
         }
 
-        // Variable global para controlar el audio actual
         let seccionActiva = "";
 
-        /**
-         * Muestra el modal dinámico con la información de la tarjeta seleccionada
-         * @param {string} idSeccion - El identificador de la tarjeta (ej. 'xocoyol', 'papalo', 'matlali')
-         */
         function mostrarSeccion(idSeccion) {
             seccionActiva = idSeccion;
 
-            // 1. Detener cualquier audio que se esté reproduciendo actualmente
             if (audioActual) {
                 audioActual.pause();
                 audioActual.currentTime = 0;
             }
 
-            // 2. Ocultar todos los elementos internos del modal (títulos, subtítulos, textos)
             const componentes = ['m-tit-', 'm-sub-', 'm-txt-'];
-            // Se agregan las nuevas secciones correspondientes a los quelites
             const todasLasSecciones = [
                 'xinachtli', 'miahuatl', 'elotl', 'cintli', 'olotl',
                 'totomoxtle', 'etl', 'ayotli', 'chilli', 'izquixochitl',
@@ -892,7 +896,6 @@
                 });
             });
 
-            // 3. Mostrar únicamente los elementos que correspondan a la sección activa
             const titulo = document.getElementById(`m-tit-${idSeccion}`);
             const subtitulo = document.getElementById(`m-sub-${idSeccion}`);
             const textoContainer = document.getElementById(`m-txt-${idSeccion}`);
@@ -901,30 +904,23 @@
             if (subtitulo) subtitulo.classList.remove('d-none');
             if (textoContainer) textoContainer.classList.remove('d-none');
 
-            // 4. Forzar al traductor simultáneo a renderizar el idioma correcto en el modal abierto
             if (typeof ajustarIdiomaActual === "function") {
                 ajustarIdiomaActual();
             }
 
-            // 5. Hacer visible el contenedor del modal removiendo 'd-none'
             const modalContainer = document.getElementById('contenedor-interactivo');
             if (modalContainer) {
                 modalContainer.classList.remove('d-none');
-                document.getElementById('modal-scroll-body').scrollTop = 0; // Resetear scroll del modal
+                document.getElementById('modal-scroll-body').scrollTop = 0;
             }
         }
 
-        /**
-         * Cierra el modal interactivo y detiene la reproducción del sonido
-         */
         function cerrarSeccion() {
-            // Ocultar el contenedor del modal
             const modalContainer = document.getElementById('contenedor-interactivo');
             if (modalContainer) {
                 modalContainer.classList.add('d-none');
             }
 
-            // Detener el audio por completo
             if (audioActual) {
                 audioActual.pause();
                 audioActual.currentTime = 0;
@@ -933,40 +929,26 @@
             seccionActiva = "";
         }
 
-        /**
-         * Reproduce el audio de la sección activa dentro del modal con soporte para velocidad normal o lenta
-         * @param {number} velocidad - Velocidad de reproducción (ej. 1.0 para normal, 0.6 para lento)
-         */
         function reproducirAudioDia(velocidad) {
             if (!seccionActiva) return;
 
             const contenedorTexto = document.getElementById(`m-txt-${seccionActiva}`);
             if (!contenedorTexto) return;
 
-            // Obtener la ruta del atributo data-audio
             const rutaAudio = contenedorTexto.getAttribute('data-audio');
             if (!rutaAudio) {
                 console.warn(`No se encontró una ruta de audio para la sección: ${seccionActiva}`);
                 return;
             }
 
-            // Invoca a la función global para procesar la reproducción
             reproducirAudioRuta(rutaAudio, velocidad);
         }
 
-        /**
-         * Reproduce cualquier audio directo desde la ruta especificada y con velocidad ajustable
-         * (Ideal para los botones rápidos incrustados directamente en las tarjetas externas)
-         * @param {string} ruta - Ruta del archivo de audio (.ogg, .mp3, etc)
-         * @param {number} velocidad - Velocidad de reproducción (ej. 1.0 o 0.6)
-         */
         function reproducirAudioRuta(ruta, velocidad) {
-            // Si ya hay un audio sonando, lo detenemos antes de iniciar el nuevo
             if (audioActual) {
                 audioActual.pause();
             }
 
-            // Crear y configurar el nuevo objeto de Audio
             audioActual = new Audio(ruta);
             audioActual.playbackRate = velocidad;
 
@@ -979,6 +961,8 @@
     <!-- JS -->
     <script src="../../../js/app.js"></script>
     <script src="../../../js/plantas.js"></script>
+    <script src="../../../js/racha.js"></script>
+
 
 </body>
 

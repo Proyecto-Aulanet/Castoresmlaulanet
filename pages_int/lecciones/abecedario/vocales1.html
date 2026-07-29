@@ -806,23 +806,29 @@
     </div>
 
     <section class="container">
-        <div class="d-flex justify-content-start mt-5" data-aos="fade-right">
+        <!-- justify-content-between coloca "Regresar" a la izquierda y "Completar" a la derecha -->
+        <div class="d-flex justify-content-between align-items-center mt-5" data-aos="fade-up">
 
+            <!-- BOTÓN REGRESAR -->
             <button onclick="window.location.href='../../../pages_int/mapa_abecedario.html'" class="btn-regresar-int">
-
                 <i class="bi bi-arrow-left-circle-fill me-2"></i>
-
                 <span data-es="Regresar" data-na="Mokuepa">
-
                     Regresar
-
                 </span>
-
             </button>
-        </div>
 
+            <!-- BOTÓN COMPLETAR LECCIÓN (Registra Racha) -->
+            <button onclick="completarMision(1, 1)" class="btn-regresar-int">
+                <span data-es="Completar Lección" data-na="Tlamiti Machtiolli">
+                    Completar Lección
+                </span>
+                <i class="bi bi-check-circle-fill ms-2"></i>
+            </button>
+
+        </div>
     </section>
 
+    <br>
     <br>
 
     <!-- =========================================
