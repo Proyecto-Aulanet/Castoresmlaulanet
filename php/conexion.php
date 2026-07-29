@@ -3,7 +3,7 @@
 header("Content-Type: application/json; charset=UTF-8");
 
 $host = "localhost";
-$db = "nahuatl";
+$db = "nahui";
 $user = "root";
 $pass = "260622BrunX";
 
