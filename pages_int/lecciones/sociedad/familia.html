@@ -706,29 +706,28 @@
         <!-- Alineación flex: Regresar a la izquierda; Subir y Completar a la derecha con espacio entre ellos -->
         <div class="d-flex justify-content-between align-items-center mt-5" data-aos="fade-up">
 
-            <!-- LADO IZQUIERDO: Botón Regresar -->
-            <div>
-                <button onclick="window.location.href='../../../pages_int/mapa_abecedario.html'"
-                    class="btn-regresar-int">
-                    <i class="bi bi-arrow-left-circle-fill me-2"></i>
-                    <span data-es="Regresar" data-na="Mokuepa">Regresar</span>
-                </button>
-            </div>
+                <div>
+                    <button onclick="window.location.href='../../../pages_int/mapa_abecedario.html'"
+                        class="btn-regresar-int">
+                        <i class="bi bi-arrow-left-circle-fill me-2"></i>
+                        <span data-es="Regresar" data-na="Mokuepa">Regresar</span>
+                    </button>
+                </div>
 
-            <!-- LADO DERECHO: Botones Subir y Completar (con gap para separarlos perfectamente) -->
-            <div class="d-flex gap-3 align-items-center">
-                <!-- Botón Subir -->
-                <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" class="btn-regresar-int">
-                    <i class="bi bi-arrow-up-circle-fill me-2"></i>
-                    <span data-es="Subir" data-na="Tlejco">Subir</span>
-                </button>
+                    <!-- LADO DERECHO: Botones Subir y Completar (con gap para separarlos perfectamente) -->
+                    <div class="d-flex gap-3 align-items-center">
+                        <!-- Botón Subir -->
+                        <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" class="btn-regresar-int">
+                            <i class="bi bi-arrow-up-circle-fill me-2"></i>
+                            <span data-es="Subir" data-na="Tlejco">Subir</span>
+                        </button>
 
-                <!-- Botón Completar Lección -->
-                <button onclick="completarMision(1, 1)" class="btn-regresar-int">
-                    <span data-es="Completar Lección" data-na="Tlamiti Machtiolli">Completar Lección</span>
-                    <i class="bi bi-check-circle-fill ms-2"></i>
-                </button>
-            </div>
+                        <!-- Botón Completar Lección -->
+                        <button onclick="completarMision(1, 1)" class="btn-regresar-int">
+                            <span data-es="Completar Lección" data-na="Tlamiti Machtiolli">Completar Lección</span>
+                            <i class="bi bi-check-circle-fill ms-2"></i>
+                        </button>
+                    </div>
 
         </div>
     </section>
