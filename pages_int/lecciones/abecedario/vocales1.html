@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="../../../styles/styles.css">
 
     <style>
+
         .theory-card {
             background-color: #ffffff;
             border: none;
@@ -34,36 +35,38 @@
             overflow: hidden;
         }
 
-        .theory-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
-        }
 
-        .btn-explore {
-            background-color: #ff9f00;
-            color: white;
-            border: none;
-            border-radius: 20px;
-            padding: 10px 30px;
-            font-weight: bold;
-            transition: all 0.2s ease;
-        }
+    .theory-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+    }
 
-        .btn-explore:hover {
-            background-color: #e08c00;
-            color: white;
-            transform: scale(1.05);
-        }
+    .btn-explore {
+        background-color: #ff9f00;
+        color: white;
+        border: none;
+        border-radius: 20px;
+        padding: 10px 30px;
+        font-weight: bold;
+        transition: all 0.2s ease;
+    }
 
-        /* SECCIONES DINÁMICAS Y TRANSICIONES */
-        .section-panel {
-            display: none;
-        }
+    .btn-explore:hover {
+        background-color: #e08c00;
+        color: white;
+        transform: scale(1.05);
+    }
 
-        .section-panel.active {
-            display: block;
-            animation: fadeIn 0.4s ease-in-out;
-        }
+    /* SECCIONES DINÁMICAS Y TRANSICIONES */
+    .section-panel {
+        display: none;
+    }
+
+    .section-panel.active {
+        display: block;
+        animation: fadeIn 0.4s ease-in-out;
+    }
+
 
         @keyframes fadeIn {
             from {
@@ -77,13 +80,15 @@
             }
         }
 
-        /* TARJETAS DE VOCALES ESTRICTAMENTE CUADRADAS Y MULTICOLORES */
-        .vowel-square-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 25px;
-            width: 100%;
-        }
+
+    /* TARJETAS DE VOCALES ESTRICTAMENTE CUADRADAS Y MULTICOLORES */
+    .vowel-square-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 25px;
+        width: 100%;
+    }
+
 
         .vowel-square-card {
             border-radius: 25px;
@@ -101,24 +106,26 @@
             border: 3px solid transparent;
         }
 
-        .vowel-square-card:hover {
-            transform: scale(1.05);
-            border-color: #ffffff;
-            box-shadow: 0 12px 30px rgba(255, 255, 255, 0.25);
-        }
 
-        /* IMÁGENES DENTRO DE LAS TARJETAS */
-        .vowel-card-img {
-            width: 100px;
-            height: 100px;
-            object-fit: contain;
-            margin-bottom: 10px;
-            transition: transform 0.2s ease;
-        }
+    .vowel-square-card:hover {
+        transform: scale(1.05);
+        border-color: #ffffff;
+        box-shadow: 0 12px 30px rgba(255, 255, 255, 0.25);
+    }
 
-        .vowel-square-card:hover .vowel-card-img {
-            transform: scale(1.1);
-        }
+    /* IMÁGENES DENTRO DE LAS TARJETAS */
+    .vowel-card-img {
+        width: 100px;
+        height: 100px;
+        object-fit: contain;
+        margin-bottom: 10px;
+        transition: transform 0.2s ease;
+    }
+
+    .vowel-square-card:hover .vowel-card-img {
+        transform: scale(1.1);
+    }
+
 
         /* GAMA DE COLORES DEGRADADOS PARA LAS TARJETAS CUADRADAS */
         .card-vowel-a {
@@ -137,24 +144,27 @@
             background: linear-gradient(135deg, #8078ed 0%, #ffffff 100%);
         }
 
-        /* TEXTOS ADAPTADOS PARA LOS FONDOS MULTICOLORES */
-        .vowel-square-card p {
-            font-size: 14px;
-            color: rgba(0, 0, 0, 0.95) !important;
-            line-height: 1.45;
-            margin: 10px 0 0 0;
-            font-weight: 500;
-        }
 
-        .btn-action-aulanet {
-            background-color: #ffffff;
-            color: #1d2671;
-            border: none;
-            border-radius: 14px;
-            padding: 8px 25px;
-            font-weight: 700;
-            transition: all 0.2s ease;
-        }
+
+    /* TEXTOS ADAPTADOS PARA LOS FONDOS MULTICOLORES */
+    .vowel-square-card p {
+        font-size: 14px;
+        color: rgba(0, 0, 0, 0.95) !important;
+        line-height: 1.45;
+        margin: 10px 0 0 0;
+        font-weight: 500;
+    }
+
+    .btn-action-aulanet {
+        background-color: #ffffff;
+        color: #1d2671;
+        border: none;
+        border-radius: 14px;
+        padding: 8px 25px;
+        font-weight: 700;
+        transition: all 0.2s ease;
+    }
+
 
         .card-vowel-e .btn-action-aulanet {
             color: #11998e;
@@ -168,11 +178,13 @@
             color: #7f00ff;
         }
 
-        .btn-action-aulanet:hover {
-            background-color: #ff9f00;
-            color: white;
-            transform: scale(1.05);
-        }
+
+    .btn-action-aulanet:hover {
+        background-color: #ff9f00;
+        color: white;
+        transform: scale(1.05);
+    }
+
 
         /* DISEÑO DE CONTENEDOR INTERACTIVO PARA EL CARRUSEL */
         .interactive-board {
@@ -182,23 +194,144 @@
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
         }
 
-        .carousel-view-box {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 20px;
+
+    .carousel-view-box {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .interactive-word-card {
+        background: #f8fafc;
+        border: 2px solid #e2e8f0;
+        border-radius: 24px;
+        padding: 30px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .illustration-box {
+        width: 200px;
+        height: 200px;
+        border-radius: 24px;
+        overflow: hidden;
+        background: #e2e8f0;
+        border: 5px solid #ff9f00;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    }
+
+    .illustration-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .word-meta {
+        text-align: left;
+        flex-grow: 1;
+    }
+
+    .word-title-nahuatl {
+        font-size: 44px;
+        font-weight: 800;
+        color: #093f2e;
+        margin: 0;
+    }
+
+    .word-meaning-es {
+        font-size: 22px;
+        color: #ff7a00;
+        font-weight: 600;
+        margin: 5px 0 20px 0;
+    }
+
+    .voice-engine-panel {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .btn-voice-trigger {
+        background: #04aa6d;
+        color: white;
+        border: none;
+        padding: 12px 28px;
+        border-radius: 16px;
+        font-weight: 700;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        box-shadow: 0 6px 12px rgba(4, 170, 109, 0.2);
+        transition: all 0.2s;
+    }
+
+    .btn-voice-trigger:hover {
+        background: #038c5a;
+        transform: scale(1.03);
+    }
+
+    .btn-pace-setting {
+        background: #e2e8f0;
+        border: 2px solid #cbd5e1;
+        color: #475569;
+        padding: 12px 20px;
+        border-radius: 16px;
+        font-weight: 700;
+        transition: all 0.2s;
+    }
+
+    .btn-pace-setting.active {
+        background: #ff7a00;
+        color: white;
+        border-color: #ff7a00;
+        box-shadow: 0 4px 10px rgba(255,122,0,0.2);
+    }
+
+    .chevron-round-btn {
+        background: #093f2e;
+        color: white;
+        border: none;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        transition: all 0.2s;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        flex-shrink: 0;
+    }
+
+    .chevron-round-btn:hover {
+        background: #ff9f00;
+        transform: scale(1.05);
+    }
+
+    /* AJUSTES DE CORRECCIÓN */
+    .footer-logo, .footer-logo-utp {
+        max-width: 140px;
+        margin: 5px;
+    }
+
+    /* ========================================================= */
+    /* MEJORAS DE RESPONSIVIDAD (TABLETS Y MÓVILES)               */
+    /* ========================================================= */
+
+    @media (max-width: 992px) {
+        .interactive-word-card {
+            gap: 25px;
+            padding: 20px;
         }
 
-        .interactive-word-card {
-            background: #f8fafc;
-            border: 2px solid #e2e8f0;
-            border-radius: 24px;
-            padding: 30px;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            gap: 40px;
-        }
 
         @media (max-width: 768px) {
             .interactive-word-card {
@@ -224,80 +357,61 @@
             justify-content: center;
             flex-shrink: 0;
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-        }
 
-        .illustration-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .word-meta {
-            text-align: left;
-            flex-grow: 1;
-        }
-
-        @media (max-width: 768px) {
-            .word-meta {
-                text-align: center;
-            }
-        }
-
-        .word-title-nahuatl {
-            font-size: 44px;
-            font-weight: 800;
-            color: #093f2e;
-            margin: 0;
         }
 
         .word-meaning-es {
-            font-size: 22px;
-            color: #ff7a00;
-            font-weight: 600;
-            margin: 5px 0 20px 0;
+            font-size: 18px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        /* Ajuste de grilla para pantallas medianas */
+        .vowel-square-grid {
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+        }
+
+        /* Carrusel apilado verticalmente para celulares */
+        .interactive-word-card {
+            flex-direction: column;
+            text-align: center;
+            gap: 15px;
+            padding: 20px;
+        }
+
+        .carousel-view-box {
+            gap: 10px;
+        }
+
+        .word-meta {
+            text-align: center;
         }
 
         .voice-engine-panel {
-            display: flex;
-            gap: 15px;
-            align-items: center;
-            flex-wrap: wrap;
+            justify-content: center;
         }
 
-        @media (max-width: 768px) {
-            .voice-engine-panel {
-                justify-content: center;
-            }
+        .illustration-box {
+            width: 140px;
+            height: 140px;
         }
 
-        .btn-voice-trigger {
-            background: #04aa6d;
-            color: white;
-            border: none;
-            padding: 12px 28px;
-            border-radius: 16px;
-            font-weight: 700;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            box-shadow: 0 6px 12px rgba(4, 170, 109, 0.2);
-            transition: all 0.2s;
+        .interactive-board {
+            padding: 20px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        /* En móviles muy pequeños, las tarjetas de vocales pasan a una columna */
+        .vowel-square-grid {
+            grid-template-columns: 1fr;
         }
 
-        .btn-voice-trigger:hover {
-            background: #038c5a;
-            transform: scale(1.03);
+        .word-title-nahuatl {
+            font-size: 30px;
         }
 
-        .btn-pace-setting {
-            background: #e2e8f0;
-            border: 2px solid #cbd5e1;
-            color: #475569;
-            padding: 12px 20px;
-            border-radius: 16px;
-            font-weight: 700;
-            transition: all 0.2s;
-        }
 
         .btn-pace-setting.active {
             background: #ff7a00;
@@ -331,8 +445,10 @@
         .footer-logo-utp {
             max-width: 140px;
             margin: 5px;
+
         }
-    </style>
+    }
+</style>
 </head>
 
 
@@ -780,10 +896,12 @@
                                     <i class="bi bi-volume-up-fill fs-5"></i>
                                     <span data-es="Escuchar Audio" data-na="Xikaki tlahtolli">Escuchar Audio</span>
                                 </button>
+
                                 <button class="btn-pace-setting" id="paceToggle" onclick="toggleSpeechPace()">
                                     <i class="bi bi-turtle-fill"></i> <span data-es="Lento"
                                         data-na="Yolichtic">Lento</span>
                                 </button>
+
                             </div>
                         </div>
                     </div>
