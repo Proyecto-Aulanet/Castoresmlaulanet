@@ -2,6 +2,16 @@
 header("Content-Type: application/json; charset=UTF-8");
 require_once "conexion.php";
 
+function formatoNombre($texto){
+
+    return mb_convert_case(
+        strtolower(trim($texto)),
+        MB_CASE_TITLE,
+        "UTF-8"
+    );
+
+}
+
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     http_response_code(405);
     echo json_encode([
@@ -33,9 +43,9 @@ try {
         // ==============================================================
         case "crear":
         case "insertar":
-            $nombre    = trim($data["nombre"] ?? "");
-            $apellidop = trim($data["apellidop"] ?? "");
-            $apellidom = trim($data["apellidom"] ?? "");
+            $nombre    = formatoNombre($data["nombre"] ?? "");
+            $apellidop = formatoNombre($data["apellidop"] ?? "");
+            $apellidom = formatoNombre($data["apellidom"] ?? "");
             $username  = trim($data["username"] ?? "");
             $email     = trim($data["email"] ?? "");
             $password  = trim($data["password"] ?? "");
@@ -150,9 +160,9 @@ try {
                 exit;
             }
 
-            $nombre    = trim($data["nombre"] ?? "");
-            $apellidop = trim($data["apellidop"] ?? "");
-            $apellidom = trim($data["apellidom"] ?? "");
+            $nombre    = formatoNombre($data["nombre"] ?? "");
+            $apellidop = formatoNombre($data["apellidop"] ?? "");
+            $apellidom = formatoNombre($data["apellidom"] ?? "");
             $username  = trim($data["username"] ?? "");
             $email     = trim($data["email"] ?? "");
             $password  = trim($data["password"] ?? "");
@@ -179,9 +189,9 @@ try {
                         username = :username, 
                         password = :password, 
                         email = :email, 
-                        fechaNac = :fechaNac, 
-                        idpais = :idpais, 
-                        idestado = :idestado
+                        fechaNac = COALESCE(:fechaNac, fechaNac),
+                        idpais = COALESCE(:idpais, idpais),
+                        idestado = COALESCE(:idestado, idestado)
                     WHERE idusuario = :idusuario
                 ");
                 $stmt->bindValue(':password', password_hash($password, PASSWORD_BCRYPT));
@@ -193,9 +203,9 @@ try {
                         apellidom = :apellidom, 
                         username = :username, 
                         email = :email, 
-                        fechaNac = :fechaNac, 
-                        idpais = :idpais, 
-                        idestado = :idestado
+                        fechaNac = COALESCE(:fechaNac, fechaNac),
+                        idpais = COALESCE(:idpais, idpais),
+                        idestado = COALESCE(:idestado, idestado)
                     WHERE idusuario = :idusuario
                 ");
             }
@@ -210,6 +220,8 @@ try {
             $stmt->bindValue(':idestado', $idestado, $idestado ? PDO::PARAM_INT : PDO::PARAM_NULL);
             $stmt->bindValue(':idusuario', $idusuario, PDO::PARAM_INT);
 
+            
+
             $stmt->execute();
 
             echo json_encode([
@@ -218,54 +230,204 @@ try {
             ]);
             break;
 
-        // ==============================================================
-        // eliminar
-        // ==============================================================
-        case "eliminar":
-        case "borrar":
-            $idusuario = (isset($data["idusuario"]) && is_numeric($data["idusuario"]) && (int)$data["idusuario"] > 0) ? (int)$data["idusuario"] : 0;
+            
 
-            if ($idusuario <= 0) {
-                http_response_code(400);
-                echo json_encode([
-                    "status"  => "error",
-                    "message" => "Se requiere un 'idusuario' válido para eliminar."
-                ]);
-                exit;
-            }
+// ==============================================================
+// guardar foto perfil
+// ==============================================================
 
-            $stmt = $pdo->prepare("DELETE FROM Usuario WHERE idusuario = :idusuario");
-            $stmt->bindValue(':idusuario', $idusuario, PDO::PARAM_INT);
-            $stmt->execute();
+case "foto":
 
-            if ($stmt->rowCount() > 0) {
-                echo json_encode([
-                    "status"  => "success",
-                    "message" => "Usuario eliminado exitosamente."
-                ]);
-            } else {
-                http_response_code(404);
-                echo json_encode([
-                    "status"  => "error",
-                    "message" => "No se encontró ningún usuario con ese ID."
-                ]);
-            }
-            break;
+    $idusuario = (int)($data["idusuario"] ?? 0);
+    $ruta_imagen = trim($data["ruta_imagen"] ?? "");
+
+
+    if($idusuario <= 0 || empty($ruta_imagen)){
+
+        http_response_code(400);
+
+        echo json_encode([
+            "status"=>"error",
+            "message"=>"Datos de foto incompletos"
+        ]);
+
+        exit;
+
+    }
+
+
+    // desactivar foto anterior
+    $stmt = $pdo->prepare("
+        UPDATE FotoPerfil 
+        SET activa = FALSE
+        WHERE idusuario = :idusuario
+    ");
+
+    $stmt->bindValue(
+        ":idusuario",
+        $idusuario,
+        PDO::PARAM_INT
+    );
+
+    $stmt->execute();
+
+
+
+    // insertar nueva foto
+
+    $stmt = $pdo->prepare("
+        INSERT INTO FotoPerfil
+        (
+            idusuario,
+            ruta_imagen,
+            activa
+        )
+        VALUES
+        (
+            :idusuario,
+            :ruta_imagen,
+            TRUE
+        )
+    ");
+
+
+    $stmt->bindValue(
+        ":idusuario",
+        $idusuario,
+        PDO::PARAM_INT
+    );
+
+
+    $stmt->bindValue(
+        ":ruta_imagen",
+        $ruta_imagen
+    );
+
+
+    $stmt->execute();
+
+
+
+    echo json_encode([
+
+        "status"=>"success",
+
+        "message"=>"Foto guardada correctamente"
+
+    ]);
+
+
+break;
+
+
+
+// ==============================================================
+// eliminar
+// ==============================================================
+
+case "eliminar":
+case "borrar":
+
+    $idusuario = (isset($data["idusuario"]) && is_numeric($data["idusuario"]) && (int)$data["idusuario"] > 0) 
+    ? (int)$data["idusuario"] 
+    : 0;
+
+
+    if ($idusuario <= 0) {
+
+        http_response_code(400);
+
+        echo json_encode([
+            "status"  => "error",
+            "message" => "Se requiere un 'idusuario' válido para eliminar."
+        ]);
+
+        exit;
+    }
+
+
+
+    // eliminar foto asociada
+
+    $stmt = $pdo->prepare("
+        DELETE FROM FotoPerfil
+        WHERE idusuario = :idusuario
+    ");
+
+
+    $stmt->bindValue(
+        ':idusuario',
+        $idusuario,
+        PDO::PARAM_INT
+    );
+
+
+    $stmt->execute();
+
+
+
+
+    // eliminar usuario
+
+    $stmt = $pdo->prepare("
+        DELETE FROM Usuario 
+        WHERE idusuario = :idusuario
+    ");
+
+
+    $stmt->bindValue(
+        ':idusuario',
+        $idusuario,
+        PDO::PARAM_INT
+    );
+
+
+    $stmt->execute();
+
+
+
+    if ($stmt->rowCount() > 0) {
+
+        echo json_encode([
+            "status"  => "success",
+            "message" => "Usuario eliminado exitosamente."
+        ]);
+
+    } else {
+
+        http_response_code(404);
+
+        echo json_encode([
+            "status"  => "error",
+            "message" => "No se encontró ningún usuario con ese ID."
+        ]);
+
+    }
+
+
+break;
 
         default:
             http_response_code(400);
+
             echo json_encode([
                 "status"  => "error",
                 "message" => "Acción no válida. Usa: crear, leer, modificar o eliminar."
             ]);
+
             break;
+
     }
 
 } catch (PDOException $e) {
+
     http_response_code(500);
+
     echo json_encode([
         "status"  => "error",
         "message" => "Error MySQL: " . $e->getMessage()
     ]);
+
 }
+
 ?>

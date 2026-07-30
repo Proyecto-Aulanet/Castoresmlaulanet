@@ -362,63 +362,65 @@
 
     <br>
 
-   <!-- PERFIL -->
-
+<!-- PERFIL -->
 <div class="container py-5">
 
-    <div class="perfilprin-card mx-auto">
+<div class="perfilprin-card mx-auto">
 
-        <div class="row g-5">
+    <div class="row g-5">
 
+        <!-- FOTO -->
+        <div class="col-lg-4 text-center">
 
-            <!-- FOTO Y USUARIO -->
-
-            <div class="col-lg-4 text-center">
-
-                <div class="perfilprin-avatar-container" data-aos="zoom-in">
-
-                    <img 
-                    id="perfilprinAvatar"
-                    src="../Recursos/iconos/avatar1.png"
-                    class="perfilprin-avatar">
+            <div class="perfilprin-avatar-container d-flex flex-column align-items-center">
 
 
-                    <button 
-                    class="btn btn-warning rounded-pill mt-4">
-
-                        <i class="bi bi-pencil-square me-2"></i>
-
-                        Cambiar icono
-
-                    </button>
-
-                </div>
+                <!-- ICONO DEFAULT -->
+                <i 
+                id="iconoDefaultPerfil"
+                class="bi bi-person-circle">
+                </i>
 
 
-                <h2 
-                id="perfilNombreUsuario"
-                class="text-white mt-4">
+                <!-- IMAGEN DEL USUARIO -->
+                <img
+                id="imgPerfil"
+                class="perfilprin-avatar d-none">
 
-                    Usuario
 
-                </h2>
+
+                <button
+                id="btnCambiarIcono"
+                class="btn btn-warning rounded-pill mt-4">
+
+                    <i class="bi bi-pencil-square me-2"></i>
+
+                    Cambiar icono
+
+                </button>
 
 
             </div>
 
 
+            <h2
+            id="lblUsuario"
+            class="text-white mt-4">
+
+                Usuario
+
+            </h2>
 
 
-            <!-- INFORMACION -->
+     
+            </div>
 
+            <!-- INFORMACIÓN -->
             <div class="col-lg-8">
-
 
                 <div class="perfilprin-seccion">
 
-
                     <div class="d-flex justify-content-between align-items-center mb-4">
-
 
                         <h4 class="text-white">
 
@@ -426,33 +428,21 @@
 
                         </h4>
 
-
-
-                        <button 
-                        id="btnEditarPerfil"
-                        type="button"
-                        class="btn btn-success rounded-pill">
-
+                        <button
+                            id="btnEditar"
+                            type="button"
+                            class="btn btn-success rounded-pill">
 
                             <i class="bi bi-pencil-square me-2"></i>
-
                             Editar información
-
 
                         </button>
 
-
                     </div>
-
-
-
 
                     <div class="row">
 
-
-
                         <div class="col-md-6 mb-3">
-
 
                             <label class="text-white">
 
@@ -460,44 +450,29 @@
 
                             </label>
 
-
-                            <input 
-                            id="nombre"
-                            class="form-control"
-                            disabled>
-
+                            <input
+                                id="txtNombre"
+                                class="form-control"
+                                disabled>
 
                         </div>
 
-
-
-
-
                         <div class="col-md-6 mb-3">
-
 
                             <label class="text-white">
 
-                                Apellido
+                                Apellidos
 
                             </label>
 
-
-                            <input 
-                            id="apellido"
-                            class="form-control"
-                            disabled>
-
+                            <input
+                                id="txtApellido"
+                                class="form-control"
+                                disabled>
 
                         </div>
 
-
-
-
-
-
                         <div class="col-md-6 mb-3">
-
 
                             <label class="text-white">
 
@@ -505,22 +480,14 @@
 
                             </label>
 
-
-                            <input 
-                            id="username"
-                            class="form-control"
-                            disabled>
-
+                            <input
+                                id="txtUsuario"
+                                class="form-control"
+                                disabled>
 
                         </div>
 
-
-
-
-
-
                         <div class="col-md-6 mb-3">
-
 
                             <label class="text-white">
 
@@ -528,22 +495,14 @@
 
                             </label>
 
-
-                            <input 
-                            id="email"
-                            class="form-control"
-                            disabled>
-
+                            <input
+                                id="txtCorreo"
+                                class="form-control"
+                                disabled>
 
                         </div>
 
-
-
-
-
-
                         <div class="col-md-12">
-
 
                             <label class="text-white">
 
@@ -551,66 +510,40 @@
 
                             </label>
 
-
-                            <input 
-                            type="password"
-                            class="form-control"
-                            value="********"
-                            disabled>
-
+                            <input
+                                type="password"
+                                class="form-control"
+                                value="********"
+                                disabled>
 
                         </div>
 
-
-
                     </div>
 
+                    <div
+                        id="panelGuardar"
+                        class="mt-4 d-none">
 
-
-
-
-
-                    <!-- GUARDAR -->
-
-
-                    <div 
-                    id="contenedorGuardar"
-                    class="mt-4 d-none">
-
-
-                        <button 
-                        id="btnGuardarPerfil"
-                        class="btn btn-success rounded-pill px-5">
-
+                        <button
+                            id="btnGuardar"
+                            type="button"
+                            class="btn btn-success rounded-pill px-5">
 
                             <i class="bi bi-check-circle-fill me-2"></i>
 
-
                             Guardar cambios
-
 
                         </button>
 
-
                     </div>
-
-
 
                 </div>
 
-
-
-
-
-
                 <!-- MEDALLAS -->
-
 
                 <div class="perfilprin-seccion mt-4">
 
-
                     <div class="d-flex justify-content-between">
-
 
                         <h4 class="text-white">
 
@@ -618,239 +551,65 @@
 
                         </h4>
 
-
-                        <button 
-                        class="btn btn-outline-light rounded-pill">
-
+                        <button
+                            class="btn btn-outline-light rounded-pill">
 
                             Ver más
 
-
                         </button>
 
-
                     </div>
-
-
 
                     <div class="perfilprin-medallas-grid mt-4">
 
-
                         <img src="../Recursos/medallas/medalla1.png">
-
                         <img src="../Recursos/medallas/medalla2.png">
-
                         <img src="../Recursos/medallas/medalla3.png">
-
                         <img src="../Recursos/medallas/medalla4.png">
-
                         <img src="../Recursos/medallas/medalla5.png">
-
 
                     </div>
 
-
                 </div>
 
-
-
-
-
-
-
-                <!-- ELIMINAR CUENTA -->
-
+                <!-- ELIMINAR -->
 
                 <div class="text-center mt-5">
 
-
-                    <button 
-                    class="btn btn-danger rounded-pill px-5 py-3">
-
+                    <button
+                        id="btnEliminar"
+                        type="button"
+                        class="btn btn-danger rounded-pill px-5 py-3">
 
                         <i class="bi bi-trash-fill me-2"></i>
 
-
                         Eliminar cuenta
-
 
                     </button>
 
-
                 </div>
-
-
 
             </div>
 
-
-
         </div>
 
-
     </div>
-
-
-
-
-    <!-- REGRESAR -->
-
 
     <div class="d-flex justify-content-start mt-5">
 
-
-        <button 
-        onclick="window.location.href='../pages_int/inicio.html'"
-        class="btn-regresar-int">
-
+        <button
+            onclick="window.location.href='../pages_int/inicio.html'"
+            class="btn-regresar-int">
 
             <i class="bi bi-arrow-left-circle-fill me-2"></i>
 
-
             Regresar
 
-
         </button>
 
-
     </div>
-
 
 </div>
-
-    
-
-    <div class="perfil-avatar">
-
-        <!-- Botón cambiar icono -->
-        <button class="btn btn-warning btn-sm cambiar-icono-btn" data-bs-toggle="modal"
-            data-bs-target="#perfilprinModalIconos">
-
-            Cambiar icono
-
-        </button>
-
-        <!-- Foto de perfil -->
-        <img id="fotoPerfil" src="../Recursos/mascotas/default.png" alt="Foto de perfil" class="foto-perfil">
-
-        <!-- Nombre del usuario -->
-        <h3 id="nombreUsuario" class="mt-3">
-            Castor Usuario
-        </h3>
-
-        <!-- Nivel -->
-        <p class="text-muted">
-            Nivel 12
-        </p>
-
-    </div>
-
-    <!-- MODAL ICONOS -->
-    <div class="modal fade" id="perfilprinModalIconos" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-
-                <!-- HEADER -->
-                <div class="modal-header">
-                    <h5 class="modal-title" data-es="Seleccionar icono" data-na="Xikpejpena tlaixiptla">
-                        Seleccionar icono
-                    </h5>
-
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-
-                <!-- BODY -->
-                <div class="modal-body">
-
-                    <div id="perfilprinIconGrid" class="perfilprin-icon-grid">
-
-                        <!-- Aquí se cargan las mascotas -->
-
-                    </div>
-
-                </div>
-
-                <!-- FOOTER -->
-                <div class="modal-footer">
-
-                    <button class="btn btn-secondary" data-bs-dismiss="modal">
-
-                        Cerrar
-
-                    </button>
-
-                    <button class="btn btn-success" onclick="perfilprinGuardarIcono()">
-
-                        Guardar
-
-                    </button>
-
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-    <!-- MODAL MEDALLAS -->
-
-    <div class="modal fade" id="perfilprinModalMedallas" tabindex="-1">
-
-        <div class="modal-dialog
-modal-dialog-centered
-modal-lg">
-
-            <div class="modal-content">
-
-                <div class="modal-header">
-
-                    <h5 class="modal-title text-white" data-es="Todas las medallas" data-na="Nochi medallas">
-
-                        Todas las medallas
-
-                    </h5>
-
-                    <button type="button" class="btn-close" data-bs-dismiss="modal">
-
-                    </button>
-
-                </div>
-
-                <div class="modal-body">
-
-                    <div class="perfilprin-medallas-grid">
-
-                        <img src="../Recursos/medallas/medalla1.png">
-                        <img src="../Recursos/medallas/medalla2.png">
-                        <img src="../Recursos/medallas/medalla3.png">
-                        <img src="../Recursos/medallas/medalla4.png">
-                        <img src="../Recursos/medallas/medalla5.png">
-
-                        <img src="../Recursos/medallas/medalla6.png">
-                        <img src="../Recursos/medallas/medalla7.png">
-                        <img src="../Recursos/medallas/medalla8.png">
-                        <img src="../Recursos/medallas/medalla9.png">
-                        <img src="../Recursos/medallas/medalla10.png">
-
-                    </div>
-
-                </div>
-
-                <div class="modal-footer">
-
-                    <button class="btn btn-success" data-bs-dismiss="modal">
-
-                        Cerrar
-
-                    </button>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
 
 
     <!-- =========================================
@@ -958,7 +717,74 @@ modal-lg">
 
 </footer>
 
+<!-- MODAL CAMBIAR ICONO -->
 
+<div class="modal fade" id="modalIconos" tabindex="-1">
+
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content">
+
+
+            <div class="modal-header">
+
+                <h5 class="modal-title">
+
+                    Seleccionar icono
+
+                </h5>
+
+
+                <button 
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal">
+
+                </button>
+
+            </div>
+
+
+
+            <div class="modal-body">
+
+
+                <div 
+                id="contenedorIconos"
+                class="d-flex flex-wrap justify-content-center gap-3">
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="modal-footer">
+
+
+                <button
+                id="btnGuardarIcono"
+                class="btn btn-success">
+
+                    Guardar icono
+
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+<script src="../js/app.js"></script>
 <!-- BOOTSTRAP -->
 <script src="../assets/js/bootstrap.bundle.min.js"></script>
 

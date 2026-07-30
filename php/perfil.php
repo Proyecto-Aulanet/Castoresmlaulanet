@@ -35,9 +35,16 @@ u.apellidop,
 u.apellidom,
 u.username,
 u.email,
-u.fechaNac
+u.fechaNac,
+
+fp.ruta_imagen
 
 FROM Usuario u
+
+LEFT JOIN FotoPerfil fp
+
+ON u.idusuario = fp.idusuario
+AND fp.activa = TRUE
 
 WHERE u.idusuario = :idusuario
 
