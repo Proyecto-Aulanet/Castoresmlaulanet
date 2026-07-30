@@ -613,9 +613,7 @@ if (registerForm) {
                 !usernameValido(username)
             ) {
 
-                alert(
-                    "Nombre de usuario no permitido."
-                );
+
 
                 return;
 
@@ -633,9 +631,7 @@ if (registerForm) {
 
             }
 
-            alert(
-                "Cuenta creada correctamente."
-            );
+
 
         }
     );
@@ -1839,3 +1835,72 @@ document.getElementById('registerForm').addEventListener('submit', async functio
     const resultado = await respuesta.json();
     alert(resultado.mensaje);
 });
+
+
+
+
+// sesion
+
+const LOGIN_API = '../php/login_process.php';
+
+
+document.addEventListener("DOMContentLoaded",()=>{
+
+    const btnEntrar=document.querySelector("#btnEntrar");
+
+    if(btnEntrar){
+        btnEntrar.addEventListener("click", iniciarSesion);
+    }
+
+});
+
+
+async function iniciarSesion(){
+
+    const email=document.querySelector("#loginEmail").value;
+    const password=document.querySelector("#loginPassword").value;
+
+
+    try{
+
+        const respuesta=await fetch(LOGIN_API,{
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify({
+                email:email,
+                password:password
+            })
+        });
+
+
+        const resultado=await respuesta.json();
+
+
+        if(resultado.status==="success"){
+
+
+            localStorage.setItem(
+                "usuario",
+                JSON.stringify(resultado.usuario)
+            );
+
+
+            window.location.href="../pages_int/inicio.html";
+
+
+        }else{
+
+            alert(resultado.message);
+
+        }
+
+
+    }catch(error){
+
+        console.error(error);
+
+    }
+
+}

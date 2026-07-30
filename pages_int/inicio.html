@@ -664,6 +664,49 @@
     <!-- AOS -->
     <script src="../assets/js/aos.js"></script>
 
+        <script>
+
+    async function cargarUsuario(){
+
+        try{
+
+            const respuesta = await fetch("../php/sesion_usuario.php");
+
+            const resultado = await respuesta.json();
+
+
+            const nombreUsuario = document.getElementById("nombreUsuario");
+
+
+            if(resultado.status === "success"){
+
+                nombreUsuario.textContent =
+                    resultado.usuario.nombre;
+
+            }else{
+
+                nombreUsuario.textContent =
+                    "Usuario";
+
+            }
+
+
+        }catch(error){
+
+            console.error("Error sesión:", error);
+
+        }
+
+    }
+
+
+    document.addEventListener(
+    "DOMContentLoaded",
+    cargarUsuario
+    );
+
+    </script>
+
     <!-- INIT AOS -->
     <script>
         AOS.init({

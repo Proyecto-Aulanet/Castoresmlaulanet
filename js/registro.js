@@ -65,14 +65,33 @@ async function guardarUsuario(e) {
         const resultado = await respuesta.json();
 
         if (resultado.status === 'success') {
-            alert(resultado.message);
-            if (accion === "crear") {
-                window.location.href = 'login.html';
-            } else {
-                consultarUsuarios(); 
-            }
+
+            Swal.fire({
+                title: '¡Éxito!',
+                text: resultado.message,
+                icon: 'success',
+                confirmButtonText: 'Continuar',
+                confirmButtonColor: '#198754'
+            }).then(() => {
+
+                if (accion === "crear") {
+                    window.location.href = '../pages_ext/index.html';
+                } else {
+                    consultarUsuarios();
+                }
+
+            });
+
         } else {
-            alert("Atención: " + resultado.message);
+
+            Swal.fire({
+                title: 'Atención',
+                text: resultado.message,
+                icon: 'warning',
+                confirmButtonText: 'Aceptar',
+                confirmButtonColor: '#ffc107'
+            });
+
         }
 
     } catch (error) {
@@ -147,7 +166,7 @@ async function eliminarUsuario(idusuario) {
     }
 }
 
- {
+ async function cargarPaises(){
     const selectPais = document.querySelector('#pais');
     if (!selectPais) return;
 

@@ -362,218 +362,363 @@
 
     <br>
 
-    <!-- PERFIL -->
+   <!-- PERFIL -->
 
-    <div class="container py-5">
+<div class="container py-5">
 
-        <div class="perfilprin-card mx-auto">
+    <div class="perfilprin-card mx-auto">
 
-            <div class="row g-5">
+        <div class="row g-5">
 
-                <!-- PERFIL -->
 
-                <div class="col-lg-4 text-center">
+            <!-- FOTO Y USUARIO -->
 
-                    <div class="perfilprin-avatar-container" data-aos="zoom-in">
+            <div class="col-lg-4 text-center">
 
-                        <img id="perfilprinAvatar" src="../Recursos/iconos/avatar1.png" class="perfilprin-avatar">
+                <div class="perfilprin-avatar-container" data-aos="zoom-in">
 
-                        <button
-                            class="btn btn-warning rounded-pill mt-4 animate__animated animate__pulse animate__infinite"
-                            onclick="perfilprinAbrirSelectorIcono()">
+                    <img 
+                    id="perfilprinAvatar"
+                    src="../Recursos/iconos/avatar1.png"
+                    class="perfilprin-avatar">
 
-                            <i class="bi bi-pencil-square me-2"></i>
 
-                            <span data-es="Cambiar icono" data-na="Xikpatla tlaixiptla">
+                    <button 
+                    class="btn btn-warning rounded-pill mt-4">
 
-                                Cambiar icono
+                        <i class="bi bi-pencil-square me-2"></i>
 
-                            </span>
+                        Cambiar icono
 
-                        </button>
-
-                    </div>
-
-                    <h2 class="text-white mt-4">
-                        Castor Usuario
-                    </h2>
-
-                    <p class="text-light">
-                        Nivel 12
-                    </p>
+                    </button>
 
                 </div>
 
-                <!-- INFORMACIÓN -->
 
-                <div class="col-lg-8">
+                <h2 
+                id="perfilNombreUsuario"
+                class="text-white mt-4">
 
-                    <div class="perfilprin-seccion">
+                    Usuario
 
-                        <div class="d-flex justify-content-between align-items-center mb-4">
+                </h2>
 
-                            <h4 class="text-white">
-
-                                <span data-es="Información" data-na="Tlanextilistli">
-
-                                    Información
-
-                                </span>
-
-                            </h4>
-
-                            <button id="perfilprinBtnEditar" class="btn btn-success rounded-pill"
-                                onclick="perfilprinEditarInformacion()">
-
-                                <i class="bi bi-pencil-square me-2"></i>
-
-                                <span data-es="Editar información" data-na="Xikpatla tlanextilistli">
-
-                                    Editar información
-
-                                </span>
-
-                            </button>
-
-                        </div>
-
-                        <div class="row">
-
-                            <div class="col-md-6 mb-3">
-                                <label class="text-white">Nombre</label>
-                                <input class="form-control" value="Julio" disabled>
-                            </div>
-
-                            <div class="col-md-6 mb-3">
-                                <label class="text-white">Apellido</label>
-                                <input class="form-control" value="García Trinidad" disabled>
-                            </div>
-
-                            <div class="col-md-6 mb-3">
-                                <label class="text-white">Usuario</label>
-                                <input class="form-control" value="castor123" disabled>
-                            </div>
-
-                            <div class="col-md-6 mb-3">
-                                <label class="text-white">Correo</label>
-                                <input class="form-control" value="usuario@email.com" disabled>
-                            </div>
-
-                            <div class="col-md-12">
-
-                                <label class="text-white">
-
-                                    <span data-es="Contraseña" data-na="Tlatzakuilli">
-
-                                        Contraseña
-
-                                    </span>
-
-                                </label>
-
-                                <input id="perfilprinPassword" type="password" class="form-control" value="123456"
-                                    disabled>
-
-                            </div>
-
-                        </div>
-
-                        <div id="perfilprinGuardar" class="mt-4 d-none">
-
-                            <button class="btn btn-success rounded-pill px-5" onclick="perfilprinGuardarInformacion()">
-
-                                <i class="bi bi-check-circle-fill me-2"></i>
-
-                                <span data-es="Guardar cambios" data-na="Xikpiyawa tlamantli">
-
-                                    Guardar cambios
-
-                                </span>
-
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                    <!-- MEDALLAS -->
-
-                    <div class="perfilprin-seccion mt-4">
-
-                        <div class="d-flex justify-content-between">
-
-                            <h4 class="text-white">
-                                Medallas
-                            </h4>
-
-                            <button id="btnVerMas" class="btn btn-outline-light rounded-pill"
-                                onclick="perfilprinAbrirModalMedallas()">
-
-                                Ver más
-
-                            </button>
-
-                        </div>
-
-                        <div class="perfilprin-medallas-grid mt-4">
-
-                            <img src="../Recursos/medallas/medalla1.png">
-                            <img src="../Recursos/medallas/medalla2.png">
-                            <img src="../Recursos/medallas/medalla3.png">
-                            <img src="../Recursos/medallas/medalla4.png">
-                            <img src="../Recursos/medallas/medalla5.png">
-
-                            <img class="perfilprin-medalla-extra d-none" src="../Recursos/medallas/medalla6.png">
-                            <img class="perfilprin-medalla-extra d-none" src="../Recursos/medallas/medalla7.png">
-                            <img class="perfilprin-medalla-extra d-none" src="../Recursos/medallas/medalla8.png">
-                            <img class="perfilprin-medalla-extra d-none" src="../Recursos/medallas/medalla9.png">
-                            <img class="perfilprin-medalla-extra d-none" src="../Recursos/medallas/medalla10.png">
-
-                        </div>
-
-                    </div>
-
-                    <div class="text-center mt-5">
-
-                        <button class="btn btn-danger rounded-pill px-5 py-3" onclick="perfilprinEliminarCuenta()">
-
-                            <i class="bi bi-trash-fill me-2"></i>
-
-                            <span data-es="Eliminar cuenta" data-na="Xikpoloa cuenta">
-
-                                Eliminar cuenta
-
-                            </span>
-
-                        </button>
-
-                    </div>
-
-                </div>
 
             </div>
 
+
+
+
+            <!-- INFORMACION -->
+
+            <div class="col-lg-8">
+
+
+                <div class="perfilprin-seccion">
+
+
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+
+
+                        <h4 class="text-white">
+
+                            Información
+
+                        </h4>
+
+
+
+                        <button 
+                        id="btnEditarPerfil"
+                        type="button"
+                        class="btn btn-success rounded-pill">
+
+
+                            <i class="bi bi-pencil-square me-2"></i>
+
+                            Editar información
+
+
+                        </button>
+
+
+                    </div>
+
+
+
+
+                    <div class="row">
+
+
+
+                        <div class="col-md-6 mb-3">
+
+
+                            <label class="text-white">
+
+                                Nombre
+
+                            </label>
+
+
+                            <input 
+                            id="nombre"
+                            class="form-control"
+                            disabled>
+
+
+                        </div>
+
+
+
+
+
+                        <div class="col-md-6 mb-3">
+
+
+                            <label class="text-white">
+
+                                Apellido
+
+                            </label>
+
+
+                            <input 
+                            id="apellido"
+                            class="form-control"
+                            disabled>
+
+
+                        </div>
+
+
+
+
+
+
+                        <div class="col-md-6 mb-3">
+
+
+                            <label class="text-white">
+
+                                Usuario
+
+                            </label>
+
+
+                            <input 
+                            id="username"
+                            class="form-control"
+                            disabled>
+
+
+                        </div>
+
+
+
+
+
+
+                        <div class="col-md-6 mb-3">
+
+
+                            <label class="text-white">
+
+                                Correo
+
+                            </label>
+
+
+                            <input 
+                            id="email"
+                            class="form-control"
+                            disabled>
+
+
+                        </div>
+
+
+
+
+
+
+                        <div class="col-md-12">
+
+
+                            <label class="text-white">
+
+                                Contraseña
+
+                            </label>
+
+
+                            <input 
+                            type="password"
+                            class="form-control"
+                            value="********"
+                            disabled>
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+
+
+
+                    <!-- GUARDAR -->
+
+
+                    <div 
+                    id="contenedorGuardar"
+                    class="mt-4 d-none">
+
+
+                        <button 
+                        id="btnGuardarPerfil"
+                        class="btn btn-success rounded-pill px-5">
+
+
+                            <i class="bi bi-check-circle-fill me-2"></i>
+
+
+                            Guardar cambios
+
+
+                        </button>
+
+
+                    </div>
+
+
+
+                </div>
+
+
+
+
+
+
+                <!-- MEDALLAS -->
+
+
+                <div class="perfilprin-seccion mt-4">
+
+
+                    <div class="d-flex justify-content-between">
+
+
+                        <h4 class="text-white">
+
+                            Medallas
+
+                        </h4>
+
+
+                        <button 
+                        class="btn btn-outline-light rounded-pill">
+
+
+                            Ver más
+
+
+                        </button>
+
+
+                    </div>
+
+
+
+                    <div class="perfilprin-medallas-grid mt-4">
+
+
+                        <img src="../Recursos/medallas/medalla1.png">
+
+                        <img src="../Recursos/medallas/medalla2.png">
+
+                        <img src="../Recursos/medallas/medalla3.png">
+
+                        <img src="../Recursos/medallas/medalla4.png">
+
+                        <img src="../Recursos/medallas/medalla5.png">
+
+
+                    </div>
+
+
+                </div>
+
+
+
+
+
+
+
+                <!-- ELIMINAR CUENTA -->
+
+
+                <div class="text-center mt-5">
+
+
+                    <button 
+                    class="btn btn-danger rounded-pill px-5 py-3">
+
+
+                        <i class="bi bi-trash-fill me-2"></i>
+
+
+                        Eliminar cuenta
+
+
+                    </button>
+
+
+                </div>
+
+
+
+            </div>
+
+
+
         </div>
 
-        <div class="d-flex justify-content-start mt-5" data-aos="fade-right">
-
-            <button onclick="window.location.href='../pages_int/inicio.html'" class="btn-regresar-int">
-
-                <i class="bi bi-arrow-left-circle-fill me-2"></i>
-
-                <span data-es="Regresar" data-na="Mokuepa">
-
-                    Regresar
-
-                </span>
-
-            </button>
-
-        </div>
 
     </div>
 
-    //
+
+
+
+    <!-- REGRESAR -->
+
+
+    <div class="d-flex justify-content-start mt-5">
+
+
+        <button 
+        onclick="window.location.href='../pages_int/inicio.html'"
+        class="btn-regresar-int">
+
+
+            <i class="bi bi-arrow-left-circle-fill me-2"></i>
+
+
+            Regresar
+
+
+        </button>
+
+
+    </div>
+
+
+</div>
+
+    
 
     <div class="perfil-avatar">
 
@@ -811,87 +956,43 @@ modal-lg">
 
         </div>
 
-    </footer>
+</footer>
 
-    <!-- BOOTSTRAP -->
-    <script src="../assets/js/bootstrap.bundle.min.js"></script>
 
-    <!-- AOS -->
-    <script src="../assets/js/aos.js"></script>
+<!-- BOOTSTRAP -->
+<script src="../assets/js/bootstrap.bundle.min.js"></script>
 
-    <!-- INIT AOS -->
-    <script>
-        AOS.init({
-            duration: 800,
-            once: true
-        });
-    </script>
 
-    <script src="../assets/sweetalert/sweetalert2.all.min.js"></script>
+<!-- AOS -->
+<script src="../assets/js/aos.js"></script>
 
-    <!-- JS -->
-    <script src="../js/app.js"></script>
-    <script src="../js/iconos.js"></script>
-    <script src="../js/racha.js"></script>
 
-    <style>
-        .perfil-avatar {
+<!-- INIT AOS -->
+<script>
 
-            position: relative;
-            text-align: center;
+AOS.init({
 
-        }
+    duration:800,
 
-        .foto-perfil {
+    once:true
 
-            width: 180px;
-            height: 180px;
-            object-fit: contain;
+});
 
-        }
+</script>
 
-        .cambiar-icono-btn {
 
-            position: absolute;
 
-            top: -10px;
+<!-- SWEETALERT -->
+<script src="../assets/sweetalert/sweetalert2.all.min.js"></script>
 
-            left: -10px;
 
-            font-size: 13px;
 
-            padding: 6px 10px;
+<!-- PERFIL -->
+<script src="../js/perfil.js"></script>
 
-            z-index: 100;
 
-        }
-    </style>
-    <style>
-        .perfilprin-icon-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-            gap: 15px;
-            justify-items: center;
-        }
 
-        .perfilprin-icon-grid img {
-            width: 90px;
-            height: 90px;
-            object-fit: contain;
-            cursor: pointer;
-            border-radius: 10px;
-            transition: .25s;
-        }
-
-        .perfilprin-icon-grid img:hover {
-            transform: scale(1.08);
-        }
-
-        .icono-activo {
-            border: 3px solid #198754;
-            border-radius: 10px;
-        }
-    </style>
 </body>
 
 </html>
+
