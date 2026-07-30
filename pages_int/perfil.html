@@ -573,62 +573,78 @@
 
     </div>
 
+    //
 
+    <div class="perfil-avatar">
 
+        <!-- Botón cambiar icono -->
+        <button class="btn btn-warning btn-sm cambiar-icono-btn" data-bs-toggle="modal"
+            data-bs-target="#perfilprinModalIconos">
 
+            Cambiar icono
 
-    <!-- COLUMNA IZQUIERDA: AVATAR Y BOTÓN -->
-<div class="text-center mb-4">
-    <!-- Etiqueta <img> donde se mostrará la mascota/icono seleccionado -->
-    <div class="mb-3">
-        <img id="perfilprinAvatarActual" 
-             src="../Recursos/mascotas/1779338869960.png" 
-             alt="Icono del usuario" 
-             style="width: 130px; height: 130px; object-fit: contain; border-radius: 50%;">
+        </button>
+
+        <!-- Foto de perfil -->
+        <img id="fotoPerfil" src="../Recursos/mascotas/default.png" alt="Foto de perfil" class="foto-perfil">
+
+        <!-- Nombre del usuario -->
+        <h3 id="nombreUsuario" class="mt-3">
+            Castor Usuario
+        </h3>
+
+        <!-- Nivel -->
+        <p class="text-muted">
+            Nivel 12
+        </p>
+
     </div>
 
-    <!-- Botón ubicado justo ABAJO de la imagen -->
-    <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#perfilprinModalIconos">
-        ✏️ Cambiar icono
-    </button>
+    <!-- MODAL ICONOS -->
+    <div class="modal fade" id="perfilprinModalIconos" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
 
-    <h3 class="mt-3">Castor Usuario</h3>
-    <p class="text-muted">Nivel 12</p>
-</div>
+                <!-- HEADER -->
+                <div class="modal-header">
+                    <h5 class="modal-title" data-es="Seleccionar icono" data-na="Xikpejpena tlaixiptla">
+                        Seleccionar icono
+                    </h5>
 
-<!-- MODAL ICONOS -->
-<div class="modal fade" id="perfilprinModalIconos" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-
-            <!-- HEADER -->
-            <div class="modal-header">
-                <h5 class="modal-title" data-es="Seleccionar icono" data-na="Xikpejpena tlaixiptla">
-                    Seleccionar icono
-                </h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-
-            <!-- BODY -->
-            <div class="modal-body">
-                <div class="perfilprin-icon-grid" id="perfilprinIconGrid">
-                    <!-- Las imágenes se cargan dinámicamente con JS desde la API -->
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
-            </div>
 
-            <!-- FOOTER -->
-            <div class="modal-footer">
-                <button class="btn btn-secondary" data-bs-dismiss="modal">
-                    Cerrar
-                </button>
-                <button class="btn btn-success" onclick="perfilprinGuardarIcono()">
-                    Guardar
-                </button>
-            </div>
+                <!-- BODY -->
+                <div class="modal-body">
 
+                    <div id="perfilprinIconGrid" class="perfilprin-icon-grid">
+
+                        <!-- Aquí se cargan las mascotas -->
+
+                    </div>
+
+                </div>
+
+                <!-- FOOTER -->
+                <div class="modal-footer">
+
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">
+
+                        Cerrar
+
+                    </button>
+
+                    <button class="btn btn-success" onclick="perfilprinGuardarIcono()">
+
+                        Guardar
+
+                    </button>
+
+                </div>
+
+            </div>
         </div>
     </div>
-</div>
 
     <!-- MODAL MEDALLAS -->
 
@@ -816,35 +832,65 @@ modal-lg">
     <!-- JS -->
     <script src="../js/app.js"></script>
     <script src="../js/iconos.js"></script>
+    <script src="../js/racha.js"></script>
 
     <style>
-.grid-mascotas-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columnas */
-    gap: 15px; /* Espacio entre cada icono */
-    max-height: 300px;
-    overflow-y: auto; /* Scroll si hay muchas imágenes */
-    padding: 10px;
-}
+        .perfil-avatar {
 
-.icono-opcion {
-    width: 100%;
-    height: 90px;
-    object-fit: contain;
-    border: 2px solid transparent;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: transform 0.2s, border-color 0.2s;
-}
+            position: relative;
+            text-align: center;
 
-.icono-opcion:hover {
-    transform: scale(1.05);
-}
+        }
 
-.icono-opcion.seleccionado {
-    border-color: #0b5e38; /* Verde similar al de tu diseño */
-    background-color: rgba(11, 94, 56, 0.1);
-}
+        .foto-perfil {
+
+            width: 180px;
+            height: 180px;
+            object-fit: contain;
+
+        }
+
+        .cambiar-icono-btn {
+
+            position: absolute;
+
+            top: -10px;
+
+            left: -10px;
+
+            font-size: 13px;
+
+            padding: 6px 10px;
+
+            z-index: 100;
+
+        }
+    </style>
+    <style>
+        .perfilprin-icon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 15px;
+            justify-items: center;
+        }
+
+        .perfilprin-icon-grid img {
+            width: 90px;
+            height: 90px;
+            object-fit: contain;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: .25s;
+        }
+
+        .perfilprin-icon-grid img:hover {
+            transform: scale(1.08);
+        }
+
+        .icono-activo {
+            border: 3px solid #198754;
+            border-radius: 10px;
+        }
     </style>
 </body>
 

@@ -104,102 +104,83 @@
     <div id="app" class="w-full min-h-full flex flex-col">
 
 
-       <!-- ========================================== -->
-<!--                HEADER MAIN                 -->
-<!-- ========================================== -->
+        <!-- ========================================== -->
+        <!--                HEADER MAIN                 -->
+        <!-- ========================================== -->
 
-<header class="header-main sticky-top shadow-lg">
+        <header class="header-main sticky-top shadow-lg">
 
-    <div class="container">
+            <div class="container">
 
-        <!-- FILA SUPERIOR -->
-        <div
-            class="headerint-top d-flex justify-content-between align-items-star flex-wrap gap-3 py-3">
+                <!-- FILA SUPERIOR -->
+                <div class="headerint-top d-flex justify-content-between align-items-star flex-wrap gap-3 py-3">
 
-            <!-- LOGO -->
-            <div class="headerint-logo">
+                    <!-- LOGO -->
+                    <div class="headerint-logo">
 
-                <img
-                    src="../../../Recursos/logos/logo_completo_svg.svg"
-                    alt="logo"
-                    class="img-fluid"
-                    style="max-width:185px;"
-                    data-aos="fade-right">
-
-            </div>
-
-            <!-- ESTADÍSTICAS -->
-            <div
-                class="headerint-stats d-flex align-items-center justify-content-center gap-3 flex-wrap"
-                data-aos="fade-up">
-
-                <!-- RACHA -->
-                <div class="stat-item headerint-racha">
-
-                    <i class="bi bi-fire stat-icon text-warning"></i>
-
-                    <div>
-
-                        <small
-                            class="stat-label"
-                            data-es="Racha"
-                            data-na="Tlatzintli">
-
-                            Racha
-
-                        </small>
-
-                        <span
-                            id="streak-display"
-                            class="stat-value">
-
-                            0
-
-                        </span>
+                        <img src="../../../Recursos/logos/logo_completo_svg.svg" alt="logo" class="img-fluid"
+                            style="max-width:185px;" data-aos="fade-right">
 
                     </div>
 
-                </div>
+                    <!-- ESTADÍSTICAS -->
+                    <div class="headerint-stats d-flex align-items-center justify-content-center gap-3 flex-wrap"
+                        data-aos="fade-up">
 
-                <!-- XP -->
-                <div class="stat-item headerint-xp">
+                        <!-- RACHA -->
+                        <div class="stat-item headerint-racha">
 
-                    <i class="bi bi-stars stat-icon text-warning"></i>
+                            <i class="bi bi-fire stat-icon text-warning"></i>
 
-                    <div>
+                            <div>
 
-                        <small
-                            class="stat-label"
-                            data-es="Puntaje"
-                            data-na="Tlapōhualli">
+                                <small class="stat-label" data-es="Racha" data-na="Tlatzintli">
+
+                                    Racha
+
+                                </small>
+
+                                <span id="streak-display" class="stat-value">
+
+                                    0
+
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <!-- XP -->
+                        <div class="stat-item headerint-xp">
+
+                            <i class="bi bi-stars stat-icon text-warning"></i>
+
+                            <div>
+
+                                <small class="stat-label" data-es="Puntaje" data-na="Tlapōhualli">
 
                                     Puntaje
 
-                        </small>
+                                </small>
 
-                        <span
-                            id="xp-display"
-                            class="stat-value">
+                                <span id="xp-display" class="stat-value">
 
-                            0
+                                    0
 
-                        </span>
+                                </span>
+
+                            </div>
+
+                        </div>
 
                     </div>
-
-                </div>
-
-            </div>
 
                     <!-- PERFIL -->
                     <div class="perfil-header dropdown" data-aos="fade-left">
 
                         <!-- BOTÓN -->
-                        <button
-                            class="btn p-0 border-0 bg-transparent d-flex align-items-center"
-                            type="button"
-                            data-bs-toggle="dropdown"
-                            aria-expanded="false">
+                        <button class="btn p-0 border-0 bg-transparent d-flex align-items-center" type="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
 
                             <!-- Avatar -->
                             <div class="perfil-avatar">
@@ -211,10 +192,7 @@
                             <!-- Nombre -->
                             <div class="perfil-info d-none d-md-block">
 
-                                <span
-                                    class="perfil-nombre"
-                                    data-es="Invitado"
-                                    data-na="Tlapowalistli">
+                                <span class="perfil-nombre" data-es="Invitado" data-na="Tlapowalistli">
 
                                     Invitado
 
@@ -249,165 +227,136 @@
 
                 </div>
 
-        </div>
+            </div>
 
-        <!-- NAVBAR -->
-        <nav class="navbar navbar-expand-lg navbarint justify-content-center">
+            <!-- NAVBAR -->
+            <nav class="navbar navbar-expand-lg navbarint justify-content-center">
 
-            <div class="container-fluid justify-content-center">
+                <div class="container-fluid justify-content-center">
 
-                <!-- BOTÓN HAMBURGUESA -->
-                    <button
-                    class="navbar-toggler navbarint-toggler mx-auto"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#menuNavbar">
+                    <!-- BOTÓN HAMBURGUESA -->
+                    <button class="navbar-toggler navbarint-toggler mx-auto" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#menuNavbar">
 
-                    <i class="bi bi-chevron-down"></i>
-
-                </button>
-
-                <!-- MENÚ -->
-                <div
-                    class="collapse navbar-collapse justify-content-center"
-                    id="menuNavbar">
-
-                    <div class="navbar-nav gap-2 justify-content-center">
-
-                    <!-- INICIO -->
-                    <button
-                        type="button"
-                        onclick="window.location.href='../../../pages_int/inicio.html'"
-                        class="btn navbarint-btn rounded-pill px-4"
-                        data-aos="fade-up"
-                        data-es="Inicio"
-                        data-na="Pewaloyan">
-
-                        <i class="bi bi-house-fill me-2"></i>
-
-                        Inicio
+                        <i class="bi bi-chevron-down"></i>
 
                     </button>
 
-                    <!-- LECCIONES -->
-                    <button
-                        type="button"
-                        onclick="window.location.href='../../../pages_int/lecciones.html'"
-                        class="btn navbarint-btn rounded-pill px-4"
-                        data-aos="fade-up"
-                        data-aos-delay="100"
-                        data-es="Lecciones"
-                        data-na="Temachtilli">
+                    <!-- MENÚ -->
+                    <div class="collapse navbar-collapse justify-content-center" id="menuNavbar">
 
-                        <i class="bi bi-book-fill me-2"></i>
+                        <div class="navbar-nav gap-2 justify-content-center">
 
-                        Lecciones
+                            <!-- INICIO -->
+                            <button type="button" onclick="window.location.href='../../../pages_int/inicio.html'"
+                                class="btn navbarint-btn rounded-pill px-4" data-aos="fade-up" data-es="Inicio"
+                                data-na="Pewaloyan">
 
-                    </button>
+                                <i class="bi bi-house-fill me-2"></i>
 
-                    <!-- CUENTOS -->
-                    <button
-                        type="button"
-                        onclick="window.location.href='../../../pages_int/Cuentos/cuentos.html'"
-                        class="btn navbarint-btn rounded-pill px-4"
-                        data-aos="fade-up"
-                        data-aos-delay="100"
-                        data-es="Cuentos"
-                        data-na="Tlahtolli">
+                                Inicio
 
-                        <i class="bi bi-book-half me-2"></i>
+                            </button>
 
-                        Cuentos
+                            <!-- LECCIONES -->
+                            <button type="button" onclick="window.location.href='../../../pages_int/lecciones.html'"
+                                class="btn navbarint-btn rounded-pill px-4" data-aos="fade-up" data-aos-delay="100"
+                                data-es="Lecciones" data-na="Temachtilli">
 
-                    </button>
+                                <i class="bi bi-book-fill me-2"></i>
 
-                    <!-- CULTURA -->
-                    <button
-                        type="button"
-                        onclick="window.location.href='../../../pages_int/cultura.html'"
-                        class="btn navbarint-btn rounded-pill px-4"
-                        data-aos="fade-up"
-                        data-aos-delay="200"
-                        data-es="Cultura"
-                        data-na="Yancuic Tlamachtiliztli">
+                                Lecciones
 
-                        <i class="bi bi-globe-americas me-2"></i>
+                            </button>
 
-                        Cultura
+                            <!-- CUENTOS -->
+                            <button type="button"
+                                onclick="window.location.href='../../../pages_int/Cuentos/cuentos.html'"
+                                class="btn navbarint-btn rounded-pill px-4" data-aos="fade-up" data-aos-delay="100"
+                                data-es="Cuentos" data-na="Tlahtolli">
 
-                    </button>
+                                <i class="bi bi-book-half me-2"></i>
 
-                    <!-- PROGRESO -->
-                    <button
-                        type="button"
-                        onclick="window.location.href='../../../pages_int/progreso.html'"
-                        class="btn navbarint-btn rounded-pill px-4"
-                        data-aos="fade-up"
-                        data-aos-delay="300"
-                        data-es="Progreso"
-                        data-na="Yancuic Nejnemiliztli">
+                                Cuentos
 
-                        <i class="bi bi-graph-up-arrow me-2"></i>
+                            </button>
 
-                        Progreso
+                            <!-- CULTURA -->
+                            <button type="button" onclick="window.location.href='../../../pages_int/cultura.html'"
+                                class="btn navbarint-btn rounded-pill px-4" data-aos="fade-up" data-aos-delay="200"
+                                data-es="Cultura" data-na="Yancuic Tlamachtiliztli">
 
-                    </button>
+                                <i class="bi bi-globe-americas me-2"></i>
+
+                                Cultura
+
+                            </button>
+
+                            <!-- PROGRESO -->
+                            <button type="button" onclick="window.location.href='../../../pages_int/progreso.html'"
+                                class="btn navbarint-btn rounded-pill px-4" data-aos="fade-up" data-aos-delay="300"
+                                data-es="Progreso" data-na="Yancuic Nejnemiliztli">
+
+                                <i class="bi bi-graph-up-arrow me-2"></i>
+
+                                Progreso
+
+                            </button>
+
+                        </div>
 
                     </div>
 
                 </div>
 
-            </div>
-
-        </nav>
+            </nav>
 
     </div>
 
-</header>
+    </header>
 
-        <!-- MAIN -->
-        <main class="container py-5">
+    <!-- MAIN -->
+    <main class="container py-5">
 
-            <!-- BOTONES SUPERIORES -->
+        <!-- BOTONES SUPERIORES -->
 
-            <!-- BOTÓN TRADUCTOR -->
-            <div class="presen-traductor-int">
+        <!-- BOTÓN TRADUCTOR -->
+        <div class="presen-traductor-int">
 
-                <button class="btn btn-light rounded-circle traductor-btn" onclick="presenToggleMenu()"
-                    data-aos="zoom-in">
+            <button class="btn btn-light rounded-circle traductor-btn" onclick="presenToggleMenu()" data-aos="zoom-in">
 
-                    <i class="bi bi-translate"></i>
+                <i class="bi bi-translate"></i>
 
-                </button>
+            </button>
 
-                <!-- MENÚ -->
-                <div class="presen-menu-int" id="presenMenuIdioma">
+            <!-- MENÚ -->
+            <div class="presen-menu-int" id="presenMenuIdioma">
 
-                    <ul class="list-unstyled m-0">
+                <ul class="list-unstyled m-0">
 
-                        <li onclick="presenCambiarModo('es')">
-                            Español
-                        </li>
+                    <li onclick="presenCambiarModo('es')">
+                        Español
+                    </li>
 
-                        <li onclick="presenCambiarModo('na')">
-                            Náhuatl
-                        </li>
+                    <li onclick="presenCambiarModo('na')">
+                        Náhuatl
+                    </li>
 
-                        <li onclick="presenCambiarModo('es-na')">
-                            Español + Náhuatl
-                        </li>
+                    <li onclick="presenCambiarModo('es-na')">
+                        Español + Náhuatl
+                    </li>
 
-                        <li onclick="presenCambiarModo('na-es')">
-                            Náhuatl + Español
-                        </li>
+                    <li onclick="presenCambiarModo('na-es')">
+                        Náhuatl + Español
+                    </li>
 
-                    </ul>
-
-                </div>
+                </ul>
 
             </div>
 
-    </div>
+        </div>
+
+        </div>
     </main>
     </div>
 
@@ -415,232 +364,332 @@
 
     <!-- ==================== CONTAINER PRINCIPAL: SECCIÓN DE TARJETAS ==================== -->
     <main class="container my-5" style="margin-top: 100px !important;">
-    <div class="row g-4">
+        <div class="row g-4">
 
-        <!-- BANNER DE BIENVENIDA CON CARRUSEL DE FOTOS ANIMADAS -->
-        <div class="col-12" id="inicio" data-aos="fade-up" data-aos-duration="1000">
-            <div class="p-4 p-sm-5 mb-2 rounded-5 shadow-lg text-white position-relative overflow-hidden"
-                style="background: linear-gradient(135deg, #2e7c07 0%, #8ebd6e 100%); min-height: auto; display: flex; align-items: center;">
+            <!-- BANNER DE BIENVENIDA CON CARRUSEL DE FOTOS ANIMADAS -->
+            <div class="col-12" id="inicio" data-aos="fade-up" data-aos-duration="1000">
+                <div class="p-4 p-sm-5 mb-2 rounded-5 shadow-lg text-white position-relative overflow-hidden"
+                    style="background: linear-gradient(135deg, #2e7c07 0%, #8ebd6e 100%); min-height: auto; display: flex; align-items: center;">
 
-                <div class="row align-items-center position-relative w-100 g-4 m-0">
-                    
-                    <!-- COLUMNA DEL CARRUSEL ANIMADO -->
-                    <div class="col-12 col-md-4 text-center order-1 order-md-2 p-0">
-                        <div class="position-relative d-inline-block w-100" style="max-width: 280px;">
-                            <div id="carouselAnimado" class="carousel slide carousel-fade" data-bs-ride="carousel">
-                                <div class="carousel-inner rounded-4 shadow-lg border border-white border-opacity-25">
-                                    
-                                    <!-- Slide 1 (Activo) -->
-                                    <div class="carousel-item active" data-bs-interval="3000">
-                                        <img src="../../../Recursos/nahui_caras/1779128084249.png" class="d-block w-100" alt="Los días en Náhuatl 1" style="height: 220px; object-fit: cover;">
-                                    </div>
-                                    
-                                    <!-- Slide 2 -->
-                                    <div class="carousel-item" data-bs-interval="3000">
-                                        <img src="../../../Recursos/nahui_caras/1779131866885.png" class="d-block w-100" alt="Los días en Náhuatl 2" style="height: 220px; object-fit: cover;">
-                                    </div>
-                                    
-                                    <!-- Slide 3 -->
-                                    <div class="carousel-item" data-bs-interval="3000">
-                                        <img src="../../../Recursos/nahui_caras/1779132509818.png" class="d-block w-100" alt="Los días en Náhuatl 3" style="height: 220px; object-fit: cover;">
-                                    </div>
+                    <div class="row align-items-center position-relative w-100 g-4 m-0">
 
+                        <!-- COLUMNA DEL CARRUSEL ANIMADO -->
+                        <div class="col-12 col-md-4 text-center order-1 order-md-2 p-0">
+                            <div class="position-relative d-inline-block w-100" style="max-width: 280px;">
+                                <div id="carouselAnimado" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                                    <div
+                                        class="carousel-inner rounded-4 shadow-lg border border-white border-opacity-25">
+
+                                        <!-- Slide 1 (Activo) -->
+                                        <div class="carousel-item active" data-bs-interval="3000">
+                                            <img src="../../../Recursos/nahui_caras/1779128084249.png"
+                                                class="d-block w-100" alt="Los días en Náhuatl 1"
+                                                style="height: 220px; object-fit: cover;">
+                                        </div>
+
+                                        <!-- Slide 2 -->
+                                        <div class="carousel-item" data-bs-interval="3000">
+                                            <img src="../../../Recursos/nahui_caras/1779131866885.png"
+                                                class="d-block w-100" alt="Los días en Náhuatl 2"
+                                                style="height: 220px; object-fit: cover;">
+                                        </div>
+
+                                        <!-- Slide 3 -->
+                                        <div class="carousel-item" data-bs-interval="3000">
+                                            <img src="../../../Recursos/nahui_caras/1779132509818.png"
+                                                class="d-block w-100" alt="Los días en Náhuatl 3"
+                                                style="height: 220px; object-fit: cover;">
+                                        </div>
+
+                                    </div>
+                                    <!-- Controles del Carrusel (Opcionales, puedes borrarlos si prefieres que sea solo automático) -->
+                                    <button class="carousel-control-prev" type="button"
+                                        data-bs-target="#carouselAnimado" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Anterior</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button"
+                                        data-bs-target="#carouselAnimado" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Siguiente</span>
+                                    </button>
                                 </div>
-                                <!-- Controles del Carrusel (Opcionales, puedes borrarlos si prefieres que sea solo automático) -->
-                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselAnimado" data-bs-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Anterior</span>
-                                </button>
-                                <button class="carousel-control-next" type="button" data-bs-target="#carouselAnimado" data-bs-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Siguiente</span>
-                                </button>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- TEXTO DEL BANNER -->
-                    <div class="col-12 col-md-8 text-center text-md-start order-2 order-md-1 p-0">
-                        <span class="badge bg-warning text-dark px-3 py-2 rounded-pill fw-bold text-uppercase mb-3 tracking-wider shadow-sm" style="font-size: 0.75rem;">
-                            <span data-es="APRENDE LOS DÍAS DE LA SEMANA" data-na="XIMOMACHTI TONALMEH ICAN CHICOME ILHUITL">APRENDE LOS DÍAS DE LA SEMANA</span>
-                        </span>
-                        <h1 class="fw-bold tracking-tight mb-2 h2">
-                            <span data-es="LOS DÍAS Y EL TIEMPO" data-na="TONALMEH IHUAN CAHUITL">LOS DÍAS Y EL TIEMPO</span>
-                        </h1>
-                        <div class="card-subtitle">
-                            <h3 class="fs-5 text-warning mb-3">
-                                <span data-es="Descubre cómo se miden los días en la variante Náhuatl de Puebla" data-na="Xikitati quenin mopouah tonalmeh ipan totlatol nican Puebla">Descubre cómo se miden los días en la variante Náhuatl de Puebla</span>
-                            </h3>
-                            <p class="fs-6 opacity-90 mb-0" style="text-align: justify;">
-                                <span data-es="El tiempo y los días representan el ciclo de nuestras vidas y activities en la comunidad. En esta lección aprenderás a nombrar cada uno de los siete días de la semana de manera interactiva..." data-na="Cahuitl ihuan tonalmeh ca in nemilistli tequitl ipan toaltepe. Nican tonemilistli timomachtis quenin motocayotia chicome ilhuitl ica tlamahuizolli...">
-                                    El tiempo y los días representan el ciclo de nuestras vidas y actividades en la comunidad. En esta lección aprenderás a nombrar cada uno de los siete días de la semana de manera interactiva...
-                                </span>
+                        <!-- TEXTO DEL BANNER -->
+                        <div class="col-12 col-md-8 text-center text-md-start order-2 order-md-1 p-0">
+                            <span
+                                class="badge bg-warning text-dark px-3 py-2 rounded-pill fw-bold text-uppercase mb-3 tracking-wider shadow-sm"
+                                style="font-size: 0.75rem;">
+                                <span data-es="APRENDE LOS DÍAS DE LA SEMANA"
+                                    data-na="XIMOMACHTI TONALMEH ICAN CHICOME ILHUITL">APRENDE LOS DÍAS DE LA
+                                    SEMANA</span>
+                            </span>
+                            <h1 class="fw-bold tracking-tight mb-2 h2">
+                                <span data-es="LOS DÍAS Y EL TIEMPO" data-na="TONALMEH IHUAN CAHUITL">LOS DÍAS Y EL
+                                    TIEMPO</span>
+                            </h1>
+                            <div class="card-subtitle">
+                                <h3 class="fs-5 text-warning mb-3">
+                                    <span data-es="Descubre cómo se miden los días en la variante Náhuatl de Puebla"
+                                        data-na="Xikitati quenin mopouah tonalmeh ipan totlatol nican Puebla">Descubre
+                                        cómo se miden los días en la variante Náhuatl de Puebla</span>
+                                </h3>
+                                <p class="fs-6 opacity-90 mb-0" style="text-align: justify;">
+                                    <span
+                                        data-es="El tiempo y los días representan el ciclo de nuestras vidas y activities en la comunidad. En esta lección aprenderás a nombrar cada uno de los siete días de la semana de manera interactiva..."
+                                        data-na="Cahuitl ihuan tonalmeh ca in nemilistli tequitl ipan toaltepe. Nican tonemilistli timomachtis quenin motocayotia chicome ilhuitl ica tlamahuizolli...">
+                                        El tiempo y los días representan el ciclo de nuestras vidas y actividades en la
+                                        comunidad. En esta lección aprenderás a nombrar cada uno de los siete días de la
+                                        semana de manera interactiva...
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- CONTENEDOR DIVIDIDO EN DOS PARA INFORMACIÓN (Abajo del Carrusel/Banner) -->
+            <div class="col-12" data-aos="fade-up" data-aos-duration="1000">
+                <div class="row g-4">
+                    <!-- Mitad Izquierda -->
+                    <div class="col-12 col-md-6">
+                        <div class="bg-white p-4 rounded-4 shadow-sm h-100 border-start border-primary border-4">
+                            <h4 class="fw-bold text-primary mb-3" data-es="Información General"
+                                data-na="Nochi Tlamachtiliztli">
+                                Información General
+                            </h4>
+                            <p class="text-muted" style="text-align: justify;"
+                                data-es="Aquí puedes colocar el primer bloque de texto informativo. Por ejemplo, detalles sobre el contexto histórico del calendario o instrucciones para realizar las actividades interactuando con los módulos de abajo."
+                                data-na="Nikan hueli tiktlalis in achto tlamachtiliztli. Tech nopa, hueli tikijkuilos tlen kiteixmatiltia in tonalpohualli, o noso ken moneki tikchihuas in tlamachtilmeh ika tiktekitis in módulos tlen kateh tlatzintlan.">
+                                Aquí puedes colocar el primer bloque de texto informativo. Por ejemplo, detalles sobre
+                                el contexto histórico del calendario o instrucciones para realizar las actividades
+                                interactuando con los módulos de abajo.
                             </p>
                         </div>
                     </div>
-
-                </div>
-            </div>
-        </div>
-
-        <!-- CONTENEDOR DIVIDIDO EN DOS PARA INFORMACIÓN (Abajo del Carrusel/Banner) -->
-        <div class="col-12" data-aos="fade-up" data-aos-duration="1000">
-            <div class="row g-4">
-                <!-- Mitad Izquierda -->
-                <div class="col-12 col-md-6">
-                    <div class="bg-white p-4 rounded-4 shadow-sm h-100 border-start border-primary border-4">
-                        <h4 class="fw-bold text-primary mb-3" data-es="Información General" data-na="Nochi Tlamachtiliztli">
-                            Información General
-                        </h4>
-                        <p class="text-muted" style="text-align: justify;" data-es="Aquí puedes colocar el primer bloque de texto informativo. Por ejemplo, detalles sobre el contexto histórico del calendario o instrucciones para realizar las actividades interactuando con los módulos de abajo." data-na="Nikan hueli tiktlalis in achto tlamachtiliztli. Tech nopa, hueli tikijkuilos tlen kiteixmatiltia in tonalpohualli, o noso ken moneki tikchihuas in tlamachtilmeh ika tiktekitis in módulos tlen kateh tlatzintlan.">
-                            Aquí puedes colocar el primer bloque de texto informativo. Por ejemplo, detalles sobre el contexto histórico del calendario o instrucciones para realizar las actividades interactuando con los módulos de abajo.
-                        </p>
-                    </div>
-                </div>
-                <!-- Mitad Derecha -->
-                <div class="col-12 col-md-6">
-                    <div class="bg-white p-4 rounded-4 shadow-sm h-100 border-start border-success border-4">
-                        <h4 class="fw-bold text-success mb-3" data-es="Objetivos de Aprendizaje" data-na="Tlein timomachtishqueh">
-                            Objetivos de Aprendizaje
-                        </h4>
-                        <p class="text-muted" style="text-align: justify;" data-es="Aquí puedes colocar el segundo bloque de texto informativo. Describe qué competencias adquirirá el alumno en esta sesión con respecto a la variante lingüística Náhuatl de Puebla." data-na="Nikan hueli tiktlalis in ome tlamachtiliztli. Xikijkuilo tlen tlamachilistli kiselis in momachtijketl ipan ni tlamachtiliztli ika in nāhuatl tlen Puebla.">
-                            Aquí puedes colocar el segundo bloque de texto informativo. Describe qué competencias adquirirá el alumno en esta sesión con respecto a la variante lingüística Náhuatl de Puebla.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- SECCIÓN DE TARJETAS EN DOS COLUMNAS (10 Tarjetas en Total) -->
-        
-        <!-- TARJETA 1: LUNES -->
-        <div class="col-12 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="card h-100 border-0 rounded-4 shadow-sm p-4 border-bottom border-5 bg-white d-flex flex-column justify-content-between" style="border-color: #1b4d3e !important;">
-                <div>
-                    <div class="d-flex align-items-center gap-3 mb-3">
-                        <div class="p-3 text-white rounded-4 shadow-sm" style="background-color: #1b4d3e;"><i class="bi bi-moon-stars fs-3"></i></div>
-                        <div>
-                            <h3 class="fw-bold fs-4 m-0" style="color: #1b4d3e;" data-es="Lunes" data-na="Ce iluitl">Lunes</h3>
-                            <h4 class="text-muted small m-0" data-es="Día del Inframundo" data-na="Metztli Ixpampa">Día del Inframundo</h4>
+                    <!-- Mitad Derecha -->
+                    <div class="col-12 col-md-6">
+                        <div class="bg-white p-4 rounded-4 shadow-sm h-100 border-start border-success border-4">
+                            <h4 class="fw-bold text-success mb-3" data-es="Objetivos de Aprendizaje"
+                                data-na="Tlein timomachtishqueh">
+                                Objetivos de Aprendizaje
+                            </h4>
+                            <p class="text-muted" style="text-align: justify;"
+                                data-es="Aquí puedes colocar el segundo bloque de texto informativo. Describe qué competencias adquirirá el alumno en esta sesión con respecto a la variante lingüística Náhuatl de Puebla."
+                                data-na="Nikan hueli tiktlalis in ome tlamachtiliztli. Xikijkuilo tlen tlamachilistli kiselis in momachtijketl ipan ni tlamachtiliztli ika in nāhuatl tlen Puebla.">
+                                Aquí puedes colocar el segundo bloque de texto informativo. Describe qué competencias
+                                adquirirá el alumno en esta sesión con respecto a la variante lingüística Náhuatl de
+                                Puebla.
+                            </p>
                         </div>
                     </div>
-                    <p class="text-dark small mb-3"><span data-es="Conoce el significado del primer día laboral de la semana." data-na="Xikitati tlein quineki quitos achto tonal tequitl.">Conoce el significado del primer día laboral de la semana.</span></p>
-                    <div class="text-center my-3 bg-light rounded-4 p-2 border"><img src="../../../Recursos/img_tiempo/Lunes.png" class="img-fluid" style="max-height: 110px; object-fit: contain;"></div>
                 </div>
-                <button class="btn w-100 rounded-pill fw-bold mt-2 py-2 shadow-sm text-white" style="background-color: #1b4d3e;" onclick="mostrarSeccion('lunes')">¡Ver detalles!</button>
             </div>
-        </div>
 
-        <!-- TARJETA 2: MARTES -->
-        <div class="col-12 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="card h-100 border-0 rounded-4 shadow-sm p-4 border-bottom border-5 bg-white d-flex flex-column justify-content-between" style="border-color: #d35400 !important;">
-                <div>
-                    <div class="d-flex align-items-center gap-3 mb-3">
-                        <div class="p-3 text-white rounded-4 shadow-sm" style="background-color: #d35400;"><i class="bi bi-fire fs-3"></i></div>
-                        <div>
-                            <h3 class="fw-bold fs-4 m-0" style="color: #d35400;" data-es="Martes" data-na="Ome iluitl">Martes</h3>
-                            <h4 class="text-muted small m-0" data-es="Día de la Fuerza" data-na="Chicahualistli Tonal">Día de la Fuerza</h4>
+            <!-- SECCIÓN DE TARJETAS EN DOS COLUMNAS (10 Tarjetas en Total) -->
+
+            <!-- TARJETA 1: LUNES -->
+            <div class="col-12 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="card h-100 border-0 rounded-4 shadow-sm p-4 border-bottom border-5 bg-white d-flex flex-column justify-content-between"
+                    style="border-color: #1b4d3e !important;">
+                    <div>
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <div class="p-3 text-white rounded-4 shadow-sm" style="background-color: #1b4d3e;"><i
+                                    class="bi bi-moon-stars fs-3"></i></div>
+                            <div>
+                                <h3 class="fw-bold fs-4 m-0" style="color: #1b4d3e;" data-es="Lunes"
+                                    data-na="Ce iluitl">Lunes</h3>
+                                <h4 class="text-muted small m-0" data-es="Día del Inframundo" data-na="Metztli Ixpampa">
+                                    Día del Inframundo</h4>
+                            </div>
                         </div>
+                        <p class="text-dark small mb-3"><span
+                                data-es="Conoce el significado del primer día laboral de la semana."
+                                data-na="Xikitati tlein quineki quitos achto tonal tequitl.">Conoce el significado del
+                                primer día laboral de la semana.</span></p>
+                        <div class="text-center my-3 bg-light rounded-4 p-2 border"><img
+                                src="../../../Recursos/img_tiempo/Lunes.png" class="img-fluid"
+                                style="max-height: 110px; object-fit: contain;"></div>
                     </div>
-                    <p class="text-dark small mb-3"><span data-es="Explora las raíces históricas y la energía asociada al segundo día." data-na="Xikixmati inin ome tonal ihuan chicahualistli.">Explora las raíces históricas y la energía asociada al segundo día.</span></p>
-                    <div class="text-center my-3 bg-light rounded-4 p-2 border"><img src="../../../Recursos/img_tiempo/martes.png" class="img-fluid" style="max-height: 110px; object-fit: contain;"></div>
+                    <button class="btn w-100 rounded-pill fw-bold mt-2 py-2 shadow-sm text-white"
+                        style="background-color: #1b4d3e;" onclick="mostrarSeccion('lunes')">¡Ver detalles!</button>
                 </div>
-                <button class="btn w-100 rounded-pill fw-bold mt-2 py-2 shadow-sm text-white" style="background-color: #d35400;" onclick="mostrarSeccion('martes')">¡Ver detalles!</button>
             </div>
-        </div>
 
-        <!-- TARJETA 3: MIÉRCOLES -->
-        <div class="col-12 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="card h-100 border-0 rounded-4 shadow-sm p-4 border-bottom border-5 bg-white d-flex flex-column justify-content-between" style="border-color: #a0522d !important;">
-                <div>
-                    <div class="d-flex align-items-center gap-3 mb-3">
-                        <div class="p-3 text-white rounded-4 shadow-sm" style="background-color: #a0522d;"><i class="bi bi-shield-shaded fs-3"></i></div>
-                        <div>
-                            <h3 class="fw-bold fs-4 m-0" style="color: #a0522d;" data-es="Miércoles" data-na="Yei iluitl">Miércoles</h3>
-                            <h4 class="text-muted small m-0" data-es="Día del Guerrero" data-na="Yaotl Tonal">Día del Guerrero</h4>
+            <!-- TARJETA 2: MARTES -->
+            <div class="col-12 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="card h-100 border-0 rounded-4 shadow-sm p-4 border-bottom border-5 bg-white d-flex flex-column justify-content-between"
+                    style="border-color: #d35400 !important;">
+                    <div>
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <div class="p-3 text-white rounded-4 shadow-sm" style="background-color: #d35400;"><i
+                                    class="bi bi-fire fs-3"></i></div>
+                            <div>
+                                <h3 class="fw-bold fs-4 m-0" style="color: #d35400;" data-es="Martes"
+                                    data-na="Ome iluitl">Martes</h3>
+                                <h4 class="text-muted small m-0" data-es="Día de la Fuerza"
+                                    data-na="Chicahualistli Tonal">Día de la Fuerza</h4>
+                            </div>
                         </div>
+                        <p class="text-dark small mb-3"><span
+                                data-es="Explora las raíces históricas y la energía asociada al segundo día."
+                                data-na="Xikixmati inin ome tonal ihuan chicahualistli.">Explora las raíces históricas y
+                                la energía asociada al segundo día.</span></p>
+                        <div class="text-center my-3 bg-light rounded-4 p-2 border"><img
+                                src="../../../Recursos/img_tiempo/martes.png" class="img-fluid"
+                                style="max-height: 110px; object-fit: contain;"></div>
                     </div>
-                    <p class="text-dark small mb-3"><span data-es="Descubre el significado cultural del punto medio de nuestra semana." data-na="Xikitati tlein nahuatlatolli quipia inin ey tonal.">Descubre el significado cultural del punto medio de nuestra semana.</span></p>
-                    <div class="text-center my-3 bg-light rounded-4 p-2 border"><img src="../../../Recursos/img_tiempo/miercoles.png" class="img-fluid" style="max-height: 110px; object-fit: contain;"></div>
+                    <button class="btn w-100 rounded-pill fw-bold mt-2 py-2 shadow-sm text-white"
+                        style="background-color: #d35400;" onclick="mostrarSeccion('martes')">¡Ver detalles!</button>
                 </div>
-                <button class="btn w-100 rounded-pill fw-bold mt-2 py-2 shadow-sm text-white" style="background-color: #a0522d;" onclick="mostrarSeccion('miercoles')">¡Ver detalles!</button>
             </div>
-        </div>
 
-        <!-- TARJETA 4: JUEVES -->
-        <div class="col-12 col-md-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="card h-100 border-0 rounded-4 shadow-sm p-4 border-bottom border-5 bg-white d-flex flex-column justify-content-between" style="border-color: #d4ac0d !important;">
-                <div>
-                    <div class="d-flex align-items-center gap-3 mb-3">
-                        <div class="p-3 text-dark rounded-4 shadow-sm" style="background-color: #d4ac0d;"><i class="bi bi-lightning-charge fs-3"></i></div>
-                        <div>
-                            <h3 class="fw-bold fs-4 m-0" style="color: #b7950b;" data-es="Jueves" data-na="Nahui iluitl">Jueves</h3>
-                            <h4 class="text-muted small m-0" data-es="Día del Trueno" data-na="Tlaloc Ixpampa">Día del Trueno</h4>
+            <!-- TARJETA 3: MIÉRCOLES -->
+            <div class="col-12 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="card h-100 border-0 rounded-4 shadow-sm p-4 border-bottom border-5 bg-white d-flex flex-column justify-content-between"
+                    style="border-color: #a0522d !important;">
+                    <div>
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <div class="p-3 text-white rounded-4 shadow-sm" style="background-color: #a0522d;"><i
+                                    class="bi bi-shield-shaded fs-3"></i></div>
+                            <div>
+                                <h3 class="fw-bold fs-4 m-0" style="color: #a0522d;" data-es="Miércoles"
+                                    data-na="Yei iluitl">Miércoles</h3>
+                                <h4 class="text-muted small m-0" data-es="Día del Guerrero" data-na="Yaotl Tonal">Día
+                                    del Guerrero</h4>
+                            </div>
                         </div>
+                        <p class="text-dark small mb-3"><span
+                                data-es="Descubre el significado cultural del punto medio de nuestra semana."
+                                data-na="Xikitati tlein nahuatlatolli quipia inin ey tonal.">Descubre el significado
+                                cultural del punto medio de nuestra semana.</span></p>
+                        <div class="text-center my-3 bg-light rounded-4 p-2 border"><img
+                                src="../../../Recursos/img_tiempo/miercoles.png" class="img-fluid"
+                                style="max-height: 110px; object-fit: contain;"></div>
                     </div>
-                    <p class="text-dark small mb-3"><span data-es="Aprende sobre la relación del cuarto día con los elementos naturales." data-na="Xipaxialo ipan inin nahui tonal.">Aprende sobre la relación del cuarto día con los elementos naturales.</span></p>
-                    <div class="text-center my-3 bg-light rounded-4 p-2 border"><img src="../../../Recursos/img_tiempo/jueves.png" class="img-fluid" style="max-height: 110px; object-fit: contain;"></div>
+                    <button class="btn w-100 rounded-pill fw-bold mt-2 py-2 shadow-sm text-white"
+                        style="background-color: #a0522d;" onclick="mostrarSeccion('miercoles')">¡Ver detalles!</button>
                 </div>
-                <button class="btn w-100 rounded-pill fw-bold mt-2 py-2 shadow-sm text-dark" style="background-color: #d4ac0d;" onclick="mostrarSeccion('jueves')">¡Ver detalles!</button>
             </div>
-        </div>
 
-        <!-- TARJETA 5: VIERNES -->
-        <div class="col-12 col-md-6" data-aos="fade-up" data-aos-delay="500">
-            <div class="card h-100 border-0 rounded-4 shadow-sm p-4 border-bottom border-5 bg-white d-flex flex-column justify-content-between" style="border-color: #2e7d32 !important;">
-                <div>
-                    <div class="d-flex align-items-center gap-3 mb-3">
-                        <div class="p-3 text-white rounded-4 shadow-sm" style="background-color: #2e7d32;"><i class="bi bi-flower1 fs-3"></i></div>
-                        <div>
-                            <h3 class="fw-bold fs-4 m-0" style="color: #2e7d32;" data-es="Viernes" data-na="Makuil iluitl">Viernes</h3>
-                            <h4 class="text-muted small m-0" data-es="Día de la Belleza" data-na="Cualli Tonalmeh">Día de la Belleza</h4>
+            <!-- TARJETA 4: JUEVES -->
+            <div class="col-12 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                <div class="card h-100 border-0 rounded-4 shadow-sm p-4 border-bottom border-5 bg-white d-flex flex-column justify-content-between"
+                    style="border-color: #d4ac0d !important;">
+                    <div>
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <div class="p-3 text-dark rounded-4 shadow-sm" style="background-color: #d4ac0d;"><i
+                                    class="bi bi-lightning-charge fs-3"></i></div>
+                            <div>
+                                <h3 class="fw-bold fs-4 m-0" style="color: #b7950b;" data-es="Jueves"
+                                    data-na="Nahui iluitl">Jueves</h3>
+                                <h4 class="text-muted small m-0" data-es="Día del Trueno" data-na="Tlaloc Ixpampa">Día
+                                    del Trueno</h4>
+                            </div>
                         </div>
+                        <p class="text-dark small mb-3"><span
+                                data-es="Aprende sobre la relación del cuarto día con los elementos naturales."
+                                data-na="Xipaxialo ipan inin nahui tonal.">Aprende sobre la relación del cuarto día con
+                                los elementos naturales.</span></p>
+                        <div class="text-center my-3 bg-light rounded-4 p-2 border"><img
+                                src="../../../Recursos/img_tiempo/jueves.png" class="img-fluid"
+                                style="max-height: 110px; object-fit: contain;"></div>
                     </div>
-                    <p class="text-dark small mb-3"><span data-es="Admira el cierre del ciclo de actividades bajo el concepto de lo precioso." data-na="Xikitati inin macuilli tonal ica cualli xochimeh.">Admira el cierre del ciclo de actividades bajo el concepto de lo precioso.</span></p>
-                    <div class="text-center my-3 bg-light rounded-4 p-2 border"><img src="../../../Recursos/img_tiempo/viernes.png" class="img-fluid" style="max-height: 110px; object-fit: contain;"></div>
+                    <button class="btn w-100 rounded-pill fw-bold mt-2 py-2 shadow-sm text-dark"
+                        style="background-color: #d4ac0d;" onclick="mostrarSeccion('jueves')">¡Ver detalles!</button>
                 </div>
-                <button class="btn w-100 rounded-pill fw-bold mt-2 py-2 shadow-sm text-white" style="background-color: #2e7d32;" onclick="mostrarSeccion('viernes')">¡Ver detalles!</button>
             </div>
-        </div>
 
-        <!-- TARJETA 6: SÁBADO -->
-        <div class="col-12 col-md-6" data-aos="fade-up" data-aos-delay="600">
-            <div class="card h-100 border-0 rounded-4 shadow-sm p-4 border-bottom border-5 bg-white d-flex flex-column justify-content-between" style="border-color: #6a1b9a !important;">
-                <div>
-                    <div class="d-flex align-items-center gap-3 mb-3">
-                        <div class="p-3 text-white rounded-4 shadow-sm" style="background-color: #6a1b9a;"><i class="bi bi-house-heart fs-3"></i></div>
-                        <div>
-                            <h3 class="fw-bold fs-4 m-0" style="color: #6a1b9a;" data-es="Sábado" data-na="Chikuasen iluitl">Sábado</h3>
-                            <h4 class="text-muted small m-0" data-es="Día del Descanso" data-na="Calitic Tonal">Día del Descanso</h4>
+            <!-- TARJETA 5: VIERNES -->
+            <div class="col-12 col-md-6" data-aos="fade-up" data-aos-delay="500">
+                <div class="card h-100 border-0 rounded-4 shadow-sm p-4 border-bottom border-5 bg-white d-flex flex-column justify-content-between"
+                    style="border-color: #2e7d32 !important;">
+                    <div>
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <div class="p-3 text-white rounded-4 shadow-sm" style="background-color: #2e7d32;"><i
+                                    class="bi bi-flower1 fs-3"></i></div>
+                            <div>
+                                <h3 class="fw-bold fs-4 m-0" style="color: #2e7d32;" data-es="Viernes"
+                                    data-na="Makuil iluitl">Viernes</h3>
+                                <h4 class="text-muted small m-0" data-es="Día de la Belleza" data-na="Cualli Tonalmeh">
+                                    Día de la Belleza</h4>
+                            </div>
                         </div>
+                        <p class="text-dark small mb-3"><span
+                                data-es="Admira el cierre del ciclo de actividades bajo el concepto de lo precioso."
+                                data-na="Xikitati inin macuilli tonal ica cualli xochimeh.">Admira el cierre del ciclo
+                                de actividades bajo el concepto de lo precioso.</span></p>
+                        <div class="text-center my-3 bg-light rounded-4 p-2 border"><img
+                                src="../../../Recursos/img_tiempo/viernes.png" class="img-fluid"
+                                style="max-height: 110px; object-fit: contain;"></div>
                     </div>
-                    <p class="text-dark small mb-3"><span data-es="Momento de reunión familiar y resguardo tras los labor de campo." data-na="Cahuitl ic tichantin pampa titonalcehuiah.">Momento de reunión familiar y resguardo tras los labor de campo.</span></p>
-                    <div class="text-center my-3 bg-light rounded-4 p-2 border"><img src="../../../Recursos/img_tiempo/sabado.png" class="img-fluid" style="max-height: 110px; object-fit: contain;"></div>
+                    <button class="btn w-100 rounded-pill fw-bold mt-2 py-2 shadow-sm text-white"
+                        style="background-color: #2e7d32;" onclick="mostrarSeccion('viernes')">¡Ver detalles!</button>
                 </div>
-                <button class="btn w-100 rounded-pill fw-bold mt-2 py-2 shadow-sm text-white" style="background-color: #6a1b9a;" onclick="mostrarSeccion('sabado')">¡Ver detalles!</button>
             </div>
-        </div>
 
-        <!-- TARJETA 7: DOMINGO -->
-        <div class="col-12 col-md-6" data-aos="fade-up" data-aos-delay="700">
-            <div class="card h-100 border-0 rounded-4 shadow-sm p-4 border-bottom border-5 bg-white d-flex flex-column justify-content-between" style="border-color: #c0392b !important;">
-                <div>
-                    <div class="d-flex align-items-center gap-3 mb-3">
-                        <div class="p-3 text-white rounded-4 shadow-sm" style="background-color: #c0392b;"><i class="bi bi-sun fs-3"></i></div>
-                        <div>
-                            <h3 class="fw-bold fs-4 m-0" style="color: #c0392b;" data-es="Domingo" data-na="Chikome iluitl">Domingo</h3>
-                            <h4 class="text-muted small m-0" data-es="Día del Sol" data-na="Tonatiuh Ixpampa">Día del Sol</h4>
+            <!-- TARJETA 6: SÁBADO -->
+            <div class="col-12 col-md-6" data-aos="fade-up" data-aos-delay="600">
+                <div class="card h-100 border-0 rounded-4 shadow-sm p-4 border-bottom border-5 bg-white d-flex flex-column justify-content-between"
+                    style="border-color: #6a1b9a !important;">
+                    <div>
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <div class="p-3 text-white rounded-4 shadow-sm" style="background-color: #6a1b9a;"><i
+                                    class="bi bi-house-heart fs-3"></i></div>
+                            <div>
+                                <h3 class="fw-bold fs-4 m-0" style="color: #6a1b9a;" data-es="Sábado"
+                                    data-na="Chikuasen iluitl">Sábado</h3>
+                                <h4 class="text-muted small m-0" data-es="Día del Descanso" data-na="Calitic Tonal">Día
+                                    del Descanso</h4>
+                            </div>
                         </div>
+                        <p class="text-dark small mb-3"><span
+                                data-es="Momento de reunión familiar y resguardo tras los labor de campo."
+                                data-na="Cahuitl ic tichantin pampa titonalcehuiah.">Momento de reunión familiar y
+                                resguardo tras los labor de campo.</span></p>
+                        <div class="text-center my-3 bg-light rounded-4 p-2 border"><img
+                                src="../../../Recursos/img_tiempo/sabado.png" class="img-fluid"
+                                style="max-height: 110px; object-fit: contain;"></div>
                     </div>
-                    <p class="text-dark small mb-3"><span data-es="El día sagrado del Sol dedicado al trueque y la plaza comunitaria." data-na="Inin uei tonal ic tonatiuh. Cualli ic titiameh.">El día sagrado del Sol dedicado al trueque y la plaza comunitaria.</span></p>
-                    <div class="text-center my-3 bg-light rounded-4 p-2 border"><img src="../../../Recursos/img_tiempo/domingo.png" class="img-fluid" style="max-height: 110px; object-fit: contain;"></div>
+                    <button class="btn w-100 rounded-pill fw-bold mt-2 py-2 shadow-sm text-white"
+                        style="background-color: #6a1b9a;" onclick="mostrarSeccion('sabado')">¡Ver detalles!</button>
                 </div>
-                <button class="btn w-100 rounded-pill fw-bold mt-2 py-2 shadow-sm text-white" style="background-color: #c0392b;" onclick="mostrarSeccion('domingo')">¡Ver detalles!</button>
             </div>
-        </div>
 
-    </div>
-</main>
+            <!-- TARJETA 7: DOMINGO -->
+            <div class="col-12 col-md-6" data-aos="fade-up" data-aos-delay="700">
+                <div class="card h-100 border-0 rounded-4 shadow-sm p-4 border-bottom border-5 bg-white d-flex flex-column justify-content-between"
+                    style="border-color: #c0392b !important;">
+                    <div>
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <div class="p-3 text-white rounded-4 shadow-sm" style="background-color: #c0392b;"><i
+                                    class="bi bi-sun fs-3"></i></div>
+                            <div>
+                                <h3 class="fw-bold fs-4 m-0" style="color: #c0392b;" data-es="Domingo"
+                                    data-na="Chikome iluitl">Domingo</h3>
+                                <h4 class="text-muted small m-0" data-es="Día del Sol" data-na="Tonatiuh Ixpampa">Día
+                                    del Sol</h4>
+                            </div>
+                        </div>
+                        <p class="text-dark small mb-3"><span
+                                data-es="El día sagrado del Sol dedicado al trueque y la plaza comunitaria."
+                                data-na="Inin uei tonal ic tonatiuh. Cualli ic titiameh.">El día sagrado del Sol
+                                dedicado al trueque y la plaza comunitaria.</span></p>
+                        <div class="text-center my-3 bg-light rounded-4 p-2 border"><img
+                                src="../../../Recursos/img_tiempo/domingo.png" class="img-fluid"
+                                style="max-height: 110px; object-fit: contain;"></div>
+                    </div>
+                    <button class="btn w-100 rounded-pill fw-bold mt-2 py-2 shadow-sm text-white"
+                        style="background-color: #c0392b;" onclick="mostrarSeccion('domingo')">¡Ver detalles!</button>
+                </div>
+            </div>
+
+        </div>
+    </main>
     <!-- ==================== CONTENEDOR MODAL DINÁMICO CON AUDIO INTEGRADO ==================== -->
     <div id="contenedor-interactivo"
         class="d-none position-fixed top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center p-3"
@@ -658,7 +707,7 @@
                 <span id="m-tit-martes" class="d-none" data-es="Martes" data-na="Ome iluitl">Martes</span>
                 <span id="m-tit-miercoles" class="d-none" data-es="Miércoles" data-na="Yei iluitl">Miércoles</span>
                 <span id="m-tit-jueves" class="d-none" data-es="Jueves" data-na="Nahui iluitl">Jueves</span>
-                <span id="m-tit-viernes" class="d-none" data-es="Viernes" data-na= "Makuil iluitl" > Viernes</span>
+                <span id="m-tit-viernes" class="d-none" data-es="Viernes" data-na="Makuil iluitl"> Viernes</span>
                 <span id="m-tit-sabado" class="d-none" data-es="Sábado" data-na="Chikuasen iluitl">Sábado</span>
                 <span id="m-tit-domingo" class="d-none" data-es="Domingo" data-na="Chikome iluitl">Domingo</span>
             </h3>
@@ -806,8 +855,9 @@
                                 <p class="fs-6 opacity-90 mb-0" style="text-align: justify;">
                                     <span data-es="Aprende los momentos del día, saludos cotidianos y cómo situar tus ideas entre el
                                     pasado y el futuro."
-                            data-na="Xikmomachti in tonalmeh, in tlajpialmeh tlen mochipa, huan kenijki tikchijchiya motlalnamikilis ipan huejcapan huan ipan tlen huehcapan.">Aprende los momentos del día, saludos cotidianos y cómo situar tus ideas entre el
-                                    pasado y el futuro.</span>
+                                        data-na="Xikmomachti in tonalmeh, in tlajpialmeh tlen mochipa, huan kenijki tikchijchiya motlalnamikilis ipan huejcapan huan ipan tlen huehcapan.">Aprende
+                                        los momentos del día, saludos cotidianos y cómo situar tus ideas entre el
+                                        pasado y el futuro.</span>
                                 </p>
                             </div>
                         </div>
@@ -820,13 +870,13 @@
                         style="border-color: #ffb300 !important;">
                         <div>
                             <h3 class="fw-bold fs-4 m-0" style="color: #ffb300;">
-                                <span data-es="Amanecer"
-                            data-na="Yahuatzinco">Amacener</span>
+                                <span data-es="Amanecer" data-na="Yahuatzinco">Amacener</span>
                             </h3>
                             <h4 class="text-muted small mb-3"><span data-es="Amanecer"
-                            data-na="Yahuatzinco">Amacener</span></h4>
+                                    data-na="Yahuatzinco">Amacener</span></h4>
                             <div class="text-center my-3 bg-light rounded-4 p-2 border">
-                                <img class="img-tarjeta-origen img-fluid" src="../../../Recursos/img_tiempo/amanecer.jpeg"
+                                <img class="img-tarjeta-origen img-fluid"
+                                    src="../../../Recursos/img_tiempo/amanecer.jpeg"
                                     style="max-height: 110px; object-fit: contain;">
                             </div>
                         </div>
@@ -845,7 +895,8 @@
                             <h3 class="fw-bold fs-5 m-0" style="color: #ff8f00;">Kualli tonali</h3>
                             <h4 class="text-muted small mb-3">Buenos días</h4>
                             <div class="text-center my-3 bg-light rounded-4 p-2 border">
-                                <img class="img-tarjeta-origen img-fluid" src="../../../Recursos/img_tiempo/buenos dias.jpeg"
+                                <img class="img-tarjeta-origen img-fluid"
+                                    src="../../../Recursos/img_tiempo/buenos dias.jpeg"
                                     style="max-height: 110px; object-fit: contain;">
                             </div>
                         </div>
@@ -864,7 +915,8 @@
                             <h3 class="fw-bold fs-4 m-0" style="color: #f57c00;">Tlahcotona</h3>
                             <h4 class="text-muted small mb-3">Mediodía / Tlahcotona</h4>
                             <div class="text-center my-3 bg-light rounded-4 p-2 border">
-                                <img class="img-tarjeta-origen img-fluid" src="../../../Recursos/img_tiempo/mediodia.jpeg"
+                                <img class="img-tarjeta-origen img-fluid"
+                                    src="../../../Recursos/img_tiempo/mediodia.jpeg"
                                     style="max-height: 110px; object-fit: contain;">
                             </div>
                         </div>
@@ -883,7 +935,8 @@
                             <h3 class="fw-bold fs-4 m-0" style="color: #e65100;">Teotlac</h3>
                             <h4 class="text-muted small mb-3">Atardecer / Tiotlac</h4>
                             <div class="text-center my-3 bg-light rounded-4 p-2 border">
-                                <img class="img-tarjeta-origen img-fluid" src="../../../Recursos/img_tiempo/atardecer.jpeg"
+                                <img class="img-tarjeta-origen img-fluid"
+                                    src="../../../Recursos/img_tiempo/atardecer.jpeg"
                                     style="max-height: 110px; object-fit: contain;">
                             </div>
                         </div>
@@ -902,7 +955,8 @@
                             <h3 class="fw-bold fs-4 m-0" style="color: #311b92;">Tlayohua</h3>
                             <h4 class="text-muted small mb-3">Anochecer / Yohualli (Noche)</h4>
                             <div class="text-center my-3 bg-light rounded-4 p-2 border">
-                                <img class="img-tarjeta-origen img-fluid" src="../../../Recursos/img_tiempo/medianoche.jpeg"
+                                <img class="img-tarjeta-origen img-fluid"
+                                    src="../../../Recursos/img_tiempo/medianoche.jpeg"
                                     style="max-height: 110px; object-fit: contain;">
                             </div>
                         </div>
@@ -921,7 +975,8 @@
                             <h3 class="fw-bold fs-4 m-0" style="color: #1a237e;">Tlahcoyohualpan</h3>
                             <h4 class="text-muted small mb-3">Medianoche</h4>
                             <div class="text-center my-3 bg-light rounded-4 p-2 border">
-                                <img class="img-tarjeta-origen img-fluid" src="../../../Recursos/img_tiempo/medianoche.jpeg"
+                                <img class="img-tarjeta-origen img-fluid"
+                                    src="../../../Recursos/img_tiempo/medianoche.jpeg"
                                     style="max-height: 110px; object-fit: contain;">
                             </div>
                         </div>
@@ -1016,7 +1071,8 @@
                             <h3 class="fw-bold fs-4 m-0" style="color: #00838f;">Huiptla mostla</h3>
                             <h4 class="text-muted small mb-3">Pasado mañana</h4>
                             <div class="text-center my-3 bg-light rounded-4 p-2 border">
-                                <img class="img-tarjeta-origen img-fluid" src="../../../Recursos/img_tiempo/pasadomañana.jpeg"
+                                <img class="img-tarjeta-origen img-fluid"
+                                    src="../../../Recursos/img_tiempo/pasadomañana.jpeg"
                                     style="max-height: 110px; object-fit: contain;">
                             </div>
                         </div>
@@ -1035,7 +1091,8 @@
                             <h3 class="fw-bold fs-4 m-0" style="color: #ad1457;">Yalhua metztli</h3>
                             <h4 class="text-muted small mb-3">El mes pasado</h4>
                             <div class="text-center my-3 bg-light rounded-4 p-2 border">
-                                <img class="img-tarjeta-origen img-fluid" src="../../../Recursos/img_tiempo/mespasado.jpeg"
+                                <img class="img-tarjeta-origen img-fluid"
+                                    src="../../../Recursos/img_tiempo/mespasado.jpeg"
                                     style="max-height: 110px; object-fit: contain;">
                             </div>
                         </div>
@@ -1054,7 +1111,8 @@
                             <h3 class="fw-bold fs-4 m-0" style="color: #00695c;">Mostla metztli</h3>
                             <h4 class="text-muted small mb-3">El próximo mes</h4>
                             <div class="text-center my-3 bg-light rounded-4 p-2 border">
-                                <img class="img-tarjeta-origen img-fluid" src="../../../Recursos/img_tiempo/proximo mes.jpeg"
+                                <img class="img-tarjeta-origen img-fluid"
+                                    src="../../../Recursos/img_tiempo/proximo mes.jpeg"
                                     style="max-height: 110px; object-fit: contain;">
                             </div>
                         </div>
@@ -1073,7 +1131,8 @@
                             <h3 class="fw-bold fs-4 m-0" style="color: #283593;">Yalhua xihuitl</h3>
                             <h4 class="text-muted small mb-3">El año pasado</h4>
                             <div class="text-center my-3 bg-light rounded-4 p-2 border">
-                                <img class="img-tarjeta-origen img-fluid" src="../../../Recursos/img_tiempo/anopasado.jpeg"
+                                <img class="img-tarjeta-origen img-fluid"
+                                    src="../../../Recursos/img_tiempo/anopasado.jpeg"
                                     style="max-height: 110px; object-fit: contain;">
                             </div>
                         </div>
@@ -1092,7 +1151,8 @@
                             <h3 class="fw-bold fs-4 m-0" style="color: #6a1b9a;">Mostla xihuitl</h3>
                             <h4 class="text-muted small mb-3">El próximo año</h4>
                             <div class="text-center my-3 bg-light rounded-4 p-2 border">
-                                <img class="img-tarjeta-origen img-fluid" src="../../../Recursos/img_tiempo/proximoano.jpeg"
+                                <img class="img-tarjeta-origen img-fluid"
+                                    src="../../../Recursos/img_tiempo/proximoano.jpeg"
                                     style="max-height: 110px; object-fit: contain;">
                             </div>
                         </div>
@@ -1110,32 +1170,34 @@
         <!-- =======================================================================
      CONTENEDOR DE ACCIONES INFERIORES: EXTREMO IZQUIERDO Y EXTREMO DERECHO
      ======================================================================= -->
-<section class="container">
-        <div
-            class="d-flex justify-content-start mt-5"
-            data-aos="fade-right">
+        <section class="container">
+            <!-- Alineación flex: Regresar a la izquierda; Subir y Completar a la derecha con espacio entre ellos -->
+            <div class="d-flex justify-content-between align-items-center mt-5" data-aos="fade-up">
 
-            <button
+                <div>
+                    <button onclick="window.location.href='../../pages_int/mapa_tiempo.html'" class="btn-regresar-int">
+                        <i class="bi bi-arrow-left-circle-fill me-2"></i>
+                        <span data-es="Regresar" data-na="Mokuepa">Regresar</span>
+                    </button>
+                </div>
 
-                onclick="window.location.href='../../../pages_int/mapa_tiempo.html'"
+                <!-- LADO DERECHO: Botones Subir y Completar (con gap para separarlos perfectamente) -->
+                <div class="d-flex gap-3 align-items-center">
+                    <!-- Botón Subir -->
+                    <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" class="btn-regresar-int">
+                        <i class="bi bi-arrow-up-circle-fill me-2"></i>
+                        <span data-es="Subir" data-na="Tlejco">Subir</span>
+                    </button>
 
-                class="btn-regresar-int">
+                    <!-- Botón Completar Lección -->
+                    <button onclick="completarMision(1, 1)" class="btn-regresar-int">
+                        <span data-es="Completar Lección" data-na="Tlamiti Machtiolli">Completar Lección</span>
+                        <i class="bi bi-check-circle-fill ms-2"></i>
+                    </button>
+                </div>
 
-                <i class="bi bi-arrow-left-circle-fill me-2"></i>
-
-                <span
-                    data-es="Regresar"
-                    data-na="Mokuepa">
-
-                    Regresar
-
-                </span>
-
-            </button>
-
-        </div>
-
-    </section>
+            </div>
+        </section>
 
         <!-- CONTENEDOR MODAL DE ESTE MÓDULO -->
         <div class="modal-interactivo d-none position-fixed top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center p-3"
@@ -1270,7 +1332,7 @@
         </div>
     </div>
 
-</div>
+    </div>
 
     <!-- =========================================
                 FOOTER
@@ -1285,7 +1347,8 @@
 
                 <div class="col-12 col-md-4" data-aos="fade-right">
 
-                    <img src="../../../Recursos/logos/logo_completo_svg.svg" alt="Aul@Net" class="img-fluid footer-logo">
+                    <img src="../../../Recursos/logos/logo_completo_svg.svg" alt="Aul@Net"
+                        class="img-fluid footer-logo">
 
 
                     <img src="../../../Recursos/logos/utp_svg.svg" alt="Aul@Net" class="img-fluid footer-logo-utp">
@@ -1392,41 +1455,30 @@
     </script>
     <!-- ==================== LÓGICA JAVASCRIPT CORREGIDA ==================== -->
     <script>
-        // Variable global compartida para que ningún audio se encime con otro
         let objetoAudioActual = null;
         const diasSemana = ['lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado', 'domingo'];
 
-        /**
-         * =======================================================================
-         * FUNCIONES ORIGINALES (Para la sección de Días de la Semana)
-         * =======================================================================
-         */
         function mostrarSeccion(dia) {
-            // Detener audios previos en ejecución antes de cambiar de ventana
             if (objetoAudioActual) {
                 objetoAudioActual.pause();
                 objetoAudioActual.currentTime = 0;
             }
 
-            // 1. Limpiar el estado interno del modal ocultando todos los bloques
             diasSemana.forEach(d => {
                 document.getElementById(`m-tit-${d}`)?.classList.add('d-none');
                 document.getElementById(`m-sub-${d}`)?.classList.add('d-none');
                 document.getElementById(`m-txt-${d}`)?.classList.add('d-none');
             });
 
-            // 2. Activar los contenedores del día correspondiente
             document.getElementById(`m-tit-${dia}`)?.classList.remove('d-none');
             document.getElementById(`m-sub-${dia}`)?.classList.remove('d-none');
             document.getElementById(`m-txt-${dia}`)?.classList.remove('d-none');
 
-            // 3. Modificar la imagen de cabecera en el modal basado en el día
             const imgMascota = document.getElementById('modal-mascota-img');
             if (imgMascota) {
                 imgMascota.src = `/Recursos/img_tiempo/${dia}.png`;
             }
 
-            // 4. Quitar d-none para abrir el modal interactivo
             document.getElementById('contenedor-interactivo')?.classList.remove('d-none');
         }
 
@@ -1470,13 +1522,6 @@
             document.getElementById('contenedor-interactivo')?.classList.add('d-none');
         }
 
-
-        /**
-         * =======================================================================
-         * NUEVAS FUNCIONES DINÁMICAS (Para la sección de Expresiones de Tiempo)
-         * =======================================================================
-         */
-
         function apagarAudioGlobal() {
             if (objetoAudioActual) {
                 objetoAudioActual.pause();
@@ -1494,20 +1539,16 @@
         function abrirModalDinamico(boton, idElemento) {
             apagarAudioGlobal();
 
-            // Buscar el contenedor del módulo actual
             const moduloPadre = boton.closest('.modulo-interactivo');
             if (!moduloPadre) return;
 
             const modal = moduloPadre.querySelector('.modal-interactivo');
             if (!modal) return;
 
-            // Ocultar textos dinámicos anteriores de este bloque
             moduloPadre.querySelectorAll('.m-dinamico').forEach(el => el.classList.add('d-none'));
 
-            // Mostrar el texto del elemento seleccionado
             moduloPadre.querySelectorAll(`[data-elemento="${idElemento}"]`).forEach(el => el.classList.remove('d-none'));
 
-            // Clonar la imagen de la tarjeta correspondiente al modal automáticamente
             const tarjetaCercana = boton.closest('.card');
             if (tarjetaCercana) {
                 const imgTarjeta = tarjetaCercana.querySelector('.img-tarjeta-origen');
@@ -1516,8 +1557,6 @@
                     imgModal.src = imgTarjeta.src;
                 }
             }
-
-            // Mostrar el modal
             modal.classList.remove('d-none');
         }
 
@@ -1525,7 +1564,6 @@
             const moduloPadre = boton.closest('.modulo-interactivo');
             if (!moduloPadre) return;
 
-            // Buscar el texto/audio que está visible actualmente en el modal
             const txtActivo = Array.from(moduloPadre.querySelectorAll('.m-txt-audio'))
                 .find(el => !el.classList.contains('d-none'));
 
@@ -1550,30 +1588,29 @@
             }
         }
     </script>
-      <script>
-            // Detectar el desplazamiento (scroll) de la página
-            window.addEventListener('scroll', function () {
-                const boton = document.getElementById("btn-subir");
+    <script>
+        window.addEventListener('scroll', function () {
+            const boton = document.getElementById("btn-subir");
 
-                // Si el usuario baja más de 300 píxeles, el botón aparece; si vuelve arriba, se oculta
-                if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-                    boton.classList.remove("d-none");
-                } else {
-                    boton.classList.add("d-none");
-                }
-            });
-
-            // Función para deslizar suavemente hacia el inicio
-            function subirInicio() {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth' // Hace que la subida sea fluida y estética
-                });
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                boton.classList.remove("d-none");
+            } else {
+                boton.classList.add("d-none");
             }
-        </script>
+        });
+
+        function subirInicio() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    </script>
 
     <!-- JS -->
     <script src="../../../js/app.js"></script>
+    <script src="../../../js/racha.js"></script>
+
 
 </body>
 
