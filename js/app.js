@@ -1013,7 +1013,7 @@ function showPage(page) {
 // =====================================
 // OBTENER CATEGORIAS
 // =====================================
-
+/*
 async function obtenerCategorias() {
     try {
         const response = await fetch("../php/obtener_categorias.php");
@@ -1027,7 +1027,7 @@ async function obtenerCategorias() {
     } catch (error) {
         console.error("Error obteniendo categorías:", error);
     }
-}
+}*/
 
 
 // =====================================

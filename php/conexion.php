@@ -5,7 +5,7 @@ header("Content-Type: application/json; charset=UTF-8");
 $host = "localhost";
 $db = "nahui";
 $user = "root";
-$pass = "260622BrunX";
+$pass = "";
 
 try {
     $pdo = new PDO(
