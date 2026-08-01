@@ -208,7 +208,16 @@
                             <!-- Avatar -->
                             <div class="perfil-avatar">
 
-                                <i class="bi bi-person-fill"></i>
+                                <i
+                                    id="iconoUsuario"
+                                    class="bi bi-person-fill">
+                                </i>
+
+                                <img
+                                    id="fotoUsuario"
+                                    class="foto-perfil"
+                                    src=""
+                                    style="display:none;">
 
                             </div>
 
@@ -216,6 +225,7 @@
                             <div class="perfil-info d-none d-md-block">
 
                                 <span
+                                    id="nombreUsuario"
                                     class="perfil-nombre"
                                     data-es="Invitado"
                                     data-na="Tlapowalistli">
@@ -726,6 +736,9 @@
             configUrl: 'https://storage.googleapis.com/landbot.online/v3/H-3480209-4YCUH03KYKADJIE9/index.json',
         });
     </script>
+
+    <!-- foto de perfil del header -->
+    <script src="/Castoresmlaulanet/js/usuarioHeader.js"></script>
 
 </body>
 

@@ -207,10 +207,19 @@
                             data-bs-toggle="dropdown"
                             aria-expanded="false">
 
-                            <!-- Avatar -->
+                           <!-- Avatar -->
                             <div class="perfil-avatar">
 
-                                <i class="bi bi-person-fill"></i>
+                                <i
+                                    id="iconoUsuario"
+                                    class="bi bi-person-fill">
+                                </i>
+
+                                <img
+                                    id="fotoUsuario"
+                                    class="foto-perfil"
+                                    src=""
+                                    style="display:none;">
 
                             </div>
 
@@ -218,6 +227,7 @@
                             <div class="perfil-info d-none d-md-block">
 
                                 <span
+                                    id="nombreUsuario"
                                     class="perfil-nombre"
                                     data-es="Invitado"
                                     data-na="Tlapowalistli">
@@ -1128,6 +1138,9 @@
     <!-- JS -->
     <script src="../js/app.js"></script>
     <script src="../js/racha.js"></script>
+
+    <!-- foto de perfil del header -->
+    <script src="/Castoresmlaulanet/js/usuarioHeader.js"></script>
 
 </body>
 

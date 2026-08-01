@@ -180,22 +180,35 @@
             data-bs-toggle="dropdown" aria-expanded="false">
 
             <!-- Avatar -->
-            <div class="perfil-avatar">
+                            <div class="perfil-avatar">
 
-              <i class="bi bi-person-fill"></i>
+                                <i
+                                    id="iconoUsuario"
+                                    class="bi bi-person-fill">
+                                </i>
 
-            </div>
+                                <img
+                                    id="fotoUsuario"
+                                    class="foto-perfil"
+                                    src=""
+                                    style="display:none;">
 
-            <!-- Nombre -->
-            <div class="perfil-info d-none d-md-block">
+                            </div>
 
-              <span class="perfil-nombre" data-es="Invitado" data-na="Tlapowalistli">
+                            <!-- Nombre -->
+                            <div class="perfil-info d-none d-md-block">
 
-                Invitado
+                                <span
+                                    id="nombreUsuario"
+                                    class="perfil-nombre"
+                                    data-es="Invitado"
+                                    data-na="Tlapowalistli">
 
-              </span>
+                                    Invitado
 
-            </div>
+                                </span>
+
+                            </div>
 
             <!-- Triángulo -->
             <i class="bi bi-caret-down-fill ms-2 perfil-flecha"></i>
@@ -208,7 +221,7 @@
             <li>
 
               <!-- Si usas páginas -->
-              <a class="dropdown-item" href="perfil.html">
+              <a class="dropdown-item" href="../../perfil.html">
 
                 <i class="bi bi-person me-2"></i>
 
@@ -910,6 +923,9 @@
       renderDecenaActual();
     });
   </script>
+
+  <!-- foto de perfil del header -->
+    <script src="/Castoresmlaulanet/js/usuarioHeader.js"></script>
 
 </body>
 

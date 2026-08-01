@@ -180,22 +180,35 @@
                         data-bs-toggle="dropdown" aria-expanded="false">
 
                         <!-- Avatar -->
-                        <div class="perfil-avatar">
+                            <div class="perfil-avatar">
 
-                            <i class="bi bi-person-fill"></i>
+                                <i
+                                    id="iconoUsuario"
+                                    class="bi bi-person-fill">
+                                </i>
 
-                        </div>
+                                <img
+                                    id="fotoUsuario"
+                                    class="foto-perfil"
+                                    src=""
+                                    style="display:none;">
 
-                        <!-- Nombre -->
-                        <div class="perfil-info d-none d-md-block">
+                            </div>
 
-                            <span class="perfil-nombre" data-es="Invitado" data-na="Tlapowalistli">
+                            <!-- Nombre -->
+                            <div class="perfil-info d-none d-md-block">
 
-                                Invitado
+                                <span
+                                    id="nombreUsuario"
+                                    class="perfil-nombre"
+                                    data-es="Invitado"
+                                    data-na="Tlapowalistli">
 
-                            </span>
+                                    Invitado
 
-                        </div>
+                                </span>
+
+                            </div>
 
                         <!-- Triángulo -->
                         <i class="bi bi-caret-down-fill ms-2 perfil-flecha"></i>
@@ -370,25 +383,31 @@
                 <!-- PERFIL -->
                 <div class="progreso-card text-center mb-4" data-aos="fade-right">
 
-                    <div class="nivel-banner">
-                        <!-- Imagen del nivel -->
-                    </div>
+                    <img
+                        id="fotoPerfil"
+                        src=""
+                        alt="Foto de perfil"
+                        class="img-fluid rounded-circle">
 
-                    <img src="../Recursos/avatar.png" class="avatar-progreso">
+                    <h3
+                        id="nombrePerfil"
+                        class="fw-bold mb-2">
 
-                    <h3>Castor Experto</h3>
+                        Invitado
 
-                    <p>XP Total: 5,420</p>
+                    </h3>
 
-                    <div class="progress">
+                    <p class="mb-1">
 
-                        <div class="progress-bar" style="width:65%">
+                        XP Total:
 
-                        </div>
+                        <span id="xpUsuario">
 
-                    </div>
+                        0
 
-                    <small>65% al siguiente nivel</small>
+                    </span>
+
+                    </p>
 
                 </div>
 
@@ -952,6 +971,11 @@
     <script src="../js/racha.js"></script>
     <!-- ENLACE AL ARCHIVO JAVASCRIPT CORREGIDO PARA TRAER EL PUNTAJE -->
     <script src="../js/lecciones.js"></script>
+
+    <!-- foto de perfil del header -->
+    <script src="/Castoresmlaulanet/js/usuarioHeader.js"></script>
+
+    <script src="/Castoresmlaulanet/js/perfil_progreso.js"></script>
 
 </body>
 
