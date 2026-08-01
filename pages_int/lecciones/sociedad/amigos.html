@@ -185,14 +185,27 @@
                             <!-- Avatar -->
                             <div class="perfil-avatar">
 
-                                <i class="bi bi-person-fill"></i>
+                                <i
+                                    id="iconoUsuario"
+                                    class="bi bi-person-fill">
+                                </i>
+
+                                <img
+                                    id="fotoUsuario"
+                                    class="foto-perfil"
+                                    src=""
+                                    style="display:none;">
 
                             </div>
 
                             <!-- Nombre -->
                             <div class="perfil-info d-none d-md-block">
 
-                                <span class="perfil-nombre" data-es="Invitado" data-na="Tlapowalistli">
+                                <span
+                                    id="nombreUsuario"
+                                    class="perfil-nombre"
+                                    data-es="Invitado"
+                                    data-na="Tlapowalistli">
 
                                     Invitado
 
@@ -211,7 +224,7 @@
                             <li>
 
                                 <!-- Si usas páginas -->
-                                <a class="dropdown-item" href="perfil.html">
+                                <a class="dropdown-item" href="../../perfil.html">
 
                                     <i class="bi bi-person me-2"></i>
 
@@ -903,6 +916,9 @@
     <!-- JS -->
     <script src="../../../js/app.js"></script>
     <script src="../../../js/racha.js"></script>
+
+    <!-- foto de perfil del header -->
+    <script src="/Castoresmlaulanet/js/usuarioHeader.js"></script>
 
 
 </body>
