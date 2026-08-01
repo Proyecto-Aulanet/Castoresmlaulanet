@@ -784,50 +784,106 @@
 
             <div class="tarjeta-cuerpo">
 
-                <img src="../Recursos/nahui_caras/nahui_feliz.png" class="avatar-share">
+    <!-- FOTO DEL USUARIO -->
+    <img
+        id="shareFoto"
+        src="../Recursos/nahui_caras/nahui_feliz.png"
+        class="avatar-share">
 
-                <h2>Julio César</h2>
+    <!-- NOMBRE -->
+    <h2 id="shareNombre">
 
-                <h5>
-                    Castor Experto
-                    <br>
-                    <small>Tlamachtijketl Castor</small>
-                </h5>
+        Invitado
 
-                <p class="mensaje-share">
+    </h2>
 
-                    Estoy aprendiendo náhuatl con
-                    Castores Multilingües AUL@NET 🌱
+    <!-- NIVEL -->
+    <h5>
 
-                    <br><br>
+        <span id="shareNivel">
 
-                    Nechmachtia in náhuatl ipan
-                    Castores Multilingües AUL@NET 🌱
+            Castor Principiante
 
-                    <br><br>
+        </span>
 
-                    #Náhuatl
-                    #AULNET
-                    #CastoresMultilingües
+        <br>
 
-                </p>
+        <small>
 
-                <div class="estadistica">
-                    <i class="bi bi-trophy-fill"></i>
-                    XP: 5420
-                </div>
+            Tlamachtijketl Castor
 
-                <div class="estadistica">
-                    <i class="bi bi-award-fill"></i>
-                    Medallas / Tetlanextilli: 6/10
-                </div>
+        </small>
 
-                <div class="estadistica">
-                    <i class="bi bi-clipboard-check-fill"></i>
-                    Exámenes / Tlatemolistli: 8/10
-                </div>
+    </h5>
 
-            </div>
+    <p class="mensaje-share">
+
+        Estoy aprendiendo náhuatl con
+        Castores Multilingües AUL@NET 🌱
+
+        <br><br>
+
+        Nechmachtia in náhuatl ipan
+        Castores Multilingües AUL@NET 🌱
+
+        <br><br>
+
+        #Náhuatl
+        #UTP
+        #AUL@NET
+        #CastoresMultilingües
+
+    </p>
+
+    <!-- XP -->
+
+    <div class="estadistica">
+
+        <i class="bi bi-trophy-fill"></i>
+
+        XP:
+
+        <span id="shareXP">
+
+            0
+
+        </span>
+
+    </div>
+
+    <!-- MEDALLAS -->
+
+    <div class="estadistica">
+
+        <i class="bi bi-award-fill"></i>
+
+        Medallas / Tetlanextilli:
+
+        <span id="shareMedallas">
+
+            0/0
+
+        </span>
+
+    </div>
+
+    <!-- EXÁMENES -->
+
+    <div class="estadistica">
+
+        <i class="bi bi-clipboard-check-fill"></i>
+
+        Exámenes / Tlatemolistli:
+
+        <span id="shareExamenes">
+
+            0/0
+
+        </span>
+
+    </div>
+
+</div>
 
             <div class="tarjeta-footer">
                 Castores Multilingües AUL@NET
@@ -968,6 +1024,7 @@
     <!-- JS -->
     <script src="../js/app.js"></script>
     <script src="../js/progreso.js"></script>
+    <script src="../js/compartir_progreso.js"></script>
     <script src="../js/racha.js"></script>
     <!-- ENLACE AL ARCHIVO JAVASCRIPT CORREGIDO PARA TRAER EL PUNTAJE -->
     <script src="../js/lecciones.js"></script>
