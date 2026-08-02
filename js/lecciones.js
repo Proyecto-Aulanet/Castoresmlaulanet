@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+//document.addEventListener('DOMContentLoaded', () => {
     // Ruta base a tu PHP
     const API_URL = '/Castoresmlaulanet/php/get_lecciones.php';
     let horaInicioExamen = null;
@@ -19,25 +19,23 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 2. OBTENER PREGUNTAS DE UNA LECCIÓN -> Método GET
-    async function obtenerPreguntasPorLeccion(idLeccion) {
-        try {
-            // Guardar hora de inicio del examen en formato SQL (YYYY-MM-DD HH:MM:SS)
-            horaInicioExamen = new Date().toISOString().slice(0, 19).replace('T', ' ');
+    async function obtenerPreguntasPorLeccion(idLeccion){
 
-            const res = await fetch(`${API_URL}?accion=preguntas&idleccion=${idLeccion}`);
-            const data = await res.json();
+    const res = await fetch(
+        `${API_URL}?accion=preguntas&idleccion=${idLeccion}`
+    );
 
-            if (data.status === 'success') {
-                console.log(`Preguntas de la lección ${idLeccion}:`, data.data);
-                // AQUÍ: Renderizar las preguntas y opciones en pantalla
-            } else {
-                alert("Error: " + (data.message || "No se pudieron cargar las preguntas"));
-            }
-        } catch (error) {
-            console.error("Error al obtener preguntas:", error);
-        }
+    const data = await res.json();
+
+    if(data.status==="success"){
+
+        return data.data;
+
     }
 
+    return [];
+
+}
     // 3. OBTENER PUNTAJE Y AVANCE SEMANAL -> Método GET
     async function obtenerPuntajeSemanal(idUsuario) {
         try {
@@ -101,4 +99,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
     obtenerLecciones();
     obtenerPuntajeSemanal(ID_USUARIO_LOGUEADO);
-});
+;

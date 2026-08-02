@@ -1,11 +1,12 @@
 <?php
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
-
 $host = "localhost";
 $db = "nahui";
 $user = "root";
 $pass = "";
+
+
 
 try {
     $pdo = new PDO(
@@ -13,7 +14,6 @@ try {
         $user,
         $pass
     );
-
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
@@ -21,6 +21,8 @@ try {
     echo json_encode([
         "status" => "error",
         "message" => "No se pudo conectar a la base de datos: " . $e->getMessage()
-    ]);
+]);
     exit;
-}
+
+} 
+

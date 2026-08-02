@@ -94,39 +94,89 @@ try {
         // ==============================================================
         // 3. Obtener preguntas + sus Opciones según ID de la Lección/Misión
         // ==============================================================
-        case 'preguntas':
-            $idleccion = intval($_GET['idleccion'] ?? $input['idleccion'] ?? $_POST['idleccion'] ?? 0);
+       case 'preguntas':
 
-            if ($idleccion <= 0) {
-                echo json_encode(["status" => "error", "message" => "Se requiere un ID de lección/misión válido"]);
-                exit;
-            }
+    $idleccion = intval(
+        $_GET['idleccion'] 
+        ?? $input['idleccion'] 
+        ?? $_POST['idleccion'] 
+        ?? 0
+    );
 
-            // Consultar las preguntas de la misión
-            $stmtPreguntas = $pdo->prepare("
-                SELECT idpregunta, idexamen, idmision, texto_esp, texto_nah, puntaje 
-                FROM Pregunta 
-                WHERE idmision = ?
-            ");
-            $stmtPreguntas->execute([$idleccion]);
-            $preguntas = $stmtPreguntas->fetchAll(PDO::FETCH_ASSOC);
 
-            // Adjuntar las opciones a cada pregunta mediante la tabla Opcion
-            foreach ($preguntas as &$pregunta) {
-                $stmtOpciones = $pdo->prepare("
-                    SELECT idopcion, texto_esp, texto_nah, correcto 
-                    FROM Opcion 
-                    WHERE idpregunta = ?
-                ");
-                $stmtOpciones->execute([$pregunta['idpregunta']]);
-                $pregunta['opciones'] = $stmtOpciones->fetchAll(PDO::FETCH_ASSOC);
-            }
+    if ($idleccion <= 0) {
 
-            echo json_encode([
-                "status" => "success",
-                "data"   => $preguntas
-            ]);
-            break;
+        echo json_encode([
+            "status"=>"error",
+            "message"=>"Se requiere un ID de misión válido"
+        ]);
+
+        exit;
+    }
+
+
+    // Obtener preguntas directamente de la misión
+    $stmtPreguntas = $pdo->prepare("
+
+        SELECT 
+            idpregunta,
+            idmision,
+            texto_esp,
+            texto_nah,
+            puntaje
+
+        FROM Pregunta
+
+        WHERE idmision = ?
+
+        ORDER BY idpregunta ASC
+
+    ");
+
+
+    $stmtPreguntas->execute([$idleccion]);
+
+    $preguntas = $stmtPreguntas->fetchAll(PDO::FETCH_ASSOC);
+
+
+
+    // Obtener opciones
+    foreach($preguntas as &$pregunta){
+
+        $stmtOpciones = $pdo->prepare("
+
+            SELECT 
+                idopcion,
+                texto_esp,
+                texto_nah,
+                correcto
+
+            FROM Opcion
+
+            WHERE idpregunta = ?
+
+        ");
+
+
+        $stmtOpciones->execute([
+            $pregunta['idpregunta']
+        ]);
+
+
+        $pregunta['opciones'] =
+            $stmtOpciones->fetchAll(PDO::FETCH_ASSOC);
+
+    }
+
+
+
+    echo json_encode([
+        "status"=>"success",
+        "data"=>$preguntas
+    ]);
+
+
+break;
 
         // ==============================================================
         // 4. Guardar resultado del examen, racha, medalla e insertar puntaje
