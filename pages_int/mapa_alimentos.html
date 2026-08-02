@@ -8,7 +8,7 @@
     <!-- RESPONSIVE -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Abecedario - Castores Multilingües Aul@Net</title>
+    <title>Alimentos - Castores Multilingües Aul@Net</title>
 
     <link rel="icon" href="../Recursos/nahui_caras/nahui_feliz_vector.svg" type="image/png">
 
@@ -482,7 +482,7 @@
 
                 <image href="../Recursos/mapas/alimentos/tlacoyos.svg" x="990" y="660" width="220" height="220" />
 
-                <image href="../Recursos/nahui_caras/nahui_feliz.png" x="180" y="30" width="110" height="110" />
+
 
 
                 <!-- NIVELES -->
@@ -712,7 +712,18 @@
                     </text>
 
                 </g>
+
+                                <image
+                id="nahui"
+                href="../Recursos/nahui_caras/nahui_feliz.png"
+                x="180"
+                y="30"
+                width="110"
+                height="110" 
+                style="pointer-events: none;"/>
             </svg>
+
+            
 
 
 
@@ -958,6 +969,97 @@
         });
     </script>
 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const nahui = document.getElementById("nahui");
+
+    // Si hay una posición guardada, mover a Nahui
+    const xGuardada = localStorage.getItem("nahuiX_abecedario");
+    const yGuardada = localStorage.getItem("nahuiY_abecedario");
+
+    if (xGuardada !== null && yGuardada !== null) {
+        nahui.setAttribute("x", xGuardada);
+        nahui.setAttribute("y", yGuardada);
+    }
+
+    document.querySelectorAll(".nivel-svg").forEach(nivel => {
+
+        nivel.addEventListener("click", () => {
+
+            let x, y;
+
+            switch (nivel.dataset.id) {
+
+                case "1":
+                    x = 180;
+                    y = 30;
+                    break;
+
+                case "2":
+                    x = 60;
+                    y = 190;
+                    break;
+
+                case "3":
+                    x = 465;
+                    y = 270;
+                    break;
+
+                case "4":
+                    x = 785;
+                    y = 270;
+                    break;
+
+                case "5":
+                    x = 865;
+                    y = 470;
+                    break;
+
+                case "6":
+                    x = 565;
+                    y = 510;
+                    break;
+
+                case "7":
+                    x = 305;
+                    y = 520;
+                    break;
+
+                case "8":
+                    x = 335;
+                    y = 750;
+                    break;
+
+                case "9":
+                    x = 515;
+                    y = 750;
+                    break;
+
+                case "10":
+                    x = 715;
+                    y = 750;
+                    break;
+
+                case "11":
+                    x = 895;
+                    y = 750;
+                    break;
+            }
+
+            nahui.setAttribute("x", x);
+            nahui.setAttribute("y", y);
+
+            // Guardar la posición
+            localStorage.setItem("nahuiX_abecedario", x);
+            localStorage.setItem("nahuiY_abecedario", y);
+
+        });
+
+    });
+
+});
+</script>
     <!-- JS -->
     <script src="../js/app.js"></script>
     <script src="../js/racha.js"></script>

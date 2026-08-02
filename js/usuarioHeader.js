@@ -7,10 +7,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (data.status !== "success") return;
 
-            const nombre = document.getElementById("nombreUsuario");
+            const nombreHeader = document.getElementById("nombreUsuario");
+            const nombreBienvenida = document.getElementById("nombreUsuarioBienvenida");
 
-            if (nombre) {
-                nombre.textContent = data.usuario.nombre;
+            if (nombreHeader) {
+                nombreHeader.textContent = data.usuario.nombre;
+            }
+
+            if (nombreBienvenida) {
+                nombreBienvenida.textContent = data.usuario.nombre;
             }
 
         })

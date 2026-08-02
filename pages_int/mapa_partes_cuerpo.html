@@ -8,7 +8,7 @@
     <!-- RESPONSIVE -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Abecedario - Castores Multilingües Aul@Net</title>
+    <title>Partes del Cuerpo - Castores Multilingües Aul@Net</title>
 
     <link rel="icon" href="../Recursos/nahui_caras/nahui_feliz_vector.svg" type="image/png">
 
@@ -614,12 +614,7 @@
             width="670"
             height="670"/>
 
-            <image
-            href="../Recursos/nahui_caras/nahui_feliz.png"
-            x="180"
-            y="30"
-            width="110"
-            height="110"/>
+
 
 
             <!-- NIVELES -->
@@ -772,6 +767,16 @@
                 </text>
 
             </g>
+                                <image
+                id="nahui"
+                href="../Recursos/nahui_caras/nahui_feliz.png"
+                x="180"
+                y="30"
+                width="110"
+                height="110" 
+                style="pointer-events: none;"/>
+            </svg>
+
         </svg>
 
 
@@ -1009,6 +1014,87 @@
 
         });
     </script>
+
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const nahui = document.getElementById("nahui");
+
+    // Recuperar posición guardada de Partes del cuerpo
+    const xGuardada = localStorage.getItem("nahuiX_partes_cuerpo");
+    const yGuardada = localStorage.getItem("nahuiY_partes_cuerpo");
+
+    if (xGuardada !== null && yGuardada !== null) {
+        nahui.setAttribute("x", xGuardada);
+        nahui.setAttribute("y", yGuardada);
+    }
+
+
+    document.querySelectorAll(".nivel-svg").forEach(nivel => {
+
+        nivel.addEventListener("click", () => {
+
+            let x, y;
+
+
+            switch (nivel.dataset.id) {
+
+
+                case "1":
+                    x = 180;
+                    y = 30;
+                    break;
+
+
+                case "2":
+                    x = 60;
+                    y = 190;
+                    break;
+
+
+                case "3":
+                    x = 465;
+                    y = 270;
+                    break;
+
+
+                case "4":
+                    x = 785;
+                    y = 270;
+                    break;
+
+
+                case "5":
+                    x = 845;
+                    y = 470;
+                    break;
+
+
+                case "11":
+                    x = 535;
+                    y = 500;
+                    break;
+
+            }
+
+
+            nahui.setAttribute("x", x);
+            nahui.setAttribute("y", y);
+
+
+            // Guardar solo este mapa
+            localStorage.setItem("nahuiX_partes_cuerpo", x);
+            localStorage.setItem("nahuiY_partes_cuerpo", y);
+
+
+        });
+
+
+    });
+
+
+});
+</script>
 
     <!-- JS -->
     <script src="../js/app.js"></script>
