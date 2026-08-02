@@ -42,6 +42,28 @@ h1, h2, h3, h4, h5, h6,
 }  
   
   
+/* 1. Grosor sutil de la barra */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Riel: Verde menta suave / Barrita: Verde oscuro profundo */
+::-webkit-scrollbar-track {
+  background-color: #a3c9b8;
+  border-radius: 20px;
+  border: 1px solid #7ea894;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #0d4722;
+  border-radius: 20px;
+  border: 3px solid #a3c9b8; /* Margen flotante */
+}
+
+/* 4. Efecto interactivo al pasar el cursor o arrastrar */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #062b13; /* Verde más intenso al interactuar */
+}
   
   
   
