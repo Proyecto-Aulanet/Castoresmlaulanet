@@ -94,11 +94,7 @@ exit;
 
 }
 
-if(
-$password
-===
-$usuario["password"]
-){
+if(password_verify($password, $usuario["password"])){
 
 $_SESSION[
 "idusuario"
@@ -108,26 +104,34 @@ $usuario[
 "idusuario"
 ];
 
-$_SESSION[
-"nombre_completo"
-]
-=
+$_SESSION["nombre"] = $usuario["nombre"];
+
+$_SESSION["nombre_completo"] =
+
 $usuario["nombre"]
 
 ." "
-
 .$usuario["apellidop"]
 
 ." "
-
 .$usuario["apellidom"];
+
 
 echo json_encode([
 
 "status"=>"success",
 
-"redirect"=>
-"/pages_int/inicio.html"
+"message"=>"Inicio de sesión correcto",
+
+"redirect"=>"../pages_int/inicio.html",
+
+"usuario"=>[
+    "idusuario"=>$usuario["idusuario"],
+    "nombre"=>$usuario["nombre"],
+    "apellidop"=>$usuario["apellidop"],
+    "apellidom"=>$usuario["apellidom"],
+    "username"=>$usuario["username"]
+]
 
 ]);
 

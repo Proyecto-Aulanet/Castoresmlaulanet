@@ -1,0 +1,153 @@
+//pruebas de las apis
+//login
+POST http://localhost/Castoresmlaulanet/php/registro_process.php
+Content-Type: application/json
+
+{
+    "nombre": "Juan",
+    "apellidop": "Pérez",
+    "apellidom": "Gómez",
+    "username": "juanperez",
+    "email": "juan.perez@ejemplo.com",
+    "password": "miPasswordSeguro123",
+    "fechaNac": "1998-05-15",
+    "idpais": null,
+    "idestado": null
+}
+
+
+
+//estados y paises
+### todos los países
+GET http://localhost/Castoresmlaulanet/php/get_ubicaciones.php?accion=paises
+Content-Type: application/json
+
+### estados de México 
+GET http://localhost/Castoresmlaulanet/php/get_ubicaciones.php?accion=estados&idpais=1
+Content-Type: application/json
+
+
+
+
+### 1. Listar todas las lecciones / misiones
+GET http://localhost/Castoresmlaulanet/php/get_lecciones.php?accion=listar
+Content-Type: application/json
+
+### 2. Preguntas - Lección 1: Abecedario
+GET http://localhost/Castoresmlaulanet/php/get_lecciones.php?accion=preguntas&idleccion=1
+Content-Type: application/json
+
+### 3. Preguntas - Lección 2: Saludos
+GET http://localhost/Castoresmlaulanet/php/get_lecciones.php?accion=preguntas&idleccion=2
+Content-Type: application/json
+
+### 4. Preguntas - Lección 3: Tiempo
+GET http://localhost/Castoresmlaulanet/php/get_lecciones.php?accion=preguntas&idleccion=3
+Content-Type: application/json
+
+### 5. Preguntas - Lección 4: Sociedad
+GET http://localhost/Castoresmlaulanet/php/get_lecciones.php?accion=preguntas&idleccion=4
+Content-Type: application/json
+
+### 6. Preguntas - Lección 5: Plantas
+GET http://localhost/Castoresmlaulanet/php/get_lecciones.php?accion=preguntas&idleccion=5
+Content-Type: application/json
+
+### 7. Preguntas - Lección 6: Alimentos
+GET http://localhost/Castoresmlaulanet/php/get_lecciones.php?accion=preguntas&idleccion=6
+Content-Type: application/json
+
+### 8. Preguntas - Lección 7: Animales
+GET http://localhost/Castoresmlaulanet/php/get_lecciones.php?accion=preguntas&idleccion=7
+Content-Type: application/json
+
+### 9. Preguntas - Lección 8: Colores
+GET http://localhost/Castoresmlaulanet/php/get_lecciones.php?accion=preguntas&idleccion=8
+Content-Type: application/json
+
+### 10. Preguntas - Lección 9: Números
+GET http://localhost/Castoresmlaulanet/php/get_lecciones.php?accion=preguntas&idleccion=9
+Content-Type: application/json
+
+### 11. Preguntas - Lección 10: Partes del cuerpo
+GET http://localhost/Castoresmlaulanet/php/get_lecciones.php?accion=preguntas&idleccion=10
+Content-Type: application/json
+
+### 12. Guardar resultado de examen, racha, avance y medalla (POST JSON)
+POST http://localhost/Castoresmlaulanet/php/get_lecciones.php
+Content-Type: application/json
+
+{
+    "accion": "guardar_resultado",
+    "idusuario": 1,
+    "idleccion": 1,
+    "idexamen": 1,
+    "puntos": 100,
+    "idmedalla": 1,
+    "hora_inicio": "2026-07-24 10:00:00"
+}
+
+### 13. Prueba de error: ID de lección no existente
+GET http://localhost/Castoresmlaulanet/php/get_lecciones.php?accion=preguntas&idleccion=999
+Content-Type: application/json
+
+### 14. Prueba de error: Acción no válida
+GET http://localhost/Castoresmlaulanet/php/get_lecciones.php?accion=desconocida
+Content-Type: application/json
+
+
+
+### ==========================================
+### LECCIONES, PREGUNTAS Y SCORE SEMANAL
+### ==========================================
+
+### 🌟 CONSULTAR PUNTAJE Y AVANCE SEMANAL (Usuario ID = 1)
+GET http://localhost/Castoresmlaulanet-main/php/get_lecciones.php?accion=puntaje_semanal&idusuario=1
+Content-Type: application/json
+
+### 1. Listar todas las lecciones / misiones
+GET http://localhost/Castoresmlaulanet-main/php/get_lecciones.php?accion=listar
+Content-Type: application/json
+
+### 2. Preguntas con sus opciones - Lección 1: Abecedario
+GET http://localhost/Castoresmlaulanet-main/php/get_lecciones.php?accion=preguntas&idleccion=1
+Content-Type: application/json
+
+### 3. Preguntas con sus opciones - Lección 2: Saludos
+GET http://localhost/Castoresmlaulanet-main/php/get_lecciones.php?accion=preguntas&idleccion=2
+Content-Type: application/json
+
+### 4. Guardar resultado de examen (Suma puntos para el score semanal)
+POST http://localhost/Castoresmlaulanet-main/php/get_lecciones.php
+Content-Type: application/json
+
+{
+    "accion": "guardar_resultado",
+    "idusuario": 1,
+    "idleccion": 1,
+    "idexamen": 1,
+    "puntos": 100,
+    "idmedalla": 1,
+    "hora_inicio": "2026-07-28 10:00:00"
+}
+
+### 5. Ver reporte general de exámenes (Administración)
+GET http://localhost/Castoresmlaulanet-main/php/get_lecciones.php?accion=reporte_examenes
+Content-Type: application/json
+
+
+### ==========================================
+### PRUEBAS DE MANEJO DE ERRORES
+### ==========================================
+
+### 6. Prueba de error: Puntaje semanal sin idusuario
+GET http://localhost/Castoresmlaulanet-main/php/get_lecciones.php?accion=puntaje_semanal
+Content-Type: application/json
+
+### 7. Prueba de error: ID de lección no existente
+GET http://localhost/Castoresmlaulanet-main/php/get_lecciones.php?accion=preguntas&idleccion=999
+Content-Type: application/json
+
+### 8. Prueba de error: Acción no válida
+GET http://localhost/Castoresmlaulanet-main/php/get_lecciones.php?accion=desconocida
+Content-Type: application/json

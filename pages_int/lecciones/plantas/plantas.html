@@ -107,106 +107,96 @@
 
 
         <!-- ========================================== -->
-<!--                HEADER MAIN                 -->
-<!-- ========================================== -->
+        <!--                HEADER MAIN                 -->
+        <!-- ========================================== -->
 
-<header class="header-main sticky-top shadow-lg">
+        <header class="header-main sticky-top shadow-lg">
 
-    <div class="container">
+            <div class="container">
 
-        <!-- FILA SUPERIOR -->
-        <div
-            class="headerint-top d-flex justify-content-between align-items-star flex-wrap gap-3 py-3">
+                <!-- FILA SUPERIOR -->
+                <div class="headerint-top d-flex justify-content-between align-items-star flex-wrap gap-3 py-3">
 
-            <!-- LOGO -->
-            <div class="headerint-logo">
+                    <!-- LOGO -->
+                    <div class="headerint-logo">
 
-                <img
-                    src="../../../Recursos/logos/logo_completo_svg.svg"
-                    alt="logo"
-                    class="img-fluid"
-                    style="max-width:185px;"
-                    data-aos="fade-right">
-
-            </div>
-
-            <!-- ESTADÍSTICAS -->
-            <div
-                class="headerint-stats d-flex align-items-center justify-content-center gap-3 flex-wrap"
-                data-aos="fade-up">
-
-                <!-- RACHA -->
-                <div class="stat-item headerint-racha">
-
-                    <i class="bi bi-fire stat-icon text-warning"></i>
-
-                    <div>
-
-                        <small
-                            class="stat-label"
-                            data-es="Racha"
-                            data-na="Tlatzintli">
-
-                            Racha
-
-                        </small>
-
-                        <span
-                            id="streak-display"
-                            class="stat-value">
-
-                            0
-
-                        </span>
+                        <img src="../../../Recursos/logos/logo_completo_svg.svg" alt="logo" class="img-fluid"
+                            style="max-width:185px;" data-aos="fade-right">
 
                     </div>
 
-                </div>
+                    <!-- ESTADÍSTICAS -->
+                    <div class="headerint-stats d-flex align-items-center justify-content-center gap-3 flex-wrap"
+                        data-aos="fade-up">
 
-                <!-- XP -->
-                <div class="stat-item headerint-xp">
+                        <!-- RACHA -->
+                        <div class="stat-item headerint-racha">
 
-                    <i class="bi bi-stars stat-icon text-warning"></i>
+                            <i class="bi bi-fire stat-icon text-warning"></i>
 
-                    <div>
+                            <div>
 
-                        <small
-                            class="stat-label"
-                            data-es="Puntaje"
-                            data-na="Tlapōhualli">
+                                <small class="stat-label" data-es="Racha" data-na="Tlatzintli">
+
+                                    Racha
+
+                                </small>
+
+                                <span id="streak-display" class="stat-value">
+
+                                    0
+
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <!-- XP -->
+                        <div class="stat-item headerint-xp">
+
+                            <i class="bi bi-stars stat-icon text-warning"></i>
+
+                            <div>
+
+                                <small class="stat-label" data-es="Puntaje" data-na="Tlapōhualli">
 
                                     Puntaje
 
-                        </small>
+                                </small>
 
-                        <span
-                            id="xp-display"
-                            class="stat-value">
+                                <span id="xp-display" class="stat-value">
 
-                            0
+                                    0
 
-                        </span>
+                                </span>
+
+                            </div>
+
+                        </div>
 
                     </div>
-
-                </div>
-
-            </div>
 
                     <!-- PERFIL -->
                     <div class="perfil-header dropdown" data-aos="fade-left">
 
                         <!-- BOTÓN -->
-                        <button
-                            class="btn p-0 border-0 bg-transparent d-flex align-items-center"
-                            type="button"
-                            data-bs-toggle="dropdown"
-                            aria-expanded="false">
+                        <button class="btn p-0 border-0 bg-transparent d-flex align-items-center" type="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
 
                             <!-- Avatar -->
                             <div class="perfil-avatar">
 
-                                <i class="bi bi-person-fill"></i>
+                                <i
+                                    id="iconoUsuario"
+                                    class="bi bi-person-fill">
+                                </i>
+
+                                <img
+                                    id="fotoUsuario"
+                                    class="foto-perfil"
+                                    src=""
+                                    style="display:none;">
 
                             </div>
 
@@ -214,6 +204,7 @@
                             <div class="perfil-info d-none d-md-block">
 
                                 <span
+                                    id="nombreUsuario"
                                     class="perfil-nombre"
                                     data-es="Invitado"
                                     data-na="Tlapowalistli">
@@ -235,7 +226,7 @@
                             <li>
 
                                 <!-- Si usas páginas -->
-                                <a class="dropdown-item" href="perfil.html">
+                                <a class="dropdown-item" href="../../perfil.html">
 
                                     <i class="bi bi-person me-2"></i>
 
@@ -251,167 +242,138 @@
 
                 </div>
 
-        </div>
+            </div>
 
-        <!-- NAVBAR -->
-        <nav class="navbar navbar-expand-lg navbarint justify-content-center">
+            <!-- NAVBAR -->
+            <nav class="navbar navbar-expand-lg navbarint justify-content-center">
 
-            <div class="container-fluid justify-content-center">
+                <div class="container-fluid justify-content-center">
 
-                <!-- BOTÓN HAMBURGUESA -->
-                    <button
-                    class="navbar-toggler navbarint-toggler mx-auto"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#menuNavbar">
+                    <!-- BOTÓN HAMBURGUESA -->
+                    <button class="navbar-toggler navbarint-toggler mx-auto" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#menuNavbar">
 
-                    <i class="bi bi-chevron-down"></i>
-
-                </button>
-
-                <!-- MENÚ -->
-                <div
-                    class="collapse navbar-collapse justify-content-center"
-                    id="menuNavbar">
-
-                    <div class="navbar-nav gap-2 justify-content-center">
-
-                    <!-- INICIO -->
-                    <button
-                        type="button"
-                        onclick="window.location.href='../../../pages_int/inicio.html'"
-                        class="btn navbarint-btn rounded-pill px-4"
-                        data-aos="fade-up"
-                        data-es="Inicio"
-                        data-na="Pewaloyan">
-
-                        <i class="bi bi-house-fill me-2"></i>
-
-                        Inicio
+                        <i class="bi bi-chevron-down"></i>
 
                     </button>
 
-                    <!-- LECCIONES -->
-                    <button
-                        type="button"
-                        onclick="window.location.href='../../../pages_int/lecciones.html'"
-                        class="btn navbarint-btn rounded-pill px-4"
-                        data-aos="fade-up"
-                        data-aos-delay="100"
-                        data-es="Lecciones"
-                        data-na="Temachtilli">
+                    <!-- MENÚ -->
+                    <div class="collapse navbar-collapse justify-content-center" id="menuNavbar">
 
-                        <i class="bi bi-book-fill me-2"></i>
+                        <div class="navbar-nav gap-2 justify-content-center">
 
-                        Lecciones
+                            <!-- INICIO -->
+                            <button type="button" onclick="window.location.href='../../../pages_int/inicio.html'"
+                                class="btn navbarint-btn rounded-pill px-4" data-aos="fade-up" data-es="Inicio"
+                                data-na="Pewaloyan">
 
-                    </button>
+                                <i class="bi bi-house-fill me-2"></i>
 
-                    <!-- CUENTOS -->
-                    <button
-                        type="button"
-                        onclick="window.location.href='../../../pages_int/Cuentos/cuentos.html'"
-                        class="btn navbarint-btn rounded-pill px-4"
-                        data-aos="fade-up"
-                        data-aos-delay="100"
-                        data-es="Cuentos"
-                        data-na="Tlahtolli">
+                                Inicio
 
-                        <i class="bi bi-book-half me-2"></i>
+                            </button>
 
-                        Cuentos
+                            <!-- LECCIONES -->
+                            <button type="button" onclick="window.location.href='../../../pages_int/lecciones.html'"
+                                class="btn navbarint-btn rounded-pill px-4" data-aos="fade-up" data-aos-delay="100"
+                                data-es="Lecciones" data-na="Temachtilli">
 
-                    </button>
+                                <i class="bi bi-book-fill me-2"></i>
 
-                    <!-- CULTURA -->
-                    <button
-                        type="button"
-                        onclick="window.location.href='../../../pages_int/cultura.html'"
-                        class="btn navbarint-btn rounded-pill px-4"
-                        data-aos="fade-up"
-                        data-aos-delay="200"
-                        data-es="Cultura"
-                        data-na="Yancuic Tlamachtiliztli">
+                                Lecciones
 
-                        <i class="bi bi-globe-americas me-2"></i>
+                            </button>
 
-                        Cultura
+                            <!-- CUENTOS -->
+                            <button type="button"
+                                onclick="window.location.href='../../../pages_int/Cuentos/cuentos.html'"
+                                class="btn navbarint-btn rounded-pill px-4" data-aos="fade-up" data-aos-delay="100"
+                                data-es="Cuentos" data-na="Tlahtolli">
 
-                    </button>
+                                <i class="bi bi-book-half me-2"></i>
 
-                    <!-- PROGRESO -->
-                    <button
-                        type="button"
-                        onclick="window.location.href='../../../pages_int/progreso.html'"
-                        class="btn navbarint-btn rounded-pill px-4"
-                        data-aos="fade-up"
-                        data-aos-delay="300"
-                        data-es="Progreso"
-                        data-na="Yancuic Nejnemiliztli">
+                                Cuentos
 
-                        <i class="bi bi-graph-up-arrow me-2"></i>
+                            </button>
 
-                        Progreso
+                            <!-- CULTURA -->
+                            <button type="button" onclick="window.location.href='../../../pages_int/cultura.html'"
+                                class="btn navbarint-btn rounded-pill px-4" data-aos="fade-up" data-aos-delay="200"
+                                data-es="Cultura" data-na="Yancuic Tlamachtiliztli">
 
-                    </button>
+                                <i class="bi bi-globe-americas me-2"></i>
+
+                                Cultura
+
+                            </button>
+
+                            <!-- PROGRESO -->
+                            <button type="button" onclick="window.location.href='../../../pages_int/progreso.html'"
+                                class="btn navbarint-btn rounded-pill px-4" data-aos="fade-up" data-aos-delay="300"
+                                data-es="Progreso" data-na="Yancuic Nejnemiliztli">
+
+                                <i class="bi bi-graph-up-arrow me-2"></i>
+
+                                Progreso
+
+                            </button>
+
+                        </div>
 
                     </div>
 
                 </div>
 
-            </div>
-
-        </nav>
+            </nav>
 
     </div>
 
-</header>
+    </header>
 
-        <!-- MAIN -->
-        <main class="container py-5">
-
-
-            <!-- BOTONES SUPERIORES -->
+    <!-- MAIN -->
+    <main class="container py-5">
 
 
-            <!-- BOTÓN TRADUCTOR -->
-            <div class="presen-traductor-int">
+        <!-- BOTONES SUPERIORES -->
 
-                <button class="btn btn-light rounded-circle traductor-btn" onclick="presenToggleMenu()"
-                    data-aos="zoom-in">
 
-                    <i class="bi bi-translate"></i>
+        <!-- BOTÓN TRADUCTOR -->
+        <div class="presen-traductor-int">
 
-                </button>
+            <button class="btn btn-light rounded-circle traductor-btn" onclick="presenToggleMenu()" data-aos="zoom-in">
 
-                <!-- MENÚ -->
-                <div class="presen-menu-int" id="presenMenuIdioma">
+                <i class="bi bi-translate"></i>
 
-                    <ul class="list-unstyled m-0">
+            </button>
 
-                        <li onclick="presenCambiarModo('es')">
-                            Español
-                        </li>
+            <!-- MENÚ -->
+            <div class="presen-menu-int" id="presenMenuIdioma">
 
-                        <li onclick="presenCambiarModo('na')">
-                            Náhuatl
-                        </li>
+                <ul class="list-unstyled m-0">
 
-                        <li onclick="presenCambiarModo('es-na')">
-                            Español + Náhuatl
-                        </li>
+                    <li onclick="presenCambiarModo('es')">
+                        Español
+                    </li>
 
-                        <li onclick="presenCambiarModo('na-es')">
-                            Náhuatl + Español
-                        </li>
+                    <li onclick="presenCambiarModo('na')">
+                        Náhuatl
+                    </li>
 
-                    </ul>
+                    <li onclick="presenCambiarModo('es-na')">
+                        Español + Náhuatl
+                    </li>
 
-                </div>
+                    <li onclick="presenCambiarModo('na-es')">
+                        Náhuatl + Español
+                    </li>
+
+                </ul>
 
             </div>
 
-    </div>
+        </div>
+
+        </div>
     </main>
     </div>
 
@@ -747,152 +709,167 @@
      CONTENEDOR DE ACCIONES INFERIORES: EXTREMO IZQUIERDO Y EXTREMO DERECHO
      ======================================================================= -->
     <section class="container">
-        <div
-            class="d-flex justify-content-start mt-5"
-            data-aos="fade-right">
+        <!-- Alineación flex: Regresar a la izquierda; Subir y Completar a la derecha con espacio entre ellos -->
+        <div class="d-flex justify-content-between align-items-center mt-5" data-aos="fade-up">
 
-            <button
-                onclick="window.location.href='../../../pages_int/mapa_plantas.html'"
-                class="btn-regresar-int">
+            <!-- LADO IZQUIERDO: Botón Regresar -->
+            <div>
+                <button onclick="window.location.href='../../../pages_int/mapa_plantas.html'"
+                    class="btn-regresar-int">
+                    <i class="bi bi-arrow-left-circle-fill me-2"></i>
+                    <span data-es="Regresar" data-na="Mokuepa">Regresar</span>
+                </button>
+            </div>
 
-                <i class="bi bi-arrow-left-circle-fill me-2"></i>
+            <!-- LADO DERECHO: Botones Subir y Completar (con gap para separarlos perfectamente) -->
+            <div class="d-flex gap-3 align-items-center">
+                <!-- Botón Subir -->
+                <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" class="btn-regresar-int">
+                    <i class="bi bi-arrow-up-circle-fill me-2"></i>
+                    <span data-es="Subir" data-na="Tlejco">Subir</span>
+                </button>
 
-                <span
-                    data-es="Regresar"
-                    data-na="Mokuepa">
-
-                    Regresar
-
-                </span>
-
-            </button>
+            </div>
 
         </div>
-
     </section>
 
+    <br>
 
     <!-- ==================== CONTENEDOR MODAL COMPACTO EQUILIBRADO ==================== -->
-<div id="contenedor-interactivo"
-    class="d-none position-fixed top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center p-3"
-    style="background: rgba(0,0,0,0.75); z-index: 2000; backdrop-filter: blur(5px);">
+    <div id="contenedor-interactivo"
+        class="d-none position-fixed top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center p-3"
+        style="background: rgba(0,0,0,0.75); z-index: 2000; backdrop-filter: blur(5px);">
 
-    <!-- Ventana con ancho ideal de 420px (Compacta y bien proporcionada) -->
-    <div id="modal-scroll-body"
-        class="card border-0 rounded-4 p-4 shadow-lg text-center bg-white position-relative"
-        style="width: 420px; max-width: 90vw; max-height: 85vh; overflow-y: auto;">
+        <!-- Ventana con ancho ideal de 420px (Compacta y bien proporcionada) -->
+        <div id="modal-scroll-body" class="card border-0 rounded-4 p-4 shadow-lg text-center bg-white position-relative"
+            style="width: 420px; max-width: 90vw; max-height: 85vh; overflow-y: auto;">
 
-        <!-- Botón de cerrar superior (X) -->
-        <button class="btn-close position-absolute top-0 end-0 m-3" style="transform: scale(0.85);" onclick="cerrarSeccion()"></button>
+            <!-- Botón de cerrar superior (X) -->
+            <button class="btn-close position-absolute top-0 end-0 m-3" style="transform: scale(0.85);"
+                onclick="cerrarSeccion()"></button>
 
-        <!-- TÍTULOS Y SUBTÍTULOS DINÁMICOS -->
-        <h4 class="fw-bold text-dark mb-0 mt-1 fs-5">
-            <span id="m-tit-xinachtli" class="d-none" data-es="Xinachtli" data-na="Xinachtli">Xinachtli</span>
-            <span id="m-tit-miahuatl" class="d-none" data-es="Miahuatl" data-na="Miahuatl">Miahuatl</span>
-            <span id="m-tit-elotl" class="d-none" data-es="Elotl" data-na="Elotl">Elotl</span>
-            <span id="m-tit-cintli" class="d-none" data-es="Cintli" data-na="Cintli">Cintli</span>
-            <span id="m-tit-olotl" class="d-none" data-es="Olotl" data-na="Olotl">Olotl</span>
-            <span id="m-tit-totomoxtle" class="d-none" data-es="Ixtlacatl / Tlalcualyotl" data-na="Ixtlacatl / Tlalcualyotl">Ixtlacatl / Tlalcualyotl</span>
-        </h4>
+            <!-- TÍTULOS Y SUBTÍTULOS DINÁMICOS -->
+            <h4 class="fw-bold text-dark mb-0 mt-1 fs-5">
+                <span id="m-tit-xinachtli" class="d-none" data-es="Xinachtli" data-na="Xinachtli">Xinachtli</span>
+                <span id="m-tit-miahuatl" class="d-none" data-es="Miahuatl" data-na="Miahuatl">Miahuatl</span>
+                <span id="m-tit-elotl" class="d-none" data-es="Elotl" data-na="Elotl">Elotl</span>
+                <span id="m-tit-cintli" class="d-none" data-es="Cintli" data-na="Cintli">Cintli</span>
+                <span id="m-tit-olotl" class="d-none" data-es="Olotl" data-na="Olotl">Olotl</span>
+                <span id="m-tit-totomoxtle" class="d-none" data-es="Ixtlacatl / Tlalcualyotl"
+                    data-na="Ixtlacatl / Tlalcualyotl">Ixtlacatl / Tlalcualyotl</span>
+            </h4>
 
-        <p class="text-muted small mb-3">
-            <span id="m-sub-xinachtli" class="d-none" data-es="La Semilla Esencial" data-na="Yancuic Xinachtli">Yancuic Xinachtli</span>
-            <span id="m-sub-miahuatl" class="d-none" data-es="La Flor Alta del Maíz" data-na="Ahco Xochitl">Ahco Xochitl</span>
-            <span id="m-sub-elotl" class="d-none" data-es="El Fruto Celic" data-na="Celic Tlaolli">Celic Tlaolli</span>
-            <span id="m-sub-cintli" class="d-none" data-es="La Mazorca Seca" data-na="Chicahuac Cintli">Chicahuac Cintli</span>
-            <span id="m-sub-olotl" class="d-none" data-es="El Centro del Maíz" data-na="Iyollo Cintli">Iyollo Cintli</span>
-            <span id="m-sub-totomoxtle" class="d-none" data-es="Hojas de Resguardo" data-na="Totomoxtli Isol">Totomoxtli Isol</span>
-        </p>
+            <p class="text-muted small mb-3">
+                <span id="m-sub-xinachtli" class="d-none" data-es="La Semilla Esencial"
+                    data-na="Yancuic Xinachtli">Yancuic Xinachtli</span>
+                <span id="m-sub-miahuatl" class="d-none" data-es="La Flor Alta del Maíz" data-na="Ahco Xochitl">Ahco
+                    Xochitl</span>
+                <span id="m-sub-elotl" class="d-none" data-es="El Fruto Celic" data-na="Celic Tlaolli">Celic
+                    Tlaolli</span>
+                <span id="m-sub-cintli" class="d-none" data-es="La Mazorca Seca" data-na="Chicahuac Cintli">Chicahuac
+                    Cintli</span>
+                <span id="m-sub-olotl" class="d-none" data-es="El Centro del Maíz" data-na="Iyollo Cintli">Iyollo
+                    Cintli</span>
+                <span id="m-sub-totomoxtle" class="d-none" data-es="Hojas de Resguardo"
+                    data-na="Totomoxtli Isol">Totomoxtli Isol</span>
+            </p>
 
-        <!-- 1. TEXTO EXPLICATIVO -->
-        <div class="text-dark small mb-3 p-3 bg-light rounded-3 border text-start" style="font-size: 0.9rem;">
+            <!-- 1. TEXTO EXPLICATIVO -->
+            <div class="text-dark small mb-3 p-3 bg-light rounded-3 border text-start" style="font-size: 0.9rem;">
 
-            <!-- Audio Xinachtli -->
-            <div id="m-txt-xinachtli" class="d-none" data-audio="../../../Recursos/audios/plantas/semilla.ogg">
-                <p class="mb-0">
-                    <span data-es="Xinachtli: La semilla del maíz (o semilla en general) reservada cuidadosamente para la siembra."
-                          data-na="Xinachtli: In tachtli tlein cualli mopian pampa se tictocaz totlalnan.">
-                        Xinachtli: In tachtli tlein cualli mopian pampa se tictocaz totlalnan.
-                    </span>
-                </p>
+                <!-- Audio Xinachtli -->
+                <div id="m-txt-xinachtli" class="d-none" data-audio="../../../Recursos/audios/plantas/semilla.ogg">
+                    <p class="mb-0">
+                        <span
+                            data-es="Xinachtli: La semilla del maíz (o semilla en general) reservada cuidadosamente para la siembra."
+                            data-na="Xinachtli: In tachtli tlein cualli mopian pampa se tictocaz totlalnan.">
+                            Xinachtli: In tachtli tlein cualli mopian pampa se tictocaz totlalnan.
+                        </span>
+                    </p>
+                </div>
+
+                <!-- Audio Miahuatl -->
+                <div id="m-txt-miahuatl" class="d-none" data-audio="../../../Recursos/audios/plantas/flor del maiz.ogg">
+                    <p class="mb-0">
+                        <span data-es="Miahuatl: La espiga o flor del maíz que aparece en la parte alta de la planta."
+                            data-na="Miahuatl: In xochitl tlaolli tlein pan neci ahco ipan icuac milmilli.">
+                            Miahuatl: In xochitl tlaolli tlein pan neci ahco ipan icuac milmilli.
+                        </span>
+                    </p>
+                </div>
+
+                <!-- Audio Elotl -->
+                <div id="m-txt-elotl" class="d-none" data-audio="../../../Recursos/audios/plantas/elote.ogg">
+                    <p class="mb-0">
+                        <span
+                            data-es="Elotl: El elote (el fruto tierno cuando los granos están suaves y llenos de leche)."
+                            data-na="Elotl: In tlaolli tlein oc celic iwan xinachtli quipia chichihualatl.">
+                            Elotl: In tlaolli tlein oc celic iwan xinachtli quipia chichihualatl.
+                        </span>
+                    </p>
+                </div>
+
+                <!-- Audio Cintli -->
+                <div id="m-txt-cintli" class="d-none" data-audio="../../../Recursos/audios/plantas/maizmaduro.ogg">
+                    <p class="mb-0">
+                        <span
+                            data-es="Cintli: La mazorca de maíz ya madura y seca, lista para cosecharse y nixtamalizarse."
+                            data-na="Cintli: In chicahuac tlaolli tlein ya huacqui iwan cualli ic nextamalli.">
+                            Cintli: In chicahuac tlaolli tlein ya huacqui iwan cualli ic nextamalli.
+                        </span>
+                    </p>
+                </div>
+
+                <!-- Audio Olotl -->
+                <div id="m-txt-olotl" class="d-none" data-audio="../../../Recursos/audios/plantas/olote.ogg">
+                    <p class="mb-0">
+                        <span
+                            data-es="Olotl: El olote (el corazón o centro de la mazorca una vez que se le quitan los granos)."
+                            data-na="Olotl: In iyollo in cintli icuac ya tiquisquiah nochimeh in tlaolmeih.">
+                            Olotl: In iyollo in cintli icuac ya tiquisquiah nochimeh in tlaolmeih.
+                        </span>
+                    </p>
+                </div>
+
+                <!-- Audio Totomoxtle -->
+                <div id="m-txt-totomoxtle" class="d-none"
+                    data-audio="../../../Recursos/audios/plantas/hojas_secas_de_mazorca.ogg">
+                    <p class="mb-0">
+                        <span
+                            data-es="Ixtlacatl / Tlalcualyotl: Las hojas secas que envuelven la mazorca (el totomoxtle)."
+                            data-na="Ixtlacatl / Tlalcualyotl: In totomoxtli tlein quiquimiloa in cintli icuac ya chicahuac.">
+                            Ixtlacatl / Tlalcualyotl: In totomoxtli tlein quiquimiloa in cintli icuac ya chicahuac.
+                        </span>
+                    </p>
+                </div>
+
             </div>
 
-            <!-- Audio Miahuatl -->
-            <div id="m-txt-miahuatl" class="d-none" data-audio="../../../Recursos/audios/plantas/flor del maiz.ogg">
-                <p class="mb-0">
-                    <span data-es="Miahuatl: La espiga o flor del maíz que aparece en la parte alta de la planta."
-                          data-na="Miahuatl: In xochitl tlaolli tlein pan neci ahco ipan icuac milmilli.">
-                        Miahuatl: In xochitl tlaolli tlein pan neci ahco ipan icuac milmilli.
-                    </span>
-                </p>
+            <!-- 2. BOTONES DE AUDIO EN LA MISMA FILA (HORIZONTAL) -->
+            <div class="d-flex gap-2 mb-2">
+                <!-- Botón Escuchar -->
+                <button id="btn-audio-normal" onclick="reproducirAudioDia(1.0)"
+                    class="btn btn-success rounded-pill d-flex align-items-center justify-content-center gap-1 py-2 fw-semibold shadow-sm text-white flex-fill small">
+                    <i class="bi bi-volume-up-fill fs-6"></i>
+                    <span data-es="Escuchar" data-na="Xicquici">Xicquici</span>
+                </button>
+
+                <!-- Botón Lento -->
+                <button id="btn-audio-lento" onclick="reproducirAudioDia(0.6)"
+                    class="btn btn-warning rounded-pill d-flex align-items-center justify-content-center gap-1 py-2 fw-semibold shadow-sm text-dark flex-fill small">
+                    <i class="bi bi-tortoise-fill fs-6"></i>
+                    <span data-es="Lento" data-na="Yolic">Yolic</span>
+                </button>
             </div>
 
-            <!-- Audio Elotl -->
-            <div id="m-txt-elotl" class="d-none" data-audio="../../../Recursos/audios/plantas/elote.ogg">
-                <p class="mb-0">
-                    <span data-es="Elotl: El elote (el fruto tierno cuando los granos están suaves y llenos de leche)."
-                          data-na="Elotl: In tlaolli tlein oc celic iwan xinachtli quipia chichihualatl.">
-                        Elotl: In tlaolli tlein oc celic iwan xinachtli quipia chichihualatl.
-                    </span>
-                </p>
-            </div>
-
-            <!-- Audio Cintli -->
-            <div id="m-txt-cintli" class="d-none" data-audio="../../../Recursos/audios/plantas/maizmaduro.ogg">
-                <p class="mb-0">
-                    <span data-es="Cintli: La mazorca de maíz ya madura y seca, lista para cosecharse y nixtamalizarse."
-                          data-na="Cintli: In chicahuac tlaolli tlein ya huacqui iwan cualli ic nextamalli.">
-                        Cintli: In chicahuac tlaolli tlein ya huacqui iwan cualli ic nextamalli.
-                    </span>
-                </p>
-            </div>
-
-            <!-- Audio Olotl -->
-            <div id="m-txt-olotl" class="d-none" data-audio="../../../Recursos/audios/plantas/olote.ogg">
-                <p class="mb-0">
-                    <span data-es="Olotl: El olote (el corazón o centro de la mazorca una vez que se le quitan los granos)."
-                          data-na="Olotl: In iyollo in cintli icuac ya tiquisquiah nochimeh in tlaolmeih.">
-                        Olotl: In iyollo in cintli icuac ya tiquisquiah nochimeh in tlaolmeih.
-                    </span>
-                </p>
-            </div>
-
-            <!-- Audio Totomoxtle -->
-            <div id="m-txt-totomoxtle" class="d-none" data-audio="../../../Recursos/audios/plantas/hojas_secas_de_mazorca.ogg">
-                <p class="mb-0">
-                    <span data-es="Ixtlacatl / Tlalcualyotl: Las hojas secas que envuelven la mazorca (el totomoxtle)."
-                          data-na="Ixtlacatl / Tlalcualyotl: In totomoxtli tlein quiquimiloa in cintli icuac ya chicahuac.">
-                        Ixtlacatl / Tlalcualyotl: In totomoxtli tlein quiquimiloa in cintli icuac ya chicahuac.
-                    </span>
-                </p>
-            </div>
-
-        </div>
-
-        <!-- 2. BOTONES DE AUDIO EN LA MISMA FILA (HORIZONTAL) -->
-        <div class="d-flex gap-2 mb-2">
-            <!-- Botón Escuchar -->
-            <button id="btn-audio-normal" onclick="reproducirAudioDia(1.0)"
-                class="btn btn-success rounded-pill d-flex align-items-center justify-content-center gap-1 py-2 fw-semibold shadow-sm text-white flex-fill small">
-                <i class="bi bi-volume-up-fill fs-6"></i>
-                <span data-es="Escuchar" data-na="Xicquici">Xicquici</span>
+            <!-- 3. BOTÓN VOLVER AL MENÚ ABAJO -->
+            <button class="btn btn-dark rounded-pill fw-bold py-2 shadow-sm w-100 small" onclick="cerrarSeccion()">
+                <span data-es="Volver al Menú" data-na="Nican mocuepa">Nican mocuepa</span>
             </button>
 
-            <!-- Botón Lento -->
-            <button id="btn-audio-lento" onclick="reproducirAudioDia(0.6)"
-                class="btn btn-warning rounded-pill d-flex align-items-center justify-content-center gap-1 py-2 fw-semibold shadow-sm text-dark flex-fill small">
-                <i class="bi bi-tortoise-fill fs-6"></i>
-                <span data-es="Lento" data-na="Yolic">Yolic</span>
-            </button>
         </div>
-
-        <!-- 3. BOTÓN VOLVER AL MENÚ ABAJO -->
-        <button class="btn btn-dark rounded-pill fw-bold py-2 shadow-sm w-100 small" onclick="cerrarSeccion()">
-            <span data-es="Volver al Menú" data-na="Nican mocuepa">Nican mocuepa</span>
-        </button>
-
     </div>
-</div>
 
     <!-- =========================================
                 FOOTER
@@ -907,7 +884,8 @@
 
                 <div class="col-12 col-md-4" data-aos="fade-right">
 
-                    <img src="../../../Recursos/logos/logo_completo_svg.svg" alt="Aul@Net" class="img-fluid footer-logo">
+                    <img src="../../../Recursos/logos/logo_completo_svg.svg" alt="Aul@Net"
+                        class="img-fluid footer-logo">
 
 
                     <img src="../../../Recursos/logos/utp_svg.svg" alt="Aul@Net" class="img-fluid footer-logo-utp">
@@ -1005,6 +983,7 @@
     <!-- AOS -->
     <script src="../../../assets/js/aos.js"></script>
 
+
     <!-- INIT AOS -->
     <script>
         AOS.init({
@@ -1013,11 +992,9 @@
         });
     </script>
     <script>
-        // Detectar el desplazamiento (scroll) de la página
         window.addEventListener('scroll', function () {
             const boton = document.getElementById("btn-subir");
 
-            // Si el usuario baja más de 300 píxeles, el botón aparece; si vuelve arriba, se oculta
             if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
                 boton.classList.remove("d-none");
             } else {
@@ -1025,32 +1002,24 @@
             }
         });
 
-        // Función para deslizar suavemente hacia el inicio
         function subirInicio() {
             window.scrollTo({
                 top: 0,
-                behavior: 'smooth' // Hace que la subida sea fluida y estética
+                behavior: 'smooth'
             });
         }
-        //audio
-        // Variable global para controlar el audio actual
+
         let audioActual = null;
         let seccionActiva = "";
 
-        /**
-         * Muestra el modal dinámico con la información de la tarjeta seleccionada
-         * @param {string} idSeccion - El identificador de la tarjeta (ej. 'xinachtli', 'miahuatl')
-         */
         function mostrarSeccion(idSeccion) {
             seccionActiva = idSeccion;
 
-            // 1. Detener cualquier audio que se esté reproduciendo actualmente
             if (audioActual) {
                 audioActual.pause();
                 audioActual.currentTime = 0;
             }
 
-            // 2. Ocultar todos los elementos internos del modal (títulos, subtítulos, textos)
             const componentes = ['m-tit-', 'm-sub-', 'm-txt-'];
             const todasLasSecciones = [
                 'xinachtli', 'miahuatl', 'elotl', 'cintli', 'olotl',
@@ -1066,7 +1035,6 @@
                 });
             });
 
-            // 3. Mostrar únicamente los elementos que correspondan a la sección activa
             const titulo = document.getElementById(`m-tit-${idSeccion}`);
             const subtitulo = document.getElementById(`m-sub-${idSeccion}`);
             const textoContainer = document.getElementById(`m-txt-${idSeccion}`);
@@ -1076,8 +1044,7 @@
             if (subtitulo) subtitulo.classList.remove('d-none');
             if (textoContainer) textoContainer.classList.remove('d-none');
 
-            // 4. Asignar la imagen correspondiente al modal de forma dinámica
-            // (Asegúrate de que estas rutas coincidan con tus archivos reales)
+
             if (mascotaImg) {
                 if (idSeccion === 'totomoxtle') {
                     mascotaImg.src = `/Recursos/nahui/frames_nahui/ezgif-frame-006.png`;
@@ -1087,30 +1054,24 @@
                 mascotaImg.alt = idSeccion;
             }
 
-            // 5. Forzar al traductor simultáneo a renderizar el idioma correcto en el modal abierto
             if (typeof ajustarIdiomaActual === "function") {
                 ajustarIdiomaActual();
             }
 
-            // 6. Hacer visible el contenedor del modal removiendo 'd-none'
             const modalContainer = document.getElementById('contenedor-interactivo');
             if (modalContainer) {
                 modalContainer.classList.remove('d-none');
-                document.getElementById('modal-scroll-body').scrollTop = 0; // Resetear scroll del modal
+                document.getElementById('modal-scroll-body').scrollTop = 0;
             }
         }
 
-        /**
-         * Cierra el modal interactivo y detiene la reproducción del sonido
-         */
+
         function cerrarSeccion() {
-            // Ocultar el contenedor del modal
             const modalContainer = document.getElementById('contenedor-interactivo');
             if (modalContainer) {
                 modalContainer.classList.add('d-none');
             }
 
-            // Detener el audio por completo
             if (audioActual) {
                 audioActual.pause();
                 audioActual.currentTime = 0;
@@ -1119,31 +1080,24 @@
             seccionActiva = "";
         }
 
-        /**
-         * Reproduce el audio de la sección activa con soporte para velocidad normal o lenta
-         * @param {number} velocidad - Velocidad de reproducción (ej. 1.0 para normal, 0.6 para lento)
-         */
         function reproducirAudioDia(velocidad) {
             if (!seccionActiva) return;
 
             const contenedorTexto = document.getElementById(`m-txt-${seccionActiva}`);
             if (!contenedorTexto) return;
 
-            // Obtener la ruta del atributo data-audio
             const rutaAudio = contenedorTexto.getAttribute('data-audio');
             if (!rutaAudio) {
                 console.warn(`No se encontró una ruta de audio para la sección: ${seccionActiva}`);
                 return;
             }
 
-            // Si ya hay un audio sonando, lo detenemos antes de iniciar el nuevo (o el mismo cambiado de velocidad)
             if (audioActual) {
                 audioActual.pause();
             }
 
-            // Crear o reutilizar el objeto de Audio
             audioActual = new Audio(rutaAudio);
-            audioActual.playbackRate = velocidad; // Ajustar velocidad de reproducción (normal o tortuga)
+            audioActual.playbackRate = velocidad;
 
             audioActual.play().catch(error => {
                 console.error("Error al intentar reproducir el audio:", error);
@@ -1154,6 +1108,11 @@
     <!-- JS -->
     <script src="../../../js/app.js"></script>
     <script src="../../../js/plantas.js"></script>
+    <script src="../../../js/racha.js"></script>
+
+    <!-- foto de perfil del header -->
+    <script src="/Castoresmlaulanet/js/usuarioHeader.js"></script>
+
 
 </body>
 

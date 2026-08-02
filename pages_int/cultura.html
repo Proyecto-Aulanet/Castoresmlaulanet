@@ -204,7 +204,16 @@
                             <!-- Avatar -->
                             <div class="perfil-avatar">
 
-                                <i class="bi bi-person-fill"></i>
+                                <i
+                                    id="iconoUsuario"
+                                    class="bi bi-person-fill">
+                                </i>
+
+                                <img
+                                    id="fotoUsuario"
+                                    class="foto-perfil"
+                                    src=""
+                                    style="display:none;">
 
                             </div>
 
@@ -212,6 +221,7 @@
                             <div class="perfil-info d-none d-md-block">
 
                                 <span
+                                    id="nombreUsuario"
                                     class="perfil-nombre"
                                     data-es="Invitado"
                                     data-na="Tlapowalistli">
@@ -233,7 +243,7 @@
                             <li>
 
                                 <!-- Si usas páginas -->
-                                <a class="dropdown-item" href="perfil.html">
+                                <a class="dropdown-item" href="../pages_int/perfil.html">
 
                                     <i class="bi bi-person me-2"></i>
 
@@ -1012,11 +1022,9 @@
                 const cuerpoModal = document.getElementById('modal-scroll-body');
                 const imagen = document.getElementById('modal-mascota-img');
 
-                // 1. Ocultamos todos los elementos dinámicos previos del modal antes de abrir
                 const elementosAocultar = cuerpoModal.querySelectorAll('[id^="m-tit-"], [id^="m-sub-"], [id^="m-txt-"], [id^="m-gal-"]');
                 elementosAocultar.forEach(el => el.classList.add('d-none'));
 
-                // 2. Definimos las imágenes correspondientes a cada mascota
                 const mascotas = {
                     'historia': '../Recursos/img_cultura/nahuipluma.png',
                     'gastronomia': '../Recursos/img_cultura/nahuicomiendo.png',
@@ -1029,13 +1037,11 @@
                     imagen.src = mascotas[seccion];
                 }
 
-                // 3. Activamos exclusivamente los bloques de la sección seleccionada
                 document.getElementById(`m-tit-${seccion}`).classList.remove('d-none');
                 document.getElementById(`m-sub-${seccion}`).classList.remove('d-none');
                 document.getElementById(`m-txt-${seccion}`).classList.remove('d-none');
                 document.getElementById(`m-gal-${seccion}`).classList.remove('d-none');
 
-                // 4. Desplegamos el modal general
                 contenedor.classList.remove('d-none');
 
                 setTimeout(() => {
@@ -1066,16 +1072,12 @@
         <!-- COMPONENTE: BOTÓN VOLVER ARRIBA (SCROLL TO TOP) -->
         <!-- ========================================== -->
 
-        <!-- Botón HTML con soporte de traducción -->
-
 
         <!-- Lógica de JavaScript para el Botón -->
         <script>
-            // Detectar el desplazamiento (scroll) de la página
             window.addEventListener('scroll', function () {
                 const boton = document.getElementById("btn-subir");
 
-                // Si el usuario baja más de 300 píxeles, el botón aparece; si vuelve arriba, se oculta
                 if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
                     boton.classList.remove("d-none");
                 } else {
@@ -1083,11 +1085,10 @@
                 }
             });
 
-            // Función para deslizar suavemente hacia el inicio
             function subirInicio() {
                 window.scrollTo({
                     top: 0,
-                    behavior: 'smooth' // Hace que la subida sea fluida y estética
+                    behavior: 'smooth' 
                 });
             }
         </script>
@@ -1214,6 +1215,10 @@
 
     <!-- JS -->
     <script src="../js/app.js"></script>
+    <script src="../js/racha.js"></script>
+
+    <!-- foto de perfil del header -->
+    <script src="/Castoresmlaulanet/js/usuarioHeader.js"></script>
 
 </body>
 

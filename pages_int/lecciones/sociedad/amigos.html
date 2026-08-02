@@ -105,106 +105,96 @@
 
 
         <!-- ========================================== -->
-<!--                HEADER MAIN                 -->
-<!-- ========================================== -->
+        <!--                HEADER MAIN                 -->
+        <!-- ========================================== -->
 
-<header class="header-main sticky-top shadow-lg">
+        <header class="header-main sticky-top shadow-lg">
 
-    <div class="container">
+            <div class="container">
 
-        <!-- FILA SUPERIOR -->
-        <div
-            class="headerint-top d-flex justify-content-between align-items-star flex-wrap gap-3 py-3">
+                <!-- FILA SUPERIOR -->
+                <div class="headerint-top d-flex justify-content-between align-items-star flex-wrap gap-3 py-3">
 
-            <!-- LOGO -->
-            <div class="headerint-logo">
+                    <!-- LOGO -->
+                    <div class="headerint-logo">
 
-                <img
-                    src="../../../Recursos/logos/logo_completo_svg.svg"
-                    alt="logo"
-                    class="img-fluid"
-                    style="max-width:185px;"
-                    data-aos="fade-right">
-
-            </div>
-
-            <!-- ESTADÍSTICAS -->
-            <div
-                class="headerint-stats d-flex align-items-center justify-content-center gap-3 flex-wrap"
-                data-aos="fade-up">
-
-                <!-- RACHA -->
-                <div class="stat-item headerint-racha">
-
-                    <i class="bi bi-fire stat-icon text-warning"></i>
-
-                    <div>
-
-                        <small
-                            class="stat-label"
-                            data-es="Racha"
-                            data-na="Tlatzintli">
-
-                            Racha
-
-                        </small>
-
-                        <span
-                            id="streak-display"
-                            class="stat-value">
-
-                            0
-
-                        </span>
+                        <img src="../../../Recursos/logos/logo_completo_svg.svg" alt="logo" class="img-fluid"
+                            style="max-width:185px;" data-aos="fade-right">
 
                     </div>
 
-                </div>
+                    <!-- ESTADÍSTICAS -->
+                    <div class="headerint-stats d-flex align-items-center justify-content-center gap-3 flex-wrap"
+                        data-aos="fade-up">
 
-                <!-- XP -->
-                <div class="stat-item headerint-xp">
+                        <!-- RACHA -->
+                        <div class="stat-item headerint-racha">
 
-                    <i class="bi bi-stars stat-icon text-warning"></i>
+                            <i class="bi bi-fire stat-icon text-warning"></i>
 
-                    <div>
+                            <div>
 
-                        <small
-                            class="stat-label"
-                            data-es="Puntaje"
-                            data-na="Tlapōhualli">
+                                <small class="stat-label" data-es="Racha" data-na="Tlatzintli">
+
+                                    Racha
+
+                                </small>
+
+                                <span id="streak-display" class="stat-value">
+
+                                    0
+
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <!-- XP -->
+                        <div class="stat-item headerint-xp">
+
+                            <i class="bi bi-stars stat-icon text-warning"></i>
+
+                            <div>
+
+                                <small class="stat-label" data-es="Puntaje" data-na="Tlapōhualli">
 
                                     Puntaje
 
-                        </small>
+                                </small>
 
-                        <span
-                            id="xp-display"
-                            class="stat-value">
+                                <span id="xp-display" class="stat-value">
 
-                            0
+                                    0
 
-                        </span>
+                                </span>
+
+                            </div>
+
+                        </div>
 
                     </div>
-
-                </div>
-
-            </div>
 
                     <!-- PERFIL -->
                     <div class="perfil-header dropdown" data-aos="fade-left">
 
                         <!-- BOTÓN -->
-                        <button
-                            class="btn p-0 border-0 bg-transparent d-flex align-items-center"
-                            type="button"
-                            data-bs-toggle="dropdown"
-                            aria-expanded="false">
+                        <button class="btn p-0 border-0 bg-transparent d-flex align-items-center" type="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
 
                             <!-- Avatar -->
                             <div class="perfil-avatar">
 
-                                <i class="bi bi-person-fill"></i>
+                                <i
+                                    id="iconoUsuario"
+                                    class="bi bi-person-fill">
+                                </i>
+
+                                <img
+                                    id="fotoUsuario"
+                                    class="foto-perfil"
+                                    src=""
+                                    style="display:none;">
 
                             </div>
 
@@ -212,6 +202,7 @@
                             <div class="perfil-info d-none d-md-block">
 
                                 <span
+                                    id="nombreUsuario"
                                     class="perfil-nombre"
                                     data-es="Invitado"
                                     data-na="Tlapowalistli">
@@ -233,7 +224,7 @@
                             <li>
 
                                 <!-- Si usas páginas -->
-                                <a class="dropdown-item" href="perfil.html">
+                                <a class="dropdown-item" href="../../perfil.html">
 
                                     <i class="bi bi-person me-2"></i>
 
@@ -249,167 +240,138 @@
 
                 </div>
 
-        </div>
+            </div>
 
-        <!-- NAVBAR -->
-        <nav class="navbar navbar-expand-lg navbarint justify-content-center">
+            <!-- NAVBAR -->
+            <nav class="navbar navbar-expand-lg navbarint justify-content-center">
 
-            <div class="container-fluid justify-content-center">
+                <div class="container-fluid justify-content-center">
 
-                <!-- BOTÓN HAMBURGUESA -->
-                    <button
-                    class="navbar-toggler navbarint-toggler mx-auto"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#menuNavbar">
+                    <!-- BOTÓN HAMBURGUESA -->
+                    <button class="navbar-toggler navbarint-toggler mx-auto" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#menuNavbar">
 
-                    <i class="bi bi-chevron-down"></i>
-
-                </button>
-
-                <!-- MENÚ -->
-                <div
-                    class="collapse navbar-collapse justify-content-center"
-                    id="menuNavbar">
-
-                    <div class="navbar-nav gap-2 justify-content-center">
-
-                    <!-- INICIO -->
-                    <button
-                        type="button"
-                        onclick="window.location.href='../../../pages_int/inicio.html'"
-                        class="btn navbarint-btn rounded-pill px-4"
-                        data-aos="fade-up"
-                        data-es="Inicio"
-                        data-na="Pewaloyan">
-
-                        <i class="bi bi-house-fill me-2"></i>
-
-                        Inicio
+                        <i class="bi bi-chevron-down"></i>
 
                     </button>
 
-                    <!-- LECCIONES -->
-                    <button
-                        type="button"
-                        onclick="window.location.href='../../../pages_int/lecciones.html'"
-                        class="btn navbarint-btn rounded-pill px-4"
-                        data-aos="fade-up"
-                        data-aos-delay="100"
-                        data-es="Lecciones"
-                        data-na="Temachtilli">
+                    <!-- MENÚ -->
+                    <div class="collapse navbar-collapse justify-content-center" id="menuNavbar">
 
-                        <i class="bi bi-book-fill me-2"></i>
+                        <div class="navbar-nav gap-2 justify-content-center">
 
-                        Lecciones
+                            <!-- INICIO -->
+                            <button type="button" onclick="window.location.href='../../../pages_int/inicio.html'"
+                                class="btn navbarint-btn rounded-pill px-4" data-aos="fade-up" data-es="Inicio"
+                                data-na="Pewaloyan">
 
-                    </button>
+                                <i class="bi bi-house-fill me-2"></i>
 
-                    <!-- CUENTOS -->
-                    <button
-                        type="button"
-                        onclick="window.location.href='../../../pages_int/Cuentos/cuentos.html'"
-                        class="btn navbarint-btn rounded-pill px-4"
-                        data-aos="fade-up"
-                        data-aos-delay="100"
-                        data-es="Cuentos"
-                        data-na="Tlahtolli">
+                                Inicio
 
-                        <i class="bi bi-book-half me-2"></i>
+                            </button>
 
-                        Cuentos
+                            <!-- LECCIONES -->
+                            <button type="button" onclick="window.location.href='../../../pages_int/lecciones.html'"
+                                class="btn navbarint-btn rounded-pill px-4" data-aos="fade-up" data-aos-delay="100"
+                                data-es="Lecciones" data-na="Temachtilli">
 
-                    </button>
+                                <i class="bi bi-book-fill me-2"></i>
 
-                    <!-- CULTURA -->
-                    <button
-                        type="button"
-                        onclick="window.location.href='../../../pages_int/cultura.html'"
-                        class="btn navbarint-btn rounded-pill px-4"
-                        data-aos="fade-up"
-                        data-aos-delay="200"
-                        data-es="Cultura"
-                        data-na="Yancuic Tlamachtiliztli">
+                                Lecciones
 
-                        <i class="bi bi-globe-americas me-2"></i>
+                            </button>
 
-                        Cultura
+                            <!-- CUENTOS -->
+                            <button type="button"
+                                onclick="window.location.href='../../../pages_int/Cuentos/cuentos.html'"
+                                class="btn navbarint-btn rounded-pill px-4" data-aos="fade-up" data-aos-delay="100"
+                                data-es="Cuentos" data-na="Tlahtolli">
 
-                    </button>
+                                <i class="bi bi-book-half me-2"></i>
 
-                    <!-- PROGRESO -->
-                    <button
-                        type="button"
-                        onclick="window.location.href='../../../pages_int/progreso.html'"
-                        class="btn navbarint-btn rounded-pill px-4"
-                        data-aos="fade-up"
-                        data-aos-delay="300"
-                        data-es="Progreso"
-                        data-na="Yancuic Nejnemiliztli">
+                                Cuentos
 
-                        <i class="bi bi-graph-up-arrow me-2"></i>
+                            </button>
 
-                        Progreso
+                            <!-- CULTURA -->
+                            <button type="button" onclick="window.location.href='../../../pages_int/cultura.html'"
+                                class="btn navbarint-btn rounded-pill px-4" data-aos="fade-up" data-aos-delay="200"
+                                data-es="Cultura" data-na="Yancuic Tlamachtiliztli">
 
-                    </button>
+                                <i class="bi bi-globe-americas me-2"></i>
+
+                                Cultura
+
+                            </button>
+
+                            <!-- PROGRESO -->
+                            <button type="button" onclick="window.location.href='../../../pages_int/progreso.html'"
+                                class="btn navbarint-btn rounded-pill px-4" data-aos="fade-up" data-aos-delay="300"
+                                data-es="Progreso" data-na="Yancuic Nejnemiliztli">
+
+                                <i class="bi bi-graph-up-arrow me-2"></i>
+
+                                Progreso
+
+                            </button>
+
+                        </div>
 
                     </div>
 
                 </div>
 
-            </div>
-
-        </nav>
+            </nav>
 
     </div>
 
-</header>
+    </header>
 
-        <!-- MAIN -->
-        <main class="container py-5">
-
-
-            <!-- BOTONES SUPERIORES -->
+    <!-- MAIN -->
+    <main class="container py-5">
 
 
-            <!-- BOTÓN TRADUCTOR -->
-            <div class="presen-traductor-int">
+        <!-- BOTONES SUPERIORES -->
 
-                <button class="btn btn-light rounded-circle traductor-btn" onclick="presenToggleMenu()"
-                    data-aos="zoom-in">
 
-                    <i class="bi bi-translate"></i>
+        <!-- BOTÓN TRADUCTOR -->
+        <div class="presen-traductor-int">
 
-                </button>
+            <button class="btn btn-light rounded-circle traductor-btn" onclick="presenToggleMenu()" data-aos="zoom-in">
 
-                <!-- MENÚ -->
-                <div class="presen-menu-int" id="presenMenuIdioma">
+                <i class="bi bi-translate"></i>
 
-                    <ul class="list-unstyled m-0">
+            </button>
 
-                        <li onclick="presenCambiarModo('es')">
-                            Español
-                        </li>
+            <!-- MENÚ -->
+            <div class="presen-menu-int" id="presenMenuIdioma">
 
-                        <li onclick="presenCambiarModo('na')">
-                            Náhuatl
-                        </li>
+                <ul class="list-unstyled m-0">
 
-                        <li onclick="presenCambiarModo('es-na')">
-                            Español + Náhuatl
-                        </li>
+                    <li onclick="presenCambiarModo('es')">
+                        Español
+                    </li>
 
-                        <li onclick="presenCambiarModo('na-es')">
-                            Náhuatl + Español
-                        </li>
+                    <li onclick="presenCambiarModo('na')">
+                        Náhuatl
+                    </li>
 
-                    </ul>
+                    <li onclick="presenCambiarModo('es-na')">
+                        Español + Náhuatl
+                    </li>
 
-                </div>
+                    <li onclick="presenCambiarModo('na-es')">
+                        Náhuatl + Español
+                    </li>
+
+                </ul>
 
             </div>
 
-    </div>
+        </div>
+
+        </div>
     </main>
     </div>
 
@@ -420,282 +382,274 @@
     <!-- =======================================================================
      ESTRUCTURA DE TRES COLUMNAS INTERACTIVAS (FONDO LIMPIO)
      ======================================================================= -->
-<main class="container-fluid mt-3 pt-5 pb-4 bg-light" style="min-height: 100vh;">
-    <div class="row g-4 px-2 px-md-4">
+    <main class="container-fluid mt-3 pt-5 pb-4 bg-light" style="min-height: 100vh;">
+        <div class="row g-4 px-2 px-md-4">
 
-        <!-- 1. PANEL IZQUIERDO: Amistad y Vecindad -->
-        <aside class="col-12 col-lg-3 d-flex flex-column gap-3">
-            <div class="p-2 border-bottom border-2 border-secondary mb-1">
-                <h5 class="fw-bold m-0 text-dark text-uppercase tracking-wide">
-                    <span data-es="Amistad y Vecindad" data-na="Icniuhcayotl huan Calnechcayotl">Amistad y Vecindad</span>
-                </h5>
-                <small class="text-secondary">
-                    <span data-es="Vínculos y compromisos colectivos." data-na="Tlatzotzonaliztli huan tlatlacualiztli tlacameh">
-                        Vínculos y compromisos colectivos.
+            <!-- 1. PANEL IZQUIERDO: Amistad y Vecindad -->
+            <aside class="col-12 col-lg-3 d-flex flex-column gap-3">
+                <div class="p-2 border-bottom border-2 border-secondary mb-1">
+                    <h5 class="fw-bold m-0 text-dark text-uppercase tracking-wide">
+                        <span data-es="Amistad y Vecindad" data-na="Icniuhcayotl huan Calnechcayotl">Amistad y
+                            Vecindad</span>
+                    </h5>
+                    <small class="text-secondary">
+                        <span data-es="Vínculos y compromisos colectivos."
+                            data-na="Tlatzotzonaliztli huan tlatlacualiztli tlacameh">
+                            Vínculos y compromisos colectivos.
+                        </span>
+                    </small>
+                </div>
+
+                <!-- Tarjeta: Amigo -->
+                <div onclick="abrirModalAudio('amigo')" data-audio="../../../Recursos/audios/sociedad/amigo.ogg"
+                    class="tarjeta-interactiva p-3 rounded-4 bg-white shadow-sm border-bottom border-4"
+                    style="border-color: #8BC34A; cursor: pointer;">
+                    <span class="badge rounded-pill fw-bold mb-1" style="background-color: #e8f5e9; color: #2e7d32;">
+                        <span data-es="Amigo" data-na="Noicniu"> Amigo </span>
                     </span>
-                </small>
-            </div>
-
-            <!-- Tarjeta: Amigo -->
-            <div onclick="abrirModalAudio('amigo')" data-audio="../../../Recursos/audios/sociedad/amigo.ogg"
-                class="tarjeta-interactiva p-3 rounded-4 bg-white shadow-sm border-bottom border-4"
-                style="border-color: #8BC34A; cursor: pointer;">
-                <span class="badge rounded-pill fw-bold mb-1" style="background-color: #e8f5e9; color: #2e7d32;">
-                    <span data-es="Amigo" data-na="Noicniu"> Amigo </span>
-                </span>
-                <div class="fw-bold text-dark fs-5">
-                    <span data-es="Amigo" data-na="Noicniu"> Amigo </span>
+                    <div class="fw-bold text-dark fs-5">
+                        <span data-es="Amigo" data-na="Noicniu"> Amigo </span>
+                    </div>
+                    <small class="text-secondary d-block mt-1">
+                        <span data-es="Mi hermano de vida" data-na="Noicniuhtzin yolpan"> Mi hermano de vida </span>
+                    </small>
                 </div>
-                <small class="text-secondary d-block mt-1">
-                    <span data-es="Mi hermano de vida" data-na="Noicniuhtzin yolpan"> Mi hermano de vida </span>
-                </small>
-            </div>
 
-            <!-- Tarjeta: Amistad -->
-            <div onclick="abrirModalAudio('amistad')" data-audio="../../../Recursos/audios/sociedad/amistad.ogg"
-                class="tarjeta-interactiva p-3 rounded-4 bg-white shadow-sm border-bottom border-4"
-                style="border-color: #D32F2F; cursor: pointer;">
-                <span class="badge rounded-pill fw-bold mb-1" style="background-color: #ffebee; color: #c62828;">
-                    <span data-es="Amistad" data-na="Icnioyotl"> Amistad </span>
-                </span>
-                <div class="fw-bold text-dark fs-5">
-                    <span data-es="Amistad" data-na="Icnioyotl"> Amistad </span>
-                </div>
-                <small class="text-secondary d-block mt-1">
-                    <span data-es="El lazo afectivo colectivo" data-na="Tlatzotzonaliztli yolotl tlacameh"> El lazo afectivo colectivo </span>
-                </small>
-            </div>
-
-            <!-- Tarjeta: Vecino -->
-            <div onclick="abrirModalAudio('vecino')" data-audio="../../../Recursos/audios/sociedad/vecino.ogg"
-                class="tarjeta-interactiva p-3 rounded-4 bg-white shadow-sm border-bottom border-4"
-                style="border-color: #9C27B0; cursor: pointer;">
-                <span class="badge rounded-pill fw-bold mb-1" style="background-color: #f3e5f5; color: #6a1b9a;">
-                    <span data-es="Vecino" data-na="Calnahuacatl"> Vecino </span>
-                </span>
-                <div class="fw-bold text-dark fs-5">
-                    <span data-es="Vecino" data-na="Calnahuacatl"> Vecino </span>
-                </div>
-                <small class="text-secondary d-block mt-1">
-                    <span data-es="El que vive junto a mi casa" data-na="In calnahuac niyuhqui"> El que vive junto a mi casa </span>
-                </small>
-            </div>
-
-            <!-- Tarjeta: Compañero -->
-            <div onclick="abrirModalAudio('companero')" data-audio="../../../Recursos/audios7sociedad/compañero.ogg"
-                class="tarjeta-interactiva p-3 rounded-4 bg-white shadow-sm border-bottom border-4"
-                style="border-color: #FF9800; cursor: pointer;">
-                <span class="badge rounded-pill fw-bold mb-1" style="background-color: #fff3e0; color: #e65100;">
-                    <span data-es="Compañero" data-na="Tenamic"> Compañero </span>
-                </span>
-                <div class="fw-bold text-dark fs-5">
-                    <span data-es="Compañero" data-na="Tenamic"> Compañero </span>
-                </div>
-                <small class="text-secondary d-block mt-1">
-                    <span data-es="Pareja o compañero de vida" data-na="Nochpochhuan huan Tenamic yolpan"> Pareja o compañero de vida </span>
-                </small>
-            </div>
-        </aside>
-
-        <!-- 2. PANEL CENTRAL: Carrusel Explicativo Automático (Espacio Blanco Eliminado) -->
-        <section class="col-12 col-lg-6">
-            <!-- Se quitó d-flex y flex-column para que no genere altura vacía abajo -->
-            <div class="seccion-carrusel bg-white rounded-4 overflow-hidden shadow-sm border">
-                
-                <!-- Barra de categoría superior -->
-                <div class="py-2 text-white fw-bold text-center text-uppercase tracking-wider"
-                    style="background-color: #FF8C00; font-size: 0.9rem;">
-                    <span data-es="Comunidad y Organización" data-na="Altepemeh huan Tlatlacualiztli"> 
-                        Comunidad y Organización
+                <!-- Tarjeta: Amistad -->
+                <div onclick="abrirModalAudio('amistad')" data-audio="../../../Recursos/audios/sociedad/amistad.ogg"
+                    class="tarjeta-interactiva p-3 rounded-4 bg-white shadow-sm border-bottom border-4"
+                    style="border-color: #D32F2F; cursor: pointer;">
+                    <span class="badge rounded-pill fw-bold mb-1" style="background-color: #ffebee; color: #c62828;">
+                        <span data-es="Amistad" data-na="Icnioyotl"> Amistad </span>
                     </span>
+                    <div class="fw-bold text-dark fs-5">
+                        <span data-es="Amistad" data-na="Icnioyotl"> Amistad </span>
+                    </div>
+                    <small class="text-secondary d-block mt-1">
+                        <span data-es="El lazo afectivo colectivo" data-na="Tlatzotzonaliztli yolotl tlacameh"> El lazo
+                            afectivo colectivo </span>
+                    </small>
                 </div>
 
-                <!-- El Carrusel -->
-                <div id="carruselEducativo" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
-                    <div class="carousel-inner">
-                        
-                        <!-- Slide 1: El Altepetl -->
-                        <div class="carousel-item active" data-titulo="Amigo / Noicniu"
-                            data-desc="La estructura comunitaria y el pueblo unido que organiza la vida social en La Resurrección.">
-                            <img src="../../../Recursos/img_sociedad/amigo.jpeg" class="d-block w-100" alt="Altepetl" style="height: auto; max-height: 420px; object-fit: cover;">
-                        </div>
-                        
-                        <!-- Slide 2: El Tequio -->
-                        <div class="carousel-item" data-titulo="EL TEQUIO O TAQUITL"
-                            data-desc="Trabajo comunitario no remunerado. La ayuda mutua obligatoria y solidaria para el bien de todos.">
-                            <img src="../../../Recursos/img_sociedad/comoestas.jpeg" class="d-block w-100" alt="Tequio" style="height: auto; max-height: 420px; object-fit: cover;">
-                        </div>
+                <!-- Tarjeta: Vecino -->
+                <div onclick="abrirModalAudio('vecino')" data-audio="../../../Recursos/audios/sociedad/vecino.ogg"
+                    class="tarjeta-interactiva p-3 rounded-4 bg-white shadow-sm border-bottom border-4"
+                    style="border-color: #9C27B0; cursor: pointer;">
+                    <span class="badge rounded-pill fw-bold mb-1" style="background-color: #f3e5f5; color: #6a1b9a;">
+                        <span data-es="Vecino" data-na="Calnahuacatl"> Vecino </span>
+                    </span>
+                    <div class="fw-bold text-dark fs-5">
+                        <span data-es="Vecino" data-na="Calnahuacatl"> Vecino </span>
+                    </div>
+                    <small class="text-secondary d-block mt-1">
+                        <span data-es="El que vive junto a mi casa" data-na="In calnahuac niyuhqui"> El que vive junto a
+                            mi casa </span>
+                    </small>
+                </div>
 
-                        <!-- Slide 3: Compañero -->
-                        <div class="carousel-item" data-titulo="EL TEQUIO O TAQUITL"
-                            data-desc="Trabajo comunitario no remunerado. La ayuda mutua obligatoria y solidaria para el bien de todos.">
-                            <img src="../../../Recursos/img_sociedad/compañero.jpeg" class="d-block w-100" alt="Tequio" style="height: auto; max-height: 420px; object-fit: cover;">
-                        </div>
+                <!-- Tarjeta: Compañero -->
+                <div onclick="abrirModalAudio('companero')" data-audio="../../../Recursos/audios7sociedad/compañero.ogg"
+                    class="tarjeta-interactiva p-3 rounded-4 bg-white shadow-sm border-bottom border-4"
+                    style="border-color: #FF9800; cursor: pointer;">
+                    <span class="badge rounded-pill fw-bold mb-1" style="background-color: #fff3e0; color: #e65100;">
+                        <span data-es="Compañero" data-na="Tenamic"> Compañero </span>
+                    </span>
+                    <div class="fw-bold text-dark fs-5">
+                        <span data-es="Compañero" data-na="Tenamic"> Compañero </span>
+                    </div>
+                    <small class="text-secondary d-block mt-1">
+                        <span data-es="Pareja o compañero de vida" data-na="Nochpochhuan huan Tenamic yolpan"> Pareja o
+                            compañero de vida </span>
+                    </small>
+                </div>
+            </aside>
 
-                        <!-- Slide 4: Gracias -->
-                        <div class="carousel-item" data-titulo="EL TEQUIO O TAQUITL"
-                            data-desc="Trabajo comunitario no remunerado. La ayuda mutua obligatoria y solidaria para el bien de todos.">
-                            <img src="../../../Recursos/img_sociedad/gracias.jpeg" class="d-block w-100" alt="Tequio" style="height: auto; max-height: 420px; object-fit: cover;">
-                        </div>
+            <!-- 2. PANEL CENTRAL: Carrusel Explicativo Automático (Espacio Blanco Eliminado) -->
+            <section class="col-12 col-lg-6">
+                <!-- Se quitó d-flex y flex-column para que no genere altura vacía abajo -->
+                <div class="seccion-carrusel bg-white rounded-4 overflow-hidden shadow-sm border">
+
+                    <!-- Barra de categoría superior -->
+                    <div class="py-2 text-white fw-bold text-center text-uppercase tracking-wider"
+                        style="background-color: #FF8C00; font-size: 0.9rem;">
+                        <span data-es="Comunidad y Organización" data-na="Altepemeh huan Tlatlacualiztli">
+                            Comunidad y Organización
+                        </span>
                     </div>
 
-                    <!-- Controles -->
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carruselEducativo" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Anterior</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carruselEducativo" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Siguiente</span>
-                    </button>
+                    <!-- El Carrusel -->
+                    <div id="carruselEducativo" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+                        <div class="carousel-inner">
+
+                            <!-- Slide 1: El Altepetl -->
+                            <div class="carousel-item active" data-titulo="Amigo / Noicniu"
+                                data-desc="La estructura comunitaria y el pueblo unido que organiza la vida social en La Resurrección.">
+                                <img src="../../../Recursos/img_sociedad/amigo.jpeg" class="d-block w-100"
+                                    alt="Altepetl" style="height: auto; max-height: 420px; object-fit: cover;">
+                            </div>
+
+                            <!-- Slide 2: El Tequio -->
+                            <div class="carousel-item" data-titulo="EL TEQUIO O TAQUITL"
+                                data-desc="Trabajo comunitario no remunerado. La ayuda mutua obligatoria y solidaria para el bien de todos.">
+                                <img src="../../../Recursos/img_sociedad/comoestas.jpeg" class="d-block w-100"
+                                    alt="Tequio" style="height: auto; max-height: 420px; object-fit: cover;">
+                            </div>
+
+                            <!-- Slide 3: Compañero -->
+                            <div class="carousel-item" data-titulo="EL TEQUIO O TAQUITL"
+                                data-desc="Trabajo comunitario no remunerado. La ayuda mutua obligatoria y solidaria para el bien de todos.">
+                                <img src="../../../Recursos/img_sociedad/compañero.jpeg" class="d-block w-100"
+                                    alt="Tequio" style="height: auto; max-height: 420px; object-fit: cover;">
+                            </div>
+
+                            <!-- Slide 4: Gracias -->
+                            <div class="carousel-item" data-titulo="EL TEQUIO O TAQUITL"
+                                data-desc="Trabajo comunitario no remunerado. La ayuda mutua obligatoria y solidaria para el bien de todos.">
+                                <img src="../../../Recursos/img_sociedad/gracias.jpeg" class="d-block w-100"
+                                    alt="Tequio" style="height: auto; max-height: 420px; object-fit: cover;">
+                            </div>
+                        </div>
+
+                        <!-- Controles -->
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carruselEducativo"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Anterior</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carruselEducativo"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Siguiente</span>
+                        </button>
+                    </div>
+
+                    <!-- Texto Informativo Inferior -->
+                    <div class="p-4 text-center border-top bg-light">
+                        <h2 id="carrusel-titulo" class="fw-black text-dark mb-1" style="font-weight: 800;">ALTEPETL</h2>
+                        <p id="carrusel-desc" class="text-secondary m-0">La estructura comunitaria y el pueblo unido que
+                            organiza la vida social.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. PANEL DERECHO: Respeto Social y Cortesía -->
+            <aside class="col-12 col-lg-3 d-flex flex-column gap-3">
+                <div class="p-2 border-bottom border-2 border-secondary mb-1">
+                    <h5 class="fw-bold m-0 text-dark text-uppercase tracking-wide">
+                        <span data-es="Respeto y Cortesía" data-na="Tlatlepaniztli huan Tlatzopeliztli"> Respeto y
+                            Cortesía </span>
+                    </h5>
+                    <small class="text-secondary">
+                        <span data-es="Expresiones cotidianas de cortesía" data-na="Tlatzopeliztli tlen tonali">
+                            Expresiones cotidianas de cortesía </span>
+                    </small>
                 </div>
 
-                <!-- Texto Informativo Inferior -->
-                <div class="p-4 text-center border-top bg-light">
-                    <h2 id="carrusel-titulo" class="fw-black text-dark mb-1" style="font-weight: 800;">ALTEPETL</h2>
-                    <p id="carrusel-desc" class="text-secondary m-0">La estructura comunitaria y el pueblo unido que organiza la vida social.</p>
+                <!-- Tarjeta: ¿Cómo está usted? -->
+                <div onclick="abrirModalAudio('saludo')" data-audio="../../../Recursos/audios/sociedad/comoesta.ogg"
+                    class="tarjeta-interactiva p-3 rounded-4 bg-white shadow-sm border-bottom border-4"
+                    style="border-color: #00bcd4; cursor: pointer;">
+                    <span class="badge rounded-pill fw-bold mb-1" style="background-color: #e0f7fa; color: #006064;">
+                        <span data-es="¿Cómo está usted?" data-na="Tlelein"> ¿Cómo está usted? </span>
+                    </span>
+                    <div class="fw-bold text-dark fs-5">
+                        <span data-es="¿Cómo está usted?" data-na="Tlelein"> ¿Cómo está usted? </span>
+                    </div>
+                    <small class="text-secondary d-block mt-1">
+                        <span data-es="Saludo de profundo respeto" data-na="Tlatlepaniztli tlahpaliztli"> Saludo de
+                            profundo respeto </span>
+                    </small>
                 </div>
-            </div>
-        </section>
 
-        <!-- 3. PANEL DERECHO: Respeto Social y Cortesía -->
-        <aside class="col-12 col-lg-3 d-flex flex-column gap-3">
-            <div class="p-2 border-bottom border-2 border-secondary mb-1">
-                <h5 class="fw-bold m-0 text-dark text-uppercase tracking-wide">
-                    <span data-es="Respeto y Cortesía" data-na="Tlatlepaniztli huan Tlatzopeliztli"> Respeto y Cortesía </span>
-                </h5>
-                <small class="text-secondary">
-                    <span data-es="Expresiones cotidianas de cortesía" data-na="Tlatzopeliztli tlen tonali"> Expresiones cotidianas de cortesía </span>
-                </small>
-            </div>
-
-            <!-- Tarjeta: ¿Cómo está usted? -->
-            <div onclick="abrirModalAudio('saludo')" data-audio="../../../Recursos/audios/sociedad/comoesta.ogg"
-                class="tarjeta-interactiva p-3 rounded-4 bg-white shadow-sm border-bottom border-4"
-                style="border-color: #00bcd4; cursor: pointer;">
-                <span class="badge rounded-pill fw-bold mb-1" style="background-color: #e0f7fa; color: #006064;">
-                    <span data-es="¿Cómo está usted?" data-na="Tlelein"> ¿Cómo está usted? </span>
-                </span>
-                <div class="fw-bold text-dark fs-5">
-                    <span data-es="¿Cómo está usted?" data-na="Tlelein"> ¿Cómo está usted? </span>
+                <!-- Tarjeta: Mi estimado amigo -->
+                <div onclick="abrirModalAudio('estimado')"
+                    data-audio="../../../Recursos/audios/sociedad/mi_estimado_amigo.ogg"
+                    class="tarjeta-interactiva p-3 rounded-4 bg-white shadow-sm border-bottom border-4"
+                    style="border-color: #3f51b5; cursor: pointer;">
+                    <span class="badge rounded-pill fw-bold mb-1" style="background-color: #e8eaf6; color: #1a237e;">
+                        <span data-es="Mi estimado amigo" data-na="Nocniutzin "> Mi estimado amigo </span>
+                    </span>
+                    <div class="fw-bold text-dark fs-5">
+                        <span data-es="Mi estimado amigo" data-na="Nocniutzin "> Mi estimado amigo </span>
+                    </div>
+                    <small class="text-secondary d-block mt-1">
+                        <span data-es="Respeto entre las personas" data-na="Tlatlepanitaliztli ihuān tlacameh"> Respeto
+                            entre las personas </span>
+                    </small>
                 </div>
-                <small class="text-secondary d-block mt-1">
-                    <span data-es="Saludo de profundo respeto" data-na="Tlatlepaniztli tlahpaliztli"> Saludo de profundo respeto </span>
-                </small>
-            </div>
 
-            <!-- Tarjeta: Mi estimado amigo -->
-            <div onclick="abrirModalAudio('estimado')" data-audio="../../../Recursos/audios/sociedad/mi_estimado_amigo.ogg"
-                class="tarjeta-interactiva p-3 rounded-4 bg-white shadow-sm border-bottom border-4"
-                style="border-color: #3f51b5; cursor: pointer;">
-                <span class="badge rounded-pill fw-bold mb-1" style="background-color: #e8eaf6; color: #1a237e;">
-                    <span data-es="Mi estimado amigo" data-na="Nocniutzin "> Mi estimado amigo </span>
-                </span>
-                <div class="fw-bold text-dark fs-5">
-                    <span data-es="Mi estimado amigo" data-na="Nocniutzin "> Mi estimado amigo </span>
+                <!-- Tarjeta: Gracias -->
+                <div onclick="abrirModalAudio('gracias')" data-audio="../../../Recursos/audios/sociedad/gracias.ogg"
+                    class="tarjeta-interactiva p-3 rounded-4 bg-white shadow-sm border-bottom border-4"
+                    style="border-color: #ffc107; cursor: pointer;">
+                    <span class="badge rounded-pill fw-bold mb-1" style="background-color: #fff8e1; color: #ff6f00;">
+                        <span data-es="Gracias" data-na="Tlazohcamati"> Gracias </span>
+                    </span>
+                    <div class="fw-bold text-dark fs-5">
+                        <span data-es="Gracias" data-na="Tlazohcamati"> Gracias </span>
+                    </div>
+                    <small class="text-secondary d-block mt-1">
+                        <span data-es="Esencial para la armonía social" data-na="Ipan huei tlatzotzonaliztli tlacameh">
+                            Esencial para la armonía social </span>
+                    </small>
                 </div>
-                <small class="text-secondary d-block mt-1">
-                    <span data-es="Respeto entre las personas" data-na="Tlatlepanitaliztli ihuān tlacameh"> Respeto entre las personas </span>
-                </small>
-            </div>
+            </aside>
 
-            <!-- Tarjeta: Gracias -->
-            <div onclick="abrirModalAudio('gracias')" data-audio="../../../Recursos/audios/sociedad/gracias.ogg"
-                class="tarjeta-interactiva p-3 rounded-4 bg-white shadow-sm border-bottom border-4"
-                style="border-color: #ffc107; cursor: pointer;">
-                <span class="badge rounded-pill fw-bold mb-1" style="background-color: #fff8e1; color: #ff6f00;">
-                    <span data-es="Gracias" data-na="Tlazohcamati"> Gracias </span>
-                </span>
-                <div class="fw-bold text-dark fs-5">
-                    <span data-es="Gracias" data-na="Tlazohcamati"> Gracias </span>
-                </div>
-                <small class="text-secondary d-block mt-1">
-                    <span data-es="Esencial para la armonía social" data-na="Ipan huei tlatzotzonaliztli tlacameh"> Esencial para la armonía social </span>
-                </small>
-            </div>
-        </aside>
+        </div>
+    </main>
 
-    </div>
-</main>
-
-<!-- =======================================================================
+    <!-- =======================================================================
      CONTENEDOR DE ACCIONES INFERIORES: EXTREMO IZQUIERDO Y EXTREMO DERECHO
      ======================================================================= -->
-<section class="container">
-        <div
-            class="d-flex justify-content-start mt-5"
-            data-aos="fade-right">
+    
+    <section class="container">
+        <!-- Alineación flex: Regresar a la izquierda; Subir y Completar a la derecha con espacio entre ellos -->
+        <div class="d-flex justify-content-between align-items-center mt-5" data-aos="fade-up">
 
-            <button
-                onclick="window.location.href='../../../pages_int/mapa_plantas.html'"
-                class="btn-regresar-int">
+            <!-- LADO IZQUIERDO: Botón Regresar -->
+            <div>
+                <button onclick="window.location.href='../../../pages_int/mapa_sociedad.html'"
+                    class="btn-regresar-int">
+                    <i class="bi bi-arrow-left-circle-fill me-2"></i>
+                    <span data-es="Regresar" data-na="Mokuepa">Regresar</span>
+                </button>
+            </div>
 
-                <i class="bi bi-arrow-left-circle-fill me-2"></i>
+            <!-- LADO DERECHO: Botones Subir y Completar (con gap para separarlos perfectamente) -->
+            <div class="d-flex gap-3 align-items-center">
+                <!-- Botón Subir -->
+                <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" class="btn-regresar-int">
+                    <i class="bi bi-arrow-up-circle-fill me-2"></i>
+                    <span data-es="Subir" data-na="Tlejco">Subir</span>
+                </button>
 
-                <span
-                    data-es="Regresar"
-                    data-na="Mokuepa">
-
-                    Regresar
-
-                </span>
-
-            </button>
+            </div>
 
         </div>
-
     </section>
 
-<!-- =======================================================================
-     VENTANA EMERGENTE (MODAL) CON CONTROLES DE AUDIO INCLUIDOS
-     ====================================================================== -->
-<div id="modal-audio-comunidad"
-    class="position-fixed top-50 start-50 translate-middle bg-white p-4 rounded-4 shadow-lg d-none"
-    style="z-index: 1060; width: 92%; max-width: 400px; border: 2px solid #dee2e6;">
+    <br>
 
-    <audio id="reproductor-core"></audio>
-
-    <div class="d-flex justify-content-between align-items-center mb-3 pb-2 border-bottom">
-        <span class="fw-bold text-muted text-uppercase small tracking-wide"> Escuchar Palabra</span>
-        <button type="button" class="btn-close rounded-circle p-2 bg-light border" onclick="cerrarModalAudio()" aria-label="Cerrar"></button>
-    </div>
-
-    <div id="modal-dinamico-info" class="text-center py-3"></div>
-
-    <div class="row g-2 mt-2 pt-3 border-top">
-        <div class="col-6">
-            <button onclick="reproducirAudioEnVelocidad(1.0)" class="btn btn-primary w-100 py-2 rounded-3 fw-bold btn-push">
-                <i class="bi bi-play-circle-fill me-1"></i> Normal
-            </button>
-        </div>
-        <div class="col-6">
-            <button onclick="reproducirAudioEnVelocidad(0.5)" class="btn btn-warning w-100 py-2 rounded-3 text-dark fw-bold btn-push">
-                <i class="bi bi-turtle-fill me-1"></i> Lento
-            </button>
-        </div>
-    </div>
-</div>
-
-<!-- =======================================================================
+    <!-- =======================================================================
      ESTILOS CSS Y COMPORTAMIENTO INTERACTIVO JS
      ======================================================================= -->
-<style>
-    .tarjeta-interactiva {
-        transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    }
+    <style>
+        .tarjeta-interactiva {
+            transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
 
-    .tarjeta-interactiva:hover {
-        transform: translateY(-4px);
-    }
+        .tarjeta-interactiva:hover {
+            transform: translateY(-4px);
+        }
 
-    .btn-push:active {
-        transform: scale(0.96);
-    }
+        .btn-push:active {
+            transform: scale(0.96);
+        }
 
-    .fw-black {
-        font-weight: 500;
-    }
-</style>
+        .fw-black {
+            font-weight: 500;
+        }
+    </style>
 
     <!-- =========================================
                 FOOTER
@@ -710,7 +664,8 @@
 
                 <div class="col-12 col-md-4" data-aos="fade-right">
 
-                    <img src="../../../Recursos/logos/logo_completo_svg.svg" alt="Aul@Net" class="img-fluid footer-logo">
+                    <img src="../../../Recursos/logos/logo_completo_svg.svg" alt="Aul@Net"
+                        class="img-fluid footer-logo">
 
 
                     <img src="../../../Recursos/logos/utp_svg.svg" alt="Aul@Net" class="img-fluid footer-logo-utp">
@@ -833,8 +788,6 @@
             const item = datosVocabulario[clave];
             if (!item) return;
 
-            // 1. Buscamos la tarjeta en el HTML para extraer su 'data-audio' dinámico
-            // Usamos el evento del click para encontrar el elemento o lo buscamos por su onclick
             const tarjeta = document.querySelector(`[onclick="abrirModalAudio('${clave}')"]`);
             if (!tarjeta) return;
 
@@ -847,21 +800,18 @@
             detenerAudio();
             audioActivoUrl = rutaAudio;
 
-            // 2. Inyectamos la información en el modal
             const infoContenedor = document.getElementById('modal-dinamico-info');
             infoContenedor.innerHTML = `
         <h3 class="fw-bold text-dark mb-1">${item.titulo}</h3>
         <p class="fs-5 text-secondary m-0">${item.traduccion}</p>
     `;
 
-            // 3. Mostramos el modal quitando la clase de Bootstrap 'd-none'
             document.getElementById('modal-audio-comunidad').classList.remove('d-none');
 
-            // 4. Asignamos la ruta al reproductor nativo y reproducimos
             const player = document.getElementById('reproductor-core');
             if (player) {
                 player.src = audioActivoUrl;
-                player.load(); // Forzamos al navegador a cargar el nuevo archivo
+                player.load();
                 reproducirAudioEnVelocidad(1.0);
             }
         }
@@ -870,15 +820,12 @@
             const player = document.getElementById('reproductor-core');
             if (!player || !audioActivoUrl) return;
 
-            // Cambiamos la velocidad de reproducción
             player.playbackRate = velocidad;
 
-            // Si el reproductor no tiene origen asignado todavía, se lo colocamos
             if (!player.src || player.src === "") {
                 player.src = audioActivoUrl;
             }
 
-            // Ejecutamos la reproducción nativa
             player.play().catch(err => {
                 console.warn("La reproducción automática fue bloqueada por el navegador o el archivo no existe. Detalles:", err);
             });
@@ -897,7 +844,6 @@
             document.getElementById('modal-audio-comunidad').classList.add('d-none');
         }
 
-        // Sincronización e iniciación forzada del autoplay del Carrusel mediante JS
         document.addEventListener('DOMContentLoaded', function () {
             const elementoCarrusel = document.getElementById('carruselEducativo');
             if (!elementoCarrusel) return;
@@ -919,11 +865,9 @@
     </script>
 
     <script>
-        // Detectar el desplazamiento (scroll) de la página
         window.addEventListener('scroll', function () {
             const boton = document.getElementById("btn-subir");
 
-            // Si el usuario baja más de 300 píxeles, el botón aparece; si vuelve arriba, se oculta
             if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
                 boton.classList.remove("d-none");
             } else {
@@ -931,11 +875,10 @@
             }
         });
 
-        // Función para deslizar suavemente hacia el inicio
         function subirInicio() {
             window.scrollTo({
                 top: 0,
-                behavior: 'smooth' // Hace que la subida sea fluida y estética
+                behavior: 'smooth'
             });
         }
 
@@ -946,6 +889,11 @@
 
     <!-- JS -->
     <script src="../../../js/app.js"></script>
+    <script src="../../../js/racha.js"></script>
+
+    <!-- foto de perfil del header -->
+    <script src="/Castoresmlaulanet/js/usuarioHeader.js"></script>
+
 
 </body>
 

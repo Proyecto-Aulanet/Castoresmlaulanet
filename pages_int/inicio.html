@@ -208,7 +208,16 @@
                             <!-- Avatar -->
                             <div class="perfil-avatar">
 
-                                <i class="bi bi-person-fill"></i>
+                                <i
+                                    id="iconoUsuario"
+                                    class="bi bi-person-fill">
+                                </i>
+
+                                <img
+                                    id="fotoUsuario"
+                                    class="foto-perfil"
+                                    src=""
+                                    style="display:none;">
 
                             </div>
 
@@ -216,6 +225,7 @@
                             <div class="perfil-info d-none d-md-block">
 
                                 <span
+                                    id="nombreUsuario"
                                     class="perfil-nombre"
                                     data-es="Invitado"
                                     data-na="Tlapowalistli">
@@ -664,6 +674,49 @@
     <!-- AOS -->
     <script src="../assets/js/aos.js"></script>
 
+        <script>
+
+    async function cargarUsuario(){
+
+        try{
+
+            const respuesta = await fetch("../php/sesion_usuario.php");
+
+            const resultado = await respuesta.json();
+
+
+            const nombreUsuario = document.getElementById("nombreUsuario");
+
+
+            if(resultado.status === "success"){
+
+                nombreUsuario.textContent =
+                    resultado.usuario.nombre;
+
+            }else{
+
+                nombreUsuario.textContent =
+                    "Usuario";
+
+            }
+
+
+        }catch(error){
+
+            console.error("Error sesión:", error);
+
+        }
+
+    }
+
+
+    document.addEventListener(
+    "DOMContentLoaded",
+    cargarUsuario
+    );
+
+    </script>
+
     <!-- INIT AOS -->
     <script>
         AOS.init({
@@ -674,6 +727,7 @@
 
     <!-- JS -->
     <script src="../js/app.js"></script>
+    <script src="../js/racha.js"></script>
 
     <!-- chat bot -->
     <script type="module" src="https://cdn.landbot.io/landbot-3/landbot-3.0.0.mjs"></script>
@@ -682,6 +736,9 @@
             configUrl: 'https://storage.googleapis.com/landbot.online/v3/H-3480209-4YCUH03KYKADJIE9/index.json',
         });
     </script>
+
+    <!-- foto de perfil del header -->
+    <script src="/Castoresmlaulanet/js/usuarioHeader.js"></script>
 
 </body>
 

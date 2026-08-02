@@ -4406,34 +4406,7 @@ box-shadow:
 
 
 
-.institution-card::before{
 
-
-    content:"";
-
-
-    position:absolute;
-
-
-    width:320px;
-
-
-    height:320px;
-
-
-    background:rgba(34,197,94,.12);
-
-
-    border-radius:50%;
-
-
-    top:-150px;
-
-
-    right:-100px;
-
-
-}
 
 
 
@@ -9667,15 +9640,10 @@ body {
 ==================================== */
 
 #contenedor-exportacion {
-
     position: fixed;
-
     left: -10000px;
-
     top: 0;
-
     pointer-events: none;
-
 }
 
 .progreso-card {
@@ -9807,27 +9775,21 @@ body {
 
 
 .tarjeta-exportar {
-
     width: 1080px;
-
     height: 1350px;
-
     background: #F7FAF8;
 
     display: flex;
-
     flex-direction: column;
 
     overflow: hidden;
 }
 
 .tarjeta-header {
-
     height: 220px;
+    flex-shrink: 0;
 
-    background: linear-gradient(135deg,
-            #124734,
-            #3B8B7A);
+    background: linear-gradient(135deg, #124734, #3B8B7A);
 
     display: flex;
     justify-content: center;
@@ -9840,15 +9802,16 @@ body {
 }
 
 .tarjeta-cuerpo {
-
     flex: 1;
 
     display: flex;
     flex-direction: column;
-
     align-items: center;
 
-    padding: 40px 80px;
+    padding: 24px 80px;
+
+    /* IMPORTANTE */
+    min-height: 0;
 }
 
 .tarjeta-cuerpo h2 {
@@ -9907,17 +9870,19 @@ body {
 }
 
 .tarjeta-footer {
+    height: 70px;
+    flex-shrink: 0;
 
     background: #124734;
-
     color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     text-align: center;
 
-    padding: 20px;
-
     font-size: 20px;
-
     font-weight: 600;
 }
 
@@ -12166,5 +12131,17 @@ left:34%;
         margin-bottom:10px;
 
     }
+
+}
+
+
+
+
+/*Perfilajustes*/
+
+#iconoDefaultPerfil{
+
+    font-size: 150px;
+    color: white;
 
 }
