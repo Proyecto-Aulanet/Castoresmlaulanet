@@ -1,3 +1,46 @@
+/* =========================
+   FUENTES
+========================= */
+/* Poppins */
+@font-face {
+  font-family: 'Poppins';
+  src: url('/assets/fonts/Poppins-Regular.ttf');
+  font-weight: 400; /* Regular */
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/assets/fonts/Poppins-Bold.ttf');
+  font-weight: 700; /* Bold */
+}
+
+/* Fredoka */
+@font-face {
+  font-family: 'Fredoka';
+  src: url('/assets/fonts/Fredoka-Regular.ttf');
+  font-weight: 400; /* Regular */
+}
+
+@font-face {
+  font-family: 'Fredoka';
+  src: url('/assets/fonts/Fredoka-Bold.ttf');
+  font-weight: 700; /* Bold */
+}
+
+/* 1. Fuente base para TODO el contenido (párrafos, spans, inputs, etc.) */
+*, *::before, *::after {
+  font-family: 'Poppins', sans-serif !important;
+}
+
+/* 2. Fuente redondeada (Fredoka) para Títulos y Botones clave */
+h1, h2, h3, h4, h5, h6, 
+.card-title, 
+.btn, 
+.nav-link {
+  font-family: 'Fredoka', sans-serif !important;
+  font-weight: 700; /* Usará Fredoka-Bold automáticamente */
+}
+
 
         .libro-fondo {
             position: absolute;
