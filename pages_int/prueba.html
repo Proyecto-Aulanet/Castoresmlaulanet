@@ -8,7 +8,7 @@
     <!-- RESPONSIVE -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Abecedario - Castores Multilingües Aul@Net</title>
+    <title>Inicio - Castores Multilingües Aul@Net</title>
 
     <link rel="icon" href="../Recursos/nahui_caras/nahui_feliz_vector.svg" type="image/png">
 
@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="../styles/styles.css">
 
 </head>
+
 
 <body>
 
@@ -110,6 +111,8 @@
         </div>
 
     </div>      
+     
+        
 <!-- ========================================== -->
 <!--                HEADER MAIN                 -->
 <!-- ========================================== -->
@@ -176,8 +179,7 @@
 
                         <small
                             class="stat-label"
-                            data-es="Puntaje"
-                            data-na="Tlapōhualli">
+    data-es="Puntaje" data-na="Tlapōhualli">
 
                                     Puntaje
 
@@ -210,16 +212,7 @@
                             <!-- Avatar -->
                             <div class="perfil-avatar">
 
-                                <i
-                                    id="iconoUsuario"
-                                    class="bi bi-person-fill">
-                                </i>
-
-                                <img
-                                    id="fotoUsuario"
-                                    class="foto-perfil"
-                                    src=""
-                                    style="display:none;">
+                                <i class="bi bi-person-fill"></i>
 
                             </div>
 
@@ -227,7 +220,6 @@
                             <div class="perfil-info d-none d-md-block">
 
                                 <span
-                                    id="nombreUsuario"
                                     class="perfil-nombre"
                                     data-es="Invitado"
                                     data-na="Tlapowalistli">
@@ -321,7 +313,7 @@
 
                         <!-- CUENTOS -->
                         <button
-                            onclick="window.location.href='../pages_int/Cuentos/cuentos.html'"
+                            onclick="window.location.href='cuentos.html'"
                             class="btn navbarint-btn rounded-pill px-4"
                             data-aos="fade-up"
                             data-aos-delay="100"
@@ -375,27 +367,28 @@
     </div>
 
 </header>
-
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<!-- MAIN -->
 <!-- MAIN -->
 <main class="container py-5">
+
 
     <!-- BOTONES SUPERIORES -->
     <div class="d-flex justify-content-between align-items-center mb-4">
 
 
-        <!-- BOTÓN TRADUCTOR -->
+        <!-- TRADUCTOR -->
         <div class="presen-traductor-int">
 
             <button
                 class="btn btn-light rounded-circle traductor-btn"
-                onclick="presenToggleMenu()"
-                data-aos="zoom-in">
+                onclick="presenToggleMenu()">
 
                 <i class="bi bi-translate"></i>
 
             </button>
 
-            <!-- MENÚ -->
+
             <div
                 class="presen-menu-int"
                 id="presenMenuIdioma">
@@ -410,461 +403,134 @@
                         Náhuatl
                     </li>
 
-                    <li onclick="presenCambiarModo('es-na')">
-                        Español + Náhuatl
-                    </li>
-
-                    <li onclick="presenCambiarModo('na-es')">
-                        Náhuatl + Español
-                    </li>
-
                 </ul>
 
             </div>
 
         </div>
 
+
     </div>
+
+
+
+    <!-- CONTENEDOR LECCIONES -->
+
+    <section class="card shadow-lg p-4">
+
+
+        <h1 id="tituloCategoria"
+            class="text-center">
+            Lecciones
+        </h1>
+
+
+        <h2 id="tituloMision"
+            class="text-center">
+        </h2>
+
+
+
+        <!-- PROGRESO -->
+
+        <div id="barraProgreso"
+             class="progress my-3">
+
+            <div
+                id="progreso"
+                class="progress-bar"
+                role="progressbar">
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CONTADOR -->
+
+        <div
+            id="contadorPregunta"
+            class="text-center">
+        </div>
+
+
+
+
+        <!-- NAHUI -->
+
+        <img
+            id="nahuiFrame"
+            src="../Recursos/nahui/frames_nahui/ezgif-frame-001.png"
+            style="display:none;">
+
+
+
+
+        <!-- PREGUNTA -->
+
+        <div
+            id="contenedorPregunta"
+            class="p-4 text-center">
+
+        </div>
+
+
+
+
+        <!-- OPCIONES -->
+
+        <div
+            id="contenedorOpciones"
+            class="mt-3">
+
+        </div>
+
+
+
+
+        <!-- PUNTAJE -->
+
+        <div
+            id="puntaje"
+            class="text-center mt-3">
+
+        </div>
+
+
+
+
+        <button
+            id="btnSiguiente"
+            class="btn btn-primary mt-3">
+
+            Siguiente
+
+        </button>
+
+
+
+    </section>
+
+
+<!-- BOTÓN REGRESAR -->
+    <div class="d-flex justify-content-start mt-5 boton-mapa" data-aos="fade-right">
+        <button onclick="window.location.href='../pages_int/mapa_abecedario.html'" class="btn-regresar-int">
+            <i class="bi bi-arrow-left-circle-fill me-2"></i>
+            <span data-es="Regresar" data-na="Mokuepa">
+                Continuar
+            </span>
+        </button>
+
+
+
+
+
         </main>
     </div>
 
 <br>
 
-<section class="mapa-abecedario">
-
-        <div class="titulo-abecedario">
-
-            <h1
-                class="titulo-mapa"
-                data-es="La Aldea de los Ancestros"
-                data-na="In Āltepētzintli in Tōtahmeh">
-
-                <i class="bi bi-tree-fill me-2"></i>
-
-                La Aldea de los Ancestros
-
-            </h1>
-
-            <p
-                class="subtitulo-mapa"
-                data-es="¡Descubre cómo nos conectamos y convivimos junto a Nahui!"
-                data-na="Xicmati ken timoikniwan huan timochanti iwan Nahui">
-
-                ¡Descubre cómo nos conectamos y convivimos junto a Nahui!
-
-            </p>
-
-        </div>
-
-    <div class="contenedor-abecedario">
-
-        <svg
-            class="camino-svg"
-            viewBox="0 0 1200 900"
-            preserveAspectRatio="xMidYMid meet">
-
-            <defs>
-
-                <!-- Verde -->
-
-                <filter id="sombra-verde"
-                        x="-50%"
-                        y="-50%"
-                        width="200%"
-                        height="200%">
-
-                    <feDropShadow
-                        dx="0"
-                        dy="6"
-                        stdDeviation="4"
-                        flood-color="#2E8A00"
-                        flood-opacity="0.45"/>
-
-                </filter>
-
-                <!-- Amarillo -->
-
-                <filter id="sombra-amarilla"
-                        x="-50%"
-                        y="-50%"
-                        width="200%"
-                        height="200%">
-
-                    <feDropShadow
-                        dx="0"
-                        dy="6"
-                        stdDeviation="4"
-                        flood-color="#C6A400"
-                        flood-opacity="0.45"/>
-
-                </filter>
-
-                <!-- Gris -->
-
-                <filter id="sombra-gris"
-                        x="-50%"
-                        y="-50%"
-                        width="200%"
-                        height="200%">
-
-                    <feDropShadow
-                        dx="0"
-                        dy="6"
-                        stdDeviation="4"
-                        flood-color="#8D8D8D"
-                        flood-opacity="0.45"/>
-
-                </filter>
-
-                <!-- Trofeo -->
-
-                <filter id="sombra-trofeo"
-                        x="-50%"
-                        y="-50%"
-                        width="200%"
-                        height="200%">
-
-                    <feDropShadow
-                        dx="0"
-                        dy="6"
-                        stdDeviation="4"
-                        flood-color="#C76B00"
-                        flood-opacity="0.45"/>
-
-                </filter>
-
-            </defs>
-
-            <!-- SOMBRA -->
-
-            <path
-                fill="none"
-                stroke="#9E9E9E"
-                stroke-width="16"
-                opacity=".55"
-                transform="translate(0,8)"
-                d="
-                M 350 100
-                A 120 120 0 0 0 230 220
-                A 120 120 0 0 0 350 340
-                L 850 340
-                A 120 120 0 0 1 970 460
-                A 120 120 0 0 1 850 580
-                L 420 580
-                A 120 120 0 0 0 300 700
-                A 120 120 0 0 0 420 820
-                L 750 820
-                "/>
-
-            <!-- CAMINO -->
-
-            <path
-                fill="none"
-                stroke="#C7C7C7"
-                stroke-width="12"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="
-                M 350 100
-                A 120 120 0 0 0 230 220
-                A 120 120 0 0 0 350 340
-                L 850 340
-                A 120 120 0 0 1 970 460
-                A 120 120 0 0 1 850 580
-                L 420 580
-                A 120 120 0 0 0 300 700
-                A 120 120 0 0 0 420 820
-                L 750 820
-                "/>
-
-            <!-- META -->
-
-            <circle
-                cx="350"
-                cy="100"
-                r="28"
-                fill="#2563EB"/>
-
-            <!-- INICIO -->
-
-            <circle
-                cx="750"
-                cy="820"
-                r="50"
-                fill="white"
-                stroke="#2563EB"
-                stroke-width="12"/>
-
-            <image
-                href="../Recursos/mapas/sociedad/familia.svg"
-                x="750"
-                y="-60"
-                width="450"
-                height="450"/>    
-
-            <image
-                href="../Recursos/mapas/sociedad/escuela.svg"
-                x="-10"
-                y="420"
-                width="320"
-                height="320"/>
-
-
-
-
-
-            <image
-            href="../Recursos/mapas/sociedad/comunidad.svg"
-            x="790"
-            y="550"
-            width="450"
-            height="450"/>
-
-            <image
-            href="../Recursos/nahui_caras/nahui_feliz.png"
-            x="180"
-            y="30"
-            width="110"
-            height="110"/>
-
-
-            <!-- NIVELES -->
-
-            <!-- NIVEL 1 -->
-
-                <g class="nivel-svg completado" data-id="1">
-
-                    <!-- Se agrego esto para que pueda funcionar el boton de los niveles -->
-                    <rect x="300" y="50" width="100" height="100" fill="transparent" />
-
-                    <circle cx="350" cy="108" r="50" fill="#164E30" />
-                    <circle cx="350" cy="100" r="50" fill="#22C55E" />
-
-                    <text x="350" y="100" fill="white" font-size="30" font-weight="700" text-anchor="middle"
-                        dominant-baseline="middle">
-
-                        1
-
-                    </text>
-
-                </g>
-
-                <!-- NIVEL 2 -->
-
-                <g class="nivel-svg bloqueado" data-id="2">
-
-                    <!-- Se agrego esto para que pueda funcionar el boton de los niveles -->
-                    <rect x="180" y="210" width="100" height="100" fill="transparent" />
-
-                    <circle cx="230" cy="268" r="50" fill="#854D0E" />
-                    <circle cx="230" cy="260" r="50" fill="#EAB308" />
-
-                    <text x="230" y="260" fill="white" font-size="30" font-weight="700" text-anchor="middle"
-                        dominant-baseline="middle">
-
-                        2
-
-                    </text>
-
-                </g>
-
-                <!-- NIVEL 3 -->
-
-                <g class="nivel-svg bloqueado" data-id="3">
-
-                    <!-- Se agrego esto para que pueda funcionar el boton de los niveles -->
-                    <rect x="470" y="290" width="100" height="100" fill="transparent" />
-
-                    <circle cx="520" cy="348" r="50" fill="#1E3A8A" />
-                    <circle cx="520" cy="340" r="50" fill="#3B82F6" />
-
-                    <text x="520" y="340" fill="white" font-size="30" font-weight="700" text-anchor="middle"
-                        dominant-baseline="middle">
-
-                        3
-
-                    </text>
-
-                </g>
-
-                <!-- NIVEL 4 -->
-
-                <g class="nivel-svg bloqueado" data-id="4">
-
-                    <!-- Se agrego esto para que pueda funcionar el boton de los niveles -->
-                <rect x="790" y="290" width="100" height="100" fill="transparent" />
-
-                    <circle cx="840" cy="348" r="50" fill="#164E30" />
-                    <circle cx="840" cy="340" r="50" fill="#22C55E" />
-
-                    <text x="840" y="340" fill="#124734" font-size="30" font-weight="700" text-anchor="middle"
-                        dominant-baseline="middle">
-
-                        4
-
-                    </text>
-
-                </g>
-
-                <!-- NIVEL 5 -->
-
-                <g class="nivel-svg bloqueado" data-id="5">
-
-                    <!-- Se agrego esto para que pueda funcionar el boton de los niveles -->
-                <rect x="870" y="490" width="100" height="100" fill="transparent" />
-
-                    <circle cx="920" cy="548" r="50" fill="#854D0E" />
-                    <circle cx="920" cy="540" r="50" fill="#EAB308" />
-
-                    <text x="920" y="540" fill="white" font-size="30" font-weight="700" text-anchor="middle"
-                        dominant-baseline="middle">
-
-                        5
-
-                    </text>
-
-                </g>
-
-                <!-- NIVEL 6 -->
-
-                <g class="nivel-svg bloqueado" data-id="6">
-
-                    <!-- Se agrego esto para que pueda funcionar el boton de los niveles -->
-                <rect x="570" y="530" width="100" height="100" fill="transparent" />
-
-                    <circle cx="620" cy="588" r="50" fill="#1E3A8A" />
-                    <circle cx="620" cy="580" r="50" fill="#3B82F6" />
-
-                    <text x="620" y="580" fill="white" font-size="30" font-weight="700" text-anchor="middle"
-                        dominant-baseline="middle">
-
-                        6
-
-                    </text>
-
-                </g>
-
-                <!-- NIVEL 7 -->
-
-                <g class="nivel-svg bloqueado" data-id="7">
-
-                    <!-- Se agrego esto para que pueda funcionar el boton de los niveles -->
-                <rect x="310" y="540" width="100" height="100" fill="transparent" />
-
-                    <circle cx="360" cy="600" r="50" fill="#164E30" />
-                    <circle cx="360" cy="590" r="50" fill="#22C55E" />
-
-                    <text x="360" y="590" fill="white" font-size="30" font-weight="700" text-anchor="middle"
-                        dominant-baseline="middle">
-
-                        7
-
-                    </text>
-
-                </g>
-
-                <!-- NIVEL 8 -->
-
-                <g class="nivel-svg bloqueado" data-id="8">
-
-                    <!-- Se agrego esto para que pueda funcionar el boton de los niveles -->
-                <rect x="340" y="770" width="100" height="100" fill="transparent" />
-
-                    <circle cx="395" cy="828" r="50" fill="#854D0E" />
-                    <circle cx="390" cy="820" r="50" fill="#EAB308" />
-
-                    <text x="390" y="820" fill="white" font-size="30" font-weight="700" text-anchor="middle"
-                        dominant-baseline="middle">
-
-                        8
-
-                    </text>
-
-                </g>
-
-            <!-- NIVEL 9 -->
-<!--
-            <g class="nivel-svg bloqueado" data-id="9">
-
-                  Se agrego esto para que pueda funcionar el boton de los niveles
-                <rect x="520" y="770" width="100" height="100" fill="transparent" />
-
-                <circle cx="575" cy="828" r="50" fill="#8D8D8D"/>
-                <circle cx="570" cy="820" r="50" fill="#C7C7C7"/>
-
-                <text
-                    x="570"
-                    y="820"
-                    fill="white"
-                    font-size="30"
-                    font-weight="700"
-                    text-anchor="middle"
-                    dominant-baseline="middle">
-
-                    9
-
-                </text>
-
-            </g>-->
-
-            <!-- TROFEO -->
-
-            <g class="nivel-svg trofeo"
-            data-id="11">
-
-             <!-- Se agrego esto para que pueda funcionar el boton de los niveles -->
-                <rect x="700" y="770" width="100" height="100" fill="transparent" />
-
-                <circle cx="750" cy="820" r="50" fill="#FF9800"/>
-
-                <text
-                    x="750"
-                    y="820"
-                    fill="white"
-                    font-size="34"
-                    font-weight="700"
-                    text-anchor="middle"
-                    dominant-baseline="middle">
-
-                    ★
-
-                </text>
-
-            </g>
-        </svg>
-
-
-
-    </div>
-
-</section>
-
-                <!-- BOTÓN REGRESAR -->
-
-<div
-    class="d-flex justify-content-start mt-5 boton-mapa"
-    data-aos="fade-right">
-
-    <button
-        onclick="window.location.href='../pages_int/lecciones.html'"
-        class="btn-regresar-int">
-
-        <i class="bi bi-arrow-left-circle-fill me-2"></i>
-
-        <span
-            data-es="Regresar"
-            data-na="Mokuepa">
-
-            Regresar
-
-        </span>
-
-    </button>
-
-     
-    </button>
-
-</div>
                 <!-- =========================================
                 FOOTER
             ========================================= -->
@@ -996,6 +662,8 @@
     <!-- AOS -->
     <script src="../assets/js/aos.js"></script>
 
+    <script src="../assets/sweetalert/sweetalert2.all.min.js"></script>    
+
     <!-- INIT AOS -->
     <script>
         AOS.init({
@@ -1003,106 +671,24 @@
             once: true
         });
     </script>
-<script>
-        const botonSubir = document.getElementById("btnSubir");
-
-        // Evento de escucha para detectar cuando el usuario hace scroll hacia abajo
-        window.onscroll = function () {
-            // Si el scroll baja más de 300px se muestra, de lo contrario permanece oculto
-            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-                botonSubir.style.display = "flex";
-            } else {
-                botonSubir.style.display = "none";
-            }
-        };
-
-        // Función que realiza el retorno fluido al inicio (Top: 0)
-        function volverArriba() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        }
-    </script>
-
-<!-- Sirve para los niveles -->
-    <script>
-        window.addEventListener('load', () => {
-
-            const nivel1 = document.querySelector('[data-id="1"]');
-            const nivel2 = document.querySelector('[data-id="2"]');
-            const nivel3 = document.querySelector('[data-id="3"]');
-            const nivel4 = document.querySelector('[data-id="4"]');
-            const nivel5 = document.querySelector('[data-id="5"]');
-            const nivel6 = document.querySelector('[data-id="6"]');
-            const nivel7 = document.querySelector('[data-id="7"]');
-            const nivel8 = document.querySelector('[data-id="8"]');
-            const nivel9 = document.querySelector('[data-id="9"]');
-
-            if (nivel1) {
-                nivel1.addEventListener('click', () => {
-                    window.location.href = 'lecciones/sociedad/familia.html';
-                });
-            }
-
-           if (nivel2) {
-    nivel2.addEventListener('click', () => {
-        window.location.href = '../pages_int/prueba.html?idmision=15';
-    });
-}
-
-            if (nivel3) {
-                nivel3.addEventListener('click', () => {
-                    window.location.href = 'lecciones/sociedad/soc_juego1.html';
-                });
-            }
-
-            if (nivel4) {
-                nivel4.addEventListener('click', () => {
-                    window.location.href = 'lecciones/sociedad/amigos.html';
-                });
-            }
-
-            if (nivel5) {
-    nivel5.addEventListener('click', () => {
-        window.location.href = '../pages_int/prueba.html?idmision=16';
-    });
-}
-
-
-             if (nivel6) {
-                nivel6.addEventListener('click', () => {
-                    window.location.href = 'lecciones/sociedad/soc_juego2.html';
-                });
-            }
-
-            if (nivel7) {
-                nivel7.addEventListener('click', () => {
-                    window.location.href = 'lecciones/sociedad/trabajos.html';
-                });
-            }
-
-            if (nivel8) {
-    nivel8.addEventListener('click', () => {
-        window.location.href = '../pages_int/prueba.html?idmision=17';
-    });
-}
-if (nivel9) {
-    nivel9.addEventListener('click', () => {
-        window.location.href = '../pages_int/prueba.html?idmision=18';
-    });
-}
-
-        });
-    </script>
 
     <!-- JS -->
-    <script src="../js/app.js"></script>
-    <script src="../js/racha.js"></script>
+    <script src="../assets/js/chart.js"></script>
 
-    <!-- foto de perfil del header -->
-    <script src="/Castoresmlaulanet/js/usuarioHeader.js"></script>
+<script src="../js/iconos.js"></script>
 
+<script src="../js/configMisiones.js"></script>
+<script src="../js/motorLecciones.js"></script>
+
+<script src="../js/uiLecciones.js"></script>
+<script src="../js/lecciones.js"></script>
+<script src="../js/progreso.js"></script>
+<script src="../js/racha.js"></script>
+<script src="../js/estadisticas.js"></script>
+<script src="../js/perfil.js"></script>
+<script src="../js/vocales.js"></script>
+
+<script src="../js/app.js"></script>
 </body>
 
 </html>

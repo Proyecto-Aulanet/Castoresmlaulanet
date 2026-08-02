@@ -870,6 +870,7 @@
             const nivel8 = document.querySelector('[data-id="8"]');
             const nivel9 = document.querySelector('[data-id="9"]');
             const nivel10 = document.querySelector('[data-id="10"]');
+            const nivel11 = document.querySelector('[data-id="11"]');
 
             if (nivel1) {
                 nivel1.addEventListener('click', () => {
@@ -879,9 +880,12 @@
 
             if (nivel2) {
                 nivel2.addEventListener('click', () => {
-                    window.location.href = 'lecciones/abecedario/col_1-1.html';
-                });
+    console.log("ENTRÓ BOTÓN NIVEL 5");
+    window.location.href = '../pages_int/prueba.html?idmision=3';
+});
+               
             }
+          
 
             if (nivel3) {
                 nivel3.addEventListener('click', () => {
@@ -896,8 +900,11 @@
             }
 
             if (nivel5) {
+                
                 nivel5.addEventListener('click', () => {
-                    window.location.href = 'lecciones/abecedario/col_1-2.html';
+                    console.log("ABRIENDO MISION 4");
+
+window.location.href = '../pages_int/prueba.html?idmision=4';
                 });
             }
 
@@ -913,12 +920,11 @@
                 });
             }
 
-            if (nivel8) {
-                nivel8.addEventListener('click', () => {
-                    window.location.href = 'lecciones/abecedario/.html';
-                });
-            }
-
+          if (nivel8) {
+    nivel8.addEventListener('click', () => {
+        window.location.href = '../pages_int/prueba.html?idmision=5';
+    });
+}
             if (nivel9) {
                 nivel9.addEventListener('click', () => {
                     window.location.href = 'lecciones/abecedario/abe_juego3.html';
@@ -930,6 +936,12 @@
                     window.location.href = 'lecciones/abecedario/letraX.html';
                 });
             }
+
+            if (nivel11) {
+    nivel11.addEventListener('click', () => {
+        window.location.href = '../pages_int/prueba.html?idmision=5';
+    });
+}
 
         });
     </script>
