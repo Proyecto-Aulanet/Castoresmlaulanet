@@ -277,6 +277,8 @@
         <!-- BOTONES SUPERIORES -->
         <div class="d-flex justify-content-between align-items-center mb-4">
 
+
+
             <!-- BOTÓN TRADUCTOR -->
             <div class="presen-traductor-int">
 
@@ -315,6 +317,18 @@
                 </div>
 
             </div>
+
+                <!-- BOTÓN VIDEO -->
+    <button
+        class="btn btn-danger rounded-circle video-btn"
+        data-bs-toggle="modal"
+        data-bs-target="#modalVideo"
+        title="Ver video de apoyo"
+        data-aos="zoom-in">
+
+        <i class="bi bi-play-fill"></i>
+
+    </button>
 
         </div>
 
@@ -735,6 +749,65 @@
         var myLandbot = new Landbot.Livechat({
             configUrl: 'https://storage.googleapis.com/landbot.online/v3/H-3480209-4YCUH03KYKADJIE9/index.json',
         });
+    </script>
+
+    <!-- Modal Video -->
+    <div
+        class="modal fade"
+        id="modalVideo"
+        tabindex="-1"
+        aria-hidden="true">
+
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+
+                    <h5 class="modal-title">
+                        Video de apoyo
+                    </h5>
+
+                    <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal">
+                    </button>
+
+                </div>
+
+                <div class="modal-body p-0">
+
+                    <div class="ratio ratio-16x9">
+
+                        <iframe
+                            id="videoYoutube"
+                            src="https://www.youtube.com/embed/jL04GQswXRo"
+                            title="Video"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        const modalVideo = document.getElementById("modalVideo");
+
+modalVideo.addEventListener("hidden.bs.modal", () => {
+
+    const iframe = document.getElementById("videoYoutube");
+
+    iframe.src = iframe.src;
+});
+
     </script>
 
     <!-- foto de perfil del header -->
