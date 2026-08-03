@@ -137,6 +137,7 @@ async function consultarUsuarios(idusuario = null) {
 // eliminar
 // ==============================================================================
 async function eliminarUsuario(idusuario) {
+        console.log("Entró a eliminarCuenta");
     if (!confirm("¿Estás seguro de que deseas eliminar este usuario?")) {
         return;
     }
