@@ -905,6 +905,7 @@
             const nivel8 = document.querySelector('[data-id="8"]');
             const nivel9 = document.querySelector('[data-id="9"]');
             const nivel10 = document.querySelector('[data-id="10"]');
+             const nivel11 = document.querySelector('[data-id="11"]');
 
             if (nivel1) {
                 nivel1.addEventListener('click', () => {
@@ -963,6 +964,11 @@
             if (nivel10) {
                 nivel10.addEventListener('click', () => {
                     window.location.href = 'lecciones/alimentos/bebidas.html';
+                });
+            }
+            if (nivel11) {
+                nivel11.addEventListener('click', () => {
+                    window.location.href = '../pages_int/examen.html?idmision=25';
                 });
             }
 

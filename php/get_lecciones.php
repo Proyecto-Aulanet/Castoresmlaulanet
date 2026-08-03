@@ -274,6 +274,115 @@ break;
                 "total_puntos_semana"  => intval($totalPuntosSemana)
             ]);
             break;
+            // ==============================================================
+// 5. Guardar medalla obtenida
+// ==============================================================
+case 'mis_medallas':
+
+$idusuario = intval($_GET['idusuario']);
+
+
+$stmt = $pdo->prepare("
+SELECT 
+idmedalla,
+fecha_obtenida
+
+FROM Usuario_Medalla
+
+WHERE idusuario=?
+
+ORDER BY fecha_obtenida ASC
+");
+
+
+$stmt->execute([$idusuario]);
+
+
+echo json_encode([
+
+"status"=>"success",
+
+"data"=>$stmt->fetchAll(PDO::FETCH_ASSOC)
+
+]);
+
+
+break;
+case 'verificar_medalla':
+
+$idusuario =
+intval($_GET['idusuario']);
+
+$idmedalla =
+intval($_GET['idmedalla']);
+
+
+
+$stmt=$pdo->prepare("
+
+SELECT COUNT(*) total
+
+FROM Usuario_Medalla
+
+WHERE idusuario=?
+AND idmedalla=?
+
+");
+
+
+$stmt->execute([
+
+$idusuario,
+$idmedalla
+
+]);
+
+
+
+$resultado =
+$stmt->fetch(PDO::FETCH_ASSOC);
+
+
+
+echo json_encode([
+
+"obtenida" =>
+$resultado['total'] > 0
+
+]);
+
+
+
+break;
+case 'puntaje_total':
+
+$idusuario=intval($_GET['idusuario']);
+
+
+$stmt=$pdo->prepare("
+
+SELECT COALESCE(SUM(puntos),0) total
+
+FROM Puntaje
+
+WHERE idusuario=?
+
+");
+
+
+$stmt->execute([$idusuario]);
+
+
+echo json_encode([
+
+"status"=>"success",
+
+"total"=>$stmt->fetchColumn()
+
+]);
+
+
+break;
 
         // ==============================================================
         // 5. Reporte completo para administradores/métricas
