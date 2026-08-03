@@ -184,23 +184,33 @@ const MotorLecciones = {
             );
 
 
-        }else{
-
-
-            UILecciones.mostrarResultado(
-
-                this.puntaje,
-
-                this.preguntasActuales.length*10,
-
-                this.idMision,
-
-                null
-
-            );
-
-
         }
+       else{
+
+    // Guardar puntaje de esta misión
+    localStorage.setItem(
+        "puntaje_mision_" + this.idMision,
+        this.puntaje
+    );
+
+
+    console.log(
+        "Puntaje guardado:",
+        this.idMision,
+        this.puntaje
+    );
+
+
+    UILecciones.mostrarResultado(
+
+        this.puntaje,
+        this.preguntasActuales.length*10,
+        this.idMision,
+        null
+
+    );
+
+}
 
 
     }

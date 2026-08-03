@@ -5,7 +5,7 @@ const UILecciones = {
 
 
         document.getElementById("tituloCategoria").textContent =
-            "Práctica de la misión";
+            "Evaluación de la misión";
 
 
         document.getElementById("tituloMision").textContent =
@@ -36,7 +36,14 @@ const UILecciones = {
 
         let htmlOpciones = "";
 
+if(!pregunta.opciones || pregunta.opciones.length===0){
 
+    document.getElementById("contenedorOpciones").innerHTML =
+    "<p>Esta pregunta no tiene opciones.</p>";
+
+    return;
+
+}
 
         pregunta.opciones.forEach(opcion => {
 

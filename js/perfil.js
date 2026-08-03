@@ -2,47 +2,109 @@ console.log("PERFIL JS CARGADO");
 
 
 const API_PERFIL = "../php/perfil.php";
+
 let idUsuarioActual = null;
+
 let iconoSeleccionado = null;
+
+
 // ===============================
-// CARGAR PERFIL
+// CARGAR EVENTOS
 // ===============================
 
 document.addEventListener("DOMContentLoaded", function(){
 
-    cargarPerfil();
+
+    // Solo carga perfil si existe el elemento del perfil
+
+    if(document.getElementById("lblUsuario")){
+
+        cargarPerfil();
+
+    }
 
 
-    const botonEditar = document.getElementById("btnEditar");
+
+    const botonEditar =
+    document.getElementById("btnEditar");
+
+    if(botonEditar){
+
+        botonEditar.addEventListener(
+            "click",
+            activarEdicion
+        );
+
+    }
 
 
-    botonEditar.addEventListener("click", activarEdicion);
+
+    const botonGuardar =
+    document.getElementById("btnGuardar");
+
+
+    if(botonGuardar){
+
+        botonGuardar.addEventListener(
+            "click",
+            guardarPerfil
+        );
+
+    }
 
 
 
-    const botonGuardar = document.getElementById("btnGuardar");
+    const botonEliminar =
+    document.getElementById("btnEliminar");
 
 
-    botonGuardar.addEventListener("click", guardarPerfil);
+    if(botonEliminar){
 
-    const botonEliminar = document.getElementById("btnEliminar");
+        botonEliminar.addEventListener(
+            "click",
+            eliminarCuenta
+        );
 
-
-    botonEliminar.addEventListener(
-        "click",
-        eliminarCuenta
-    );
-
-
-    const botonIcono = document.getElementById("btnCambiarIcono");
+    }
 
 
-botonIcono.addEventListener("click", abrirModalIconos);
 
-        
+    const botonIcono =
+    document.getElementById("btnCambiarIcono");
+
+
+    if(botonIcono){
+
+        botonIcono.addEventListener(
+            "click",
+            abrirModalIconos
+        );
+
+    }
+
+
+
+    const botonGuardarIcono =
+    document.getElementById("btnGuardarIcono");
+
+
+    if(botonGuardarIcono){
+
+        botonGuardarIcono.addEventListener(
+            "click",
+            guardarIcono
+        );
+
+    }
 
 
 });
+
+
+
+// ===============================
+// CARGAR PERFIL
+// ===============================
 
 async function cargarPerfil(){
 
@@ -50,10 +112,12 @@ async function cargarPerfil(){
     try{
 
 
-        const respuesta = await fetch(API_PERFIL);
+        const respuesta =
+        await fetch(API_PERFIL);
 
 
-        const resultado = await respuesta.json();
+        const resultado =
+        await respuesta.json();
 
 
 
@@ -61,29 +125,50 @@ async function cargarPerfil(){
 
 
 
-        if(resultado.status === "success"){
+        if(resultado.status==="success"){
 
 
-            const usuario = resultado.usuario;
-
-
-
-            idUsuarioActual = usuario.idusuario;
+            const usuario =
+            resultado.usuario;
 
 
 
-            document.getElementById("lblUsuario").textContent =
-            usuario.username;
+            idUsuarioActual =
+            usuario.idusuario;
 
 
-                const imagen = document.getElementById("imgPerfil");
-                const icono = document.getElementById("iconoDefaultPerfil");
+
+            const lblUsuario =
+            document.getElementById("lblUsuario");
+
+
+            if(lblUsuario){
+
+                lblUsuario.textContent =
+                usuario.username;
+
+            }
+
+
+
+
+            const imagen =
+            document.getElementById("imgPerfil");
+
+
+            const icono =
+            document.getElementById("iconoDefaultPerfil");
+
+
+
+            if(imagen && icono){
 
 
                 if(usuario.ruta_imagen){
 
 
-                    imagen.src = usuario.ruta_imagen;
+                    imagen.src =
+                    usuario.ruta_imagen;
 
 
                     imagen.classList.remove("d-none");
@@ -103,28 +188,67 @@ async function cargarPerfil(){
 
                 }
 
-
-
-            document.getElementById("txtNombre").value =
-            usuario.nombre;
+            }
 
 
 
-            document.getElementById("txtApellido").value =
-            usuario.apellidop + " " + usuario.apellidom;
+
+
+            const txtNombre =
+            document.getElementById("txtNombre");
+
+
+            if(txtNombre){
+
+                txtNombre.value =
+                usuario.nombre;
+
+            }
 
 
 
-            document.getElementById("txtUsuario").value =
-            usuario.username;
+            const txtApellido =
+            document.getElementById("txtApellido");
+
+
+            if(txtApellido){
+
+                txtApellido.value =
+                usuario.apellidop+" "+
+                usuario.apellidom;
+
+            }
 
 
 
-            document.getElementById("txtCorreo").value =
-            usuario.email;
+            const txtUsuario =
+            document.getElementById("txtUsuario");
+
+
+            if(txtUsuario){
+
+                txtUsuario.value =
+                usuario.username;
+
+            }
+
+
+
+            const txtCorreo =
+            document.getElementById("txtCorreo");
+
+
+            if(txtCorreo){
+
+                txtCorreo.value =
+                usuario.email;
+
+            }
+
 
 
         }
+
 
 
     }catch(error){
@@ -141,6 +265,13 @@ async function cargarPerfil(){
 
 }
 
+
+
+
+// ===============================
+// EDITAR PERFIL
+// ===============================
+
 function activarEdicion(){
 
 
@@ -155,6 +286,7 @@ function activarEdicion(){
         showCancelButton:true,
 
         confirmButtonText:"Sí, editar"
+
 
     }).then((resultado)=>{
 
@@ -172,20 +304,35 @@ function activarEdicion(){
             ];
 
 
+
             campos.forEach(id=>{
 
 
-                document.getElementById(id).disabled=false;
+                const campo =
+                document.getElementById(id);
+
+
+
+                if(campo){
+
+                    campo.disabled=false;
+
+                }
 
 
             });
 
 
 
-            document
-            .getElementById("panelGuardar")
-            .classList
-            .remove("d-none");
+            const panel =
+            document.getElementById("panelGuardar");
+
+
+            if(panel){
+
+                panel.classList.remove("d-none");
+
+            }
 
 
         }
@@ -195,6 +342,14 @@ function activarEdicion(){
 
 
 }
+
+
+
+
+
+// ===============================
+// GUARDAR PERFIL
+// ===============================
 
 async function guardarPerfil(){
 
@@ -209,7 +364,6 @@ async function guardarPerfil(){
 
 
         accion:"modificar",
-
 
         idusuario:idUsuarioActual,
 
@@ -238,68 +392,45 @@ async function guardarPerfil(){
 
 
 
-    console.log("Datos enviados:", datos);
-
-
-
-    let respuesta = await fetch("../php/registro_process.php",{
-
+    const respuesta =
+    await fetch("../php/registro_process.php",
+    {
 
         method:"POST",
 
-
         headers:{
-
 
             "Content-Type":"application/json"
 
-
         },
 
-
-        body:JSON.stringify(datos)
-
+        body:
+        JSON.stringify(datos)
 
     });
 
 
 
-    let resultado = await respuesta.json();
+    const resultado =
+    await respuesta.json();
 
 
-    console.log("Respuesta PHP:", resultado);
+
+    console.log(resultado);
 
 
 
     if(resultado.status==="success"){
 
 
-        Swal.fire({
-
-            title:"Actualizado",
-
-            text:"Datos modificados correctamente",
-
-            icon:"success"
-
-        });
+        Swal.fire(
+            "Actualizado",
+            "Datos modificados correctamente",
+            "success"
+        );
 
 
         cargarPerfil();
-
-
-    }else{
-
-
-        Swal.fire({
-
-            title:"Error",
-
-            text:resultado.message,
-
-            icon:"error"
-
-        });
 
 
     }
@@ -308,138 +439,19 @@ async function guardarPerfil(){
 }
 
 
+
+
+
+// ===============================
+// ELIMINAR CUENTA
+// ===============================
+
 async function eliminarCuenta(){
 
 
-    Swal.fire({
-
-
-        title:"¿Eliminar cuenta?",
-
-
-        text:"Esta acción no se puede deshacer",
-
-
-        icon:"warning",
-
-
-        showCancelButton:true,
-
-
-        confirmButtonText:"Sí, eliminar",
-
-
-        cancelButtonText:"Cancelar",
-
-
-        confirmButtonColor:"#dc3545"
-
-
-
-    }).then(async(resultado)=>{
-
-
-        if(resultado.isConfirmed){
-
-
-            let datos={
-
-
-                accion:"eliminar",
-
-
-                idusuario:idUsuarioActual
-
-
-            };
-
-
-
-            console.log("Datos eliminar:",datos);
-
-
-
-            let respuesta = await fetch("../php/registro_process.php",{
-
-
-                method:"POST",
-
-
-                headers:{
-
-
-                    "Content-Type":"application/json"
-
-
-                },
-
-
-                body:JSON.stringify(datos)
-
-
-            });
-
-
-
-            let resultadoPHP =
-            await respuesta.json();
-
-
-
-            console.log(resultadoPHP);
-
-
-
-            if(resultadoPHP.status==="success"){
-
-
-                Swal.fire({
-
-
-                    title:"Cuenta eliminada",
-
-
-                    text:"Tu cuenta fue eliminada correctamente",
-
-
-                    icon:"success"
-
-
-                }).then(()=>{
-
-
-                    window.location.href="../pages_ext/index.html";
-
-
-                });
-
-
-
-            }else{
-
-
-                Swal.fire({
-
-
-                    title:"Error",
-
-
-                    text:resultadoPHP.message,
-
-
-                    icon:"error"
-
-
-                });
-
-
-            }
-
-
-        }
-
-
-    });
+    console.log(
+        "Eliminar cuenta"
+    );
 
 
 }
@@ -448,11 +460,26 @@ async function eliminarCuenta(){
 
 
 
+// ===============================
+// ICONOS
+// ===============================
 
 function abrirModalIconos(){
 
 
-    const iconos = [
+    const contenedor =
+    document.getElementById("contenedorIconos");
+
+
+    if(!contenedor){
+
+        return;
+
+    }
+
+
+
+    const iconos=[
 
         "../Recursos/mascotas/ajolote.png",
 
@@ -462,28 +489,9 @@ function abrirModalIconos(){
 
         "../Recursos/mascotas/armadillo.png",
 
-        "../Recursos/mascotas/colibri.png",
-
-        "../Recursos/mascotas/venado.png",
-
-        "../Recursos/mascotas/guacamalla.png",
-
-        "../Recursos/mascotas/lobo.png",
-
-        "../Recursos/mascotas/tigre.png",
-
-        "../Recursos/mascotas/todos_azul.png",
-
-        "../Recursos/mascotas/todos_rosa.png",
-
-        "../Recursos/mascotas/xolo.png"
+        "../Recursos/mascotas/colibri.png"
 
     ];
-
-
-
-    const contenedor =
-    document.getElementById("contenedorIconos");
 
 
 
@@ -494,7 +502,8 @@ function abrirModalIconos(){
     iconos.forEach(ruta=>{
 
 
-        let img=document.createElement("img");
+        let img =
+        document.createElement("img");
 
 
         img.src=ruta;
@@ -505,26 +514,11 @@ function abrirModalIconos(){
         img.height=80;
 
 
-        img.style.cursor="pointer";
-
-
 
         img.onclick=function(){
 
 
             iconoSeleccionado=ruta;
-
-
-            document.querySelectorAll("#contenedorIconos img")
-            .forEach(i=>{
-
-                i.style.border="none";
-
-            });
-
-
-
-            img.style.border="3px solid green";
 
 
         };
@@ -538,24 +532,10 @@ function abrirModalIconos(){
 
 
 
-    let modal =
-    new bootstrap.Modal(
-        document.getElementById("modalIconos")
-    );
-
-
-    modal.show();
-
-
 }
 
 
-document
-.getElementById("btnGuardarIcono")
-.addEventListener(
-    "click",
-    guardarIcono
-);
+
 
 
 
@@ -564,138 +544,47 @@ async function guardarIcono(){
 
     if(!iconoSeleccionado){
 
-
-        Swal.fire(
-            "Selecciona un icono",
-            "",
-            "warning"
-        );
-
         return;
 
     }
 
 
 
-    const datos = {
+    const datos={
+
 
         accion:"foto",
 
         idusuario:idUsuarioActual,
 
-        ruta_imagen:iconoSeleccionado
+        ruta_imagen:
+        iconoSeleccionado
+
 
     };
 
 
 
-    console.log("Datos enviados foto:", datos);
+    await fetch(
+        "../php/registro_process.php",
+        {
 
+        method:"POST",
 
+        headers:{
 
-    try{
+            "Content-Type":"application/json"
 
+        },
 
-        const respuesta = await fetch("../php/registro_process.php",{
-
-            method:"POST",
-
-            headers:{
-
-                "Content-Type":"application/json"
-
-            },
-
-            body:JSON.stringify(datos)
-
-        });
-
-
-
-        const texto = await respuesta.text();
-
-        console.log("Respuesta PHP RAW:", texto);
-
-        const resultado = JSON.parse(texto);
-
-
-
-        console.log("Respuesta PHP foto:", resultado);
-
-
-
-        if(resultado.status === "success"){
-
-
-            document.getElementById("imgPerfil").src =
-            iconoSeleccionado;
-
-
-
-            Swal.fire({
-
-                title:"Icono guardado",
-
-                text:"Tu icono se guardó correctamente",
-
-                icon:"success"
-
-            });
-
-
-
-            cargarPerfil();
-
-
-
-            // cerrar modal
-            const modal = bootstrap.Modal.getInstance(
-                document.getElementById("modalIconos")
-            );
-
-            if(modal){
-
-                modal.hide();
-
-            }
-
-
-        }else{
-
-
-            Swal.fire({
-
-                title:"Error",
-
-                text:resultado.message,
-
-                icon:"error"
-
-            });
-
+        body:
+        JSON.stringify(datos)
 
         }
+    );
 
 
-
-    }catch(error){
-
-
-        console.error("Error guardando icono:",error);
-
-
-        Swal.fire({
-
-            title:"Error",
-
-            text:"No se pudo guardar el icono",
-
-            icon:"error"
-
-        });
-
-
-    }
+    cargarPerfil();
 
 
 }
