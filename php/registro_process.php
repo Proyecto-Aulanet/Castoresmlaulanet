@@ -328,8 +328,12 @@ break;
 case "eliminar":
 case "borrar":
 
-    $idusuario = (isset($data["idusuario"]) && is_numeric($data["idusuario"]) && (int)$data["idusuario"] > 0) 
-    ? (int)$data["idusuario"] 
+    $idusuario = (
+        isset($data["idusuario"]) &&
+        is_numeric($data["idusuario"]) &&
+        (int)$data["idusuario"] > 0
+    )
+    ? (int)$data["idusuario"]
     : 0;
 
 
@@ -347,43 +351,41 @@ case "borrar":
 
 
 
-    // eliminar foto asociada
+    // ==========================================================
+    // ELIMINAR FOTO DE PERFIL
+    // ==========================================================
 
     $stmt = $pdo->prepare("
         DELETE FROM FotoPerfil
         WHERE idusuario = :idusuario
     ");
 
-
     $stmt->bindValue(
         ':idusuario',
         $idusuario,
         PDO::PARAM_INT
     );
 
-
     $stmt->execute();
 
 
 
-
-    // eliminar usuario
+    // ==========================================================
+    // ELIMINAR RACHA
+    // ==========================================================
 
     $stmt = $pdo->prepare("
-        DELETE FROM Usuario 
+        DELETE FROM Usuario
         WHERE idusuario = :idusuario
     ");
 
-
     $stmt->bindValue(
         ':idusuario',
         $idusuario,
         PDO::PARAM_INT
     );
 
-
     $stmt->execute();
-
 
 
     if ($stmt->rowCount() > 0) {
@@ -403,7 +405,6 @@ case "borrar":
         ]);
 
     }
-
 
 break;
 
