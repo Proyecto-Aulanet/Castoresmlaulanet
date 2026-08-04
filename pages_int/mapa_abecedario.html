@@ -112,8 +112,11 @@
                 <!-- LOGO -->
                 <div class="headerint-logo">
 
+                    <img src="../Recursos/logos/utp_svg.svg" alt="logo" class="img-fluid" style="max-width:185px;"
+                        data-aos="fade-right">
+
                     <img src="../Recursos/logos/logo_completo_svg.svg" alt="logo" class="img-fluid"
-                        style="max-width:185px;" data-aos="fade-right">
+                        style="max-width:185px;" data-aos="fade-left">
 
                 </div>
 
@@ -177,35 +180,25 @@
                         data-bs-toggle="dropdown" aria-expanded="false">
 
                         <!-- Avatar -->
-                            <div class="perfil-avatar">
+                        <div class="perfil-avatar">
 
-                                <i
-                                    id="iconoUsuario"
-                                    class="bi bi-person-fill">
-                                </i>
+                            <i id="iconoUsuario" class="bi bi-person-fill">
+                            </i>
 
-                                <img
-                                    id="fotoUsuario"
-                                    class="foto-perfil"
-                                    src=""
-                                    style="display:none;">
+                            <img id="fotoUsuario" class="foto-perfil" src="" style="display:none;">
 
-                            </div>
+                        </div>
 
-                            <!-- Nombre -->
-                            <div class="perfil-info d-none d-md-block">
+                        <!-- Nombre -->
+                        <div class="perfil-info d-none d-md-block">
 
-                                <span
-                                    id="nombreUsuario"
-                                    class="perfil-nombre"
-                                    data-es="Invitado"
-                                    data-na="Tlapowalistli">
+                            <span id="nombreUsuario" class="perfil-nombre" data-es="Invitado" data-na="Tlapowalistli">
 
-                                    Invitado
+                                Invitado
 
-                                </span>
+                            </span>
 
-                            </div>
+                        </div>
 
                         <!-- Triángulo -->
                         <i class="bi bi-caret-down-fill ms-2 perfil-flecha"></i>
@@ -691,14 +684,8 @@
                     </text>
 
                 </g>
-                                                <image
-                id="nahui"
-                href="../Recursos/nahui_caras/nahui_feliz.png"
-                x="180"
-                y="30"
-                width="110"
-                height="110" 
-                style="pointer-events: none;"/>
+                <image id="nahui" href="../Recursos/nahui_caras/nahui_feliz.png" x="180" y="30" width="110" height="110"
+                    style="pointer-events: none;" />
             </svg>
             </svg>
 
@@ -735,12 +722,9 @@
 
                 <div class="col-12 col-md-4" data-aos="fade-right">
 
-                    <img src="../Recursos/logos/logo_completo_svg.svg" alt="Aul@Net" class="img-fluid footer-logo">
-
-
                     <img src="../Recursos/logos/utp_svg.svg" alt="Aul@Net" class="img-fluid footer-logo-utp">
 
-
+                    <img src="../Recursos/logos/logo_completo_svg.svg" alt="Aul@Net" class="img-fluid footer-logo">
 
                 </div>
 
@@ -889,12 +873,12 @@
 
             if (nivel2) {
                 nivel2.addEventListener('click', () => {
-    console.log("ENTRÓ BOTÓN NIVEL 5");
-    window.location.href = '../pages_int/prueba.html?idmision=3';
-});
-               
+                    console.log("ENTRÓ BOTÓN NIVEL 5");
+                    window.location.href = '../pages_int/prueba.html?idmision=3';
+                });
+
             }
-          
+
 
             if (nivel3) {
                 nivel3.addEventListener('click', () => {
@@ -909,11 +893,11 @@
             }
 
             if (nivel5) {
-                
+
                 nivel5.addEventListener('click', () => {
                     console.log("ABRIENDO MISION 4");
 
-window.location.href = '../pages_int/prueba.html?idmision=4';
+                    window.location.href = '../pages_int/prueba.html?idmision=4';
                 });
             }
 
@@ -929,11 +913,11 @@ window.location.href = '../pages_int/prueba.html?idmision=4';
                 });
             }
 
-          if (nivel8) {
-    nivel8.addEventListener('click', () => {
-        window.location.href = '../pages_int/prueba.html?idmision=5';
-    });
-}
+            if (nivel8) {
+                nivel8.addEventListener('click', () => {
+                    window.location.href = '../pages_int/prueba.html?idmision=5';
+                });
+            }
             if (nivel9) {
                 nivel9.addEventListener('click', () => {
                     window.location.href = 'lecciones/abecedario/abe_juego3.html';
@@ -947,10 +931,10 @@ window.location.href = '../pages_int/prueba.html?idmision=4';
             }
 
             if (nivel11) {
-    nivel11.addEventListener('click', () => {
-       window.location.href ='../pages_int/examen.html?idmision=9';
-    });
-}
+                nivel11.addEventListener('click', () => {
+                    window.location.href = '../pages_int/examen.html?idmision=9';
+                });
+            }
 
         });
     </script>
@@ -963,125 +947,125 @@ window.location.href = '../pages_int/prueba.html?idmision=4';
     <script src="/Castoresmlaulanet/js/usuarioHeader.js"></script>
 
     <script>
-document.addEventListener("DOMContentLoaded", () => {
+        document.addEventListener("DOMContentLoaded", () => {
 
-    const nahui = document.getElementById("nahui");
-
-
-    // Recuperar posición guardada del mapa Abecedario
-    const xGuardada = localStorage.getItem("nahuiX_abecedario");
-    const yGuardada = localStorage.getItem("nahuiY_abecedario");
+            const nahui = document.getElementById("nahui");
 
 
-    if (xGuardada !== null && yGuardada !== null) {
-
-        nahui.setAttribute("x", xGuardada);
-        nahui.setAttribute("y", yGuardada);
-
-    }
+            // Recuperar posición guardada del mapa Abecedario
+            const xGuardada = localStorage.getItem("nahuiX_abecedario");
+            const yGuardada = localStorage.getItem("nahuiY_abecedario");
 
 
+            if (xGuardada !== null && yGuardada !== null) {
 
-    document.querySelectorAll(".nivel-svg").forEach(nivel => {
-
-
-        nivel.addEventListener("click", () => {
-
-
-            let x, y;
-
-
-            switch (nivel.dataset.id) {
-
-
-                case "1":
-                    x = 180;
-                    y = 30;
-                    break;
-
-
-                case "2":
-                    x = 60;
-                    y = 190;
-                    break;
-
-
-                case "3":
-                    x = 465;
-                    y = 270;
-                    break;
-
-
-                case "4":
-                    x = 785;
-                    y = 270;
-                    break;
-
-
-                case "5":
-                    x = 865;
-                    y = 470;
-                    break;
-
-
-                case "6":
-                    x = 565;
-                    y = 510;
-                    break;
-
-
-                case "7":
-                    x = 305;
-                    y = 520;
-                    break;
-
-
-                case "8":
-                    x = 335;
-                    y = 750;
-                    break;
-
-
-                case "9":
-                    x = 515;
-                    y = 750;
-                    break;
-
-
-                case "10":
-                    x = 715;
-                    y = 750;
-                    break;
-
-
-                case "11":
-                    x = 895;
-                    y = 750;
-                    break;
+                nahui.setAttribute("x", xGuardada);
+                nahui.setAttribute("y", yGuardada);
 
             }
 
 
 
-            nahui.setAttribute("x", x);
-            nahui.setAttribute("y", y);
+            document.querySelectorAll(".nivel-svg").forEach(nivel => {
+
+
+                nivel.addEventListener("click", () => {
+
+
+                    let x, y;
+
+
+                    switch (nivel.dataset.id) {
+
+
+                        case "1":
+                            x = 180;
+                            y = 30;
+                            break;
+
+
+                        case "2":
+                            x = 60;
+                            y = 190;
+                            break;
+
+
+                        case "3":
+                            x = 465;
+                            y = 270;
+                            break;
+
+
+                        case "4":
+                            x = 785;
+                            y = 270;
+                            break;
+
+
+                        case "5":
+                            x = 865;
+                            y = 470;
+                            break;
+
+
+                        case "6":
+                            x = 565;
+                            y = 510;
+                            break;
+
+
+                        case "7":
+                            x = 305;
+                            y = 520;
+                            break;
+
+
+                        case "8":
+                            x = 335;
+                            y = 750;
+                            break;
+
+
+                        case "9":
+                            x = 515;
+                            y = 750;
+                            break;
+
+
+                        case "10":
+                            x = 715;
+                            y = 750;
+                            break;
+
+
+                        case "11":
+                            x = 895;
+                            y = 750;
+                            break;
+
+                    }
 
 
 
-            // Guardar solamente la posición de Abecedario
-            localStorage.setItem("nahuiX_abecedario", x);
-            localStorage.setItem("nahuiY_abecedario", y);
+                    nahui.setAttribute("x", x);
+                    nahui.setAttribute("y", y);
 
+
+
+                    // Guardar solamente la posición de Abecedario
+                    localStorage.setItem("nahuiX_abecedario", x);
+                    localStorage.setItem("nahuiY_abecedario", y);
+
+
+
+                });
+
+
+            });
 
 
         });
-
-
-    });
-
-
-});
-</script>
+    </script>
 
 </body>
 
