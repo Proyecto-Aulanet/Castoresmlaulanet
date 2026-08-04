@@ -379,16 +379,12 @@
 
                     <div class="perfilprin-avatar-container d-flex flex-column align-items-center">
 
-
                         <!-- ICONO DEFAULT -->
                         <i id="iconoDefaultPerfil" class="bi bi-person-circle">
                         </i>
 
-
                         <!-- IMAGEN DEL USUARIO -->
                         <img id="imgPerfil" class="perfilprin-avatar d-none">
-
-
 
                         <button id="btnCambiarIcono" class="btn btn-warning rounded-pill mt-4">
 
@@ -398,17 +394,13 @@
 
                         </button>
 
-
                     </div>
-
 
                     <h2 id="lblUsuario" class="text-white mt-4">
 
                         Usuario
 
                     </h2>
-
-
 
                 </div>
 
@@ -484,7 +476,8 @@
 
                             </div>
 
-                            <div class="col-md-12">
+                            <!-- CONTRASEÑA ACTUALIZADA -->
+                            <div class="col-md-12 mb-3">
 
                                 <label class="text-white">
 
@@ -492,7 +485,18 @@
 
                                 </label>
 
-                                <input type="password" class="form-control" value="********" disabled>
+                                <div class="input-group">
+
+                                    <input id="txtPassword" type="password" class="form-control" value="****" disabled>
+
+                                    <button id="btnTogglePassword" class="btn btn-outline-light" type="button"
+                                        onclick="toggleMostrarPassword()" disabled>
+
+                                        <i id="iconoPassword" class="bi bi-eye-fill"></i>
+
+                                    </button>
+
+                                </div>
 
                             </div>
 
@@ -534,11 +538,11 @@
 
                         <div class="perfilprin-medallas-grid mt-4">
 
-                            <img src="../Recursos/medallas/medalla1.png">
-                            <img src="../Recursos/medallas/medalla2.png">
-                            <img src="../Recursos/medallas/medalla3.png">
-                            <img src="../Recursos/medallas/medalla4.png">
-                            <img src="../Recursos/medallas/medalla5.png">
+                            <img src="../Recursos/medallas/medalla1.png" alt="Medalla 1">
+                            <img src="../Recursos/medallas/medalla2.png" alt="Medalla 2">
+                            <img src="../Recursos/medallas/medalla3.png" alt="Medalla 3">
+                            <img src="../Recursos/medallas/medalla4.png" alt="Medalla 4">
+                            <img src="../Recursos/medallas/medalla5.png" alt="Medalla 5">
 
                         </div>
 
@@ -577,7 +581,6 @@
         </div>
 
     </div>
-
 
     <!-- =========================================
                 FOOTER

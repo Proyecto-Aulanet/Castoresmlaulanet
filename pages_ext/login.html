@@ -346,8 +346,14 @@
                                                 Confirmar contraseña
                                             </span>
                                         </label>
-                                        <input type="password" id="confirmPassword" class="form-control rounded-3"
-                                            required>
+                                        <div class="input-group">
+                                            <input type="password" id="confirmPassword"
+                                                class="form-control rounded-start-3" required>
+                                            <button type="button" onclick="toggleConfirmPassword()"
+                                                class="btn btn-outline-secondary">
+                                                <i id="iconConfirmPassword" class="bi bi-eye-fill"></i>
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -372,12 +378,13 @@
                                     </span>
                                 </button>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </section>
     </div>
-
-
-
 
     <!-- =========================================
                 FOOTER
