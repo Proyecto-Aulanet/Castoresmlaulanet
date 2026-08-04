@@ -673,3 +673,16 @@ document.addEventListener("click", function(e){
     }
 
 });
+
+document.getElementById('btnEditar').addEventListener('click', () => {
+    document.getElementById('txtNombre').removeAttribute('disabled');
+    document.getElementById('txtApellido').removeAttribute('disabled');
+    document.getElementById('txtUsuario').removeAttribute('disabled');
+    document.getElementById('txtCorreo').removeAttribute('disabled');
+    
+    // Habilitar contraseña y botón de visualización
+    document.getElementById('txtPassword').removeAttribute('disabled');
+    document.getElementById('btnTogglePassword').removeAttribute('disabled');
+    
+    document.getElementById('panelGuardar').classList.remove('d-none');
+});
