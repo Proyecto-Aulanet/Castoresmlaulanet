@@ -104,126 +104,101 @@
     <div id="app" class="w-full min-h-full flex flex-col">
 
 
-<!-- ========================================== -->
-<!--                HEADER MAIN                 -->
-<!-- ========================================== -->
+        <!-- ========================================== -->
+        <!--                HEADER MAIN                 -->
+        <!-- ========================================== -->
 
-<header class="header-main sticky-top shadow-lg">
+        <header class="header-main sticky-top shadow-lg">
 
-    <div class="container">
+            <div class="container">
 
-        <!-- FILA SUPERIOR -->
-        <div
-            class="headerint-top d-flex justify-content-between align-items-star flex-wrap gap-3 py-3">
+                <!-- FILA SUPERIOR -->
+                <div class="headerint-top d-flex justify-content-between align-items-star flex-wrap gap-3 py-3">
 
-            <!-- LOGO -->
-            <div class="headerint-logo">
+                    <!-- LOGO -->
+                    <div class="headerint-logo">
 
-                <img
-                    src="../Recursos/logos/logo_completo_svg.svg"
-                    alt="logo"
-                    class="img-fluid"
-                    style="max-width:185px;"
-                    data-aos="fade-right">
+                        <img src="../Recursos/logos/utp_svg.svg" alt="logo" class="img-fluid"
+                            style="max-width:185px;" data-aos="fade-right">
 
-            </div>
-
-            <!-- ESTADÍSTICAS -->
-            <div
-                class="headerint-stats d-flex align-items-center justify-content-center gap-3 flex-wrap"
-                data-aos="fade-up">
-
-                <!-- RACHA -->
-                <div class="stat-item headerint-racha">
-
-                    <i class="bi bi-fire stat-icon text-warning"></i>
-
-                    <div>
-
-                        <small
-                            class="stat-label"
-                            data-es="Racha"
-                            data-na="Tlatzintli">
-
-                            Racha
-
-                        </small>
-
-                        <span
-                            id="streak-display"
-                            class="stat-value">
-
-                            0
-
-                        </span>
+                        <img src="../Recursos/logos/logo_completo_svg.svg" alt="logo" class="img-fluid"
+                            style="max-width:185px;" data-aos="fade-left">
 
                     </div>
 
-                </div>
+                    <!-- ESTADÍSTICAS -->
+                    <div class="headerint-stats d-flex align-items-center justify-content-center gap-3 flex-wrap"
+                        data-aos="fade-up">
 
-                <!-- XP -->
-                <div class="stat-item headerint-xp">
+                        <!-- RACHA -->
+                        <div class="stat-item headerint-racha">
 
-                    <i class="bi bi-stars stat-icon text-warning"></i>
+                            <i class="bi bi-fire stat-icon text-warning"></i>
 
-                    <div>
+                            <div>
 
-                        <small
-                            class="stat-label"
-                            data-es="Puntaje"
-                            data-na="Tlapōhualli">
+                                <small class="stat-label" data-es="Racha" data-na="Tlatzintli">
+
+                                    Racha
+
+                                </small>
+
+                                <span id="streak-display" class="stat-value">
+
+                                    0
+
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <!-- XP -->
+                        <div class="stat-item headerint-xp">
+
+                            <i class="bi bi-stars stat-icon text-warning"></i>
+
+                            <div>
+
+                                <small class="stat-label" data-es="Puntaje" data-na="Tlapōhualli">
 
                                     Puntaje
 
-                        </small>
+                                </small>
 
-                        <span
-                            id="xp-display"
-                            class="stat-value">
+                                <span id="xp-display" class="stat-value">
 
-                            0
+                                    0
 
-                        </span>
+                                </span>
+
+                            </div>
+
+                        </div>
 
                     </div>
-
-                </div>
-
-            </div>
 
                     <!-- PERFIL -->
                     <div class="perfil-header dropdown" data-aos="fade-left">
 
                         <!-- BOTÓN -->
-                        <button
-                            class="btn p-0 border-0 bg-transparent d-flex align-items-center"
-                            type="button"
-                            data-bs-toggle="dropdown"
-                            aria-expanded="false">
+                        <button class="btn p-0 border-0 bg-transparent d-flex align-items-center" type="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
 
                             <!-- Avatar -->
                             <div class="perfil-avatar">
 
-                                <i
-                                    id="iconoUsuario"
-                                    class="bi bi-person-fill">
+                                <i id="iconoUsuario" class="bi bi-person-fill">
                                 </i>
 
-                                <img
-                                    id="fotoUsuario"
-                                    class="foto-perfil"
-                                    src=""
-                                    style="display:none;">
+                                <img id="fotoUsuario" class="foto-perfil" src="" style="display:none;">
 
                             </div>
 
                             <!-- Nombre -->
                             <div class="perfil-info d-none d-md-block">
 
-                                <span
-                                    id="nombreUsuario"
-                                    class="perfil-nombre"
-                                    data-es="Invitado"
+                                <span id="nombreUsuario" class="perfil-nombre" data-es="Invitado"
                                     data-na="Tlapowalistli">
 
                                     Invitado
@@ -259,171 +234,142 @@
 
                 </div>
 
-        </div>
+            </div>
 
-        <!-- NAVBAR -->
-        <nav class="navbar navbar-expand-lg navbarint justify-content-center">
+            <!-- NAVBAR -->
+            <nav class="navbar navbar-expand-lg navbarint justify-content-center">
 
-            <div class="container-fluid justify-content-center">
+                <div class="container-fluid justify-content-center">
 
-                <!-- BOTÓN HAMBURGUESA -->
-                    <button
-                    class="navbar-toggler navbarint-toggler mx-auto"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#menuNavbar">
+                    <!-- BOTÓN HAMBURGUESA -->
+                    <button class="navbar-toggler navbarint-toggler mx-auto" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#menuNavbar">
 
-                    <i class="bi bi-chevron-down"></i>
-
-                </button>
-
-                <!-- MENÚ -->
-                <div
-                    class="collapse navbar-collapse justify-content-center"
-                    id="menuNavbar">
-
-                    <div class="navbar-nav gap-2 justify-content-center">
-
-                    <!-- INICIO -->
-                    <button
-                        type="button"
-                        onclick="window.location.href='../pages_int/inicio.html'"
-                        class="btn navbarint-btn rounded-pill px-4"
-                        data-aos="fade-up"
-                        data-es="Inicio"
-                        data-na="Pewaloyan">
-
-                        <i class="bi bi-house-fill me-2"></i>
-
-                        Inicio
+                        <i class="bi bi-chevron-down"></i>
 
                     </button>
 
-                    <!-- LECCIONES -->
-                    <button
-                        type="button"
-                        onclick="window.location.href='../pages_int/lecciones.html'"
-                        class="btn navbarint-btn rounded-pill px-4"
-                        data-aos="fade-up"
-                        data-aos-delay="100"
-                        data-es="Lecciones"
-                        data-na="Temachtilli">
+                    <!-- MENÚ -->
+                    <div class="collapse navbar-collapse justify-content-center" id="menuNavbar">
 
-                        <i class="bi bi-book-fill me-2"></i>
+                        <div class="navbar-nav gap-2 justify-content-center">
 
-                        Lecciones
+                            <!-- INICIO -->
+                            <button type="button" onclick="window.location.href='../pages_int/inicio.html'"
+                                class="btn navbarint-btn rounded-pill px-4" data-aos="fade-up" data-es="Inicio"
+                                data-na="Pewaloyan">
 
-                    </button>
+                                <i class="bi bi-house-fill me-2"></i>
 
-                    <!-- CUENTOS -->
-                    <button
-                        type="button"
-                        onclick="window.location.href='../pages_int/Cuentos/cuentos.html'"
-                        class="btn navbarint-btn rounded-pill px-4"
-                        data-aos="fade-up"
-                        data-aos-delay="100"
-                        data-es="Cuentos"
-                        data-na="Tlahtolli">
+                                Inicio
 
-                        <i class="bi bi-book-half me-2"></i>
+                            </button>
 
-                        Cuentos
+                            <!-- LECCIONES -->
+                            <button type="button" onclick="window.location.href='../pages_int/lecciones.html'"
+                                class="btn navbarint-btn rounded-pill px-4" data-aos="fade-up" data-aos-delay="100"
+                                data-es="Lecciones" data-na="Temachtilli">
 
-                    </button>
+                                <i class="bi bi-book-fill me-2"></i>
 
-                    <!-- CULTURA -->
-                    <button
-                        type="button"
-                        onclick="window.location.href='../pages_int/cultura.html'"
-                        class="btn navbarint-btn rounded-pill px-4"
-                        data-aos="fade-up"
-                        data-aos-delay="200"
-                        data-es="Cultura"
-                        data-na="Yancuic Tlamachtiliztli">
+                                Lecciones
 
-                        <i class="bi bi-globe-americas me-2"></i>
+                            </button>
 
-                        Cultura
+                            <!-- CUENTOS -->
+                            <button type="button" onclick="window.location.href='../pages_int/Cuentos/cuentos.html'"
+                                class="btn navbarint-btn rounded-pill px-4" data-aos="fade-up" data-aos-delay="100"
+                                data-es="Cuentos" data-na="Tlahtolli">
 
-                    </button>
+                                <i class="bi bi-book-half me-2"></i>
 
-                    <!-- PROGRESO -->
-                    <button
-                        type="button"
-                        onclick="window.location.href='../pages_int/progreso.html'"
-                        class="btn navbarint-btn rounded-pill px-4"
-                        data-aos="fade-up"
-                        data-aos-delay="300"
-                        data-es="Progreso"
-                        data-na="Yancuic Nejnemiliztli">
+                                Cuentos
 
-                        <i class="bi bi-graph-up-arrow me-2"></i>
+                            </button>
 
-                        Progreso
+                            <!-- CULTURA -->
+                            <button type="button" onclick="window.location.href='../pages_int/cultura.html'"
+                                class="btn navbarint-btn rounded-pill px-4" data-aos="fade-up" data-aos-delay="200"
+                                data-es="Cultura" data-na="Yancuic Tlamachtiliztli">
 
-                    </button>
+                                <i class="bi bi-globe-americas me-2"></i>
+
+                                Cultura
+
+                            </button>
+
+                            <!-- PROGRESO -->
+                            <button type="button" onclick="window.location.href='../pages_int/progreso.html'"
+                                class="btn navbarint-btn rounded-pill px-4" data-aos="fade-up" data-aos-delay="300"
+                                data-es="Progreso" data-na="Yancuic Nejnemiliztli">
+
+                                <i class="bi bi-graph-up-arrow me-2"></i>
+
+                                Progreso
+
+                            </button>
+
+                        </div>
 
                     </div>
 
                 </div>
 
-            </div>
-
-        </nav>
+            </nav>
 
     </div>
 
-</header>
+    </header>
 
-        <!-- MAIN -->
-        <main class="container py-5">
-
-
-            <!-- BOTONES SUPERIORES -->
+    <!-- MAIN -->
+    <main class="container py-5">
 
 
-            <!-- BOTÓN TRADUCTOR -->
-            <div class="presen-traductor-int">
+        <!-- BOTONES SUPERIORES -->
 
-                <button class="btn btn-light rounded-circle traductor-btn" onclick="presenToggleMenu()"
-                    data-aos="zoom-in">
 
-                    <i class="bi bi-translate"></i>
+        <!-- BOTÓN TRADUCTOR -->
+        <div class="presen-traductor-int">
 
-                </button>
+            <button class="btn btn-light rounded-circle traductor-btn" onclick="presenToggleMenu()" data-aos="zoom-in">
 
-                <!-- MENÚ -->
-                <div class="presen-menu-int" id="presenMenuIdioma">
+                <i class="bi bi-translate"></i>
 
-                    <ul class="list-unstyled m-0">
+            </button>
 
-                        <li onclick="presenCambiarModo('es')">
-                            Español
-                        </li>
+            <!-- MENÚ -->
+            <div class="presen-menu-int" id="presenMenuIdioma">
 
-                        <li onclick="presenCambiarModo('na')">
-                            Náhuatl
-                        </li>
+                <ul class="list-unstyled m-0">
 
-                        <li onclick="presenCambiarModo('es-na')">
-                            Español + Náhuatl
-                        </li>
+                    <li onclick="presenCambiarModo('es')">
+                        Español
+                    </li>
 
-                        <li onclick="presenCambiarModo('na-es')">
-                            Náhuatl + Español
-                        </li>
+                    <li onclick="presenCambiarModo('na')">
+                        Náhuatl
+                    </li>
 
-                    </ul>
+                    <li onclick="presenCambiarModo('es-na')">
+                        Español + Náhuatl
+                    </li>
 
-                </div>
+                    <li onclick="presenCambiarModo('na-es')">
+                        Náhuatl + Español
+                    </li>
+
+                </ul>
 
             </div>
 
-    </div>
+        </div>
+
+        </div>
     </main>
     </div>
 
-
+    <br>
+    <br>
     <!-- ==================== CONTENEDOR PRINCIPAL INTERACTIVO ==================== -->
     <main class="container my-5">
 
@@ -452,11 +398,9 @@
                                 </div>
 
                                 <!-- TEXTO -->
-                                <div class="col-12 col-md-8 text-center text-md-start order-2 order-md-1 p-0"
-                                class="badge bg-warning text-dark px-3 py-2 rounded-pill fw-bold text-uppercase mb-3
-                                    tracking-wider shadow-sm"
-                                    style="font-size: 0.75rem;">
-                                    
+                                <div class="col-12 col-md-8 text-center text-md-start order-2 order-md-1 p-0" class="badge bg-warning text-dark px-3 py-2 rounded-pill fw-bold text-uppercase mb-3
+                                    tracking-wider shadow-sm" style="font-size: 0.75rem;">
+
                                     <span data-es="BIENVENIDOS A LA RIQUEZA CULTURAL"
                                         data-na="XIMOCUEHRUICAN NICAN TOTLALNAN">BIENVENIDOS A LA RIQUEZA
                                         CULTURAL</span>
@@ -597,8 +541,8 @@
                         </div>
 
                         <div class="text-center my-3 bg-light rounded-4 p-2 border">
-                            <img src="../Recursos/img_cultura/NahuiArque.png" class="img-fluid" alt="Mascota Arqueología"
-                                style="max-height: 110px; object-fit: contain;">
+                            <img src="../Recursos/img_cultura/NahuiArque.png" class="img-fluid"
+                                alt="Mascota Arqueología" style="max-height: 110px; object-fit: contain;">
                         </div>
                     </div>
                     <button class="btn btn-info text-white w-100 rounded-pill fw-bold mt-2 py-2 shadow-sm"
@@ -1088,7 +1032,7 @@
             function subirInicio() {
                 window.scrollTo({
                     top: 0,
-                    behavior: 'smooth' 
+                    behavior: 'smooth'
                 });
             }
         </script>
@@ -1107,12 +1051,9 @@
 
                 <div class="col-12 col-md-4" data-aos="fade-right">
 
-                    <img src="../Recursos/logos/logo_completo_svg.svg" alt="Aul@Net" class="img-fluid footer-logo">
-
-
                     <img src="../Recursos/logos/utp_svg.svg" alt="Aul@Net" class="img-fluid footer-logo-utp">
 
-
+                    <img src="../Recursos/logos/logo_completo_svg.svg" alt="Aul@Net" class="img-fluid footer-logo">
 
                 </div>
 
