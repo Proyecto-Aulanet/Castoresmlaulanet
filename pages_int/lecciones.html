@@ -638,6 +638,77 @@
 
     </footer>
 
+        <!-- ===========================
+     NAHUI CHATBOT
+=========================== -->
+
+<!-- Botón flotante -->
+<button id="nahuichatbot-abrir" class="nahuichatbot-fab">
+
+    <img src="../Recursos/nahui_caras/nahui_feliz.png"
+         alt="Nahui"
+         class="nahuichatbot-avatar">
+
+</button>
+
+<!-- Ventana -->
+<div id="nahuichatbot-container" class="nahuichatbot-container">
+
+    <!-- Encabezado -->
+    <div class="nahuichatbot-header">
+
+        <div class="nahuichatbot-info">
+
+            <img src="../Recursos/nahui_caras/nahui_feliz.png"
+                 alt="Nahui"
+                 class="nahuichatbot-header-avatar">
+
+            <div>
+
+                <h5>Nahui</h5>
+
+                <small>Asistente Virtual Aul@Net</small>
+
+            </div>
+
+        </div>
+
+        <button id="nahuichatbot-cerrar"
+                class="nahuichatbot-close">
+
+            <i class="bi bi-x-lg"></i>
+
+        </button>
+
+    </div>
+
+    <!-- Conversación -->
+    <div id="nahuichatbot-body"
+         class="nahuichatbot-body">
+
+    </div>
+
+    <!-- Escribir -->
+    <div class="nahuichatbot-footer">
+
+        <input
+            id="nahuichatbot-input"
+            class="nahuichatbot-input"
+            type="text"
+            placeholder="Escribe tu pregunta...">
+
+        <button
+            id="nahuichatbot-enviar"
+            class="nahuichatbot-send">
+
+            <i class="bi bi-send-fill"></i>
+
+        </button>
+
+    </div>
+
+</div>
+
     <!-- BOOTSTRAP -->
     <script src="../assets/js/bootstrap.bundle.min.js"></script>
 
@@ -657,13 +728,8 @@
     <script src="../js/lecciones.js"></script>
     <script src="/castoresmlaulanet/js/racha_usuario.js"></script>
 
-    <!-- chat bot -->
-    <script type="module" src="https://cdn.landbot.io/landbot-3/landbot-3.0.0.mjs"></script>
-    <script type="module">
-        var myLandbot = new Landbot.Livechat({
-            configUrl: 'https://storage.googleapis.com/landbot.online/v3/H-3480209-4YCUH03KYKADJIE9/index.json',
-        });
-    </script>
+        <script src="../js/conocimiento.js"></script>
+        <script src="../js/nahui.js"></script>
 
     <!-- foto de perfil del header -->
     <script src="/Castoresmlaulanet/js/usuarioHeader.js"></script>
