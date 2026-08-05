@@ -190,10 +190,6 @@ ${info.descripcion}
 
 }
 
-
-
-
-
 document.addEventListener(
 "DOMContentLoaded",
 ()=>{
@@ -201,3 +197,40 @@ document.addEventListener(
 cargarMedallasUsuario();
 
 });
+
+async function guardarResultadoExamen(idExamen, puntajeObtenido) {
+    try {
+        const sesionRes = await fetch("../php/sesion_usuario.php");
+        const usuarioData = await sesionRes.json();
+        const idUsuario = usuarioData.usuario.idusuario;
+
+        const respuesta = await fetch("../php/medallas.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                idusuario: idUsuario,
+                idexamen: idExamen,
+                puntaje_obtenido: puntajeObtenido
+            })
+        });
+
+        const resultado = await respuesta.json();
+
+        if (resultado.status === "success") {
+            if (resultado.medalla_otorgada) {
+                const medallaGanada = informacionMedallas[resultado.idmedalla];
+                
+                alert(`¡Felicidades! Ganaste la medalla: ${medallaGanada ? medallaGanada.nombre : ''}\n${resultado.mensaje}`);
+            } else {
+                alert(resultado.mensaje);
+            }
+        } else {
+            console.error("Error devuelto por la API:", resultado.message);
+        }
+
+    } catch (error) {
+        console.error("Error al procesar el examen:", error);
+    }
+}
