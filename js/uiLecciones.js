@@ -80,8 +80,8 @@ if(!pregunta.opciones || pregunta.opciones.length===0){
 
 
 
-        document.getElementById("puntaje").textContent =
-            `Puntaje: ${puntajeActual}`;
+      //  document.getElementById("puntaje").textContent =
+        //    `Puntaje: ${puntajeActual}`;
 
 
     },
