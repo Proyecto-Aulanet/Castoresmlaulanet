@@ -720,7 +720,7 @@ new Chart(ctx, {
 
         datasets: [{
 
-            label: 'XP',
+            label: 'pts',
 
             data: [
                 50,
