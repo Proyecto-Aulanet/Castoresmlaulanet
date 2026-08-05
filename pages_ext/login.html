@@ -328,13 +328,24 @@
                                             </span>
                                         </label>
                                         <div class="input-group">
-                                            <input type="password" id="password" class="form-control rounded-start-3"
-                                                minlength="8" required>
-                                            <button type="button" onclick="togglePassword()"
-                                                class="btn btn-outline-secondary">
-                                                <i id="iconPassword" class="bi bi-eye-fill"></i>
-                                            </button>
-                                        </div>
+
+    <input
+        type="password"
+        id="password"
+        class="form-control rounded-start-3"
+        minlength="8"
+        required
+    >
+
+    <button
+        type="button"
+        onclick="togglePassword('password', 'iconPassword')"
+        class="btn btn-outline-secondary"
+    >
+        <i id="iconPassword" class="bi bi-eye-fill"></i>
+    </button>
+
+</div>
                                     </div>
 
                                     <!-- CONFIRMAR -->
@@ -345,13 +356,24 @@
                                             </span>
                                         </label>
                                         <div class="input-group">
-                                            <input type="password" id="confirmPassword"
-                                                class="form-control rounded-start-3" required>
-                                            <button type="button" onclick="toggleConfirmPassword()"
-                                                class="btn btn-outline-secondary">
-                                                <i id="iconConfirmPassword" class="bi bi-eye-fill"></i>
-                                            </button>
-                                        </div>
+
+    <input
+        type="password"
+        id="confirmPassword"
+        class="form-control rounded-start-3"
+        minlength="8"
+        required
+    >
+
+    <button
+        type="button"
+        onclick="togglePassword('confirmPassword', 'iconConfirmPassword')"
+        class="btn btn-outline-secondary"
+    >
+        <i id="iconConfirmPassword" class="bi bi-eye-fill"></i>
+    </button>
+
+</div>
                                     </div>
                                 </div>
 
@@ -508,6 +530,7 @@
     <script src="../js/registro.js"></script>
     <script src="../js/estadisticas.js"></script>
     <script src="../js/progreso.js"></script>
+    <script src="../js/contraseña.js"></script>
 </body>
 
 </html>
