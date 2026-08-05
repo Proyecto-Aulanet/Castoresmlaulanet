@@ -24,7 +24,7 @@ $idusuario = $_SESSION["idusuario"];
 try {
 
     $sql = "SELECT fecha
-            FROM Racha
+            FROM racha
             WHERE idusuario = ?
             AND dia_completado = 1
             ORDER BY fecha DESC";

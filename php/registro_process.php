@@ -64,7 +64,7 @@ try {
             }
 
             $stmt = $pdo->prepare("
-                INSERT INTO Usuario (
+                INSERT INTO usuario (
                     nombre, 
                     apellidop, 
                     apellidom, 
@@ -101,7 +101,7 @@ try {
 
             echo json_encode([
                 "status"    => "success",
-                "message"   => "¡Usuario registrado exitosamente!",
+                "message"   => "¡usuario registrado exitosamente!",
                 "idusuario" => $pdo->lastInsertId()
             ]);
             break;
@@ -118,9 +118,9 @@ try {
                     SELECT u.idusuario, u.nombre, u.apellidop, u.apellidom, u.username, u.email, u.fechaNac, u.idpais, u.idestado,
                            COALESCE(p.nombre, 'Sin especificar') AS pais,
                            COALESCE(e.nombre, 'Sin especificar') AS estado
-                    FROM Usuario u
-                    LEFT JOIN Pais p ON u.idpais = p.idpais
-                    LEFT JOIN Estado e ON u.idestado = e.idestado
+                    FROM usuario u
+                    LEFT JOIN pais p ON u.idpais = p.idpais
+                    LEFT JOIN estado e ON u.idestado = e.idestado
                     WHERE u.idusuario = :idusuario
                 ");
                 $stmt->bindValue(':idusuario', $idusuario, PDO::PARAM_INT);
@@ -131,9 +131,9 @@ try {
                     SELECT u.idusuario, u.nombre, u.apellidop, u.apellidom, u.username, u.email, u.fechaNac, u.idpais, u.idestado,
                            COALESCE(p.nombre, 'Sin especificar') AS pais,
                            COALESCE(e.nombre, 'Sin especificar') AS estado
-                    FROM Usuario u
-                    LEFT JOIN Pais p ON u.idpais = p.idpais
-                    LEFT JOIN Estado e ON u.idestado = e.idestado
+                    FROM usuario u
+                    LEFT JOIN pais p ON u.idpais = p.idpais
+                    LEFT JOIN estado e ON u.idestado = e.idestado
                 ");
                 $resultado = $stmt->fetchAll(PDO::FETCH_ASSOC);
             }
@@ -182,7 +182,7 @@ try {
 
             if (!empty($password)) {
                 $stmt = $pdo->prepare("
-                    UPDATE Usuario SET 
+                    UPDATE usuario SET 
                         nombre = :nombre, 
                         apellidop = :apellidop, 
                         apellidom = :apellidom, 
@@ -197,7 +197,7 @@ try {
                 $stmt->bindValue(':password', password_hash($password, PASSWORD_BCRYPT));
             } else {
                 $stmt = $pdo->prepare("
-                    UPDATE Usuario SET 
+                    UPDATE usuario SET 
                         nombre = :nombre, 
                         apellidop = :apellidop, 
                         apellidom = :apellidom, 
@@ -226,7 +226,7 @@ try {
 
             echo json_encode([
                 "status"  => "success",
-                "message" => "¡Usuario actualizado exitosamente!"
+                "message" => "¡usuario actualizado exitosamente!"
             ]);
             break;
 
@@ -375,7 +375,7 @@ case "borrar":
     // ==========================================================
 
     $stmt = $pdo->prepare("
-        DELETE FROM Usuario
+        DELETE FROM usuario
         WHERE idusuario = :idusuario
     ");
 
@@ -392,7 +392,7 @@ case "borrar":
 
         echo json_encode([
             "status"  => "success",
-            "message" => "Usuario eliminado exitosamente."
+            "message" => "usuario eliminado exitosamente."
         ]);
 
     } else {

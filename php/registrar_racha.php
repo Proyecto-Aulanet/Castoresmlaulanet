@@ -20,7 +20,7 @@ $idusuario = $_SESSION["idusuario"];
 
 try {
 
-    $sql = "INSERT INTO Racha
+    $sql = "INSERT INTO racha
             (idusuario, fecha, dia_completado)
             VALUES (?, CURDATE(), TRUE)
             ON DUPLICATE KEY UPDATE

@@ -31,7 +31,7 @@ try{
             u.apellidom,
             fp.ruta_imagen
 
-        FROM Usuario u
+        FROM usuario u
 
         LEFT JOIN FotoPerfil fp
             ON fp.idusuario=u.idusuario
@@ -80,7 +80,7 @@ try{
 
     $sql = $pdo->query("
         SELECT COUNT(*) total
-        FROM Medalla
+        FROM medalla
     ");
 
     $totalMedallas = $sql->fetch(PDO::FETCH_ASSOC)["total"];
