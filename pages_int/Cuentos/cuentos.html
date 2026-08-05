@@ -33,14 +33,40 @@
             border-radius: 4px;
         }
 
+        /* --- Estilos para simular la hoja de un libro --- */
+        .style-pagina-libro {
+            background: linear-gradient(to right, #fdfbf7 0%, #f4ecd8 100%);
+            color: #2c1d11;
+            padding: 2.5rem 2rem;
+            border-radius: 4px 12px 12px 4px;
+            box-shadow:
+                inset 15px 0 20px -10px rgba(139, 90, 43, 0.15),
+                /* Sombra del lomo */
+                5px 5px 15px rgba(0, 0, 0, 0.08);
+            /* Sombra exterior de la hoja */
+            border-left: 3px solid #8B5A2B;
+            /* Detalle del lomo */
+            font-family: inherit;
+            /* Respeta el tipo de letra original */
+            line-height: 1.8;
+            text-align: justify;
+        }
+
         .style-pagina-libro p {
             margin-bottom: 1.2rem;
         }
 
+        /* Indentación de inicio de párrafo estilo editorial */
+        .style-pagina-libro p+p {
+            text-indent: 1.5em;
+        }
+
         @media (min-width: 768px) {
             .style-pagina-libro {
-                padding-top: 10px;
-                padding-bottom: 10px;
+                padding-top: 3rem;
+                padding-bottom: 3rem;
+                padding-left: 3.5rem;
+                padding-right: 3rem;
             }
         }
 
@@ -529,7 +555,7 @@
         </section>
 
     </main>
-    <!-- FOOTER -->
+
 
     <footer class="footer-main mt-5">
 
@@ -588,7 +614,6 @@
         </div>
 
     </footer>
-
 
     <div class="modal fade" id="modalCuentos" tabindex="-1" aria-hidden="true">
 
@@ -888,7 +913,7 @@
                             </div>
                             <div class="texto-narrar"
                                 style="font-family: 'Georgia', serif; font-size: 1.1rem; line-height: 1.8; color: #2c1d11; text-align: justify;">
-                                <p><strong>1.</strong> Ce tlacatl tlen itoca Juan. Yehhuatl tlahuel tlalnamiquiya,
+                                <p> Ce tlacatl tlen itoca Juan. Yehhuatl tlahuel tlalnamiquiya,
                                     macamo quitlazohtlaya in tequiti ipan ixtlahuatl; quinequia quimatis campa hualauh
                                     in tonatiuh huan in metztli, huan campa mocahua in tlanextli ihcuac in yohualli
                                     tlaneci. Ceh tona, quicahualteuac ichan, iconehuan huan icihuauh, huan yajqui ipan
@@ -997,7 +1022,7 @@
                             </div>
                             <div class="texto-narrar"
                                 style="font-family: 'Georgia', serif; font-size: 1.1rem; line-height: 1.8; color: #2c1d11; text-align: justify;">
-                                <p><strong>2.</strong> Ipan ce altepetl tlen nemi in faldas de la Matlalcueye, nemiya ce
+                                <p> Ipan ce altepetl tlen nemi in faldas de la Matlalcueye, nemiya ce
                                     tlacatl tlen itoca Don Mateo. Yehhuatl oquipia ce cuali tonal: oquimatia patli tlen
                                     cuauhtitlan huan quipalehuiahtli in cocoxqueh. Nochtin in tlacameh quimahuiztiaya
                                     ipampa iyolo oquipia chipahuac atl. Huelis, in tomin oquixitini iyolo. Mateo
@@ -1107,7 +1132,7 @@
                             </div>
                             <div class="texto-narrar"
                                 style="font-family: 'Georgia', serif; font-size: 1.1rem; line-height: 1.8; color: #2c1d11; text-align: justify;">
-                                <p><strong>3.</strong> Nemiya ce cihuatl tlen itoca Maria. Yehhuatl oquipolo itatzin,
+                                <p> Nemiya ce cihuatl tlen itoca Maria. Yehhuatl oquipolo itatzin,
                                     tlen oquitzatziaya chicahuac ipan iyolo. Maria tlahuel ochocaya nochtin in tonah,
                                     aicma quinequia tlacualiztli huan quitlaliaya icualantli ipan in altepetl.
                                     Quihtoaya: "¿Ipampa tlein in Miquiztli oquihuicac notatzin huan oquicauh in tlacameh
