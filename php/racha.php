@@ -21,7 +21,7 @@ try {
 
         $stmt = $pdo->prepare("
             SELECT COUNT(*) AS total_racha, MAX(fecha) AS ultima_fecha 
-            FROM Racha 
+            FROM racha 
             WHERE idusuario = ? AND dia_completado = TRUE
         ");
         $stmt->execute([$idusuario]);
@@ -52,7 +52,7 @@ try {
         $hoy = date('Y-m-d');
 
         $stmt = $pdo->prepare("
-            INSERT INTO Racha (idusuario, fecha, dia_completado, ultima_fecha) 
+            INSERT INTO racha (idusuario, fecha, dia_completado, ultima_fecha) 
             VALUES (?, ?, TRUE, ?)
             ON DUPLICATE KEY UPDATE dia_completado = TRUE, ultima_fecha = VALUES(ultima_fecha)
         ");
@@ -64,13 +64,13 @@ try {
         ");
         $stmt_prog->execute([$idusuario, $idmision]);
 
-        $stmt_cant = $pdo->prepare("SELECT COUNT(*) FROM Racha WHERE idusuario = ? AND dia_completado = TRUE");
+        $stmt_cant = $pdo->prepare("SELECT COUNT(*) FROM racha WHERE idusuario = ? AND dia_completado = TRUE");
         $stmt_cant->execute([$idusuario]);
         $nueva_racha = intval($stmt_cant->fetchColumn());
 
         echo json_encode([
             "exito" => true,
-            "mensaje" => "¡Racha y nivel actualizados con éxito!",
+            "mensaje" => "¡racha y nivel actualizados con éxito!",
             "racha_actual" => $nueva_racha
         ]);
         exit;

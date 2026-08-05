@@ -110,8 +110,9 @@
                 <!-- LOGO -->
                 <div class="d-flex justify-content-center">
 
-                    <img src="../Recursos/logos/logo_completo_svg.svg" alt="logo" class="img-fluid"
-                        style="width:150%; max-width:181px;" data-aos="fade-right">
+                    <img src="../Recursos/logos/logos.svg" alt="Aul@Net" class="img-fluid footer-logo-utp">
+
+
 
                 </div>
 
@@ -343,8 +344,14 @@
                                                 Confirmar contraseña
                                             </span>
                                         </label>
-                                        <input type="password" id="confirmPassword" class="form-control rounded-3"
-                                            required>
+                                        <div class="input-group">
+                                            <input type="password" id="confirmPassword"
+                                                class="form-control rounded-start-3" required>
+                                            <button type="button" onclick="toggleConfirmPassword()"
+                                                class="btn btn-outline-secondary">
+                                                <i id="iconConfirmPassword" class="bi bi-eye-fill"></i>
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -361,19 +368,21 @@
                             <!-- BOTÓN REGRESAR -->
 
                             <div class="d-flex justify-content-start mt-5" data-aos="fade-right">
-                                <button onclick="window.location.href='../pages_ext/index.html'" class="btn-regresar-int">
+                                <button onclick="window.location.href='../pages_ext/index.html'"
+                                    class="btn-regresar-int">
                                     <i class="bi bi-arrow-left-circle-fill me-2"></i>
                                     <span data-es="Regresar" data-na="Mokuepa">
                                         Regresar
                                     </span>
                                 </button>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </section>
     </div>
-
-
-
 
     <!-- =========================================
                 FOOTER
@@ -388,12 +397,8 @@
 
                 <div class="col-12 col-md-4" data-aos="fade-right">
 
-                    <img src="../Recursos/logos/logo_completo_svg.svg" alt="Aul@Net" class="img-fluid footer-logo">
-
-
                     <img src="../Recursos/logos/utp_svg.svg" alt="Aul@Net" class="img-fluid footer-logo-utp">
-
-
+                    <img src="../Recursos/logos/logo_completo_svg.svg" alt="Aul@Net" class="img-fluid footer-logo">
 
                 </div>
 

@@ -64,7 +64,7 @@ try {
             }
 
             $stmt = $pdo->prepare("
-                INSERT INTO Usuario (
+                INSERT INTO usuario (
                     nombre, 
                     apellidop, 
                     apellidom, 
@@ -101,7 +101,7 @@ try {
 
             echo json_encode([
                 "status"    => "success",
-                "message"   => "¡Usuario registrado exitosamente!",
+                "message"   => "¡usuario registrado exitosamente!",
                 "idusuario" => $pdo->lastInsertId()
             ]);
             break;
@@ -118,9 +118,9 @@ try {
                     SELECT u.idusuario, u.nombre, u.apellidop, u.apellidom, u.username, u.email, u.fechaNac, u.idpais, u.idestado,
                            COALESCE(p.nombre, 'Sin especificar') AS pais,
                            COALESCE(e.nombre, 'Sin especificar') AS estado
-                    FROM Usuario u
-                    LEFT JOIN Pais p ON u.idpais = p.idpais
-                    LEFT JOIN Estado e ON u.idestado = e.idestado
+                    FROM usuario u
+                    LEFT JOIN pais p ON u.idpais = p.idpais
+                    LEFT JOIN estado e ON u.idestado = e.idestado
                     WHERE u.idusuario = :idusuario
                 ");
                 $stmt->bindValue(':idusuario', $idusuario, PDO::PARAM_INT);
@@ -131,9 +131,9 @@ try {
                     SELECT u.idusuario, u.nombre, u.apellidop, u.apellidom, u.username, u.email, u.fechaNac, u.idpais, u.idestado,
                            COALESCE(p.nombre, 'Sin especificar') AS pais,
                            COALESCE(e.nombre, 'Sin especificar') AS estado
-                    FROM Usuario u
-                    LEFT JOIN Pais p ON u.idpais = p.idpais
-                    LEFT JOIN Estado e ON u.idestado = e.idestado
+                    FROM usuario u
+                    LEFT JOIN pais p ON u.idpais = p.idpais
+                    LEFT JOIN estado e ON u.idestado = e.idestado
                 ");
                 $resultado = $stmt->fetchAll(PDO::FETCH_ASSOC);
             }
@@ -182,7 +182,7 @@ try {
 
             if (!empty($password)) {
                 $stmt = $pdo->prepare("
-                    UPDATE Usuario SET 
+                    UPDATE usuario SET 
                         nombre = :nombre, 
                         apellidop = :apellidop, 
                         apellidom = :apellidom, 
@@ -197,7 +197,7 @@ try {
                 $stmt->bindValue(':password', password_hash($password, PASSWORD_BCRYPT));
             } else {
                 $stmt = $pdo->prepare("
-                    UPDATE Usuario SET 
+                    UPDATE usuario SET 
                         nombre = :nombre, 
                         apellidop = :apellidop, 
                         apellidom = :apellidom, 
@@ -226,7 +226,7 @@ try {
 
             echo json_encode([
                 "status"  => "success",
-                "message" => "¡Usuario actualizado exitosamente!"
+                "message" => "¡usuario actualizado exitosamente!"
             ]);
             break;
 
@@ -322,14 +322,18 @@ break;
 
 
 // ==============================================================
-// eliminar
+// ELIMINAR USUARIO
 // ==============================================================
 
 case "eliminar":
 case "borrar":
 
-    $idusuario = (isset($data["idusuario"]) && is_numeric($data["idusuario"]) && (int)$data["idusuario"] > 0) 
-    ? (int)$data["idusuario"] 
+    $idusuario = (
+        isset($data["idusuario"]) &&
+        is_numeric($data["idusuario"]) &&
+        (int)$data["idusuario"] > 0
+    )
+    ? (int)$data["idusuario"]
     : 0;
 
 
@@ -346,14 +350,21 @@ case "borrar":
     }
 
 
+    // ==========================================================
+    // INICIAR TRANSACCIÓN
+    // ==========================================================
 
-    // eliminar foto asociada
+    $pdo->beginTransaction();
+
+
+    // ==========================================================
+    // 1. ELIMINAR LECCIONES DEL USUARIO
+    // ==========================================================
 
     $stmt = $pdo->prepare("
-        DELETE FROM FotoPerfil
+        DELETE FROM lecciones_usuario
         WHERE idusuario = :idusuario
     ");
-
 
     $stmt->bindValue(
         ':idusuario',
@@ -361,19 +372,17 @@ case "borrar":
         PDO::PARAM_INT
     );
 
-
     $stmt->execute();
 
 
-
-
-    // eliminar usuario
+    // ==========================================================
+    // 2. ELIMINAR INTENTOS DE EXAMEN
+    // ==========================================================
 
     $stmt = $pdo->prepare("
-        DELETE FROM Usuario 
+        DELETE FROM intentoexamen
         WHERE idusuario = :idusuario
     ");
-
 
     $stmt->bindValue(
         ':idusuario',
@@ -381,19 +390,115 @@ case "borrar":
         PDO::PARAM_INT
     );
 
+    $stmt->execute();
+
+
+    // ==========================================================
+    // 3. ELIMINAR MEDALLAS DEL USUARIO
+    // ==========================================================
+
+    $stmt = $pdo->prepare("
+        DELETE FROM usuario_medalla
+        WHERE idusuario = :idusuario
+    ");
+
+    $stmt->bindValue(
+        ':idusuario',
+        $idusuario,
+        PDO::PARAM_INT
+    );
 
     $stmt->execute();
 
 
+    // ==========================================================
+    // 4. ELIMINAR PUNTAJES
+    // ==========================================================
+
+    $stmt = $pdo->prepare("
+        DELETE FROM puntaje
+        WHERE idusuario = :idusuario
+    ");
+
+    $stmt->bindValue(
+        ':idusuario',
+        $idusuario,
+        PDO::PARAM_INT
+    );
+
+    $stmt->execute();
+
+
+    // ==========================================================
+    // 5. ELIMINAR RACHA
+    // ==========================================================
+
+    $stmt = $pdo->prepare("
+        DELETE FROM racha
+        WHERE idusuario = :idusuario
+    ");
+
+    $stmt->bindValue(
+        ':idusuario',
+        $idusuario,
+        PDO::PARAM_INT
+    );
+
+    $stmt->execute();
+
+
+    // ==========================================================
+    // 6. ELIMINAR FOTO DE PERFIL
+    // ==========================================================
+
+    $stmt = $pdo->prepare("
+        DELETE FROM fotoperfil
+        WHERE idusuario = :idusuario
+    ");
+
+    $stmt->bindValue(
+        ':idusuario',
+        $idusuario,
+        PDO::PARAM_INT
+    );
+
+    $stmt->execute();
+
+
+    // ==========================================================
+    // 7. ELIMINAR USUARIO
+    // ==========================================================
+
+    $stmt = $pdo->prepare("
+        DELETE FROM usuario
+        WHERE idusuario = :idusuario
+    ");
+
+    $stmt->bindValue(
+        ':idusuario',
+        $idusuario,
+        PDO::PARAM_INT
+    );
+
+    $stmt->execute();
+
+
+    // ==========================================================
+    // CONFIRMAR ELIMINACIÓN
+    // ==========================================================
 
     if ($stmt->rowCount() > 0) {
 
+        $pdo->commit();
+
         echo json_encode([
             "status"  => "success",
-            "message" => "Usuario eliminado exitosamente."
+            "message" => "usuario eliminado exitosamente."
         ]);
 
     } else {
+
+        $pdo->rollBack();
 
         http_response_code(404);
 
@@ -404,22 +509,31 @@ case "borrar":
 
     }
 
-
 break;
 
-        default:
-            http_response_code(400);
+// ==========================================================
+    // ACCIÓN NO VÁLIDA
+    // ==========================================================
 
-            echo json_encode([
-                "status"  => "error",
-                "message" => "Acción no válida. Usa: crear, leer, modificar o eliminar."
-            ]);
+    default:
 
-            break;
+        http_response_code(400);
+
+        echo json_encode([
+            "status"  => "error",
+            "message" => "Acción no válida."
+        ]);
+
+        break;
 
     }
 
 } catch (PDOException $e) {
+
+    // Si había una transacción activa, cancelarla
+    if ($pdo->inTransaction()) {
+        $pdo->rollBack();
+    }
 
     http_response_code(500);
 

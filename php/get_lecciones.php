@@ -79,7 +79,7 @@ try {
                     m.descripcion_nah, 
                     m.imagen, 
                     e.idexamen 
-                FROM Mision m
+                FROM mision m
                 LEFT JOIN Examen e ON m.idmision = e.idmision
                 ORDER BY m.idmision ASC
             ");
@@ -211,15 +211,15 @@ break;
             $stmtPuntaje->execute([$idusuario, $idexamen, $puntos]);
             $idpuntaje = $pdo->lastInsertId();
 
-            // 3. Registrar o actualizar Racha del día
+            // 3. Registrar o actualizar racha del día
             $stmtRacha = $pdo->prepare("
-                INSERT INTO Racha (idusuario, fecha, dia_completado) 
+                INSERT INTO racha (idusuario, fecha, dia_completado) 
                 VALUES (?, CURRENT_DATE(), TRUE)
                 ON DUPLICATE KEY UPDATE dia_completado = TRUE
             ");
             $stmtRacha->execute([$idusuario]);
 
-            $stmtGetRacha = $pdo->prepare("SELECT idracha FROM Racha WHERE idusuario = ? AND fecha = CURRENT_DATE()");
+            $stmtGetRacha = $pdo->prepare("SELECT idracha FROM racha WHERE idusuario = ? AND fecha = CURRENT_DATE()");
             $stmtGetRacha->execute([$idusuario]);
             $idracha = $stmtGetRacha->fetch(PDO::FETCH_ASSOC)['idracha'] ?? null;
 
@@ -243,7 +243,7 @@ break;
                 $stmtInsert->execute([$idusuario, $idleccion, $idexamen, $idpuntaje, $idracha]);
             }
 
-            // 5. Asignar Medalla si aplica
+            // 5. Asignar medalla si aplica
             $medallaOtorgada = false;
             if ($idmedalla && $idmedalla > 0) {
                 $stmtMedalla = $pdo->prepare("
@@ -404,11 +404,11 @@ break;
                     TIMEDIFF(ie.hora_fin, ie.hora_inicio) AS tiempo_tardado,
                     TIMESTAMPDIFF(SECOND, ie.hora_inicio, ie.hora_fin) AS segundos_totales
                 FROM IntentoExamen ie
-                INNER JOIN Usuario u ON ie.idusuario = u.idusuario
-                LEFT JOIN Pais p ON u.idpais = p.idpais
-                LEFT JOIN Estado e ON u.idestado = e.idestado
+                INNER JOIN usuario u ON ie.idusuario = u.idusuario
+                LEFT JOIN pais p ON u.idpais = p.idpais
+                LEFT JOIN estado e ON u.idestado = e.idestado
                 INNER JOIN Examen ex ON ie.idexamen = ex.idexamen
-                INNER JOIN Mision m ON ex.idmision = m.idmision
+                INNER JOIN mision m ON ex.idmision = m.idmision
                 ORDER BY ie.hora_fin DESC
             ");
 

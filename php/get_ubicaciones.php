@@ -6,7 +6,7 @@ $accion = $_GET['accion'] ?? '';
 
 try {
     if ($accion === 'paises') {
-        $stmt = $pdo->query("SELECT idpais, nombre FROM Pais");
+        $stmt = $pdo->query("SELECT idpais, nombre FROM pais");
         $paises = $stmt->fetchAll(PDO::FETCH_ASSOC);
         
         echo json_encode([
@@ -17,7 +17,7 @@ try {
     elseif ($accion === 'estados') {
         $idpais = isset($_GET['idpais']) ? intval($_GET['idpais']) : 1;
 
-        $stmt = $pdo->prepare("SELECT idestado, nombre FROM Estado WHERE idpais = ?");
+        $stmt = $pdo->prepare("SELECT idestado, nombre FROM estado WHERE idpais = ?");
         $stmt->execute([$idpais]);
         $estados = $stmt->fetchAll(PDO::FETCH_ASSOC);
         

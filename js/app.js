@@ -669,37 +669,31 @@ function cerrarSesion() {
 }
 
 
-/* frames nahui*/
+/* frames nahui */
 let frameActual = 1;
-
 const totalFrames = 58;
-
 let direccion = 1;
 
 function animarNahui() {
 
-    const numero =
-        String(frameActual)
-            .padStart(3, "0");
+    const nahui = document.getElementById("nahuiFrame");
 
-    document.getElementById("nahuiFrame")
-        .src =
+    if (!nahui) return;
+
+    const numero = String(frameActual).padStart(3, "0");
+
+    nahui.src =
         `../Recursos/nahui/frames_nahui/ezgif-frame-${numero}.png`;
 
     frameActual += direccion;
 
     if (frameActual >= totalFrames) {
-
         direccion = -1;
-
     }
 
     if (frameActual <= 1) {
-
         direccion = 1;
-
     }
-
 }
 
 setInterval(animarNahui, 70);
@@ -726,7 +720,7 @@ new Chart(ctx, {
 
         datasets: [{
 
-            label: 'XP',
+            label: 'pts',
 
             data: [
                 50,

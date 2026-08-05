@@ -62,7 +62,7 @@ apellidom,
 username,
 password
 
-FROM Usuario
+FROM usuario
 
 WHERE email=:email
 
@@ -86,7 +86,7 @@ echo json_encode([
 "status"=>"error",
 
 "message"=>
-"Usuario no encontrado"
+"usuario no encontrado"
 
 ]);
 

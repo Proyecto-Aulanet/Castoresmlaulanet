@@ -406,6 +406,17 @@ const MotorExamen = {
 
             }
 
+            const btnTerminarExamen =
+            document.getElementById(
+            "btnTerminarExamen"
+            );
+
+            if(btnTerminarExamen){
+
+            btnTerminarExamen.style.display="inline-block";
+
+            }
+
 
 
 
@@ -1117,10 +1128,7 @@ document.addEventListener(
         ()=>{
 
 
-            window.location.href =
-            configExamenes[
-            MotorExamen.idExamen
-            ].siguiente;
+            MotorExamen.mostrarMedalla();
 
 
 
@@ -1129,6 +1137,56 @@ document.addEventListener(
 
 
     }
+
+    const btnTerminarExamen =
+    document.getElementById("btnTerminarExamen");
+
+if (btnTerminarExamen) {
+
+    btnTerminarExamen.addEventListener(
+        "click",
+        async () => {
+
+            try {
+
+                const respuesta = await fetch(
+                    "../php/registrar_racha.php",
+                    {
+                        method: "POST"
+                    }
+                );
+
+                const datos = await respuesta.json();
+
+                console.log(datos);
+
+                if (datos.status === "success") {
+
+                    window.history.back();
+
+                } else {
+
+                    alert(datos.message);
+
+                }
+
+            } catch (error) {
+
+                console.error(
+                    "Error al registrar la racha:",
+                    error
+                );
+
+                alert(
+                    "Ocurrió un error al registrar la actividad."
+                );
+
+            }
+
+        }
+    );
+
+}
 
 
 
