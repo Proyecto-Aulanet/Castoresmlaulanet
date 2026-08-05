@@ -10,8 +10,8 @@ try {
             u.username,
             COALESCE(p.nombre, 'Sin país') AS pais_codigo,
             COALESCE(SUM(pu.puntos), 0) AS puntaje
-        FROM Usuario u
-        LEFT JOIN Pais p ON u.idpais = p.idpais
+        FROM usuario u
+        LEFT JOIN pais p ON u.idpais = p.idpais
         LEFT JOIN Puntaje pu ON u.idusuario = pu.idusuario
         GROUP BY u.idusuario, u.nombre, u.username, p.nombre
         ORDER BY puntaje DESC

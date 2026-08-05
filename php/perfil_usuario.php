@@ -35,7 +35,7 @@ FROM Puntaje
 WHERE idusuario = u.idusuario
 ),0) AS xp
 
-FROM Usuario u
+FROM usuario u
 
 WHERE u.idusuario = ?";
 

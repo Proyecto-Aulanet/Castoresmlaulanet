@@ -39,7 +39,7 @@ u.fechaNac,
 
 fp.ruta_imagen
 
-FROM Usuario u
+FROM usuario u
 
 LEFT JOIN FotoPerfil fp
 
