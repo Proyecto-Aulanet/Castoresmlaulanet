@@ -316,12 +316,37 @@
                     </div>
 
                     <div class="mb-4">
-                        <label class="form-label fw-semibold text-black">
-                            <span data-es="Contraseña" data-na="Tlatzakuilli">Contraseña</span>
-                        </label>
-                        <input type="password" id="loginPassword" class="form-control rounded-3" placeholder="********"
-                            required>
-                    </div>
+
+    <label class="form-label fw-semibold text-black">
+        <span data-es="Contraseña" data-na="Tlatzakuilli">
+            Contraseña
+        </span>
+    </label>
+
+    <div class="input-group">
+
+        <input
+            type="password"
+            id="loginPassword"
+            class="form-control rounded-start-3"
+            placeholder="********"
+            required>
+
+        <button
+            type="button"
+            onclick="togglePassword('loginPassword', 'iconLoginPassword')"
+            class="btn btn-outline-secondary">
+
+            <i
+                id="iconLoginPassword"
+                class="bi bi-eye-fill">
+            </i>
+
+        </button>
+
+    </div>
+
+</div>
 
                     <button type="button" id="btnEntrar" class="btn btn-success w-100 rounded-3 py-2">
                         <i class="bi bi-box-arrow-in-right me-2"></i>
@@ -4081,6 +4106,8 @@
 
     </footer>
 
+
+
     <!-- BOOTSTRAP -->
     <script src="../assets/js/bootstrap.bundle.min.js"></script>
 
@@ -4366,11 +4393,13 @@
             });
         }
     </script>
+    
 
 
     <script src="../js/estadisticas.js"></script>
+    <script src="../js/contraseña.js"></script>
     <!-- Librería Chart.js para dibujar gráficas -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../assets/js/chart.js"></script>
 
 </body>
 

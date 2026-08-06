@@ -475,6 +475,8 @@ async function eliminarCuenta(){
 
             let resultadoPHP = await respuesta.json();
 
+            console.log("Respuesta eliminar:", resultadoPHP);
+
             if(resultadoPHP.status==="success"){
 
                 Swal.fire({
