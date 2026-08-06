@@ -56,7 +56,6 @@ try {
     $medalla_otorgada = false;
 
     if ($porcentaje >= 80 && !empty($idmedalla)) {
-        // Asignar medalla al usuario evitando duplicados si ya la obtuvo previamente
         $stmtMedalla = $conexion->prepare(
             "INSERT INTO Usuario_Medalla (idusuario, idmedalla) VALUES (?, ?) 
              ON DUPLICATE KEY UPDATE fecha_obtenida = fecha_obtenida"
@@ -69,7 +68,6 @@ try {
         }
     }
 
-    // 6. Respuesta JSON
     echo json_encode([
         "status" => "success",
         "porcentaje" => round($porcentaje, 2),
