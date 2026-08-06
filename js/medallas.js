@@ -30,7 +30,7 @@ imagen:"medalla_sociedad.png"
 
 5:{
 nombre:"AJOTL",
-descripcion:"Guardián de Plantas y Animales",
+descripcion:"Guardián de las Plantas",
 imagen:"medalla_plantas.png"
 },
 
@@ -42,8 +42,8 @@ imagen:"medalla_alimentos.png"
 
 7:{
 nombre:"MAMCHA",
-descripcion:"Guardián de Comidas y Bebidas",
-imagen:"medalla_comidas.png"
+descripcion:"Guardián de los Animales",
+imagen:"medalla_animales.png"
 },
 
 8:{
