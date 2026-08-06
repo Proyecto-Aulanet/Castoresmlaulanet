@@ -3,6 +3,31 @@ const API_URL = '../php/registro_process.php';
 document.addEventListener('DOMContentLoaded', () => {
     cargarPaises();
 
+    const fechaNac = document.querySelector('#fechaNac');
+
+    if (fechaNac) {
+        fechaNac.min = "1900-01-01";
+        fechaNac.max = "2026-12-31";
+
+        fechaNac.addEventListener('change', function () {
+
+            if (!this.value) return;
+
+            const año = parseInt(this.value.substring(0, 4), 10);
+
+            if (año < 1900 || año > 2026) {
+                Swal.fire({
+                    title: 'Fecha no válida',
+                    text: 'El año de nacimiento debe estar entre 1900 y 2026.',
+                    icon: 'warning',
+                    confirmButtonText: 'Aceptar'
+                });
+
+                this.value = '';
+            }
+        });
+    }
+
     const selectPais = document.querySelector('#pais');
     if (selectPais) {
         selectPais.addEventListener('change', cambiarPais);
@@ -23,6 +48,25 @@ document.addEventListener('DOMContentLoaded', () => {
 // ==============================================================================
 async function guardarUsuario(e) {
     e.preventDefault();
+
+    const fechaNac = document.querySelector('#fechaNac')?.value;
+
+    if (fechaNac) {
+
+        const año = parseInt(fechaNac.substring(0, 4), 10);
+
+        if (año < 1900 || año > 2026) {
+
+            Swal.fire({
+                title: 'Fecha no válida',
+                text: 'El año de nacimiento debe estar entre 1900 y 2026.',
+                icon: 'warning',
+                confirmButtonText: 'Aceptar'
+            });
+
+            return;
+        }
+    }
 
     const password = document.querySelector('#password')?.value || '';
     const confirmPassword = document.querySelector('#confirmPassword')?.value || '';
