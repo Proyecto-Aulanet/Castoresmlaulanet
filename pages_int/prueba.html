@@ -182,33 +182,21 @@
                         <!-- Avatar -->
                         <div class="perfil-avatar">
 
-                            <i class="bi bi-person-fill"></i>
+                            <i id="iconoUsuario" class="bi bi-person-fill">
+                            </i>
 
+                            <img id="fotoUsuario" class="foto-perfil" src="" style="display:none;">
 
-                                <i
-                                    id="iconoUsuario"
-                                    class="bi bi-person-fill">
-                                </i>
+                        </div>
 
-                                <img
-                                    id="fotoUsuario"
-                                    class="foto-perfil"
-                                    src=""
-                                    style="display:none;">
+                        <!-- Nombre -->
+                        <div class="perfil-info d-none d-md-block">
 
-                            </div>
+                            <span id="nombreUsuario" class="perfil-nombre" data-es="Invitado" data-na="Tlapowalistli">
 
-                            <!-- Nombre -->
-                            <div class="perfil-info d-none d-md-block">
+                                Invitado
 
-                                <span
-                                    id="nombreUsuario"
-                                    class="perfil-nombre"
-                                    data-es="Invitado"
-                                    data-na="Tlapowalistli">
-
-
-
+                            </span>
 
                         </div>
 
@@ -271,7 +259,7 @@
                         </button>
 
                         <!-- LECCIONES -->
-                        <button onclick="window.location.href='lecciones.html'"
+                        <button onclick="window.location.href='../pages_int/lecciones.html'"
                             class="btn navbarint-btn rounded-pill px-4" data-aos="fade-up" data-aos-delay="100"
                             data-es="Lecciones" data-na="Temachtilli">
 
@@ -282,7 +270,7 @@
                         </button>
 
                         <!-- CUENTOS -->
-                        <button onclick="window.location.href='cuentos.html'"
+                        <button onclick="window.location.href='../pages_int/Cuentos/cuentos.html'"
                             class="btn navbarint-btn rounded-pill px-4" data-aos="fade-up" data-aos-delay="100"
                             data-es="Cuentos" data-na="Tlahtolli">
 
@@ -293,7 +281,7 @@
                         </button>
 
                         <!-- CULTURA -->
-                        <button onclick="window.location.href='cultura.html'"
+                        <button onclick="window.location.href='../pages_int/cultura.html'"
                             class="btn navbarint-btn rounded-pill px-4" data-aos="fade-up" data-aos-delay="200"
                             data-es="Cultura" data-na="Yancuic Tlamachtiliztli">
 
@@ -304,7 +292,7 @@
                         </button>
 
                         <!-- PROGRESO -->
-                        <button onclick="window.location.href='progreso.html'"
+                        <button onclick="window.location.href='../pages_int/progreso.html'"
                             class="btn navbarint-btn rounded-pill px-4" data-aos="fade-up" data-aos-delay="300"
                             data-es="Progreso" data-na="Yancuic Nejnemiliztli">
 
@@ -323,6 +311,51 @@
         </nav>
 
         </div>
+
+        <!-- BOTONES SUPERIORES -->
+        <div class="d-flex justify-content-between align-items-center mb-4">
+
+
+            <!-- BOTÓN TRADUCTOR -->
+            <div class="presen-traductor-int">
+
+                <button class="btn btn-light rounded-circle traductor-btn" onclick="presenToggleMenu()"
+                    data-aos="zoom-in">
+
+                    <i class="bi bi-translate"></i>
+
+                </button>
+
+                <!-- MENÚ -->
+                <div class="presen-menu-int" id="presenMenuIdioma">
+
+                    <ul class="list-unstyled m-0">
+
+                        <li onclick="presenCambiarModo('es')">
+                            Español
+                        </li>
+
+                        <li onclick="presenCambiarModo('na')">
+                            Náhuatl
+                        </li>
+
+                        <li onclick="presenCambiarModo('es-na')">
+                            Español + Náhuatl
+                        </li>
+
+                        <li onclick="presenCambiarModo('na-es')">
+                            Náhuatl + Español
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
 
     </header>
     <br><br><br><br><br><br><br><br><br><br><br><br>
