@@ -4,7 +4,7 @@ header("Content-Type: application/json; charset=UTF-8");
 $host = "localhost";
 $db = "nahui";
 $user = "root";
-$pass = "pizza028";
+$pass = "260622BrunX";
 
 
 
@@ -26,3 +26,5 @@ try {
 
 } 
 
+
+ya no me haga la api y ahora haga un js donde se implemente todo el funcionamiento, y cazp
