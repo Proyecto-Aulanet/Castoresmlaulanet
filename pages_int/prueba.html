@@ -92,13 +92,14 @@
 
 
 
-<!-- =====================================================
-                    HEADER
-===================================================== -->
 
 <header class="header-main sticky-top shadow-lg">
 
+
     <div class="container">
+
+
+        <!-- FILA SUPERIOR -->
 
         <div class="headerint-top d-flex
                     justify-content-between
@@ -115,7 +116,8 @@
                 <img src="../Recursos/logos/logos.svg"
                      alt="Aul@Net"
                      class="img-fluid"
-                     style="max-width:185px;">
+                     style="max-width:185px;"
+                     data-aos="fade-right">
 
             </div>
 
@@ -126,7 +128,8 @@
                         align-items-center
                         justify-content-center
                         gap-3
-                        flex-wrap">
+                        flex-wrap"
+                 data-aos="fade-up">
 
 
                 <!-- RACHA -->
@@ -137,8 +140,12 @@
 
                     <div>
 
-                        <small class="stat-label">
+                        <small class="stat-label"
+                               data-es="Racha"
+                               data-na="Tlatzintli">
+
                             Racha
+
                         </small>
 
                         <span id="streak-display"
@@ -161,8 +168,12 @@
 
                     <div>
 
-                        <small class="stat-label">
+                        <small class="stat-label"
+                               data-es="Puntaje"
+                               data-na="Tlapōhualli">
+
                             Puntaje
+
                         </small>
 
                         <span id="xp-display"
@@ -182,9 +193,18 @@
 
             <!-- PERFIL -->
 
-            <div class="perfil-header">
+            <div class="perfil-header dropdown"
+                 data-aos="fade-left">
 
-                <div class="d-flex align-items-center">
+
+                <button class="btn p-0 border-0 bg-transparent
+                               d-flex align-items-center"
+                        type="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false">
+
+
+                    <!-- AVATAR -->
 
                     <div class="perfil-avatar">
 
@@ -199,10 +219,15 @@
 
                     </div>
 
-                    <div class="perfil-info">
+
+                    <!-- NOMBRE -->
+
+                    <div class="perfil-info d-none d-md-block">
 
                         <span id="nombreUsuario"
-                              class="perfil-nombre">
+                              class="perfil-nombre"
+                              data-es="Invitado"
+                              data-na="Tlapowalistli">
 
                             Invitado
 
@@ -210,7 +235,37 @@
 
                     </div>
 
-                </div>
+
+                    <!-- FLECHA -->
+
+                    <i class="bi bi-caret-down-fill
+                              ms-2
+                              perfil-flecha">
+                    </i>
+
+
+                </button>
+
+
+                <!-- MENÚ PERFIL -->
+
+                <ul class="dropdown-menu dropdown-menu-end">
+
+                    <li>
+
+                        <a class="dropdown-item"
+                           href="perfil.html">
+
+                            <i class="bi bi-person me-2"></i>
+
+                            Perfil
+
+                        </a>
+
+                    </li>
+
+                </ul>
+
 
             </div>
 
@@ -221,14 +276,21 @@
     </div>
 
 
-    <!-- NAVBAR -->
+    <!-- =====================================================
+                            NAVBAR
+    ===================================================== -->
 
-    <nav class="navbar navbar-expand-lg navbarint">
+    <nav class="navbar navbar-expand-lg navbarint
+                justify-content-center">
 
-        <div class="container-fluid justify-content-center">
+
+        <div class="container-fluid
+                    justify-content-center">
 
 
-            <button class="navbar-toggler navbarint-toggler"
+            <!-- HAMBURGUESA -->
+
+            <button class="navbar-toggler navbarint-toggler mx-auto"
                     type="button"
                     data-bs-toggle="collapse"
                     data-bs-target="#menuNavbar">
@@ -238,16 +300,26 @@
             </button>
 
 
-            <div class="collapse navbar-collapse justify-content-center"
+            <!-- MENÚ -->
+
+            <div class="collapse navbar-collapse
+                        justify-content-center"
                  id="menuNavbar">
 
 
-                <div class="navbar-nav gap-2">
+                <div class="navbar-nav
+                            gap-2
+                            justify-content-center">
 
 
-                    <button
-                        onclick="window.location.href='../pages_int/inicio.html'"
-                        class="btn navbarint-btn rounded-pill px-4">
+                    <!-- INICIO -->
+
+                    <button onclick="window.location.href='../pages_int/inicio.html'"
+                            class="btn navbarint-btn
+                                   rounded-pill px-4"
+                            data-aos="fade-up"
+                            data-es="Inicio"
+                            data-na="Pewaloyan">
 
                         <i class="bi bi-house-fill me-2"></i>
 
@@ -256,9 +328,15 @@
                     </button>
 
 
-                    <button
-                        onclick="window.location.href='../pages_int/lecciones.html'"
-                        class="btn navbarint-btn rounded-pill px-4">
+                    <!-- LECCIONES -->
+
+                    <button onclick="window.location.href='../pages_int/lecciones.html'"
+                            class="btn navbarint-btn
+                                   rounded-pill px-4"
+                            data-aos="fade-up"
+                            data-aos-delay="100"
+                            data-es="Lecciones"
+                            data-na="Temachtilli">
 
                         <i class="bi bi-book-fill me-2"></i>
 
@@ -267,20 +345,27 @@
                     </button>
 
 
-                    <button
-                        onclick="window.location.href='../pages_int/Cuentos/cuentos.html'"
-                        class="btn navbarint-btn rounded-pill px-4">
+                    <!-- CUENTOS -->
+                        <button onclick="window.location.href='../pages_int/Cuentos/cuentos.html'"
+                            class="btn navbarint-btn rounded-pill px-4" data-aos="fade-up" data-aos-delay="100"
+                            data-es="Cuentos" data-na="Tlahtolli">
 
-                        <i class="bi bi-book-half me-2"></i>
+                            <i class="bi bi-book-half me-2"></i>
 
-                        Cuentos
+                            Cuentos
 
-                    </button>
+                        </button>
 
 
-                    <button
-                        onclick="window.location.href='../pages_int/cultura.html'"
-                        class="btn navbarint-btn rounded-pill px-4">
+                    <!-- CULTURA -->
+
+                    <button onclick="window.location.href='../pages_int/cultura.html'"
+                            class="btn navbarint-btn
+                                   rounded-pill px-4"
+                            data-aos="fade-up"
+                            data-aos-delay="200"
+                            data-es="Cultura"
+                            data-na="Yancuic Tlamachtiliztli">
 
                         <i class="bi bi-globe-americas me-2"></i>
 
@@ -289,9 +374,15 @@
                     </button>
 
 
-                    <button
-                        onclick="window.location.href='../pages_int/progreso.html'"
-                        class="btn navbarint-btn rounded-pill px-4">
+                    <!-- PROGRESO -->
+
+                    <button onclick="window.location.href='../pages_int/progreso.html'"
+                            class="btn navbarint-btn
+                                   rounded-pill px-4"
+                            data-aos="fade-up"
+                            data-aos-delay="300"
+                            data-es="Progreso"
+                            data-na="Yancuic Nejnemiliztli">
 
                         <i class="bi bi-graph-up-arrow me-2"></i>
 
@@ -308,7 +399,9 @@
 
     </nav>
 
+
 </header>
+
 
 
 
