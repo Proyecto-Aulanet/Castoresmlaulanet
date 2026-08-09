@@ -25,6 +25,230 @@
     <link rel="stylesheet" href="../styles/styles.css">
 
 </head>
+<style>
+   /* =====================================================
+   MIS RETOS
+===================================================== */
+
+.retos-card {
+    position: relative;
+}
+
+
+/* TARJETA */
+
+.reto-card {
+
+    position: relative;
+
+    min-height: 155px;
+
+    padding: 20px 15px;
+
+    background: #ffffff;
+
+    border: 1px solid rgba(0, 0, 0, 0.07);
+
+    border-radius: 18px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+
+    overflow: hidden;
+}
+
+
+/* EFECTO SUPERIOR */
+
+.reto-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background: linear-gradient(
+        90deg,
+        #198754,
+        #0d6efd,
+        #ffc107
+    );
+
+    opacity: 0;
+
+    transition: opacity 0.25s ease;
+}
+
+
+/* HOVER */
+
+.reto-card:hover {
+
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 12px 25px rgba(0, 0, 0, 0.12);
+
+    border-color: rgba(13, 110, 253, 0.2);
+
+}
+
+
+.reto-card:hover::before {
+
+    opacity: 1;
+
+}
+
+
+/* ICONO */
+
+.reto-icon {
+
+    width: 62px;
+
+    height: 62px;
+
+    border-radius: 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 29px;
+
+    margin-bottom: 12px;
+
+    transition:
+        transform 0.25s ease;
+
+}
+
+
+.reto-card:hover .reto-icon {
+
+    transform: scale(1.1) rotate(-3deg);
+
+}
+
+
+/* TITULO */
+
+.reto-card h6 {
+
+    margin: 0;
+
+    font-weight: 700;
+
+    font-size: 0.95rem;
+
+    color: #333;
+
+}
+
+
+/* BOTON JUGAR */
+
+.reto-link {
+
+    margin-top: 7px;
+
+    font-size: 0.78rem;
+
+    font-weight: 600;
+
+    color: #198754;
+
+    opacity: 0.85;
+
+    transition:
+        transform 0.25s ease,
+        opacity 0.25s ease;
+
+}
+
+
+.reto-card:hover .reto-link {
+
+    opacity: 1;
+
+    transform: translateX(3px);
+
+}
+
+
+.reto-link i {
+
+    margin-left: 3px;
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 575px) {
+
+    .reto-card {
+
+        min-height: 140px;
+
+        padding: 15px 10px;
+
+        border-radius: 15px;
+
+    }
+
+    .reto-icon {
+
+        width: 52px;
+
+        height: 52px;
+
+        font-size: 24px;
+
+        border-radius: 15px;
+
+        margin-bottom: 9px;
+
+    }
+
+    .reto-card h6 {
+
+        font-size: 0.85rem;
+
+    }
+
+    .reto-link {
+
+        font-size: 0.72rem;
+
+    }
+
+}
+</style>
 
 
 <body>
@@ -444,25 +668,364 @@
             <!-- COLUMNA CENTRO -->
             <!-- ===================== -->
             <div class="col-12 col-lg-6">
+                <div class="progreso-card retos-card" data-aos="fade-up">
+
+    <!-- ENCABEZADO -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <div>
+            <h4 class="mb-1">
+                <i class="bi bi-controller me-2"></i>
+                Mis Retos
+            </h4>
+
+            <small class="text-muted">
+                Pon a prueba lo que has aprendido
+            </small>
+        </div>
+
+        <span class="badge bg-primary rounded-pill px-3 py-2">
+            10 retos
+        </span>
+
+    </div>
+
+
+   
+
 
                 <!-- PUNTAJE SEMANAL -->
-                <div class="progreso-card mb-4" data-aos="fade-up">
+               <!-- ========================================== -->
+<!--                 MIS RETOS                  -->
+<!-- ========================================== -->
 
-                    <div class="d-flex justify-content-between align-items-center mb-2">
-                        <h4 data-es="Puntaje semanal" data-na="Motlanilistli semanalki" class="m-0">
+<div class="progreso-card mb-4" data-aos="fade-up">
 
-                            Puntaje semanal
+    <div class="d-flex justify-content-between align-items-center mb-4">
 
-                        </h4>
-                        <!-- ID AGREGADO PARA IMPRIMIR EL PUNTAJE -->
-                        <span id="total-puntos" class="badge bg-primary fs-5">0 pts</span>
-                    </div>
+        <div>
+            <!--<h4 class="m-0 fw-bold"
+                data-es="Mis retos"
+                data-na="Nehnemiliztli">
 
-                    <small id="lecciones-completadas" class="text-muted d-block mb-3"></small>
+               
 
-                    <canvas id="xpChart"></canvas>
+            </h4>
+
+            <small class="text-muted">
+
+                
+
+            </small>-->
+        </div>
+
+         <!-- TARJETAS -->
+    <div class="row g-3">
+
+
+        <!-- ========================= -->
+        <!-- ABECEDARIO -->
+        <!-- ========================= -->
+
+        <div class="col-6 col-md-4 col-xl-3">
+
+            <div class="reto-card"
+                 onclick="window.location.href='lecciones/abecedario/abe_reto.html'">
+
+                <div class="reto-icon bg-primary-subtle text-primary">
+
+                    <i class="bi bi-fonts"></i>
 
                 </div>
+
+                <h6>
+                    Abecedario
+                </h6>
+
+                <span class="reto-link">
+                    Jugar
+                    <i class="bi bi-arrow-right"></i>
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- ========================= -->
+        <!-- SALUDOS -->
+        <!-- ========================= -->
+
+        <div class="col-6 col-md-4 col-xl-3">
+
+            <div class="reto-card"
+                 onclick="window.location.href='lecciones/saludos/sal_reto.html'">
+
+                <div class="reto-icon bg-success-subtle text-success">
+
+                    <i class="bi bi-chat-dots-fill"></i>
+
+                </div>
+
+                <h6>
+                    Saludos
+                </h6>
+
+                <span class="reto-link">
+                    Jugar
+                    <i class="bi bi-arrow-right"></i>
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- ========================= -->
+        <!-- TIEMPO -->
+        <!-- ========================= -->
+
+        <div class="col-6 col-md-4 col-xl-3">
+
+            <div class="reto-card"
+                 onclick="window.location.href='lecciones/tiempos/tiem_reto.html'">
+
+                <div class="reto-icon bg-warning-subtle text-warning">
+
+                    <i class="bi bi-clock-fill"></i>
+
+                </div>
+
+                <h6>
+                    Tiempo
+                </h6>
+
+                <span class="reto-link">
+                    Jugar
+                    <i class="bi bi-arrow-right"></i>
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- ========================= -->
+        <!-- SOCIEDAD -->
+        <!-- ========================= -->
+
+        <div class="col-6 col-md-4 col-xl-3">
+
+            <div class="reto-card"
+                 onclick="window.location.href='lecciones/sociedad/soc_reto.html'">
+
+                <div class="reto-icon bg-info-subtle text-info">
+
+                    <i class="bi bi-people-fill"></i>
+
+                </div>
+
+                <h6>
+                    Sociedad
+                </h6>
+
+                <span class="reto-link">
+                    Jugar
+                    <i class="bi bi-arrow-right"></i>
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- ========================= -->
+        <!-- PLANTAS -->
+        <!-- ========================= -->
+
+        <div class="col-6 col-md-4 col-xl-3">
+
+            <div class="reto-card"
+                 onclick="window.location.href='lecciones/plantas/pla_reto.html'">
+
+                <div class="reto-icon bg-success-subtle text-success">
+
+                    <i class="bi bi-flower1"></i>
+
+                </div>
+
+                <h6>
+                    Plantas
+                </h6>
+
+                <span class="reto-link">
+                    Jugar
+                    <i class="bi bi-arrow-right"></i>
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- ========================= -->
+        <!-- ALIMENTOS -->
+        <!-- ========================= -->
+
+        <div class="col-6 col-md-4 col-xl-3">
+
+            <div class="reto-card"
+                 onclick="window.location.href='lecciones/alimentos/ali_reto.html'">
+
+                <div class="reto-icon bg-danger-subtle text-danger">
+
+                    <i class="bi bi-egg-fried"></i>
+
+                </div>
+
+                <h6>
+                    Alimentos
+                </h6>
+
+                <span class="reto-link">
+                    Jugar
+                    <i class="bi bi-arrow-right"></i>
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- ========================= -->
+        <!-- ANIMALES -->
+        <!-- ========================= -->
+
+        <div class="col-6 col-md-4 col-xl-3">
+
+            <div class="reto-card"
+                 onclick="window.location.href='lecciones/animales/anim_reto.html'">
+
+                <div class="reto-icon bg-warning-subtle text-warning">
+
+                    <i class="bi bi-bug-fill"></i>
+
+                </div>
+
+                <h6>
+                    Animales
+                </h6>
+
+                <span class="reto-link">
+                    Jugar
+                    <i class="bi bi-arrow-right"></i>
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- ========================= -->
+        <!-- COLORES -->
+        <!-- ========================= -->
+
+        <div class="col-6 col-md-4 col-xl-3">
+
+            <div class="reto-card"
+                 onclick="window.location.href='lecciones/colores/col_reto.html'">
+
+                <div class="reto-icon bg-primary-subtle text-primary">
+
+                    <i class="bi bi-palette-fill"></i>
+
+                </div>
+
+                <h6>
+                    Colores
+                </h6>
+
+                <span class="reto-link">
+                    Jugar
+                    <i class="bi bi-arrow-right"></i>
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- ========================= -->
+        <!-- NÚMEROS -->
+        <!-- ========================= -->
+
+        <div class="col-6 col-md-4 col-xl-3">
+
+            <div class="reto-card"
+                 onclick="window.location.href='lecciones/numeros/num_reto.html'">
+
+                <div class="reto-icon bg-dark-subtle text-dark">
+
+                    <i class="bi bi-123"></i>
+
+                </div>
+
+                <h6>
+                    Números
+                </h6>
+
+                <span class="reto-link">
+                    Jugar
+                    <i class="bi bi-arrow-right"></i>
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- ========================= -->
+        <!-- CUERPO -->
+        <!-- ========================= -->
+
+        <div class="col-6 col-md-4 col-xl-3">
+
+            <div class="reto-card"
+                 onclick="window.location.href='lecciones/partes_cuerpo/cuerpo_reto.html'">
+
+                <div class="reto-icon bg-secondary-subtle text-secondary">
+
+                    <i class="bi bi-person-standing"></i>
+
+                </div>
+
+                <h6>
+                    Partes del cuerpo
+                </h6>
+
+                <span class="reto-link">
+                    Jugar
+                    <i class="bi bi-arrow-right"></i>
+                </span>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    </div>
+
+</div>
+<!-- ========================= -->
+<!-- MIS RETOS -->
+<!-- ========================= -->
+
+
+
+</div> <br>
 
                 <!-- EXÁMENES -->
                 <div class="progreso-card" data-aos="fade-up">
@@ -648,138 +1211,356 @@
                 <div class="modal-body">
 
           <div class="row g-4">
+<!-- ===================================================== -->
+<!-- EXÁMENES -->
+<!-- ===================================================== -->
 
-    <!-- Abecedario -->
-    <div class="col-md-6 col-lg-4">
-        <div id="mision9" class="card examen-card h-100 shadow-sm" onclick="abrirExamen(9)">
-            <div class="card-body text-center">
-                <i class="bi bi-fonts display-4 text-primary"></i>
-                <h5 class="mt-3">Abecedario</h5>
-                <span class="badge bg-secondary estado-examen">
-                    Pendiente
-                </span>
-            </div>
-        </div>
+<div class="progreso-card" data-aos="fade-up">
+
+    <!-- ENCABEZADO -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <h4 data-es="Exámenes" data-na="Tlatemolistli">
+            Exámenes
+        </h4>
+
+        <span id="contadorExamenes"
+              class="badge bg-primary fs-6">
+            0 / 10
+        </span>
+
     </div>
 
-    <!-- Saludos -->
-    <div class="col-md-6 col-lg-4">
-        <div id="mision10" class="card examen-card h-100 shadow-sm" onclick="abrirExamen(10)">
-            <div class="card-body text-center">
-                <i class="bi bi-chat-dots-fill display-4 text-success"></i>
-                <h5 class="mt-3">Saludos</h5>
-                <span class="badge bg-secondary estado-examen">
-                    Pendiente
-                </span>
-            </div>
-        </div>
-    </div>
 
-    <!-- Tiempo -->
-    <div class="col-md-6 col-lg-4">
-        <div id="mision14" class="card examen-card h-100 shadow-sm" onclick="abrirExamen(14)">
-            <div class="card-body text-center">
-                <i class="bi bi-clock-fill display-4 text-warning"></i>
-                <h5 class="mt-3">Tiempo</h5>
-                <span class="badge bg-secondary estado-examen">
-                    Pendiente
-                </span>
-            </div>
-        </div>
-    </div>
+    <!-- ================================================= -->
+    <!-- TARJETAS DE EXÁMENES -->
+    <!-- ================================================= -->
 
-    <!-- Sociedad -->
-    <div class="col-md-6 col-lg-4">
-        <div id="mision18" class="card examen-card h-100 shadow-sm" onclick="abrirExamen(18)">
-            <div class="card-body text-center">
-                <i class="bi bi-people-fill display-4 text-info"></i>
-                <h5 class="mt-3">Sociedad</h5>
-                <span class="badge bg-secondary estado-examen">
-                    Pendiente
-                </span>
-            </div>
-        </div>
-    </div>
+    <div class="row g-3">
 
-    <!-- Plantas -->
-    <div class="col-md-6 col-lg-4">
-        <div id="mision22" class="card examen-card h-100 shadow-sm" onclick="abrirExamen(22)">
-            <div class="card-body text-center">
-                <i class="bi bi-flower1 display-4 text-success"></i>
-                <h5 class="mt-3">Plantas</h5>
-                <span class="badge bg-secondary estado-examen">
-                    Pendiente
-                </span>
-            </div>
-        </div>
-    </div>
 
-    <!-- Alimentos -->
-    <div class="col-md-6 col-lg-4">
-        <div id="mision25" class="card examen-card h-100 shadow-sm" onclick="abrirExamen(25)">
-            <div class="card-body text-center">
-                <i class="bi bi-egg-fried display-4 text-danger"></i>
-                <h5 class="mt-3">Alimentos</h5>
-                <span class="badge bg-secondary estado-examen">
-                    Pendiente
-                </span>
-            </div>
-        </div>
-    </div>
+        <!-- ============================================= -->
+        <!-- ABECEDARIO -->
+        <!-- ============================================= -->
 
-    <!-- Animales -->
-    <div class="col-md-6 col-lg-4">
-        <div id="mision29" class="card examen-card h-100 shadow-sm" onclick="abrirExamen(29)">
-            <div class="card-body text-center">
-                <i class="bi bi-bug-fill display-4 text-warning"></i>
-                <h5 class="mt-3">Animales</h5>
-                <span class="badge bg-secondary estado-examen">
-                    Pendiente
-                </span>
-            </div>
-        </div>
-    </div>
+        <div class="col-12 col-md-6">
 
-    <!-- Colores -->
-    <div class="col-md-6 col-lg-4">
-        <div id="mision33" class="card examen-card h-100 shadow-sm" onclick="abrirExamen(33)">
-            <div class="card-body text-center">
-                <i class="bi bi-palette-fill display-4 text-primary"></i>
-                <h5 class="mt-3">Colores</h5>
-                <span class="badge bg-secondary estado-examen">
-                    Pendiente
-                </span>
-            </div>
-        </div>
-    </div>
+            <div id="examenAbecedario"
+                 class="card examen-card h-100 shadow-sm"
+                 data-medalla="1">
 
-    <!-- Números -->
-    <div class="col-md-6 col-lg-4">
-        <div id="mision36" class="card examen-card h-100 shadow-sm" onclick="abrirExamen(36)">
-            <div class="card-body text-center">
-                <i class="bi bi-123 display-4 text-dark"></i>
-                <h5 class="mt-3">Números</h5>
-                <span class="badge bg-secondary estado-examen">
-                    Pendiente
-                </span>
-            </div>
-        </div>
-    </div>
+                <div class="card-body text-center">
 
-    <!-- Partes del cuerpo -->
-    <div class="col-md-6 col-lg-4">
-        <div id="mision39" class="card examen-card h-100 shadow-sm" onclick="abrirExamen(39)">
-            <div class="card-body text-center">
-                <i class="bi bi-person-standing display-4 text-secondary"></i>
-                <h5 class="mt-3">Partes del cuerpo</h5>
-                <span class="badge bg-secondary estado-examen">
-                    Pendiente
-                </span>
-            </div>
-        </div>
-    </div>
+                    <i class="bi bi-fonts display-4 text-primary"></i>
 
-</div>
+                    <h5 class="mt-3">
+                        Abecedario
+                    </h5>
+
+                    <p class="text-muted mb-3">
+                        Examen general de abecedario
+                    </p>
+
+                    <span class="badge bg-secondary estado-examen">
+                        Pendiente
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ============================================= -->
+        <!-- SALUDOS -->
+        <!-- ============================================= -->
+
+        <div class="col-12 col-md-6">
+
+            <div id="examenSaludos"
+                 class="card examen-card h-100 shadow-sm"
+                 data-medalla="2">
+
+                <div class="card-body text-center">
+
+                    <i class="bi bi-chat-dots-fill display-4 text-success"></i>
+
+                    <h5 class="mt-3">
+                        Saludos
+                    </h5>
+
+                    <p class="text-muted mb-3">
+                        Examen general de saludos
+                    </p>
+
+                    <span class="badge bg-secondary estado-examen">
+                        Pendiente
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ============================================= -->
+        <!-- TIEMPO -->
+        <!-- ============================================= -->
+
+        <div class="col-12 col-md-6">
+
+            <div id="examenTiempo"
+                 class="card examen-card h-100 shadow-sm"
+                 data-medalla="3">
+
+                <div class="card-body text-center">
+
+                    <i class="bi bi-clock-fill display-4 text-warning"></i>
+
+                    <h5 class="mt-3">
+                        Tiempo
+                    </h5>
+
+                    <p class="text-muted mb-3">
+                        Examen general de tiempo
+                    </p>
+
+                    <span class="badge bg-secondary estado-examen">
+                        Pendiente
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ============================================= -->
+        <!-- SOCIEDAD -->
+        <!-- ============================================= -->
+
+        <div class="col-12 col-md-6">
+
+            <div id="examenSociedad"
+                 class="card examen-card h-100 shadow-sm"
+                 data-medalla="4">
+
+                <div class="card-body text-center">
+
+                    <i class="bi bi-people-fill display-4 text-info"></i>
+
+                    <h5 class="mt-3">
+                        Sociedad
+                    </h5>
+
+                    <p class="text-muted mb-3">
+                        Examen general de sociedad
+                    </p>
+
+                    <span class="badge bg-secondary estado-examen">
+                        Pendiente
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ============================================= -->
+        <!-- PLANTAS -->
+        <!-- ============================================= -->
+
+        <div class="col-12 col-md-6">
+
+            <div id="examenPlantas"
+                 class="card examen-card h-100 shadow-sm"
+                 data-medalla="5">
+
+                <div class="card-body text-center">
+
+                    <i class="bi bi-flower1 display-4 text-success"></i>
+
+                    <h5 class="mt-3">
+                        Plantas
+                    </h5>
+
+                    <p class="text-muted mb-3">
+                        Examen general de plantas
+                    </p>
+
+                    <span class="badge bg-secondary estado-examen">
+                        Pendiente
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ============================================= -->
+        <!-- ALIMENTOS -->
+        <!-- ============================================= -->
+
+        <div class="col-12 col-md-6">
+
+            <div id="examenAlimentos"
+                 class="card examen-card h-100 shadow-sm"
+                 data-medalla="6">
+
+                <div class="card-body text-center">
+
+                    <i class="bi bi-egg-fried display-4 text-danger"></i>
+
+                    <h5 class="mt-3">
+                        Alimentos
+                    </h5>
+
+                    <p class="text-muted mb-3">
+                        Examen general de alimentos
+                    </p>
+
+                    <span class="badge bg-secondary estado-examen">
+                        Pendiente
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ============================================= -->
+        <!-- ANIMALES -->
+        <!-- ============================================= -->
+
+        <div class="col-12 col-md-6">
+
+            <div id="examenAnimales"
+                 class="card examen-card h-100 shadow-sm"
+                 data-medalla="7">
+
+                <div class="card-body text-center">
+
+                    <i class="bi bi-bug-fill display-4 text-warning"></i>
+
+                    <h5 class="mt-3">
+                        Animales
+                    </h5>
+
+                    <p class="text-muted mb-3">
+                        Examen general de animales
+                    </p>
+
+                    <span class="badge bg-secondary estado-examen">
+                        Pendiente
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ============================================= -->
+        <!-- COLORES -->
+        <!-- ============================================= -->
+
+        <div class="col-12 col-md-6">
+
+            <div id="examenColores"
+                 class="card examen-card h-100 shadow-sm"
+                 data-medalla="8">
+
+                <div class="card-body text-center">
+
+                    <i class="bi bi-palette-fill display-4 text-primary"></i>
+
+                    <h5 class="mt-3">
+                        Colores
+                    </h5>
+
+                    <p class="text-muted mb-3">
+                        Examen general de colores
+                    </p>
+
+                    <span class="badge bg-secondary estado-examen">
+                        Pendiente
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ============================================= -->
+        <!-- NÚMEROS -->
+        <!-- ============================================= -->
+
+        <div class="col-12 col-md-6">
+
+            <div id="examenNumeros"
+                 class="card examen-card h-100 shadow-sm"
+                 data-medalla="9">
+
+                <div class="card-body text-center">
+
+                    <i class="bi bi-123 display-4 text-dark"></i>
+
+                    <h5 class="mt-3">
+                        Números
+                    </h5>
+
+                    <p class="text-muted mb-3">
+                        Examen general de números
+                    </p>
+
+                    <span class="badge bg-secondary estado-examen">
+                        Pendiente
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ============================================= -->
+        <!-- CUERPO HUMANO -->
+        <!-- ============================================= -->
+
+        <div class="col-12 col-md-6">
+
+            <div id="examenCuerpo"
+                 class="card examen-card h-100 shadow-sm"
+                 data-medalla="10">
+
+                <div class="card-body text-center">
+
+                    <i class="bi bi-person-standing display-4 text-secondary"></i>
+
+                    <h5 class="mt-3">
+                        Partes del cuerpo
+                    </h5>
+
+                    <p class="text-muted mb-3">
+                        Examen general del cuerpo humano
+                    </p>
+
+                    <span class="badge bg-secondary estado-examen">
+                        Pendiente
+                    </span>
 
                 </div>
 
@@ -788,6 +1569,8 @@
         </div>
 
     </div>
+
+</div>
 
     <!-- MODAL DETALLE EXAMEN -->
     <div class="modal fade modal-examen-detalle" id="modalDetalleExamen">
@@ -1114,6 +1897,7 @@
     <!-- JS -->
     <script src="../js/app.js"></script>
     <script src="../js/progreso.js"></script>
+    <script src="../js/examenes_realizados.js"></script>
     <script src="../js/compartir_progreso.js"></script>
     <script src="/castoresmlaulanet/js/racha_usuario.js"></script>
     <!-- ENLACE AL ARCHIVO JAVASCRIPT CORREGIDO PARA TRAER EL PUNTAJE -->
@@ -1124,8 +1908,8 @@
 
     <script src="/Castoresmlaulanet/js/perfil_progreso.js"></script>
     <script src="../js/medallas.js"></script>
-    <script src="../js/examenes_realizados.js"></script>
-
+    <!<!-- JS PARA MOSTRAR EXÁMENES TERMINADOS -->
+<!--<script src="../js/examenes_progreso.js"></script>-->
 </body>
 
 </html>
