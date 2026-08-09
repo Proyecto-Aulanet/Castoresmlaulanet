@@ -160,7 +160,6 @@ function abrirModalMedallas() {
         document.body.style.overflow = "hidden"; 
     }
 }
-
 function cerrarModalMedallas() {
     const modal = document.getElementById("modalMedallasPerfilCustom");
     if (modal) {
@@ -168,7 +167,6 @@ function cerrarModalMedallas() {
         document.body.style.overflow = "auto"
     }
 }
-
 window.addEventListener("click", function (event) {
     const modal = document.getElementById("modalMedallasPerfilCustom");
     if (event.target === modal) {

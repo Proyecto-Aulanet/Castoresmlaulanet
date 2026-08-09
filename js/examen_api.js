@@ -70,7 +70,7 @@ async function cargarExamen() {
                 alert("Ya aprobaste este examen y tienes tu medalla obtenida.");
                 window.location.href = "lecciones.html";
             }
-            return; 
+            return;
         }
 
         // =================================================
@@ -297,7 +297,6 @@ function mostrarPregunta() {
                 </label>
 
             `;
-
         }
     );
 
@@ -353,7 +352,6 @@ function siguientePregunta() {
             'input[name="respuesta"]:checked'
         );
 
-
     if (!seleccion) {
 
         return;
@@ -405,6 +403,29 @@ function siguientePregunta() {
 
 function finalizarExamen() {
 
+    // Obtener idMision de la URL
+    const parametros = new URLSearchParams(window.location.search);
+    const idMision = parseInt(parametros.get("idmision")) || 1;
+
+    // =====================================================
+    // GUARDAR PUNTAJE EN BASE DE DATOS (MYSQL)
+    // =====================================================
+    if (puntaje > 0) {
+        fetch("../php/puntaje.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                idexamen: idMision,
+                puntos: puntaje
+            })
+        })
+        .then(res => res.json())
+        .then(data => console.log("Respuesta BD puntaje:", data))
+        .catch(err => console.error("Error al guardar puntaje en BD:", err));
+    }
+
     document.getElementById("progreso").style.width = "100%";
 
     document.getElementById("contadorPregunta").textContent = "Examen completado";
@@ -433,14 +454,7 @@ function finalizarExamen() {
     if (btnTerminar) {
         btnTerminar.style.display = "inline-block";
 
-        // =====================================================
-        // AL HACER CLIC EN EL BOTÓN "TERMINAR EXAMEN"
-        // =====================================================
         btnTerminar.onclick = function () {
-            const parametros = new URLSearchParams(window.location.search);
-            const idMision = parseInt(parametros.get("idmision"));
-
-            // Disparar la tarjeta con la medalla
             if (typeof procesarMedallaLocal === "function") {
                 procesarMedallaLocal(idMision, puntaje);
             }
