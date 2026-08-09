@@ -514,33 +514,35 @@
 
                     </div>
 
-                    <!-- MEDALLAS -->
-
+                    <!-- MEDALLAS EN PERFIL -->
                     <div class="perfilprin-seccion mt-4">
-
-                        <div class="d-flex justify-content-between">
-
-                            <h4 class="text-white">
-
-                                Medallas
-
-                            </h4>
-
-                            <button class="btn btn-outline-light rounded-pill">
-
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h4 class="text-white mb-0">Medallas</h4>
+                            <button class="btn btn-outline-light rounded-pill px-3" onclick="abrirModalMedallas()">
                                 Ver más
-
                             </button>
-
                         </div>
 
-                        <div class="perfilprin-medallas-grid mt-4">
+                        <div class="perfilprin-medallas-grid mt-4 d-flex gap-3 justify-content-start flex-wrap"
+                            id="gridMedallasPerfilVistaPrevia">
+                        </div>
+                    </div>
 
-                            <img src="../Recursos/medallas/medalla1.png" alt="Medalla 1">
-                            <img src="../Recursos/medallas/medalla2.png" alt="Medalla 2">
-                            <img src="../Recursos/medallas/medalla3.png" alt="Medalla 3">
-                            <img src="../Recursos/medallas/medalla4.png" alt="Medalla 4">
-                            <img src="../Recursos/medallas/medalla5.png" alt="Medalla 5">
+                    <div id="modalMedallasPerfilCustom"
+                        style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(0,0,0,0.75); z-index: 99999; justify-content: center; align-items: center;">
+                        <div
+                            style="background: #ffffff; width: 90%; max-width: 700px; max-height: 85vh; border-radius: 16px; padding: 24px; position: relative; overflow-y: auto; box-shadow: 0 10px 30px rgba(0,0,0,0.3); opacity: 1 !important;">
+
+                            <div class="d-flex justify-content-between align-items-center mb-3 border-bottom pb-2">
+                                <h4 class="fw-bold text-dark m-0">🏆 Mis Medallas</h4>
+                                <button type="button" onclick="cerrarModalMedallas()"
+                                    style="background: transparent; border: none; font-size: 28px; font-weight: bold; color: #333; cursor: pointer; line-height: 1; padding: 0 8px;">
+                                    &times;
+                                </button>
+                            </div>
+
+                            <div class="row g-3" id="gridMedallasPerfilModal">
+                            </div>
 
                         </div>
 
@@ -708,7 +710,6 @@
                 </div>
 
 
-
                 <div class="modal-body">
 
 
@@ -779,6 +780,10 @@
     <script src="/Castoresmlaulanet/js/usuarioHeader.js"></script>
 
     <script src="/castoresmlaulanet/js/racha_usuario.js"></script>
+
+
+    <script src="../js/medallas.js"></script>
+
 
 </body>
 

@@ -39,6 +39,45 @@ async function cargarExamen() {
 
 
         // =================================================
+        // VALIDAR SI YA SE APROBÓ EL EXAMEN (LOCALSTORAGE)
+        // =================================================
+
+        const relacionMisionMedalla = {
+            9: 1,   // Abecedario
+            10: 2,  // Saludos
+            14: 3,  // Tiempo
+            18: 4,  // Sociedad
+            22: 5,  // Plantas
+            25: 6,  // Alimentos
+            29: 7,  // Animales
+            33: 8,  // Colores
+            36: 9,  // Números
+            39: 10  // Cuerpo
+        };
+
+        const idMedalla = relacionMisionMedalla[idMision] || idMision;
+        const medallasGanadas = JSON.parse(localStorage.getItem("misMedallasObtenidas")) || [];
+
+        if (medallasGanadas.includes(idMedalla)) {
+            if (typeof Swal !== "undefined") {
+                Swal.fire({
+                    icon: "info",
+                    title: "Examen ya completado",
+                    text: "Ya aprobaste este examen y tienes tu medalla obtenida.",
+                    confirmButtonText: "Regresar a Lecciones",
+                    confirmButtonColor: "#28a745"
+                }).then(() => {
+                    window.location.href = "lecciones.html";
+                });
+            } else {
+                alert("Ya aprobaste este examen y tienes tu medalla obtenida.");
+                window.location.href = "lecciones.html";
+            }
+            return;
+        }
+
+
+        // =================================================
         // CONSULTAR API
         // IMPORTANTE:
         // SE ENVÍA idmision, NO idexamen
@@ -54,8 +93,13 @@ async function cargarExamen() {
         );
 
 
+
         const respuesta =
             await fetch(url);
+
+
+
+
 
 
         if (!respuesta.ok) {
@@ -67,8 +111,10 @@ async function cargarExamen() {
         }
 
 
+
         const datos =
             await respuesta.json();
+
 
 
         console.log(
@@ -117,9 +163,7 @@ async function cargarExamen() {
                 "El examen necesita 10 preguntas y la API solo devolvió " +
                 preguntas.length + "."
             );
-
         }
-
 
         indiceActual = 0;
 
@@ -168,11 +212,10 @@ async function cargarExamen() {
             `;
 
         }
-
+    
     }
 
 }
-
 
 
 // =====================================================
@@ -190,6 +233,7 @@ function mostrarPregunta() {
         return;
 
     }
+
 
 
     const numero =
@@ -210,6 +254,7 @@ function mostrarPregunta() {
         "progreso"
     ).style.width =
         `${(numero / 10) * 100}%`;
+
 
 
     // =================================================
@@ -309,7 +354,9 @@ function mostrarPregunta() {
         );
 
 
+
     btn.disabled = true;
+
 
 
     // =================================================
@@ -334,7 +381,7 @@ function mostrarPregunta() {
 
             }
         );
-
+    
 }
 
 
@@ -477,29 +524,43 @@ async function registrarExamenRealizado() {
     }
 }
 
-
 // =====================================================
 // FINALIZAR EXAMEN
 // =====================================================
 
 async function finalizarExamen() {
 
-    document.getElementById(
-        "progreso"
-    ).style.width = "100%";
 
+    // Obtener idMision de la URL
+    const parametros = new URLSearchParams(window.location.search);
+    const idMision = parseInt(parametros.get("idmision")) || 1;
 
-    document.getElementById(
-        "contadorPregunta"
-    ).textContent =
-        "Examen completado";
+    // =====================================================
+    // GUARDAR PUNTAJE EN BASE DE DATOS (MYSQL)
+    // =====================================================
+    if (puntaje > 0) {
+        fetch("../php/puntaje.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                idexamen: idMision,
+                puntos: puntaje
+            })
+        })
+        .then(res => res.json())
+        .then(data => console.log("Respuesta BD puntaje:", data))
+        .catch(err => console.error("Error al guardar puntaje en BD:", err));
+    }
 
+    document.getElementById("progreso").style.width = "100%";
 
-    document.getElementById(
-        "contenedorPregunta"
-    ).innerHTML = `
+    document.getElementById("contadorPregunta").textContent = "Examen completado";
 
+    document.getElementById("contenedorPregunta").innerHTML = `
         <h2 class="text-success">
+
 
             🎉 ¡Felicidades!
 
@@ -511,14 +572,12 @@ async function finalizarExamen() {
 
         </p>
 
+
     `;
 
-
-    document.getElementById(
-        "contenedorOpciones"
-    ).innerHTML = `
-
+    document.getElementById("contenedorOpciones").innerHTML = `
         <div class="text-center">
+
 
             <i class="bi bi-check-circle-fill text-success"
                style="font-size:70px;">
@@ -530,9 +589,12 @@ async function finalizarExamen() {
 
             </h3>
 
-        </div>
 
+        </div>
     `;
+
+    // Ocultar botón "Siguiente"
+    document.getElementById("btnSiguiente").style.display = "none";
 
 
     document.getElementById(
@@ -547,6 +609,22 @@ document.dispatchEvent(new Event("examenTerminado"));
     await registrarExamenRealizado();
 
 }
+
+    // Mostrar el botón "Terminar examen" del HTML
+    const btnTerminar = document.getElementById("btnTerminarExamen");
+
+    if (btnTerminar) {
+        btnTerminar.style.display = "inline-block";
+
+        btnTerminar.onclick = function () {
+            if (typeof procesarMedallaLocal === "function") {
+                procesarMedallaLocal(idMision, puntaje);
+            }
+        };
+    }
+}
+
+
 // =====================================================
 // INICIAR
 // =====================================================

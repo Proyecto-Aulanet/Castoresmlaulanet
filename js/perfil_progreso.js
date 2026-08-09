@@ -1,55 +1,78 @@
-document.addEventListener("DOMContentLoaded",()=>{
 
-fetch("/Castoresmlaulanet/php/perfil_usuario.php")
+document.addEventListener("DOMContentLoaded", function () {
 
-.then(response=>response.json())
+    console.log("🔄 perfil_progreso.js cargado");
 
-.then(data=>{
+    // ===============================
+    // 1. OBTENER FOTO Y NOMBRE DEL USUARIO
+    // ===============================
+    function cargarPerfil() {
+        console.log("🔄 Cargando datos del perfil (nombre y foto)...");
+        fetch("/Castoresmlaulanet/php/perfil_usuario.php")
+            .then(response => response.json())
+            .then(data => {
+                console.log("👤 RespuestaPerfil:", data);
+                if (data.status !== "success") return;
 
-if(data.status!="success") return;
+                const usuario = data.usuario;
 
-const usuario=data.usuario;
+                // Actualizar foto de perfil
+                const foto = document.getElementById("fotoPerfil");
+                if (foto && usuario.foto !== "") {
+                    foto.src = usuario.foto;
+                }
 
-//=========================
-// FOTO
-//=========================
+                // Reemplazar "Invitado" por el nombre real
+                const nombre = document.getElementById("nombrePerfil");
+                if (nombre) {
+                    nombre.textContent = usuario.nombre;
+                }
+            })
+            .catch(error => console.error("❌ Error al cargar perfil:", error));
+    }
 
-const foto=document.getElementById("fotoPerfil");
+    // Llama a cargarPerfil para que cambie el nombre "Invitado" y la foto
+    cargarPerfil();
 
-if(foto && usuario.foto!=""){
+    // ===============================
+    // 2. OBTENER PUNTAJE Y RANKING
+    // ===============================
+    (function () {
+        'use strict';
 
-foto.src=usuario.foto;
+        function cargarPuntosProgreso() {
+            fetch("/Castoresmlaulanet/php/obtener_puntaje_total.php")
+                .then(response => response.json())
+                .then(data => {
+                    console.log("📊 Respuesta Puntaje:", data);
 
-}
+                    if (data.status === "success") {
+                        const total = Number(data.puntaje_total).toLocaleString();
 
-//=========================
-// NOMBRE
-//=========================
+                        // Solo actualiza el valor de "pts Total" en la tarjeta
+                        const xpUsuario = document.getElementById("xpUsuario");
+                        if (xpUsuario) {
+                            xpUsuario.textContent = total;
+                            console.log("✅ Actualizado #xpUsuario con:", total);
+                        } else {
+                            console.warn("⚠️ No se encontró #xpUsuario en el HTML");
+                        }
 
-const nombre=document.getElementById("nombrePerfil");
+                        // Solo actualiza los puntos del Ranking
+                        const xpRankingUsuario = document.getElementById("xpRankingUsuario");
+                        if (xpRankingUsuario) {
+                            xpRankingUsuario.textContent = `${total} XP`;
+                            console.log("✅ Actualizado #xpRankingUsuario con:", total);
+                        }
+                    } else {
+                        console.warn("⚠️ Error en PHP de puntaje:", data.message);
+                    }
+                })
+                .catch(error => console.error("❌ Error al obtener puntaje en progreso:", error));
+        }
 
-if(nombre){
-
-nombre.textContent=usuario.nombre;
-
-}
-
-//=========================
-// XP
-//=========================
-
-const xp=Number(usuario.xp);
-
-const textoXP=document.getElementById("xpUsuario");
-
-if(textoXP){
-
-textoXP.textContent=xp.toLocaleString();
-
-}
-
-})
-
-.catch(error=>console.log(error));
+        cargarPuntosProgreso();
+        setInterval(cargarPuntosProgreso, 30000);
+    })();
 
 });

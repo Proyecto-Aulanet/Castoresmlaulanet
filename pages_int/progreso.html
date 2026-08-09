@@ -583,7 +583,8 @@
         </div>
     </main>
     <br>
-<br>ssss
+<br>
+
     <!-- PERFIL + COMPARTIR -->
     <section class="container py-5 progreso-contenido">
 
@@ -1069,34 +1070,36 @@
             <!-- ===================== -->
             <div class="col-12 col-lg-3">
 
-                <!-- MEDALLAS -->
-                <div class="progreso-card mb-4" data-aos="fade-left">
 
+                <div class="perfilprin-seccion mt-4">
                     <div class="d-flex justify-content-between align-items-center">
-
-                        <h4 data-es="Medallas" data-na="Medallas">
-
-                            Medallas
-
-                        </h4>
-
-                        <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalMedallas">
-
-                            Ver todas
-
+                        <h4 class="text-white mb-0">Medallas</h4>
+                        <button class="btn btn-outline-light rounded-pill px-3" data-bs-toggle="modal"
+                            data-bs-target="#modalMedallasPerfil">
+                            Ver más
                         </button>
-
                     </div>
 
-                    <div class="medallas-grid">
+                    <div class="perfilprin-medallas-grid mt-4 d-flex gap-3 justify-content-start flex-wrap"
+                        id="gridMedallasPerfilVistaPrevia">
+                    </div>
+                </div>
 
-                        <div class="medalla-slot"></div>
-                        <div class="medalla-slot"></div>
-                        <div class="medalla-slot"></div>
-                        <div class="medalla-slot"></div>
-                        <div class="medalla-slot"></div>
-                        <div class="medalla-slot"></div>
-
+                <div class="modal fade" id="modalMedallasPerfil" tabindex="-1"
+                    aria-labelledby="modalMedallasPerfilLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                        <div class="modal-content rounded-4 border-0 shadow">
+                            <div class="modal-header border-0 pb-0">
+                                <h5 class="modal-title fw-bold text-dark" id="modalMedallasPerfilLabel">🏆 Mis Medallas
+                                </h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body p-4">
+                                <div class="row g-3" id="gridMedallasPerfilModal">
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
@@ -1139,7 +1142,6 @@
         </div>
 
     </section>
-
 
 
     <div class="modal fade" id="modalMedallas" tabindex="-1">
@@ -1209,6 +1211,7 @@
                 </div>
 
                 <div class="modal-body">
+
 
           <div class="row g-4">
 <!-- ===================================================== -->
@@ -1562,6 +1565,7 @@
                         Pendiente
                     </span>
 
+
                 </div>
 
             </div>
@@ -1908,8 +1912,7 @@
 
     <script src="/Castoresmlaulanet/js/perfil_progreso.js"></script>
     <script src="../js/medallas.js"></script>
-    <!<!-- JS PARA MOSTRAR EXÁMENES TERMINADOS -->
-<!--<script src="../js/examenes_progreso.js"></script>-->
+
 </body>
 
 </html>
