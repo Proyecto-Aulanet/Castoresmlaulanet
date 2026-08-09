@@ -33,7 +33,7 @@ try{
 
         FROM usuario u
 
-        LEFT JOIN FotoPerfil fp
+        LEFT JOIN u.foto_perfil fp
             ON fp.idusuario=u.idusuario
             AND fp.activa=1
 
@@ -52,7 +52,7 @@ try{
 
     $sql = $pdo->prepare("
         SELECT COALESCE(SUM(puntos),0) AS xp
-        FROM Puntaje
+        FROM puntaje
         WHERE idusuario=?
     ");
 
@@ -93,7 +93,7 @@ try{
 
     $sql = $pdo->prepare("
         SELECT COUNT(DISTINCT idexamen) total
-        FROM Puntaje
+        FROM puntaje
         WHERE idusuario=?
     ");
 

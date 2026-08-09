@@ -232,8 +232,9 @@ try {
 
             
 
+
 // ==============================================================
-// guardar foto perfil
+// GUARDAR FOTO DE PERFIL
 // ==============================================================
 
 case "foto":
@@ -241,83 +242,58 @@ case "foto":
     $idusuario = (int)($data["idusuario"] ?? 0);
     $ruta_imagen = trim($data["ruta_imagen"] ?? "");
 
-
-    if($idusuario <= 0 || empty($ruta_imagen)){
+    if ($idusuario <= 0 || empty($ruta_imagen)) {
 
         http_response_code(400);
 
         echo json_encode([
-            "status"=>"error",
-            "message"=>"Datos de foto incompletos"
+            "status" => "error",
+            "message" => "Datos de foto incompletos"
         ]);
 
         exit;
-
     }
 
-
-    // desactivar foto anterior
     $stmt = $pdo->prepare("
-        UPDATE FotoPerfil 
-        SET activa = FALSE
+        UPDATE usuario
+        SET foto_perfil = :ruta_imagen
         WHERE idusuario = :idusuario
     ");
 
     $stmt->bindValue(
-        ":idusuario",
-        $idusuario,
-        PDO::PARAM_INT
-    );
-
-    $stmt->execute();
-
-
-
-    // insertar nueva foto
-
-    $stmt = $pdo->prepare("
-        INSERT INTO FotoPerfil
-        (
-            idusuario,
-            ruta_imagen,
-            activa
-        )
-        VALUES
-        (
-            :idusuario,
-            :ruta_imagen,
-            TRUE
-        )
-    ");
-
-
-    $stmt->bindValue(
-        ":idusuario",
-        $idusuario,
-        PDO::PARAM_INT
-    );
-
-
-    $stmt->bindValue(
         ":ruta_imagen",
-        $ruta_imagen
+        $ruta_imagen,
+        PDO::PARAM_STR
     );
 
+    $stmt->bindValue(
+        ":idusuario",
+        $idusuario,
+        PDO::PARAM_INT
+    );
 
     $stmt->execute();
 
+    if ($stmt->rowCount() >= 0) {
+
+        echo json_encode([
+            "status" => "success",
+            "message" => "Foto guardada correctamente"
+        ]);
+
+    } else {
+
+        http_response_code(404);
+
+        echo json_encode([
+            "status" => "error",
+            "message" => "Usuario no encontrado"
+        ]);
+    }
+
+    break;
 
 
-    echo json_encode([
-
-        "status"=>"success",
-
-        "message"=>"Foto guardada correctamente"
-
-    ]);
-
-
-break;
 
 
 
@@ -447,22 +423,7 @@ case "borrar":
     $stmt->execute();
 
 
-    // ==========================================================
-    // 6. ELIMINAR FOTO DE PERFIL
-    // ==========================================================
 
-    $stmt = $pdo->prepare("
-        DELETE FROM fotoperfil
-        WHERE idusuario = :idusuario
-    ");
-
-    $stmt->bindValue(
-        ':idusuario',
-        $idusuario,
-        PDO::PARAM_INT
-    );
-
-    $stmt->execute();
 
 
     // ==========================================================

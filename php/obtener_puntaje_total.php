@@ -31,7 +31,7 @@ try {
     // Suma de todos los puntos obtenidos en los exámenes
     $stmt = $pdo->prepare("
         SELECT COALESCE(SUM(puntos), 0) AS puntaje_total
-        FROM Puntaje
+        FROM puntaje
         WHERE idusuario = :idusuario
     ");
     $stmt->execute([":idusuario" => $idusuario]);
