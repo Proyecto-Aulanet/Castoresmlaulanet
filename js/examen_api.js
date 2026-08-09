@@ -446,13 +446,89 @@ function siguientePregunta() {
     }
 
 }
+async function registrarExamenRealizado() {
 
+    try {
+
+        const parametros =
+            new URLSearchParams(window.location.search);
+
+
+        const idmision =
+            parseInt(parametros.get("idmision"));
+
+
+        if (!idmision) {
+
+            console.error(
+                "No se encontró idmision en la URL."
+            );
+
+            return false;
+        }
+
+
+        console.log(
+            "Registrando misión:",
+            idmision
+        );
+
+
+        const respuesta = await fetch(
+            "../php/api_guardar_examen.php",
+            {
+                method: "POST",
+
+                headers: {
+                    "Content-Type": "application/json"
+                },
+
+                body: JSON.stringify({
+                    idmision: idmision
+                })
+            }
+        );
+
+
+        const datos = await respuesta.json();
+
+
+        console.log(
+            "Respuesta registro examen:",
+            datos
+        );
+
+
+        if (datos.status !== "success") {
+
+            console.error(
+                "Error:",
+                datos.message
+            );
+
+            return false;
+        }
+
+
+        return true;
+
+
+    } catch (error) {
+
+        console.error(
+            "Error registrando examen:",
+            error
+        );
+
+        return false;
+    }
+}
 
 // =====================================================
 // FINALIZAR EXAMEN
 // =====================================================
 
-function finalizarExamen() {
+async function finalizarExamen() {
 
 
     // Obtener idMision de la URL
@@ -484,21 +560,55 @@ function finalizarExamen() {
 
     document.getElementById("contenedorPregunta").innerHTML = `
         <h2 class="text-success">
-            🎉 ¡Examen terminado!
+
+
+            🎉 ¡Felicidades!
+
         </h2>
+
+        <p class="fs-5">
+
+            Has terminado este examen.
+
+        </p>
+
+
     `;
 
     document.getElementById("contenedorOpciones").innerHTML = `
         <div class="text-center">
-            <h3>Puntaje obtenido</h3>
-            <div class="display-5 fw-bold">
-                ${puntaje} / 100
-            </div>
+
+
+            <i class="bi bi-check-circle-fill text-success"
+               style="font-size:70px;">
+            </i>
+
+            <h3 class="mt-3">
+
+                Examen terminado
+
+            </h3>
+
+
         </div>
     `;
 
     // Ocultar botón "Siguiente"
     document.getElementById("btnSiguiente").style.display = "none";
+
+
+    document.getElementById(
+        "btnSiguiente"
+    ).style.display = "none";
+
+document.dispatchEvent(new Event("examenTerminado"));
+    // ============================================
+    // REGISTRAR EXAMEN
+    // ============================================
+
+    await registrarExamenRealizado();
+
+}
 
     // Mostrar el botón "Terminar examen" del HTML
     const btnTerminar = document.getElementById("btnTerminarExamen");
