@@ -359,7 +359,8 @@
         </div>
     </main>
     <br>
-<br>ssss
+<br>
+
     <!-- PERFIL + COMPARTIR -->
     <section class="container py-5 progreso-contenido">
 
@@ -506,34 +507,36 @@
             <!-- ===================== -->
             <div class="col-12 col-lg-3">
 
-                <!-- MEDALLAS -->
-                <div class="progreso-card mb-4" data-aos="fade-left">
 
+                <div class="perfilprin-seccion mt-4">
                     <div class="d-flex justify-content-between align-items-center">
-
-                        <h4 data-es="Medallas" data-na="Medallas">
-
-                            Medallas
-
-                        </h4>
-
-                        <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalMedallas">
-
-                            Ver todas
-
+                        <h4 class="text-white mb-0">Medallas</h4>
+                        <button class="btn btn-outline-light rounded-pill px-3" data-bs-toggle="modal"
+                            data-bs-target="#modalMedallasPerfil">
+                            Ver más
                         </button>
-
                     </div>
 
-                    <div class="medallas-grid">
+                    <div class="perfilprin-medallas-grid mt-4 d-flex gap-3 justify-content-start flex-wrap"
+                        id="gridMedallasPerfilVistaPrevia">
+                    </div>
+                </div>
 
-                        <div class="medalla-slot"></div>
-                        <div class="medalla-slot"></div>
-                        <div class="medalla-slot"></div>
-                        <div class="medalla-slot"></div>
-                        <div class="medalla-slot"></div>
-                        <div class="medalla-slot"></div>
-
+                <div class="modal fade" id="modalMedallasPerfil" tabindex="-1"
+                    aria-labelledby="modalMedallasPerfilLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                        <div class="modal-content rounded-4 border-0 shadow">
+                            <div class="modal-header border-0 pb-0">
+                                <h5 class="modal-title fw-bold text-dark" id="modalMedallasPerfilLabel">🏆 Mis Medallas
+                                </h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body p-4">
+                                <div class="row g-3" id="gridMedallasPerfilModal">
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
@@ -576,7 +579,6 @@
         </div>
 
     </section>
-
 
 
     <div class="modal fade" id="modalMedallas" tabindex="-1">
@@ -647,139 +649,29 @@
 
                 <div class="modal-body">
 
-          <div class="row g-4">
 
-    <!-- Abecedario -->
-    <div class="col-md-6 col-lg-4">
-        <div id="mision9" class="card examen-card h-100 shadow-sm" onclick="abrirExamen(9)">
-            <div class="card-body text-center">
-                <i class="bi bi-fonts display-4 text-primary"></i>
-                <h5 class="mt-3">Abecedario</h5>
-                <span class="badge bg-secondary estado-examen">
-                    Pendiente
-                </span>
-            </div>
-        </div>
-    </div>
+                    <div class="camino-completo">
 
-    <!-- Saludos -->
-    <div class="col-md-6 col-lg-4">
-        <div id="mision10" class="card examen-card h-100 shadow-sm" onclick="abrirExamen(10)">
-            <div class="card-body text-center">
-                <i class="bi bi-chat-dots-fill display-4 text-success"></i>
-                <h5 class="mt-3">Saludos</h5>
-                <span class="badge bg-secondary estado-examen">
-                    Pendiente
-                </span>
-            </div>
-        </div>
-    </div>
+                        <button class="btn btn-success examen-btn" onclick="abrirExamen(1)">
 
-    <!-- Tiempo -->
-    <div class="col-md-6 col-lg-4">
-        <div id="mision14" class="card examen-card h-100 shadow-sm" onclick="abrirExamen(14)">
-            <div class="card-body text-center">
-                <i class="bi bi-clock-fill display-4 text-warning"></i>
-                <h5 class="mt-3">Tiempo</h5>
-                <span class="badge bg-secondary estado-examen">
-                    Pendiente
-                </span>
-            </div>
-        </div>
-    </div>
+                            Examen 1
 
-    <!-- Sociedad -->
-    <div class="col-md-6 col-lg-4">
-        <div id="mision18" class="card examen-card h-100 shadow-sm" onclick="abrirExamen(18)">
-            <div class="card-body text-center">
-                <i class="bi bi-people-fill display-4 text-info"></i>
-                <h5 class="mt-3">Sociedad</h5>
-                <span class="badge bg-secondary estado-examen">
-                    Pendiente
-                </span>
-            </div>
-        </div>
-    </div>
+                        </button>
 
-    <!-- Plantas -->
-    <div class="col-md-6 col-lg-4">
-        <div id="mision22" class="card examen-card h-100 shadow-sm" onclick="abrirExamen(22)">
-            <div class="card-body text-center">
-                <i class="bi bi-flower1 display-4 text-success"></i>
-                <h5 class="mt-3">Plantas</h5>
-                <span class="badge bg-secondary estado-examen">
-                    Pendiente
-                </span>
-            </div>
-        </div>
-    </div>
+                        <button class="btn btn-success examen-btn" onclick="abrirExamen(2)">
 
-    <!-- Alimentos -->
-    <div class="col-md-6 col-lg-4">
-        <div id="mision25" class="card examen-card h-100 shadow-sm" onclick="abrirExamen(25)">
-            <div class="card-body text-center">
-                <i class="bi bi-egg-fried display-4 text-danger"></i>
-                <h5 class="mt-3">Alimentos</h5>
-                <span class="badge bg-secondary estado-examen">
-                    Pendiente
-                </span>
-            </div>
-        </div>
-    </div>
+                            Examen 2
 
-    <!-- Animales -->
-    <div class="col-md-6 col-lg-4">
-        <div id="mision29" class="card examen-card h-100 shadow-sm" onclick="abrirExamen(29)">
-            <div class="card-body text-center">
-                <i class="bi bi-bug-fill display-4 text-warning"></i>
-                <h5 class="mt-3">Animales</h5>
-                <span class="badge bg-secondary estado-examen">
-                    Pendiente
-                </span>
-            </div>
-        </div>
-    </div>
+                        </button>
 
-    <!-- Colores -->
-    <div class="col-md-6 col-lg-4">
-        <div id="mision33" class="card examen-card h-100 shadow-sm" onclick="abrirExamen(33)">
-            <div class="card-body text-center">
-                <i class="bi bi-palette-fill display-4 text-primary"></i>
-                <h5 class="mt-3">Colores</h5>
-                <span class="badge bg-secondary estado-examen">
-                    Pendiente
-                </span>
-            </div>
-        </div>
-    </div>
+                        <button class="btn btn-success examen-btn" onclick="abrirExamen(3)">
 
-    <!-- Números -->
-    <div class="col-md-6 col-lg-4">
-        <div id="mision36" class="card examen-card h-100 shadow-sm" onclick="abrirExamen(36)">
-            <div class="card-body text-center">
-                <i class="bi bi-123 display-4 text-dark"></i>
-                <h5 class="mt-3">Números</h5>
-                <span class="badge bg-secondary estado-examen">
-                    Pendiente
-                </span>
-            </div>
-        </div>
-    </div>
+                            Examen 3
 
-    <!-- Partes del cuerpo -->
-    <div class="col-md-6 col-lg-4">
-        <div id="mision39" class="card examen-card h-100 shadow-sm" onclick="abrirExamen(39)">
-            <div class="card-body text-center">
-                <i class="bi bi-person-standing display-4 text-secondary"></i>
-                <h5 class="mt-3">Partes del cuerpo</h5>
-                <span class="badge bg-secondary estado-examen">
-                    Pendiente
-                </span>
-            </div>
-        </div>
-    </div>
+                        </button>
 
-</div>
+                    </div>
+
 
                 </div>
 
@@ -1124,7 +1016,8 @@
 
     <script src="/Castoresmlaulanet/js/perfil_progreso.js"></script>
     <script src="../js/medallas.js"></script>
-    <script src="../js/examenes_realizados.js"></script>
+
+
 
 </body>
 
