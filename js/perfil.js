@@ -133,8 +133,9 @@ async function cargarPerfil(){
 
 
 
-            idUsuarioActual =
-            usuario.idusuario;
+            idUsuarioActual = parseInt(usuario.idusuario, 10);
+
+            console.log("ID USUARIO OBTENIDO DEL PERFIL:", idUsuarioActual);
 
 
 
@@ -664,17 +665,7 @@ async function guardarIcono(){
 
 }
 
-document.addEventListener("click", function(e){
 
-    if(e.target.closest("#btnGuardarIcono")){
-
-        console.log("CLICK REAL GUARDAR ICONO");
-
-        guardarIcono();
-
-    }
-
-});
 
 document.getElementById('btnEditar').addEventListener('click', () => {
     document.getElementById('txtNombre').removeAttribute('disabled');

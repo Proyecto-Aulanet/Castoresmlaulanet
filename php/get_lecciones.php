@@ -33,7 +33,7 @@ try {
                 SELECT 
                     COALESCE(SUM(puntos), 0) AS total_puntos_semana,
                     COUNT(DISTINCT DATE(fecha)) AS dias_activos_semana
-                FROM Puntaje 
+                FROM puntaje 
                 WHERE idusuario = ? 
                   AND YEARWEEK(fecha, 1) = YEARWEEK(CURDATE(), 1)
             ");
@@ -46,7 +46,7 @@ try {
                     DATE(fecha) AS fecha,
                     DAYNAME(fecha) AS dia_nombre,
                     SUM(puntos) AS puntos_obtenidos
-                FROM Puntaje
+                FROM puntaje
                 WHERE idusuario = ? 
                   AND YEARWEEK(fecha, 1) = YEARWEEK(CURDATE(), 1)
                 GROUP BY DATE(fecha), DAYNAME(fecha)
@@ -257,7 +257,7 @@ break;
             // 6. Obtener el total acumulado de la semana para respuesta directa
             $stmtTotalSemana = $pdo->prepare("
                 SELECT COALESCE(SUM(puntos), 0) AS total_semana
-                FROM Puntaje 
+                FROM puntaje 
                 WHERE idusuario = ? AND YEARWEEK(fecha, 1) = YEARWEEK(CURDATE(), 1)
             ");
             $stmtTotalSemana->execute([$idusuario]);
@@ -363,7 +363,7 @@ $stmt=$pdo->prepare("
 
 SELECT COALESCE(SUM(puntos),0) total
 
-FROM Puntaje
+FROM puntaje
 
 WHERE idusuario=?
 

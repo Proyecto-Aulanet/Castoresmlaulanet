@@ -1,42 +1,57 @@
+
 <?php
 
 session_start();
+
 header("Content-Type: application/json; charset=UTF-8");
+
 require_once "conexion.php";
 
 if (!isset($_SESSION["idusuario"])) {
 
     echo json_encode([
-        "status" => "error"
+        "status" => "error",
+        "message" => "No hay sesión activa"
     ]);
 
     exit;
 }
 
-$sql = "SELECT ruta_imagen
-        FROM FotoPerfil
-        WHERE idusuario = ?
-        AND activa = 1
-        LIMIT 1";
+$idusuario = $_SESSION["idusuario"];
 
-$stmt = $pdo->prepare($sql);
-$stmt->execute([$_SESSION["idusuario"]]);
+try {
 
-$foto = $stmt->fetch(PDO::FETCH_ASSOC);
+    $stmt = $pdo->prepare("
+        SELECT foto_perfil
+        FROM usuario
+        WHERE idusuario = :idusuario
+        LIMIT 1
+    ");
 
-// Convertir la ruta relativa a absoluta
-$ruta = "";
+    $stmt->execute([
+        "idusuario" => $idusuario
+    ]);
 
-if ($foto && !empty($foto["ruta_imagen"])) {
+    $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    // Quita el "../" del inicio
-    $ruta = str_replace("../", "", $foto["ruta_imagen"]);
+    $foto = "";
 
-    // Agrega la ruta base del proyecto
-    $ruta = "/Castoresmlaulanet/" . $ruta;
+    if ($usuario && !empty($usuario["foto_perfil"])) {
+        $foto = $usuario["foto_perfil"];
+    }
+
+    echo json_encode([
+        "status" => "success",
+        "foto" => $foto
+    ]);
+
+} catch (PDOException $e) {
+
+    echo json_encode([
+        "status" => "error",
+        "message" => "Error MySQL: " . $e->getMessage()
+    ]);
+
 }
+?>
 
-echo json_encode([
-    "status" => "success",
-    "foto" => $ruta
-]);

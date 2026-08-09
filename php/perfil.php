@@ -1,3 +1,4 @@
+
 <?php
 
 session_start();
@@ -6,84 +7,63 @@ header("Content-Type: application/json; charset=UTF-8");
 
 require_once "conexion.php";
 
-
-if(!isset($_SESSION["idusuario"])){
+if (!isset($_SESSION["idusuario"])) {
 
     echo json_encode([
-        "status"=>"error",
-        "message"=>"No hay sesión activa"
+        "status" => "error",
+        "message" => "No hay sesión activa"
     ]);
 
     exit;
-
 }
-
 
 $idusuario = $_SESSION["idusuario"];
 
+try {
 
-try{
+    $stmt = $pdo->prepare("
+        SELECT
+            idusuario,
+            nombre,
+            apellidop,
+            apellidom,
+            username,
+            email,
+            fechaNac,
+            foto_perfil
+        FROM usuario
+        WHERE idusuario = :idusuario
+        LIMIT 1
+    ");
 
+    $stmt->execute([
+        "idusuario" => $idusuario
+    ]);
 
-$stmt = $pdo->prepare("
+    $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
 
-SELECT
+    if (!$usuario) {
 
-u.idusuario,
-u.nombre,
-u.apellidop,
-u.apellidom,
-u.username,
-u.email,
-u.fechaNac,
+        echo json_encode([
+            "status" => "error",
+            "message" => "Usuario no encontrado"
+        ]);
 
-fp.ruta_imagen
+        exit;
+    }
 
-FROM usuario u
+    echo json_encode([
+        "status" => "success",
+        "usuario" => $usuario
+    ]);
 
-LEFT JOIN FotoPerfil fp
+} catch (PDOException $e) {
 
-ON u.idusuario = fp.idusuario
-AND fp.activa = TRUE
-
-WHERE u.idusuario = :idusuario
-
-");
-
-
-$stmt->execute([
-
-"idusuario"=>$idusuario
-
-]);
-
-
-$usuario=$stmt->fetch(PDO::FETCH_ASSOC);
-
-
-
-echo json_encode([
-
-"status"=>"success",
-
-"usuario"=>$usuario
-
-]);
-
-
-
-}catch(Exception $e){
-
-
-echo json_encode([
-
-"status"=>"error",
-
-"message"=>"Error al consultar perfil"
-
-]);
-
+    echo json_encode([
+        "status" => "error",
+        "message" => "Error MySQL: " . $e->getMessage()
+    ]);
 
 }
-
 ?>
+

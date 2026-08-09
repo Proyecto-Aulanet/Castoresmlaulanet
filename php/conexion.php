@@ -2,10 +2,9 @@
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 $host = "localhost";
-$db = "nahui";
-$user = "root";
-$pass = "";
-
+$db = "aulanet";
+$user = "aulanet_user";
+$pass = "Aulanet2026*";
 
 
 try {
