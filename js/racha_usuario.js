@@ -2,24 +2,47 @@ async function cargarRacha() {
 
     try {
 
-        const respuesta = await fetch(
-            "/castoresmlaulanet/php/obtener_racha.php"
+        console.log(
+            "🔥 Cargando racha..."
         );
 
-        const datos = await respuesta.json();
 
-        console.log("Racha recibida:", datos);
+        const respuesta =
+            await fetch(
+                "/castoresmlaulanet/php/obtener_racha.php"
+            );
 
-        if (datos.status === "success") {
+
+        const datos =
+            await respuesta.json();
+
+
+        console.log(
+            "🔥 Racha recibida:",
+            datos
+        );
+
+
+        if (
+            datos.status === "success"
+        ) {
 
             const elementoRacha =
-                document.getElementById("streak-display");
+                document.getElementById(
+                    "streak-display"
+                );
 
-            console.log("Elemento encontrado:", elementoRacha);
 
             if (elementoRacha) {
 
-                elementoRacha.textContent = datos.racha;
+                elementoRacha.textContent =
+                    datos.racha;
+
+            } else {
+
+                console.error(
+                    "❌ No existe #streak-display"
+                );
 
             }
 
@@ -28,7 +51,7 @@ async function cargarRacha() {
     } catch (error) {
 
         console.error(
-            "Error al cargar la racha:",
+            "❌ Error al cargar la racha:",
             error
         );
 
