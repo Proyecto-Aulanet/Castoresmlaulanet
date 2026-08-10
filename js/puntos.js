@@ -1,42 +1,187 @@
-document.addEventListener('DOMContentLoaded', () => {
+
+// =====================================================
+// PUNTOS.JS
+// =====================================================
+
+console.log("🚀 puntos.js CARGADO CORRECTAMENTE");
+
+
+// =====================================================
+// ESPERAR A QUE CARGUE EL HTML
+// =====================================================
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    console.log("📄 DOM cargado");
+
     cargarPuntaje();
+
 });
+
+
+// =====================================================
+// CARGAR PUNTAJE
+// =====================================================
 
 async function cargarPuntaje() {
 
-    const urlApi = '../php/obtener_puntaje.php'; 
+    console.log("⭐ Iniciando carga del puntaje...");
+
+
+    const urlApi = "/Castoresmlaulanet/php/obtener_puntaje_total.php";
+
+    console.log(
+        "🌐 Consultando:",
+        urlApi
+    );
+
 
     try {
-        const response = await fetch(urlApi, { 
-            credentials: 'same-origin' 
-        });
+
+        const response =
+            await fetch(
+                urlApi,
+                {
+                    method: "GET",
+                    credentials: "include"
+                }
+            );
+
+
+        console.log(
+            "📡 Respuesta HTTP:",
+            response.status
+        );
+
 
         if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+
+            throw new Error(
+                "HTTP " + response.status
+            );
+
         }
 
-        const data = await response.json();
 
-        if (data.status === 'success') {
-            actualizarPuntajeDOM(data.puntos_totales);
+        const data =
+            await response.json();
+
+
+        console.log(
+            "📦 Datos recibidos:",
+            data
+        );
+
+
+        if (
+            data.status === "success"
+        ) {
+
+            const puntaje =
+                Number(
+                    data.puntaje_total
+                ) || 0;
+
+
+            console.log(
+                "🏆 PUNTAJE TOTAL:",
+                puntaje
+            );
+
+
+            actualizarPuntajeDOM(
+                puntaje
+            );
+
+
         } else {
-            console.error('Error desde la API:', data.message);
+
+            console.error(
+                "❌ PHP respondió error:",
+                data.message
+            );
+
         }
+
+
     } catch (error) {
-        console.error('Error de conexión:', error);
+
+        console.error(
+            "❌ ERROR CARGANDO PUNTAJE:",
+            error
+        );
+
     }
+
 }
 
-function actualizarPuntajeDOM(totales) {
-    // 1. Tarjeta lateral de Perfil ("pts Total:")
-    const xpUsuario = document.getElementById('xpUsuario');
+
+// =====================================================
+// ACTUALIZAR ELEMENTOS
+// =====================================================
+
+function actualizarPuntajeDOM(puntaje) {
+
+    console.log(
+        "🎯 Actualizando puntaje en pantalla:",
+        puntaje
+    );
+
+
+    // =================================================
+    // PERFIL
+    // =================================================
+
+    const xpUsuario =
+        document.getElementById(
+            "xpUsuario"
+        );
+
+
     if (xpUsuario) {
-        xpUsuario.textContent = totales;
+
+        xpUsuario.textContent =
+            puntaje;
+
+        console.log(
+            "✅ #xpUsuario actualizado"
+        );
+
+    } else {
+
+        console.warn(
+            "⚠️ No existe #xpUsuario en esta página"
+        );
+
     }
 
-    // 2. Header superior ("Puntaje")
-    const xpDisplay = document.getElementById('xp-display');
+
+    // =================================================
+    // HEADER
+    // =================================================
+
+    const xpDisplay =
+        document.getElementById(
+            "xp-display"
+        );
+
+
     if (xpDisplay) {
-        xpDisplay.textContent = totales;
+
+        xpDisplay.textContent =
+            puntaje;
+
+        console.log(
+            "✅ #xp-display actualizado"
+        );
+
+    } else {
+
+        console.warn(
+            "⚠️ No existe #xp-display en esta página"
+        );
+
     }
+
 }
+

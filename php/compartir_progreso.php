@@ -1,3 +1,4 @@
+
 <?php
 
 session_start();
@@ -6,167 +7,248 @@ header("Content-Type: application/json; charset=UTF-8");
 
 require_once "conexion.php";
 
-if(!isset($_SESSION["idusuario"])){
+try {
 
-    echo json_encode([
-        "status"=>"error",
-        "message"=>"No hay sesión activa"
+    // =========================================
+    // VERIFICAR SESIÓN
+    // =========================================
+
+    if (
+        !isset($_SESSION["idusuario"]) ||
+        (int)$_SESSION["idusuario"] <= 0
+    ) {
+
+        echo json_encode([
+            "status" => "error",
+            "message" => "No hay una sesión activa."
+        ]);
+
+        exit;
+    }
+
+    $idusuario = (int)$_SESSION["idusuario"];
+
+
+    // =========================================
+    // OBTENER INFORMACIÓN DEL USUARIO
+    // =========================================
+
+    $stmt = $pdo->prepare("
+        SELECT
+            idusuario,
+            nombre,
+            foto_perfil
+        FROM usuario
+        WHERE idusuario = :idusuario
+        LIMIT 1
+    ");
+
+    $stmt->execute([
+        ":idusuario" => $idusuario
     ]);
 
-    exit;
-}
-
-$idusuario = $_SESSION["idusuario"];
-
-try{
-
-    // ===============================
-    // DATOS DEL USUARIO
-    // ===============================
-
-    $sql = $pdo->prepare("
-        SELECT
-            u.nombre,
-            u.apellidop,
-            u.apellidom,
-            fp.ruta_imagen
-
-        FROM usuario u
-
-        LEFT JOIN u.foto_perfil fp
-            ON fp.idusuario=u.idusuario
-            AND fp.activa=1
-
-        WHERE u.idusuario=?
-    ");
-
-    $sql->execute([$idusuario]);
-
-    $usuario = $sql->fetch(PDO::FETCH_ASSOC);
+    $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
 
 
+    if (!$usuario) {
 
-    // ===============================
-    // XP TOTAL
-    // ===============================
+        echo json_encode([
+            "status" => "error",
+            "message" => "No se encontró el usuario."
+        ]);
 
-    $sql = $pdo->prepare("
-        SELECT COALESCE(SUM(puntos),0) AS xp
-        FROM puntaje
-        WHERE idusuario=?
-    ");
-
-    $sql->execute([$idusuario]);
-
-    $xp = $sql->fetch(PDO::FETCH_ASSOC)["xp"];
+        exit;
+    }
 
 
+    // =========================================
+    // OBTENER XP
+    // =========================================
 
-    // ===============================
-    // MEDALLAS
-    // ===============================
+    $xp = 0;
 
-    $sql = $pdo->prepare("
-        SELECT COUNT(*) total
-        FROM Usuario_Medalla
-        WHERE idusuario=?
-    ");
+    try {
 
-    $sql->execute([$idusuario]);
+        $stmtXP = $pdo->prepare("
+            SELECT COALESCE(SUM(puntos), 0)
+            FROM puntaje
+            WHERE idusuario = :idusuario
+        ");
 
-    $medallas = $sql->fetch(PDO::FETCH_ASSOC)["total"];
+        $stmtXP->execute([
+            ":idusuario" => $idusuario
+        ]);
 
+        $xp = (int)$stmtXP->fetchColumn();
 
+    } catch (PDOException $e) {
 
-    $sql = $pdo->query("
-        SELECT COUNT(*) total
-        FROM medalla
-    ");
-
-    $totalMedallas = $sql->fetch(PDO::FETCH_ASSOC)["total"];
-
-
-
-    // ===============================
-    // EXÁMENES
-    // ===============================
-
-    $sql = $pdo->prepare("
-        SELECT COUNT(DISTINCT idexamen) total
-        FROM puntaje
-        WHERE idusuario=?
-    ");
-
-    $sql->execute([$idusuario]);
-
-    $examenes = $sql->fetch(PDO::FETCH_ASSOC)["total"];
+        $xp = 0;
+    }
 
 
+    // =========================================
+    // OBTENER MEDALLAS
+    // =========================================
 
-    $sql = $pdo->query("
-        SELECT COUNT(*) total
-        FROM Examen
-    ");
+    $medallas = 0;
+    $totalMedallas = 0;
 
-    $totalExamenes = $sql->fetch(PDO::FETCH_ASSOC)["total"];
+    try {
+
+        $stmtMedallas = $pdo->prepare("
+            SELECT COUNT(*)
+            FROM usuario_medalla
+            WHERE idusuario = :idusuario
+        ");
+
+        $stmtMedallas->execute([
+            ":idusuario" => $idusuario
+        ]);
+
+        $medallas = (int)$stmtMedallas->fetchColumn();
 
 
+        $stmtTotalMedallas = $pdo->query("
+            SELECT COUNT(*)
+            FROM medalla
+        ");
 
-    // ===============================
-    // NIVEL
-    // ===============================
+        $totalMedallas =
+            (int)$stmtTotalMedallas->fetchColumn();
 
-    if($xp<500){
+    } catch (PDOException $e) {
 
-        $nivel="Castor Principiante";
+        $medallas = 0;
+        $totalMedallas = 0;
+    }
 
-    }elseif($xp<1500){
 
-        $nivel="Castor Aprendiz";
+    // =========================================
+    // OBTENER EXÁMENES REALIZADOS
+    // =========================================
 
-    }elseif($xp<3000){
+    $examenes = 0;
+    $totalExamenes = 0;
 
-        $nivel="Castor Avanzado";
+    try {
 
-    }else{
+        $stmtExamenes = $pdo->prepare("
+            SELECT COUNT(*)
+            FROM puntaje
+            WHERE idusuario = :idusuario
+        ");
 
-        $nivel="Castor Experto";
+        $stmtExamenes->execute([
+            ":idusuario" => $idusuario
+        ]);
+
+        $examenes =
+            (int)$stmtExamenes->fetchColumn();
+
+
+        $stmtTotalExamenes = $pdo->query("
+            SELECT COUNT(*)
+            FROM examen
+        ");
+
+        $totalExamenes =
+            (int)$stmtTotalExamenes->fetchColumn();
+
+    } catch (PDOException $e) {
+
+        $examenes = 0;
+        $totalExamenes = 0;
+    }
+
+
+    // =========================================
+    // CALCULAR NIVEL
+    // =========================================
+
+    $nivel = 1;
+
+    if ($xp >= 100) {
+
+        $nivel =
+            floor($xp / 100) + 1;
 
     }
 
 
+    // =========================================
+    // FOTO DE PERFIL
+    // =========================================
+
+    $foto = null;
+
+    if (
+        isset($usuario["foto_perfil"]) &&
+        !empty($usuario["foto_perfil"])
+    ) {
+
+        $foto =
+            $usuario["foto_perfil"];
+
+    }
+
+
+    // =========================================
+    // RESPUESTA
+    // =========================================
 
     echo json_encode([
 
-        "status"=>"success",
+        "status" => "success",
 
-        "usuario"=>[
+        "usuario" => [
 
-            "nombre"=>$usuario["nombre"]." ".$usuario["apellidop"],
+            "idusuario" =>
+                (int)$usuario["idusuario"],
 
-            "foto"=>$usuario["ruta_imagen"],
+            "nombre" =>
+                $usuario["nombre"],
 
-            "xp"=>$xp,
+            "nivel" =>
+                $nivel,
 
-            "nivel"=>$nivel,
+            "xp" =>
+                $xp,
 
-            "medallas"=>$medallas,
+            "medallas" =>
+                $medallas,
 
-            "totalMedallas"=>$totalMedallas,
+            "totalMedallas" =>
+                $totalMedallas,
 
-            "examenes"=>$examenes,
+            "examenes" =>
+                $examenes,
 
-            "totalExamenes"=>$totalExamenes
+            "totalExamenes" =>
+                $totalExamenes,
+
+            "foto" =>
+                $foto
 
         ]
 
-    ]);
+    ], JSON_UNESCAPED_UNICODE);
 
-}catch(Exception $e){
+
+} catch (PDOException $e) {
+
+    http_response_code(500);
 
     echo json_encode([
-        "status"=>"error",
-        "message"=>$e->getMessage()
+
+        "status" => "error",
+
+        "message" =>
+            "Error MySQL: " .
+            $e->getMessage()
+
     ]);
 
 }
+?>
+

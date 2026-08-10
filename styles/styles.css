@@ -4,26 +4,26 @@
 /* Poppins */
 @font-face {
   font-family: 'Poppins';
-  src: url('/assets/fonts/Poppins-Regular.ttf');
+  src: url('/Castoresmlaulanet/assets/fonts/Poppins-Regular.ttf');
   font-weight: 400; /* Regular */
 }
 
 @font-face {
   font-family: 'Poppins';
-  src: url('/assets/fonts/Poppins-Bold.ttf');
+  src: url('/Castoresmlaulanet/assets/fonts/Poppins-Bold.ttf');
   font-weight: 700; /* Bold */
 }
 
 /* Fredoka */
 @font-face {
   font-family: 'Fredoka';
-  src: url('/assets/fonts/Fredoka-Regular.ttf');
+  src: url('/Castoresmlaulanet/assets/fonts/Fredoka-Regular.ttf');
   font-weight: 400; /* Regular */
 }
 
 @font-face {
   font-family: 'Fredoka';
-  src: url('/assets/fonts/Fredoka-Bold.ttf');
+  src: url('/Castoresmlaulanet/assets/fonts/Fredoka-Bold.ttf');
   font-weight: 700; /* Bold */
 }
 
@@ -12769,5 +12769,38 @@ left:34%;
         height:45px;
 
     }
+
+}
+
+
+
+
+.nivel-share {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-top: 10px;
+
+}
+
+.nivel-share span:first-child {
+
+    font-size: 32px;
+
+    font-weight: bold;
+
+}
+
+.texto-nivel {
+
+    font-size: 18px;
+
+    font-weight: 600;
 
 }

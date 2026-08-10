@@ -58,8 +58,8 @@ async function guardarUsuario(e) {
         idestado: estadoVal && !isNaN(estadoVal) ? parseInt(estadoVal, 10) : null
     };
 
-    if (idusuarioinput) {
-        datosUsuario.idusuario = parseInt(idusuarioinput, 10);
+    if (idusuarioInput) {
+        datosUsuario.idusuario = parseInt(idusuarioInput, 10);
     }
 
     try {

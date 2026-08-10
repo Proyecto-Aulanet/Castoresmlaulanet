@@ -615,6 +615,7 @@ async function registrarRacha() {
 
 
 
+
 // =====================================================
 // FINALIZAR EXAMEN
 // =====================================================
@@ -625,87 +626,77 @@ async function finalizarExamen() {
 
     // Evitar que se ejecute dos veces
     if (examenFinalizado) {
-        console.warn("⚠️ El examen ya fue finalizado.");
+
+        console.warn(
+            "⚠️ El examen ya fue finalizado."
+        );
+
         return;
     }
 
     examenFinalizado = true;
 
-    console.log("🏁 FINALIZANDO EXAMEN...");
-    console.log("📊 PUNTAJE FINAL:", puntaje);
+    console.log(
+        "🏁 FINALIZANDO EXAMEN..."
+    );
+
+    console.log(
+        "📊 PUNTAJE FINAL:",
+        puntaje
+    );
+
 
     // =================================================
     // OBTENER ID MISIÓN
     // =================================================
 
     const parametros =
-        new URLSearchParams(window.location.search);
+        new URLSearchParams(
+            window.location.search
+        );
+
 
     const idmision =
-        parseInt(parametros.get("idmision"));
+        parseInt(
+            parametros.get("idmision")
+        );
 
-    console.log("🆔 ID MISIÓN:", idmision);
 
-    if (!idmision || isNaN(idmision)) {
+    console.log(
+        "🆔 ID MISIÓN:",
+        idmision
+    );
+
+
+    if (
+        !idmision ||
+        isNaN(idmision)
+    ) {
 
         console.error(
             "❌ No se encontró idmision en la URL."
         );
 
         examenFinalizado = false;
+
         return;
     }
 
-    // =================================================
-    // RELACIÓN MISIÓN → EXAMEN
-    // =================================================
-
-    const relacionMisionExamen = {
-
-        9: 1,
-        10: 3,
-        14: 4,
-        18: 5,
-        22: 6,
-        25: 7,
-        29: 8,
-        33: 9,
-        36: 10,
-        39: 2
-
-    };
-
-    const idexamen =
-        relacionMisionExamen[idmision];
-
-    console.log(
-        "📝 ID EXAMEN:",
-        idexamen
-    );
-
-    if (!idexamen) {
-
-        console.error(
-            "❌ No existe relación misión/examen."
-        );
-
-        examenFinalizado = false;
-        return;
-    }
 
     // =================================================
     // GUARDAR PUNTAJE
     // =================================================
-if (idexamen){
+
     try {
 
         console.log(
             "💾 Guardando puntaje:",
             {
-                idexamen: idexamen,
+                idmision: idmision,
                 puntos: puntaje
             }
         );
+
 
         const respuesta =
             await fetch(
@@ -719,26 +710,33 @@ if (idexamen){
                             "application/json"
                     },
 
-                        body: JSON.stringify({
+                    body: JSON.stringify({
 
-                            idmision: idmision,
+                        idmision:
+                            idmision,
 
-                            puntos: puntaje
+                        puntos:
+                            puntaje
 
-                        })
+                    })
 
                 }
             );
 
+
         const datos =
             await respuesta.json();
+
 
         console.log(
             "📊 RESPUESTA PUNTAJE:",
             datos
         );
 
-        if (datos.status !== "success") {
+
+        if (
+            datos.status !== "success"
+        ) {
 
             console.error(
                 "❌ ERROR GUARDANDO PUNTAJE:",
@@ -754,6 +752,7 @@ if (idexamen){
 
         }
 
+
     } catch (error) {
 
         console.error(
@@ -763,23 +762,30 @@ if (idexamen){
 
     }
 
-}
 
     // =================================================
     // ACTUALIZAR PANTALLA
     // =================================================
 
     const progreso =
-        document.getElementById("progreso");
+        document.getElementById(
+            "progreso"
+        );
+
 
     if (progreso) {
-        progreso.style.width = "100%";
+
+        progreso.style.width =
+            "100%";
+
     }
+
 
     const contadorPregunta =
         document.getElementById(
             "contadorPregunta"
         );
+
 
     if (contadorPregunta) {
 
@@ -788,35 +794,45 @@ if (idexamen){
 
     }
 
+
     const contenedorPregunta =
         document.getElementById(
             "contenedorPregunta"
         );
+
 
     if (contenedorPregunta) {
 
         contenedorPregunta.innerHTML = `
 
             <h2 class="text-success">
+
                 🎉 ¡Examen terminado!
+
             </h2>
 
             <p class="fs-5">
+
                 Has terminado este examen.
+
             </p>
 
             <p class="fs-4 fw-bold">
+
                 Puntaje: ${puntaje}
+
             </p>
 
         `;
 
     }
 
+
     const contenedorOpciones =
         document.getElementById(
             "contenedorOpciones"
         );
+
 
     if (contenedorOpciones) {
 
@@ -830,7 +846,9 @@ if (idexamen){
                 </i>
 
                 <h3 class="mt-3">
+
                     Examen terminado
+
                 </h3>
 
             </div>
@@ -838,6 +856,7 @@ if (idexamen){
         `;
 
     }
+
 
     // =================================================
     // OCULTAR SIGUIENTE
@@ -848,13 +867,13 @@ if (idexamen){
             "btnSiguiente"
         );
 
+
     if (btnSiguiente) {
 
         btnSiguiente.style.display =
             "none";
 
     }
-
 
 
     // =================================================
@@ -866,10 +885,12 @@ if (idexamen){
             "btnTerminarExamen"
         );
 
+
     if (btnTerminar) {
 
         btnTerminar.style.display =
             "inline-block";
+
 
         btnTerminar.onclick =
             async function () {
@@ -877,7 +898,11 @@ if (idexamen){
                 btnTerminar.disabled =
                     true;
 
-                // Registrar racha
+
+                // =====================================
+                // REGISTRAR RACHA
+                // =====================================
+
                 if (
                     typeof registrarRacha ===
                     "function"
@@ -887,7 +912,11 @@ if (idexamen){
 
                 }
 
-                // Procesar medalla
+
+                // =====================================
+                // PROCESAR MEDALLA
+                // =====================================
+
                 if (
                     typeof procesarMedallaLocal ===
                     "function"
