@@ -608,9 +608,8 @@ document.dispatchEvent(new Event("examenTerminado"));
 
     await registrarExamenRealizado();
 
-}
 
-    // Mostrar el botón "Terminar examen" del HTML
+        // Mostrar el botón "Terminar examen" del HTML
     const btnTerminar = document.getElementById("btnTerminarExamen");
 
     if (btnTerminar) {
@@ -622,7 +621,11 @@ document.dispatchEvent(new Event("examenTerminado"));
             }
         };
     }
+
 }
+
+
+
 
 
 // =====================================================
