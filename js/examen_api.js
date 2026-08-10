@@ -20,16 +20,16 @@ async function cargarExamen() {
         const parametros =
             new URLSearchParams(window.location.search);
 
-        const idMision =
+        const idmision =
             parseInt(parametros.get("idmision"));
 
         console.log(
             "Misión recibida:",
-            idMision
+            idmision
         );
 
 
-        if (!idMision || isNaN(idMision)) {
+        if (!idmision || isNaN(idmision)) {
 
             throw new Error(
                 "No se recibió una misión válida."
@@ -39,7 +39,7 @@ async function cargarExamen() {
 
 
         // =================================================
-
+        // VALIDAR SI YA SE APROBÓ EL EXAMEN (DESDE BD EN PHP)
         // =================================================
 
         const relacionMisionMedalla = {
@@ -55,8 +55,7 @@ async function cargarExamen() {
             39: 10
         };
 
-
-        const idMedalla = relacionMisionMedalla[idMision] || idMision;
+        const idmedalla = relacionMisionMedalla[idmision] || idmision;
 
         // Consultar medallas de la cuenta activa desde PHP
         let medallasGanadas = [];
@@ -70,8 +69,7 @@ async function cargarExamen() {
             console.error("No se pudieron verificar las medallas ganadas", e);
         }
 
-
-        if (medallasGanadas.includes(idMedalla)) {
+        if (medallasGanadas.includes(idmedalla)) {
 
             if (typeof Swal !== "undefined") {
 
@@ -109,13 +107,14 @@ async function cargarExamen() {
 
             return;
         }
+
         // =================================================
         // CONSULTAR API
-
+        // IMPORTANTE: SE ENVÍA idmision
         // =================================================
 
         const url =
-            `../php/api_examen.php?idmision=${idMision}`;
+            `../php/api_examen.php?idmision=${idmision}`;
 
 
         console.log(
@@ -123,10 +122,8 @@ async function cargarExamen() {
             url
         );
 
-
         const respuesta =
             await fetch(url);
-
 
         if (!respuesta.ok) {
 
@@ -136,10 +133,8 @@ async function cargarExamen() {
 
         }
 
-
         const datos =
             await respuesta.json();
-
 
         console.log(
             "Respuesta API examen:",
@@ -195,11 +190,7 @@ async function cargarExamen() {
 
         mostrarPregunta();
 
-
-    }
-
-    catch (error) {
-
+    } catch (error) {
 
         console.error(
             "Error cargando examen:",
@@ -251,7 +242,6 @@ function mostrarPregunta() {
 
     }
 
-
     const numero =
         indiceActual + 1;
 
@@ -268,7 +258,6 @@ function mostrarPregunta() {
         "progreso"
     ).style.width =
         `${(numero / 10) * 100}%`;
-
 
     // =================================================
     // PREGUNTA
@@ -356,9 +345,7 @@ function mostrarPregunta() {
             "btnSiguiente"
         );
 
-
     btn.disabled = true;
-
 
     // =================================================
     // ACTIVAR BOTÓN
@@ -381,9 +368,7 @@ function mostrarPregunta() {
                 );
 
             }
-
         ); 
-
 }
 
 // =====================================================
@@ -425,7 +410,6 @@ function siguientePregunta() {
 
     indiceActual++;
 
-
     if (
         indiceActual < preguntas.length
     ) {
@@ -441,8 +425,6 @@ function siguientePregunta() {
     }
 
 }
-
-
 
 // =====================================================
 // REGISTRAR EXAMEN REALIZADO
@@ -478,33 +460,33 @@ async function registrarExamenRealizado() {
             idmision
         );
 
-
         const respuesta = await fetch(
             "../php/api_guardar_examen.php",
             {
                 method: "POST",
 
+                headers: {
+                    "Content-Type":
+                        "application/json"
+                },
 
-                    headers: {
-                        "Content-Type":
-                            "application/json"
-                    },
+                body: JSON.stringify({
 
-                    body: JSON.stringify({
+                    idmision:
+                        idmision
 
+                })
+            }
+        );
 
         const datos = await respuesta.json();
-
-
 
         console.log(
             "Respuesta registro examen:",
             datos
         );
 
-
         if (datos.status !== "success") {
-
 
             console.error(
                 "Error:",
@@ -647,7 +629,7 @@ async function finalizarExamen() {
         );
 
 
-    const idMision =
+    const idmision =
         parseInt(
             parametros.get("idmision")
         ) || 1;
@@ -675,7 +657,7 @@ async function finalizarExamen() {
                 body: JSON.stringify({
 
                     idexamen:
-                        idMision,
+                        idmision,
 
                     puntos:
                         puntaje
@@ -851,7 +833,7 @@ async function finalizarExamen() {
                 ) {
 
                     procesarMedallaLocal(
-                        idMision,
+                        idmision,
                         puntaje
                     );
 
@@ -874,6 +856,7 @@ async function finalizarExamen() {
 
     }
 
+}
 
 
 // =====================================================
