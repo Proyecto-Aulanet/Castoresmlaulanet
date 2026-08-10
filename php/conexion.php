@@ -2,9 +2,9 @@
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 $host = "localhost";
-$db = "nahui";
-$user = 'root';
-$pass = "260622BrunX";
+$db   = "aulanet_dev";
+$user = "aulanet_local";
+$pass = "Aul@NetLocal2026!";
 
 try {
     $pdo = new PDO(
