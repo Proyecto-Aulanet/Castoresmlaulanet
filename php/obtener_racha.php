@@ -18,7 +18,8 @@ if (!isset($_SESSION["idusuario"])) {
 }
 
 
-$idusuario = $_SESSION["idusuario"];
+$idusuario =
+    $_SESSION["idusuario"];
 
 
 try {
@@ -29,15 +30,23 @@ try {
             AND dia_completado = 1
             ORDER BY fecha DESC";
 
-    $stmt = $pdo->prepare($sql);
 
-    $stmt->execute([$idusuario]);
-
-    $fechas = $stmt->fetchAll(PDO::FETCH_COLUMN);
+    $stmt =
+        $pdo->prepare($sql);
 
 
-    // Si no tiene actividades
-    if (count($fechas) === 0) {
+    $stmt->execute([
+        $idusuario
+    ]);
+
+
+    $fechas =
+        $stmt->fetchAll(
+            PDO::FETCH_COLUMN
+        );
+
+
+    if (empty($fechas)) {
 
         echo json_encode([
             "status" => "success",
@@ -45,19 +54,28 @@ try {
         ]);
 
         exit;
+
     }
 
 
-    $hoy = new DateTime();
-
-    $ultimaFecha = new DateTime($fechas[0]);
-
-
-    // Diferencia entre hoy y la última actividad
-    $diferencia = $hoy->diff($ultimaFecha)->days;
+    $hoy =
+        new DateTime(
+            date("Y-m-d")
+        );
 
 
-    // Si no hizo actividad hoy ni ayer, la racha se perdió
+    $ultimaFecha =
+        new DateTime(
+            $fechas[0]
+        );
+
+
+    $diferencia =
+        $hoy->diff(
+            $ultimaFecha
+        )->days;
+
+
     if ($diferencia > 1) {
 
         echo json_encode([
@@ -66,23 +84,37 @@ try {
         ]);
 
         exit;
+
     }
 
 
-    // Comenzamos la racha
     $racha = 1;
 
 
-    for ($i = 1; $i < count($fechas); $i++) {
+    for (
+        $i = 1;
+        $i < count($fechas);
+        $i++
+    ) {
 
-        $fechaAnterior = new DateTime($fechas[$i - 1]);
-        $fechaActual = new DateTime($fechas[$i]);
+        $fechaAnterior =
+            new DateTime(
+                $fechas[$i - 1]
+            );
 
 
-        $diferencia = $fechaAnterior->diff($fechaActual)->days;
+        $fechaActual =
+            new DateTime(
+                $fechas[$i]
+            );
 
 
-        // Si son días consecutivos
+        $diferencia =
+            $fechaAnterior->diff(
+                $fechaActual
+            )->days;
+
+
         if ($diferencia === 1) {
 
             $racha++;
@@ -97,16 +129,28 @@ try {
 
 
     echo json_encode([
-        "status" => "success",
-        "racha" => $racha
+
+        "status" =>
+            "success",
+
+        "racha" =>
+            $racha
+
     ]);
 
 
 } catch (PDOException $e) {
 
     echo json_encode([
-        "status" => "error",
-        "message" => "Error al consultar la racha"
+
+        "status" =>
+            "error",
+
+        "message" =>
+            "Error al consultar la racha"
+
     ]);
 
 }
+
+?>
