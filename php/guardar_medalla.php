@@ -9,7 +9,6 @@ if (!isset($_SESSION['idusuario']) || !isset($datos['idmedalla'])) {
     echo json_encode(["status" => "error", "message" => "Datos incompletos o sin sesión"]);
     exit;
 }
-
 $idusuario = $_SESSION['idusuario'];
 $idmedalla = intval($datos['idmedalla']);
 

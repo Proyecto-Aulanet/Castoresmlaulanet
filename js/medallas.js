@@ -111,7 +111,6 @@ async function procesarMedallaLocal(idmision, puntajeobtenido) {
     const relacionmisionmedalla = {
         9: 1, 10: 2, 14: 3, 18: 4, 22: 5, 25: 6, 29: 7, 33: 8, 36: 9, 39: 10
     };
-
     const idmedalla = relacionmisionmedalla[idmision] || idmision;
     const medalla = informacionMedallas[idmedalla];
 
