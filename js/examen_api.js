@@ -20,16 +20,16 @@ async function cargarExamen() {
         const parametros =
             new URLSearchParams(window.location.search);
 
-        const idMision =
+        const idmision =
             parseInt(parametros.get("idmision"));
 
         console.log(
             "Misión recibida:",
-            idMision
+            idmision
         );
 
 
-        if (!idMision || isNaN(idMision)) {
+        if (!idmision || isNaN(idmision)) {
 
             throw new Error(
                 "No se recibió una misión válida."
@@ -55,7 +55,7 @@ async function cargarExamen() {
             39: 10
         };
 
-        const idMedalla = relacionMisionMedalla[idMision] || idMision;
+        const idmedalla = relacionMisionMedalla[idmision] || idmision;
 
         // Consultar medallas de la cuenta activa desde PHP
         let medallasGanadas = [];
@@ -69,7 +69,7 @@ async function cargarExamen() {
             console.error("No se pudieron verificar las medallas ganadas", e);
         }
 
-        if (medallasGanadas.includes(idMedalla)) {
+        if (medallasGanadas.includes(idmedalla)) {
 
             if (typeof Swal !== "undefined") {
 
@@ -114,7 +114,7 @@ async function cargarExamen() {
         // =================================================
 
         const url =
-            `../php/api_examen.php?idmision=${idMision}`;
+            `../php/api_examen.php?idmision=${idmision}`;
 
 
         console.log(
@@ -410,7 +410,6 @@ function siguientePregunta() {
 
     indiceActual++;
 
-
     if (
         indiceActual < preguntas.length
     ) {
@@ -426,8 +425,6 @@ function siguientePregunta() {
     }
 
 }
-
-
 
 // =====================================================
 // REGISTRAR EXAMEN REALIZADO
@@ -632,7 +629,7 @@ async function finalizarExamen() {
         );
 
 
-    const idMision =
+    const idmision =
         parseInt(
             parametros.get("idmision")
         ) || 1;
@@ -660,7 +657,7 @@ async function finalizarExamen() {
                 body: JSON.stringify({
 
                     idexamen:
-                        idMision,
+                        idmision,
 
                     puntos:
                         puntaje
@@ -836,7 +833,7 @@ async function finalizarExamen() {
                 ) {
 
                     procesarMedallaLocal(
-                        idMision,
+                        idmision,
                         puntaje
                     );
 

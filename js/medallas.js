@@ -13,9 +13,6 @@ const informacionMedallas = {
     10: { nombre: "LONI", descripcion: "Guardián del Cuerpo", imagen: "medalla_cuerpo.png" }
 };
 
-/**
- * Consulta las medallas del usuario desde la base de datos (PHP)
- */
 async function obtenerMedallasUsuario() {
     try {
         const res = await fetch("../php/obtener_medallas.php");
@@ -35,7 +32,7 @@ async function cargarMedallasObtenidas() {
     const contenedorPrevia = document.getElementById("gridMedallasPerfilVistaPrevia") || document.getElementById("gridMedallasVistaPrevia");
     const contenedorModal = document.getElementById("gridMedallasPerfilModal") || document.getElementById("gridMedallasModal");
 
-    // Consultamos la BD en lugar de localStorage
+    // Se consulta desde la BD
     const medallasGanadas = await obtenerMedallasUsuario();
 
     if (contenedorPrevia) {
@@ -72,31 +69,31 @@ async function cargarMedallasObtenidas() {
 
         Object.keys(informacionMedallas).forEach(idmedalla => {
             const info = informacionMedallas[idmedalla];
-            const idNumero = parseInt(idmedalla);
-            const esObtenida = medallasGanadas.includes(idNumero);
+            const idnumero = parseInt(idmedalla);
+            const esobtenida = medallasGanadas.includes(idnumero);
 
-            const filtroImagen = esObtenida 
+            const filtroimagen = esobtenida 
                 ? 'filter: drop-shadow(0px 3px 5px rgba(0,0,0,0.15)); opacity: 1;' 
                 : 'filter: grayscale(100%) opacity(0.25);';
 
-            const claseTarjeta = esObtenida
+            const clasetarjeta = esobtenida
                 ? 'bg-white border-2 border-success shadow-sm'
                 : 'bg-light border-1 border-light text-muted opacity-75';
 
             contenedorModal.innerHTML += `
                 <div class="col-6 col-md-4 col-lg-3">
-                    <div class="card h-100 p-2 text-center rounded-3 ${claseTarjeta}">
+                    <div class="card h-100 p-2 text-center rounded-3 ${clasetarjeta}">
                         <div class="d-flex align-items-center justify-content-center my-2" style="height: 60px;">
                             <img src="../Recursos/medallas/${info.imagen}" 
                                  alt="${info.nombre}" 
                                  class="img-fluid" 
-                                 style="max-height: 55px; object-fit: contain; ${filtroImagen}">
+                                 style="max-height: 55px; object-fit: contain; ${filtroimagen}">
                         </div>
                         <div class="card-body p-1">
-                            <h6 class="fw-bold mb-1 ${esObtenida ? 'text-dark' : 'text-secondary'}" style="font-size: 0.85rem;">
+                            <h6 class="fw-bold mb-1 ${esobtenida ? 'text-dark' : 'text-secondary'}" style="font-size: 0.85rem;">
                                 ${info.nombre}
                             </h6>
-                            <small style="font-size: 0.7rem; line-height: 1.1; color: ${esObtenida ? '#555' : '#aaa'}; display: block;">
+                            <small style="font-size: 0.7rem; line-height: 1.1; color: ${esobtenida ? '#555' : '#aaa'}; display: block;">
                                 ${info.descripcion}
                             </small>
                         </div>
@@ -110,21 +107,20 @@ async function cargarMedallasObtenidas() {
 /**
  * Procesa y registra la medalla en la Base de Datos tras finalizar el examen
  */
-async function procesarMedallaLocal(idmision, puntajeObtenido) {
-    const relacionMisionMedalla = {
+async function procesarMedallaLocal(idmision, puntajeobtenido) {
+    const relacionmisionmedalla = {
         9: 1, 10: 2, 14: 3, 18: 4, 22: 5, 25: 6, 29: 7, 33: 8, 36: 9, 39: 10
     };
 
-    const idMedalla = relacionMisionMedalla[idmision] || idmision;
-    const medalla = informacionMedallas[idMedalla];
+    const idmedalla = relacionmisionmedalla[idmision] || idmision;
+    const medalla = informacionMedallas[idmedalla];
 
-    if (puntajeObtenido > 50) {
-        // Guardar medalla en la BD vía PHP
+    if (puntajeobtenido > 50) {
         try {
             await fetch("../php/guardar_medalla.php", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ idmedalla: idMedalla })
+                body: JSON.stringify({ idmedalla: idmedalla })
             });
         } catch (error) {
             console.error("Error guardando medalla:", error);
@@ -141,7 +137,7 @@ async function procesarMedallaLocal(idmision, puntajeObtenido) {
                         <h3 style="color: #2e7d32; margin: 5px 0;">${medalla ? medalla.nombre : '¡Felicidades!'}</h3>
                         <p style="color: #555; font-size: 0.95rem;">${medalla ? medalla.descripcion : ''}</p>
                         <hr style="margin: 15px 0; border: 0; border-top: 1px solid #eee;">
-                        <p style="font-size: 1rem; color: #333;"><b>Puntaje:</b> ${puntajeObtenido}%</p>
+                        <p style="font-size: 1rem; color: #333;"><b>Puntaje:</b> ${puntajeobtenido}%</p>
                     </div>
                 `,
                 confirmButtonText: "Continuar",
@@ -158,12 +154,12 @@ async function procesarMedallaLocal(idmision, puntajeObtenido) {
             Swal.fire({
                 icon: "warning",
                 title: "Examen finalizado",
-                text: `Obtuviste un ${puntajeObtenido}%. Necesitas más del 50% para conseguir la medalla.`,
+                text: `Obtuviste un ${puntajeobtenido}%. Necesitas más del 50% para conseguir la medalla.`,
                 confirmButtonText: "Entendido",
                 confirmButtonColor: "#dc3545"
             });
         } else {
-            alert(`Obtuviste un ${puntajeObtenido}%. Requieres más del 50% para ganar esta medalla.`);
+            alert(`Obtuviste un ${puntajeobtenido}%. Requieres más del 50% para ganar esta medalla.`);
         }
     }
 }
@@ -172,7 +168,6 @@ document.addEventListener("DOMContentLoaded", () => {
     cargarMedallasObtenidas();
 });
 
-// Modal helpers
 function abrirModalMedallas() {
     const modal = document.getElementById("modalMedallasPerfilCustom");
     if (modal) {

@@ -1,7 +1,7 @@
 <?php
 session_start();
 header('Content-Type: application/json');
-require_once "conexion.php"; // Tu archivo de conexión a la BD
+require_once "conexion.php"; 
 
 $datos = json_decode(file_get_contents("php://input"), true);
 
@@ -13,7 +13,6 @@ if (!isset($_SESSION['idusuario']) || !isset($datos['idmedalla'])) {
 $idusuario = $_SESSION['idusuario'];
 $idmedalla = intval($datos['idmedalla']);
 
-// Inserta si no existe previamente
 $query = "INSERT IGNORE INTO medallas_usuario (idusuario, idmedalla) VALUES (?, ?)";
 $stmt = $conexion->prepare($query);
 $stmt->bind_param("ii", $idusuario, $idmedalla);
