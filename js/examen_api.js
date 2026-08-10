@@ -43,16 +43,16 @@ async function cargarExamen() {
         // =================================================
 
         const relacionMisionMedalla = {
-            9: 1,   // Abecedario
-            10: 2,  // Saludos
-            14: 3,  // Tiempo
-            18: 4,  // Sociedad
-            22: 5,  // Plantas
-            25: 6,  // Alimentos
-            29: 7,  // Animales
-            33: 8,  // Colores
-            36: 9,  // Números
-            39: 10  // Cuerpo
+            9: 1,
+            10: 2,
+            14: 3,
+            18: 4,
+            22: 5,
+            25: 6,
+            29: 7,
+            33: 8,
+            36: 9,
+            39: 10
         };
 
         const idMedalla = relacionMisionMedalla[idMision] || idMision;
@@ -70,22 +70,44 @@ async function cargarExamen() {
         }
 
         if (medallasGanadas.includes(idMedalla)) {
+
             if (typeof Swal !== "undefined") {
+
                 Swal.fire({
+
                     icon: "info",
+
                     title: "Examen ya completado",
-                    text: "Ya aprobaste este examen y tienes tu medalla obtenida.",
-                    confirmButtonText: "Regresar a Lecciones",
-                    confirmButtonColor: "#28a745"
+
+                    text:
+                        "Ya aprobaste este examen y tienes tu medalla obtenida.",
+
+                    confirmButtonText:
+                        "Regresar a Lecciones",
+
+                    confirmButtonColor:
+                        "#28a745"
+
                 }).then(() => {
-                    window.location.href = "lecciones.html";
+
+                    window.location.href =
+                        "lecciones.html";
+
                 });
+
             } else {
-                alert("Ya aprobaste este examen y tienes tu medalla obtenida.");
-                window.location.href = "lecciones.html";
+
+                alert(
+                    "Ya aprobaste este examen y tienes tu medalla obtenida."
+                );
+
+                window.location.href =
+                    "lecciones.html";
             }
+
             return;
         }
+
         // =================================================
         // CONSULTAR API
         // IMPORTANTE: SE ENVÍA idmision
@@ -152,9 +174,12 @@ async function cargarExamen() {
 
             throw new Error(
                 "El examen necesita 10 preguntas y la API solo devolvió " +
-                preguntas.length + "."
+                preguntas.length +
+                "."
             );
+
         }
+
 
         indiceActual = 0;
         puntaje = 0;
@@ -165,9 +190,7 @@ async function cargarExamen() {
 
         mostrarPregunta();
 
-    }
-
-    catch (error) {
+    } catch (error) {
 
         console.error(
             "Error cargando examen:",
@@ -202,6 +225,7 @@ async function cargarExamen() {
     }
 
 }
+
 // =====================================================
 // MOSTRAR PREGUNTA
 // =====================================================
@@ -270,11 +294,6 @@ function mostrarPregunta() {
 
     opciones.forEach(
         (opcion, index) => {
-
-            // =================================================
-            // SOLO MOSTRAR ESPAÑOL
-            // NO MOSTRAR texto_nah
-            // =================================================
 
             html += `
 
@@ -407,16 +426,27 @@ function siguientePregunta() {
     }
 
 }
+
+
+
+// =====================================================
+// REGISTRAR EXAMEN REALIZADO
+// =====================================================
+
 async function registrarExamenRealizado() {
 
     try {
 
         const parametros =
-            new URLSearchParams(window.location.search);
+            new URLSearchParams(
+                window.location.search
+            );
 
 
         const idmision =
-            parseInt(parametros.get("idmision"));
+            parseInt(
+                parametros.get("idmision")
+            );
 
 
         if (!idmision) {
@@ -439,17 +469,20 @@ async function registrarExamenRealizado() {
                 method: "POST",
 
                 headers: {
-                    "Content-Type": "application/json"
+                    "Content-Type":
+                        "application/json"
                 },
 
                 body: JSON.stringify({
-                    idmision: idmision
+
+                    idmision:
+                        idmision
+
                 })
             }
         );
 
         const datos = await respuesta.json();
-
 
         console.log(
             "Respuesta registro examen:",
@@ -477,7 +510,111 @@ async function registrarExamenRealizado() {
 
         return false;
     }
+
 }
+
+
+
+// =====================================================
+// ⭐ REGISTRAR RACHA
+// =====================================================
+
+async function registrarRacha() {
+
+    try {
+
+        console.log(
+            "🔥 Registrando racha..."
+        );
+
+
+        const respuesta =
+            await fetch(
+                "../php/registrar_racha.php",
+                {
+                    method: "POST"
+                }
+            );
+
+
+        const datos =
+            await respuesta.json();
+
+
+        console.log(
+            "🔥 Respuesta registrar racha:",
+            datos
+        );
+
+
+        if (
+            datos.status === "success"
+        ) {
+
+            console.log(
+                "✅ Racha actual:",
+                datos.racha
+            );
+
+
+            // =================================================
+            // ACTUALIZAR EL NÚMERO DE ARRIBA
+            // =================================================
+
+            const elementoRacha =
+                document.getElementById(
+                    "streak-display"
+                );
+
+
+            if (elementoRacha) {
+
+                elementoRacha.textContent =
+                    datos.racha;
+
+                console.log(
+                    "🔥 Racha actualizada en pantalla:",
+                    datos.racha
+                );
+
+            } else {
+
+                console.warn(
+                    "⚠️ No se encontró #streak-display"
+                );
+
+            }
+
+
+            return true;
+
+        }
+
+
+        console.error(
+            "❌ No se pudo registrar la racha:",
+            datos.message
+        );
+
+
+        return false;
+
+
+    } catch (error) {
+
+        console.error(
+            "❌ Error registrando racha:",
+            error
+        );
+
+
+        return false;
+
+    }
+
+}
+
+
 
 // =====================================================
 // FINALIZAR EXAMEN
@@ -485,37 +622,97 @@ async function registrarExamenRealizado() {
 
 async function finalizarExamen() {
 
+    // =================================================
+    // OBTENER ID MISIÓN
+    // =================================================
 
-    // Obtener idMision de la URL
-    const parametros = new URLSearchParams(window.location.search);
-    const idMision = parseInt(parametros.get("idmision")) || 1;
+    const parametros =
+        new URLSearchParams(
+            window.location.search
+        );
 
-    // =====================================================
-    // GUARDAR PUNTAJE EN BASE DE DATOS (MYSQL)
-    // =====================================================
+
+    const idMision =
+        parseInt(
+            parametros.get("idmision")
+        ) || 1;
+
+
+    // =================================================
+    // GUARDAR PUNTAJE EN BASE DE DATOS
+    // =================================================
+
     if (puntaje > 0) {
-        fetch("../php/puntaje.php", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                idexamen: idMision,
-                puntos: puntaje
-            })
-        })
-        .then(res => res.json())
-        .then(data => console.log("Respuesta BD puntaje:", data))
-        .catch(err => console.error("Error al guardar puntaje en BD:", err));
+
+        fetch(
+            "../php/puntaje.php",
+            {
+
+                method: "POST",
+
+                headers: {
+
+                    "Content-Type":
+                        "application/json"
+
+                },
+
+                body: JSON.stringify({
+
+                    idexamen:
+                        idMision,
+
+                    puntos:
+                        puntaje
+
+                })
+
+            }
+        )
+
+        .then(
+            res => res.json()
+        )
+
+        .then(
+            data =>
+                console.log(
+                    "Respuesta BD puntaje:",
+                    data
+                )
+        )
+
+        .catch(
+            err =>
+                console.error(
+                    "Error al guardar puntaje en BD:",
+                    err
+                )
+        );
+
     }
 
-    document.getElementById("progreso").style.width = "100%";
 
-    document.getElementById("contadorPregunta").textContent = "Examen completado";
+    // =================================================
+    // ACTUALIZAR PROGRESO VISUAL
+    // =================================================
 
-    document.getElementById("contenedorPregunta").innerHTML = `
+    document.getElementById(
+        "progreso"
+    ).style.width = "100%";
+
+
+    document.getElementById(
+        "contadorPregunta"
+    ).textContent =
+        "Examen completado";
+
+
+    document.getElementById(
+        "contenedorPregunta"
+    ).innerHTML = `
+
         <h2 class="text-success">
-
 
             🎉 ¡Felicidades!
 
@@ -527,15 +724,18 @@ async function finalizarExamen() {
 
         </p>
 
-
     `;
 
-    document.getElementById("contenedorOpciones").innerHTML = `
+
+    document.getElementById(
+        "contenedorOpciones"
+    ).innerHTML = `
+
         <div class="text-center">
 
-
-            <i class="bi bi-check-circle-fill text-success"
-               style="font-size:70px;">
+            <i
+                class="bi bi-check-circle-fill text-success"
+                style="font-size:70px;">
             </i>
 
             <h3 class="mt-3">
@@ -544,42 +744,126 @@ async function finalizarExamen() {
 
             </h3>
 
-
         </div>
+
     `;
 
-    // Ocultar botón "Siguiente"
-    document.getElementById("btnSiguiente").style.display = "none";
+
+    // =================================================
+    // OCULTAR BOTÓN SIGUIENTE
+    // =================================================
+
+    const btnSiguiente =
+        document.getElementById(
+            "btnSiguiente"
+        );
 
 
-    document.getElementById(
-        "btnSiguiente"
-    ).style.display = "none";
+    if (btnSiguiente) {
 
-document.dispatchEvent(new Event("examenTerminado"));
-    // ============================================
+        btnSiguiente.style.display =
+            "none";
+
+    }
+
+
+    // =================================================
+    // AVISAR QUE EL EXAMEN TERMINÓ
+    // =================================================
+
+    document.dispatchEvent(
+        new Event("examenTerminado")
+    );
+
+
+    // =================================================
     // REGISTRAR EXAMEN
-    // ============================================
+    // =================================================
 
     await registrarExamenRealizado();
 
-}
 
-    // Mostrar el botón "Terminar examen" del HTML
-    const btnTerminar = document.getElementById("btnTerminarExamen");
+    // =================================================
+    // MOSTRAR BOTÓN "TERMINAR EXAMEN"
+    // =================================================
+
+    const btnTerminar =
+        document.getElementById(
+            "btnTerminarExamen"
+        );
+
 
     if (btnTerminar) {
-        btnTerminar.style.display = "inline-block";
 
-        btnTerminar.onclick = function () {
-            if (typeof procesarMedallaLocal === "function") {
-                procesarMedallaLocal(idMision, puntaje);
-            }
-        };
+        btnTerminar.style.display =
+            "inline-block";
+
+
+        // =================================================
+        // ⭐ CUANDO SE PRESIONE TERMINAR EXAMEN
+        // =================================================
+
+        btnTerminar.onclick =
+            async function () {
+
+                console.log(
+                    "📝 Botón Terminar examen presionado"
+                );
+
+
+                // Desactivar temporalmente
+                // para evitar doble clic
+
+                btnTerminar.disabled =
+                    true;
+
+
+                // =================================================
+                // ⭐ REGISTRAR RACHA
+                // =================================================
+
+                const rachaRegistrada =
+                    await registrarRacha();
+
+
+                // =================================================
+                // PROCESAR MEDALLA
+                // =================================================
+
+                if (
+                    typeof procesarMedallaLocal ===
+                    "function"
+                ) {
+
+                    procesarMedallaLocal(
+                        idMision,
+                        puntaje
+                    );
+
+                }
+
+
+                // =================================================
+                // SI NO HAY FUNCIÓN DE MEDALLA,
+                // REGRESAR A PROGRESO
+                // =================================================
+
+                else {
+
+                    window.location.href =
+                        "progreso.html";
+
+                }
+
+            };
+
     }
 
+}
+
+
 // =====================================================
-// INICIAR
+// INICIAR EXAMEN
 // =====================================================
 
 document.addEventListener(
