@@ -613,148 +613,240 @@ async function registrarRacha() {
 
 
 
+
+
 // =====================================================
 // FINALIZAR EXAMEN
 // =====================================================
 
+let examenFinalizado = false;
+
 async function finalizarExamen() {
+
+    // Evitar que se ejecute dos veces
+    if (examenFinalizado) {
+        console.warn("⚠️ El examen ya fue finalizado.");
+        return;
+    }
+
+    examenFinalizado = true;
+
+    console.log("🏁 FINALIZANDO EXAMEN...");
+    console.log("📊 PUNTAJE FINAL:", puntaje);
 
     // =================================================
     // OBTENER ID MISIÓN
     // =================================================
 
     const parametros =
-        new URLSearchParams(
-            window.location.search
-        );
-
+        new URLSearchParams(window.location.search);
 
     const idmision =
-        parseInt(
-            parametros.get("idmision")
-        ) || 1;
+        parseInt(parametros.get("idmision"));
 
+    console.log("🆔 ID MISIÓN:", idmision);
+
+    if (!idmision || isNaN(idmision)) {
+
+        console.error(
+            "❌ No se encontró idmision en la URL."
+        );
+
+        examenFinalizado = false;
+        return;
+    }
 
     // =================================================
-    // GUARDAR PUNTAJE EN BASE DE DATOS
+    // RELACIÓN MISIÓN → EXAMEN
     // =================================================
 
-    if (puntaje > 0) {
+    const relacionMisionExamen = {
 
-        fetch(
-            "../php/puntaje.php",
+        9: 1,
+        10: 3,
+        14: 4,
+        18: 5,
+        22: 6,
+        25: 7,
+        29: 8,
+        33: 9,
+        36: 10,
+        39: 2
+
+    };
+
+    const idexamen =
+        relacionMisionExamen[idmision];
+
+    console.log(
+        "📝 ID EXAMEN:",
+        idexamen
+    );
+
+    if (!idexamen) {
+
+        console.error(
+            "❌ No existe relación misión/examen."
+        );
+
+        examenFinalizado = false;
+        return;
+    }
+
+    // =================================================
+    // GUARDAR PUNTAJE
+    // =================================================
+if (idexamen){
+    try {
+
+        console.log(
+            "💾 Guardando puntaje:",
             {
-
-                method: "POST",
-
-                headers: {
-
-                    "Content-Type":
-                        "application/json"
-
-                },
-
-                body: JSON.stringify({
-
-                    idexamen:
-                        idmision,
-
-                    puntos:
-                        puntaje
-
-                })
-
+                idexamen: idexamen,
+                puntos: puntaje
             }
-        )
+        );
 
-        .then(
-            res => res.json()
-        )
+        const respuesta =
+            await fetch(
+                "../php/puntaje.php",
+                {
 
-        .then(
-            data =>
-                console.log(
-                    "Respuesta BD puntaje:",
-                    data
-                )
-        )
+                    method: "POST",
 
-        .catch(
-            err =>
-                console.error(
-                    "Error al guardar puntaje en BD:",
-                    err
-                )
+                    headers: {
+                        "Content-Type":
+                            "application/json"
+                    },
+
+                        body: JSON.stringify({
+
+                            idmision: idmision,
+
+                            puntos: puntaje
+
+                        })
+
+                }
+            );
+
+        const datos =
+            await respuesta.json();
+
+        console.log(
+            "📊 RESPUESTA PUNTAJE:",
+            datos
+        );
+
+        if (datos.status !== "success") {
+
+            console.error(
+                "❌ ERROR GUARDANDO PUNTAJE:",
+                datos.message
+            );
+
+        } else {
+
+            console.log(
+                "✅ PUNTAJE GUARDADO:",
+                datos.puntos_guardados
+            );
+
+        }
+
+    } catch (error) {
+
+        console.error(
+            "❌ Error al guardar puntaje:",
+            error
         );
 
     }
 
+}
 
     // =================================================
-    // ACTUALIZAR PROGRESO VISUAL
+    // ACTUALIZAR PANTALLA
     // =================================================
 
-    document.getElementById(
-        "progreso"
-    ).style.width = "100%";
+    const progreso =
+        document.getElementById("progreso");
 
+    if (progreso) {
+        progreso.style.width = "100%";
+    }
 
-    document.getElementById(
-        "contadorPregunta"
-    ).textContent =
-        "Examen completado";
+    const contadorPregunta =
+        document.getElementById(
+            "contadorPregunta"
+        );
 
+    if (contadorPregunta) {
 
-    document.getElementById(
-        "contenedorPregunta"
-    ).innerHTML = `
+        contadorPregunta.textContent =
+            "Examen completado";
 
-        <h2 class="text-success">
+    }
 
-            🎉 ¡Felicidades!
+    const contenedorPregunta =
+        document.getElementById(
+            "contenedorPregunta"
+        );
 
-        </h2>
+    if (contenedorPregunta) {
 
-        <p class="fs-5">
+        contenedorPregunta.innerHTML = `
 
-            Has terminado este examen.
+            <h2 class="text-success">
+                🎉 ¡Examen terminado!
+            </h2>
 
-        </p>
+            <p class="fs-5">
+                Has terminado este examen.
+            </p>
 
-    `;
+            <p class="fs-4 fw-bold">
+                Puntaje: ${puntaje}
+            </p>
 
+        `;
 
-    document.getElementById(
-        "contenedorOpciones"
-    ).innerHTML = `
+    }
 
-        <div class="text-center">
+    const contenedorOpciones =
+        document.getElementById(
+            "contenedorOpciones"
+        );
 
-            <i
-                class="bi bi-check-circle-fill text-success"
-                style="font-size:70px;">
-            </i>
+    if (contenedorOpciones) {
 
-            <h3 class="mt-3">
+        contenedorOpciones.innerHTML = `
 
-                Examen terminado
+            <div class="text-center">
 
-            </h3>
+                <i
+                    class="bi bi-check-circle-fill text-success"
+                    style="font-size:70px;">
+                </i>
 
-        </div>
+                <h3 class="mt-3">
+                    Examen terminado
+                </h3>
 
-    `;
+            </div>
 
+        `;
+
+    }
 
     // =================================================
-    // OCULTAR BOTÓN SIGUIENTE
+    // OCULTAR SIGUIENTE
     // =================================================
 
     const btnSiguiente =
         document.getElementById(
             "btnSiguiente"
         );
-
 
     if (btnSiguiente) {
 
@@ -764,24 +856,9 @@ async function finalizarExamen() {
     }
 
 
-    // =================================================
-    // AVISAR QUE EL EXAMEN TERMINÓ
-    // =================================================
-
-    document.dispatchEvent(
-        new Event("examenTerminado")
-    );
-
 
     // =================================================
-    // REGISTRAR EXAMEN
-    // =================================================
-
-    await registrarExamenRealizado();
-
-
-    // =================================================
-    // MOSTRAR BOTÓN "TERMINAR EXAMEN"
+    // MOSTRAR BOTÓN TERMINAR
     // =================================================
 
     const btnTerminar =
@@ -789,63 +866,39 @@ async function finalizarExamen() {
             "btnTerminarExamen"
         );
 
-
     if (btnTerminar) {
 
         btnTerminar.style.display =
             "inline-block";
 
-
-        // =================================================
-        // ⭐ CUANDO SE PRESIONE TERMINAR EXAMEN
-        // =================================================
-
         btnTerminar.onclick =
             async function () {
-
-                console.log(
-                    "📝 Botón Terminar examen presionado"
-                );
-
-
-                // Desactivar temporalmente
-                // para evitar doble clic
 
                 btnTerminar.disabled =
                     true;
 
+                // Registrar racha
+                if (
+                    typeof registrarRacha ===
+                    "function"
+                ) {
 
-                // =================================================
-                // ⭐ REGISTRAR RACHA
-                // =================================================
-
-                const rachaRegistrada =
                     await registrarRacha();
 
+                }
 
-                // =================================================
-                // PROCESAR MEDALLA
-                // =================================================
-
+                // Procesar medalla
                 if (
                     typeof procesarMedallaLocal ===
                     "function"
                 ) {
 
-                    procesarMedallaLocal(
+                    await procesarMedallaLocal(
                         idmision,
                         puntaje
                     );
 
-                }
-
-
-                // =================================================
-                // SI NO HAY FUNCIÓN DE MEDALLA,
-                // REGRESAR A PROGRESO
-                // =================================================
-
-                else {
+                } else {
 
                     window.location.href =
                         "progreso.html";
@@ -857,6 +910,10 @@ async function finalizarExamen() {
     }
 
 }
+
+
+ 
+
 
 
 // =====================================================
@@ -887,3 +944,22 @@ document.addEventListener(
 
     }
 );
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const modalAlerta = document.getElementById("modalAlertaExamen");
+
+    if (modalAlerta) {
+
+        modalAlerta.addEventListener("hidden.bs.modal", function () {
+
+            // Quitar el foco del botón antes de dejar el modal oculto
+            if (document.activeElement) {
+                document.activeElement.blur();
+            }
+
+        });
+
+    }
+
+});

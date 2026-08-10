@@ -114,7 +114,7 @@ async function procesarMedallaLocal(idmision, puntajeobtenido) {
     const idmedalla = relacionmisionmedalla[idmision] || idmision;
     const medalla = informacionMedallas[idmedalla];
 
-    if (puntajeobtenido > 50) {
+    if (puntajeobtenido >= 50) {
         try {
             await fetch("../php/guardar_medalla.php", {
                 method: "POST",

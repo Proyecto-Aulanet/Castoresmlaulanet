@@ -122,6 +122,7 @@ async function cargarPerfil(){
 
 
         console.log(resultado);
+        
 
 
 
@@ -165,27 +166,19 @@ async function cargarPerfil(){
             if(imagen && icono){
 
 
-                if(usuario.ruta_imagen){
+                if (usuario.foto_perfil) {
 
-
-                    imagen.src =
-                    usuario.ruta_imagen;
-
+                    imagen.src = usuario.foto_perfil;
 
                     imagen.classList.remove("d-none");
 
-
                     icono.classList.add("d-none");
 
-
-                }else{
-
+                } else {
 
                     imagen.classList.add("d-none");
 
-
                     icono.classList.remove("d-none");
-
 
                 }
 
@@ -366,7 +359,7 @@ async function guardarPerfil(){
 
         accion:"modificar",
 
-        idusuario:idusuarioactual,
+        idusuario: idUsuarioActual,
 
 
         nombre:
@@ -463,7 +456,7 @@ async function eliminarCuenta(){
 
             let datos = {
                 accion:"eliminar",
-                idusuario:idusuarioactual
+                idusuario: idUsuarioActual
             };
 
             let respuesta = await fetch("../php/registro_process.php",{
@@ -621,7 +614,7 @@ async function guardarIcono(){
     const datos = {
 
         accion:"foto",
-        idusuario:idusuarioactual,
+        idusuario: idUsuarioActual,
         ruta_imagen:iconoSeleccionado
 
     };
