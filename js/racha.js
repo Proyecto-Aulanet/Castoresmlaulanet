@@ -63,9 +63,9 @@ async function completarMision(idusuario, idmision) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    const idUsuarioActivo = localStorage.getItem('idusuario') || 1; 
+    const idusuarioactivo = localStorage.getItem('idusuario') || 1; 
     
-    if (idUsuarioActivo) {
-        obtenerRacha(idUsuarioActivo);
+    if (idusuarioactivo) {
+        obtenerRacha(idusuarioactivo);
     }
 });

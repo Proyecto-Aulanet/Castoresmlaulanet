@@ -20,7 +20,6 @@ if (isset($_SESSION["idusuario"]) && (int)$_SESSION["idusuario"] > 0) {
     $idusuario = (int)$_REQUEST["idusuario"];
 }
 
-// Si no hay un idusuario autenticado ni enviado en la petición, rechazamos la solicitud
 if ($idusuario <= 0) {
     echo json_encode([
         "status" => "error",

@@ -366,7 +366,7 @@ async function guardarPerfil(){
 
         accion:"modificar",
 
-        idusuario:idUsuarioActual,
+        idusuario:idusuarioactual,
 
 
         nombre:
@@ -463,7 +463,7 @@ async function eliminarCuenta(){
 
             let datos = {
                 accion:"eliminar",
-                idusuario:idUsuarioActual
+                idusuario:idusuarioactual
             };
 
             let respuesta = await fetch("../php/registro_process.php",{
@@ -621,7 +621,7 @@ async function guardarIcono(){
     const datos = {
 
         accion:"foto",
-        idusuario:idUsuarioActual,
+        idusuario:idusuarioactual,
         ruta_imagen:iconoSeleccionado
 
     };

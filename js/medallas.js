@@ -1,5 +1,4 @@
-
-console.log("Medallas JS cargado (Vista Previa 3 + Modal Bootstrap)");
+console.log("Medallas JS cargado (Sesión en BD)");
 
 const informacionMedallas = {
     1: { nombre: "CALLY", descripcion: "Guardiana del Abecedario", imagen: "medalla_abecedario.png" },
@@ -15,13 +14,29 @@ const informacionMedallas = {
 };
 
 /**
- * Renderiza la vista previa lateral y el modal dinámicamente
+ * Consulta las medallas del usuario desde la base de datos (PHP)
  */
-function cargarMedallasObtenidas() {
+async function obtenerMedallasUsuario() {
+    try {
+        const res = await fetch("../php/obtener_medallas.php");
+        if (!res.ok) return [];
+        const datos = await res.json();
+        return datos.status === "success" ? datos.medallas : [];
+    } catch (err) {
+        console.error("Error al obtener medallas del usuario:", err);
+        return [];
+    }
+}
+
+/**
+ * Renderiza la vista previa lateral y el modal dinámicamente con datos de la BD
+ */
+async function cargarMedallasObtenidas() {
     const contenedorPrevia = document.getElementById("gridMedallasPerfilVistaPrevia") || document.getElementById("gridMedallasVistaPrevia");
     const contenedorModal = document.getElementById("gridMedallasPerfilModal") || document.getElementById("gridMedallasModal");
 
-    const medallasGanadas = JSON.parse(localStorage.getItem("misMedallasObtenidas")) || [];
+    // Consultamos la BD en lugar de localStorage
+    const medallasGanadas = await obtenerMedallasUsuario();
 
     if (contenedorPrevia) {
         contenedorPrevia.innerHTML = "";
@@ -93,22 +108,26 @@ function cargarMedallasObtenidas() {
 }
 
 /**
- * Procesa y registra la medalla tras finalizar el examen
+ * Procesa y registra la medalla en la Base de Datos tras finalizar el examen
  */
-function procesarMedallaLocal(idMision, puntajeObtenido) {
+async function procesarMedallaLocal(idmision, puntajeObtenido) {
     const relacionMisionMedalla = {
         9: 1, 10: 2, 14: 3, 18: 4, 22: 5, 25: 6, 29: 7, 33: 8, 36: 9, 39: 10
     };
 
-    const idMedalla = relacionMisionMedalla[idMision] || idMision;
+    const idMedalla = relacionMisionMedalla[idmision] || idmision;
     const medalla = informacionMedallas[idMedalla];
 
     if (puntajeObtenido > 50) {
-        let misMedallas = JSON.parse(localStorage.getItem("misMedallasObtenidas")) || [];
-
-        if (!misMedallas.includes(idMedalla)) {
-            misMedallas.push(idMedalla);
-            localStorage.setItem("misMedallasObtenidas", JSON.stringify(misMedallas));
+        // Guardar medalla en la BD vía PHP
+        try {
+            await fetch("../php/guardar_medalla.php", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ idmedalla: idMedalla })
+            });
+        } catch (error) {
+            console.error("Error guardando medalla:", error);
         }
 
         if (typeof Swal !== "undefined") {
@@ -153,7 +172,7 @@ document.addEventListener("DOMContentLoaded", () => {
     cargarMedallasObtenidas();
 });
 
-// Abrir Modal
+// Modal helpers
 function abrirModalMedallas() {
     const modal = document.getElementById("modalMedallasPerfilCustom");
     if (modal) {
@@ -161,17 +180,18 @@ function abrirModalMedallas() {
         document.body.style.overflow = "hidden"; 
     }
 }
+
 function cerrarModalMedallas() {
     const modal = document.getElementById("modalMedallasPerfilCustom");
     if (modal) {
         modal.style.display = "none";
-        document.body.style.overflow = "auto"
+        document.body.style.overflow = "auto";
     }
 }
+
 window.addEventListener("click", function (event) {
     const modal = document.getElementById("modalMedallasPerfilCustom");
     if (event.target === modal) {
         cerrarModalMedallas();
     }
 });
-

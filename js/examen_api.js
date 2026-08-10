@@ -39,7 +39,7 @@ async function cargarExamen() {
 
 
         // =================================================
-        // VALIDAR SI YA SE APROBÓ EL EXAMEN
+
         // =================================================
 
         const relacionMisionMedalla = {
@@ -56,16 +56,19 @@ async function cargarExamen() {
         };
 
 
-        const idMedalla =
-            relacionMisionMedalla[idMision] || idMision;
+        const idMedalla = relacionMisionMedalla[idMision] || idMision;
 
-
-        const medallasGanadas =
-            JSON.parse(
-                localStorage.getItem(
-                    "misMedallasObtenidas"
-                )
-            ) || [];
+        // Consultar medallas de la cuenta activa desde PHP
+        let medallasGanadas = [];
+        try {
+            const resMedallas = await fetch("../php/obtener_medallas.php");
+            const dataMedallas = await resMedallas.json();
+            if (dataMedallas.status === "success") {
+                medallasGanadas = dataMedallas.medallas;
+            }
+        } catch (e) {
+            console.error("No se pudieron verificar las medallas ganadas", e);
+        }
 
 
         if (medallasGanadas.includes(idMedalla)) {
@@ -106,10 +109,9 @@ async function cargarExamen() {
 
             return;
         }
-
-
         // =================================================
         // CONSULTAR API
+
         // =================================================
 
         const url =
@@ -144,7 +146,6 @@ async function cargarExamen() {
             datos
         );
 
-
         // =================================================
         // COMPROBAR RESPUESTA
         // =================================================
@@ -158,7 +159,6 @@ async function cargarExamen() {
 
         }
 
-
         // =================================================
         // GUARDAR PREGUNTAS
         // =================================================
@@ -166,18 +166,14 @@ async function cargarExamen() {
         preguntas =
             datos.preguntas || [];
 
-
         // Máximo 10 preguntas
-
         preguntas =
             preguntas.slice(0, 10);
-
 
         console.log(
             "Preguntas recibidas:",
             preguntas.length
         );
-
 
         if (preguntas.length < 10) {
 
@@ -191,9 +187,7 @@ async function cargarExamen() {
 
 
         indiceActual = 0;
-
         puntaje = 0;
-
 
         // =================================================
         // MOSTRAR PRIMERA PREGUNTA
@@ -202,19 +196,20 @@ async function cargarExamen() {
         mostrarPregunta();
 
 
-    } catch (error) {
+    }
+
+    catch (error) {
+
 
         console.error(
             "Error cargando examen:",
             error
         );
 
-
         const contenedor =
             document.getElementById(
                 "contenedorPregunta"
             );
-
 
         if (contenedor) {
 
@@ -240,8 +235,6 @@ async function cargarExamen() {
 
 }
 
-
-
 // =====================================================
 // MOSTRAR PREGUNTA
 // =====================================================
@@ -262,7 +255,6 @@ function mostrarPregunta() {
     const numero =
         indiceActual + 1;
 
-
     // =================================================
     // PROGRESO
     // =================================================
@@ -271,7 +263,6 @@ function mostrarPregunta() {
         "contadorPregunta"
     ).textContent =
         `Pregunta ${numero} de 10`;
-
 
     document.getElementById(
         "progreso"
@@ -296,7 +287,6 @@ function mostrarPregunta() {
 
     `;
 
-
     // =================================================
     // OPCIONES
     // =================================================
@@ -311,9 +301,7 @@ function mostrarPregunta() {
         () => Math.random() - 0.5
     );
 
-
     let html = "";
-
 
     opciones.forEach(
         (opcion, index) => {
@@ -355,11 +343,9 @@ function mostrarPregunta() {
         }
     );
 
-
     document.getElementById(
         "contenedorOpciones"
     ).innerHTML = html;
-
 
     // =================================================
     // BOTÓN SIGUIENTE
@@ -395,11 +381,10 @@ function mostrarPregunta() {
                 );
 
             }
-        );
+
+        ); 
 
 }
-
-
 
 // =====================================================
 // SIGUIENTE PREGUNTA
@@ -412,13 +397,11 @@ function siguientePregunta() {
             'input[name="respuesta"]:checked'
         );
 
-
     if (!seleccion) {
 
         return;
 
     }
-
 
     // =================================================
     // COMPROBAR RESPUESTA
@@ -429,15 +412,12 @@ function siguientePregunta() {
     ) {
 
         puntaje += 10;
-
     }
-
 
     console.log(
         "Puntaje:",
         puntaje
     );
-
 
     // =================================================
     // SIGUIENTE
@@ -493,18 +473,17 @@ async function registrarExamenRealizado() {
             return false;
         }
 
-
         console.log(
             "Registrando misión:",
             idmision
         );
 
 
-        const respuesta =
-            await fetch(
-                "../php/api_guardar_examen.php",
-                {
-                    method: "POST",
+        const respuesta = await fetch(
+            "../php/api_guardar_examen.php",
+            {
+                method: "POST",
+
 
                     headers: {
                         "Content-Type":
@@ -513,16 +492,9 @@ async function registrarExamenRealizado() {
 
                     body: JSON.stringify({
 
-                        idmision:
-                            idmision
 
-                    })
-                }
-            );
+        const datos = await respuesta.json();
 
-
-        const datos =
-            await respuesta.json();
 
 
         console.log(
@@ -531,9 +503,8 @@ async function registrarExamenRealizado() {
         );
 
 
-        if (
-            datos.status !== "success"
-        ) {
+        if (datos.status !== "success") {
+
 
             console.error(
                 "Error:",
@@ -543,9 +514,7 @@ async function registrarExamenRealizado() {
             return false;
         }
 
-
         return true;
-
 
     } catch (error) {
 
@@ -904,8 +873,6 @@ async function finalizarExamen() {
             };
 
     }
-
-}
 
 
 
