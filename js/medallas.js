@@ -167,21 +167,94 @@ document.addEventListener("DOMContentLoaded", () => {
     cargarMedallasObtenidas();
 });
 
+
 function abrirModalMedallas() {
+
     const modal = document.getElementById("modalMedallasPerfilCustom");
-    if (modal) {
-        modal.style.display = "flex";
-        document.body.style.overflow = "hidden"; 
+
+    if (!modal) {
+        console.error("❌ No se encontró el modal de medallas.");
+        return;
     }
+
+    // Mostrar modal
+    modal.style.display = "flex";
+
+    // Evitar que la página de atrás se mueva
+    document.body.style.overflow = "hidden";
+
+    console.log("🏆 Modal de medallas abierto.");
 }
 
+
 function cerrarModalMedallas() {
+
     const modal = document.getElementById("modalMedallasPerfilCustom");
-    if (modal) {
-        modal.style.display = "none";
-        document.body.style.overflow = "auto";
+
+    if (!modal) {
+        console.error("❌ No se encontró el modal de medallas.");
+        return;
     }
+
+    // Ocultar modal
+    modal.style.display = "none";
+
+    // Restaurar scroll
+    document.body.style.overflow = "";
+
+    console.log("❌ Modal de medallas cerrado.");
 }
+
+
+// =====================================================
+// CERRAR AL HACER CLIC FUERA DE LA TARJETA
+// =====================================================
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const modal = document.getElementById("modalMedallasPerfilCustom");
+
+    if (!modal) return;
+
+    modal.addEventListener("click", function (e) {
+
+        // Si el clic fue directamente sobre el fondo
+        if (e.target === modal) {
+
+            cerrarModalMedallas();
+
+        }
+
+    });
+
+});
+
+
+// =====================================================
+// CERRAR CON LA TECLA ESC
+// =====================================================
+
+document.addEventListener("keydown", function (e) {
+
+    if (e.key === "Escape") {
+
+        const modal =
+            document.getElementById("modalMedallasPerfilCustom");
+
+        if (
+            modal &&
+            modal.style.display === "flex"
+        ) {
+
+            cerrarModalMedallas();
+
+        }
+
+    }
+
+});
+
+
 
 window.addEventListener("click", function (event) {
     const modal = document.getElementById("modalMedallasPerfilCustom");

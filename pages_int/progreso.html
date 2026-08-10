@@ -1028,7 +1028,51 @@
 
 </div> <br>
 
-                <!-- EXÁMENES -->
+
+
+            </div>
+
+            <!-- ===================== -->
+            <!-- COLUMNA DERECHA -->
+            <!-- ===================== -->
+            <div class="col-12 col-lg-3">
+
+
+                <div class="perfilprin-seccion mt-4">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h4 class="text-white mb-0">Medallas</h4>
+                        <button class="btn rounded-pill px-3 btn-ver-mas-medallas"
+                            data-bs-toggle="modal"
+                            data-bs-target="#modalMedallasPerfil">
+                            Ver más
+                        </button>
+                    </div>
+
+                    <div class="perfilprin-medallas-grid mt-4 d-flex gap-3 justify-content-start flex-wrap"
+                        id="gridMedallasPerfilVistaPrevia">
+                    </div>
+                </div>
+
+                <div class="modal fade" id="modalMedallasPerfil" tabindex="-1"
+                    aria-labelledby="modalMedallasPerfilLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                        <div class="modal-content rounded-4 border-0 shadow">
+                            <div class="modal-header border-0 pb-0">
+                                <h5 class="modal-title fw-bold text-dark" id="modalMedallasPerfilLabel">🏆 Mis Medallas
+                                </h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body p-4">
+                                <div class="row g-3" id="gridMedallasPerfilModal">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </br>
+                                <!-- EXÁMENES -->
                 <div class="progreso-card" data-aos="fade-up">
 
                     <div class="d-flex justify-content-between align-items-center">
@@ -1062,58 +1106,16 @@
                     </div>
 
                 </div>
-
+                
             </div>
-
-            <!-- ===================== -->
-            <!-- COLUMNA DERECHA -->
-            <!-- ===================== -->
-            <div class="col-12 col-lg-3">
-
-
-                <div class="perfilprin-seccion mt-4">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <h4 class="text-white mb-0">Medallas</h4>
-                        <button class="btn btn-outline-light rounded-pill px-3" data-bs-toggle="modal"
-                            data-bs-target="#modalMedallasPerfil">
-                            Ver más
-                        </button>
-                    </div>
-
-                    <div class="perfilprin-medallas-grid mt-4 d-flex gap-3 justify-content-start flex-wrap"
-                        id="gridMedallasPerfilVistaPrevia">
-                    </div>
-                </div>
-
-                <div class="modal fade" id="modalMedallasPerfil" tabindex="-1"
-                    aria-labelledby="modalMedallasPerfilLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-lg modal-dialog-centered">
-                        <div class="modal-content rounded-4 border-0 shadow">
-                            <div class="modal-header border-0 pb-0">
-                                <h5 class="modal-title fw-bold text-dark" id="modalMedallasPerfilLabel">🏆 Mis Medallas
-                                </h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body p-4">
-                                <div class="row g-3" id="gridMedallasPerfilModal">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- RANKING -->
+                                        <!-- RANKING -->
                 <div class="progreso-card" data-aos="fade-left" data-aos-delay="150">
 
                     <div class="d-flex justify-content-between align-items-center mb-3">
                         <h4 data-es="Ranking" data-na="Tlatepanilistli">
                             Ranking
                         </h4>
-                        <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalRanking">
-                            Ver más
-                        </button>
+
                     </div>
 
                     <div id="rankingList">
@@ -1121,7 +1123,7 @@
 
                 </div>
 
-            </div>
+
 
             <div class="d-flex justify-content-start mt-5" data-aos="fade-right">
 
@@ -1227,10 +1229,6 @@
             Exámenes
         </h4>
 
-        <span id="contadorExamenes"
-              class="badge bg-primary fs-6">
-            0 / 10
-        </span>
 
     </div>
 
@@ -1625,34 +1623,79 @@
         </div>
     </div>
 
-    <!-- MODAL RANKING MUNDIAL -->
-    <div class="modal fade" id="modalRanking">
-        <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5>Ranking Mundial</h5>
-                    <button class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
+    <!-- ============================= -->
+<!-- MODAL RANKING -->
+<!-- ============================= -->
+
+<div class="modal fade"
+     id="modalRanking"
+     tabindex="-1"
+     aria-labelledby="modalRankingLabel"
+     aria-hidden="true">
+
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+
+        <div class="modal-content shadow border-0 rounded-4">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title fw-bold" id="modalRankingLabel">
+                    🏆 Ranking Mundial
+                </h5>
+
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Cerrar">
+                </button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <div class="table-responsive">
+
                     <table class="table align-middle">
+
                         <thead>
+
                             <tr>
                                 <th>#</th>
                                 <th>Bandera</th>
                                 <th>Usuario</th>
-                                <th>pts</th>
+                                <th>Puntos</th>
                             </tr>
+
                         </thead>
+
                         <tbody id="tbodyRankingMundial">
+
                             <tr>
-                                <td colspan="4" class="text-center text-muted">Cargando ranking...</td>
+
+                                <td
+                                    colspan="4"
+                                    class="text-center text-muted">
+
+                                    Cargando ranking...
+
+                                </td>
+
                             </tr>
+
                         </tbody>
+
                     </table>
+
                 </div>
+
             </div>
+
         </div>
+
     </div>
+
+</div>
 
     <!-- CONTENEDOR OCULTO PARA EXPORTAR -->
     <div id="contenedor-exportacion">
@@ -1896,6 +1939,8 @@
     <script src="/Castoresmlaulanet/js/perfil_progreso.js"></script>
     <script src="../js/medallas.js"></script>
     <script src="/Castoresmlaulanet/js/puntos.js"></script>
+    <script src="../js/puntos.js"></script>
+    <script src="../js/examenes_realizados.js"></script>
 
 </body>
 

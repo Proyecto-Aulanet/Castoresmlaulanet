@@ -51,70 +51,294 @@ function obtenerPaisFormateado(nombrePais) {
     return abr;
 }
 
+/// =====================================================
+// RANKING PRINCIPAL — SOLO 5 USUARIOS
+// =====================================================
+
 async function cargarRanking() {
-    const contenedor = document.querySelector('#rankingList');
+
+    const contenedor =
+        document.querySelector('#rankingList');
+
     if (!contenedor) return;
 
     try {
-        const respuesta = await fetch('../php/ranking.php');
-        const resultado = await respuesta.json();
 
-        if (resultado.status === 'success') {
-            contenedor.innerHTML = ''; 
+        const respuesta =
+            await fetch('../php/ranking.php');
 
-            resultado.data.forEach(user => {
-                const abr = obtenerPaisFormateado(user.pais_codigo);
-                const nombreMostrar = user.nombre ? user.nombre.split(' ')[0] : (user.username || 'Usuario');
+        const resultado =
+            await respuesta.json();
 
-                const item = document.createElement('div');
-                item.className = 'ranking-item';
+        console.log("📊 Ranking recibido:", resultado);
+
+        if (resultado.status !== 'success') {
+
+            console.error(
+                "❌ Error del ranking:",
+                resultado.message
+            );
+
+            return;
+        }
+
+        contenedor.innerHTML = '';
+
+        // SOLO LOS PRIMEROS 5
+        const primerosCinco =
+            resultado.data.slice(0, 5);
+
+        primerosCinco.forEach(
+            (user, index) => {
+
+                const abr =
+                    obtenerPaisFormateado(
+                        user.pais_codigo
+                    );
+
+                const nombreMostrar =
+                    user.nombre
+                        ? user.nombre.split(' ')[0]
+                        : (user.username || 'Usuario');
+
+                const item =
+                    document.createElement('div');
+
+                item.className =
+                    'ranking-item';
+
                 item.innerHTML = `
-                    ${abr} ${nombreMostrar}
-                    <span>${user.puntaje || 0} XP</span>
+
+                    <span>
+                        ${index + 1}. 
+                        ${abr} 
+                        ${nombreMostrar}
+                    </span>
+
+                    <span>
+                        ${user.puntaje || 0} XP
+                    </span>
+
                 `;
 
                 contenedor.appendChild(item);
-            });
-        }
+
+            }
+        );
+
     } catch (error) {
-        console.error("Error al obtener el ranking:", error);
+
+        console.error(
+            "❌ Error al obtener el ranking:",
+            error
+        );
+
     }
+
 }
+
+
+// =====================================================
+// RANKING DEL MODAL — TODOS LOS USUARIOS
+// =====================================================
 
 async function cargarRankingModal() {
-    const tbody = document.querySelector('#tbodyRankingMundial') || document.querySelector('#modalRanking tbody') || document.querySelector('.modal tbody');
-    if (!tbody) return;
+
+    const tbody =
+        document.getElementById(
+            'tbodyRankingMundial'
+        );
+
+    if (!tbody) {
+
+        console.error(
+            "❌ No existe #tbodyRankingMundial"
+        );
+
+        return;
+    }
 
     try {
-        tbody.innerHTML = '<tr><td colspan="4" class="text-center">Cargando datos...</td></tr>';
 
-        const respuesta = await fetch('../php/ranking.php');
-        const resultado = await respuesta.json();
+        tbody.innerHTML = `
 
-        if (resultado.status === 'success') {
-            tbody.innerHTML = '';
+            <tr>
 
-            if (resultado.data.length === 0) {
-                tbody.innerHTML = '<tr><td colspan="4" class="text-center">No hay registros aún.</td></tr>';
-                return;
-            }
+                <td
+                    colspan="4"
+                    class="text-center">
 
-            resultado.data.forEach((user, index) => {
-                const abr = obtenerPaisFormateado(user.pais_codigo);
-                const nombreMostrar = user.nombre ? user.nombre.split(' ')[0] : (user.username || 'Usuario');
+                    Cargando ranking...
 
-                const tr = document.createElement('tr');
-                tr.innerHTML = `
-                    <td>${index + 1}</td>
-                    <td>${abr}</td>
-                    <td>${nombreMostrar}</td>
-                    <td>${user.puntaje || 0} XP</td>
-                `;
-                tbody.appendChild(tr);
-            });
+                </td>
+
+            </tr>
+
+        `;
+
+        const respuesta =
+            await fetch('../php/ranking.php');
+
+        const resultado =
+            await respuesta.json();
+
+        console.log(
+            "🏆 Ranking completo:",
+            resultado
+        );
+
+        if (resultado.status !== 'success') {
+
+            throw new Error(
+                resultado.message ||
+                'No se pudo obtener el ranking.'
+            );
+
         }
+
+        tbody.innerHTML = '';
+
+        // =================================================
+        // IMPORTANTE:
+        // AQUÍ NO USAMOS slice(0,5)
+        // SE MUESTRAN TODOS
+        // =================================================
+
+        resultado.data.forEach(
+            (user, index) => {
+
+                const abr =
+                    obtenerPaisFormateado(
+                        user.pais_codigo
+                    );
+
+                const nombreMostrar =
+                    user.nombre
+                        ? user.nombre.split(' ')[0]
+                        : (user.username || 'Usuario');
+
+                const tr =
+                    document.createElement('tr');
+
+                tr.innerHTML = `
+
+                    <td>
+                        ${index + 1}
+                    </td>
+
+                    <td>
+                        ${abr}
+                    </td>
+
+                    <td>
+                        ${nombreMostrar}
+                    </td>
+
+                    <td class="fw-bold">
+                        ${user.puntaje || 0} XP
+                    </td>
+
+                `;
+
+                tbody.appendChild(tr);
+
+            }
+        );
+
+
+        // =================================================
+        // SI NO HAY USUARIOS
+        // =================================================
+
+        if (resultado.data.length === 0) {
+
+            tbody.innerHTML = `
+
+                <tr>
+
+                    <td
+                        colspan="4"
+                        class="text-center text-muted">
+
+                        No hay usuarios en el ranking.
+
+                    </td>
+
+                </tr>
+
+            `;
+
+        }
+
     } catch (error) {
-        console.error("Error al cargar la tabla del modal:", error);
-        tbody.innerHTML = '<tr><td colspan="4" class="text-center text-danger">Error al conectar con el servidor.</td></tr>';
+
+        console.error(
+            "❌ Error cargando ranking completo:",
+            error
+        );
+
+        tbody.innerHTML = `
+
+            <tr>
+
+                <td
+                    colspan="4"
+                    class="text-center text-danger">
+
+                    Error al conectar con el servidor.
+
+                </td>
+
+            </tr>
+
+        `;
+
     }
+
 }
+
+
+// =====================================================
+// INICIALIZAR RANKING
+// =====================================================
+
+document.addEventListener(
+    'DOMContentLoaded',
+    function () {
+
+        console.log(
+            "🏆 Inicializando ranking..."
+        );
+
+        // Cargar los 5 principales
+        cargarRanking();
+
+
+        // =============================================
+        // MODAL
+        // =============================================
+
+        const modalRanking =
+            document.getElementById(
+                'modalRanking'
+            );
+
+        if (modalRanking) {
+
+            modalRanking.addEventListener(
+                'show.bs.modal',
+                function () {
+
+                    console.log(
+                        "🏆 Abriendo ranking completo..."
+                    );
+
+                    cargarRankingModal();
+
+                }
+            );
+
+        }
+
+    }
+);
