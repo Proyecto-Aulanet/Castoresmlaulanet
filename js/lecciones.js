@@ -19,10 +19,10 @@
     }
 
     // 2. OBTENER PREGUNTAS DE UNA LECCIÓN -> Método GET
-    async function obtenerPreguntasPorLeccion(idLeccion){
+    async function obtenerPreguntasPorLeccion(idleccion){
 
     const res = await fetch(
-        `${API_URL}?accion=preguntas&idleccion=${idLeccion}`
+        `${API_URL}?accion=preguntas&idleccion=${idleccion}`
     );
 
     const data = await res.json();
@@ -37,13 +37,13 @@
 
 }
     // 3. OBTENER PUNTAJE Y AVANCE SEMANAL -> Método GET
-    async function obtenerPuntajeSemanal(idUsuario) {
+    async function obtenerPuntajeSemanal(idusuario) {
         try {
-            const res = await fetch(`${API_URL}?accion=puntaje_semanal&idusuario=${idUsuario}`);
+            const res = await fetch(`${API_URL}?accion=puntaje_semanal&idusuario=${idusuario}`);
             const data = await res.json();
 
             if (data.status === 'success') {
-                console.log(`Puntaje semanal del usuario ${idUsuario}:`, data.data);
+                console.log(`Puntaje semanal del usuario ${idusuario}:`, data.data);
 
                 // Si tienes elementos en HTML con esta ID, se actualizarán solos:
                 const elPuntos = document.getElementById('total-puntos');
@@ -57,7 +57,7 @@
     }
 
     // 4. FINALIZAR EXAMEN Y GUARDAR RESULTADO -> Método POST
-    async function finalizarExamen(idUsuario, idLeccion, idExamen, puntajeObtenido, idMedalla = 1) {
+    async function finalizarExamen(idusuario, idleccion, idexamen, puntajeobtenido, idmedalla = 1) {
         try {
             const res = await fetch(API_URL, {
                 method: 'POST',
@@ -83,7 +83,7 @@
                 }
 
                 // Actualizar automáticamente los puntos semanales tras terminar el examen
-                obtenerPuntajeSemanal(idUsuario);
+                obtenerPuntajeSemanal(idusuario);
             } else {
                 alert("Error al guardar: " + data.message);
             }

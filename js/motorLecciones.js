@@ -29,8 +29,8 @@ const MotorLecciones = {
 
 
         if(
-            isNaN(this.idMision) ||
-            !configMisiones[this.idMision]
+            isNaN(this.idmision) ||
+            !configMisiones[this.idmision]
         ){
 
             console.error(
@@ -49,13 +49,13 @@ const MotorLecciones = {
 
         console.log(
             "Misión:",
-            configMisiones[this.idMision].nombre
+            configMisiones[this.idmision].nombre
         );
 
 
         console.log(
             "ID misión:",
-            this.idMision
+            this.idmision
         );
 
 
@@ -66,7 +66,7 @@ const MotorLecciones = {
 
         this.preguntas =
         await obtenerPreguntasPorLeccion(
-            this.idMision
+            this.idmision
         );
 
 
@@ -75,7 +75,7 @@ const MotorLecciones = {
             "Preguntas:",
             this.preguntas
         );
-        console.log("Misión actual:", this.idMision);
+        console.log("Misión actual:", this.idmision);
 
 
 
@@ -189,14 +189,14 @@ const MotorLecciones = {
 
     // Guardar puntaje de esta misión
     localStorage.setItem(
-        "puntaje_mision_" + this.idMision,
+        "puntaje_mision_" + this.idmision,
         this.puntaje
     );
 
 
     console.log(
         "Puntaje guardado:",
-        this.idMision,
+        this.idmision,
         this.puntaje
     );
 
@@ -205,7 +205,7 @@ const MotorLecciones = {
 
         this.puntaje,
         this.preguntasActuales.length*10,
-        this.idMision,
+        this.idmision,
         null
 
     );
